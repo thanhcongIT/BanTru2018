@@ -27,6 +27,7 @@ namespace DataConnect.DAO.ThanhCongTC.ChiTieu
             dt.Invoices.InsertOnSubmit(a);
             dt.SubmitChanges();
             return a.InvoiceID;
+            //
         }
         public bool Edit(Invoice invoice)
         {
