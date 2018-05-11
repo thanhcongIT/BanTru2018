@@ -171,12 +171,6 @@
     <Compile Include="HungTD\Form\Department\frmDepartmentList.Designer.cs">
       <DependentUpon>frmDepartmentList.cs</DependentUpon>
     </Compile>
-    <Compile Include="HungTD\Form\Dish\frmChangeQuantity.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="HungTD\Form\Dish\frmChangeQuantity.Designer.cs">
-      <DependentUpon>frmChangeQuantity.cs</DependentUpon>
-    </Compile>
     <Compile Include="HungTD\Form\Dish\frmDish.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -323,6 +317,12 @@
     </Compile>
     <Compile Include="QLThuChi\ChiTieu\ChiTieuThucPham\UsChiThucPham.Designer.cs">
       <DependentUpon>UsChiThucPham.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QLThuChi\ChiTieu\ChiTieuThucPham\UsYeuCau.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="QLThuChi\ChiTieu\ChiTieuThucPham\UsYeuCau.Designer.cs">
+      <DependentUpon>UsYeuCau.cs</DependentUpon>
     </Compile>
     <Compile Include="QLThuChi\ChiTieu\KhoanChi\FrChiTietHoaDon.cs">
       <SubType>Form</SubType>
@@ -570,9 +570,6 @@
     <EmbeddedResource Include="HungTD\Form\Department\frmDepartmentList.resx">
       <DependentUpon>frmDepartmentList.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="HungTD\Form\Dish\frmChangeQuantity.resx">
-      <DependentUpon>frmChangeQuantity.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="HungTD\Form\Dish\frmDish.resx">
       <DependentUpon>frmDish.cs</DependentUpon>
     </EmbeddedResource>
@@ -655,6 +652,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="QLThuChi\ChiTieu\ChiTieuThucPham\UsChiThucPham.resx">
       <DependentUpon>UsChiThucPham.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QLThuChi\ChiTieu\ChiTieuThucPham\UsYeuCau.resx">
+      <DependentUpon>UsYeuCau.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="QLThuChi\ChiTieu\KhoanChi\FrChiTietHoaDon.resx">
       <DependentUpon>FrChiTietHoaDon.cs</DependentUpon>
