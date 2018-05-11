@@ -59,7 +59,7 @@ namespace QLHSBanTru2018_Demo_V1.HungTD.Form.Dish
 
         private void btnNext_Click(object sender, EventArgs e)
         {
-            tabInformation.SelectedTabPage = tabPage2;
+            this.Close();
         }
 
         private void cbbIngredientType_SelectedIndexChanged(object sender, EventArgs e)
@@ -89,6 +89,26 @@ namespace QLHSBanTru2018_Demo_V1.HungTD.Form.Dish
             btnNext.Enabled = true;
             btnPrevious.Enabled = false;
             btnFinish.Enabled = false;
+        }
+
+        private void btnAdd_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            frmChangeQuantity frmCQ = new frmChangeQuantity();
+            var rowHandle = gridView1.FocusedRowHandle;
+            try
+            {
+                frmCQ.setIngredient(Convert.ToInt32(gridView1.GetRowCellValue(rowHandle, "IngredientID").ToString()));
+            }
+            catch
+            {
+
+            }
+            frmCQ.setTitle("Thêm Thực Phẩm");
+            frmCQ.ShowDialog();
+            if(frmCQ.DialogResult == DialogResult.OK)
+            {
+
+            }
         }
     }
 }
