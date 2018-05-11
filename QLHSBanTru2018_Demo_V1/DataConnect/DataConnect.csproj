@@ -70,6 +70,10 @@
     <Compile Include="DAO\HungTD\SemesterDAO.cs" />
     <Compile Include="DAO\HungTD\TopicDAO.cs" />
     <Compile Include="DAO\HungTD\TopicTypeDAO.cs" />
+    <Compile Include="DAO\ThanhCongTC\ChiTieuThucPham\OrderDAO.cs" />
+    <Compile Include="DAO\ThanhCongTC\ChiTieuThucPham\OrderDetailDAO.cs" />
+    <Compile Include="DAO\ThanhCongTC\ChiTieuThucPham\TCIngredientRequestDAO.cs" />
+    <Compile Include="DAO\ThanhCongTC\ChiTieuThucPham\TCIngredientRequestDetailDAO.cs" />
     <Compile Include="DAO\ThanhCongTC\ChiTieu\InvoiceDAO.cs" />
     <Compile Include="DAO\ThanhCongTC\ChiTieu\InvoiceDetailDAO.cs" />
     <Compile Include="DAO\ThanhCongTC\ChiTieu\SpendSpeciesDAO.cs" />
