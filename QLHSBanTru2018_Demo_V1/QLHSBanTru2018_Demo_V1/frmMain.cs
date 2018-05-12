@@ -24,6 +24,7 @@ using QLHSBanTru2018_Demo_V1.Common;
 using QLHSBanTru2018_Demo_V1.HungTD.Form.Ingredient;
 using QLHSBanTru2018_Demo_V1.QLThuChi.ChiTieu;
 using QLHSBanTru2018_Demo_V1.HungTD.Form.Dish;
+using QLHSBanTru2018_Demo_V1.QLThuChi.ChiTieu.ChiTieuThucPham;
 
 namespace QLHSBanTru2018_Demo_V1
 {
@@ -152,6 +153,21 @@ namespace QLHSBanTru2018_Demo_V1
             FRDienMienGiam a = new FRDienMienGiam();
             a.ShowDialog();
         }
+        private void btnChiThucPham_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            UsChiThucPham a = new UsChiThucPham();
+            pnControlsPanel.Controls.Clear();
+            pnControlsPanel.Controls.Add(a);
+            a.Dock = DockStyle.Fill;
+        }
+
+        private void btnYeuCau_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            UsYeuCau a = new UsYeuCau();
+            pnControlsPanel.Controls.Clear();
+            pnControlsPanel.Controls.Add(a);
+            a.Dock = DockStyle.Fill;
+        }
         #endregion
 
         #region Nguyễn Tiến Bảo
@@ -217,5 +233,7 @@ namespace QLHSBanTru2018_Demo_V1
         #region Vũ Đức Thiện
 
         #endregion
+
+       
     }
 }

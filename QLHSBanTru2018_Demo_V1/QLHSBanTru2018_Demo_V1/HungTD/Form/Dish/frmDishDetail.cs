@@ -93,22 +93,22 @@ namespace QLHSBanTru2018_Demo_V1.HungTD.Form.Dish
 
         private void btnAdd_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
-            frmChangeQuantity frmCQ = new frmChangeQuantity();
-            var rowHandle = gridView1.FocusedRowHandle;
-            try
-            {
-                frmCQ.setIngredient(Convert.ToInt32(gridView1.GetRowCellValue(rowHandle, "IngredientID").ToString()));
-            }
-            catch
-            {
+            //frmChangeQuantity frmCQ = new frmChangeQuantity();
+            //var rowHandle = gridView1.FocusedRowHandle;
+            //try
+            //{
+            //    frmCQ.setIngredient(Convert.ToInt32(gridView1.GetRowCellValue(rowHandle, "IngredientID").ToString()));
+            //}
+            //catch
+            //{
 
-            }
-            frmCQ.setTitle("Thêm Thực Phẩm");
-            frmCQ.ShowDialog();
-            if(frmCQ.DialogResult == DialogResult.OK)
-            {
+            //}
+            //frmCQ.setTitle("Thêm Thực Phẩm");
+            //frmCQ.ShowDialog();
+            //if(frmCQ.DialogResult == DialogResult.OK)
+            //{
 
-            }
+            //}
         }
     }
 }

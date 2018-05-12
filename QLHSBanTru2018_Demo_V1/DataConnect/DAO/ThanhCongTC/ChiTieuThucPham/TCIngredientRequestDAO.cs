@@ -11,12 +11,12 @@ namespace DataConnect.DAO.ThanhCongTC.ChiTieuThucPham
         QLHSSmartKidsDataContext dt = new QLHSSmartKidsDataContext();
         public List<IngredientRequest> listIngredienRequesByDate(DateTime ngaymua)
         {
-            var a = dt.IngredientRequests.Where(t => t.Date == ngaymua);
+            var a = dt.IngredientRequests.Where(t => t.Date.DayOfYear == ngaymua.DayOfYear);
             return a.ToList();
         }
-        public List<IngredientRequest> lítIngredienRequesByCreatedDate(DateTime ngaytao)
+        public List<IngredientRequest> listIngredienRequesByCreatedDate(DateTime ngaytao)
         {
-            var a = dt.IngredientRequests.Where(t => t.CreatedDate == ngaytao);
+            var a = dt.IngredientRequests.Where(t => t.CreatedDate.DayOfYear == ngaytao.DayOfYear);
             return a.ToList();
         }
         public bool Edit(IngredientRequest ingredientRequest)

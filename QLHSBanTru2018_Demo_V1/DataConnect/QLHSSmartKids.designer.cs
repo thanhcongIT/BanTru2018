@@ -108,12 +108,6 @@ namespace DataConnect
     partial void InsertIngredient(Ingredient instance);
     partial void UpdateIngredient(Ingredient instance);
     partial void DeleteIngredient(Ingredient instance);
-    partial void InsertIngredientRequest(IngredientRequest instance);
-    partial void UpdateIngredientRequest(IngredientRequest instance);
-    partial void DeleteIngredientRequest(IngredientRequest instance);
-    partial void InsertIngredientRequestDetail(IngredientRequestDetail instance);
-    partial void UpdateIngredientRequestDetail(IngredientRequestDetail instance);
-    partial void DeleteIngredientRequestDetail(IngredientRequestDetail instance);
     partial void InsertIngredientType(IngredientType instance);
     partial void UpdateIngredientType(IngredientType instance);
     partial void DeleteIngredientType(IngredientType instance);
@@ -195,6 +189,12 @@ namespace DataConnect
     partial void InsertWeeklyMenu(WeeklyMenu instance);
     partial void UpdateWeeklyMenu(WeeklyMenu instance);
     partial void DeleteWeeklyMenu(WeeklyMenu instance);
+    partial void InsertIngredientRequestDetail(IngredientRequestDetail instance);
+    partial void UpdateIngredientRequestDetail(IngredientRequestDetail instance);
+    partial void DeleteIngredientRequestDetail(IngredientRequestDetail instance);
+    partial void InsertIngredientRequest(IngredientRequest instance);
+    partial void UpdateIngredientRequest(IngredientRequest instance);
+    partial void DeleteIngredientRequest(IngredientRequest instance);
     #endregion
 		
 		public QLHSSmartKidsDataContext() : 
@@ -435,22 +435,6 @@ namespace DataConnect
 			}
 		}
 		
-		public System.Data.Linq.Table<IngredientRequest> IngredientRequests
-		{
-			get
-			{
-				return this.GetTable<IngredientRequest>();
-			}
-		}
-		
-		public System.Data.Linq.Table<IngredientRequestDetail> IngredientRequestDetails
-		{
-			get
-			{
-				return this.GetTable<IngredientRequestDetail>();
-			}
-		}
-		
 		public System.Data.Linq.Table<IngredientType> IngredientTypes
 		{
 			get
@@ -664,6 +648,22 @@ namespace DataConnect
 			get
 			{
 				return this.GetTable<WeeklyMenu>();
+			}
+		}
+		
+		public System.Data.Linq.Table<IngredientRequestDetail> IngredientRequestDetails
+		{
+			get
+			{
+				return this.GetTable<IngredientRequestDetail>();
+			}
+		}
+		
+		public System.Data.Linq.Table<IngredientRequest> IngredientRequests
+		{
+			get
+			{
+				return this.GetTable<IngredientRequest>();
 			}
 		}
 	}
@@ -8067,9 +8067,9 @@ namespace DataConnect
 		
 		private EntitySet<DishDetail> _DishDetails;
 		
-		private EntitySet<IngredientRequestDetail> _IngredientRequestDetails;
-		
 		private EntitySet<OrderDetail> _OrderDetails;
+		
+		private EntitySet<IngredientRequestDetail> _IngredientRequestDetails;
 		
 		private EntityRef<IngredientType> _IngredientType;
 		
@@ -8122,8 +8122,8 @@ namespace DataConnect
 		public Ingredient()
 		{
 			this._DishDetails = new EntitySet<DishDetail>(new Action<DishDetail>(this.attach_DishDetails), new Action<DishDetail>(this.detach_DishDetails));
-			this._IngredientRequestDetails = new EntitySet<IngredientRequestDetail>(new Action<IngredientRequestDetail>(this.attach_IngredientRequestDetails), new Action<IngredientRequestDetail>(this.detach_IngredientRequestDetails));
 			this._OrderDetails = new EntitySet<OrderDetail>(new Action<OrderDetail>(this.attach_OrderDetails), new Action<OrderDetail>(this.detach_OrderDetails));
+			this._IngredientRequestDetails = new EntitySet<IngredientRequestDetail>(new Action<IngredientRequestDetail>(this.attach_IngredientRequestDetails), new Action<IngredientRequestDetail>(this.detach_IngredientRequestDetails));
 			this._IngredientType = default(EntityRef<IngredientType>);
 			OnCreated();
 		}
@@ -8545,19 +8545,6 @@ namespace DataConnect
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Ingredient_IngredientRequestDetail", Storage="_IngredientRequestDetails", ThisKey="IngredientID", OtherKey="IngredientID")]
-		public EntitySet<IngredientRequestDetail> IngredientRequestDetails
-		{
-			get
-			{
-				return this._IngredientRequestDetails;
-			}
-			set
-			{
-				this._IngredientRequestDetails.Assign(value);
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Ingredient_OrderDetail", Storage="_OrderDetails", ThisKey="IngredientID", OtherKey="IngredientID")]
 		public EntitySet<OrderDetail> OrderDetails
 		{
@@ -8568,6 +8555,19 @@ namespace DataConnect
 			set
 			{
 				this._OrderDetails.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Ingredient_IngredientRequestDetail", Storage="_IngredientRequestDetails", ThisKey="IngredientID", OtherKey="IngredientID")]
+		public EntitySet<IngredientRequestDetail> IngredientRequestDetails
+		{
+			get
+			{
+				return this._IngredientRequestDetails;
+			}
+			set
+			{
+				this._IngredientRequestDetails.Assign(value);
 			}
 		}
 		
@@ -8637,18 +8637,6 @@ namespace DataConnect
 			entity.Ingredient = null;
 		}
 		
-		private void attach_IngredientRequestDetails(IngredientRequestDetail entity)
-		{
-			this.SendPropertyChanging();
-			entity.Ingredient = this;
-		}
-		
-		private void detach_IngredientRequestDetails(IngredientRequestDetail entity)
-		{
-			this.SendPropertyChanging();
-			entity.Ingredient = null;
-		}
-		
 		private void attach_OrderDetails(OrderDetail entity)
 		{
 			this.SendPropertyChanging();
@@ -8660,448 +8648,17 @@ namespace DataConnect
 			this.SendPropertyChanging();
 			entity.Ingredient = null;
 		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.IngredientRequest")]
-	public partial class IngredientRequest : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _IngredientRequestID;
-		
-		private System.DateTime _Date;
-		
-		private int _CreatedBy;
-		
-		private System.DateTime _CreatedDate;
-		
-		private bool _Status;
-		
-		private EntitySet<IngredientRequestDetail> _IngredientRequestDetails;
-		
-		private EntityRef<Employee> _Employee;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIngredientRequestIDChanging(int value);
-    partial void OnIngredientRequestIDChanged();
-    partial void OnDateChanging(System.DateTime value);
-    partial void OnDateChanged();
-    partial void OnCreatedByChanging(int value);
-    partial void OnCreatedByChanged();
-    partial void OnCreatedDateChanging(System.DateTime value);
-    partial void OnCreatedDateChanged();
-    partial void OnStatusChanging(bool value);
-    partial void OnStatusChanged();
-    #endregion
-		
-		public IngredientRequest()
-		{
-			this._IngredientRequestDetails = new EntitySet<IngredientRequestDetail>(new Action<IngredientRequestDetail>(this.attach_IngredientRequestDetails), new Action<IngredientRequestDetail>(this.detach_IngredientRequestDetails));
-			this._Employee = default(EntityRef<Employee>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IngredientRequestID", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int IngredientRequestID
-		{
-			get
-			{
-				return this._IngredientRequestID;
-			}
-			set
-			{
-				if ((this._IngredientRequestID != value))
-				{
-					this.OnIngredientRequestIDChanging(value);
-					this.SendPropertyChanging();
-					this._IngredientRequestID = value;
-					this.SendPropertyChanged("IngredientRequestID");
-					this.OnIngredientRequestIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Date", DbType="DateTime NOT NULL")]
-		public System.DateTime Date
-		{
-			get
-			{
-				return this._Date;
-			}
-			set
-			{
-				if ((this._Date != value))
-				{
-					this.OnDateChanging(value);
-					this.SendPropertyChanging();
-					this._Date = value;
-					this.SendPropertyChanged("Date");
-					this.OnDateChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreatedBy", DbType="Int NOT NULL")]
-		public int CreatedBy
-		{
-			get
-			{
-				return this._CreatedBy;
-			}
-			set
-			{
-				if ((this._CreatedBy != value))
-				{
-					if (this._Employee.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnCreatedByChanging(value);
-					this.SendPropertyChanging();
-					this._CreatedBy = value;
-					this.SendPropertyChanged("CreatedBy");
-					this.OnCreatedByChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreatedDate", DbType="DateTime NOT NULL")]
-		public System.DateTime CreatedDate
-		{
-			get
-			{
-				return this._CreatedDate;
-			}
-			set
-			{
-				if ((this._CreatedDate != value))
-				{
-					this.OnCreatedDateChanging(value);
-					this.SendPropertyChanging();
-					this._CreatedDate = value;
-					this.SendPropertyChanged("CreatedDate");
-					this.OnCreatedDateChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Status", DbType="Bit NOT NULL")]
-		public bool Status
-		{
-			get
-			{
-				return this._Status;
-			}
-			set
-			{
-				if ((this._Status != value))
-				{
-					this.OnStatusChanging(value);
-					this.SendPropertyChanging();
-					this._Status = value;
-					this.SendPropertyChanged("Status");
-					this.OnStatusChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="IngredientRequest_IngredientRequestDetail", Storage="_IngredientRequestDetails", ThisKey="IngredientRequestID", OtherKey="IngredientRequestID")]
-		public EntitySet<IngredientRequestDetail> IngredientRequestDetails
-		{
-			get
-			{
-				return this._IngredientRequestDetails;
-			}
-			set
-			{
-				this._IngredientRequestDetails.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Employee_IngredientRequest", Storage="_Employee", ThisKey="CreatedBy", OtherKey="EmployeeID", IsForeignKey=true)]
-		public Employee Employee
-		{
-			get
-			{
-				return this._Employee.Entity;
-			}
-			set
-			{
-				Employee previousValue = this._Employee.Entity;
-				if (((previousValue != value) 
-							|| (this._Employee.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Employee.Entity = null;
-						previousValue.IngredientRequests.Remove(this);
-					}
-					this._Employee.Entity = value;
-					if ((value != null))
-					{
-						value.IngredientRequests.Add(this);
-						this._CreatedBy = value.EmployeeID;
-					}
-					else
-					{
-						this._CreatedBy = default(int);
-					}
-					this.SendPropertyChanged("Employee");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
 		
 		private void attach_IngredientRequestDetails(IngredientRequestDetail entity)
 		{
 			this.SendPropertyChanging();
-			entity.IngredientRequest = this;
+			entity.Ingredient = this;
 		}
 		
 		private void detach_IngredientRequestDetails(IngredientRequestDetail entity)
 		{
 			this.SendPropertyChanging();
-			entity.IngredientRequest = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.IngredientRequestDetail")]
-	public partial class IngredientRequestDetail : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _IngredientID;
-		
-		private int _IngredientRequestID;
-		
-		private System.Nullable<double> _Quantity;
-		
-		private System.Nullable<bool> _Status;
-		
-		private EntityRef<Ingredient> _Ingredient;
-		
-		private EntityRef<IngredientRequest> _IngredientRequest;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIngredientIDChanging(int value);
-    partial void OnIngredientIDChanged();
-    partial void OnIngredientRequestIDChanging(int value);
-    partial void OnIngredientRequestIDChanged();
-    partial void OnQuantityChanging(System.Nullable<double> value);
-    partial void OnQuantityChanged();
-    partial void OnStatusChanging(System.Nullable<bool> value);
-    partial void OnStatusChanged();
-    #endregion
-		
-		public IngredientRequestDetail()
-		{
-			this._Ingredient = default(EntityRef<Ingredient>);
-			this._IngredientRequest = default(EntityRef<IngredientRequest>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IngredientID", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int IngredientID
-		{
-			get
-			{
-				return this._IngredientID;
-			}
-			set
-			{
-				if ((this._IngredientID != value))
-				{
-					if (this._Ingredient.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnIngredientIDChanging(value);
-					this.SendPropertyChanging();
-					this._IngredientID = value;
-					this.SendPropertyChanged("IngredientID");
-					this.OnIngredientIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IngredientRequestID", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int IngredientRequestID
-		{
-			get
-			{
-				return this._IngredientRequestID;
-			}
-			set
-			{
-				if ((this._IngredientRequestID != value))
-				{
-					if (this._IngredientRequest.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnIngredientRequestIDChanging(value);
-					this.SendPropertyChanging();
-					this._IngredientRequestID = value;
-					this.SendPropertyChanged("IngredientRequestID");
-					this.OnIngredientRequestIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Quantity", DbType="Float")]
-		public System.Nullable<double> Quantity
-		{
-			get
-			{
-				return this._Quantity;
-			}
-			set
-			{
-				if ((this._Quantity != value))
-				{
-					this.OnQuantityChanging(value);
-					this.SendPropertyChanging();
-					this._Quantity = value;
-					this.SendPropertyChanged("Quantity");
-					this.OnQuantityChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Status", DbType="Bit")]
-		public System.Nullable<bool> Status
-		{
-			get
-			{
-				return this._Status;
-			}
-			set
-			{
-				if ((this._Status != value))
-				{
-					this.OnStatusChanging(value);
-					this.SendPropertyChanging();
-					this._Status = value;
-					this.SendPropertyChanged("Status");
-					this.OnStatusChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Ingredient_IngredientRequestDetail", Storage="_Ingredient", ThisKey="IngredientID", OtherKey="IngredientID", IsForeignKey=true)]
-		public Ingredient Ingredient
-		{
-			get
-			{
-				return this._Ingredient.Entity;
-			}
-			set
-			{
-				Ingredient previousValue = this._Ingredient.Entity;
-				if (((previousValue != value) 
-							|| (this._Ingredient.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Ingredient.Entity = null;
-						previousValue.IngredientRequestDetails.Remove(this);
-					}
-					this._Ingredient.Entity = value;
-					if ((value != null))
-					{
-						value.IngredientRequestDetails.Add(this);
-						this._IngredientID = value.IngredientID;
-					}
-					else
-					{
-						this._IngredientID = default(int);
-					}
-					this.SendPropertyChanged("Ingredient");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="IngredientRequest_IngredientRequestDetail", Storage="_IngredientRequest", ThisKey="IngredientRequestID", OtherKey="IngredientRequestID", IsForeignKey=true)]
-		public IngredientRequest IngredientRequest
-		{
-			get
-			{
-				return this._IngredientRequest.Entity;
-			}
-			set
-			{
-				IngredientRequest previousValue = this._IngredientRequest.Entity;
-				if (((previousValue != value) 
-							|| (this._IngredientRequest.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._IngredientRequest.Entity = null;
-						previousValue.IngredientRequestDetails.Remove(this);
-					}
-					this._IngredientRequest.Entity = value;
-					if ((value != null))
-					{
-						value.IngredientRequestDetails.Add(this);
-						this._IngredientRequestID = value.IngredientRequestID;
-					}
-					else
-					{
-						this._IngredientRequestID = default(int);
-					}
-					this.SendPropertyChanged("IngredientRequest");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
+			entity.Ingredient = null;
 		}
 	}
 	
@@ -16306,6 +15863,497 @@ namespace DataConnect
 		{
 			this.SendPropertyChanging();
 			entity.WeeklyMenu = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.IngredientRequestDetail")]
+	public partial class IngredientRequestDetail : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _IngredientID;
+		
+		private int _IngredientRequestID;
+		
+		private System.Nullable<double> _Quantity;
+		
+		private string _Unit;
+		
+		private System.Nullable<bool> _Status;
+		
+		private EntityRef<Ingredient> _Ingredient;
+		
+		private EntityRef<IngredientRequest> _IngredientRequest;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIngredientIDChanging(int value);
+    partial void OnIngredientIDChanged();
+    partial void OnIngredientRequestIDChanging(int value);
+    partial void OnIngredientRequestIDChanged();
+    partial void OnQuantityChanging(System.Nullable<double> value);
+    partial void OnQuantityChanged();
+    partial void OnUnitChanging(string value);
+    partial void OnUnitChanged();
+    partial void OnStatusChanging(System.Nullable<bool> value);
+    partial void OnStatusChanged();
+    #endregion
+		
+		public IngredientRequestDetail()
+		{
+			this._Ingredient = default(EntityRef<Ingredient>);
+			this._IngredientRequest = default(EntityRef<IngredientRequest>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IngredientID", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int IngredientID
+		{
+			get
+			{
+				return this._IngredientID;
+			}
+			set
+			{
+				if ((this._IngredientID != value))
+				{
+					if (this._Ingredient.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnIngredientIDChanging(value);
+					this.SendPropertyChanging();
+					this._IngredientID = value;
+					this.SendPropertyChanged("IngredientID");
+					this.OnIngredientIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IngredientRequestID", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int IngredientRequestID
+		{
+			get
+			{
+				return this._IngredientRequestID;
+			}
+			set
+			{
+				if ((this._IngredientRequestID != value))
+				{
+					if (this._IngredientRequest.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnIngredientRequestIDChanging(value);
+					this.SendPropertyChanging();
+					this._IngredientRequestID = value;
+					this.SendPropertyChanged("IngredientRequestID");
+					this.OnIngredientRequestIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Quantity", DbType="Float")]
+		public System.Nullable<double> Quantity
+		{
+			get
+			{
+				return this._Quantity;
+			}
+			set
+			{
+				if ((this._Quantity != value))
+				{
+					this.OnQuantityChanging(value);
+					this.SendPropertyChanging();
+					this._Quantity = value;
+					this.SendPropertyChanged("Quantity");
+					this.OnQuantityChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Unit", DbType="NVarChar(10)")]
+		public string Unit
+		{
+			get
+			{
+				return this._Unit;
+			}
+			set
+			{
+				if ((this._Unit != value))
+				{
+					this.OnUnitChanging(value);
+					this.SendPropertyChanging();
+					this._Unit = value;
+					this.SendPropertyChanged("Unit");
+					this.OnUnitChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Status", DbType="Bit")]
+		public System.Nullable<bool> Status
+		{
+			get
+			{
+				return this._Status;
+			}
+			set
+			{
+				if ((this._Status != value))
+				{
+					this.OnStatusChanging(value);
+					this.SendPropertyChanging();
+					this._Status = value;
+					this.SendPropertyChanged("Status");
+					this.OnStatusChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Ingredient_IngredientRequestDetail", Storage="_Ingredient", ThisKey="IngredientID", OtherKey="IngredientID", IsForeignKey=true)]
+		public Ingredient Ingredient
+		{
+			get
+			{
+				return this._Ingredient.Entity;
+			}
+			set
+			{
+				Ingredient previousValue = this._Ingredient.Entity;
+				if (((previousValue != value) 
+							|| (this._Ingredient.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Ingredient.Entity = null;
+						previousValue.IngredientRequestDetails.Remove(this);
+					}
+					this._Ingredient.Entity = value;
+					if ((value != null))
+					{
+						value.IngredientRequestDetails.Add(this);
+						this._IngredientID = value.IngredientID;
+					}
+					else
+					{
+						this._IngredientID = default(int);
+					}
+					this.SendPropertyChanged("Ingredient");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="IngredientRequest_IngredientRequestDetail", Storage="_IngredientRequest", ThisKey="IngredientRequestID", OtherKey="IngredientRequestID", IsForeignKey=true)]
+		public IngredientRequest IngredientRequest
+		{
+			get
+			{
+				return this._IngredientRequest.Entity;
+			}
+			set
+			{
+				IngredientRequest previousValue = this._IngredientRequest.Entity;
+				if (((previousValue != value) 
+							|| (this._IngredientRequest.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._IngredientRequest.Entity = null;
+						previousValue.IngredientRequestDetails.Remove(this);
+					}
+					this._IngredientRequest.Entity = value;
+					if ((value != null))
+					{
+						value.IngredientRequestDetails.Add(this);
+						this._IngredientRequestID = value.IngredientRequestID;
+					}
+					else
+					{
+						this._IngredientRequestID = default(int);
+					}
+					this.SendPropertyChanged("IngredientRequest");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.IngredientRequest")]
+	public partial class IngredientRequest : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _IngredientRequestID;
+		
+		private System.DateTime _Date;
+		
+		private int _CreatedBy;
+		
+		private System.DateTime _CreatedDate;
+		
+		private string _Note;
+		
+		private bool _Status;
+		
+		private EntitySet<IngredientRequestDetail> _IngredientRequestDetails;
+		
+		private EntityRef<Employee> _Employee;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIngredientRequestIDChanging(int value);
+    partial void OnIngredientRequestIDChanged();
+    partial void OnDateChanging(System.DateTime value);
+    partial void OnDateChanged();
+    partial void OnCreatedByChanging(int value);
+    partial void OnCreatedByChanged();
+    partial void OnCreatedDateChanging(System.DateTime value);
+    partial void OnCreatedDateChanged();
+    partial void OnNoteChanging(string value);
+    partial void OnNoteChanged();
+    partial void OnStatusChanging(bool value);
+    partial void OnStatusChanged();
+    #endregion
+		
+		public IngredientRequest()
+		{
+			this._IngredientRequestDetails = new EntitySet<IngredientRequestDetail>(new Action<IngredientRequestDetail>(this.attach_IngredientRequestDetails), new Action<IngredientRequestDetail>(this.detach_IngredientRequestDetails));
+			this._Employee = default(EntityRef<Employee>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IngredientRequestID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int IngredientRequestID
+		{
+			get
+			{
+				return this._IngredientRequestID;
+			}
+			set
+			{
+				if ((this._IngredientRequestID != value))
+				{
+					this.OnIngredientRequestIDChanging(value);
+					this.SendPropertyChanging();
+					this._IngredientRequestID = value;
+					this.SendPropertyChanged("IngredientRequestID");
+					this.OnIngredientRequestIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Date", DbType="DateTime NOT NULL")]
+		public System.DateTime Date
+		{
+			get
+			{
+				return this._Date;
+			}
+			set
+			{
+				if ((this._Date != value))
+				{
+					this.OnDateChanging(value);
+					this.SendPropertyChanging();
+					this._Date = value;
+					this.SendPropertyChanged("Date");
+					this.OnDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreatedBy", DbType="Int NOT NULL")]
+		public int CreatedBy
+		{
+			get
+			{
+				return this._CreatedBy;
+			}
+			set
+			{
+				if ((this._CreatedBy != value))
+				{
+					if (this._Employee.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnCreatedByChanging(value);
+					this.SendPropertyChanging();
+					this._CreatedBy = value;
+					this.SendPropertyChanged("CreatedBy");
+					this.OnCreatedByChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreatedDate", DbType="DateTime NOT NULL")]
+		public System.DateTime CreatedDate
+		{
+			get
+			{
+				return this._CreatedDate;
+			}
+			set
+			{
+				if ((this._CreatedDate != value))
+				{
+					this.OnCreatedDateChanging(value);
+					this.SendPropertyChanging();
+					this._CreatedDate = value;
+					this.SendPropertyChanged("CreatedDate");
+					this.OnCreatedDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Note", DbType="NText", UpdateCheck=UpdateCheck.Never)]
+		public string Note
+		{
+			get
+			{
+				return this._Note;
+			}
+			set
+			{
+				if ((this._Note != value))
+				{
+					this.OnNoteChanging(value);
+					this.SendPropertyChanging();
+					this._Note = value;
+					this.SendPropertyChanged("Note");
+					this.OnNoteChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Status", DbType="Bit NOT NULL")]
+		public bool Status
+		{
+			get
+			{
+				return this._Status;
+			}
+			set
+			{
+				if ((this._Status != value))
+				{
+					this.OnStatusChanging(value);
+					this.SendPropertyChanging();
+					this._Status = value;
+					this.SendPropertyChanged("Status");
+					this.OnStatusChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="IngredientRequest_IngredientRequestDetail", Storage="_IngredientRequestDetails", ThisKey="IngredientRequestID", OtherKey="IngredientRequestID")]
+		public EntitySet<IngredientRequestDetail> IngredientRequestDetails
+		{
+			get
+			{
+				return this._IngredientRequestDetails;
+			}
+			set
+			{
+				this._IngredientRequestDetails.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Employee_IngredientRequest", Storage="_Employee", ThisKey="CreatedBy", OtherKey="EmployeeID", IsForeignKey=true)]
+		public Employee Employee
+		{
+			get
+			{
+				return this._Employee.Entity;
+			}
+			set
+			{
+				Employee previousValue = this._Employee.Entity;
+				if (((previousValue != value) 
+							|| (this._Employee.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Employee.Entity = null;
+						previousValue.IngredientRequests.Remove(this);
+					}
+					this._Employee.Entity = value;
+					if ((value != null))
+					{
+						value.IngredientRequests.Add(this);
+						this._CreatedBy = value.EmployeeID;
+					}
+					else
+					{
+						this._CreatedBy = default(int);
+					}
+					this.SendPropertyChanged("Employee");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_IngredientRequestDetails(IngredientRequestDetail entity)
+		{
+			this.SendPropertyChanging();
+			entity.IngredientRequest = this;
+		}
+		
+		private void detach_IngredientRequestDetails(IngredientRequestDetail entity)
+		{
+			this.SendPropertyChanging();
+			entity.IngredientRequest = null;
 		}
 	}
 }
