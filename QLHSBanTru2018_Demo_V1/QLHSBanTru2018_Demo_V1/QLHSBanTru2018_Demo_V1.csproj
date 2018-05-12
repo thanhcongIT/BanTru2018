@@ -312,6 +312,12 @@
     <Compile Include="QLThuChi\ChiTieu\ChiTieuThucPham\FrThemPhieuChi.Designer.cs">
       <DependentUpon>FrThemPhieuChi.cs</DependentUpon>
     </Compile>
+    <Compile Include="QLThuChi\ChiTieu\ChiTieuThucPham\TcFrNhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QLThuChi\ChiTieu\ChiTieuThucPham\TcFrNhanVien.Designer.cs">
+      <DependentUpon>TcFrNhanVien.cs</DependentUpon>
+    </Compile>
     <Compile Include="QLThuChi\ChiTieu\ChiTieuThucPham\UsChiThucPham.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -649,6 +655,9 @@
     </Compile>
     <EmbeddedResource Include="QLThuChi\ChiTieu\ChiTieuThucPham\FrThemPhieuChi.resx">
       <DependentUpon>FrThemPhieuChi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QLThuChi\ChiTieu\ChiTieuThucPham\TcFrNhanVien.resx">
+      <DependentUpon>TcFrNhanVien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="QLThuChi\ChiTieu\ChiTieuThucPham\UsChiThucPham.resx">
       <DependentUpon>UsChiThucPham.cs</DependentUpon>

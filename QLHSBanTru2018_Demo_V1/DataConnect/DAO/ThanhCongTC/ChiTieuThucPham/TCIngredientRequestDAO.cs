@@ -9,6 +9,7 @@ namespace DataConnect.DAO.ThanhCongTC.ChiTieuThucPham
     public class TCIngredientRequestDAO
     {
         QLHSSmartKidsDataContext dt = new QLHSSmartKidsDataContext();
+        public static Employee employeeReques = new Employee();
         public List<IngredientRequest> listIngredienRequesByDate(DateTime ngaymua)
         {
             var a = dt.IngredientRequests.Where(t => t.Date.DayOfYear == ngaymua.DayOfYear);

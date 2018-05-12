@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using DataConnect.DAO.ThanhCongTC.ChiTieuThucPham;
+using DataConnect.DAO.HungTD;
 
 namespace QLHSBanTru2018_Demo_V1.QLThuChi.ChiTieu.ChiTieuThucPham
 {
@@ -49,7 +50,6 @@ namespace QLHSBanTru2018_Demo_V1.QLThuChi.ChiTieu.ChiTieuThucPham
 
                 
             }
-            //MessageBox.Show("" + gridView1.GetRowCellValue(0, gridView1.Columns["IngredientID"]).ToString()+ "");
         }
 
         private void cbNgayMua_CheckedChanged(object sender, EventArgs e)
@@ -80,6 +80,13 @@ namespace QLHSBanTru2018_Demo_V1.QLThuChi.ChiTieu.ChiTieuThucPham
             try
             {
                 LoadIngredienRequestDetail((int)gridView1.GetRowCellValue(e.FocusedRowHandle, "IngredientRequestID"));
+                //laod thông tin yêu cầu
+                EmployeeDAO dt = new EmployeeDAO();
+                TCIngredientRequestDAO.employeeReques = dt.GetByID((int)gridView1.GetRowCellValue(e.FocusedRowHandle, "CreatedBy"));
+                txtNguoiYeuCau.Text = TCIngredientRequestDAO.employeeReques.FirstName +" "+ TCIngredientRequestDAO.employeeReques.LastName;
+                dtYeuCau.EditValue = gridView1.GetRowCellValue(e.FocusedRowHandle, "Date");
+                dtKhoiTao.EditValue = gridView1.GetRowCellValue(e.FocusedRowHandle, "CreatedDate");
+                txtGhiChu.Text = gridView1.GetRowCellValue(e.FocusedRowHandle, "Note").ToString();
             }
             catch 
             {
@@ -96,6 +103,12 @@ namespace QLHSBanTru2018_Demo_V1.QLThuChi.ChiTieu.ChiTieuThucPham
         private void dtNgayKhoiTao_ValueChanged(object sender, EventArgs e)
         {
             LoadIngredienRequestByDate();
+        }
+
+        private void btnNguoiYeuCau_Click(object sender, EventArgs e)
+        {
+            TcFrNhanVien a = new TcFrNhanVien();
+            a.ShowDialog();
         }
     }
 }
