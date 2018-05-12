@@ -171,6 +171,12 @@
     <Compile Include="HungTD\Form\Department\frmDepartmentList.Designer.cs">
       <DependentUpon>frmDepartmentList.cs</DependentUpon>
     </Compile>
+    <Compile Include="HungTD\Form\Dish\frmChangeQuantity.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HungTD\Form\Dish\frmChangeQuantity.Designer.cs">
+      <DependentUpon>frmChangeQuantity.cs</DependentUpon>
+    </Compile>
     <Compile Include="HungTD\Form\Dish\frmDish.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -569,6 +575,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="HungTD\Form\Department\frmDepartmentList.resx">
       <DependentUpon>frmDepartmentList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HungTD\Form\Dish\frmChangeQuantity.resx">
+      <DependentUpon>frmChangeQuantity.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HungTD\Form\Dish\frmDish.resx">
       <DependentUpon>frmDish.cs</DependentUpon>
