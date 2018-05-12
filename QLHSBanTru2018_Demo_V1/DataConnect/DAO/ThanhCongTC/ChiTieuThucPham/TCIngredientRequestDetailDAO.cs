@@ -13,13 +13,14 @@ namespace DataConnect.DAO.ThanhCongTC.ChiTieuThucPham
         Table<Ingredient> ingredient;
         Table<IngredientRequestDetail> ingredientRequesDetail;
         QLHSSmartKidsDataContext dt = new QLHSSmartKidsDataContext();
-        public List<TCIngredientRequestDetaiViewModle> listInredientRequestDetail(int ingredientRequest)
+        public static TCIngredientRequestDetaiViewModle DemoIngredientRequestDetai= new TCIngredientRequestDetaiViewModle();
+        public List<TCIngredientRequestDetaiViewModle> listInredientRequestDetail1(int ingredientRequest)
         {
             ingredient = dt.GetTable<Ingredient>();
             ingredientRequesDetail = dt.GetTable<IngredientRequestDetail>();
             var a = from b in ingredient
                     join c in ingredientRequesDetail on b.IngredientID equals c.IngredientID
-                    where c.IngredientRequestID.Equals(ingredientRequest)
+                    where(c.IngredientRequestID.Equals(ingredientRequest)&&c.Status==false)
                     select new TCIngredientRequestDetaiViewModle
                     {
                         IngredientID = c.IngredientID,
@@ -31,6 +32,25 @@ namespace DataConnect.DAO.ThanhCongTC.ChiTieuThucPham
                     };
             return a.ToList();
                                    
+        }
+        public List<TCIngredientRequestDetaiViewModle> listInredientRequestDetail2(int ingredientRequest)
+        {
+            ingredient = dt.GetTable<Ingredient>();
+            ingredientRequesDetail = dt.GetTable<IngredientRequestDetail>();
+            var a = from b in ingredient
+                    join c in ingredientRequesDetail on b.IngredientID equals c.IngredientID
+                    where (c.IngredientRequestID.Equals(ingredientRequest) && c.Status == true)
+                    select new TCIngredientRequestDetaiViewModle
+                    {
+                        IngredientID = c.IngredientID,
+                        IngredientRequestID = c.IngredientRequestID,
+                        Quantity = c.Quantity,
+                        Unit = b.Unit,
+                        Name = b.Name,
+                        Status = c.Status
+                    };
+            return a.ToList();
+
         }
         public bool Edit(IngredientRequestDetail ingredientRequest)
         {
