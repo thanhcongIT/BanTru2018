@@ -712,17 +712,6 @@
       <Association Name="WeeklyMenu_DailyMenu" Member="DailyMenus" ThisKey="WeeklyMenuID" OtherKey="WeeklyMenuID" Type="DailyMenu" />
     </Type>
   </Table>
-  <Table Name="dbo.IngredientRequestDetail" Member="IngredientRequestDetails">
-    <Type Name="IngredientRequestDetail">
-      <Column Name="IngredientID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="IngredientRequestID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="Quantity" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="Unit" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
-      <Column Name="Status" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Association Name="Ingredient_IngredientRequestDetail" Member="Ingredient" ThisKey="IngredientID" OtherKey="IngredientID" Type="Ingredient" IsForeignKey="true" />
-      <Association Name="IngredientRequest_IngredientRequestDetail" Member="IngredientRequest" ThisKey="IngredientRequestID" OtherKey="IngredientRequestID" Type="IngredientRequest" IsForeignKey="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.IngredientRequest" Member="IngredientRequests">
     <Type Name="IngredientRequest">
       <Column Name="IngredientRequestID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -733,6 +722,16 @@
       <Column Name="Status" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
       <Association Name="IngredientRequest_IngredientRequestDetail" Member="IngredientRequestDetails" ThisKey="IngredientRequestID" OtherKey="IngredientRequestID" Type="IngredientRequestDetail" />
       <Association Name="Employee_IngredientRequest" Member="Employee" ThisKey="CreatedBy" OtherKey="EmployeeID" Type="Employee" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.IngredientRequestDetail" Member="IngredientRequestDetails">
+    <Type Name="IngredientRequestDetail">
+      <Column Name="IngredientID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IngredientRequestID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Quantity" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Status" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="Ingredient_IngredientRequestDetail" Member="Ingredient" ThisKey="IngredientID" OtherKey="IngredientID" Type="Ingredient" IsForeignKey="true" />
+      <Association Name="IngredientRequest_IngredientRequestDetail" Member="IngredientRequest" ThisKey="IngredientRequestID" OtherKey="IngredientRequestID" Type="IngredientRequest" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>

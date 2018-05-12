@@ -86,6 +86,7 @@
     <Compile Include="DAO\ThanhCongTC\KhoanThu\SemesterDAO.cs" />
     <Compile Include="DAO\ThanhCongTC\KhoanThu\StudenGrade.cs" />
     <Compile Include="DAO\ThanhCongTC\KhoanThu\studentReceivableDAO.cs" />
+    <Compile Include="DAO\ThanhCongTC\TCViewModle\TCIngredientRequestDetaiViewModle.cs" />
     <Compile Include="DAO\ThanhCongTC\TCViewModle\TCStudentViewModle.cs" />
     <Compile Include="DAO\TienBao\ClassDAO.cs" />
     <Compile Include="DAO\TienBao\HealthExaminationDAO.cs" />

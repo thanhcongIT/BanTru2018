@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using DataConnect.DAO.ThanhCongTC.ChiTieuThucPham;
 using DataConnect.DAO.HungTD;
+using DataConnect;
+using DataConnect.DAO.ThanhCongTC.TCViewModle;
 
 namespace QLHSBanTru2018_Demo_V1.QLThuChi.ChiTieu.ChiTieuThucPham
 {
@@ -35,7 +37,7 @@ namespace QLHSBanTru2018_Demo_V1.QLThuChi.ChiTieu.ChiTieuThucPham
         public void LoadIngredienRequestDetail(int InredientRequestID)
         {
             TCIngredientRequestDetailDAO dt = new TCIngredientRequestDetailDAO();
-            grChiTietYeuCau.DataSource = dt.listInredientRequestDetail(InredientRequestID);
+            grChiTietYeuCau.DataSource = dt.listInredientRequestDetail1(InredientRequestID);
         }
         private void UsYeuCau_Load(object sender, EventArgs e)
         {
@@ -43,7 +45,7 @@ namespace QLHSBanTru2018_Demo_V1.QLThuChi.ChiTieu.ChiTieuThucPham
             {
                 LoadIngredienRequestByDate();
                 LoadIngredienRequestDetail((int)gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "IngredientRequestID"));
-
+                
             }
             catch
             {
@@ -110,5 +112,15 @@ namespace QLHSBanTru2018_Demo_V1.QLThuChi.ChiTieu.ChiTieuThucPham
             TcFrNhanVien a = new TcFrNhanVien();
             a.ShowDialog();
         }
+
+        private void gridView2_CustomUnboundColumnData(object sender, DevExpress.XtraGrid.Views.Base.CustomColumnDataEventArgs e)
+        {
+           
+        }
+        private void gridView2_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
+        {
+            IngredientDAO dt = new IngredientDAO();
+            TCIngredientRequestDAO.Ingredient = dt.GetByID((int)gridView2.GetRowCellValue(e.FocusedRowHandle, "IngredientID"));
+        }  
     }
 }

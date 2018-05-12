@@ -22,6 +22,7 @@ namespace QLHSBanTru2018_Demo_V1.QLThuChi.ChiTieu.ChiTieuThucPham
         }
         private void TcFrNhanVien_Load(object sender, EventArgs e)
         {
+            btnThoat.Hide();
             try
             {
                 txtFirstName.Text = TCIngredientRequestDAO.employeeReques.FirstName;
@@ -43,6 +44,11 @@ namespace QLHSBanTru2018_Demo_V1.QLThuChi.ChiTieu.ChiTieuThucPham
 
                 
             }
-        }        
+        }
+
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

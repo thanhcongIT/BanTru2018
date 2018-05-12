@@ -30,29 +30,32 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TcFrNhanVien));
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
-            this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.btnThoat = new DevExpress.XtraEditors.SimpleButton();
+            this.cbbWard = new System.Windows.Forms.ComboBox();
             this.cbbDistrict = new System.Windows.Forms.ComboBox();
             this.cbbProvince = new System.Windows.Forms.ComboBox();
-            this.cbbWard = new System.Windows.Forms.ComboBox();
+            this.txtUsername = new DevExpress.XtraEditors.TextEdit();
+            this.txtFirstName = new DevExpress.XtraEditors.TextEdit();
+            this.dtBirthday = new DevExpress.XtraEditors.DateEdit();
+            this.txtLastName = new DevExpress.XtraEditors.TextEdit();
+            this.txtPassword = new DevExpress.XtraEditors.TextEdit();
+            this.picImage = new DevExpress.XtraEditors.PictureEdit();
+            this.txtPhone = new DevExpress.XtraEditors.TextEdit();
+            this.txtEmail = new DevExpress.XtraEditors.TextEdit();
+            this.txtIdentityNumber = new DevExpress.XtraEditors.TextEdit();
+            this.dtDateOfIssue = new DevExpress.XtraEditors.DateEdit();
+            this.txtPlaceOfIssue = new DevExpress.XtraEditors.MemoEdit();
+            this.cbbEthnicGroup = new System.Windows.Forms.ComboBox();
+            this.cbbReligion = new System.Windows.Forms.ComboBox();
+            this.cbbDegree = new System.Windows.Forms.ComboBox();
+            this.cbbGender = new System.Windows.Forms.ComboBox();
+            this.txtNote = new DevExpress.XtraEditors.MemoEdit();
+            this.chbStatus = new DevExpress.XtraEditors.CheckEdit();
+            this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlGroup4 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.ward = new DevExpress.XtraLayout.LayoutControlItem();
             this.aaa = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.txtPhone = new DevExpress.XtraEditors.TextEdit();
-            this.txtLastName = new DevExpress.XtraEditors.TextEdit();
-            this.txtPassword = new DevExpress.XtraEditors.TextEdit();
-            this.txtUsername = new DevExpress.XtraEditors.TextEdit();
-            this.cbbEthnicGroup = new System.Windows.Forms.ComboBox();
-            this.txtIdentityNumber = new DevExpress.XtraEditors.TextEdit();
-            this.picImage = new DevExpress.XtraEditors.PictureEdit();
-            this.cbbGender = new System.Windows.Forms.ComboBox();
-            this.txtFirstName = new DevExpress.XtraEditors.TextEdit();
-            this.dtBirthday = new DevExpress.XtraEditors.DateEdit();
-            this.txtEmail = new DevExpress.XtraEditors.TextEdit();
-            this.cbbReligion = new System.Windows.Forms.ComboBox();
-            this.cbbDegree = new System.Windows.Forms.ComboBox();
-            this.dtDateOfIssue = new DevExpress.XtraEditors.DateEdit();
-            this.txtPlaceOfIssue = new DevExpress.XtraEditors.MemoEdit();
             this.layoutControlGroup3 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.ItemForUsername = new DevExpress.XtraLayout.LayoutControlItem();
             this.ItemForFirstName = new DevExpress.XtraLayout.LayoutControlItem();
@@ -69,35 +72,34 @@
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.chbStatus = new DevExpress.XtraEditors.CheckEdit();
-            this.txtNote = new DevExpress.XtraEditors.MemoEdit();
             this.layoutControlGroup5 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.ItemForNote = new DevExpress.XtraLayout.LayoutControlItem();
             this.ItemForStatus = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem4 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.btnThoat = new DevExpress.XtraEditors.SimpleButton();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtUsername.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtFirstName.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtBirthday.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtBirthday.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtLastName.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPassword.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picImage.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPhone.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtEmail.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtIdentityNumber.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtDateOfIssue.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtDateOfIssue.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPlaceOfIssue.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNote.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chbStatus.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ward)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.aaa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtPhone.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtLastName.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtPassword.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtUsername.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtIdentityNumber.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picImage.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtFirstName.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtBirthday.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtBirthday.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtEmail.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtDateOfIssue.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtDateOfIssue.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtPlaceOfIssue.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForUsername)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForFirstName)).BeginInit();
@@ -114,8 +116,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chbStatus.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtNote.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForNote)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForStatus)).BeginInit();
@@ -156,6 +156,205 @@
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
+            // btnThoat
+            // 
+            this.btnThoat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnThoat.ImageOptions.Image")));
+            this.btnThoat.Location = new System.Drawing.Point(668, 527);
+            this.btnThoat.Name = "btnThoat";
+            this.btnThoat.Size = new System.Drawing.Size(104, 22);
+            this.btnThoat.StyleController = this.layoutControl1;
+            this.btnThoat.TabIndex = 35;
+            this.btnThoat.Text = "Thoát";
+            this.btnThoat.Visible = false;
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
+            // 
+            // cbbWard
+            // 
+            this.cbbWard.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbWard.FormattingEnabled = true;
+            this.cbbWard.Location = new System.Drawing.Point(599, 279);
+            this.cbbWard.Name = "cbbWard";
+            this.cbbWard.Size = new System.Drawing.Size(161, 21);
+            this.cbbWard.TabIndex = 27;
+            // 
+            // cbbDistrict
+            // 
+            this.cbbDistrict.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbDistrict.FormattingEnabled = true;
+            this.cbbDistrict.Location = new System.Drawing.Point(353, 279);
+            this.cbbDistrict.Name = "cbbDistrict";
+            this.cbbDistrict.Size = new System.Drawing.Size(160, 21);
+            this.cbbDistrict.TabIndex = 29;
+            // 
+            // cbbProvince
+            // 
+            this.cbbProvince.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbProvince.FormattingEnabled = true;
+            this.cbbProvince.Location = new System.Drawing.Point(106, 279);
+            this.cbbProvince.Name = "cbbProvince";
+            this.cbbProvince.Size = new System.Drawing.Size(161, 21);
+            this.cbbProvince.TabIndex = 30;
+            // 
+            // txtUsername
+            // 
+            this.txtUsername.Location = new System.Drawing.Point(106, 42);
+            this.txtUsername.Name = "txtUsername";
+            this.txtUsername.Size = new System.Drawing.Size(198, 20);
+            this.txtUsername.StyleController = this.layoutControl1;
+            this.txtUsername.TabIndex = 4;
+            // 
+            // txtFirstName
+            // 
+            this.txtFirstName.Location = new System.Drawing.Point(106, 66);
+            this.txtFirstName.Name = "txtFirstName";
+            this.txtFirstName.Size = new System.Drawing.Size(198, 20);
+            this.txtFirstName.StyleController = this.layoutControl1;
+            this.txtFirstName.TabIndex = 6;
+            // 
+            // dtBirthday
+            // 
+            this.dtBirthday.EditValue = null;
+            this.dtBirthday.Location = new System.Drawing.Point(106, 90);
+            this.dtBirthday.Name = "dtBirthday";
+            this.dtBirthday.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
+            this.dtBirthday.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dtBirthday.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dtBirthday.Size = new System.Drawing.Size(198, 20);
+            this.dtBirthday.StyleController = this.layoutControl1;
+            this.dtBirthday.TabIndex = 8;
+            // 
+            // txtLastName
+            // 
+            this.txtLastName.Location = new System.Drawing.Point(390, 66);
+            this.txtLastName.Name = "txtLastName";
+            this.txtLastName.Size = new System.Drawing.Size(192, 20);
+            this.txtLastName.StyleController = this.layoutControl1;
+            this.txtLastName.TabIndex = 7;
+            // 
+            // txtPassword
+            // 
+            this.txtPassword.Location = new System.Drawing.Point(390, 42);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Properties.PasswordChar = '*';
+            this.txtPassword.Size = new System.Drawing.Size(192, 20);
+            this.txtPassword.StyleController = this.layoutControl1;
+            this.txtPassword.TabIndex = 5;
+            // 
+            // picImage
+            // 
+            this.picImage.Cursor = System.Windows.Forms.Cursors.Default;
+            this.picImage.Location = new System.Drawing.Point(586, 42);
+            this.picImage.Name = "picImage";
+            this.picImage.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Squeeze;
+            this.picImage.Size = new System.Drawing.Size(174, 191);
+            this.picImage.StyleController = this.layoutControl1;
+            this.picImage.TabIndex = 12;
+            // 
+            // txtPhone
+            // 
+            this.txtPhone.Location = new System.Drawing.Point(390, 115);
+            this.txtPhone.Name = "txtPhone";
+            this.txtPhone.Size = new System.Drawing.Size(192, 20);
+            this.txtPhone.StyleController = this.layoutControl1;
+            this.txtPhone.TabIndex = 17;
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.Location = new System.Drawing.Point(106, 114);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(198, 20);
+            this.txtEmail.StyleController = this.layoutControl1;
+            this.txtEmail.TabIndex = 16;
+            // 
+            // txtIdentityNumber
+            // 
+            this.txtIdentityNumber.Location = new System.Drawing.Point(106, 139);
+            this.txtIdentityNumber.Name = "txtIdentityNumber";
+            this.txtIdentityNumber.Size = new System.Drawing.Size(198, 20);
+            this.txtIdentityNumber.StyleController = this.layoutControl1;
+            this.txtIdentityNumber.TabIndex = 18;
+            // 
+            // dtDateOfIssue
+            // 
+            this.dtDateOfIssue.EditValue = null;
+            this.dtDateOfIssue.Location = new System.Drawing.Point(106, 163);
+            this.dtDateOfIssue.Name = "dtDateOfIssue";
+            this.dtDateOfIssue.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dtDateOfIssue.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dtDateOfIssue.Size = new System.Drawing.Size(198, 20);
+            this.dtDateOfIssue.StyleController = this.layoutControl1;
+            this.dtDateOfIssue.TabIndex = 19;
+            // 
+            // txtPlaceOfIssue
+            // 
+            this.txtPlaceOfIssue.Location = new System.Drawing.Point(390, 139);
+            this.txtPlaceOfIssue.Name = "txtPlaceOfIssue";
+            this.txtPlaceOfIssue.Size = new System.Drawing.Size(192, 44);
+            this.txtPlaceOfIssue.StyleController = this.layoutControl1;
+            this.txtPlaceOfIssue.TabIndex = 20;
+            // 
+            // cbbEthnicGroup
+            // 
+            this.cbbEthnicGroup.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbEthnicGroup.FormattingEnabled = true;
+            this.cbbEthnicGroup.Location = new System.Drawing.Point(106, 187);
+            this.cbbEthnicGroup.Name = "cbbEthnicGroup";
+            this.cbbEthnicGroup.Size = new System.Drawing.Size(198, 21);
+            this.cbbEthnicGroup.TabIndex = 31;
+            // 
+            // cbbReligion
+            // 
+            this.cbbReligion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbReligion.FormattingEnabled = true;
+            this.cbbReligion.Location = new System.Drawing.Point(390, 187);
+            this.cbbReligion.Name = "cbbReligion";
+            this.cbbReligion.Size = new System.Drawing.Size(192, 21);
+            this.cbbReligion.TabIndex = 32;
+            // 
+            // cbbDegree
+            // 
+            this.cbbDegree.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbDegree.FormattingEnabled = true;
+            this.cbbDegree.Location = new System.Drawing.Point(106, 212);
+            this.cbbDegree.Name = "cbbDegree";
+            this.cbbDegree.Size = new System.Drawing.Size(198, 21);
+            this.cbbDegree.TabIndex = 33;
+            // 
+            // cbbGender
+            // 
+            this.cbbGender.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbGender.FormattingEnabled = true;
+            this.cbbGender.Items.AddRange(new object[] {
+            "Nam",
+            "Nữ"});
+            this.cbbGender.Location = new System.Drawing.Point(390, 90);
+            this.cbbGender.Name = "cbbGender";
+            this.cbbGender.Size = new System.Drawing.Size(192, 21);
+            this.cbbGender.TabIndex = 34;
+            // 
+            // txtNote
+            // 
+            this.txtNote.Location = new System.Drawing.Point(24, 344);
+            this.txtNote.Name = "txtNote";
+            this.txtNote.Size = new System.Drawing.Size(736, 144);
+            this.txtNote.StyleController = this.layoutControl1;
+            this.txtNote.TabIndex = 21;
+            // 
+            // chbStatus
+            // 
+            this.chbStatus.EditValue = true;
+            this.chbStatus.Location = new System.Drawing.Point(134, 492);
+            this.chbStatus.Name = "chbStatus";
+            this.chbStatus.Properties.Caption = "Kích hoạt";
+            this.chbStatus.Properties.GlyphAlignment = DevExpress.Utils.HorzAlignment.Default;
+            this.chbStatus.Size = new System.Drawing.Size(626, 19);
+            this.chbStatus.StyleController = this.layoutControl1;
+            this.chbStatus.TabIndex = 22;
+            // 
             // layoutControlGroup1
             // 
             this.layoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
@@ -169,33 +368,6 @@
             this.layoutControlGroup1.Name = "Root";
             this.layoutControlGroup1.Size = new System.Drawing.Size(784, 561);
             this.layoutControlGroup1.TextVisible = false;
-            // 
-            // cbbDistrict
-            // 
-            this.cbbDistrict.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbbDistrict.FormattingEnabled = true;
-            this.cbbDistrict.Location = new System.Drawing.Point(354, 279);
-            this.cbbDistrict.Name = "cbbDistrict";
-            this.cbbDistrict.Size = new System.Drawing.Size(159, 21);
-            this.cbbDistrict.TabIndex = 29;
-            // 
-            // cbbProvince
-            // 
-            this.cbbProvince.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbbProvince.FormattingEnabled = true;
-            this.cbbProvince.Location = new System.Drawing.Point(107, 279);
-            this.cbbProvince.Name = "cbbProvince";
-            this.cbbProvince.Size = new System.Drawing.Size(160, 21);
-            this.cbbProvince.TabIndex = 30;
-            // 
-            // cbbWard
-            // 
-            this.cbbWard.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbbWard.FormattingEnabled = true;
-            this.cbbWard.Location = new System.Drawing.Point(600, 279);
-            this.cbbWard.Name = "cbbWard";
-            this.cbbWard.Size = new System.Drawing.Size(160, 21);
-            this.cbbWard.TabIndex = 27;
             // 
             // layoutControlGroup4
             // 
@@ -238,147 +410,6 @@
             this.layoutControlItem6.Size = new System.Drawing.Size(247, 25);
             this.layoutControlItem6.Text = "Tỉnh/Thành Phố:";
             this.layoutControlItem6.TextSize = new System.Drawing.Size(79, 13);
-            // 
-            // txtPhone
-            // 
-            this.txtPhone.Location = new System.Drawing.Point(391, 115);
-            this.txtPhone.Name = "txtPhone";
-            this.txtPhone.Size = new System.Drawing.Size(191, 20);
-            this.txtPhone.StyleController = this.layoutControl1;
-            this.txtPhone.TabIndex = 17;
-            // 
-            // txtLastName
-            // 
-            this.txtLastName.Location = new System.Drawing.Point(391, 66);
-            this.txtLastName.Name = "txtLastName";
-            this.txtLastName.Size = new System.Drawing.Size(191, 20);
-            this.txtLastName.StyleController = this.layoutControl1;
-            this.txtLastName.TabIndex = 7;
-            // 
-            // txtPassword
-            // 
-            this.txtPassword.Location = new System.Drawing.Point(391, 42);
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Properties.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(191, 20);
-            this.txtPassword.StyleController = this.layoutControl1;
-            this.txtPassword.TabIndex = 5;
-            // 
-            // txtUsername
-            // 
-            this.txtUsername.Location = new System.Drawing.Point(107, 42);
-            this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(197, 20);
-            this.txtUsername.StyleController = this.layoutControl1;
-            this.txtUsername.TabIndex = 4;
-            // 
-            // cbbEthnicGroup
-            // 
-            this.cbbEthnicGroup.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbbEthnicGroup.FormattingEnabled = true;
-            this.cbbEthnicGroup.Location = new System.Drawing.Point(107, 187);
-            this.cbbEthnicGroup.Name = "cbbEthnicGroup";
-            this.cbbEthnicGroup.Size = new System.Drawing.Size(197, 21);
-            this.cbbEthnicGroup.TabIndex = 31;
-            // 
-            // txtIdentityNumber
-            // 
-            this.txtIdentityNumber.Location = new System.Drawing.Point(107, 139);
-            this.txtIdentityNumber.Name = "txtIdentityNumber";
-            this.txtIdentityNumber.Size = new System.Drawing.Size(197, 20);
-            this.txtIdentityNumber.StyleController = this.layoutControl1;
-            this.txtIdentityNumber.TabIndex = 18;
-            // 
-            // picImage
-            // 
-            this.picImage.Cursor = System.Windows.Forms.Cursors.Default;
-            this.picImage.Location = new System.Drawing.Point(586, 42);
-            this.picImage.Name = "picImage";
-            this.picImage.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Squeeze;
-            this.picImage.Size = new System.Drawing.Size(174, 191);
-            this.picImage.StyleController = this.layoutControl1;
-            this.picImage.TabIndex = 12;
-            // 
-            // cbbGender
-            // 
-            this.cbbGender.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbbGender.FormattingEnabled = true;
-            this.cbbGender.Items.AddRange(new object[] {
-            "Nam",
-            "Nữ"});
-            this.cbbGender.Location = new System.Drawing.Point(391, 90);
-            this.cbbGender.Name = "cbbGender";
-            this.cbbGender.Size = new System.Drawing.Size(191, 21);
-            this.cbbGender.TabIndex = 34;
-            // 
-            // txtFirstName
-            // 
-            this.txtFirstName.Location = new System.Drawing.Point(107, 66);
-            this.txtFirstName.Name = "txtFirstName";
-            this.txtFirstName.Size = new System.Drawing.Size(197, 20);
-            this.txtFirstName.StyleController = this.layoutControl1;
-            this.txtFirstName.TabIndex = 6;
-            // 
-            // dtBirthday
-            // 
-            this.dtBirthday.EditValue = null;
-            this.dtBirthday.Location = new System.Drawing.Point(107, 90);
-            this.dtBirthday.Name = "dtBirthday";
-            this.dtBirthday.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
-            this.dtBirthday.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dtBirthday.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dtBirthday.Size = new System.Drawing.Size(197, 20);
-            this.dtBirthday.StyleController = this.layoutControl1;
-            this.dtBirthday.TabIndex = 8;
-            // 
-            // txtEmail
-            // 
-            this.txtEmail.Location = new System.Drawing.Point(107, 114);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(197, 20);
-            this.txtEmail.StyleController = this.layoutControl1;
-            this.txtEmail.TabIndex = 16;
-            // 
-            // cbbReligion
-            // 
-            this.cbbReligion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbbReligion.FormattingEnabled = true;
-            this.cbbReligion.Location = new System.Drawing.Point(391, 187);
-            this.cbbReligion.Name = "cbbReligion";
-            this.cbbReligion.Size = new System.Drawing.Size(191, 21);
-            this.cbbReligion.TabIndex = 32;
-            // 
-            // cbbDegree
-            // 
-            this.cbbDegree.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbbDegree.FormattingEnabled = true;
-            this.cbbDegree.Location = new System.Drawing.Point(107, 212);
-            this.cbbDegree.Name = "cbbDegree";
-            this.cbbDegree.Size = new System.Drawing.Size(197, 21);
-            this.cbbDegree.TabIndex = 33;
-            // 
-            // dtDateOfIssue
-            // 
-            this.dtDateOfIssue.EditValue = null;
-            this.dtDateOfIssue.Location = new System.Drawing.Point(107, 163);
-            this.dtDateOfIssue.Name = "dtDateOfIssue";
-            this.dtDateOfIssue.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dtDateOfIssue.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dtDateOfIssue.Size = new System.Drawing.Size(197, 20);
-            this.dtDateOfIssue.StyleController = this.layoutControl1;
-            this.dtDateOfIssue.TabIndex = 19;
-            // 
-            // txtPlaceOfIssue
-            // 
-            this.txtPlaceOfIssue.Location = new System.Drawing.Point(391, 139);
-            this.txtPlaceOfIssue.Name = "txtPlaceOfIssue";
-            this.txtPlaceOfIssue.Size = new System.Drawing.Size(191, 44);
-            this.txtPlaceOfIssue.StyleController = this.layoutControl1;
-            this.txtPlaceOfIssue.TabIndex = 20;
             // 
             // layoutControlGroup3
             // 
@@ -556,25 +587,6 @@
             this.layoutControlItem7.Text = "Giới tính:";
             this.layoutControlItem7.TextSize = new System.Drawing.Size(79, 13);
             // 
-            // chbStatus
-            // 
-            this.chbStatus.EditValue = true;
-            this.chbStatus.Location = new System.Drawing.Point(135, 492);
-            this.chbStatus.Name = "chbStatus";
-            this.chbStatus.Properties.Caption = "Kích hoạt";
-            this.chbStatus.Properties.GlyphAlignment = DevExpress.Utils.HorzAlignment.Default;
-            this.chbStatus.Size = new System.Drawing.Size(625, 19);
-            this.chbStatus.StyleController = this.layoutControl1;
-            this.chbStatus.TabIndex = 22;
-            // 
-            // txtNote
-            // 
-            this.txtNote.Location = new System.Drawing.Point(24, 344);
-            this.txtNote.Name = "txtNote";
-            this.txtNote.Size = new System.Drawing.Size(736, 144);
-            this.txtNote.StyleController = this.layoutControl1;
-            this.txtNote.TabIndex = 21;
-            // 
             // layoutControlGroup5
             // 
             this.layoutControlGroup5.CustomizationFormText = "layoutControlGroup5";
@@ -585,7 +597,6 @@
             this.layoutControlGroup5.Location = new System.Drawing.Point(0, 304);
             this.layoutControlGroup5.Name = "layoutControlGroup5";
             this.layoutControlGroup5.Size = new System.Drawing.Size(764, 211);
-            this.layoutControlGroup5.Text = "layoutControlGroup5";
             this.layoutControlGroup5.TextVisible = false;
             // 
             // ItemForNote
@@ -627,16 +638,6 @@
             this.emptySpaceItem1.Size = new System.Drawing.Size(656, 26);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
-            // btnThoat
-            // 
-            this.btnThoat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnThoat.ImageOptions.Image")));
-            this.btnThoat.Location = new System.Drawing.Point(668, 527);
-            this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(104, 22);
-            this.btnThoat.StyleController = this.layoutControl1;
-            this.btnThoat.TabIndex = 35;
-            this.btnThoat.Text = "Thoát";
-            // 
             // layoutControlItem3
             // 
             this.layoutControlItem3.Control = this.btnThoat;
@@ -657,24 +658,26 @@
             this.Load += new System.EventHandler(this.TcFrNhanVien_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.txtUsername.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtFirstName.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtBirthday.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtBirthday.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtLastName.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPassword.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picImage.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPhone.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtEmail.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtIdentityNumber.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtDateOfIssue.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtDateOfIssue.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPlaceOfIssue.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNote.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chbStatus.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ward)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.aaa)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtPhone.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtLastName.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtPassword.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtUsername.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtIdentityNumber.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picImage.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtFirstName.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtBirthday.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtBirthday.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtEmail.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtDateOfIssue.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtDateOfIssue.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtPlaceOfIssue.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForUsername)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForFirstName)).EndInit();
@@ -691,8 +694,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chbStatus.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtNote.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForNote)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForStatus)).EndInit();
