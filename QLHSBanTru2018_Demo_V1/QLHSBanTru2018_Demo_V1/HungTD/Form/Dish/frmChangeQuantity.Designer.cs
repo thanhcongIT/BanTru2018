@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.labUnit = new System.Windows.Forms.Label();
             this.txtName = new DevExpress.XtraEditors.TextEdit();
             this.txtQuantity = new DevExpress.XtraEditors.TextEdit();
             this.btnCancel = new DevExpress.XtraEditors.SimpleButton();
@@ -37,11 +38,10 @@
             this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.labUnit = new System.Windows.Forms.Label();
-            this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtName.Properties)).BeginInit();
@@ -50,10 +50,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -71,6 +71,15 @@
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
+            // labUnit
+            // 
+            this.labUnit.Location = new System.Drawing.Point(274, 48);
+            this.labUnit.Name = "labUnit";
+            this.labUnit.Size = new System.Drawing.Size(86, 20);
+            this.labUnit.TabIndex = 8;
+            this.labUnit.Text = "(gam)";
+            this.labUnit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // txtName
             // 
             this.txtName.Location = new System.Drawing.Point(105, 24);
@@ -82,8 +91,11 @@
             // 
             // txtQuantity
             // 
+            this.txtQuantity.EditValue = "0";
             this.txtQuantity.Location = new System.Drawing.Point(105, 48);
             this.txtQuantity.Name = "txtQuantity";
+            this.txtQuantity.Properties.Appearance.Options.UseTextOptions = true;
+            this.txtQuantity.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.txtQuantity.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.txtQuantity.Size = new System.Drawing.Size(165, 20);
             this.txtQuantity.StyleController = this.layoutControl1;
@@ -151,6 +163,15 @@
             this.layoutControlItem2.Text = "Số Lượng:";
             this.layoutControlItem2.TextSize = new System.Drawing.Size(78, 13);
             // 
+            // layoutControlItem5
+            // 
+            this.layoutControlItem5.Control = this.labUnit;
+            this.layoutControlItem5.Location = new System.Drawing.Point(250, 24);
+            this.layoutControlItem5.Name = "layoutControlItem5";
+            this.layoutControlItem5.Size = new System.Drawing.Size(90, 24);
+            this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem5.TextVisible = false;
+            // 
             // layoutControlItem4
             // 
             this.layoutControlItem4.Control = this.btnSave;
@@ -165,7 +186,7 @@
             this.emptySpaceItem1.AllowHotTrack = false;
             this.emptySpaceItem1.Location = new System.Drawing.Point(0, 72);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(162, 27);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(162, 273);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem3
@@ -176,24 +197,6 @@
             this.layoutControlItem3.Size = new System.Drawing.Size(100, 27);
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem3.TextVisible = false;
-            // 
-            // labUnit
-            // 
-            this.labUnit.Location = new System.Drawing.Point(274, 48);
-            this.labUnit.Name = "labUnit";
-            this.labUnit.Size = new System.Drawing.Size(86, 20);
-            this.labUnit.TabIndex = 8;
-            this.labUnit.Text = "(gam)";
-            this.labUnit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // layoutControlItem5
-            // 
-            this.layoutControlItem5.Control = this.labUnit;
-            this.layoutControlItem5.Location = new System.Drawing.Point(250, 24);
-            this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(90, 24);
-            this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem5.TextVisible = false;
             // 
             // frmChangeQuantity
             // 
@@ -215,10 +218,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             this.ResumeLayout(false);
 
         }

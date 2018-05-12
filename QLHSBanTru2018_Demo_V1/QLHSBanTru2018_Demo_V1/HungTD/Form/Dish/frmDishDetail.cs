@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using DataConnect;
 using DataConnect.DAO.HungTD;
+using DataConnect.ViewModel;
 
 namespace QLHSBanTru2018_Demo_V1.HungTD.Form.Dish
 {
@@ -17,6 +18,8 @@ namespace QLHSBanTru2018_Demo_V1.HungTD.Form.Dish
     {
         public int iFuntion = 0;
         public DataConnect.Dish dish;
+        public List<DataConnect.DishDetail> dishDetails;
+        public List<DishDetailViewModel> dishDetailViewModels;
         public void setFunction(int function)
         {
             this.iFuntion = function;
@@ -37,6 +40,8 @@ namespace QLHSBanTru2018_Demo_V1.HungTD.Form.Dish
         private void frmDishDetail_Load(object sender, EventArgs e)
         {
             FillCombobox();
+            dishDetails = new List<DataConnect.DishDetail>();
+            dishDetailViewModels = new List<DishDetailViewModel>();
         }
         private void FillCombobox()
         {
@@ -107,8 +112,33 @@ namespace QLHSBanTru2018_Demo_V1.HungTD.Form.Dish
             frmCQ.ShowDialog();
             if (frmCQ.DialogResult == DialogResult.OK)
             {
+                DataConnect.DishDetail entity = new DishDetail();
+                entity.DishID = 0;
+                entity.IngredientID = frmCQ.getIngredient().IngredientID;
+                entity.QuantiyOfUnit = frmCQ.getQuantity();
+                entity.Status = true;
+                dishDetails.Add(entity);
 
+                DishDetailViewModel entity2 = new DishDetailViewModel();
+                entity2.DishID = 0;
+                entity2.IngredientID = frmCQ.getIngredient().IngredientID;
+                entity2.IngredientName = frmCQ.getIngredient().Name;
+                entity2.QuantityOfUnit = frmCQ.getQuantity();
+                entity2.Status = true;
+                dishDetailViewModels.Add(entity2);
+
+                gcRight.DataSource = null;
+                gcRight.DataSource = dishDetailViewModels;
             }
+            frmCQ.Dispose();
+        }
+
+        private void btnNutritionCaculation_Click(object sender, EventArgs e)
+        {
+            frmDishNutritionCalculation frmDNC = new frmDishNutritionCalculation();
+            frmDNC.setList(dishDetails);
+            frmDNC.Text = "Chi Tiết Dinh Dưỡng";
+            frmDNC.ShowDialog();
         }
     }
 }

@@ -64,6 +64,8 @@
     <Reference Include="DevExpress.XtraBars.v17.2" />
     <Reference Include="DevExpress.Sparkline.v17.2.Core" />
     <Reference Include="DevExpress.XtraCharts.v17.2, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v17.2.UI, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v17.2.Wizard, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraEditors.v17.2" />
     <Reference Include="DevExpress.XtraGauges.v17.2.Core, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraGrid.v17.2, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
@@ -95,6 +97,7 @@
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Windows.Input.Manipulations" />
     <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
@@ -188,6 +191,12 @@
     </Compile>
     <Compile Include="HungTD\Form\Dish\frmDishDetail.Designer.cs">
       <DependentUpon>frmDishDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HungTD\Form\Dish\frmDishNutritionCalculation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HungTD\Form\Dish\frmDishNutritionCalculation.Designer.cs">
+      <DependentUpon>frmDishNutritionCalculation.cs</DependentUpon>
     </Compile>
     <Compile Include="HungTD\Form\Dish\frmDishType.cs">
       <SubType>UserControl</SubType>
@@ -590,6 +599,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="HungTD\Form\Dish\frmDishDetail.resx">
       <DependentUpon>frmDishDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HungTD\Form\Dish\frmDishNutritionCalculation.resx">
+      <DependentUpon>frmDishNutritionCalculation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HungTD\Form\Dish\frmDishType.resx">
       <DependentUpon>frmDishType.cs</DependentUpon>

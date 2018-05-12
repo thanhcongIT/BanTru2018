@@ -110,6 +110,7 @@
     <Compile Include="ViewModel\ContractReportViewModel.cs" />
     <Compile Include="ViewModel\ContractViewModel.cs" />
     <Compile Include="ViewModel\Department_EmployeeViewModel.cs" />
+    <Compile Include="ViewModel\DishDetailViewModel.cs" />
     <Compile Include="ViewModel\DishViewModel.cs" />
     <Compile Include="ViewModel\DivisionViewModel.cs" />
     <Compile Include="ViewModel\EmployeeFullViewModel.cs" />
