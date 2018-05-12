@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using DataConnect.DAO.ThanhCongTC.ChiTieuThucPham;
 using DataConnect.DAO.HungTD;
+using DataConnect;
 
 namespace QLHSBanTru2018_Demo_V1.QLThuChi.ChiTieu.ChiTieuThucPham
 {
@@ -109,6 +110,11 @@ namespace QLHSBanTru2018_Demo_V1.QLThuChi.ChiTieu.ChiTieuThucPham
         {
             TcFrNhanVien a = new TcFrNhanVien();
             a.ShowDialog();
+        }
+
+        private void gridView2_CustomUnboundColumnData(object sender, DevExpress.XtraGrid.Views.Base.CustomColumnDataEventArgs e)
+        {
+           
         }
     }
 }
