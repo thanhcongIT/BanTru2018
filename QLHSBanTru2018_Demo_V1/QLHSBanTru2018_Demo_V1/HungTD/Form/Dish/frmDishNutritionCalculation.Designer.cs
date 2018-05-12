@@ -32,6 +32,7 @@
             DevExpress.XtraCharts.DoughnutSeriesLabel doughnutSeriesLabel1 = new DevExpress.XtraCharts.DoughnutSeriesLabel();
             DevExpress.XtraCharts.DoughnutSeriesView doughnutSeriesView1 = new DevExpress.XtraCharts.DoughnutSeriesView();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.chartNutrition = new DevExpress.XtraCharts.ChartControl();
             this.labError = new System.Windows.Forms.Label();
             this.txtKcal = new DevExpress.XtraEditors.TextEdit();
             this.txtFat = new DevExpress.XtraEditors.TextEdit();
@@ -70,10 +71,13 @@
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.chartNutrition = new DevExpress.XtraCharts.ChartControl();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chartNutrition)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(series1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(doughnutSeriesLabel1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(doughnutSeriesView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtKcal.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtFat.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtFiber.Properties)).BeginInit();
@@ -110,10 +114,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chartNutrition)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(series1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(doughnutSeriesLabel1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(doughnutSeriesView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             this.SuspendLayout();
             // 
@@ -142,25 +142,47 @@
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(972, 255, 650, 400);
             this.layoutControl1.Root = this.layoutControlGroup1;
-            this.layoutControl1.Size = new System.Drawing.Size(715, 279);
+            this.layoutControl1.Size = new System.Drawing.Size(784, 381);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
+            // 
+            // chartNutrition
+            // 
+            this.chartNutrition.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.chartNutrition.Legend.Name = "Default Legend";
+            this.chartNutrition.Location = new System.Drawing.Point(12, 12);
+            this.chartNutrition.Name = "chartNutrition";
+            doughnutSeriesLabel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            doughnutSeriesLabel1.Border.Visibility = DevExpress.Utils.DefaultBoolean.True;
+            doughnutSeriesLabel1.Position = DevExpress.XtraCharts.PieSeriesLabelPosition.TwoColumns;
+            series1.Label = doughnutSeriesLabel1;
+            series1.LabelsVisibility = DevExpress.Utils.DefaultBoolean.True;
+            series1.LegendName = "Default Legend";
+            series1.Name = "series1";
+            doughnutSeriesView1.HoleRadiusPercent = 30;
+            series1.View = doughnutSeriesView1;
+            this.chartNutrition.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
+        series1};
+            this.chartNutrition.SeriesTemplate.ArgumentScaleType = DevExpress.XtraCharts.ScaleType.Qualitative;
+            this.chartNutrition.SeriesTemplate.LegendTextPattern = "{S}: {V}";
+            this.chartNutrition.Size = new System.Drawing.Size(396, 357);
+            this.chartNutrition.TabIndex = 28;
             // 
             // labError
             // 
             this.labError.ForeColor = System.Drawing.Color.Red;
-            this.labError.Location = new System.Drawing.Point(24, 234);
+            this.labError.Location = new System.Drawing.Point(424, 234);
             this.labError.Name = "labError";
-            this.labError.Size = new System.Drawing.Size(166, 21);
+            this.labError.Size = new System.Drawing.Size(166, 123);
             this.labError.TabIndex = 27;
             this.labError.Text = "Chưa có thực phẩm được chọn!";
-            this.labError.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.labError.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.labError.Visible = false;
             // 
             // txtKcal
             // 
             this.txtKcal.EditValue = "0";
-            this.txtKcal.Location = new System.Drawing.Point(101, 42);
+            this.txtKcal.Location = new System.Drawing.Point(501, 42);
             this.txtKcal.Name = "txtKcal";
             this.txtKcal.Properties.Appearance.Options.UseTextOptions = true;
             this.txtKcal.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
@@ -173,7 +195,7 @@
             // txtFat
             // 
             this.txtFat.EditValue = "0";
-            this.txtFat.Location = new System.Drawing.Point(101, 66);
+            this.txtFat.Location = new System.Drawing.Point(501, 66);
             this.txtFat.Name = "txtFat";
             this.txtFat.Properties.Appearance.Options.UseTextOptions = true;
             this.txtFat.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
@@ -186,7 +208,7 @@
             // txtFiber
             // 
             this.txtFiber.EditValue = "0";
-            this.txtFiber.Location = new System.Drawing.Point(101, 90);
+            this.txtFiber.Location = new System.Drawing.Point(501, 90);
             this.txtFiber.Name = "txtFiber";
             this.txtFiber.Properties.Appearance.Options.UseTextOptions = true;
             this.txtFiber.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
@@ -199,7 +221,7 @@
             // txtIron
             // 
             this.txtIron.EditValue = "0";
-            this.txtIron.Location = new System.Drawing.Point(101, 114);
+            this.txtIron.Location = new System.Drawing.Point(501, 114);
             this.txtIron.Name = "txtIron";
             this.txtIron.Properties.Appearance.Options.UseTextOptions = true;
             this.txtIron.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
@@ -212,7 +234,7 @@
             // txtKali
             // 
             this.txtKali.EditValue = "0";
-            this.txtKali.Location = new System.Drawing.Point(101, 138);
+            this.txtKali.Location = new System.Drawing.Point(501, 138);
             this.txtKali.Name = "txtKali";
             this.txtKali.Properties.Appearance.Options.UseTextOptions = true;
             this.txtKali.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
@@ -225,7 +247,7 @@
             // txtVitaminA
             // 
             this.txtVitaminA.EditValue = "0";
-            this.txtVitaminA.Location = new System.Drawing.Point(101, 162);
+            this.txtVitaminA.Location = new System.Drawing.Point(501, 162);
             this.txtVitaminA.Name = "txtVitaminA";
             this.txtVitaminA.Properties.Appearance.Options.UseTextOptions = true;
             this.txtVitaminA.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
@@ -238,7 +260,7 @@
             // txtVitaminC
             // 
             this.txtVitaminC.EditValue = "0";
-            this.txtVitaminC.Location = new System.Drawing.Point(101, 186);
+            this.txtVitaminC.Location = new System.Drawing.Point(501, 186);
             this.txtVitaminC.Name = "txtVitaminC";
             this.txtVitaminC.Properties.Appearance.Options.UseTextOptions = true;
             this.txtVitaminC.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
@@ -251,7 +273,7 @@
             // txtCholesterol
             // 
             this.txtCholesterol.EditValue = "0";
-            this.txtCholesterol.Location = new System.Drawing.Point(101, 210);
+            this.txtCholesterol.Location = new System.Drawing.Point(501, 210);
             this.txtCholesterol.Name = "txtCholesterol";
             this.txtCholesterol.Properties.Appearance.Options.UseTextOptions = true;
             this.txtCholesterol.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
@@ -264,7 +286,7 @@
             // txtProtein
             // 
             this.txtProtein.EditValue = "0";
-            this.txtProtein.Location = new System.Drawing.Point(271, 42);
+            this.txtProtein.Location = new System.Drawing.Point(671, 42);
             this.txtProtein.Name = "txtProtein";
             this.txtProtein.Properties.Appearance.Options.UseTextOptions = true;
             this.txtProtein.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
@@ -277,7 +299,7 @@
             // txtGlucose
             // 
             this.txtGlucose.EditValue = "0";
-            this.txtGlucose.Location = new System.Drawing.Point(271, 66);
+            this.txtGlucose.Location = new System.Drawing.Point(671, 66);
             this.txtGlucose.Name = "txtGlucose";
             this.txtGlucose.Properties.Appearance.Options.UseTextOptions = true;
             this.txtGlucose.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
@@ -290,7 +312,7 @@
             // txtCanxi
             // 
             this.txtCanxi.EditValue = "0";
-            this.txtCanxi.Location = new System.Drawing.Point(271, 90);
+            this.txtCanxi.Location = new System.Drawing.Point(671, 90);
             this.txtCanxi.Name = "txtCanxi";
             this.txtCanxi.Properties.Appearance.Options.UseTextOptions = true;
             this.txtCanxi.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
@@ -303,7 +325,7 @@
             // txtPhotpho
             // 
             this.txtPhotpho.EditValue = "0";
-            this.txtPhotpho.Location = new System.Drawing.Point(271, 114);
+            this.txtPhotpho.Location = new System.Drawing.Point(671, 114);
             this.txtPhotpho.Name = "txtPhotpho";
             this.txtPhotpho.Properties.Appearance.Options.UseTextOptions = true;
             this.txtPhotpho.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
@@ -316,7 +338,7 @@
             // txtNatri
             // 
             this.txtNatri.EditValue = "0";
-            this.txtNatri.Location = new System.Drawing.Point(271, 138);
+            this.txtNatri.Location = new System.Drawing.Point(671, 138);
             this.txtNatri.Name = "txtNatri";
             this.txtNatri.Properties.Appearance.Options.UseTextOptions = true;
             this.txtNatri.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
@@ -329,7 +351,7 @@
             // txtVitaminB1
             // 
             this.txtVitaminB1.EditValue = "0";
-            this.txtVitaminB1.Location = new System.Drawing.Point(271, 162);
+            this.txtVitaminB1.Location = new System.Drawing.Point(671, 162);
             this.txtVitaminB1.Name = "txtVitaminB1";
             this.txtVitaminB1.Properties.Appearance.Options.UseTextOptions = true;
             this.txtVitaminB1.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
@@ -342,7 +364,7 @@
             // txtAxitFolic
             // 
             this.txtAxitFolic.EditValue = "0";
-            this.txtAxitFolic.Location = new System.Drawing.Point(271, 186);
+            this.txtAxitFolic.Location = new System.Drawing.Point(671, 186);
             this.txtAxitFolic.Name = "txtAxitFolic";
             this.txtAxitFolic.Properties.Appearance.Options.UseTextOptions = true;
             this.txtAxitFolic.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
@@ -354,7 +376,7 @@
             // 
             // btnOK
             // 
-            this.btnOK.Location = new System.Drawing.Point(263, 233);
+            this.btnOK.Location = new System.Drawing.Point(663, 335);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(97, 22);
             this.btnOK.StyleController = this.layoutControl1;
@@ -370,7 +392,7 @@
             this.layoutControlGroup4,
             this.layoutControlItem3});
             this.layoutControlGroup1.Name = "Root";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(715, 279);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(784, 381);
             this.layoutControlGroup1.TextVisible = false;
             // 
             // layoutControlGroup4
@@ -396,9 +418,9 @@
             this.layoutControlItem1,
             this.layoutControlItem2,
             this.emptySpaceItem1});
-            this.layoutControlGroup4.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlGroup4.Location = new System.Drawing.Point(400, 0);
             this.layoutControlGroup4.Name = "layoutControlGroup4";
-            this.layoutControlGroup4.Size = new System.Drawing.Size(364, 259);
+            this.layoutControlGroup4.Size = new System.Drawing.Size(364, 361);
             this.layoutControlGroup4.Text = "Thông Tin Dinh Dưỡng";
             // 
             // layoutControlItem8
@@ -602,13 +624,13 @@
             this.emptySpaceItem3.CustomizationFormText = "emptySpaceItem3";
             this.emptySpaceItem3.Location = new System.Drawing.Point(170, 168);
             this.emptySpaceItem3.Name = "emptySpaceItem3";
-            this.emptySpaceItem3.Size = new System.Drawing.Size(170, 23);
+            this.emptySpaceItem3.Size = new System.Drawing.Size(170, 125);
             this.emptySpaceItem3.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem1
             // 
             this.layoutControlItem1.Control = this.btnOK;
-            this.layoutControlItem1.Location = new System.Drawing.Point(239, 191);
+            this.layoutControlItem1.Location = new System.Drawing.Point(239, 293);
             this.layoutControlItem1.MaxSize = new System.Drawing.Size(101, 26);
             this.layoutControlItem1.MinSize = new System.Drawing.Size(101, 26);
             this.layoutControlItem1.Name = "layoutControlItem1";
@@ -622,40 +644,24 @@
             this.layoutControlItem2.Control = this.labError;
             this.layoutControlItem2.Location = new System.Drawing.Point(0, 192);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(170, 25);
+            this.layoutControlItem2.Size = new System.Drawing.Size(170, 127);
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
             // 
             // emptySpaceItem1
             // 
             this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(170, 191);
+            this.emptySpaceItem1.Location = new System.Drawing.Point(170, 293);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
             this.emptySpaceItem1.Size = new System.Drawing.Size(69, 26);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
-            // chartNutrition
-            // 
-            this.chartNutrition.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.chartNutrition.Legend.Name = "Default Legend";
-            this.chartNutrition.Location = new System.Drawing.Point(376, 12);
-            this.chartNutrition.Name = "chartNutrition";
-            doughnutSeriesLabel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            series1.Label = doughnutSeriesLabel1;
-            series1.Name = "series1";
-            doughnutSeriesView1.HoleRadiusPercent = 30;
-            series1.View = doughnutSeriesView1;
-            this.chartNutrition.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
-        series1};
-            this.chartNutrition.Size = new System.Drawing.Size(327, 255);
-            this.chartNutrition.TabIndex = 28;
-            // 
             // layoutControlItem3
             // 
             this.layoutControlItem3.Control = this.chartNutrition;
-            this.layoutControlItem3.Location = new System.Drawing.Point(364, 0);
+            this.layoutControlItem3.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(331, 259);
+            this.layoutControlItem3.Size = new System.Drawing.Size(400, 361);
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem3.TextVisible = false;
             // 
@@ -663,7 +669,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(715, 279);
+            this.ClientSize = new System.Drawing.Size(784, 381);
             this.Controls.Add(this.layoutControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
@@ -673,6 +679,10 @@
             this.Load += new System.EventHandler(this.frmDishNutritionCalculation_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(doughnutSeriesLabel1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(doughnutSeriesView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(series1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartNutrition)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtKcal.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtFat.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtFiber.Properties)).EndInit();
@@ -709,10 +719,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(doughnutSeriesLabel1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(doughnutSeriesView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(series1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chartNutrition)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             this.ResumeLayout(false);
 

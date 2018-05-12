@@ -106,6 +106,36 @@ namespace QLHSBanTru2018_Demo_V1.HungTD.Form.Dish
         private void SetChartNutrition()
         {
 
+
+            Series series = new Series("series1", ViewType.Doughnut);
+
+            series.Points.Add(new SeriesPoint("Năng lượng", ingredient.Kcal));
+            series.Points.Add(new SeriesPoint("Chất đạm", ingredient.Protein));
+            series.Points.Add(new SeriesPoint("Chất béo", ingredient.Fat));
+            series.Points.Add(new SeriesPoint("Đường bột", ingredient.Glucose));
+            series.Points.Add(new SeriesPoint("Chất xơ", ingredient.Fiber));
+            series.Points.Add(new SeriesPoint("Canxi", ingredient.Canxi));
+            series.Points.Add(new SeriesPoint("Sắt", ingredient.Iron));
+            series.Points.Add(new SeriesPoint("Photpho", ingredient.Photpho));
+            series.Points.Add(new SeriesPoint("Kali", ingredient.Kali));
+            series.Points.Add(new SeriesPoint("Natri", ingredient.Natri));
+            series.Points.Add(new SeriesPoint("Vitamin A", ingredient.VitaminA));
+            series.Points.Add(new SeriesPoint("Vitamin B1", ingredient.VitaminB1));
+            series.Points.Add(new SeriesPoint("Vitamin C", ingredient.VitaminC));
+            series.Points.Add(new SeriesPoint("Axit Folic", ingredient.AxitFolic));
+            series.Points.Add(new SeriesPoint("Cholesterol", ingredient.Cholesterol));
+
+            chartNutrition.Series.Add(series);
+            PieSeriesLabel label = (PieSeriesLabel)series.Label;
+            label.TextPattern = "{A}: {VP:P0}";
+            label.ResolveOverlappingMode = ResolveOverlappingMode.Default;
+            ChartTitle chartTitle = new ChartTitle();
+            chartTitle.Text = "Tỉ lệ dưỡng chất";
+            chartNutrition.Titles.Add(chartTitle);
         }
+    }
+    public class chartNutrition
+    {
+
     }
 }
