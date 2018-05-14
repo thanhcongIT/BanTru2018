@@ -429,16 +429,6 @@
       <Association Name="Meal_Dish" Member="Dishes" ThisKey="MealID" OtherKey="MealID" Type="Dish" />
     </Type>
   </Table>
-  <Table Name="dbo.[Order]" Member="Orders">
-    <Type Name="Order">
-      <Column Name="OrderID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="OrderName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="Date" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="EmployeeID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Status" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Association Name="Order_OrderDetail" Member="OrderDetails" ThisKey="OrderID" OtherKey="OrderID" Type="OrderDetail" />
-    </Type>
-  </Table>
   <Table Name="dbo.OrderDetail" Member="OrderDetails">
     <Type Name="OrderDetail">
       <Column Name="OrderID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -698,6 +688,29 @@
       <Association Name="IngredientRequest_IngredientRequestDetail" Member="IngredientRequest" ThisKey="IngredientRequestID" OtherKey="IngredientRequestID" Type="IngredientRequest" IsForeignKey="true" />
     </Type>
   </Table>
+  <Table Name="dbo.Topic" Member="Topics">
+    <Type Name="Topic">
+      <Column Name="TopicID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="AgeGroupID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="DisplayOrder" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Status" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="Topic_Lesson" Member="Lessons" ThisKey="TopicID" OtherKey="TopicID" Type="Lesson" />
+      <Association Name="AgeGroup_Topic" Member="AgeGroup" ThisKey="AgeGroupID" OtherKey="AgeGroupID" Type="AgeGroup" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[Order]" Member="Orders">
+    <Type Name="Order">
+      <Column Name="OrderID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="OrderName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="TotalPrice" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="Date" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="EmployeeID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Status" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="Order_OrderDetail" Member="OrderDetails" ThisKey="OrderID" OtherKey="OrderID" Type="OrderDetail" />
+    </Type>
+  </Table>
   <Table Name="dbo.Dish" Member="Dishes">
     <Type Name="Dish">
       <Column Name="DishID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -711,18 +724,7 @@
       <Association Name="Dish_DailyMenuDetail" Member="DailyMenuDetails" ThisKey="DishID" OtherKey="DishID" Type="DailyMenuDetail" />
       <Association Name="Dish_DishDetail" Member="DishDetails" ThisKey="DishID" OtherKey="DishID" Type="DishDetail" />
       <Association Name="Meal_Dish" Member="Meal" ThisKey="MealID" OtherKey="MealID" Type="Meal" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.Topic" Member="Topics">
-    <Type Name="Topic">
-      <Column Name="TopicID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Name" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
-      <Column Name="AgeGroupID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Description" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
-      <Column Name="DisplayOrder" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Status" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Association Name="Topic_Lesson" Member="Lessons" ThisKey="TopicID" OtherKey="TopicID" Type="Lesson" />
-      <Association Name="AgeGroup_Topic" Member="AgeGroup" ThisKey="AgeGroupID" OtherKey="AgeGroupID" Type="AgeGroup" IsForeignKey="true" />
+      <Association Name="AgeGroup_Dish" Member="AgeGroup" ThisKey="AgeGroupID" OtherKey="AgeGroupID" Type="AgeGroup" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.AgeGroup" Member="AgeGroups">
@@ -733,6 +735,7 @@
       <Column Name="DisplayOrder" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="Status" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
       <Association Name="AgeGroup_Topic" Member="Topics" ThisKey="AgeGroupID" OtherKey="AgeGroupID" Type="Topic" />
+      <Association Name="AgeGroup_Dish" Member="Dishes" ThisKey="AgeGroupID" OtherKey="AgeGroupID" Type="Dish" />
     </Type>
   </Table>
 </Database>
