@@ -27,20 +27,32 @@ namespace DataConnect.DAO.HungTD
         }
         public int Insert(Dish dishEntity, List<DishDetail> listDishDetailEntity)
         {
-            try
+            //try
+            //{
+            //    dishes.InsertOnSubmit(dishEntity);
+            //    db.SubmitChanges();
+            //    int a = dishEntity.DishID;
+            //    if (new DishDetailDAO().InsertList(listDishDetailEntity, dishEntity.DishID))
+            //    {
+            //        return dishEntity.DishID;
+            //    }
+            //    else
+            //    {
+            //        return 0;
+            //    }
+            //}
+            //catch
+            //{
+            //    return 0;
+            //}
+            dishes.InsertOnSubmit(dishEntity);
+            db.SubmitChanges();
+            int a = dishEntity.DishID;
+            if (new DishDetailDAO().InsertList(listDishDetailEntity, dishEntity.DishID))
             {
-                dishes.InsertOnSubmit(dishEntity);
-                db.SubmitChanges();
-                if (new DishDetailDAO().InsertList(listDishDetailEntity))
-                {
-                    return dishEntity.DishID; ;
-                }
-                else
-                {
-                    return 0;
-                }
+                return dishEntity.DishID;
             }
-            catch
+            else
             {
                 return 0;
             }
