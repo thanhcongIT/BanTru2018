@@ -65,6 +65,7 @@
     <Compile Include="DAO\HungTD\LessonDAO.cs" />
     <Compile Include="DAO\HungTD\LocationDAO.cs" />
     <Compile Include="DAO\HungTD\LoginDAO.cs" />
+    <Compile Include="DAO\HungTD\MealDAO.cs" />
     <Compile Include="DAO\HungTD\PositionDAO.cs" />
     <Compile Include="DAO\HungTD\ReligionDAO.cs" />
     <Compile Include="DAO\HungTD\SemesterDAO.cs" />

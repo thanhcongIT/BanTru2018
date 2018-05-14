@@ -84,6 +84,7 @@
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
             this.pnControlsPanel = new System.Windows.Forms.Panel();
+            this.btnMealManager = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             this.SuspendLayout();
             // 
@@ -125,9 +126,10 @@
             this.btnDoituongchinhsach,
             this.btnDishManager,
             this.btnChiThucPham,
-            this.btnYeuCau});
+            this.btnYeuCau,
+            this.btnMealManager});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 35;
+            this.ribbon.MaxItemId = 36;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -500,6 +502,7 @@
             // ribbonPageGroup11
             // 
             this.ribbonPageGroup11.ItemLinks.Add(this.btnDishManager);
+            this.ribbonPageGroup11.ItemLinks.Add(this.btnMealManager);
             this.ribbonPageGroup11.Name = "ribbonPageGroup11";
             this.ribbonPageGroup11.Text = "Món Ăn";
             // 
@@ -580,6 +583,15 @@
             this.pnControlsPanel.Size = new System.Drawing.Size(1364, 600);
             this.pnControlsPanel.TabIndex = 3;
             // 
+            // btnMealManager
+            // 
+            this.btnMealManager.Caption = "Bữa Ăn";
+            this.btnMealManager.Id = 35;
+            this.btnMealManager.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.Image")));
+            this.btnMealManager.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.LargeImage")));
+            this.btnMealManager.Name = "btnMealManager";
+            this.btnMealManager.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnMealManager_ItemClick);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -655,5 +667,6 @@
         private DevExpress.XtraBars.BarButtonItem btnChiThucPham;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup12;
         private DevExpress.XtraBars.BarButtonItem btnYeuCau;
+        private DevExpress.XtraBars.BarButtonItem btnMealManager;
     }
 }

@@ -11,6 +11,9 @@ using DevExpress.XtraEditors;
 using DataConnect;
 using DataConnect.DAO.HungTD;
 using DataConnect.ViewModel;
+using QLHSBanTru2018_Demo_V1.Common;
+using System.IO;
+using System.Drawing.Imaging;
 
 namespace QLHSBanTru2018_Demo_V1.HungTD.Form.Dish
 {
@@ -40,8 +43,10 @@ namespace QLHSBanTru2018_Demo_V1.HungTD.Form.Dish
         private void frmDishDetail_Load(object sender, EventArgs e)
         {
             FillCombobox();
+            txtCreatedBy.Text = LoginDetail.LoginName;
             dishDetails = new List<DataConnect.DishDetail>();
             dishDetailViewModels = new List<DishDetailViewModel>();
+            dish = new DataConnect.Dish();
         }
         private void FillCombobox()
         {
@@ -56,6 +61,14 @@ namespace QLHSBanTru2018_Demo_V1.HungTD.Form.Dish
             {
 
             }
+
+            cbbAgeGroup.DataSource = new AgeGroupDAO().ListAll();
+            cbbAgeGroup.DisplayMember = "Name";
+            cbbAgeGroup.ValueMember = "AgeGroupID";
+
+            cbbMeal.DataSource = new MealDAO().ListAll();
+            cbbMeal.DisplayMember = "Name";
+            cbbMeal.ValueMember = "MealID";
         }
         private void FillGridControls(int ingredientID)
         {
@@ -64,11 +77,39 @@ namespace QLHSBanTru2018_Demo_V1.HungTD.Form.Dish
 
         private void btnNext_Click(object sender, EventArgs e)
         {
-            //Hoàn tất
-            dish.MealID = int.Parse(cbbIngredientType.SelectedValue.ToString());
-            dish.Name = txtName.Text;
+            if (dishDetails != null || dishDetails.Count() > 0 || txtName.Text != "")
+            {
+                //Hoàn tất
+                dish.Name = txtName.Text;
+                dish.MealID = int.Parse(cbbMeal.SelectedValue.ToString());
+                dish.AgeGroupID = int.Parse(cbbAgeGroup.SelectedValue.ToString());
+                dish.CreatedBy = LoginDetail.LoginID;
+                dish.CreatedDate = DateTime.Now;
+                if (Stream() != null)
+                {
+                    dish.Image = Stream().ToArray();
+                }
+                dish.Status = chkStatus.Checked;
 
-            this.Close();
+                if (iFuntion == 1)
+                {
+                    if (new DishDAO().Insert(dish, dishDetails) > 0)
+                    {
+                        MessageBox.Show("Thành công!", "Thêm thành công!");
+                        DialogResult = DialogResult.OK;
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Xin lỗi!", "Hệ thống đã xảy ra lỗi");
+                    }
+                }
+                else if (iFuntion == 2)
+                {
+
+                }
+                this.Close();
+            }
         }
 
         private void cbbIngredientType_SelectedIndexChanged(object sender, EventArgs e)
@@ -143,6 +184,30 @@ namespace QLHSBanTru2018_Demo_V1.HungTD.Form.Dish
             frmDNC.setList(dishDetails);
             frmDNC.Text = "Chi Tiết Dinh Dưỡng";
             frmDNC.ShowDialog();
+        }
+
+        private void btnBrowse_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.Title = "Chọn ảnh đại diện";
+            ofd.Filter = "Image|*.jpg; *.jpeg; *.png;";
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+                picDescription.Image = Image.FromFile(ofd.FileName);
+            }
+        }
+        private MemoryStream Stream()
+        {
+            try
+            {
+                MemoryStream stream = new MemoryStream();
+                picDescription.Image.Save(stream, ImageFormat.Jpeg);
+                return stream;
+            }
+            catch
+            {
+                return null;
+            }
         }
     }
 }

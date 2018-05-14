@@ -206,6 +206,12 @@
     <Compile Include="HungTD\Form\Dish\frmDishType.Designer.cs">
       <DependentUpon>frmDishType.cs</DependentUpon>
     </Compile>
+    <Compile Include="HungTD\Form\Dish\frmMeal.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HungTD\Form\Dish\frmMeal.Designer.cs">
+      <DependentUpon>frmMeal.cs</DependentUpon>
+    </Compile>
     <Compile Include="HungTD\Form\Employee\frmEmployeeDetail.cs">
       <SubType>Form</SubType>
     </Compile>

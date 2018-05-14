@@ -7,42 +7,39 @@ using System.Threading.Tasks;
 
 namespace DataConnect.DAO.HungTD
 {
-    public class AgeGroupDAO
+    public class MealDAO
     {
         QLHSSmartKidsDataContext db;
-        Table<AgeGroup> AgeGroups;
-        public AgeGroupDAO()
+        Table<Meal> meals;
+        public MealDAO()
         {
             db = new QLHSSmartKidsDataContext();
-            AgeGroups = db.GetTable<AgeGroup>();
+            meals = db.GetTable<Meal>();
         }
-        public List<AgeGroup> ListAll()
+        public List<Meal> ListAll()
         {
-            return AgeGroups.Where(x => x.Status.Equals(true)).ToList();
+            return meals.Where(x => x.Status.Equals(true)).ToList();
         }
-        public List<AgeGroup> ListAllDeleted()
-        {
-            return AgeGroups.Where(x => x.Status.Equals(false)).ToList();
-        }
-        public int Insert(AgeGroup entity)
+        public int Insert(Meal entity)
         {
             try
             {
-                AgeGroups.InsertOnSubmit(entity);
+                meals.InsertOnSubmit(entity);
                 db.SubmitChanges();
-                return entity.AgeGroupID;
+                return entity.MealID;
             }
             catch
             {
                 return 0;
             }
         }
-        public bool Edit(AgeGroup entity)
+        public bool Edit(Meal entity)
         {
             try
             {
-                AgeGroup obj = AgeGroups.Single(x => x.AgeGroupID == entity.AgeGroupID);
+                Meal obj = meals.SingleOrDefault(x => x.MealID.Equals(entity.MealID));
                 obj.Name = entity.Name;
+                obj.Time = entity.Time;
                 obj.Status = entity.Status;
                 db.SubmitChanges();
                 return true;
@@ -52,11 +49,11 @@ namespace DataConnect.DAO.HungTD
                 return false;
             }
         }
-        public bool Delete(int AgeGroupID)
+        public bool Delete(int mealID)
         {
             try
             {
-                AgeGroup obj = AgeGroups.Single(x => x.AgeGroupID == AgeGroupID);
+                Meal obj = meals.SingleOrDefault(x => x.MealID.Equals(mealID));
                 obj.Status = false;
                 db.SubmitChanges();
                 return true;
@@ -66,13 +63,12 @@ namespace DataConnect.DAO.HungTD
                 return false;
             }
         }
-        public bool Restore(int AgeGroupID)
+        public bool Restore(int mealID)
         {
             try
             {
-                AgeGroup obj = AgeGroups.Single(x => x.AgeGroupID == AgeGroupID && x.Status == false);
+                Meal obj = meals.SingleOrDefault(x => x.MealID.Equals(mealID) && x.Status.Equals(false));
                 obj.Status = true;
-                db.SubmitChanges();
                 return true;
             }
             catch

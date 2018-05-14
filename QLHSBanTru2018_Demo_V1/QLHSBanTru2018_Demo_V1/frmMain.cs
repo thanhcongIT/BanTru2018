@@ -112,6 +112,13 @@ namespace QLHSBanTru2018_Demo_V1
             pnControlsPanel.Controls.Add(new frmDish());
             labTitle.Caption = "QUẢN LÝ MÓN ĂN";
         }
+        
+        private void btnMealManager_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            pnControlsPanel.Controls.Clear();
+            pnControlsPanel.Controls.Add(new frmMeal());
+            labTitle.Caption = "QUẢN LÝ BỮA SĂN";
+        }
         #endregion
 
         #region s2s2s2s2 Nguyễn Kiều Thành Công s2s2s2
@@ -169,7 +176,7 @@ namespace QLHSBanTru2018_Demo_V1
             a.Dock = DockStyle.Fill;
         }
         #endregion
-
+        
         #region Nguyễn Tiến Bảo
         private void btnTTHocSinh_ItemClick(object sender, ItemClickEventArgs e)
         {
@@ -228,12 +235,11 @@ namespace QLHSBanTru2018_Demo_V1
 
 
 
+
         #endregion
 
         #region Vũ Đức Thiện
 
         #endregion
-
-       
     }
 }
