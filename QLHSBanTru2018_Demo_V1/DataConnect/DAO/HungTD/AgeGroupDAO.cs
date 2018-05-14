@@ -7,41 +7,41 @@ using System.Threading.Tasks;
 
 namespace DataConnect.DAO.HungTD
 {
-    public class TopicTypeDAO
+    public class AgeGroupDAO
     {
         QLHSSmartKidsDataContext db;
-        Table<TopicType> topicTypes;
-        public TopicTypeDAO()
+        Table<AgeGroup> AgeGroups;
+        public AgeGroupDAO()
         {
             db = new QLHSSmartKidsDataContext();
-            topicTypes = db.GetTable<TopicType>();
+            AgeGroups = db.GetTable<AgeGroup>();
         }
-        public List<TopicType> ListAll()
+        public List<AgeGroup> ListAll()
         {
-            return topicTypes.Where(x => x.Status.Equals(true)).ToList();
+            return AgeGroups.Where(x => x.Status.Equals(true)).ToList();
         }
-        public List<TopicType> ListAllDeleted()
+        public List<AgeGroup> ListAllDeleted()
         {
-            return topicTypes.Where(x => x.Status.Equals(false)).ToList();
+            return AgeGroups.Where(x => x.Status.Equals(false)).ToList();
         }
-        public int Insert(TopicType entity)
+        public int Insert(AgeGroup entity)
         {
             try
             {
-                topicTypes.InsertOnSubmit(entity);
+                AgeGroups.InsertOnSubmit(entity);
                 db.SubmitChanges();
-                return entity.TopicTypeID;
+                return entity.AgeGroupID;
             }
             catch
             {
                 return 0;
             }
         }
-        public bool Edit(TopicType entity)
+        public bool Edit(AgeGroup entity)
         {
             try
             {
-                TopicType obj = topicTypes.Single(x => x.TopicTypeID == entity.TopicTypeID);
+                AgeGroup obj = AgeGroups.Single(x => x.AgeGroupID == entity.AgeGroupID);
                 obj.Name = entity.Name;
                 obj.Status = entity.Status;
                 db.SubmitChanges();
@@ -52,14 +52,14 @@ namespace DataConnect.DAO.HungTD
                 return false;
             }
         }
-        public bool Delete(int topicTypeID)
+        public bool Delete(int AgeGroupID)
         {
             try
             {
-                TopicType obj = topicTypes.Single(x => x.TopicTypeID == topicTypeID);
+                AgeGroup obj = AgeGroups.Single(x => x.AgeGroupID == AgeGroupID);
                 obj.Status = false;
                 db.SubmitChanges();
-                new TopicDAO().DeleteByTopicType(topicTypeID);
+                new TopicDAO().DeleteByAgeGroup(AgeGroupID);
                 return true;
             }
             catch
@@ -67,14 +67,14 @@ namespace DataConnect.DAO.HungTD
                 return false;
             }
         }
-        public bool Restore(int topicTypeID)
+        public bool Restore(int AgeGroupID)
         {
             try
             {
-                TopicType obj = topicTypes.Single(x => x.TopicTypeID == topicTypeID && x.Status == false);
+                AgeGroup obj = AgeGroups.Single(x => x.AgeGroupID == AgeGroupID && x.Status == false);
                 obj.Status = true;
                 db.SubmitChanges();
-                new TopicDAO().RestoreByTopicType(topicTypeID);
+                new TopicDAO().RestoreByAgeGroup(AgeGroupID);
                 return true;
             }
             catch

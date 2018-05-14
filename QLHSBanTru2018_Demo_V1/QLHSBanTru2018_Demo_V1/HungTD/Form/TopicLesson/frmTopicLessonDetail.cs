@@ -36,13 +36,13 @@ namespace QLHSBanTru2018_Demo_V1.HungTD.Form.TopicLesson
 
         private void frmTopicLessonDetail_Load(object sender, EventArgs e)
         {
-            FillTopicTypeID();
+            FillAgeGroupID();
             FillDisplayOrder();
             LoadDetail();
         }
         private void LoadDetail()
         {
-            cbbTopicTypeID.SelectedValue = new TopicDAO().GetTopicTypeID(new LessonDAO().GetTopicID(lesson.LessonID));
+            cbbAgeGroupID.SelectedValue = new TopicDAO().GetAgeGroupID(new LessonDAO().GetTopicID(lesson.LessonID));
             cbbTopicID.SelectedValue = new LessonDAO().GetTopicID(lesson.LessonID);
             if (iFunction == 2)
             {
@@ -52,25 +52,25 @@ namespace QLHSBanTru2018_Demo_V1.HungTD.Form.TopicLesson
                 chkActive.Checked = lesson.Status;
             }
         }
-        private void FillTopicTypeID()
+        private void FillAgeGroupID()
         {
             //Lứa tuổi
-            cbbTopicTypeID.DataSource = new TopicTypeDAO().ListAll();
-            cbbTopicTypeID.DisplayMember = "Name";
-            cbbTopicTypeID.ValueMember = "TopicTypeID";
+            cbbAgeGroupID.DataSource = new AgeGroupDAO().ListAll();
+            cbbAgeGroupID.DisplayMember = "Name";
+            cbbAgeGroupID.ValueMember = "AgeGroupID";
 
             try
             {
-                FillTopicID(int.Parse(cbbTopicTypeID.SelectedValue.ToString()));
+                FillTopicID(int.Parse(cbbAgeGroupID.SelectedValue.ToString()));
             }
             catch
             {
 
             }
         }
-        private void FillTopicID(int topicTypeID)
+        private void FillTopicID(int AgeGroupID)
         {
-            cbbTopicID.DataSource = new TopicDAO().ListByTopicTypeID(topicTypeID);
+            cbbTopicID.DataSource = new TopicDAO().ListByAgeGroupID(AgeGroupID);
             cbbTopicID.DisplayMember = "Name";
             cbbTopicID.ValueMember = "TopicID";
         }
@@ -84,7 +84,7 @@ namespace QLHSBanTru2018_Demo_V1.HungTD.Form.TopicLesson
         {
             try
             {
-                FillTopicID(int.Parse(cbbTopicTypeID.SelectedValue.ToString()));
+                FillTopicID(int.Parse(cbbAgeGroupID.SelectedValue.ToString()));
             }
             catch
             {

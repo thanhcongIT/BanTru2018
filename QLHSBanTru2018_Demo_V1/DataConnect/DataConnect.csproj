@@ -69,7 +69,7 @@
     <Compile Include="DAO\HungTD\ReligionDAO.cs" />
     <Compile Include="DAO\HungTD\SemesterDAO.cs" />
     <Compile Include="DAO\HungTD\TopicDAO.cs" />
-    <Compile Include="DAO\HungTD\TopicTypeDAO.cs" />
+    <Compile Include="DAO\HungTD\AgeGroupDAO.cs" />
     <Compile Include="DAO\ThanhCongTC\ChiTieuThucPham\OrderDAO.cs" />
     <Compile Include="DAO\ThanhCongTC\ChiTieuThucPham\OrderDetailDAO.cs" />
     <Compile Include="DAO\ThanhCongTC\ChiTieuThucPham\TCIngredientRequestDAO.cs" />

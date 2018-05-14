@@ -20,17 +20,17 @@ namespace DataConnect.DAO.HungTD
         {
             return topics.Where(x => x.Status.Equals(true)).ToList();
         }
-        public List<Topic> ListByTopicTypeID(int topicTypeID)
+        public List<Topic> ListByAgeGroupID(int ageGroupID)
         {
-            return topics.Where(x => x.Status.Equals(true) && x.TopicTypeID.Equals(topicTypeID)).ToList();
+            return topics.Where(x => x.Status.Equals(true) && x.AgeGroupID.Equals(ageGroupID)).ToList();
         }
         public List<Topic> ListDeleted()
         {
             return topics.Where(x => x.Status.Equals(false)).ToList();
         }
-        public int GetTopicTypeID(int topicID)
+        public int GetAgeGroupID(int topicID)
         {
-            return topics.Where(x => x.TopicID.Equals(topicID)).FirstOrDefault().TopicTypeID;
+            return topics.Where(x => x.TopicID.Equals(topicID)).FirstOrDefault().AgeGroupID;
         }
         public Topic GetByTopicID(int topicID)
         {
@@ -55,7 +55,7 @@ namespace DataConnect.DAO.HungTD
             {
                 Topic obj = topics.Single(x => x.TopicID == entity.TopicID);
                 obj.Name = entity.Name;
-                obj.TopicTypeID = entity.TopicTypeID;
+                obj.AgeGroupID = entity.AgeGroupID;
                 obj.Status = entity.Status;
                 db.SubmitChanges();
                 return true;
@@ -79,11 +79,11 @@ namespace DataConnect.DAO.HungTD
                 return false;
             }
         }
-        public bool DeleteByTopicType(int topicTypeID)
+        public bool DeleteByAgeGroup(int ageGroupID)
         {
             try
             {
-                var listDeleteTopic = topics.Where(x => x.TopicTypeID.Equals(topicTypeID));
+                var listDeleteTopic = topics.Where(x => x.AgeGroupID.Equals(ageGroupID));
                 foreach(var item in listDeleteTopic)
                 {
                     Delete(item.TopicID);
@@ -109,11 +109,11 @@ namespace DataConnect.DAO.HungTD
                 return false;
             }
         }
-        public bool RestoreByTopicType(int topicTypeID)
+        public bool RestoreByAgeGroup(int ageGroupID)
         {
             try
             {
-                var listRestoreTopic = topics.Where(x => x.TopicTypeID.Equals(topicTypeID));
+                var listRestoreTopic = topics.Where(x => x.AgeGroupID.Equals(ageGroupID));
                 foreach(var item in listRestoreTopic)
                 {
                     Restore(item.TopicID);
