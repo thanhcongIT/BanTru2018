@@ -56,13 +56,13 @@
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.tabPage2 = new DevExpress.XtraTab.XtraTabPage();
             this.layoutControl3 = new DevExpress.XtraLayout.LayoutControl();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit2 = new DevExpress.XtraEditors.TextEdit();
+            this.cbbAgeGroup = new System.Windows.Forms.ComboBox();
+            this.cbbMealID = new System.Windows.Forms.ComboBox();
+            this.txtName = new DevExpress.XtraEditors.TextEdit();
+            this.txtCreatedBy = new DevExpress.XtraEditors.TextEdit();
             this.chkStatus = new DevExpress.XtraEditors.CheckEdit();
-            this.pictureEdit1 = new DevExpress.XtraEditors.PictureEdit();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.picDescription = new DevExpress.XtraEditors.PictureEdit();
+            this.btnBrowse = new DevExpress.XtraEditors.SimpleButton();
             this.layoutControlGroup3 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -108,10 +108,10 @@
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl3)).BeginInit();
             this.layoutControl3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtName.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCreatedBy.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkStatus.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picDescription.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
@@ -416,57 +416,57 @@
             // 
             this.tabPage2.Controls.Add(this.layoutControl3);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Size = new System.Drawing.Size(554, 284);
+            this.tabPage2.Size = new System.Drawing.Size(754, 277);
             this.tabPage2.Text = "Thông Tin";
             // 
             // layoutControl3
             // 
-            this.layoutControl3.Controls.Add(this.comboBox2);
-            this.layoutControl3.Controls.Add(this.comboBox1);
-            this.layoutControl3.Controls.Add(this.textEdit1);
-            this.layoutControl3.Controls.Add(this.textEdit2);
+            this.layoutControl3.Controls.Add(this.cbbAgeGroup);
+            this.layoutControl3.Controls.Add(this.cbbMealID);
+            this.layoutControl3.Controls.Add(this.txtName);
+            this.layoutControl3.Controls.Add(this.txtCreatedBy);
             this.layoutControl3.Controls.Add(this.chkStatus);
-            this.layoutControl3.Controls.Add(this.pictureEdit1);
-            this.layoutControl3.Controls.Add(this.simpleButton1);
+            this.layoutControl3.Controls.Add(this.picDescription);
+            this.layoutControl3.Controls.Add(this.btnBrowse);
             this.layoutControl3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl3.Location = new System.Drawing.Point(0, 0);
             this.layoutControl3.Name = "layoutControl3";
             this.layoutControl3.Root = this.layoutControlGroup3;
-            this.layoutControl3.Size = new System.Drawing.Size(554, 284);
+            this.layoutControl3.Size = new System.Drawing.Size(754, 277);
             this.layoutControl3.TabIndex = 0;
             this.layoutControl3.Text = "layoutControl3";
             // 
-            // comboBox2
+            // cbbAgeGroup
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(175, 71);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(282, 21);
-            this.comboBox2.TabIndex = 6;
+            this.cbbAgeGroup.FormattingEnabled = true;
+            this.cbbAgeGroup.Location = new System.Drawing.Point(175, 71);
+            this.cbbAgeGroup.Name = "cbbAgeGroup";
+            this.cbbAgeGroup.Size = new System.Drawing.Size(482, 21);
+            this.cbbAgeGroup.TabIndex = 6;
             // 
-            // comboBox1
+            // cbbMealID
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(175, 46);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(282, 21);
-            this.comboBox1.TabIndex = 5;
+            this.cbbMealID.FormattingEnabled = true;
+            this.cbbMealID.Location = new System.Drawing.Point(175, 46);
+            this.cbbMealID.Name = "cbbMealID";
+            this.cbbMealID.Size = new System.Drawing.Size(482, 21);
+            this.cbbMealID.TabIndex = 5;
             // 
-            // textEdit1
+            // txtName
             // 
-            this.textEdit1.Location = new System.Drawing.Point(175, 22);
-            this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Size = new System.Drawing.Size(282, 20);
-            this.textEdit1.StyleController = this.layoutControl3;
-            this.textEdit1.TabIndex = 4;
+            this.txtName.Location = new System.Drawing.Point(175, 22);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(482, 20);
+            this.txtName.StyleController = this.layoutControl3;
+            this.txtName.TabIndex = 4;
             // 
-            // textEdit2
+            // txtCreatedBy
             // 
-            this.textEdit2.Location = new System.Drawing.Point(175, 96);
-            this.textEdit2.Name = "textEdit2";
-            this.textEdit2.Size = new System.Drawing.Size(282, 20);
-            this.textEdit2.StyleController = this.layoutControl3;
-            this.textEdit2.TabIndex = 7;
+            this.txtCreatedBy.Location = new System.Drawing.Point(175, 96);
+            this.txtCreatedBy.Name = "txtCreatedBy";
+            this.txtCreatedBy.Size = new System.Drawing.Size(482, 20);
+            this.txtCreatedBy.StyleController = this.layoutControl3;
+            this.txtCreatedBy.TabIndex = 7;
             // 
             // chkStatus
             // 
@@ -474,31 +474,31 @@
             this.chkStatus.Location = new System.Drawing.Point(175, 120);
             this.chkStatus.Name = "chkStatus";
             this.chkStatus.Properties.Caption = "Kích Hoạt";
-            this.chkStatus.Size = new System.Drawing.Size(282, 19);
+            this.chkStatus.Size = new System.Drawing.Size(482, 19);
             this.chkStatus.StyleController = this.layoutControl3;
             this.chkStatus.TabIndex = 8;
             // 
-            // pictureEdit1
+            // picDescription
             // 
-            this.pictureEdit1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.pictureEdit1.EditValue = global::QLHSBanTru2018_Demo_V1.Properties.Resources._1232;
-            this.pictureEdit1.Location = new System.Drawing.Point(182, 143);
-            this.pictureEdit1.Name = "pictureEdit1";
-            this.pictureEdit1.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.pictureEdit1.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Squeeze;
-            this.pictureEdit1.Size = new System.Drawing.Size(189, 129);
-            this.pictureEdit1.StyleController = this.layoutControl3;
-            this.pictureEdit1.TabIndex = 9;
+            this.picDescription.Cursor = System.Windows.Forms.Cursors.Default;
+            this.picDescription.EditValue = global::QLHSBanTru2018_Demo_V1.Properties.Resources._1232;
+            this.picDescription.Location = new System.Drawing.Point(229, 143);
+            this.picDescription.Name = "picDescription";
+            this.picDescription.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
+            this.picDescription.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Squeeze;
+            this.picDescription.Size = new System.Drawing.Size(295, 122);
+            this.picDescription.StyleController = this.layoutControl3;
+            this.picDescription.TabIndex = 9;
             // 
-            // simpleButton1
+            // btnBrowse
             // 
-            this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.simpleButton1.Location = new System.Drawing.Point(375, 250);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(82, 22);
-            this.simpleButton1.StyleController = this.layoutControl3;
-            this.simpleButton1.TabIndex = 10;
-            this.simpleButton1.Text = "Chọn Ảnh";
+            this.btnBrowse.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.btnBrowse.Location = new System.Drawing.Point(528, 243);
+            this.btnBrowse.Name = "btnBrowse";
+            this.btnBrowse.Size = new System.Drawing.Size(129, 22);
+            this.btnBrowse.StyleController = this.layoutControl3;
+            this.btnBrowse.TabIndex = 10;
+            this.btnBrowse.Text = "Chọn Ảnh";
             // 
             // layoutControlGroup3
             // 
@@ -516,42 +516,42 @@
             this.layoutControlItem15});
             this.layoutControlGroup3.Name = "layoutControlGroup3";
             this.layoutControlGroup3.Padding = new DevExpress.XtraLayout.Utils.Padding(95, 95, 20, 10);
-            this.layoutControlGroup3.Size = new System.Drawing.Size(554, 284);
+            this.layoutControlGroup3.Size = new System.Drawing.Size(754, 277);
             this.layoutControlGroup3.TextVisible = false;
             // 
             // layoutControlItem9
             // 
-            this.layoutControlItem9.Control = this.textEdit1;
+            this.layoutControlItem9.Control = this.txtName;
             this.layoutControlItem9.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem9.Name = "layoutControlItem9";
-            this.layoutControlItem9.Size = new System.Drawing.Size(364, 24);
+            this.layoutControlItem9.Size = new System.Drawing.Size(564, 24);
             this.layoutControlItem9.Text = "Tên Món Ăn:";
             this.layoutControlItem9.TextSize = new System.Drawing.Size(75, 13);
             // 
             // layoutControlItem10
             // 
-            this.layoutControlItem10.Control = this.comboBox1;
+            this.layoutControlItem10.Control = this.cbbMealID;
             this.layoutControlItem10.Location = new System.Drawing.Point(0, 24);
             this.layoutControlItem10.Name = "layoutControlItem10";
-            this.layoutControlItem10.Size = new System.Drawing.Size(364, 25);
+            this.layoutControlItem10.Size = new System.Drawing.Size(564, 25);
             this.layoutControlItem10.Text = "Bữa Ăn:";
             this.layoutControlItem10.TextSize = new System.Drawing.Size(75, 13);
             // 
             // layoutControlItem11
             // 
-            this.layoutControlItem11.Control = this.comboBox2;
+            this.layoutControlItem11.Control = this.cbbAgeGroup;
             this.layoutControlItem11.Location = new System.Drawing.Point(0, 49);
             this.layoutControlItem11.Name = "layoutControlItem11";
-            this.layoutControlItem11.Size = new System.Drawing.Size(364, 25);
+            this.layoutControlItem11.Size = new System.Drawing.Size(564, 25);
             this.layoutControlItem11.Text = "Nhóm Tuổi:";
             this.layoutControlItem11.TextSize = new System.Drawing.Size(75, 13);
             // 
             // layoutControlItem12
             // 
-            this.layoutControlItem12.Control = this.textEdit2;
+            this.layoutControlItem12.Control = this.txtCreatedBy;
             this.layoutControlItem12.Location = new System.Drawing.Point(0, 74);
             this.layoutControlItem12.Name = "layoutControlItem12";
-            this.layoutControlItem12.Size = new System.Drawing.Size(364, 24);
+            this.layoutControlItem12.Size = new System.Drawing.Size(564, 24);
             this.layoutControlItem12.Text = "Người Lập Món:";
             this.layoutControlItem12.TextSize = new System.Drawing.Size(75, 13);
             // 
@@ -560,16 +560,16 @@
             this.layoutControlItem13.Control = this.chkStatus;
             this.layoutControlItem13.Location = new System.Drawing.Point(0, 98);
             this.layoutControlItem13.Name = "layoutControlItem13";
-            this.layoutControlItem13.Size = new System.Drawing.Size(364, 23);
+            this.layoutControlItem13.Size = new System.Drawing.Size(564, 23);
             this.layoutControlItem13.Text = "Tình Trạng:";
             this.layoutControlItem13.TextSize = new System.Drawing.Size(75, 13);
             // 
             // layoutControlItem14
             // 
-            this.layoutControlItem14.Control = this.pictureEdit1;
-            this.layoutControlItem14.Location = new System.Drawing.Point(85, 121);
+            this.layoutControlItem14.Control = this.picDescription;
+            this.layoutControlItem14.Location = new System.Drawing.Point(132, 121);
             this.layoutControlItem14.Name = "layoutControlItem14";
-            this.layoutControlItem14.Size = new System.Drawing.Size(193, 133);
+            this.layoutControlItem14.Size = new System.Drawing.Size(299, 126);
             this.layoutControlItem14.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem14.TextVisible = false;
             // 
@@ -578,23 +578,23 @@
             this.emptySpaceItem2.AllowHotTrack = false;
             this.emptySpaceItem2.Location = new System.Drawing.Point(0, 121);
             this.emptySpaceItem2.Name = "emptySpaceItem2";
-            this.emptySpaceItem2.Size = new System.Drawing.Size(85, 133);
+            this.emptySpaceItem2.Size = new System.Drawing.Size(132, 126);
             this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
             // 
             // emptySpaceItem3
             // 
             this.emptySpaceItem3.AllowHotTrack = false;
-            this.emptySpaceItem3.Location = new System.Drawing.Point(278, 121);
+            this.emptySpaceItem3.Location = new System.Drawing.Point(431, 121);
             this.emptySpaceItem3.Name = "emptySpaceItem3";
-            this.emptySpaceItem3.Size = new System.Drawing.Size(86, 107);
+            this.emptySpaceItem3.Size = new System.Drawing.Size(133, 100);
             this.emptySpaceItem3.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem15
             // 
-            this.layoutControlItem15.Control = this.simpleButton1;
-            this.layoutControlItem15.Location = new System.Drawing.Point(278, 228);
+            this.layoutControlItem15.Control = this.btnBrowse;
+            this.layoutControlItem15.Location = new System.Drawing.Point(431, 221);
             this.layoutControlItem15.Name = "layoutControlItem15";
-            this.layoutControlItem15.Size = new System.Drawing.Size(86, 26);
+            this.layoutControlItem15.Size = new System.Drawing.Size(133, 26);
             this.layoutControlItem15.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem15.TextVisible = false;
             // 
@@ -764,10 +764,10 @@
             this.tabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl3)).EndInit();
             this.layoutControl3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtName.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCreatedBy.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkStatus.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picDescription.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
@@ -827,12 +827,12 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem8;
         private DevExpress.XtraLayout.LayoutControl layoutControl3;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup3;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private DevExpress.XtraEditors.TextEdit textEdit1;
-        private DevExpress.XtraEditors.TextEdit textEdit2;
+        private System.Windows.Forms.ComboBox cbbAgeGroup;
+        private System.Windows.Forms.ComboBox cbbMealID;
+        private DevExpress.XtraEditors.TextEdit txtName;
+        private DevExpress.XtraEditors.TextEdit txtCreatedBy;
         private DevExpress.XtraEditors.CheckEdit chkStatus;
-        private DevExpress.XtraEditors.PictureEdit pictureEdit1;
+        private DevExpress.XtraEditors.PictureEdit picDescription;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem9;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem10;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem11;
@@ -841,7 +841,7 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem14;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem2;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem3;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraEditors.SimpleButton btnBrowse;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem15;
         private DevExpress.XtraEditors.SimpleButton btnNutritionCaculation;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem16;
