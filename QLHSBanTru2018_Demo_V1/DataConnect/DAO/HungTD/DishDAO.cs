@@ -17,9 +17,22 @@ namespace DataConnect.DAO.HungTD
             db = new QLHSSmartKidsDataContext();
             dishes = db.GetTable<Dish>();
         }
-        public List<DishViewModel> ListAll()
+        public List<DishFullViewModel> ListAll()
         {
-            return null;
+            var model = from d in dishes
+                        where d.Status.Equals(true)
+                        select new DishFullViewModel
+                        {
+                            DishID = d.DishID,
+                            MealID = d.MealID,
+                            MealName = d.Meal.Name,
+                            AgeGroupID = d.AgeGroupID,
+                            AgeGroupName = d.AgeGroup.Name,
+                            Name = d.Name,
+                            CreatedDate = d.CreatedDate,
+                            CreatedBy = d.CreatedBy
+                        };
+            return model.ToList();
         }
         public Dish GetByID(int dishID)
         {
@@ -27,32 +40,21 @@ namespace DataConnect.DAO.HungTD
         }
         public int Insert(Dish dishEntity, List<DishDetail> listDishDetailEntity)
         {
-            //try
-            //{
-            //    dishes.InsertOnSubmit(dishEntity);
-            //    db.SubmitChanges();
-            //    int a = dishEntity.DishID;
-            //    if (new DishDetailDAO().InsertList(listDishDetailEntity, dishEntity.DishID))
-            //    {
-            //        return dishEntity.DishID;
-            //    }
-            //    else
-            //    {
-            //        return 0;
-            //    }
-            //}
-            //catch
-            //{
-            //    return 0;
-            //}
-            dishes.InsertOnSubmit(dishEntity);
-            db.SubmitChanges();
-            int a = dishEntity.DishID;
-            if (new DishDetailDAO().InsertList(listDishDetailEntity, dishEntity.DishID))
+            try
             {
-                return dishEntity.DishID;
+                dishes.InsertOnSubmit(dishEntity);
+                db.SubmitChanges();
+                int a = dishEntity.DishID;
+                if (new DishDetailDAO().InsertList(listDishDetailEntity, dishEntity.DishID))
+                {
+                    return dishEntity.DishID;
+                }
+                else
+                {
+                    return 0;
+                }
             }
-            else
+            catch
             {
                 return 0;
             }

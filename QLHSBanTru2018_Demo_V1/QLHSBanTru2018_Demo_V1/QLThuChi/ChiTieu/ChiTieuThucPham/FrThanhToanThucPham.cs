@@ -18,6 +18,9 @@ namespace QLHSBanTru2018_Demo_V1.QLThuChi.ChiTieu.ChiTieuThucPham
             InitializeComponent();
         }
 
-        
+        private void FrThanhToanThucPham_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
