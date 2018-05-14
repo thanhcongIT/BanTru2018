@@ -17,7 +17,6 @@ namespace DataConnect.DAO.ThanhCongTC.ChiTieuThucPham
             a.PriceOfUnit = orderDetail.PriceOfUnit;
             a.QuantityOfUnit = orderDetail.QuantityOfUnit;
             a.TotalPrice = orderDetail.TotalPrice;
-            a.Discount = orderDetail.Discount;
             a.Status = orderDetail.Status;
             dt.OrderDetails.InsertOnSubmit(a);
             dt.SubmitChanges();

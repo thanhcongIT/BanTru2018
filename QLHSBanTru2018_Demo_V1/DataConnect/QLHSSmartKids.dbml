@@ -348,8 +348,8 @@
       <Column Name="Cholesterol" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
       <Column Name="Status" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
       <Association Name="Ingredient_DishDetail" Member="DishDetails" ThisKey="IngredientID" OtherKey="IngredientID" Type="DishDetail" />
-      <Association Name="Ingredient_OrderDetail" Member="OrderDetails" ThisKey="IngredientID" OtherKey="IngredientID" Type="OrderDetail" />
       <Association Name="Ingredient_IngredientRequestDetail" Member="IngredientRequestDetails" ThisKey="IngredientID" OtherKey="IngredientID" Type="IngredientRequestDetail" />
+      <Association Name="Ingredient_OrderDetail" Member="OrderDetails" ThisKey="IngredientID" OtherKey="IngredientID" Type="OrderDetail" />
       <Association Name="IngredientType_Ingredient" Member="IngredientType" ThisKey="IngredientTypeID" OtherKey="IngredientTypeID" Type="IngredientType" IsForeignKey="true" />
     </Type>
   </Table>
@@ -427,19 +427,6 @@
       <Column Name="Time" Type="System.TimeSpan" DbType="Time NOT NULL" CanBeNull="false" />
       <Column Name="Status" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
       <Association Name="Meal_Dish" Member="Dishes" ThisKey="MealID" OtherKey="MealID" Type="Dish" />
-    </Type>
-  </Table>
-  <Table Name="dbo.OrderDetail" Member="OrderDetails">
-    <Type Name="OrderDetail">
-      <Column Name="OrderID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="IngredientID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="PriceOfUnit" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
-      <Column Name="QuantityOfUnit" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="TotalPrice" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
-      <Column Name="Discount" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
-      <Column Name="Status" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Association Name="Ingredient_OrderDetail" Member="Ingredient" ThisKey="IngredientID" OtherKey="IngredientID" Type="Ingredient" IsForeignKey="true" />
-      <Association Name="Order_OrderDetail" Member="Order" ThisKey="OrderID" OtherKey="OrderID" Type="Order" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.PhysicalAssessment" Member="PhysicalAssessments">
@@ -736,6 +723,18 @@
       <Column Name="Status" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
       <Association Name="AgeGroup_Topic" Member="Topics" ThisKey="AgeGroupID" OtherKey="AgeGroupID" Type="Topic" />
       <Association Name="AgeGroup_Dish" Member="Dishes" ThisKey="AgeGroupID" OtherKey="AgeGroupID" Type="Dish" />
+    </Type>
+  </Table>
+  <Table Name="dbo.OrderDetail" Member="OrderDetails">
+    <Type Name="OrderDetail">
+      <Column Name="OrderID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IngredientID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="PriceOfUnit" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="QuantityOfUnit" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TotalPrice" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="Status" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="Ingredient_OrderDetail" Member="Ingredient" ThisKey="IngredientID" OtherKey="IngredientID" Type="Ingredient" IsForeignKey="true" />
+      <Association Name="Order_OrderDetail" Member="Order" ThisKey="OrderID" OtherKey="OrderID" Type="Order" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>
