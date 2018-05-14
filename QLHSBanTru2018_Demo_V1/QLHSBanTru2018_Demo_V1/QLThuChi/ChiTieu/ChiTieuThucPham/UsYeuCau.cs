@@ -43,7 +43,7 @@ namespace QLHSBanTru2018_Demo_V1.QLThuChi.ChiTieu.ChiTieuThucPham
         public void LoadIngredienRequesDetailBought(int InredientRequestID)
         {
             TCIngredientRequestDetailDAO dt = new TCIngredientRequestDetailDAO();
-            grChiTietYeuCau.DataSource = dt.listInredientRequestDetail2(InredientRequestID);
+            grDamua.DataSource = dt.listInredientRequestDetail2(InredientRequestID);
         }
         private void UsYeuCau_Load(object sender, EventArgs e)
         {
@@ -69,6 +69,7 @@ namespace QLHSBanTru2018_Demo_V1.QLThuChi.ChiTieu.ChiTieuThucPham
                 dtNgayMua.Enabled = true;
                 LoadIngredienRequestByDate();
                 LoadIngredienRequestDetail((int)gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "IngredientRequestID"));
+                LoadIngredienRequesDetailBought(IngredienRequesID);
             }
             catch 
             {
@@ -86,6 +87,7 @@ namespace QLHSBanTru2018_Demo_V1.QLThuChi.ChiTieu.ChiTieuThucPham
                 dtNgayKhoiTao.Enabled = true;
                 LoadIngredienRequestByDate();
                 LoadIngredienRequestDetail((int)gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "IngredientRequestID"));
+                LoadIngredienRequesDetailBought(IngredienRequesID);
             }
             catch 
             {
@@ -105,6 +107,7 @@ namespace QLHSBanTru2018_Demo_V1.QLThuChi.ChiTieu.ChiTieuThucPham
             {
                 IngredienRequesID = (int)gridView1.GetRowCellValue(e.FocusedRowHandle, "IngredientRequestID");
                 LoadIngredienRequestDetail(IngredienRequesID);
+                LoadIngredienRequesDetailBought(IngredienRequesID);
                 //laod thông tin yêu cầu
                 EmployeeDAO dt = new EmployeeDAO();
                 TCIngredientRequestDAO.employeeReques = dt.GetByID((int)gridView1.GetRowCellValue(e.FocusedRowHandle, "CreatedBy"));
@@ -125,6 +128,8 @@ namespace QLHSBanTru2018_Demo_V1.QLThuChi.ChiTieu.ChiTieuThucPham
             try
             {
                 LoadIngredienRequestByDate();
+                LoadIngredienRequestDetail(IngredienRequesID);
+                LoadIngredienRequesDetailBought(IngredienRequesID);
             }
             catch
             {
@@ -138,6 +143,8 @@ namespace QLHSBanTru2018_Demo_V1.QLThuChi.ChiTieu.ChiTieuThucPham
             try
             {
                 LoadIngredienRequestByDate();
+                LoadIngredienRequestDetail(IngredienRequesID);
+                LoadIngredienRequesDetailBought(IngredienRequesID);
             }
             catch 
             {
@@ -174,6 +181,7 @@ namespace QLHSBanTru2018_Demo_V1.QLThuChi.ChiTieu.ChiTieuThucPham
                         IngredientRequestDetail a = new IngredientRequestDetail();
                         a.IngredientRequestID= IngredienRequesID;
                         a.IngredientID = (int)gridView2.GetRowCellValue(i, gridView2.Columns["IngredientID"]);
+                        a.Status = true;
                         if (dt.Edit(a)==true)
                         {
 
@@ -186,11 +194,46 @@ namespace QLHSBanTru2018_Demo_V1.QLThuChi.ChiTieu.ChiTieuThucPham
                     }
                 }
                 LoadIngredienRequesDetailBought(IngredienRequesID);
+                LoadIngredienRequestDetail(IngredienRequesID);
             }
             catch 
             {
 
                 
+            }
+        }
+
+        private void btnHuyMua_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                TCIngredientRequestDetailDAO dt = new TCIngredientRequestDetailDAO();
+                for (int i = 0; i < gridView3.RowCount; i++)
+                {
+                    if ((bool)gridView3.GetRowCellValue(i, gridView3.Columns["Status"]) == true)
+                    {
+                        IngredientRequestDetail a = new IngredientRequestDetail();
+                        a.IngredientRequestID = IngredienRequesID;
+                        a.IngredientID = (int)gridView3.GetRowCellValue(i, gridView3.Columns["IngredientID"]);
+                        a.Status = false;
+                        if (dt.Edit(a) == true)
+                        {
+
+                        }
+                        else
+                        {
+                            MessageBox.Show("Lỗi bản ghi thữ " + i + "");
+                            break;
+                        }
+                    }
+                }
+                LoadIngredienRequestDetail(IngredienRequesID);
+                LoadIngredienRequesDetailBought(IngredienRequesID);
+            }
+            catch
+            {
+
+
             }
         }
     }

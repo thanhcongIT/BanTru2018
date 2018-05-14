@@ -323,6 +323,12 @@
     <Compile Include="MD5Hash\PasswordEncryptor.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QLThuChi\ChiTieu\ChiTieuThucPham\FrThanhToanThucPham.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QLThuChi\ChiTieu\ChiTieuThucPham\FrThanhToanThucPham.Designer.cs">
+      <DependentUpon>FrThanhToanThucPham.cs</DependentUpon>
+    </Compile>
     <Compile Include="QLThuChi\ChiTieu\ChiTieuThucPham\FrThemPhieuChi.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -676,6 +682,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="QLThuChi\ChiTieu\ChiTieuThucPham\FrThanhToanThucPham.resx">
+      <DependentUpon>FrThanhToanThucPham.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="QLThuChi\ChiTieu\ChiTieuThucPham\FrThemPhieuChi.resx">
       <DependentUpon>FrThemPhieuChi.cs</DependentUpon>
     </EmbeddedResource>
