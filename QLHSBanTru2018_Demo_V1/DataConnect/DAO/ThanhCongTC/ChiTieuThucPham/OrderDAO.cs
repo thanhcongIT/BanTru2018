@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DataConnect.DAO.ThanhCongTC.TCViewModle;
 
 namespace DataConnect.DAO.ThanhCongTC.ChiTieuThucPham
 {
@@ -32,5 +33,6 @@ namespace DataConnect.DAO.ThanhCongTC.ChiTieuThucPham
             var a = dt.Orders.Where(t => t.Date.Month == dateTime.Month && t.Date.Year == dateTime.Year);
             return a.ToList();
         }
+       
     }
 }

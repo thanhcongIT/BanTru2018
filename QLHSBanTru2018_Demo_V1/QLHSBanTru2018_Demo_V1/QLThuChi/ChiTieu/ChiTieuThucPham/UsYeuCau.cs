@@ -210,7 +210,7 @@ namespace QLHSBanTru2018_Demo_V1.QLThuChi.ChiTieu.ChiTieuThucPham
                 TCIngredientRequestDetailDAO dt = new TCIngredientRequestDetailDAO();
                 for (int i = 0; i < gridView3.RowCount; i++)
                 {
-                    if ((bool)gridView3.GetRowCellValue(i, gridView3.Columns["Status"]) == true)
+                    if ((bool)gridView3.GetRowCellValue(i, gridView3.Columns["Status"]) == false)
                     {
                         IngredientRequestDetail a = new IngredientRequestDetail();
                         a.IngredientRequestID = IngredienRequesID;
@@ -234,6 +234,31 @@ namespace QLHSBanTru2018_Demo_V1.QLThuChi.ChiTieu.ChiTieuThucPham
             {
 
 
+            }
+        }
+
+        private void btnHoaDon_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                OrderDetailDAO dt = new OrderDetailDAO();
+                OrderDetailDAO.ListTCOrderDetailViewModle.Clear();
+                for (int i = 0; i < gridView3.RowCount; i++)
+                {
+                    OrderDetail a = new OrderDetail();
+                    TCOrderDetailViewModle b = new TCOrderDetailViewModle();
+                    a.IngredientID = (int)gridView3.GetRowCellValue(i, gridView3.Columns["IngredientID"]);
+                    a.QuantityOfUnit = (double)gridView3.GetRowCellValue(i, gridView3.Columns["Quantity"]);
+                    b = dt.OrderDetailViewModle(a);
+                    OrderDetailDAO.ListTCOrderDetailViewModle.Add(b);
+                }
+                FrThanhToanThucPham c = new FrThanhToanThucPham();
+                c.ShowDialog();
+            }
+            catch 
+            {
+
+              
             }
         }
     }

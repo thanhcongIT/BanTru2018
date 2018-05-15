@@ -37,9 +37,15 @@
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.btnMua = new DevExpress.XtraEditors.SimpleButton();
             this.btnHuyMua = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnHoaDon = new DevExpress.XtraEditors.SimpleButton();
             this.grDamua = new DevExpress.XtraGrid.GridControl();
             this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn14 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn15 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn16 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn17 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn18 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn19 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnNguoiYeuCau = new DevExpress.XtraEditors.SimpleButton();
             this.dtKhoiTao = new DevExpress.XtraEditors.DateEdit();
             this.dtYeuCau = new DevExpress.XtraEditors.DateEdit();
@@ -89,12 +95,6 @@
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem3 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.gridColumn14 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn15 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn16 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn17 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn18 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn19 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grDamua)).BeginInit();
@@ -136,7 +136,7 @@
             // 
             this.layoutControl1.Controls.Add(this.btnMua);
             this.layoutControl1.Controls.Add(this.btnHuyMua);
-            this.layoutControl1.Controls.Add(this.simpleButton1);
+            this.layoutControl1.Controls.Add(this.btnHoaDon);
             this.layoutControl1.Controls.Add(this.grDamua);
             this.layoutControl1.Controls.Add(this.btnNguoiYeuCau);
             this.layoutControl1.Controls.Add(this.dtKhoiTao);
@@ -175,14 +175,15 @@
             this.btnHuyMua.Text = "<<";
             this.btnHuyMua.Click += new System.EventHandler(this.btnHuyMua_Click);
             // 
-            // simpleButton1
+            // btnHoaDon
             // 
-            this.simpleButton1.Location = new System.Drawing.Point(670, 515);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(76, 22);
-            this.simpleButton1.StyleController = this.layoutControl1;
-            this.simpleButton1.TabIndex = 15;
-            this.simpleButton1.Text = "Xuất hóa đơn";
+            this.btnHoaDon.Location = new System.Drawing.Point(670, 515);
+            this.btnHoaDon.Name = "btnHoaDon";
+            this.btnHoaDon.Size = new System.Drawing.Size(76, 22);
+            this.btnHoaDon.StyleController = this.layoutControl1;
+            this.btnHoaDon.TabIndex = 15;
+            this.btnHoaDon.Text = "Xuất hóa đơn";
+            this.btnHoaDon.Click += new System.EventHandler(this.btnHoaDon_Click);
             // 
             // grDamua
             // 
@@ -205,6 +206,54 @@
             this.gridColumn19});
             this.gridView3.GridControl = this.grDamua;
             this.gridView3.Name = "gridView3";
+            // 
+            // gridColumn14
+            // 
+            this.gridColumn14.Caption = "Mã thực phẩm";
+            this.gridColumn14.FieldName = "IngredientID";
+            this.gridColumn14.Name = "gridColumn14";
+            // 
+            // gridColumn15
+            // 
+            this.gridColumn15.Caption = "Mã yêu cầu";
+            this.gridColumn15.FieldName = "IngredientRequestID";
+            this.gridColumn15.Name = "gridColumn15";
+            // 
+            // gridColumn16
+            // 
+            this.gridColumn16.Caption = "Số lượng";
+            this.gridColumn16.FieldName = "Quantity";
+            this.gridColumn16.Name = "gridColumn16";
+            this.gridColumn16.Visible = true;
+            this.gridColumn16.VisibleIndex = 1;
+            this.gridColumn16.Width = 137;
+            // 
+            // gridColumn17
+            // 
+            this.gridColumn17.Caption = "Tình trạng";
+            this.gridColumn17.FieldName = "Status";
+            this.gridColumn17.Name = "gridColumn17";
+            this.gridColumn17.Visible = true;
+            this.gridColumn17.VisibleIndex = 3;
+            this.gridColumn17.Width = 77;
+            // 
+            // gridColumn18
+            // 
+            this.gridColumn18.Caption = "Tên thực phẩm";
+            this.gridColumn18.FieldName = "Name";
+            this.gridColumn18.Name = "gridColumn18";
+            this.gridColumn18.Visible = true;
+            this.gridColumn18.VisibleIndex = 0;
+            this.gridColumn18.Width = 674;
+            // 
+            // gridColumn19
+            // 
+            this.gridColumn19.Caption = "Đơn vị";
+            this.gridColumn19.FieldName = "Unit";
+            this.gridColumn19.Name = "gridColumn19";
+            this.gridColumn19.Visible = true;
+            this.gridColumn19.VisibleIndex = 2;
+            this.gridColumn19.Width = 124;
             // 
             // btnNguoiYeuCau
             // 
@@ -614,7 +663,7 @@
             // 
             // layoutControlItem1
             // 
-            this.layoutControlItem1.Control = this.simpleButton1;
+            this.layoutControlItem1.Control = this.btnHoaDon;
             this.layoutControlItem1.Location = new System.Drawing.Point(658, 503);
             this.layoutControlItem1.Name = "layoutControlItem1";
             this.layoutControlItem1.Size = new System.Drawing.Size(80, 26);
@@ -678,54 +727,6 @@
             this.emptySpaceItem3.Name = "emptySpaceItem3";
             this.emptySpaceItem3.Size = new System.Drawing.Size(412, 226);
             this.emptySpaceItem3.TextSize = new System.Drawing.Size(0, 0);
-            // 
-            // gridColumn14
-            // 
-            this.gridColumn14.Caption = "Mã thực phẩm";
-            this.gridColumn14.FieldName = "IngredientID";
-            this.gridColumn14.Name = "gridColumn14";
-            // 
-            // gridColumn15
-            // 
-            this.gridColumn15.Caption = "Mã yêu cầu";
-            this.gridColumn15.FieldName = "IngredientRequestID";
-            this.gridColumn15.Name = "gridColumn15";
-            // 
-            // gridColumn16
-            // 
-            this.gridColumn16.Caption = "Số lượng";
-            this.gridColumn16.FieldName = "Quantity";
-            this.gridColumn16.Name = "gridColumn16";
-            this.gridColumn16.Visible = true;
-            this.gridColumn16.VisibleIndex = 1;
-            this.gridColumn16.Width = 137;
-            // 
-            // gridColumn17
-            // 
-            this.gridColumn17.Caption = "Tình trạng";
-            this.gridColumn17.FieldName = "Status";
-            this.gridColumn17.Name = "gridColumn17";
-            this.gridColumn17.Visible = true;
-            this.gridColumn17.VisibleIndex = 3;
-            this.gridColumn17.Width = 77;
-            // 
-            // gridColumn18
-            // 
-            this.gridColumn18.Caption = "Tên thực phẩm";
-            this.gridColumn18.FieldName = "Name";
-            this.gridColumn18.Name = "gridColumn18";
-            this.gridColumn18.Visible = true;
-            this.gridColumn18.VisibleIndex = 0;
-            this.gridColumn18.Width = 674;
-            // 
-            // gridColumn19
-            // 
-            this.gridColumn19.Caption = "Đơn vị";
-            this.gridColumn19.FieldName = "Unit";
-            this.gridColumn19.Name = "gridColumn19";
-            this.gridColumn19.Visible = true;
-            this.gridColumn19.VisibleIndex = 2;
-            this.gridColumn19.Width = 124;
             // 
             // UsYeuCau
             // 
@@ -826,7 +827,7 @@
         private DevExpress.XtraGrid.Views.Grid.GridView gridView3;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem10;
         private DevExpress.XtraEditors.SimpleButton btnHuyMua;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraEditors.SimpleButton btnHoaDon;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem11;
         private DevExpress.XtraEditors.SimpleButton btnMua;
