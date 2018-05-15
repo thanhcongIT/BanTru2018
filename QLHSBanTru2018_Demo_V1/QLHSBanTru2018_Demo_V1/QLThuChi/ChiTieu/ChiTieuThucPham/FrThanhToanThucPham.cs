@@ -102,7 +102,8 @@ namespace QLHSBanTru2018_Demo_V1.QLThuChi.ChiTieu.ChiTieuThucPham
                         }
                     }
                     MessageBox.Show("Lưu thành công");
-                    this.Close();
+                    // in hóa đơn 
+                 
                 }
                 else
                 {

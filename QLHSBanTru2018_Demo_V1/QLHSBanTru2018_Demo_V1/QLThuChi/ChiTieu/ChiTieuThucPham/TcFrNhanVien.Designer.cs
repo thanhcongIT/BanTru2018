@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TcFrNhanVien));
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
-            this.btnThoat = new DevExpress.XtraEditors.SimpleButton();
             this.cbbWard = new System.Windows.Forms.ComboBox();
             this.cbbDistrict = new System.Windows.Forms.ComboBox();
             this.cbbProvince = new System.Windows.Forms.ComboBox();
@@ -77,6 +76,7 @@
             this.ItemForStatus = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem4 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.btnThoat = new DevExpress.XtraEditors.SimpleButton();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
@@ -155,18 +155,6 @@
             this.layoutControl1.Size = new System.Drawing.Size(784, 561);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
-            // 
-            // btnThoat
-            // 
-            this.btnThoat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnThoat.ImageOptions.Image")));
-            this.btnThoat.Location = new System.Drawing.Point(668, 527);
-            this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(104, 22);
-            this.btnThoat.StyleController = this.layoutControl1;
-            this.btnThoat.TabIndex = 35;
-            this.btnThoat.Text = "Thoát";
-            this.btnThoat.Visible = false;
-            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // cbbWard
             // 
@@ -637,6 +625,18 @@
             this.emptySpaceItem1.Name = "emptySpaceItem1";
             this.emptySpaceItem1.Size = new System.Drawing.Size(656, 26);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
+            // 
+            // btnThoat
+            // 
+            this.btnThoat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnThoat.ImageOptions.Image")));
+            this.btnThoat.Location = new System.Drawing.Point(668, 527);
+            this.btnThoat.Name = "btnThoat";
+            this.btnThoat.Size = new System.Drawing.Size(104, 22);
+            this.btnThoat.StyleController = this.layoutControl1;
+            this.btnThoat.TabIndex = 35;
+            this.btnThoat.Text = "Thoát";
+            this.btnThoat.Visible = false;
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // layoutControlItem3
             // 

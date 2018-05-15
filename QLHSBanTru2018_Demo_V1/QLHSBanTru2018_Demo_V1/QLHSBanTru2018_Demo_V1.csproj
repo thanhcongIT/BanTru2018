@@ -116,11 +116,6 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="QLThuChi\ChiTieu\ChiTieuThucPham\CPITQLHSBanTru2018DataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CPITQLHSBanTru2018DataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -826,17 +821,6 @@
       <DependentUpon>WaitForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config" />
-    <None Include="QLThuChi\ChiTieu\ChiTieuThucPham\CPITQLHSBanTru2018DataSet.xsc">
-      <DependentUpon>CPITQLHSBanTru2018DataSet.xsd</DependentUpon>
-    </None>
-    <None Include="QLThuChi\ChiTieu\ChiTieuThucPham\CPITQLHSBanTru2018DataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>CPITQLHSBanTru2018DataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="QLThuChi\ChiTieu\ChiTieuThucPham\CPITQLHSBanTru2018DataSet.xss">
-      <DependentUpon>CPITQLHSBanTru2018DataSet.xsd</DependentUpon>
-    </None>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\DataConnect.Employee.datasource" />
     <None Include="Properties\Settings.settings">

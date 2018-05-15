@@ -239,27 +239,39 @@ namespace QLHSBanTru2018_Demo_V1.QLThuChi.ChiTieu.ChiTieuThucPham
 
         private void btnHoaDon_Click(object sender, EventArgs e)
         {
-            try
+            if (gridView3.RowCount!=0)
             {
-                OrderDetailDAO dt = new OrderDetailDAO();
-                OrderDetailDAO.ListTCOrderDetailViewModle.Clear();
-                for (int i = 0; i < gridView3.RowCount; i++)
+                try
                 {
-                    OrderDetail a = new OrderDetail();
-                    TCOrderDetailViewModle b = new TCOrderDetailViewModle();
-                    a.IngredientID = (int)gridView3.GetRowCellValue(i, gridView3.Columns["IngredientID"]);
-                    a.QuantityOfUnit = (double)gridView3.GetRowCellValue(i, gridView3.Columns["Quantity"]);
-                    b = dt.OrderDetailViewModle(a);
-                    OrderDetailDAO.ListTCOrderDetailViewModle.Add(b);
+                    OrderDetailDAO dt = new OrderDetailDAO();
+                    OrderDetailDAO.ListTCOrderDetailViewModle.Clear();
+                    for (int i = 0; i < gridView3.RowCount; i++)
+                    {
+                        OrderDetail a = new OrderDetail();
+                        TCOrderDetailViewModle b = new TCOrderDetailViewModle();
+                        a.IngredientID = (int)gridView3.GetRowCellValue(i, gridView3.Columns["IngredientID"]);
+                        a.QuantityOfUnit = (double)gridView3.GetRowCellValue(i, gridView3.Columns["Quantity"]);
+                        b = dt.OrderDetailViewModle(a);
+                        OrderDetailDAO.ListTCOrderDetailViewModle.Add(b);
+                    }
+                    FrThanhToanThucPham c = new FrThanhToanThucPham();
+                    c.ShowDialog();
                 }
-                FrThanhToanThucPham c = new FrThanhToanThucPham();
-                c.ShowDialog();
-            }
-            catch 
-            {
+                catch
+                {
 
-              
+
+                }
             }
+           
+        }
+
+        private void gridView1_CustomUnboundColumnData(object sender, DevExpress.XtraGrid.Views.Base.CustomColumnDataEventArgs e)
+        {
+            EmployeeDAO dt = new EmployeeDAO();
+            Employee a = dt.GetByID((int)gridView1.GetRowCellValue(e.ListSourceRowIndex, "CreatedBy"));
+            if (e.Column.FieldName != "TenNhanVien") return;
+            e.Value = a.FirstName+" "+a.LastName;
         }
     }
 }
