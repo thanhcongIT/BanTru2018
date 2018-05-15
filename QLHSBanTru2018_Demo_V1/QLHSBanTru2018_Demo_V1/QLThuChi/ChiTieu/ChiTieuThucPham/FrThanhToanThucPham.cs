@@ -12,6 +12,7 @@ using DataConnect.DAO.ThanhCongTC.ChiTieuThucPham;
 using QLHSBanTru2018_Demo_V1.Common;
 using DataConnect;
 using DataConnect.DAO.HungTD;
+using System.IO;
 
 namespace QLHSBanTru2018_Demo_V1.QLThuChi.ChiTieu.ChiTieuThucPham
 {
@@ -32,6 +33,12 @@ namespace QLHSBanTru2018_Demo_V1.QLThuChi.ChiTieu.ChiTieuThucPham
             LoadChiTietThanhToan();
             Employee a = dt.GetByID(LoginDetail.LoginID);
             txtHoTen.Text = a.FirstName + " " + a.LastName;
+            txtNgaySinh.Text = a.Birthday.Value.ToShortDateString();
+            txtSDT.Text = a.Phone;
+            txtDiaChi.Text = a.AddressDetail;
+            MemoryStream mom = new MemoryStream(a.Image.ToArray());
+            Image img = Image.FromStream(mom);
+            pcAnh.Image = img;
         }
         private void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {

@@ -167,6 +167,7 @@
       <Association Name="Employee_HealthProblem" Member="HealthProblems" ThisKey="EmployeeID" OtherKey="EmployeeID" Type="HealthProblem" />
       <Association Name="Employee_History" Member="Histories" ThisKey="EmployeeID" OtherKey="EmployeeID" Type="History" />
       <Association Name="Employee_IngredientRequest" Member="IngredientRequests" ThisKey="EmployeeID" OtherKey="CreatedBy" Type="IngredientRequest" />
+      <Association Name="Employee_Order" Member="Orders" ThisKey="EmployeeID" OtherKey="EmployeeID" Type="Order" />
       <Association Name="Degree_Employee" Member="Degree" ThisKey="DegreeID" OtherKey="DegreeID" Type="Degree" IsForeignKey="true" />
       <Association Name="EthnicGroup_Employee" Member="EthnicGroup" ThisKey="EthnicGroupID" OtherKey="EthnicGroupID" Type="EthnicGroup" IsForeignKey="true" />
       <Association Name="Location_Employee" Member="Location" ThisKey="LocationID" OtherKey="LocationID" Type="Location" IsForeignKey="true" />
@@ -676,17 +677,6 @@
       <Association Name="AgeGroup_Topic" Member="AgeGroup" ThisKey="AgeGroupID" OtherKey="AgeGroupID" Type="AgeGroup" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.[Order]" Member="Orders">
-    <Type Name="Order">
-      <Column Name="OrderID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="OrderName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="TotalPrice" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
-      <Column Name="Date" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="EmployeeID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Status" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Association Name="Order_OrderDetail" Member="OrderDetails" ThisKey="OrderID" OtherKey="OrderID" Type="OrderDetail" />
-    </Type>
-  </Table>
   <Table Name="dbo.Dish" Member="Dishes">
     <Type Name="Dish">
       <Column Name="DishID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -735,6 +725,18 @@
       <Column Name="Status" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
       <Association Name="Ingredient_OrderDetail" Member="Ingredient" ThisKey="IngredientID" OtherKey="IngredientID" Type="Ingredient" IsForeignKey="true" />
       <Association Name="Order_OrderDetail" Member="Order" ThisKey="OrderID" OtherKey="OrderID" Type="Order" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[Order]" Member="Orders">
+    <Type Name="Order">
+      <Column Name="OrderID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="OrderName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="TotalPrice" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="Date" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="EmployeeID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Status" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="Order_OrderDetail" Member="OrderDetails" ThisKey="OrderID" OtherKey="OrderID" Type="OrderDetail" />
+      <Association Name="Employee_Order" Member="Employee" ThisKey="EmployeeID" OtherKey="EmployeeID" Type="Employee" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>
