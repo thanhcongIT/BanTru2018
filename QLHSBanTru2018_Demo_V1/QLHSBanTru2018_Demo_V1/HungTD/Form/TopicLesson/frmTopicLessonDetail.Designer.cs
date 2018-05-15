@@ -34,7 +34,7 @@
             this.btnCancel = new DevExpress.XtraEditors.SimpleButton();
             this.cbbDisplayOrder = new System.Windows.Forms.ComboBox();
             this.cbbTopicID = new System.Windows.Forms.ComboBox();
-            this.cbbTopicTypeID = new System.Windows.Forms.ComboBox();
+            this.cbbAgeGroupID = new System.Windows.Forms.ComboBox();
             this.txtDescription = new DevExpress.XtraEditors.MemoEdit();
             this.chkActive = new DevExpress.XtraEditors.CheckEdit();
             this.txtName = new DevExpress.XtraEditors.MemoEdit();
@@ -75,7 +75,7 @@
             this.layoutControl1.Controls.Add(this.btnCancel);
             this.layoutControl1.Controls.Add(this.cbbDisplayOrder);
             this.layoutControl1.Controls.Add(this.cbbTopicID);
-            this.layoutControl1.Controls.Add(this.cbbTopicTypeID);
+            this.layoutControl1.Controls.Add(this.cbbAgeGroupID);
             this.layoutControl1.Controls.Add(this.txtDescription);
             this.layoutControl1.Controls.Add(this.chkActive);
             this.layoutControl1.Controls.Add(this.txtName);
@@ -122,26 +122,26 @@
             // 
             this.cbbTopicID.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbTopicID.FormattingEnabled = true;
-            this.cbbTopicID.Location = new System.Drawing.Point(114, 111);
+            this.cbbTopicID.Location = new System.Drawing.Point(114, 110);
             this.cbbTopicID.Name = "cbbTopicID";
             this.cbbTopicID.Size = new System.Drawing.Size(346, 21);
             this.cbbTopicID.TabIndex = 7;
             // 
-            // cbbTopicTypeID
+            // cbbAgeGroupID
             // 
-            this.cbbTopicTypeID.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbbTopicTypeID.FormattingEnabled = true;
-            this.cbbTopicTypeID.Location = new System.Drawing.Point(114, 86);
-            this.cbbTopicTypeID.Name = "cbbTopicTypeID";
-            this.cbbTopicTypeID.Size = new System.Drawing.Size(346, 21);
-            this.cbbTopicTypeID.TabIndex = 5;
-            this.cbbTopicTypeID.SelectedIndexChanged += new System.EventHandler(this.cbbTopicTypeID_SelectedIndexChanged);
+            this.cbbAgeGroupID.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbAgeGroupID.FormattingEnabled = true;
+            this.cbbAgeGroupID.Location = new System.Drawing.Point(114, 85);
+            this.cbbAgeGroupID.Name = "cbbAgeGroupID";
+            this.cbbAgeGroupID.Size = new System.Drawing.Size(346, 21);
+            this.cbbAgeGroupID.TabIndex = 5;
+            this.cbbAgeGroupID.SelectedIndexChanged += new System.EventHandler(this.cbbTopicTypeID_SelectedIndexChanged);
             // 
             // txtDescription
             // 
-            this.txtDescription.Location = new System.Drawing.Point(114, 136);
+            this.txtDescription.Location = new System.Drawing.Point(114, 135);
             this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new System.Drawing.Size(346, 27);
+            this.txtDescription.Size = new System.Drawing.Size(346, 28);
             this.txtDescription.StyleController = this.layoutControl1;
             this.txtDescription.TabIndex = 6;
             // 
@@ -157,7 +157,7 @@
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(114, 43);
+            this.txtName.Location = new System.Drawing.Point(114, 42);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(346, 39);
             this.txtName.StyleController = this.layoutControl1;
@@ -234,7 +234,7 @@
             // 
             // layoutControlItem2
             // 
-            this.layoutControlItem2.Control = this.cbbTopicTypeID;
+            this.layoutControlItem2.Control = this.cbbAgeGroupID;
             this.layoutControlItem2.Location = new System.Drawing.Point(0, 43);
             this.layoutControlItem2.Name = "layoutControlItem2";
             this.layoutControlItem2.Size = new System.Drawing.Size(440, 25);
@@ -255,14 +255,14 @@
             this.layoutControlItem3.Control = this.txtDescription;
             this.layoutControlItem3.Location = new System.Drawing.Point(0, 93);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(440, 31);
+            this.layoutControlItem3.Size = new System.Drawing.Size(440, 32);
             this.layoutControlItem3.Text = "Miêu Tả (Nếu Có):";
             this.layoutControlItem3.TextSize = new System.Drawing.Size(87, 13);
             // 
             // layoutControlItem5
             // 
             this.layoutControlItem5.Control = this.cbbDisplayOrder;
-            this.layoutControlItem5.Location = new System.Drawing.Point(0, 124);
+            this.layoutControlItem5.Location = new System.Drawing.Point(0, 125);
             this.layoutControlItem5.MaxSize = new System.Drawing.Size(232, 25);
             this.layoutControlItem5.MinSize = new System.Drawing.Size(232, 25);
             this.layoutControlItem5.Name = "layoutControlItem5";
@@ -274,7 +274,7 @@
             // emptySpaceItem2
             // 
             this.emptySpaceItem2.AllowHotTrack = false;
-            this.emptySpaceItem2.Location = new System.Drawing.Point(232, 124);
+            this.emptySpaceItem2.Location = new System.Drawing.Point(232, 125);
             this.emptySpaceItem2.Name = "emptySpaceItem2";
             this.emptySpaceItem2.Size = new System.Drawing.Size(208, 25);
             this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
@@ -282,7 +282,7 @@
             // layoutControlItem6
             // 
             this.layoutControlItem6.Control = this.chkActive;
-            this.layoutControlItem6.Location = new System.Drawing.Point(0, 149);
+            this.layoutControlItem6.Location = new System.Drawing.Point(0, 150);
             this.layoutControlItem6.Name = "layoutControlItem6";
             this.layoutControlItem6.Size = new System.Drawing.Size(440, 23);
             this.layoutControlItem6.Text = "Tình Trạng:";
@@ -324,7 +324,7 @@
         private DevExpress.XtraLayout.LayoutControl layoutControl1;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
         private System.Windows.Forms.ComboBox cbbTopicID;
-        private System.Windows.Forms.ComboBox cbbTopicTypeID;
+        private System.Windows.Forms.ComboBox cbbAgeGroupID;
         private DevExpress.XtraEditors.MemoEdit txtDescription;
         private System.Windows.Forms.ComboBox cbbDisplayOrder;
         private DevExpress.XtraEditors.CheckEdit chkActive;

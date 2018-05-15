@@ -17,9 +17,22 @@ namespace DataConnect.DAO.HungTD
             db = new QLHSSmartKidsDataContext();
             dishes = db.GetTable<Dish>();
         }
-        public List<DishViewModel> ListAll()
+        public List<DishFullViewModel> ListAll()
         {
-            return null;
+            var model = from d in dishes
+                        where d.Status.Equals(true)
+                        select new DishFullViewModel
+                        {
+                            DishID = d.DishID,
+                            MealID = d.MealID,
+                            MealName = d.Meal.Name,
+                            AgeGroupID = d.AgeGroupID,
+                            AgeGroupName = d.AgeGroup.Name,
+                            Name = d.Name,
+                            CreatedDate = d.CreatedDate,
+                            CreatedBy = d.CreatedBy
+                        };
+            return model.ToList();
         }
         public Dish GetByID(int dishID)
         {
@@ -31,9 +44,10 @@ namespace DataConnect.DAO.HungTD
             {
                 dishes.InsertOnSubmit(dishEntity);
                 db.SubmitChanges();
-                if (new DishDetailDAO().InsertList(listDishDetailEntity))
+                int a = dishEntity.DishID;
+                if (new DishDetailDAO().InsertList(listDishDetailEntity, dishEntity.DishID))
                 {
-                    return dishEntity.DishID; ;
+                    return dishEntity.DishID;
                 }
                 else
                 {

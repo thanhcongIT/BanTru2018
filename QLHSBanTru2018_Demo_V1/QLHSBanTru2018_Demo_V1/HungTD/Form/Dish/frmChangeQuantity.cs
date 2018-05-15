@@ -46,9 +46,16 @@ namespace QLHSBanTru2018_Demo_V1.HungTD.Form.Dish
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            this.quantity = double.Parse(txtQuantity.Text);
-            DialogResult = DialogResult.OK;
-            this.Close();
+            if (int.Parse(txtQuantity.Text) > 0)
+            {
+                this.quantity = double.Parse(txtQuantity.Text);
+                DialogResult = DialogResult.OK;
+                this.Close();
+            }
+            else
+            {
+                errorProvider1.SetError(txtQuantity, "Lượng sản phẩm phải lớn hơn 0");
+            }
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

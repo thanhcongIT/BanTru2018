@@ -53,9 +53,9 @@ namespace QLHSBanTru2018_Demo_V1.HungTD.Form.TopicLesson
         }
         private void FillTopicTypeID()
         {
-            cbbTopicType.DataSource = new TopicTypeDAO().ListAll();
+            cbbTopicType.DataSource = new AgeGroupDAO().ListAll();
             cbbTopicType.DisplayMember = "Name";
-            cbbTopicType.ValueMember = "TopicTypeID";
+            cbbTopicType.ValueMember = "AgeGroupID";
         }
         private void FillDisplayOrder()
         {
@@ -69,7 +69,7 @@ namespace QLHSBanTru2018_Demo_V1.HungTD.Form.TopicLesson
             {
                 Topic entity = new Topic();
                 entity.Name = txtName.Text;
-                entity.TopicTypeID = int.Parse(cbbTopicType.SelectedValue.ToString());
+                entity.AgeGroupID = int.Parse(cbbTopicType.SelectedValue.ToString());
                 entity.Description = txtDescription.Text;
                 entity.DisplayOrder = int.Parse(cbbDisplayOrder.SelectedIndex.ToString()) + 1;
                 entity.Status = chkActive.Checked;

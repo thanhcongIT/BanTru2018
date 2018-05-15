@@ -24,33 +24,36 @@ namespace DataConnect.DAO.HungTD
         {
             return dishDetails.FirstOrDefault(x => x.DishDetailID.Equals(dishDetailID));
         }
-        public int Insert(DishDetail entity)
+        public int Insert(DishDetail entity, int dishID)
         {
-            try
-            {
-                dishDetails.InsertOnSubmit(entity);
-                db.SubmitChanges();
-                return entity.DishDetailID;
-            }
-            catch
-            {
-                return 0;
-            }
+            DishDetail dishDetail = new DishDetail();
+            dishDetail.DishID = dishID;
+            dishDetail.IngredientID = entity.IngredientID;
+            dishDetail.QuantiyOfUnit = entity.QuantiyOfUnit;
+            dishDetail.Status = entity.Status;
+            dishDetails.InsertOnSubmit(dishDetail);
+            db.SubmitChanges();
+            return dishDetail.DishDetailID;
         }
-        public bool InsertList(List<DishDetail> listDishDetail)
+        public bool InsertList(List<DishDetail> listDishDetail, int dishID)
         {
-            try
+            //try
+            //{
+            //    foreach (DishDetail item in listDishDetail)
+            //    {
+            //        Insert(item, dishID);
+            //    }
+            //    return true;
+            //}
+            //catch
+            //{
+            //    return false;
+            //}
+            foreach (DishDetail item in listDishDetail)
             {
-                foreach (DishDetail item in listDishDetail)
-                {
-                    Insert(item);
-                }
-                return true;
+                Insert(item, dishID);
             }
-            catch
-            {
-                return false;
-            }
+            return true;
         }
         public bool ChangeQuantity(DishDetail entity)
         {

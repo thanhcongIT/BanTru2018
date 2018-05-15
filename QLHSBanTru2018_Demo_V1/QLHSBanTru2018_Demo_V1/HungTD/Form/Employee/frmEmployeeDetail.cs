@@ -84,7 +84,7 @@ namespace QLHSBanTru2018_Demo_V1.HungTD.Form.Employee
         private void btnSave_Click(object sender, EventArgs e)
         {
             if (txtUsername.Text != "" &&
-                (txtPassword.Text != "" || iFunction!=1)&&
+                (txtPassword.Text != "" || iFunction != 1) &&
                 txtFirstName.Text != "" &&
                 txtLastName.Text != "" &&
                 dtBirthday.Text != "" &&
@@ -119,7 +119,7 @@ namespace QLHSBanTru2018_Demo_V1.HungTD.Form.Employee
                 entity.Status = chbStatus.Checked ? true : false;
                 if (iFunction == 1)
                 {
-                    if(new EmployeeDAO().Insert(entity) == true)
+                    if (new EmployeeDAO().Insert(entity) == true)
                     {
                         MessageBox.Show("Thành công!", "Thêm thành công!");
                         DialogResult = DialogResult.OK;
@@ -152,7 +152,7 @@ namespace QLHSBanTru2018_Demo_V1.HungTD.Form.Employee
         }
 
         private void frmEmployeeDetail_Load(object sender, EventArgs e)
-        {            
+        {
             LoadDegreeInfor();
             LoadEthnicGroupInfor();
             LoadReligionInfor();
@@ -254,6 +254,11 @@ namespace QLHSBanTru2018_Demo_V1.HungTD.Form.Employee
             {
                 return null;
             }
+        }
+
+        private void picImage_EditValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
