@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Linq;
+using System.Data.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
@@ -58,9 +59,16 @@ namespace QLHSBanTru2018_Demo_V1.TienBao
         }
         private void LoadPhysicalAssessmentInfor()
         {
-            cmbPhysicalAssessment.DataSource = new PhysicalAssessmentDAO().ListPhysicalAssessment(); ;
-            cmbPhysicalAssessment.DisplayMember = "NamePhysicalAssessment";
-            cmbPhysicalAssessment.ValueMember = "PhysicalAssessmentID";
+            cmbPhysicalAssessment.Properties.DataSource = new PhysicalAssessmentDAO().ListPhysicalAssessment(); ;
+            cmbPhysicalAssessment.Properties.DisplayMember = "NamePhysicalAssessment";
+            cmbPhysicalAssessment.Properties.ValueMember = "PhysicalAssessmentID";
+            cmbPhysicalAssessment.Properties.NullText = "-- Chọn đợt cân đo --";
+        }
+        private void cmbPhysicalAssessment_EditValueChanged(object sender, EventArgs e)
+        {
+            
+            txtPhysicalNote.Text = cmbPhysicalAssessment.GetColumnValue("NotePhysicalAssessment").ToString();
+            dtPhysicalDate.Text = cmbPhysicalAssessment.GetColumnValue("DatePhysicalAssessment").ToString();
         }
         private void FillGridControl(int ClassID, int PhysicalAssessmentID)
         {
@@ -72,29 +80,105 @@ namespace QLHSBanTru2018_Demo_V1.TienBao
             catch
             { }
         }
-              
+
         #endregion
 
+        #region EventClass
+        private void cmbNamHoc_Click(object sender, EventArgs e)
+        {
+            LoadCourseInfor();
+        }
+        private void cmbNamHoc_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                LoadSemesterInfor(int.Parse(cmbNamHoc.SelectedValue.ToString()));
+            }
+            catch
+            { }
+        }
+        private void cmbHocKy_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                LoadGradeInfor(int.Parse(cmbHocKy.SelectedValue.ToString()));
 
+            }
+            catch
+            { }
+        }
+        private void cmbKhoiHoc_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                LoadClassInfor(int.Parse(cmbKhoiLop.SelectedValue.ToString()));
 
+            }
+            catch
+            { }
+        }
 
+        #endregion
 
+        #region Event
+        private void frmPhysicalAssessment_Load(object sender, EventArgs e)
+        {
+            this.Dock = DockStyle.Fill;
+        }
+        private void btnXemChiTiet_Click(object sender, EventArgs e)
+        {
+            if (cmbPhysicalAssessment.SelectedText == null)
+            {
+                XtraMessageBox.Show("Mời bạn chọn đợt cân đo", "Thông báo");
+            }
+            else if (cmbLopHoc.SelectedValue == null)
+            {
+                XtraMessageBox.Show("Mời bạn chọn lớp học", "Thông báo");
+            }
+            else
+            {
+                FillGridControl(int.Parse(cmbLopHoc.SelectedValue.ToString()), int.Parse(cmbPhysicalAssessment.EditValue.ToString()));
+            }
+        }
+        private void btnThemmoi_Click(object sender, EventArgs e)
+        {
 
+            frmPhysicalDetail m_frmPhysicalDetail = new frmPhysicalDetail();
+            m_frmPhysicalDetail.iFunction = 1;
+         //   m_frmPhysicalDetail.Coursetable = new CourseDAO().GetByID(int.Parse(cmbNamHoc.SelectedValue.ToString()));
 
+            m_frmPhysicalDetail.ShowDialog();
+            if (m_frmPhysicalDetail.DialogResult == DialogResult.OK)
+            {
+                FillGridControl(int.Parse(cmbLopHoc.SelectedValue.ToString()), int.Parse(cmbPhysicalAssessment.EditValue.ToString()));
+            }
 
+        }
+        private void btnChinhSua_Click(object sender, EventArgs e)
+        {
+            if (cmbPhysicalAssessment.SelectedText == null)
+            {
+                XtraMessageBox.Show("Mời bạn chọn đợt cân đo", "Thông báo");
 
+            }
+            else if (cmbLopHoc.SelectedValue == null)
+            {
+                XtraMessageBox.Show("Mời bạn chọn lớp học", "Thông báo");
+            }
+            else
+            {
+                frmPhysicalDetail m_frmPhysicalDetail = new frmPhysicalDetail();
+                m_frmPhysicalDetail.iFunction = 2;
+                m_frmPhysicalDetail.m_PhysicalTable = new PhysicalAssessmentDAO().GetByID(int.Parse(cmbPhysicalAssessment.EditValue.ToString()));
 
-
-
-
-
-
-
-
-
-
-
-
+                m_frmPhysicalDetail.ShowDialog();
+                if (m_frmPhysicalDetail.DialogResult == DialogResult.OK)
+                {
+                    FillGridControl(int.Parse(cmbLopHoc.SelectedValue.ToString()), int.Parse(cmbPhysicalAssessment.EditValue.ToString()));
+                }
+            }
+        }
+        #endregion
 
         #region STT
         private void bandedGridView1_CustomDrawRowIndicator(object sender, RowIndicatorCustomDrawEventArgs e)
@@ -137,7 +221,7 @@ namespace QLHSBanTru2018_Demo_V1.TienBao
 
                 }
             }
-            catch 
+            catch
             {
             }
         }
@@ -151,6 +235,12 @@ namespace QLHSBanTru2018_Demo_V1.TienBao
             gridview.IndicatorWidth = Convert.ToInt32(size.Width + 0.999f) + GridPainter.Indicator.ImageSize.Width + 10;
 
         }
+
+
+
+
         #endregion
+
+
     }
 }

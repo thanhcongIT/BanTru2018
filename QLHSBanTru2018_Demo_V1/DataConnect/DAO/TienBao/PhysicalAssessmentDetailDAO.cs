@@ -76,6 +76,8 @@ namespace DataConnect.DAO.TienBao
                             StudentID = s.StudentID,
                             StudentCode = s.StudentCode,
                             FullName = s.FirstName + " " + s.LastName,
+                            Birthday = s.Birthday,
+                            Gender = s.Gender,
                             ClassID = sc.ClassID,
                             ClassName = c.Name,
                         };
