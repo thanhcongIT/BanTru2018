@@ -89,11 +89,11 @@ namespace QLHSBanTru2018_Demo_V1.QLThuChi.ChiTieu.ChiTieuThucPham
                         c.IngredientID = (int)gridView1.GetRowCellValue(i, gridView1.Columns["IngredientID"]);
                         c.PriceOfUnit = (decimal)gridView1.GetRowCellValue(i, gridView1.Columns["PriceOfUnit"]);
                         c.QuantityOfUnit = (int)gridView1.GetRowCellValue(i, "QuantityOfUnit");
-                        c.TotalPrice = decimal.Parse(txtTongTien.Text);
+                        c.TotalPrice = (decimal)gridView1.GetRowCellValue(i, "TotalPrice");
                         c.Status = false;
                         if (dc.Insert(c) == true)
                         {
-
+                           
                         }
                         else
                         {
