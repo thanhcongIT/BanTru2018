@@ -8,6 +8,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using DataConnect.DAO.HungTD;
+using DevExpress.XtraSplashScreen;
+using DevExpress.XtraWaitForm;
 
 namespace QLHSBanTru2018_Demo_V1.HungTD.Form.Dish
 {
@@ -19,18 +22,26 @@ namespace QLHSBanTru2018_Demo_V1.HungTD.Form.Dish
         }
         private void frmDish_Load(object sender, EventArgs e)
         {
+            SplashScreenManager.ShowForm(typeof(TienBao.WaitForm));
             this.Dock = DockStyle.Fill;
             FillCombobox();
+            SplashScreenManager.CloseForm();
         }
 
         private void FillCombobox()
         {
-
+            FillGridControls();
         }
         private void FillGridControls()
         {
-
+            gcMain.DataSource = new DishDAO().ListAll();
+            BindingDetail();
         }
+        private void BindingDetail()
+        {
+            //BindingDetail();
+        }
+
         private void btnAdd_Click(object sender, EventArgs e)
         {
             frmDishDetail frmDD = new frmDishDetail();

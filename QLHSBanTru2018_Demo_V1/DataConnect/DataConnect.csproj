@@ -54,7 +54,6 @@
     <Compile Include="DAO\HungTD\DishDetailDAO.cs" />
     <Compile Include="DAO\HungTD\DivisionDAO.cs" />
     <Compile Include="DAO\HungTD\EmployeeDAO.cs" />
-    <Compile Include="DAO\HungTD\EthenicGroupDAO.cs" />
     <Compile Include="DAO\HungTD\EthnicGroupDAO.cs" />
     <Compile Include="DAO\HungTD\FunctionDAO.cs" />
     <Compile Include="DAO\HungTD\FunctionGroupDAO.cs" />

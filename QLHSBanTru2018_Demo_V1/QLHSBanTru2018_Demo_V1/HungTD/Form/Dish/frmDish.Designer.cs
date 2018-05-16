@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDish));
+            DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager1 = new DevExpress.XtraSplashScreen.SplashScreenManager(this, null, true, true, typeof(System.Windows.Forms.UserControl));
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.btnAdd = new DevExpress.XtraEditors.SimpleButton();
             this.btnEdit = new DevExpress.XtraEditors.SimpleButton();
@@ -39,6 +40,13 @@
             this.textEdit2 = new DevExpress.XtraEditors.TextEdit();
             this.gcMain = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colDishID = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colMealName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colAgeGroupName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCreatedByName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDetail = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.btnDetail = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.Root1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.Root2 = new DevExpress.XtraLayout.LayoutControlGroup();
@@ -60,6 +68,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnDetail)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root2)).BeginInit();
@@ -167,6 +176,8 @@
             this.gcMain.Location = new System.Drawing.Point(25, 51);
             this.gcMain.MainView = this.gridView1;
             this.gcMain.Name = "gcMain";
+            this.gcMain.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.btnDetail});
             this.gcMain.Size = new System.Drawing.Size(452, 444);
             this.gcMain.TabIndex = 12;
             this.gcMain.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -174,9 +185,113 @@
             // 
             // gridView1
             // 
+            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colDishID,
+            this.colName,
+            this.colMealName,
+            this.colAgeGroupName,
+            this.colCreatedByName,
+            this.colDetail});
             this.gridView1.GridControl = this.gcMain;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.ShowGroupPanel = false;
+            // 
+            // colDishID
+            // 
+            this.colDishID.AppearanceCell.Options.UseTextOptions = true;
+            this.colDishID.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colDishID.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.colDishID.AppearanceHeader.Options.UseTextOptions = true;
+            this.colDishID.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colDishID.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.colDishID.Caption = "ID";
+            this.colDishID.FieldName = "DishID";
+            this.colDishID.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
+            this.colDishID.MaxWidth = 40;
+            this.colDishID.MinWidth = 40;
+            this.colDishID.Name = "colDishID";
+            this.colDishID.Visible = true;
+            this.colDishID.VisibleIndex = 0;
+            this.colDishID.Width = 40;
+            // 
+            // colName
+            // 
+            this.colName.AppearanceHeader.Options.UseTextOptions = true;
+            this.colName.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colName.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.colName.Caption = "Tên Món Ăn";
+            this.colName.FieldName = "Name";
+            this.colName.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
+            this.colName.MaxWidth = 500;
+            this.colName.MinWidth = 120;
+            this.colName.Name = "colName";
+            this.colName.Visible = true;
+            this.colName.VisibleIndex = 1;
+            this.colName.Width = 150;
+            // 
+            // colMealName
+            // 
+            this.colMealName.AppearanceHeader.Options.UseTextOptions = true;
+            this.colMealName.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colMealName.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.colMealName.Caption = "Bữa Ăn";
+            this.colMealName.FieldName = "MealName";
+            this.colMealName.MaxWidth = 250;
+            this.colMealName.MinWidth = 100;
+            this.colMealName.Name = "colMealName";
+            this.colMealName.Visible = true;
+            this.colMealName.VisibleIndex = 2;
+            this.colMealName.Width = 100;
+            // 
+            // colAgeGroupName
+            // 
+            this.colAgeGroupName.AppearanceHeader.Options.UseTextOptions = true;
+            this.colAgeGroupName.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colAgeGroupName.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.colAgeGroupName.Caption = "Nhóm Tuổi";
+            this.colAgeGroupName.FieldName = "AgeGroupName";
+            this.colAgeGroupName.MaxWidth = 250;
+            this.colAgeGroupName.MinWidth = 100;
+            this.colAgeGroupName.Name = "colAgeGroupName";
+            this.colAgeGroupName.Visible = true;
+            this.colAgeGroupName.VisibleIndex = 3;
+            this.colAgeGroupName.Width = 100;
+            // 
+            // colCreatedByName
+            // 
+            this.colCreatedByName.AppearanceHeader.Options.UseTextOptions = true;
+            this.colCreatedByName.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colCreatedByName.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.colCreatedByName.Caption = "Người Tạo Món";
+            this.colCreatedByName.FieldName = "CreatedByName";
+            this.colCreatedByName.MaxWidth = 250;
+            this.colCreatedByName.MinWidth = 100;
+            this.colCreatedByName.Name = "colCreatedByName";
+            this.colCreatedByName.Visible = true;
+            this.colCreatedByName.VisibleIndex = 4;
+            this.colCreatedByName.Width = 100;
+            // 
+            // colDetail
+            // 
+            this.colDetail.AppearanceHeader.Options.UseTextOptions = true;
+            this.colDetail.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colDetail.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.colDetail.ColumnEdit = this.btnDetail;
+            this.colDetail.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Right;
+            this.colDetail.MaxWidth = 60;
+            this.colDetail.MinWidth = 40;
+            this.colDetail.Name = "colDetail";
+            this.colDetail.Visible = true;
+            this.colDetail.VisibleIndex = 5;
+            this.colDetail.Width = 40;
+            // 
+            // btnDetail
+            // 
+            this.btnDetail.AutoHeight = false;
+            this.btnDetail.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Search)});
+            this.btnDetail.Name = "btnDetail";
+            this.btnDetail.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             // 
             // layoutControlGroup1
             // 
@@ -359,6 +474,10 @@
             this.layoutControlItem8.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem8.TextVisible = false;
             // 
+            // splashScreenManager1
+            // 
+            splashScreenManager1.ClosingDelay = 3000;
+            // 
             // frmDish
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -373,6 +492,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcMain)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnDetail)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root2)).EndInit();
@@ -419,5 +539,12 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem7;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem8;
+        private DevExpress.XtraGrid.Columns.GridColumn colDishID;
+        private DevExpress.XtraGrid.Columns.GridColumn colName;
+        private DevExpress.XtraGrid.Columns.GridColumn colMealName;
+        private DevExpress.XtraGrid.Columns.GridColumn colAgeGroupName;
+        private DevExpress.XtraGrid.Columns.GridColumn colCreatedByName;
+        private DevExpress.XtraGrid.Columns.GridColumn colDetail;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnDetail;
     }
 }

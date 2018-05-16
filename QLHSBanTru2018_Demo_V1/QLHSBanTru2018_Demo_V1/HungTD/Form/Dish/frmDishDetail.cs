@@ -85,10 +85,6 @@ namespace QLHSBanTru2018_Demo_V1.HungTD.Form.Dish
                 dish.AgeGroupID = int.Parse(cbbAgeGroup.SelectedValue.ToString());
                 dish.CreatedBy = LoginDetail.LoginID;
                 dish.CreatedDate = DateTime.Now;
-                if (Stream() != null)
-                {
-                    dish.Image = Stream().ToArray();
-                }
                 dish.Status = chkStatus.Checked;
 
                 if (iFuntion == 1)
@@ -194,19 +190,6 @@ namespace QLHSBanTru2018_Demo_V1.HungTD.Form.Dish
             if (ofd.ShowDialog() == DialogResult.OK)
             {
                 picDescription.Image = Image.FromFile(ofd.FileName);
-            }
-        }
-        private MemoryStream Stream()
-        {
-            try
-            {
-                MemoryStream stream = new MemoryStream();
-                picDescription.Image.Save(stream, ImageFormat.Jpeg);
-                return stream;
-            }
-            catch
-            {
-                return null;
             }
         }
     }
