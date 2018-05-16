@@ -153,7 +153,7 @@ namespace QLHSBanTru2018_Demo_V1.TienBao
                         entity2.Weight = int.Parse(bandedGridView1.GetRowCellValue(0, "Weight").ToString());
                         entity2.HeightRating = bandedGridView1.GetRowCellValue(0, "HeightRating").ToString();
                         entity2.WeightRating = bandedGridView1.GetRowCellValue(0, "WeightRating").ToString();
-                        entity2.OtherRating = "tốt";
+                        //entity2.OtherRating = "tốt";
                         entity2.Note = bandedGridView1.GetRowCellValue(0, "Note").ToString();
                         entity2.Status = true;
                         m_PhysicalDetailDAO.PhysicalDetailInsert(entity2);
@@ -176,7 +176,7 @@ namespace QLHSBanTru2018_Demo_V1.TienBao
                     entity2.Weight = int.Parse(bandedGridView1.GetRowCellValue(0, "Weight").ToString());
                     entity2.HeightRating = bandedGridView1.GetRowCellValue(0, "HeightRating").ToString();
                     entity2.WeightRating = bandedGridView1.GetRowCellValue(0, "WeightRating").ToString();
-                    entity2.OtherRating = "tốt";
+                    //entity2.OtherRating = "tốt";
                     entity2.Note = bandedGridView1.GetRowCellValue(0, "Note").ToString();
                     entity2.Status = true;
                     if (m_PhysicalDAO.PhysicalUpdate(entity) == true && m_PhysicalDetailDAO.PhysicalDetailUpdate(entity2) == true)

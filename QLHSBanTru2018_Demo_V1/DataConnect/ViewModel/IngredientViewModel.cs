@@ -18,7 +18,7 @@ namespace DataConnect.ViewModel
         public double Fat { get; set; }
         public double Glucose { get; set; }
         public double Fiber { get; set; }
-        public double Canxi { get; set; }
+        public double? Canxi { get; set; }
         public double Iron { get; set; }
         public double Photpho { get; set; }
         public double Kali { get; set; }

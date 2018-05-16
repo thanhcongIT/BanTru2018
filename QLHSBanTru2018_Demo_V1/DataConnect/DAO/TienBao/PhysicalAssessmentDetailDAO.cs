@@ -51,7 +51,7 @@ namespace DataConnect.DAO.TienBao
                             Weight = phd.Weight,
                             HeightRating = phd.HeightRating,
                             WeightRating = phd.WeightRating,
-                            OtherRating = phd.OtherRating,
+                            //OtherRating = phd.OtherRating,
                             NoteDetail = phd.Note,
                             StatusPhysicalAssessmentDetail = phd.Status
                         };
@@ -111,7 +111,7 @@ namespace DataConnect.DAO.TienBao
                 model.Weight = entity.Weight;
                 model.HeightRating = entity.HeightRating;
                 model.WeightRating = entity.WeightRating;
-                model.OtherRating = entity.OtherRating;
+                //model.OtherRating = entity.OtherRating;
                 model.Note = entity.Note;
                 model.Status = entity.Status;
 

@@ -45,7 +45,7 @@ namespace QLHSBanTru2018_Demo_V1.TienBao
                 DataConnect.HealthExaminationDetail entity = new DataConnect.HealthExaminationDetail();
                 entity.StudentID = int.Parse(Student.StudentID.ToString());                
                 entity.HealthExaminationID = int.Parse(healthExamination.HealthExaminationID.ToString());
-                entity.HealthInsurance = 1;
+                //entity.HealthInsurance = 1;
                 entity.Height = int.Parse(txtHeight.Text);
                 entity.Weight = int.Parse(txtWeight.Text);
                 entity.Eyes = cmbEyesRating.Text;
