@@ -316,15 +316,15 @@ namespace QLHSBanTru2018_Demo_V1.QLThuChi
                     worksheet.Cells[10 + i, 3] = gridView1.GetRowCellValue(i, gridView1.Columns["FirstName"]);
                     worksheet.Cells[10 + i, 4] = gridView1.GetRowCellValue(i, gridView1.Columns["LastName"]);
                     worksheet.Cells[10 + i, 5] = gridView1.GetRowCellValue(i, gridView1.Columns["Birthday"]);
-                    if ((bool)gridView1.GetRowCellValue(i, gridView1.Columns["Gender"]) == true)
-                    {
-                        worksheet.Cells[10 + i, 6] = "Nam";
-                    }
-                    else
-                    {
-                        worksheet.Cells[10 + i, 6] = "Nữ";
-                    }
-                    //worksheet.Cells[10 + i, 6] = gridView1.GetRowCellValue(i, gridView1.Columns["Gender"]);
+                    //if ((bool)gridView1.GetRowCellValue(i, gridView1.Columns["Gender"]) == true)
+                    //{
+                    //    worksheet.Cells[10 + i, 6] = "Nam";
+                    //}
+                    //else
+                    //{
+                    //    worksheet.Cells[10 + i, 6] = "Nữ";
+                    //}
+                    worksheet.Cells[10 + i, 6] = gridView1.GetRowCellValue(i, gridView1.Columns["Gender"]);
                     worksheet.Cells[10 + i, 7] = gridView1.GetRowCellValue(i, gridView1.Columns["AdressDetail"]);
                     worksheet.Cells[10 + i, 8] = gridView1.GetRowCellValue(i, gridView1.Columns["tinhtrang"]);
                     #endregion---thong tin hoc sinh------
