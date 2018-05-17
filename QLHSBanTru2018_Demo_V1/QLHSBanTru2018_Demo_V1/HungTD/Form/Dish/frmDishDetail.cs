@@ -31,6 +31,14 @@ namespace QLHSBanTru2018_Demo_V1.HungTD.Form.Dish
         {
             this.dish = new DishDAO().GetByID(dishID);
         }
+        public void setDishDetail(int dishID)
+        {
+            this.dishDetails = new DishDetailDAO().GetByDishID(dishID);
+        }
+        public void setDishDetailViewModels(int dishID)
+        {
+            this.dishDetailViewModels = new DishDetailDAO().GetDishDetailViewModels(dishID);
+        }
         public void setTitle(string title)
         {
             this.Text = title;
@@ -43,10 +51,27 @@ namespace QLHSBanTru2018_Demo_V1.HungTD.Form.Dish
         private void frmDishDetail_Load(object sender, EventArgs e)
         {
             FillCombobox();
-            txtCreatedBy.Text = LoginDetail.LoginName;
-            dishDetails = new List<DataConnect.DishDetail>();
-            dishDetailViewModels = new List<DishDetailViewModel>();
-            dish = new DataConnect.Dish();
+            if (iFuntion == 2)
+            {
+                LoadDetail();
+            }
+            else
+            {
+                txtCreatedBy.Text = LoginDetail.LoginName;
+                dishDetails = new List<DataConnect.DishDetail>();
+                dishDetailViewModels = new List<DishDetailViewModel>();
+                dish = new DataConnect.Dish();
+            }
+        }
+        private void LoadDetail()
+        {
+            gcRight.DataSource = null;
+            gcRight.DataSource = dishDetailViewModels;
+
+            txtName.Text = dish.Name;
+            txtCreatedBy.Text = dish.Employee.FirstName + " " + dish.Employee.LastName;
+            cbbAgeGroup.SelectedValue = dish.AgeGroupID;
+            cbbMeal.SelectedValue = dish.MealID;
         }
         private void FillCombobox()
         {
@@ -77,7 +102,7 @@ namespace QLHSBanTru2018_Demo_V1.HungTD.Form.Dish
 
         private void btnNext_Click(object sender, EventArgs e)
         {
-            if (dishDetails != null || dishDetails.Count() > 0 || txtName.Text != "")
+            if (dishDetails != null && dishDetails.Count() > 0 && txtName.Text != "")
             {
                 //Hoàn tất
                 dish.Name = txtName.Text;
@@ -102,9 +127,14 @@ namespace QLHSBanTru2018_Demo_V1.HungTD.Form.Dish
                 }
                 else if (iFuntion == 2)
                 {
+                    dish.DishID = dish.DishID;
 
                 }
                 this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Xin lỗi!", "Mời bạn nhập đầy đủ thông tin!");
             }
         }
 

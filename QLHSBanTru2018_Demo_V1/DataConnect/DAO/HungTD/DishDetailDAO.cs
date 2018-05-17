@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DataConnect.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Data.Linq;
 using System.Linq;
@@ -55,7 +56,7 @@ namespace DataConnect.DAO.HungTD
             }
             return true;
         }
-        public bool ChangeQuantity(DishDetail entity)
+        public bool Update(DishDetail entity)
         {
             try
             {
@@ -75,7 +76,7 @@ namespace DataConnect.DAO.HungTD
             {
                 foreach (DishDetail item in listDishDetail)
                 {
-                    ChangeQuantity(item);
+                    Update(item);
                 }
                 return true;
             }
@@ -96,6 +97,31 @@ namespace DataConnect.DAO.HungTD
             catch
             {
                 return false;
+            }
+        }
+
+        public List<DishDetailViewModel> GetDishDetailViewModels(int dishID)
+        {
+            try
+            {
+                Table<Ingredient> ingredients = db.GetTable<Ingredient>();
+                var model = from d in dishDetails
+                            join i in ingredients
+                            on d.IngredientID equals i.IngredientID
+                            where d.DishID == dishID
+                            select new DishDetailViewModel
+                            {
+                                DishID = d.DishID,
+                                IngredientID = d.IngredientID,
+                                IngredientName = i.Name,
+                                QuantityOfUnit = d.QuantiyOfUnit,
+                                Status = d.Status
+                            };
+                return model.ToList();
+            }
+            catch
+            {
+                return null;
             }
         }
 
