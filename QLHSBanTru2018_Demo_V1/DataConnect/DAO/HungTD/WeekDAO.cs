@@ -45,7 +45,19 @@ namespace DataConnect.DAO.HungTD
         {
             try
             {
-                int iWeekIndex = 1;
+                int iWeekIndex = 2;
+                Week w = new Week();
+                w.CourseID = course.CourseID;
+                w.WeekIndex = 1;
+                w.StartDate = course.StartDate;
+                for(DateTime d = course.StartDate; d<=d.AddDays(7);d = d.AddDays(1))
+                {
+                    if (d.DayOfWeek == DayOfWeek.Sunday)
+                        w.EndDate = d;
+                }
+                w.Status = true;
+                Insert(w);
+
                 for (DateTime date = course.StartDate; date.Date <= course.EndDate; date = date.AddDays(1))
                 {
                     if (date.DayOfWeek == DayOfWeek.Monday)
