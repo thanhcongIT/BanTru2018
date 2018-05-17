@@ -16,6 +16,7 @@ namespace DataConnect.DAO.ThanhCongTC.ChiTieuThucPham
             a.OrderName = order.OrderName;
             a.Date = order.Date;
             a.EmployeeID = order.EmployeeID;
+            a.TotalPrice = order.TotalPrice;
             a.Status = order.Status;
             dt.Orders.InsertOnSubmit(a);
             dt.SubmitChanges();
