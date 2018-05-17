@@ -70,13 +70,16 @@ namespace DataConnect.DAO.HungTD
                 return false;
             }
         }
-        public bool ChangeQuantityList(List<DishDetail> listDishDetail)
+        public bool Update(List<DishDetail> listDishDetail)
         {
             try
             {
                 foreach (DishDetail item in listDishDetail)
                 {
-                    Update(item);
+                    if (!Update(item))
+                    {
+                        break;
+                    }
                 }
                 return true;
             }

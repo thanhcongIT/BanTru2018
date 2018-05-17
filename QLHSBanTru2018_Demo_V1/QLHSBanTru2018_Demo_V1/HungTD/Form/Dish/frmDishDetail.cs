@@ -116,7 +116,7 @@ namespace QLHSBanTru2018_Demo_V1.HungTD.Form.Dish
                 {
                     if (new DishDAO().Insert(dish, dishDetails) > 0)
                     {
-                        MessageBox.Show("Thành công!", "Thêm thành công!");
+                        MessageBox.Show("Thành công!", "Thêm món ăn thành công!");
                         DialogResult = DialogResult.OK;
                         this.Close();
                     }
@@ -128,6 +128,16 @@ namespace QLHSBanTru2018_Demo_V1.HungTD.Form.Dish
                 else if (iFuntion == 2)
                 {
                     dish.DishID = dish.DishID;
+                    if(new DishDAO().Update(dish, dishDetails))
+                    {
+                        MessageBox.Show("Thành công!", "Chỉnh sửa món ăn thành công!");
+                        DialogResult = DialogResult.OK;
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Xin lỗi!", "Hệ thống đã xảy ra lỗi");
+                    }
 
                 }
                 this.Close();
@@ -186,17 +196,33 @@ namespace QLHSBanTru2018_Demo_V1.HungTD.Form.Dish
                 DataConnect.DishDetail entity = new DishDetail();
                 entity.DishID = 0;
                 entity.IngredientID = frmCQ.getIngredient().IngredientID;
-                entity.QuantiyOfUnit = frmCQ.getQuantity();
                 entity.Status = true;
-                dishDetails.Add(entity);
+                entity.QuantiyOfUnit = frmCQ.getQuantity();
+
+                if (dishDetails.FindAll(x => x.IngredientID.Equals(entity.IngredientID)).Count > 0)
+                {
+                    dishDetails.FindLast(x => x.IngredientID.Equals(entity.IngredientID)).QuantiyOfUnit += entity.QuantiyOfUnit;
+                }
+                else
+                {
+                    dishDetails.Add(entity);
+                }
 
                 DishDetailViewModel entity2 = new DishDetailViewModel();
                 entity2.DishID = 0;
                 entity2.IngredientID = frmCQ.getIngredient().IngredientID;
                 entity2.IngredientName = frmCQ.getIngredient().Name;
-                entity2.QuantityOfUnit = frmCQ.getQuantity();
                 entity2.Status = true;
-                dishDetailViewModels.Add(entity2);
+                entity2.QuantityOfUnit = frmCQ.getQuantity();
+
+                if (dishDetailViewModels.FindAll(x => x.IngredientID.Equals(entity2.IngredientID)).Count > 0)
+                {
+                    dishDetailViewModels.FindLast(x => x.IngredientID.Equals(entity2.IngredientID)).QuantityOfUnit += entity2.QuantityOfUnit;
+                }
+                else
+                {
+                    dishDetailViewModels.Add(entity2);
+                }
 
                 gcRight.DataSource = null;
                 gcRight.DataSource = dishDetailViewModels;
