@@ -57,6 +57,9 @@ namespace DataConnect
     partial void InsertDailyTask(DailyTask instance);
     partial void UpdateDailyTask(DailyTask instance);
     partial void DeleteDailyTask(DailyTask instance);
+    partial void InsertDateOfDate(DateOfDate instance);
+    partial void UpdateDateOfDate(DateOfDate instance);
+    partial void DeleteDateOfDate(DateOfDate instance);
     partial void InsertDateOfEntry(DateOfEntry instance);
     partial void UpdateDateOfEntry(DateOfEntry instance);
     partial void DeleteDateOfEntry(DateOfEntry instance);
@@ -195,9 +198,9 @@ namespace DataConnect
     partial void InsertTrackingUpLate(TrackingUpLate instance);
     partial void UpdateTrackingUpLate(TrackingUpLate instance);
     partial void DeleteTrackingUpLate(TrackingUpLate instance);
-    partial void InsertWeeklyMenu(WeeklyMenu instance);
-    partial void UpdateWeeklyMenu(WeeklyMenu instance);
-    partial void DeleteWeeklyMenu(WeeklyMenu instance);
+    partial void InsertWeek(Week instance);
+    partial void UpdateWeek(Week instance);
+    partial void DeleteWeek(Week instance);
     #endregion
 		
 		public QLHSSmartKidsDataContext() : 
@@ -299,6 +302,14 @@ namespace DataConnect
 			get
 			{
 				return this.GetTable<DailyTask>();
+			}
+		}
+		
+		public System.Data.Linq.Table<DateOfDate> DateOfDates
+		{
+			get
+			{
+				return this.GetTable<DateOfDate>();
 			}
 		}
 		
@@ -670,11 +681,11 @@ namespace DataConnect
 			}
 		}
 		
-		public System.Data.Linq.Table<WeeklyMenu> WeeklyMenus
+		public System.Data.Linq.Table<Week> Weeks
 		{
 			get
 			{
-				return this.GetTable<WeeklyMenu>();
+				return this.GetTable<Week>();
 			}
 		}
 	}
@@ -1849,6 +1860,8 @@ namespace DataConnect
 		
 		private EntitySet<Semester> _Semesters;
 		
+		private EntitySet<Week> _Weeks;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -1870,6 +1883,7 @@ namespace DataConnect
 			this._CourseTasks = new EntitySet<CourseTask>(new Action<CourseTask>(this.attach_CourseTasks), new Action<CourseTask>(this.detach_CourseTasks));
 			this._Invoices = new EntitySet<Invoice>(new Action<Invoice>(this.attach_Invoices), new Action<Invoice>(this.detach_Invoices));
 			this._Semesters = new EntitySet<Semester>(new Action<Semester>(this.attach_Semesters), new Action<Semester>(this.detach_Semesters));
+			this._Weeks = new EntitySet<Week>(new Action<Week>(this.attach_Weeks), new Action<Week>(this.detach_Weeks));
 			OnCreated();
 		}
 		
@@ -2012,6 +2026,19 @@ namespace DataConnect
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Course_Week", Storage="_Weeks", ThisKey="CourseID", OtherKey="CourseID")]
+		public EntitySet<Week> Weeks
+		{
+			get
+			{
+				return this._Weeks;
+			}
+			set
+			{
+				this._Weeks.Assign(value);
+			}
+		}
+		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -2063,6 +2090,18 @@ namespace DataConnect
 		}
 		
 		private void detach_Semesters(Semester entity)
+		{
+			this.SendPropertyChanging();
+			entity.Course = null;
+		}
+		
+		private void attach_Weeks(Week entity)
+		{
+			this.SendPropertyChanging();
+			entity.Course = this;
+		}
+		
+		private void detach_Weeks(Week entity)
 		{
 			this.SendPropertyChanging();
 			entity.Course = null;
@@ -2391,7 +2430,7 @@ namespace DataConnect
 		
 		private string _Name;
 		
-		private int _WeeklyMenuID;
+		private int _WeekID;
 		
 		private System.DateTime _Date;
 		
@@ -2401,7 +2440,7 @@ namespace DataConnect
 		
 		private EntitySet<DailyMenuDetail> _DailyMenuDetails;
 		
-		private EntityRef<WeeklyMenu> _WeeklyMenu;
+		private EntityRef<Week> _Week;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -2411,8 +2450,8 @@ namespace DataConnect
     partial void OnDailyMenuIDChanged();
     partial void OnNameChanging(string value);
     partial void OnNameChanged();
-    partial void OnWeeklyMenuIDChanging(int value);
-    partial void OnWeeklyMenuIDChanged();
+    partial void OnWeekIDChanging(int value);
+    partial void OnWeekIDChanged();
     partial void OnDateChanging(System.DateTime value);
     partial void OnDateChanged();
     partial void OnIsFormChanging(bool value);
@@ -2424,7 +2463,7 @@ namespace DataConnect
 		public DailyMenu()
 		{
 			this._DailyMenuDetails = new EntitySet<DailyMenuDetail>(new Action<DailyMenuDetail>(this.attach_DailyMenuDetails), new Action<DailyMenuDetail>(this.detach_DailyMenuDetails));
-			this._WeeklyMenu = default(EntityRef<WeeklyMenu>);
+			this._Week = default(EntityRef<Week>);
 			OnCreated();
 		}
 		
@@ -2468,26 +2507,26 @@ namespace DataConnect
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_WeeklyMenuID", DbType="Int NOT NULL")]
-		public int WeeklyMenuID
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_WeekID", DbType="Int NOT NULL")]
+		public int WeekID
 		{
 			get
 			{
-				return this._WeeklyMenuID;
+				return this._WeekID;
 			}
 			set
 			{
-				if ((this._WeeklyMenuID != value))
+				if ((this._WeekID != value))
 				{
-					if (this._WeeklyMenu.HasLoadedOrAssignedValue)
+					if (this._Week.HasLoadedOrAssignedValue)
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
-					this.OnWeeklyMenuIDChanging(value);
+					this.OnWeekIDChanging(value);
 					this.SendPropertyChanging();
-					this._WeeklyMenuID = value;
-					this.SendPropertyChanged("WeeklyMenuID");
-					this.OnWeeklyMenuIDChanged();
+					this._WeekID = value;
+					this.SendPropertyChanged("WeekID");
+					this.OnWeekIDChanged();
 				}
 			}
 		}
@@ -2565,36 +2604,36 @@ namespace DataConnect
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="WeeklyMenu_DailyMenu", Storage="_WeeklyMenu", ThisKey="WeeklyMenuID", OtherKey="WeeklyMenuID", IsForeignKey=true)]
-		public WeeklyMenu WeeklyMenu
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Week_DailyMenu", Storage="_Week", ThisKey="WeekID", OtherKey="WeekID", IsForeignKey=true)]
+		public Week Week
 		{
 			get
 			{
-				return this._WeeklyMenu.Entity;
+				return this._Week.Entity;
 			}
 			set
 			{
-				WeeklyMenu previousValue = this._WeeklyMenu.Entity;
+				Week previousValue = this._Week.Entity;
 				if (((previousValue != value) 
-							|| (this._WeeklyMenu.HasLoadedOrAssignedValue == false)))
+							|| (this._Week.HasLoadedOrAssignedValue == false)))
 				{
 					this.SendPropertyChanging();
 					if ((previousValue != null))
 					{
-						this._WeeklyMenu.Entity = null;
+						this._Week.Entity = null;
 						previousValue.DailyMenus.Remove(this);
 					}
-					this._WeeklyMenu.Entity = value;
+					this._Week.Entity = value;
 					if ((value != null))
 					{
 						value.DailyMenus.Add(this);
-						this._WeeklyMenuID = value.WeeklyMenuID;
+						this._WeekID = value.WeekID;
 					}
 					else
 					{
-						this._WeeklyMenuID = default(int);
+						this._WeekID = default(int);
 					}
-					this.SendPropertyChanged("WeeklyMenu");
+					this.SendPropertyChanged("Week");
 				}
 			}
 		}
@@ -2875,7 +2914,7 @@ namespace DataConnect
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DailyTaskID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DailyTaskID", AutoSync=AutoSync.Always, DbType="Int NOT NULL IDENTITY", IsDbGenerated=true)]
 		public int DailyTaskID
 		{
 			get
@@ -2895,7 +2934,7 @@ namespace DataConnect
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StudentID", DbType="Int NOT NULL")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StudentID", DbType="Int NOT NULL", IsPrimaryKey=true)]
 		public int StudentID
 		{
 			get
@@ -2959,7 +2998,7 @@ namespace DataConnect
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DateTask", DbType="NChar(20)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DateTask", DbType="NChar(20) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
 		public string DateTask
 		{
 			get
@@ -3087,6 +3126,68 @@ namespace DataConnect
 						this._StudentID = default(int);
 					}
 					this.SendPropertyChanged("Student");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.DateOfDate")]
+	public partial class DateOfDate : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private string _DateOfEntry;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnDateOfEntryChanging(string value);
+    partial void OnDateOfEntryChanged();
+    #endregion
+		
+		public DateOfDate()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DateOfEntry", DbType="NChar(10) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string DateOfEntry
+		{
+			get
+			{
+				return this._DateOfEntry;
+			}
+			set
+			{
+				if ((this._DateOfEntry != value))
+				{
+					this.OnDateOfEntryChanging(value);
+					this.SendPropertyChanging();
+					this._DateOfEntry = value;
+					this.SendPropertyChanged("DateOfEntry");
+					this.OnDateOfEntryChanged();
 				}
 			}
 		}
@@ -8537,7 +8638,7 @@ namespace DataConnect
 		
 		private double _Fiber;
 		
-		private System.Nullable<double> _Canxi;
+		private double _Canxi;
 		
 		private double _Iron;
 		
@@ -8589,7 +8690,7 @@ namespace DataConnect
     partial void OnGlucoseChanged();
     partial void OnFiberChanging(double value);
     partial void OnFiberChanged();
-    partial void OnCanxiChanging(System.Nullable<double> value);
+    partial void OnCanxiChanging(double value);
     partial void OnCanxiChanged();
     partial void OnIronChanging(double value);
     partial void OnIronChanged();
@@ -8806,8 +8907,8 @@ namespace DataConnect
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Canxi", DbType="Float")]
-		public System.Nullable<double> Canxi
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Canxi", DbType="Float NOT NULL")]
+		public double Canxi
 		{
 			get
 			{
@@ -14324,8 +14425,6 @@ namespace DataConnect
 		
 		private EntitySet<StudentParent> _StudentParents;
 		
-		private EntitySet<TrackingUpLate> _TrackingUpLates;
-		
 		private EntityRef<Preferred> _Preferred;
 		
     #region Extensibility Method Definitions
@@ -14384,7 +14483,6 @@ namespace DataConnect
 			this._Student_Classes = new EntitySet<Student_Class>(new Action<Student_Class>(this.attach_Student_Classes), new Action<Student_Class>(this.detach_Student_Classes));
 			this._Student_Lessons = new EntitySet<Student_Lesson>(new Action<Student_Lesson>(this.attach_Student_Lessons), new Action<Student_Lesson>(this.detach_Student_Lessons));
 			this._StudentParents = new EntitySet<StudentParent>(new Action<StudentParent>(this.attach_StudentParents), new Action<StudentParent>(this.detach_StudentParents));
-			this._TrackingUpLates = new EntitySet<TrackingUpLate>(new Action<TrackingUpLate>(this.attach_TrackingUpLates), new Action<TrackingUpLate>(this.detach_TrackingUpLates));
 			this._Preferred = default(EntityRef<Preferred>);
 			OnCreated();
 		}
@@ -14903,19 +15001,6 @@ namespace DataConnect
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Student_TrackingUpLate", Storage="_TrackingUpLates", ThisKey="StudentID", OtherKey="StudentID")]
-		public EntitySet<TrackingUpLate> TrackingUpLates
-		{
-			get
-			{
-				return this._TrackingUpLates;
-			}
-			set
-			{
-				this._TrackingUpLates.Assign(value);
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Preferred_Student", Storage="_Preferred", ThisKey="PreferredID", OtherKey="PreferredID", IsForeignKey=true)]
 		public Preferred Preferred
 		{
@@ -15085,18 +15170,6 @@ namespace DataConnect
 		}
 		
 		private void detach_StudentParents(StudentParent entity)
-		{
-			this.SendPropertyChanging();
-			entity.Student = null;
-		}
-		
-		private void attach_TrackingUpLates(TrackingUpLate entity)
-		{
-			this.SendPropertyChanging();
-			entity.Student = this;
-		}
-		
-		private void detach_TrackingUpLates(TrackingUpLate entity)
 		{
 			this.SendPropertyChanging();
 			entity.Student = null;
@@ -16157,8 +16230,6 @@ namespace DataConnect
 		
 		private string _Note;
 		
-		private EntityRef<Student> _Student;
-		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -16189,7 +16260,6 @@ namespace DataConnect
 		
 		public TrackingUpLate()
 		{
-			this._Student = default(EntityRef<Student>);
 			OnCreated();
 		}
 		
@@ -16224,10 +16294,6 @@ namespace DataConnect
 			{
 				if ((this._StudentID != value))
 				{
-					if (this._Student.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
 					this.OnStudentIDChanging(value);
 					this.SendPropertyChanging();
 					this._StudentID = value;
@@ -16417,40 +16483,6 @@ namespace DataConnect
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Student_TrackingUpLate", Storage="_Student", ThisKey="StudentID", OtherKey="StudentID", IsForeignKey=true)]
-		public Student Student
-		{
-			get
-			{
-				return this._Student.Entity;
-			}
-			set
-			{
-				Student previousValue = this._Student.Entity;
-				if (((previousValue != value) 
-							|| (this._Student.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Student.Entity = null;
-						previousValue.TrackingUpLates.Remove(this);
-					}
-					this._Student.Entity = value;
-					if ((value != null))
-					{
-						value.TrackingUpLates.Add(this);
-						this._StudentID = value.StudentID;
-					}
-					else
-					{
-						this._StudentID = default(int);
-					}
-					this.SendPropertyChanged("Student");
-				}
-			}
-		}
-		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -16472,15 +16504,17 @@ namespace DataConnect
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.WeeklyMenu")]
-	public partial class WeeklyMenu : INotifyPropertyChanging, INotifyPropertyChanged
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Week")]
+	public partial class Week : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private int _WeeklyMenuID;
+		private int _WeekID;
 		
-		private string _Name;
+		private int _CourseID;
+		
+		private int _WeekIndex;
 		
 		private System.DateTime _StartDate;
 		
@@ -16490,14 +16524,18 @@ namespace DataConnect
 		
 		private EntitySet<DailyMenu> _DailyMenus;
 		
+		private EntityRef<Course> _Course;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void OnWeeklyMenuIDChanging(int value);
-    partial void OnWeeklyMenuIDChanged();
-    partial void OnNameChanging(string value);
-    partial void OnNameChanged();
+    partial void OnWeekIDChanging(int value);
+    partial void OnWeekIDChanged();
+    partial void OnCourseIDChanging(int value);
+    partial void OnCourseIDChanged();
+    partial void OnWeekIndexChanging(int value);
+    partial void OnWeekIndexChanged();
     partial void OnStartDateChanging(System.DateTime value);
     partial void OnStartDateChanged();
     partial void OnEndDateChanging(System.DateTime value);
@@ -16506,48 +16544,73 @@ namespace DataConnect
     partial void OnStatusChanged();
     #endregion
 		
-		public WeeklyMenu()
+		public Week()
 		{
 			this._DailyMenus = new EntitySet<DailyMenu>(new Action<DailyMenu>(this.attach_DailyMenus), new Action<DailyMenu>(this.detach_DailyMenus));
+			this._Course = default(EntityRef<Course>);
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_WeeklyMenuID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int WeeklyMenuID
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_WeekID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int WeekID
 		{
 			get
 			{
-				return this._WeeklyMenuID;
+				return this._WeekID;
 			}
 			set
 			{
-				if ((this._WeeklyMenuID != value))
+				if ((this._WeekID != value))
 				{
-					this.OnWeeklyMenuIDChanging(value);
+					this.OnWeekIDChanging(value);
 					this.SendPropertyChanging();
-					this._WeeklyMenuID = value;
-					this.SendPropertyChanged("WeeklyMenuID");
-					this.OnWeeklyMenuIDChanged();
+					this._WeekID = value;
+					this.SendPropertyChanged("WeekID");
+					this.OnWeekIDChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string Name
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CourseID", DbType="Int NOT NULL")]
+		public int CourseID
 		{
 			get
 			{
-				return this._Name;
+				return this._CourseID;
 			}
 			set
 			{
-				if ((this._Name != value))
+				if ((this._CourseID != value))
 				{
-					this.OnNameChanging(value);
+					if (this._Course.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnCourseIDChanging(value);
 					this.SendPropertyChanging();
-					this._Name = value;
-					this.SendPropertyChanged("Name");
-					this.OnNameChanged();
+					this._CourseID = value;
+					this.SendPropertyChanged("CourseID");
+					this.OnCourseIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_WeekIndex", DbType="Int NOT NULL")]
+		public int WeekIndex
+		{
+			get
+			{
+				return this._WeekIndex;
+			}
+			set
+			{
+				if ((this._WeekIndex != value))
+				{
+					this.OnWeekIndexChanging(value);
+					this.SendPropertyChanging();
+					this._WeekIndex = value;
+					this.SendPropertyChanged("WeekIndex");
+					this.OnWeekIndexChanged();
 				}
 			}
 		}
@@ -16612,7 +16675,7 @@ namespace DataConnect
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="WeeklyMenu_DailyMenu", Storage="_DailyMenus", ThisKey="WeeklyMenuID", OtherKey="WeeklyMenuID")]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Week_DailyMenu", Storage="_DailyMenus", ThisKey="WeekID", OtherKey="WeekID")]
 		public EntitySet<DailyMenu> DailyMenus
 		{
 			get
@@ -16622,6 +16685,40 @@ namespace DataConnect
 			set
 			{
 				this._DailyMenus.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Course_Week", Storage="_Course", ThisKey="CourseID", OtherKey="CourseID", IsForeignKey=true)]
+		public Course Course
+		{
+			get
+			{
+				return this._Course.Entity;
+			}
+			set
+			{
+				Course previousValue = this._Course.Entity;
+				if (((previousValue != value) 
+							|| (this._Course.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Course.Entity = null;
+						previousValue.Weeks.Remove(this);
+					}
+					this._Course.Entity = value;
+					if ((value != null))
+					{
+						value.Weeks.Add(this);
+						this._CourseID = value.CourseID;
+					}
+					else
+					{
+						this._CourseID = default(int);
+					}
+					this.SendPropertyChanged("Course");
+				}
 			}
 		}
 		
@@ -16648,13 +16745,13 @@ namespace DataConnect
 		private void attach_DailyMenus(DailyMenu entity)
 		{
 			this.SendPropertyChanging();
-			entity.WeeklyMenu = this;
+			entity.Week = this;
 		}
 		
 		private void detach_DailyMenus(DailyMenu entity)
 		{
 			this.SendPropertyChanging();
-			entity.WeeklyMenu = null;
+			entity.Week = null;
 		}
 	}
 }

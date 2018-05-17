@@ -120,6 +120,12 @@ namespace QLHSBanTru2018_Demo_V1
             pnControlsPanel.Controls.Add(new frmMeal());
             labTitle.Caption = "QUẢN LÝ BỮA SĂN";
         }
+        private void btnDailyMenuManager_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            pnControlsPanel.Controls.Clear();
+            //pnControlsPanel.Controls.Add(new frmMenu());
+            labTitle.Caption = "QUẢN LÝ THỰC ĐƠN";
+        }
         #endregion
 
         #region s2s2s2s2 Nguyễn Kiều Thành Công s2s2s2
@@ -244,12 +250,12 @@ namespace QLHSBanTru2018_Demo_V1
 
 
 
+
         #endregion
 
         #region Vũ Đức Thiện
 
         #endregion
 
-        
     }
 }
