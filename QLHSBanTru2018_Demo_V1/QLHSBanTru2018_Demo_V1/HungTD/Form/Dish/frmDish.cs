@@ -102,5 +102,20 @@ namespace QLHSBanTru2018_Demo_V1.HungTD.Form.Dish
                 }
             }
         }
+
+        private void btnContextAdd_Click(object sender, EventArgs e)
+        {
+            btnAdd_Click(sender, e);
+        }
+
+        private void btnContextEdit_Click(object sender, EventArgs e)
+        {
+            btnEdit_Click(sender, e);
+        }
+
+        private void btnContexDelete_Click(object sender, EventArgs e)
+        {
+            btnDelete_Click(sender, e);
+        }
     }
 }

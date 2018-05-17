@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager1 = new DevExpress.XtraSplashScreen.SplashScreenManager(this, null, true, true, typeof(System.Windows.Forms.UserControl));
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDish));
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
@@ -64,6 +65,15 @@
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.btnContextAdd = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnContextEdit = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnContexDelete = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.btnContextAddAgeGroup = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnContextAddMeal = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.btnContextDetail = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
@@ -86,6 +96,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // splashScreenManager1
@@ -181,6 +192,7 @@
             // 
             // gcMain
             // 
+            this.gcMain.ContextMenuStrip = this.contextMenuStrip1;
             this.gcMain.Location = new System.Drawing.Point(15, 41);
             this.gcMain.MainView = this.gridView1;
             this.gcMain.Name = "gcMain";
@@ -536,6 +548,69 @@
             this.layoutControlItem8.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem8.TextVisible = false;
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnContextAdd,
+            this.btnContextEdit,
+            this.btnContexDelete,
+            this.toolStripSeparator1,
+            this.btnContextAddAgeGroup,
+            this.btnContextAddMeal,
+            this.toolStripSeparator2,
+            this.btnContextDetail});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(189, 170);
+            // 
+            // btnContextAdd
+            // 
+            this.btnContextAdd.Name = "btnContextAdd";
+            this.btnContextAdd.Size = new System.Drawing.Size(188, 22);
+            this.btnContextAdd.Text = "Thêm mới món ăn";
+            this.btnContextAdd.Click += new System.EventHandler(this.btnContextAdd_Click);
+            // 
+            // btnContextEdit
+            // 
+            this.btnContextEdit.Name = "btnContextEdit";
+            this.btnContextEdit.Size = new System.Drawing.Size(188, 22);
+            this.btnContextEdit.Text = "Chỉnh sửa món ăn";
+            this.btnContextEdit.Click += new System.EventHandler(this.btnContextEdit_Click);
+            // 
+            // btnContexDelete
+            // 
+            this.btnContexDelete.Name = "btnContexDelete";
+            this.btnContexDelete.Size = new System.Drawing.Size(188, 22);
+            this.btnContexDelete.Text = "Xóa";
+            this.btnContexDelete.Click += new System.EventHandler(this.btnContexDelete_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(185, 6);
+            // 
+            // btnContextAddAgeGroup
+            // 
+            this.btnContextAddAgeGroup.Name = "btnContextAddAgeGroup";
+            this.btnContextAddAgeGroup.Size = new System.Drawing.Size(188, 22);
+            this.btnContextAddAgeGroup.Text = "Thêm mới nhóm tuổi";
+            // 
+            // btnContextAddMeal
+            // 
+            this.btnContextAddMeal.Name = "btnContextAddMeal";
+            this.btnContextAddMeal.Size = new System.Drawing.Size(188, 22);
+            this.btnContextAddMeal.Text = "Thêm mới bữa ăn";
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(185, 6);
+            // 
+            // btnContextDetail
+            // 
+            this.btnContextDetail.Name = "btnContextDetail";
+            this.btnContextDetail.Size = new System.Drawing.Size(188, 22);
+            this.btnContextDetail.Text = "Xem chi tiết";
+            // 
             // frmDish
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -566,6 +641,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -606,5 +682,14 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnDetail;
         private DevExpress.XtraGrid.Columns.GridColumn colCreatedDate;
         private DevExpress.XtraGrid.Columns.GridColumn colStatus;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem btnContextAdd;
+        private System.Windows.Forms.ToolStripMenuItem btnContextEdit;
+        private System.Windows.Forms.ToolStripMenuItem btnContexDelete;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripMenuItem btnContextAddAgeGroup;
+        private System.Windows.Forms.ToolStripMenuItem btnContextAddMeal;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripMenuItem btnContextDetail;
     }
 }
