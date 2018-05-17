@@ -85,5 +85,37 @@ namespace QLHSBanTru2018_Demo_V1.HungTD.Form.Dish
             if (frmDD.DialogResult == DialogResult.OK)
                 FillCombobox();
         }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            var rowHandle = gridView1.FocusedRowHandle;
+            if (MessageBox.Show("Bạn có muốn xóa món ăn "+ gridView1.GetRowCellValue(rowHandle, "Name").ToString(), "Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            {
+                try
+                {
+                    new DishDAO().Delete(Convert.ToInt32(gridView1.GetRowCellValue(rowHandle, "DishID").ToString()));
+                    FillGridControls();
+                }
+                catch
+                {
+                    
+                }
+            }
+        }
+
+        private void btnContextAdd_Click(object sender, EventArgs e)
+        {
+            btnAdd_Click(sender, e);
+        }
+
+        private void btnContextEdit_Click(object sender, EventArgs e)
+        {
+            btnEdit_Click(sender, e);
+        }
+
+        private void btnContexDelete_Click(object sender, EventArgs e)
+        {
+            btnDelete_Click(sender, e);
+        }
     }
 }

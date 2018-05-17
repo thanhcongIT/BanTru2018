@@ -163,8 +163,10 @@
             // 
             // gridView1
             // 
-            this.gridView1.Appearance.EvenRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(242)))), ((int)(((byte)(251)))));
+            this.gridView1.Appearance.EvenRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(242)))), ((int)(((byte)(250)))));
             this.gridView1.Appearance.EvenRow.Options.UseBackColor = true;
+            this.gridView1.Appearance.FocusedRow.BackColor = System.Drawing.Color.Bisque;
+            this.gridView1.Appearance.FocusedRow.Options.UseBackColor = true;
             this.gridView1.Appearance.OddRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.gridView1.Appearance.OddRow.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.gridView1.Appearance.OddRow.Options.UseBackColor = true;
@@ -181,7 +183,7 @@
             this.gridView1.GridControl = this.gcMain;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsBehavior.ReadOnly = true;
-            this.gridView1.OptionsView.EnableAppearanceOddRow = true;
+            this.gridView1.OptionsView.EnableAppearanceEvenRow = true;
             this.gridView1.OptionsView.ShowGroupPanel = false;
             // 
             // colIngredientTypeID
@@ -258,7 +260,6 @@
             // btnIngredientTypeDetail
             // 
             this.btnIngredientTypeDetail.AutoHeight = false;
-            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
             serializableAppearanceObject1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(115)))), ((int)(((byte)(199)))));
             serializableAppearanceObject1.Options.UseBackColor = true;
             this.btnIngredientTypeDetail.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -270,7 +271,7 @@
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(719, 46);
+            this.txtName.Location = new System.Drawing.Point(719, 45);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(155, 20);
             this.txtName.StyleController = this.layoutControl1;
@@ -278,7 +279,7 @@
             // 
             // txtCount
             // 
-            this.txtCount.Location = new System.Drawing.Point(719, 70);
+            this.txtCount.Location = new System.Drawing.Point(719, 69);
             this.txtCount.Name = "txtCount";
             this.txtCount.Size = new System.Drawing.Size(155, 20);
             this.txtCount.StyleController = this.layoutControl1;
@@ -286,7 +287,7 @@
             // 
             // chkStatus
             // 
-            this.chkStatus.Location = new System.Drawing.Point(719, 94);
+            this.chkStatus.Location = new System.Drawing.Point(719, 93);
             this.chkStatus.Name = "chkStatus";
             this.chkStatus.Properties.Caption = "Kích Hoạt";
             this.chkStatus.Size = new System.Drawing.Size(155, 19);
@@ -438,7 +439,7 @@
             this.layoutControlItem7.Control = this.chkStatus;
             this.layoutControlItem7.Location = new System.Drawing.Point(0, 48);
             this.layoutControlItem7.Name = "layoutControlItem7";
-            this.layoutControlItem7.Size = new System.Drawing.Size(270, 346);
+            this.layoutControlItem7.Size = new System.Drawing.Size(270, 347);
             this.layoutControlItem7.Text = "Tình Trạng:";
             this.layoutControlItem7.TextSize = new System.Drawing.Size(108, 13);
             // 

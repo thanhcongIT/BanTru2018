@@ -63,15 +63,44 @@ namespace DataConnect.DAO.HungTD
             }
         }
 
-        public int Update(Dish dishEntity, List<DishDetail> llistDishDetailEntity)
+        public bool Update(Dish dishEntity, List<DishDetail> listDishDetailEntity)
         {
             try
             {
-                return 1;
+                Dish obj = dishes.SingleOrDefault(x => x.DishID.Equals(dishEntity.DishID));
+                obj.MealID = dishEntity.MealID;
+                obj.AgeGroupID = dishEntity.AgeGroupID;
+                obj.Name = dishEntity.Name;
+                obj.CreatedBy = dishEntity.CreatedBy;
+                obj.CreatedDate = dishEntity.CreatedDate;
+                obj.Status = dishEntity.Status;
+                db.SubmitChanges();
+
+                List<DishDetail> dishDetails = new DishDetailDAO().GetByDishID(dishEntity.DishID);
+                foreach(DishDetail item in listDishDetailEntity)
+                {
+                    bool exist = false;
+                    foreach(DishDetail item2 in dishDetails)
+                    {
+                        if (item.DishID == item2.DishID)
+                        {
+                            exist = true;
+                        }
+                    }
+                    if (exist)
+                    {
+                        new DishDetailDAO().Update(item);
+                    }
+                    else
+                    {
+                        new DishDetailDAO().Insert(item, dishEntity.DishID);
+                    }
+                }
+                return true;
             }
             catch
             {
-                return 0;
+                return false;
             }
         }
 
@@ -79,8 +108,11 @@ namespace DataConnect.DAO.HungTD
         {
             try
             {
-                Dish obj = dishes.FirstOrDefault(x => x.DishID.Equals(dishID));
-                dishes.DeleteOnSubmit(obj);
+                new DishDetailDAO().DeleteListByDish(dishID);
+
+                Dish entity = dishes.SingleOrDefault(x => x.DishID.Equals(dishID));
+                dishes.DeleteOnSubmit(entity);
+                db.SubmitChanges();
                 return true;
             }
             catch

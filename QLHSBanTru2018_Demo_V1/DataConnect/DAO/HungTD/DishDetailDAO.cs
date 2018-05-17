@@ -70,13 +70,16 @@ namespace DataConnect.DAO.HungTD
                 return false;
             }
         }
-        public bool ChangeQuantityList(List<DishDetail> listDishDetail)
+        public bool Update(List<DishDetail> listDishDetail)
         {
             try
             {
                 foreach (DishDetail item in listDishDetail)
                 {
-                    Update(item);
+                    if (!Update(item))
+                    {
+                        break;
+                    }
                 }
                 return true;
             }
@@ -90,7 +93,7 @@ namespace DataConnect.DAO.HungTD
             try
             {
                 DishDetail obj = dishDetails.Single(x => x.DishDetailID.Equals(dishDetailID));
-                obj.Status = false;
+                dishDetails.DeleteOnSubmit(obj);
                 db.SubmitChanges();
                 return true;
             }
@@ -100,6 +103,22 @@ namespace DataConnect.DAO.HungTD
             }
         }
 
+        public bool DeleteListByDish(int dishID)
+        {
+            try
+            {
+                List<DishDetail> listObj = dishDetails.Where(x => x.DishID.Equals(dishID)).ToList();
+                foreach(DishDetail obj in listObj)
+                {
+                    Delete(obj.DishDetailID);
+                }
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
         public List<DishDetailViewModel> GetDishDetailViewModels(int dishID)
         {
             try
@@ -126,7 +145,7 @@ namespace DataConnect.DAO.HungTD
         }
 
         public Ingredient NutritionCalculation(int DishID)
-        {            
+        {
             try
             {
                 Ingredient total = new Ingredient();
