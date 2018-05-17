@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.btnDepartment = new DevExpress.XtraBars.BarButtonItem();
@@ -66,6 +65,7 @@
             this.btnChiThucPham = new DevExpress.XtraBars.BarButtonItem();
             this.btnYeuCau = new DevExpress.XtraBars.BarButtonItem();
             this.btnMealManager = new DevExpress.XtraBars.BarButtonItem();
+            this.btnThongKeThucPham = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -83,9 +83,10 @@
             this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup7 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
-            this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
+            this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel();
             this.pnControlsPanel = new System.Windows.Forms.Panel();
-            this.btnThongKeThucPham = new DevExpress.XtraBars.BarButtonItem();
+            this.ribbonPageGroup13 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.btnDailyMenuManager = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             this.SuspendLayout();
             // 
@@ -129,9 +130,10 @@
             this.btnChiThucPham,
             this.btnYeuCau,
             this.btnMealManager,
-            this.btnThongKeThucPham});
+            this.btnThongKeThucPham,
+            this.btnDailyMenuManager});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 37;
+            this.ribbon.MaxItemId = 38;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -449,6 +451,15 @@
             this.btnMealManager.Name = "btnMealManager";
             this.btnMealManager.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnMealManager_ItemClick);
             // 
+            // btnThongKeThucPham
+            // 
+            this.btnThongKeThucPham.Caption = "Thống kê thực phẩm";
+            this.btnThongKeThucPham.Id = 36;
+            this.btnThongKeThucPham.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnThongKeThucPham.ImageOptions.Image")));
+            this.btnThongKeThucPham.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnThongKeThucPham.ImageOptions.LargeImage")));
+            this.btnThongKeThucPham.Name = "btnThongKeThucPham";
+            this.btnThongKeThucPham.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThongKeThucPham_ItemClick);
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -499,7 +510,8 @@
             // 
             this.ribbonPage4.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup9,
-            this.ribbonPageGroup11});
+            this.ribbonPageGroup11,
+            this.ribbonPageGroup13});
             this.ribbonPage4.Name = "ribbonPage4";
             this.ribbonPage4.Text = "Thực Phẩm - Dinh Dưỡng";
             // 
@@ -595,14 +607,20 @@
             this.pnControlsPanel.Size = new System.Drawing.Size(1364, 600);
             this.pnControlsPanel.TabIndex = 3;
             // 
-            // btnThongKeThucPham
+            // ribbonPageGroup13
             // 
-            this.btnThongKeThucPham.Caption = "Thống kê thực phẩm";
-            this.btnThongKeThucPham.Id = 36;
-            this.btnThongKeThucPham.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnThongKeThucPham.ImageOptions.Image")));
-            this.btnThongKeThucPham.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnThongKeThucPham.ImageOptions.LargeImage")));
-            this.btnThongKeThucPham.Name = "btnThongKeThucPham";
-            this.btnThongKeThucPham.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThongKeThucPham_ItemClick);
+            this.ribbonPageGroup13.ItemLinks.Add(this.btnDailyMenuManager);
+            this.ribbonPageGroup13.Name = "ribbonPageGroup13";
+            this.ribbonPageGroup13.Text = "Thực Đơn";
+            // 
+            // btnDailyMenuManager
+            // 
+            this.btnDailyMenuManager.Caption = "Quản Lý Thực Đơn";
+            this.btnDailyMenuManager.Id = 37;
+            this.btnDailyMenuManager.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDailyMenuManager.ImageOptions.Image")));
+            this.btnDailyMenuManager.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnDailyMenuManager.ImageOptions.LargeImage")));
+            this.btnDailyMenuManager.Name = "btnDailyMenuManager";
+            this.btnDailyMenuManager.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDailyMenuManager_ItemClick);
             // 
             // frmMain
             // 
@@ -681,5 +699,7 @@
         private DevExpress.XtraBars.BarButtonItem btnYeuCau;
         private DevExpress.XtraBars.BarButtonItem btnMealManager;
         private DevExpress.XtraBars.BarButtonItem btnThongKeThucPham;
+        private DevExpress.XtraBars.BarButtonItem btnDailyMenuManager;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup13;
     }
 }

@@ -64,6 +64,7 @@
       <Association Name="Course_CourseTask" Member="CourseTasks" ThisKey="CourseID" OtherKey="CourseID" Type="CourseTask" />
       <Association Name="Course_Invoice" Member="Invoices" ThisKey="CourseID" OtherKey="CourseID" Type="Invoice" />
       <Association Name="Course_Semester" Member="Semesters" ThisKey="CourseID" OtherKey="CourseID" Type="Semester" />
+      <Association Name="Course_Week" Member="Weeks" ThisKey="CourseID" OtherKey="CourseID" Type="Week" />
     </Type>
   </Table>
   <Table Name="dbo.CourseTask" Member="CourseTasks">
@@ -84,12 +85,12 @@
     <Type Name="DailyMenu">
       <Column Name="DailyMenuID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="WeeklyMenuID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="WeekID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="Date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
       <Column Name="IsForm" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
       <Column Name="Status" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
       <Association Name="DailyMenu_DailyMenuDetail" Member="DailyMenuDetails" ThisKey="DailyMenuID" OtherKey="DailyMenuID" Type="DailyMenuDetail" />
-      <Association Name="WeeklyMenu_DailyMenu" Member="WeeklyMenu" ThisKey="WeeklyMenuID" OtherKey="WeeklyMenuID" Type="WeeklyMenu" IsForeignKey="true" />
+      <Association Name="Week_DailyMenu" Member="Week" ThisKey="WeekID" OtherKey="WeekID" Type="Week" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.DailyMenuDetail" Member="DailyMenuDetails">
@@ -103,15 +104,20 @@
   </Table>
   <Table Name="dbo.DailyTask" Member="DailyTasks">
     <Type Name="DailyTask">
-      <Column Name="DailyTaskID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="StudentID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DailyTaskID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="StudentID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="WeeklyTaskID" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="MonthlyTaskID" Type="System.String" DbType="NChar(20)" CanBeNull="true" />
-      <Column Name="DateTask" Type="System.String" DbType="NChar(20)" CanBeNull="true" />
+      <Column Name="DateTask" Type="System.String" DbType="NChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="Present" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
       <Column Name="Reason" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
       <Association Name="DateOfEntry_DailyTask" Member="DateOfEntry" ThisKey="DateTask" OtherKey="DateTask" Type="DateOfEntry" IsForeignKey="true" />
       <Association Name="Student_DailyTask" Member="Student" ThisKey="StudentID" OtherKey="StudentID" Type="Student" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DateOfDate" Member="DateOfDates">
+    <Type Name="DateOfDate">
+      <Column Name="DateOfEntry" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
     </Type>
   </Table>
   <Table Name="dbo.DateOfEntry" Member="DateOfEntries">
@@ -372,7 +378,7 @@
       <Column Name="Fat" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
       <Column Name="Glucose" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
       <Column Name="Fiber" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
-      <Column Name="Canxi" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Canxi" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
       <Column Name="Iron" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
       <Column Name="Photpho" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
       <Column Name="Kali" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
@@ -668,7 +674,6 @@
       <Association Name="Student_Student_Class" Member="Student_Classes" ThisKey="StudentID" OtherKey="StudentID" Type="Student_Class" />
       <Association Name="Student_Student_Lesson" Member="Student_Lessons" ThisKey="StudentID" OtherKey="StudentID" Type="Student_Lesson" />
       <Association Name="Student_StudentParent" Member="StudentParents" ThisKey="StudentID" OtherKey="StudentID" Type="StudentParent" />
-      <Association Name="Student_TrackingUpLate" Member="TrackingUpLates" ThisKey="StudentID" OtherKey="StudentID" Type="TrackingUpLate" />
       <Association Name="Preferred_Student" Member="Preferred" ThisKey="PreferredID" OtherKey="PreferredID" Type="Preferred" IsForeignKey="true" />
     </Type>
   </Table>
@@ -733,17 +738,18 @@
       <Column Name="Health" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
       <Column Name="Study" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
       <Column Name="Note" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
-      <Association Name="Student_TrackingUpLate" Member="Student" ThisKey="StudentID" OtherKey="StudentID" Type="Student" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.WeeklyMenu" Member="WeeklyMenus">
-    <Type Name="WeeklyMenu">
-      <Column Name="WeeklyMenuID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+  <Table Name="dbo.Week" Member="Weeks">
+    <Type Name="Week">
+      <Column Name="WeekID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CourseID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="WeekIndex" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="StartDate" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
       <Column Name="EndDate" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
       <Column Name="Status" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Association Name="WeeklyMenu_DailyMenu" Member="DailyMenus" ThisKey="WeeklyMenuID" OtherKey="WeeklyMenuID" Type="DailyMenu" />
+      <Association Name="Week_DailyMenu" Member="DailyMenus" ThisKey="WeekID" OtherKey="WeekID" Type="DailyMenu" />
+      <Association Name="Course_Week" Member="Course" ThisKey="CourseID" OtherKey="CourseID" Type="Course" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>
