@@ -87,7 +87,7 @@ namespace DataConnect.DAO.ThanhCongTC
                 d.BirthPlaceID = b.BirthPlaceID;
                 d.LocationID = b.LocationID;
                 d.AdressDetail = b.AdressDetail;
-                //d.PreferredID = (int)b.PreferredID;
+                d.PreferredID = (int)b.PreferredID;
                 d.Note = b.Note;
                 d.Status = b.Status;
                 listViewStuden.Add(d);
