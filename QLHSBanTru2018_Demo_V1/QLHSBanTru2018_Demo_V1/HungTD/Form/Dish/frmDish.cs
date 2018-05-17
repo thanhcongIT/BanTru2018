@@ -30,6 +30,8 @@ namespace QLHSBanTru2018_Demo_V1.HungTD.Form.Dish
 
         private void FillCombobox()
         {
+            string[] DisplayDescription = new string[] { "Lứa tuổi", "Bữa Ăn", "Người tạo" };
+            cbbFilter.DataSource = DisplayDescription;
             FillGridControls();
         }
         private void FillGridControls()
@@ -39,7 +41,18 @@ namespace QLHSBanTru2018_Demo_V1.HungTD.Form.Dish
         }
         private void BindingDetail()
         {
-            //BindingDetail();
+            txtName.DataBindings.Clear();
+            txtName.DataBindings.Add(new Binding("Text", gcMain.DataSource, "Name"));
+            txtMeal.DataBindings.Clear();
+            txtMeal.DataBindings.Add(new Binding("Text", gcMain.DataSource, "MealName"));
+            txtAgeGroup.DataBindings.Clear();
+            txtAgeGroup.DataBindings.Add(new Binding("Text", gcMain.DataSource, "AgeGroupName"));
+            txtCreatedDate.DataBindings.Clear();
+            txtCreatedDate.DataBindings.Add(new Binding("Text", gcMain.DataSource, "CreatedDate"));
+            txtCreatedBy.DataBindings.Clear();
+            txtCreatedBy.DataBindings.Add(new Binding("Text", gcMain.DataSource, "CreatedByName"));
+            chkStatus.DataBindings.Clear();
+            chkStatus.DataBindings.Add(new Binding("Checked", gcMain.DataSource, "Status"));
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -89,7 +102,7 @@ namespace QLHSBanTru2018_Demo_V1.HungTD.Form.Dish
         private void btnDelete_Click(object sender, EventArgs e)
         {
             var rowHandle = gridView1.FocusedRowHandle;
-            if (MessageBox.Show("Bạn có muốn xóa món ăn "+ gridView1.GetRowCellValue(rowHandle, "Name").ToString(), "Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            if (MessageBox.Show("Bạn có muốn xóa món ăn " + gridView1.GetRowCellValue(rowHandle, "Name").ToString(), "Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
                 try
                 {
@@ -98,7 +111,7 @@ namespace QLHSBanTru2018_Demo_V1.HungTD.Form.Dish
                 }
                 catch
                 {
-                    
+
                 }
             }
         }
@@ -116,6 +129,25 @@ namespace QLHSBanTru2018_Demo_V1.HungTD.Form.Dish
         private void btnContexDelete_Click(object sender, EventArgs e)
         {
             btnDelete_Click(sender, e);
+        }
+
+        private void cbbFilter_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbbFilter.Text == "Lứa tuổi")
+            {
+                gridView1.ClearGrouping();
+                colAgeGroupName.GroupIndex = 0;
+            }
+            else if (cbbFilter.Text == "Bữa Ăn")
+            {
+                gridView1.ClearGrouping();
+                colMealName.GroupIndex = 0;
+            }
+            else
+            {
+                gridView1.ClearGrouping();
+                colCreatedByName.GroupIndex = 0;
+            }
         }
     }
 }

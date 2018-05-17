@@ -36,10 +36,17 @@
             this.btnEdit = new DevExpress.XtraEditors.SimpleButton();
             this.btnDelete = new DevExpress.XtraEditors.SimpleButton();
             this.btnPrint = new DevExpress.XtraEditors.SimpleButton();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit2 = new DevExpress.XtraEditors.TextEdit();
+            this.cbbFilter = new System.Windows.Forms.ComboBox();
             this.gcMain = new DevExpress.XtraGrid.GridControl();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.btnContextAdd = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnContextEdit = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnContexDelete = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.btnContextAddAgeGroup = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnContextAddMeal = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.btnContextDetail = new System.Windows.Forms.ToolStripMenuItem();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colDishID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colName = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -62,23 +69,23 @@
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlGroup4 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.txtCreatedBy = new DevExpress.XtraEditors.TextEdit();
+            this.txtName = new DevExpress.XtraEditors.TextEdit();
+            this.txtAgeGroup = new DevExpress.XtraEditors.TextEdit();
+            this.txtMeal = new DevExpress.XtraEditors.TextEdit();
+            this.txtCreatedDate = new DevExpress.XtraEditors.TextEdit();
+            this.chkStatus = new DevExpress.XtraEditors.CheckEdit();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.btnContextAdd = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnContextEdit = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnContexDelete = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.btnContextAddAgeGroup = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnContextAddMeal = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.btnContextDetail = new System.Windows.Forms.ToolStripMenuItem();
+            this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem12 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcMain)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnDetail)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
@@ -93,10 +100,19 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCreatedBy.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtName.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAgeGroup.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtMeal.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCreatedDate.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkStatus.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
-            this.contextMenuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).BeginInit();
             this.SuspendLayout();
             // 
             // splashScreenManager1
@@ -109,10 +125,14 @@
             this.layoutControl1.Controls.Add(this.btnEdit);
             this.layoutControl1.Controls.Add(this.btnDelete);
             this.layoutControl1.Controls.Add(this.btnPrint);
-            this.layoutControl1.Controls.Add(this.comboBox1);
-            this.layoutControl1.Controls.Add(this.textEdit1);
-            this.layoutControl1.Controls.Add(this.textEdit2);
+            this.layoutControl1.Controls.Add(this.cbbFilter);
             this.layoutControl1.Controls.Add(this.gcMain);
+            this.layoutControl1.Controls.Add(this.txtName);
+            this.layoutControl1.Controls.Add(this.txtMeal);
+            this.layoutControl1.Controls.Add(this.chkStatus);
+            this.layoutControl1.Controls.Add(this.txtAgeGroup);
+            this.layoutControl1.Controls.Add(this.txtCreatedDate);
+            this.layoutControl1.Controls.Add(this.txtCreatedBy);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl1.Location = new System.Drawing.Point(0, 0);
             this.layoutControl1.Name = "layoutControl1";
@@ -165,30 +185,15 @@
             this.btnPrint.TabIndex = 7;
             this.btnPrint.Text = "In Báo Cáo";
             // 
-            // comboBox1
+            // cbbFilter
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(607, 45);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(162, 21);
-            this.comboBox1.TabIndex = 9;
-            // 
-            // textEdit1
-            // 
-            this.textEdit1.Location = new System.Drawing.Point(607, 112);
-            this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Size = new System.Drawing.Size(162, 20);
-            this.textEdit1.StyleController = this.layoutControl1;
-            this.textEdit1.TabIndex = 10;
-            // 
-            // textEdit2
-            // 
-            this.textEdit2.Location = new System.Drawing.Point(607, 136);
-            this.textEdit2.Name = "textEdit2";
-            this.textEdit2.Size = new System.Drawing.Size(162, 20);
-            this.textEdit2.StyleController = this.layoutControl1;
-            this.textEdit2.TabIndex = 11;
+            this.cbbFilter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbFilter.FormattingEnabled = true;
+            this.cbbFilter.Location = new System.Drawing.Point(583, 45);
+            this.cbbFilter.Name = "cbbFilter";
+            this.cbbFilter.Size = new System.Drawing.Size(186, 21);
+            this.cbbFilter.TabIndex = 9;
+            this.cbbFilter.SelectedIndexChanged += new System.EventHandler(this.cbbFilter_SelectedIndexChanged);
             // 
             // gcMain
             // 
@@ -202,6 +207,69 @@
             this.gcMain.TabIndex = 12;
             this.gcMain.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnContextAdd,
+            this.btnContextEdit,
+            this.btnContexDelete,
+            this.toolStripSeparator1,
+            this.btnContextAddAgeGroup,
+            this.btnContextAddMeal,
+            this.toolStripSeparator2,
+            this.btnContextDetail});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(189, 148);
+            // 
+            // btnContextAdd
+            // 
+            this.btnContextAdd.Name = "btnContextAdd";
+            this.btnContextAdd.Size = new System.Drawing.Size(188, 22);
+            this.btnContextAdd.Text = "Thêm mới món ăn";
+            this.btnContextAdd.Click += new System.EventHandler(this.btnContextAdd_Click);
+            // 
+            // btnContextEdit
+            // 
+            this.btnContextEdit.Name = "btnContextEdit";
+            this.btnContextEdit.Size = new System.Drawing.Size(188, 22);
+            this.btnContextEdit.Text = "Chỉnh sửa món ăn";
+            this.btnContextEdit.Click += new System.EventHandler(this.btnContextEdit_Click);
+            // 
+            // btnContexDelete
+            // 
+            this.btnContexDelete.Name = "btnContexDelete";
+            this.btnContexDelete.Size = new System.Drawing.Size(188, 22);
+            this.btnContexDelete.Text = "Xóa";
+            this.btnContexDelete.Click += new System.EventHandler(this.btnContexDelete_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(185, 6);
+            // 
+            // btnContextAddAgeGroup
+            // 
+            this.btnContextAddAgeGroup.Name = "btnContextAddAgeGroup";
+            this.btnContextAddAgeGroup.Size = new System.Drawing.Size(188, 22);
+            this.btnContextAddAgeGroup.Text = "Thêm mới nhóm tuổi";
+            // 
+            // btnContextAddMeal
+            // 
+            this.btnContextAddMeal.Name = "btnContextAddMeal";
+            this.btnContextAddMeal.Size = new System.Drawing.Size(188, 22);
+            this.btnContextAddMeal.Text = "Thêm mới bữa ăn";
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(185, 6);
+            // 
+            // btnContextDetail
+            // 
+            this.btnContextDetail.Name = "btnContextDetail";
+            this.btnContextDetail.Size = new System.Drawing.Size(188, 22);
+            this.btnContextDetail.Text = "Xem chi tiết";
             // 
             // gridView1
             // 
@@ -335,7 +403,7 @@
             this.colStatus.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colStatus.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.colStatus.Caption = "Tình Trạng";
-            this.colStatus.FieldName = "Status";
+            this.colStatus.FieldName = "StringStatus";
             this.colStatus.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Right;
             this.colStatus.MaxWidth = 70;
             this.colStatus.MinWidth = 70;
@@ -486,13 +554,13 @@
             // 
             // layoutControlItem6
             // 
-            this.layoutControlItem6.Control = this.comboBox1;
+            this.layoutControlItem6.Control = this.cbbFilter;
             this.layoutControlItem6.CustomizationFormText = "Lọc ngày tháng năm:";
             this.layoutControlItem6.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem6.Name = "layoutControlItem6";
             this.layoutControlItem6.Size = new System.Drawing.Size(270, 25);
-            this.layoutControlItem6.Text = "Lọc ngày tháng năm:";
-            this.layoutControlItem6.TextSize = new System.Drawing.Size(101, 13);
+            this.layoutControlItem6.Text = "Tiêu Chuẩn Lọc:";
+            this.layoutControlItem6.TextSize = new System.Drawing.Size(77, 13);
             // 
             // layoutControlGroup4
             // 
@@ -500,7 +568,11 @@
             this.layoutControlGroup4.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.emptySpaceItem1,
             this.layoutControlItem5,
-            this.layoutControlItem7});
+            this.layoutControlItem7,
+            this.layoutControlItem10,
+            this.layoutControlItem11,
+            this.layoutControlItem12,
+            this.layoutControlItem9});
             this.layoutControlGroup4.Location = new System.Drawing.Point(476, 67);
             this.layoutControlGroup4.Name = "layoutControlGroup4";
             this.layoutControlGroup4.Size = new System.Drawing.Size(294, 427);
@@ -510,33 +582,13 @@
             // 
             this.emptySpaceItem1.AllowHotTrack = false;
             this.emptySpaceItem1.CustomizationFormText = "emptySpaceItem1";
-            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 48);
+            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 143);
             this.emptySpaceItem1.MaxSize = new System.Drawing.Size(270, 0);
             this.emptySpaceItem1.MinSize = new System.Drawing.Size(270, 24);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(270, 337);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(270, 242);
             this.emptySpaceItem1.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
-            // 
-            // layoutControlItem5
-            // 
-            this.layoutControlItem5.Control = this.textEdit1;
-            this.layoutControlItem5.CustomizationFormText = "Họ và tên:";
-            this.layoutControlItem5.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(270, 24);
-            this.layoutControlItem5.Text = "Họ và tên:";
-            this.layoutControlItem5.TextSize = new System.Drawing.Size(101, 13);
-            // 
-            // layoutControlItem7
-            // 
-            this.layoutControlItem7.Control = this.textEdit2;
-            this.layoutControlItem7.CustomizationFormText = "Mã hợp đồng:";
-            this.layoutControlItem7.Location = new System.Drawing.Point(0, 24);
-            this.layoutControlItem7.Name = "layoutControlItem7";
-            this.layoutControlItem7.Size = new System.Drawing.Size(270, 24);
-            this.layoutControlItem7.Text = "Mã hợp đồng:";
-            this.layoutControlItem7.TextSize = new System.Drawing.Size(101, 13);
             // 
             // layoutControlItem8
             // 
@@ -548,68 +600,122 @@
             this.layoutControlItem8.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem8.TextVisible = false;
             // 
-            // contextMenuStrip1
+            // txtCreatedBy
             // 
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btnContextAdd,
-            this.btnContextEdit,
-            this.btnContexDelete,
-            this.toolStripSeparator1,
-            this.btnContextAddAgeGroup,
-            this.btnContextAddMeal,
-            this.toolStripSeparator2,
-            this.btnContextDetail});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(189, 170);
+            this.txtCreatedBy.Location = new System.Drawing.Point(583, 208);
+            this.txtCreatedBy.Name = "txtCreatedBy";
+            this.txtCreatedBy.Properties.ReadOnly = true;
+            this.txtCreatedBy.Size = new System.Drawing.Size(186, 20);
+            this.txtCreatedBy.StyleController = this.layoutControl1;
+            this.txtCreatedBy.TabIndex = 18;
             // 
-            // btnContextAdd
+            // txtName
             // 
-            this.btnContextAdd.Name = "btnContextAdd";
-            this.btnContextAdd.Size = new System.Drawing.Size(188, 22);
-            this.btnContextAdd.Text = "Thêm mới món ăn";
-            this.btnContextAdd.Click += new System.EventHandler(this.btnContextAdd_Click);
+            this.txtName.Location = new System.Drawing.Point(583, 112);
+            this.txtName.Name = "txtName";
+            this.txtName.Properties.ReadOnly = true;
+            this.txtName.Size = new System.Drawing.Size(186, 20);
+            this.txtName.StyleController = this.layoutControl1;
+            this.txtName.TabIndex = 13;
             // 
-            // btnContextEdit
+            // txtAgeGroup
             // 
-            this.btnContextEdit.Name = "btnContextEdit";
-            this.btnContextEdit.Size = new System.Drawing.Size(188, 22);
-            this.btnContextEdit.Text = "Chỉnh sửa món ăn";
-            this.btnContextEdit.Click += new System.EventHandler(this.btnContextEdit_Click);
+            this.txtAgeGroup.Location = new System.Drawing.Point(583, 160);
+            this.txtAgeGroup.Name = "txtAgeGroup";
+            this.txtAgeGroup.Properties.ReadOnly = true;
+            this.txtAgeGroup.Size = new System.Drawing.Size(186, 20);
+            this.txtAgeGroup.StyleController = this.layoutControl1;
+            this.txtAgeGroup.TabIndex = 16;
             // 
-            // btnContexDelete
+            // txtMeal
             // 
-            this.btnContexDelete.Name = "btnContexDelete";
-            this.btnContexDelete.Size = new System.Drawing.Size(188, 22);
-            this.btnContexDelete.Text = "Xóa";
-            this.btnContexDelete.Click += new System.EventHandler(this.btnContexDelete_Click);
+            this.txtMeal.Location = new System.Drawing.Point(583, 136);
+            this.txtMeal.Name = "txtMeal";
+            this.txtMeal.Properties.ReadOnly = true;
+            this.txtMeal.Size = new System.Drawing.Size(186, 20);
+            this.txtMeal.StyleController = this.layoutControl1;
+            this.txtMeal.TabIndex = 14;
             // 
-            // toolStripSeparator1
+            // txtCreatedDate
             // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(185, 6);
+            this.txtCreatedDate.Location = new System.Drawing.Point(583, 184);
+            this.txtCreatedDate.Name = "txtCreatedDate";
+            this.txtCreatedDate.Properties.ReadOnly = true;
+            this.txtCreatedDate.Size = new System.Drawing.Size(186, 20);
+            this.txtCreatedDate.StyleController = this.layoutControl1;
+            this.txtCreatedDate.TabIndex = 17;
             // 
-            // btnContextAddAgeGroup
+            // chkStatus
             // 
-            this.btnContextAddAgeGroup.Name = "btnContextAddAgeGroup";
-            this.btnContextAddAgeGroup.Size = new System.Drawing.Size(188, 22);
-            this.btnContextAddAgeGroup.Text = "Thêm mới nhóm tuổi";
+            this.chkStatus.Location = new System.Drawing.Point(583, 232);
+            this.chkStatus.Name = "chkStatus";
+            this.chkStatus.Properties.Caption = "Kích Hoạt";
+            this.chkStatus.Size = new System.Drawing.Size(186, 19);
+            this.chkStatus.StyleController = this.layoutControl1;
+            this.chkStatus.TabIndex = 15;
             // 
-            // btnContextAddMeal
+            // layoutControlItem5
             // 
-            this.btnContextAddMeal.Name = "btnContextAddMeal";
-            this.btnContextAddMeal.Size = new System.Drawing.Size(188, 22);
-            this.btnContextAddMeal.Text = "Thêm mới bữa ăn";
+            this.layoutControlItem5.Control = this.txtName;
+            this.layoutControlItem5.CustomizationFormText = "Tên Món Ăn:";
+            this.layoutControlItem5.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem5.MaxSize = new System.Drawing.Size(270, 24);
+            this.layoutControlItem5.MinSize = new System.Drawing.Size(270, 24);
+            this.layoutControlItem5.Name = "layoutControlItem5";
+            this.layoutControlItem5.Size = new System.Drawing.Size(270, 24);
+            this.layoutControlItem5.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            this.layoutControlItem5.Text = "Tên Món Ăn:";
+            this.layoutControlItem5.TextSize = new System.Drawing.Size(77, 13);
             // 
-            // toolStripSeparator2
+            // layoutControlItem7
             // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(185, 6);
+            this.layoutControlItem7.Control = this.txtMeal;
+            this.layoutControlItem7.CustomizationFormText = "Bữa Ăn:";
+            this.layoutControlItem7.Location = new System.Drawing.Point(0, 24);
+            this.layoutControlItem7.Name = "layoutControlItem7";
+            this.layoutControlItem7.Size = new System.Drawing.Size(270, 24);
+            this.layoutControlItem7.Text = "Bữa Ăn:";
+            this.layoutControlItem7.TextSize = new System.Drawing.Size(77, 13);
             // 
-            // btnContextDetail
+            // layoutControlItem9
             // 
-            this.btnContextDetail.Name = "btnContextDetail";
-            this.btnContextDetail.Size = new System.Drawing.Size(188, 22);
-            this.btnContextDetail.Text = "Xem chi tiết";
+            this.layoutControlItem9.Control = this.chkStatus;
+            this.layoutControlItem9.CustomizationFormText = "Tình Trạng:";
+            this.layoutControlItem9.Location = new System.Drawing.Point(0, 120);
+            this.layoutControlItem9.Name = "layoutControlItem9";
+            this.layoutControlItem9.Size = new System.Drawing.Size(270, 23);
+            this.layoutControlItem9.Text = "Tình Trạng:";
+            this.layoutControlItem9.TextSize = new System.Drawing.Size(77, 13);
+            // 
+            // layoutControlItem10
+            // 
+            this.layoutControlItem10.Control = this.txtAgeGroup;
+            this.layoutControlItem10.CustomizationFormText = "Nhóm Tuổi:";
+            this.layoutControlItem10.Location = new System.Drawing.Point(0, 48);
+            this.layoutControlItem10.Name = "layoutControlItem10";
+            this.layoutControlItem10.Size = new System.Drawing.Size(270, 24);
+            this.layoutControlItem10.Text = "Nhóm Tuổi:";
+            this.layoutControlItem10.TextSize = new System.Drawing.Size(77, 13);
+            // 
+            // layoutControlItem11
+            // 
+            this.layoutControlItem11.Control = this.txtCreatedDate;
+            this.layoutControlItem11.CustomizationFormText = "Ngày Tạo Món:";
+            this.layoutControlItem11.Location = new System.Drawing.Point(0, 72);
+            this.layoutControlItem11.Name = "layoutControlItem11";
+            this.layoutControlItem11.Size = new System.Drawing.Size(270, 24);
+            this.layoutControlItem11.Text = "Ngày Tạo Món:";
+            this.layoutControlItem11.TextSize = new System.Drawing.Size(77, 13);
+            // 
+            // layoutControlItem12
+            // 
+            this.layoutControlItem12.Control = this.txtCreatedBy;
+            this.layoutControlItem12.CustomizationFormText = "Người Tạo Món:";
+            this.layoutControlItem12.Location = new System.Drawing.Point(0, 96);
+            this.layoutControlItem12.Name = "layoutControlItem12";
+            this.layoutControlItem12.Size = new System.Drawing.Size(270, 24);
+            this.layoutControlItem12.Text = "Người Tạo Món:";
+            this.layoutControlItem12.TextSize = new System.Drawing.Size(77, 13);
             // 
             // frmDish
             // 
@@ -621,9 +727,8 @@
             this.Load += new System.EventHandler(this.frmDish_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcMain)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnDetail)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
@@ -638,10 +743,19 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCreatedBy.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtName.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAgeGroup.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtMeal.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCreatedDate.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkStatus.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
-            this.contextMenuStrip1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -654,9 +768,7 @@
         private DevExpress.XtraEditors.SimpleButton btnEdit;
         private DevExpress.XtraEditors.SimpleButton btnDelete;
         private DevExpress.XtraEditors.SimpleButton btnPrint;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private DevExpress.XtraEditors.TextEdit textEdit1;
-        private DevExpress.XtraEditors.TextEdit textEdit2;
+        private System.Windows.Forms.ComboBox cbbFilter;
         private DevExpress.XtraGrid.GridControl gcMain;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraLayout.LayoutControlGroup Root1;
@@ -670,8 +782,6 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup4;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem7;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem8;
         private DevExpress.XtraGrid.Columns.GridColumn colDishID;
         private DevExpress.XtraGrid.Columns.GridColumn colName;
@@ -691,5 +801,17 @@
         private System.Windows.Forms.ToolStripMenuItem btnContextAddMeal;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripMenuItem btnContextDetail;
+        private DevExpress.XtraEditors.TextEdit txtName;
+        private DevExpress.XtraEditors.TextEdit txtMeal;
+        private DevExpress.XtraEditors.CheckEdit chkStatus;
+        private DevExpress.XtraEditors.TextEdit txtAgeGroup;
+        private DevExpress.XtraEditors.TextEdit txtCreatedDate;
+        private DevExpress.XtraEditors.TextEdit txtCreatedBy;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem7;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem10;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem11;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem12;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem9;
     }
 }

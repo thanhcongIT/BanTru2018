@@ -34,8 +34,8 @@ namespace QLHSBanTru2018_Demo_V1.HungTD.Form.Ingredient
         {
             txtName.DataBindings.Clear();
             txtName.DataBindings.Add("Text", gcMain.DataSource, "Name");
-            txtCount.DataBindings.Clear();
-            txtCount.DataBindings.Add("Text", gcMain.DataSource, "CountChild");
+            txtMeal.DataBindings.Clear();
+            txtMeal.DataBindings.Add("Text", gcMain.DataSource, "CountChild");
             chkStatus.DataBindings.Clear();
             chkStatus.DataBindings.Add("Checked", gcMain.DataSource, "Status");
         }

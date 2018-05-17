@@ -32,7 +32,8 @@ namespace DataConnect.DAO.HungTD
                             CreatedDate = d.CreatedDate,
                             CreatedBy = d.CreatedBy,
                             CreatedByName = d.Employee.FirstName + " " + d.Employee.LastName,
-                            Status = d.Status == true ? "Kích hoạt" : "Khóa"
+                            StringStatus = d.Status == true ? "Kích hoạt" : "Khóa",
+                            Status = d.Status
                         };
             return model.ToList();
         }

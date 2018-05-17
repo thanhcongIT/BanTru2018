@@ -18,6 +18,7 @@ namespace DataConnect.ViewModel
         public int CreatedBy { get; set; }
         public string CreatedByName { get; set; }
 
-        public string Status { get; set; }
+        public string StringStatus { get; set; }
+        public bool Status { get; set; }
     }
 }
