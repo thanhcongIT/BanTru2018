@@ -424,6 +424,7 @@
             this.grDanhsachkhoanthu.Location = new System.Drawing.Point(236, 12);
             this.grDanhsachkhoanthu.MainView = this.gridView1;
             this.grDanhsachkhoanthu.Name = "grDanhsachkhoanthu";
+            this.grDanhsachkhoanthu.ShowOnlyPredefinedDetails = true;
             this.grDanhsachkhoanthu.Size = new System.Drawing.Size(707, 309);
             this.grDanhsachkhoanthu.TabIndex = 4;
             this.grDanhsachkhoanthu.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {

@@ -17,5 +17,10 @@ namespace QLHSBanTru2018_Demo_V1.QLThuChi.ChiTieu.ChiTieuThucPham.ThongKeThucPha
         {
             InitializeComponent();
         }
+
+        private void UsThongKeThucPham_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

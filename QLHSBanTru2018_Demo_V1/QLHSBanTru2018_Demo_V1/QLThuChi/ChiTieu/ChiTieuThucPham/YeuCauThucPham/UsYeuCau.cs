@@ -60,42 +60,6 @@ namespace QLHSBanTru2018_Demo_V1.QLThuChi.ChiTieu.ChiTieuThucPham
             }
         }
 
-        private void cbNgayMua_CheckedChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                cbNgayTao.Checked = false;
-                dtNgayKhoiTao.Enabled = false;
-                dtNgayMua.Enabled = true;
-                LoadIngredienRequestByDate();
-                LoadIngredienRequestDetail((int)gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "IngredientRequestID"));
-                LoadIngredienRequesDetailBought(IngredienRequesID);
-            }
-            catch 
-            {
-
-               
-            }
-        }
-
-        private void cbNgayTao_CheckedChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                cbNgayMua.Checked = false;
-                dtNgayMua.Enabled = false;
-                dtNgayKhoiTao.Enabled = true;
-                LoadIngredienRequestByDate();
-                LoadIngredienRequestDetail((int)gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "IngredientRequestID"));
-                LoadIngredienRequesDetailBought(IngredienRequesID);
-            }
-            catch 
-            {
-
-              
-            }
-        }
-
         private void btnXuatYeuCau_Click(object sender, EventArgs e)
         {
             MessageBox.Show("" +gridView1.FocusedRowHandle + "");
@@ -122,37 +86,6 @@ namespace QLHSBanTru2018_Demo_V1.QLThuChi.ChiTieu.ChiTieuThucPham
                 
             }
         }
-
-        private void dtNgayMua_ValueChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                LoadIngredienRequestByDate();
-                LoadIngredienRequestDetail(IngredienRequesID);
-                LoadIngredienRequesDetailBought(IngredienRequesID);
-            }
-            catch
-            {
-
-                
-            }
-        }
-
-        private void dtNgayKhoiTao_ValueChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                LoadIngredienRequestByDate();
-                LoadIngredienRequestDetail(IngredienRequesID);
-                LoadIngredienRequesDetailBought(IngredienRequesID);
-            }
-            catch 
-            {
-
-                throw;
-            }
-        }
-
         private void btnNguoiYeuCau_Click(object sender, EventArgs e)
         {
             TcFrNhanVien a = new TcFrNhanVien();
@@ -272,6 +205,40 @@ namespace QLHSBanTru2018_Demo_V1.QLThuChi.ChiTieu.ChiTieuThucPham
             Employee a = dt.GetByID((int)gridView1.GetRowCellValue(e.ListSourceRowIndex, "CreatedBy"));
             if (e.Column.FieldName != "TenNhanVien") return;
             e.Value = a.FirstName+" "+a.LastName;
+        }
+
+        private void cbNgayMua_CheckedChanged_1(object sender, EventArgs e)
+        {
+            try
+            {
+                
+                dtNgayKhoiTao.Enabled = false;
+                dtNgayMua.Enabled = true;
+                LoadIngredienRequestByDate();
+                LoadIngredienRequestDetail((int)gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "IngredientRequestID"));
+                LoadIngredienRequesDetailBought(IngredienRequesID);
+            }
+            catch
+            {
+
+
+            }
+        }
+        private void cbNgayTao_CheckedChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                dtNgayMua.Enabled = false;
+                dtNgayKhoiTao.Enabled = true;
+                LoadIngredienRequestByDate();
+                LoadIngredienRequestDetail((int)gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "IngredientRequestID"));
+                LoadIngredienRequesDetailBought(IngredienRequesID);
+            }
+            catch 
+            {
+
+                
+            }
         }
     }
 }
