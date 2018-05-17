@@ -108,8 +108,11 @@ namespace DataConnect.DAO.HungTD
         {
             try
             {
-                Dish obj = dishes.FirstOrDefault(x => x.DishID.Equals(dishID));
-                dishes.DeleteOnSubmit(obj);
+                new DishDetailDAO().DeleteListByDish(dishID);
+
+                Dish entity = dishes.SingleOrDefault(x => x.DishID.Equals(dishID));
+                dishes.DeleteOnSubmit(entity);
+                db.SubmitChanges();
                 return true;
             }
             catch
