@@ -180,7 +180,15 @@ namespace QLHSBanTru2018_Demo_V1.QLThuChi.DotThu.KeHoachThu
 
         private void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
-            studentReceivableDAO.PreferredID = gridView1.GetRowCellValue(e.FocusedRowHandle,"PreferredID").ToString();
+            try
+            {
+                studentReceivableDAO.PreferredID = gridView1.GetRowCellValue(e.FocusedRowHandle, "PreferredID").ToString();
+            }
+            catch 
+            {
+
+                
+            }
         }
 
         private void gridView1_CustomUnboundColumnData(object sender, DevExpress.XtraGrid.Views.Base.CustomColumnDataEventArgs e)
@@ -190,7 +198,7 @@ namespace QLHSBanTru2018_Demo_V1.QLThuChi.DotThu.KeHoachThu
             int rowindex = e.ListSourceRowIndex;
             decimal a = 0;
             if (e.Column.FieldName != "miengiam") return;
-            int perferredID = dt.lookforPreferredID(ClassStudentDAO.StudentID);
+            int? perferredID = dt.lookforPreferredID(ClassStudentDAO.StudentID);
             if (perferredID==null)
             {
                 e.Value = 0;
