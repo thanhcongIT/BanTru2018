@@ -65,6 +65,7 @@
             this.btnDishManager = new DevExpress.XtraBars.BarButtonItem();
             this.btnChiThucPham = new DevExpress.XtraBars.BarButtonItem();
             this.btnYeuCau = new DevExpress.XtraBars.BarButtonItem();
+            this.btnMealManager = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -84,7 +85,7 @@
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
             this.pnControlsPanel = new System.Windows.Forms.Panel();
-            this.btnMealManager = new DevExpress.XtraBars.BarButtonItem();
+            this.btnThongKeThucPham = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             this.SuspendLayout();
             // 
@@ -127,9 +128,10 @@
             this.btnDishManager,
             this.btnChiThucPham,
             this.btnYeuCau,
-            this.btnMealManager});
+            this.btnMealManager,
+            this.btnThongKeThucPham});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 36;
+            this.ribbon.MaxItemId = 37;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -438,6 +440,15 @@
             this.btnYeuCau.Name = "btnYeuCau";
             this.btnYeuCau.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnYeuCau_ItemClick);
             // 
+            // btnMealManager
+            // 
+            this.btnMealManager.Caption = "Bữa Ăn";
+            this.btnMealManager.Id = 35;
+            this.btnMealManager.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnMealManager.ImageOptions.Image")));
+            this.btnMealManager.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnMealManager.ImageOptions.LargeImage")));
+            this.btnMealManager.Name = "btnMealManager";
+            this.btnMealManager.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnMealManager_ItemClick);
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -535,6 +546,7 @@
             // 
             this.ribbonPageGroup12.ItemLinks.Add(this.btnChiThucPham);
             this.ribbonPageGroup12.ItemLinks.Add(this.btnYeuCau);
+            this.ribbonPageGroup12.ItemLinks.Add(this.btnThongKeThucPham);
             this.ribbonPageGroup12.Name = "ribbonPageGroup12";
             this.ribbonPageGroup12.Text = "Chi tiêu thực phẩm";
             // 
@@ -583,14 +595,14 @@
             this.pnControlsPanel.Size = new System.Drawing.Size(1364, 600);
             this.pnControlsPanel.TabIndex = 3;
             // 
-            // btnMealManager
+            // btnThongKeThucPham
             // 
-            this.btnMealManager.Caption = "Bữa Ăn";
-            this.btnMealManager.Id = 35;
-            this.btnMealManager.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.Image")));
-            this.btnMealManager.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.LargeImage")));
-            this.btnMealManager.Name = "btnMealManager";
-            this.btnMealManager.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnMealManager_ItemClick);
+            this.btnThongKeThucPham.Caption = "Thống kê thực phẩm";
+            this.btnThongKeThucPham.Id = 36;
+            this.btnThongKeThucPham.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnThongKeThucPham.ImageOptions.Image")));
+            this.btnThongKeThucPham.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnThongKeThucPham.ImageOptions.LargeImage")));
+            this.btnThongKeThucPham.Name = "btnThongKeThucPham";
+            this.btnThongKeThucPham.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThongKeThucPham_ItemClick);
             // 
             // frmMain
             // 
@@ -668,5 +680,6 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup12;
         private DevExpress.XtraBars.BarButtonItem btnYeuCau;
         private DevExpress.XtraBars.BarButtonItem btnMealManager;
+        private DevExpress.XtraBars.BarButtonItem btnThongKeThucPham;
     }
 }

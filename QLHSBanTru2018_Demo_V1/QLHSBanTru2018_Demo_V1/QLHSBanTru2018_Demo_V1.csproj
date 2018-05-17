@@ -335,10 +335,16 @@
     <Compile Include="QLThuChi\ChiTieu\ChiTieuThucPham\FrRptHoaDonThucPham.Designer.cs">
       <DependentUpon>FrRptHoaDonThucPham.cs</DependentUpon>
     </Compile>
-    <Compile Include="QLThuChi\ChiTieu\ChiTieuThucPham\FrThanhToanThucPham.cs">
+    <Compile Include="QLThuChi\ChiTieu\ChiTieuThucPham\ThongKeThucPham\UsThongKeThucPham.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="QLThuChi\ChiTieu\ChiTieuThucPham\ThongKeThucPham\UsThongKeThucPham.Designer.cs">
+      <DependentUpon>UsThongKeThucPham.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QLThuChi\ChiTieu\ChiTieuThucPham\YeuCauThucPham\FrThanhToanThucPham.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="QLThuChi\ChiTieu\ChiTieuThucPham\FrThanhToanThucPham.Designer.cs">
+    <Compile Include="QLThuChi\ChiTieu\ChiTieuThucPham\YeuCauThucPham\FrThanhToanThucPham.Designer.cs">
       <DependentUpon>FrThanhToanThucPham.cs</DependentUpon>
     </Compile>
     <Compile Include="QLThuChi\ChiTieu\ChiTieuThucPham\FrThemPhieuChi.cs">
@@ -347,10 +353,10 @@
     <Compile Include="QLThuChi\ChiTieu\ChiTieuThucPham\FrThemPhieuChi.Designer.cs">
       <DependentUpon>FrThemPhieuChi.cs</DependentUpon>
     </Compile>
-    <Compile Include="QLThuChi\ChiTieu\ChiTieuThucPham\TcFrNhanVien.cs">
+    <Compile Include="QLThuChi\ChiTieu\ChiTieuThucPham\YeuCauThucPham\TcFrNhanVien.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="QLThuChi\ChiTieu\ChiTieuThucPham\TcFrNhanVien.Designer.cs">
+    <Compile Include="QLThuChi\ChiTieu\ChiTieuThucPham\YeuCauThucPham\TcFrNhanVien.Designer.cs">
       <DependentUpon>TcFrNhanVien.cs</DependentUpon>
     </Compile>
     <Compile Include="QLThuChi\ChiTieu\ChiTieuThucPham\UsChiThucPham.cs">
@@ -359,10 +365,10 @@
     <Compile Include="QLThuChi\ChiTieu\ChiTieuThucPham\UsChiThucPham.Designer.cs">
       <DependentUpon>UsChiThucPham.cs</DependentUpon>
     </Compile>
-    <Compile Include="QLThuChi\ChiTieu\ChiTieuThucPham\UsYeuCau.cs">
+    <Compile Include="QLThuChi\ChiTieu\ChiTieuThucPham\YeuCauThucPham\UsYeuCau.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="QLThuChi\ChiTieu\ChiTieuThucPham\UsYeuCau.Designer.cs">
+    <Compile Include="QLThuChi\ChiTieu\ChiTieuThucPham\YeuCauThucPham\UsYeuCau.Designer.cs">
       <DependentUpon>UsYeuCau.cs</DependentUpon>
     </Compile>
     <Compile Include="QLThuChi\ChiTieu\KhoanChi\FrChiTietHoaDon.cs">
@@ -697,19 +703,22 @@
     <EmbeddedResource Include="QLThuChi\ChiTieu\ChiTieuThucPham\FrRptHoaDonThucPham.resx">
       <DependentUpon>FrRptHoaDonThucPham.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="QLThuChi\ChiTieu\ChiTieuThucPham\FrThanhToanThucPham.resx">
+    <EmbeddedResource Include="QLThuChi\ChiTieu\ChiTieuThucPham\ThongKeThucPham\UsThongKeThucPham.resx">
+      <DependentUpon>UsThongKeThucPham.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QLThuChi\ChiTieu\ChiTieuThucPham\YeuCauThucPham\FrThanhToanThucPham.resx">
       <DependentUpon>FrThanhToanThucPham.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="QLThuChi\ChiTieu\ChiTieuThucPham\FrThemPhieuChi.resx">
       <DependentUpon>FrThemPhieuChi.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="QLThuChi\ChiTieu\ChiTieuThucPham\TcFrNhanVien.resx">
+    <EmbeddedResource Include="QLThuChi\ChiTieu\ChiTieuThucPham\YeuCauThucPham\TcFrNhanVien.resx">
       <DependentUpon>TcFrNhanVien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="QLThuChi\ChiTieu\ChiTieuThucPham\UsChiThucPham.resx">
       <DependentUpon>UsChiThucPham.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="QLThuChi\ChiTieu\ChiTieuThucPham\UsYeuCau.resx">
+    <EmbeddedResource Include="QLThuChi\ChiTieu\ChiTieuThucPham\YeuCauThucPham\UsYeuCau.resx">
       <DependentUpon>UsYeuCau.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="QLThuChi\ChiTieu\KhoanChi\FrChiTietHoaDon.resx">
