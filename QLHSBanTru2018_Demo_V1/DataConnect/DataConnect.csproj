@@ -70,6 +70,7 @@
     <Compile Include="DAO\HungTD\SemesterDAO.cs" />
     <Compile Include="DAO\HungTD\TopicDAO.cs" />
     <Compile Include="DAO\HungTD\AgeGroupDAO.cs" />
+    <Compile Include="DAO\HungTD\WeekDAO.cs" />
     <Compile Include="DAO\ThanhCongTC\ChiTieuThucPham\Dataset\DsHoaDonThucPham.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

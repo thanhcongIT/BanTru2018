@@ -33,6 +33,9 @@ namespace DataConnect.DAO.HungTD
                 course.InsertOnSubmit(entity);
                 db.SubmitChanges();
                 //History
+
+                new WeekDAO().InsertAllWeekOfCourse(entity);
+
                 return entity.CourseID;
             }
             catch
