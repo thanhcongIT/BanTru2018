@@ -31,6 +31,8 @@
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.cbTheoThang = new System.Windows.Forms.RadioButton();
+            this.cbTheoNgay = new System.Windows.Forms.RadioButton();
             this.grChiTietPhieuChi = new DevExpress.XtraGrid.GridControl();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.grPhieuChi = new DevExpress.XtraGrid.GridControl();
@@ -48,8 +50,10 @@
             this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem3 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem4 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.dtTheoNgay = new System.Windows.Forms.DateTimePicker();
+            this.dtTheoThang = new System.Windows.Forms.DateTimePicker();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
@@ -99,12 +103,38 @@
             // 
             // groupControl1
             // 
-            this.groupControl1.Controls.Add(this.radioButton2);
-            this.groupControl1.Controls.Add(this.radioButton1);
+            this.groupControl1.Controls.Add(this.label2);
+            this.groupControl1.Controls.Add(this.label1);
+            this.groupControl1.Controls.Add(this.dtTheoThang);
+            this.groupControl1.Controls.Add(this.dtTheoNgay);
+            this.groupControl1.Controls.Add(this.cbTheoThang);
+            this.groupControl1.Controls.Add(this.cbTheoNgay);
             this.groupControl1.Location = new System.Drawing.Point(12, 12);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(246, 115);
+            this.groupControl1.Size = new System.Drawing.Size(246, 77);
             this.groupControl1.TabIndex = 8;
+            // 
+            // cbTheoThang
+            // 
+            this.cbTheoThang.AutoSize = true;
+            this.cbTheoThang.Location = new System.Drawing.Point(196, 53);
+            this.cbTheoThang.Name = "cbTheoThang";
+            this.cbTheoThang.Size = new System.Drawing.Size(14, 13);
+            this.cbTheoThang.TabIndex = 1;
+            this.cbTheoThang.UseVisualStyleBackColor = true;
+            this.cbTheoThang.CheckedChanged += new System.EventHandler(this.cbTheoThang_CheckedChanged);
+            // 
+            // cbTheoNgay
+            // 
+            this.cbTheoNgay.AutoSize = true;
+            this.cbTheoNgay.Checked = true;
+            this.cbTheoNgay.Location = new System.Drawing.Point(196, 26);
+            this.cbTheoNgay.Name = "cbTheoNgay";
+            this.cbTheoNgay.Size = new System.Drawing.Size(14, 13);
+            this.cbTheoNgay.TabIndex = 0;
+            this.cbTheoNgay.TabStop = true;
+            this.cbTheoNgay.UseVisualStyleBackColor = true;
+            this.cbTheoNgay.CheckedChanged += new System.EventHandler(this.cbTheoNgay_CheckedChanged);
             // 
             // grChiTietPhieuChi
             // 
@@ -123,10 +153,10 @@
             // 
             // grPhieuChi
             // 
-            this.grPhieuChi.Location = new System.Drawing.Point(12, 131);
+            this.grPhieuChi.Location = new System.Drawing.Point(12, 93);
             this.grPhieuChi.MainView = this.gridView1;
             this.grPhieuChi.Name = "grPhieuChi";
-            this.grPhieuChi.Size = new System.Drawing.Size(246, 383);
+            this.grPhieuChi.Size = new System.Drawing.Size(246, 421);
             this.grPhieuChi.TabIndex = 6;
             this.grPhieuChi.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -190,9 +220,9 @@
             // layoutControlItem3
             // 
             this.layoutControlItem3.Control = this.grPhieuChi;
-            this.layoutControlItem3.Location = new System.Drawing.Point(0, 119);
+            this.layoutControlItem3.Location = new System.Drawing.Point(0, 81);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(250, 387);
+            this.layoutControlItem3.Size = new System.Drawing.Size(250, 425);
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem3.TextVisible = false;
             // 
@@ -210,7 +240,7 @@
             this.layoutControlItem5.Control = this.groupControl1;
             this.layoutControlItem5.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(250, 119);
+            this.layoutControlItem5.Size = new System.Drawing.Size(250, 81);
             this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem5.TextVisible = false;
             // 
@@ -255,27 +285,44 @@
             this.emptySpaceItem4.Size = new System.Drawing.Size(511, 172);
             this.emptySpaceItem4.TextSize = new System.Drawing.Size(0, 0);
             // 
-            // radioButton1
+            // dtTheoNgay
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Checked = true;
-            this.radioButton1.Location = new System.Drawing.Point(72, 42);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(87, 17);
-            this.radioButton1.TabIndex = 0;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "radioButton1";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.dtTheoNgay.CustomFormat = "dd/MM/yyyy";
+            this.dtTheoNgay.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtTheoNgay.Location = new System.Drawing.Point(71, 20);
+            this.dtTheoNgay.Name = "dtTheoNgay";
+            this.dtTheoNgay.Size = new System.Drawing.Size(107, 21);
+            this.dtTheoNgay.TabIndex = 2;
+            this.dtTheoNgay.ValueChanged += new System.EventHandler(this.dtTheoNgay_ValueChanged);
             // 
-            // radioButton2
+            // dtTheoThang
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(72, 65);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(87, 17);
-            this.radioButton2.TabIndex = 1;
-            this.radioButton2.Text = "radioButton2";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.dtTheoThang.CustomFormat = "MM/yyyy";
+            this.dtTheoThang.Enabled = false;
+            this.dtTheoThang.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtTheoThang.Location = new System.Drawing.Point(71, 47);
+            this.dtTheoThang.Name = "dtTheoThang";
+            this.dtTheoThang.Size = new System.Drawing.Size(107, 21);
+            this.dtTheoThang.TabIndex = 3;
+            this.dtTheoThang.ValueChanged += new System.EventHandler(this.dtTheoThang_ValueChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(7, 26);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(58, 13);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Theo ngày";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(7, 53);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(62, 13);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Theo tháng";
             // 
             // UsChiThucPham
             // 
@@ -332,7 +379,11 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton cbTheoThang;
+        private System.Windows.Forms.RadioButton cbTheoNgay;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DateTimePicker dtTheoThang;
+        private System.Windows.Forms.DateTimePicker dtTheoNgay;
     }
 }

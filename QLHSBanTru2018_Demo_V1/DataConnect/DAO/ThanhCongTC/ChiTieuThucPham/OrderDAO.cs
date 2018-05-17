@@ -34,6 +34,11 @@ namespace DataConnect.DAO.ThanhCongTC.ChiTieuThucPham
             var a = dt.Orders.Where(t => t.Date.Month == dateTime.Month && t.Date.Year == dateTime.Year);
             return a.ToList();
         }
+        public List<Order>ListOrderByDay(DateTime dateTime)
+        {
+            var a = dt.Orders.Where(t => t.Date == dateTime);
+            return a.ToList();
+        }
        
     }
 }
