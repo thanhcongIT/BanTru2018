@@ -45,16 +45,16 @@ namespace QLHSBanTru2018_Demo_V1.HungTD.Form.Dish
         private void btnAdd_Click(object sender, EventArgs e)
         {
             frmDishDetail frmDD = new frmDishDetail();
-            var rowHandle = gridView1.FocusedRowHandle;
-            try
-            {
-                frmDD.setDish(Convert.ToInt32(gridView1.GetRowCellValue(rowHandle, "DishID").ToString()));
-            }
-            catch
-            {
-                //var rowChild = gridView1.GetChildRowHandle(rowHandle, 0);
-                //frmDD.setDish(Convert.ToInt32(gridView1.GetRowCellValue(rowChild, "DishID").ToString()));
-            }
+            //var rowHandle = gridView1.FocusedRowHandle;
+            //try
+            //{
+            //    frmDD.setDish(Convert.ToInt32(gridView1.GetRowCellValue(rowHandle, "DishID").ToString()));
+            //}
+            //catch
+            //{
+            //    var rowChild = gridView1.GetChildRowHandle(rowHandle, 0);
+            //    frmDD.setDish(Convert.ToInt32(gridView1.GetRowCellValue(rowChild, "DishID").ToString()));
+            //}
             frmDD.setFunction(1);
             frmDD.setTitle("Thêm Mới Món Ăn");
             frmDD.ShowDialog();
@@ -62,5 +62,28 @@ namespace QLHSBanTru2018_Demo_V1.HungTD.Form.Dish
                 FillCombobox();
         }
 
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            frmDishDetail frmDD = new frmDishDetail();
+            var rowHandle = gridView1.FocusedRowHandle;
+            try
+            {
+                frmDD.setDish(Convert.ToInt32(gridView1.GetRowCellValue(rowHandle, "DishID").ToString()));
+                frmDD.setDishDetail(Convert.ToInt32(gridView1.GetRowCellValue(rowHandle, "DishID").ToString()));
+                frmDD.setDishDetailViewModels(Convert.ToInt32(gridView1.GetRowCellValue(rowHandle, "DishID").ToString()));
+            }
+            catch
+            {
+                var rowChild = gridView1.GetChildRowHandle(rowHandle, 0);
+                frmDD.setDish(Convert.ToInt32(gridView1.GetRowCellValue(rowChild, "DishID").ToString()));
+                frmDD.setDishDetail(Convert.ToInt32(gridView1.GetRowCellValue(rowChild, "DishID").ToString()));
+                frmDD.setDishDetailViewModels(Convert.ToInt32(gridView1.GetRowCellValue(rowChild, "DishID").ToString()));
+            }
+            frmDD.setFunction(2);
+            frmDD.setTitle("Chỉnh Sửa Món Ăn");
+            frmDD.ShowDialog();
+            if (frmDD.DialogResult == DialogResult.OK)
+                FillCombobox();
+        }
     }
 }

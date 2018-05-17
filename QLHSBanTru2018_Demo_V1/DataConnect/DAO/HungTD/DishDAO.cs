@@ -32,28 +32,8 @@ namespace DataConnect.DAO.HungTD
                             CreatedDate = d.CreatedDate,
                             CreatedBy = d.CreatedBy,
                             CreatedByName = d.Employee.FirstName + " " + d.Employee.LastName,
-                            Status = d.Status,
-
-                            Kcal = 0,
-                            Protein = 0,
-                            Fat = 0,
-                            Glucose = 0,
-                            Fiber = 0,
-                            Canxi = 0,
-                            Iron = 0,
-                            Photpho = 0,
-                            Kali = 0,
-                            Natri = 0,
-                            VitaminA = 0,
-                            VitaminB1 = 0,
-                            VitaminC = 0,
-                            AxitFolic = 0,
-                            Cholesterol = 0,
+                            Status = d.Status == true ? "Kích hoạt" : "Khóa"
                         };
-            foreach(var item in dishes)
-            {
-                
-            }
             return model.ToList();
         }
 
@@ -82,6 +62,19 @@ namespace DataConnect.DAO.HungTD
                 return 0;
             }
         }
+
+        public int Update(Dish dishEntity, List<DishDetail> llistDishDetailEntity)
+        {
+            try
+            {
+                return 1;
+            }
+            catch
+            {
+                return 0;
+            }
+        }
+
         public bool Delete(int dishID)
         {
             try

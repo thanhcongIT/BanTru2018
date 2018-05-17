@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDish));
             DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager1 = new DevExpress.XtraSplashScreen.SplashScreenManager(this, null, true, true, typeof(System.Windows.Forms.UserControl));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDish));
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.btnAdd = new DevExpress.XtraEditors.SimpleButton();
             this.btnEdit = new DevExpress.XtraEditors.SimpleButton();
@@ -45,6 +45,8 @@
             this.colMealName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colAgeGroupName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colCreatedByName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCreatedDate = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colStatus = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDetail = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnDetail = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
@@ -86,6 +88,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
             this.SuspendLayout();
             // 
+            // splashScreenManager1
+            // 
+            splashScreenManager1.ClosingDelay = 3000;
+            // 
             // layoutControl1
             // 
             this.layoutControl1.Controls.Add(this.btnAdd);
@@ -108,7 +114,7 @@
             // btnAdd
             // 
             this.btnAdd.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.ImageOptions.Image")));
-            this.btnAdd.Location = new System.Drawing.Point(25, 25);
+            this.btnAdd.Location = new System.Drawing.Point(15, 15);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(86, 22);
             this.btnAdd.StyleController = this.layoutControl1;
@@ -119,17 +125,18 @@
             // btnEdit
             // 
             this.btnEdit.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnEdit.ImageOptions.Image")));
-            this.btnEdit.Location = new System.Drawing.Point(115, 25);
+            this.btnEdit.Location = new System.Drawing.Point(105, 15);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(85, 22);
             this.btnEdit.StyleController = this.layoutControl1;
             this.btnEdit.TabIndex = 5;
             this.btnEdit.Text = "Cập Nhật";
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnDelete
             // 
             this.btnDelete.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.ImageOptions.Image")));
-            this.btnDelete.Location = new System.Drawing.Point(204, 25);
+            this.btnDelete.Location = new System.Drawing.Point(194, 15);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(87, 22);
             this.btnDelete.StyleController = this.layoutControl1;
@@ -139,7 +146,7 @@
             // btnPrint
             // 
             this.btnPrint.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnPrint.ImageOptions.Image")));
-            this.btnPrint.Location = new System.Drawing.Point(295, 25);
+            this.btnPrint.Location = new System.Drawing.Point(285, 15);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(90, 22);
             this.btnPrint.StyleController = this.layoutControl1;
@@ -150,14 +157,14 @@
             // 
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(597, 55);
+            this.comboBox1.Location = new System.Drawing.Point(607, 45);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(162, 21);
             this.comboBox1.TabIndex = 9;
             // 
             // textEdit1
             // 
-            this.textEdit1.Location = new System.Drawing.Point(597, 122);
+            this.textEdit1.Location = new System.Drawing.Point(607, 112);
             this.textEdit1.Name = "textEdit1";
             this.textEdit1.Size = new System.Drawing.Size(162, 20);
             this.textEdit1.StyleController = this.layoutControl1;
@@ -165,7 +172,7 @@
             // 
             // textEdit2
             // 
-            this.textEdit2.Location = new System.Drawing.Point(597, 146);
+            this.textEdit2.Location = new System.Drawing.Point(607, 136);
             this.textEdit2.Name = "textEdit2";
             this.textEdit2.Size = new System.Drawing.Size(162, 20);
             this.textEdit2.StyleController = this.layoutControl1;
@@ -173,28 +180,46 @@
             // 
             // gcMain
             // 
-            this.gcMain.Location = new System.Drawing.Point(25, 51);
+            this.gcMain.Location = new System.Drawing.Point(15, 41);
             this.gcMain.MainView = this.gridView1;
             this.gcMain.Name = "gcMain";
             this.gcMain.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.btnDetail});
-            this.gcMain.Size = new System.Drawing.Size(452, 444);
+            this.gcMain.Size = new System.Drawing.Size(472, 464);
             this.gcMain.TabIndex = 12;
             this.gcMain.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             // 
             // gridView1
             // 
+            this.gridView1.Appearance.EvenRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(242)))), ((int)(((byte)(251)))));
+            this.gridView1.Appearance.EvenRow.Options.UseBackColor = true;
+            this.gridView1.Appearance.FocusedRow.BackColor = System.Drawing.Color.Bisque;
+            this.gridView1.Appearance.FocusedRow.Options.UseBackColor = true;
+            this.gridView1.Appearance.OddRow.BackColor = System.Drawing.Color.White;
+            this.gridView1.Appearance.OddRow.Options.UseBackColor = true;
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colDishID,
             this.colName,
             this.colMealName,
             this.colAgeGroupName,
             this.colCreatedByName,
+            this.colCreatedDate,
+            this.colStatus,
             this.colDetail});
             this.gridView1.GridControl = this.gcMain;
+            this.gridView1.GroupCount = 1;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsBehavior.AutoExpandAllGroups = true;
+            this.gridView1.OptionsBehavior.ReadOnly = true;
+            this.gridView1.OptionsFind.AlwaysVisible = true;
+            this.gridView1.OptionsFind.FindDelay = 500;
+            this.gridView1.OptionsFind.FindNullPrompt = "Nhập từ khóa...";
+            this.gridView1.OptionsView.EnableAppearanceEvenRow = true;
+            this.gridView1.OptionsView.EnableAppearanceOddRow = true;
             this.gridView1.OptionsView.ShowGroupPanel = false;
+            this.gridView1.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colAgeGroupName, DevExpress.Data.ColumnSortOrder.Ascending)});
             // 
             // colDishID
             // 
@@ -212,7 +237,7 @@
             this.colDishID.Name = "colDishID";
             this.colDishID.Visible = true;
             this.colDishID.VisibleIndex = 0;
-            this.colDishID.Width = 40;
+            this.colDishID.Width = 61;
             // 
             // colName
             // 
@@ -223,11 +248,11 @@
             this.colName.FieldName = "Name";
             this.colName.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
             this.colName.MaxWidth = 500;
-            this.colName.MinWidth = 120;
+            this.colName.MinWidth = 250;
             this.colName.Name = "colName";
             this.colName.Visible = true;
             this.colName.VisibleIndex = 1;
-            this.colName.Width = 150;
+            this.colName.Width = 250;
             // 
             // colMealName
             // 
@@ -237,11 +262,11 @@
             this.colMealName.Caption = "Bữa Ăn";
             this.colMealName.FieldName = "MealName";
             this.colMealName.MaxWidth = 250;
-            this.colMealName.MinWidth = 100;
+            this.colMealName.MinWidth = 120;
             this.colMealName.Name = "colMealName";
             this.colMealName.Visible = true;
             this.colMealName.VisibleIndex = 2;
-            this.colMealName.Width = 100;
+            this.colMealName.Width = 120;
             // 
             // colAgeGroupName
             // 
@@ -251,11 +276,11 @@
             this.colAgeGroupName.Caption = "Nhóm Tuổi";
             this.colAgeGroupName.FieldName = "AgeGroupName";
             this.colAgeGroupName.MaxWidth = 250;
-            this.colAgeGroupName.MinWidth = 100;
+            this.colAgeGroupName.MinWidth = 120;
             this.colAgeGroupName.Name = "colAgeGroupName";
             this.colAgeGroupName.Visible = true;
             this.colAgeGroupName.VisibleIndex = 3;
-            this.colAgeGroupName.Width = 100;
+            this.colAgeGroupName.Width = 120;
             // 
             // colCreatedByName
             // 
@@ -268,8 +293,43 @@
             this.colCreatedByName.MinWidth = 100;
             this.colCreatedByName.Name = "colCreatedByName";
             this.colCreatedByName.Visible = true;
-            this.colCreatedByName.VisibleIndex = 4;
+            this.colCreatedByName.VisibleIndex = 3;
             this.colCreatedByName.Width = 100;
+            // 
+            // colCreatedDate
+            // 
+            this.colCreatedDate.AppearanceCell.Options.UseTextOptions = true;
+            this.colCreatedDate.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colCreatedDate.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.colCreatedDate.AppearanceHeader.Options.UseTextOptions = true;
+            this.colCreatedDate.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colCreatedDate.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.colCreatedDate.Caption = "Ngày Tạo";
+            this.colCreatedDate.FieldName = "CreatedDate";
+            this.colCreatedDate.MaxWidth = 200;
+            this.colCreatedDate.MinWidth = 150;
+            this.colCreatedDate.Name = "colCreatedDate";
+            this.colCreatedDate.Visible = true;
+            this.colCreatedDate.VisibleIndex = 4;
+            this.colCreatedDate.Width = 150;
+            // 
+            // colStatus
+            // 
+            this.colStatus.AppearanceCell.Options.UseTextOptions = true;
+            this.colStatus.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colStatus.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.colStatus.AppearanceHeader.Options.UseTextOptions = true;
+            this.colStatus.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colStatus.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.colStatus.Caption = "Tình Trạng";
+            this.colStatus.FieldName = "Status";
+            this.colStatus.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Right;
+            this.colStatus.MaxWidth = 70;
+            this.colStatus.MinWidth = 70;
+            this.colStatus.Name = "colStatus";
+            this.colStatus.Visible = true;
+            this.colStatus.VisibleIndex = 5;
+            this.colStatus.Width = 70;
             // 
             // colDetail
             // 
@@ -282,7 +342,7 @@
             this.colDetail.MinWidth = 40;
             this.colDetail.Name = "colDetail";
             this.colDetail.Visible = true;
-            this.colDetail.VisibleIndex = 5;
+            this.colDetail.VisibleIndex = 6;
             this.colDetail.Width = 40;
             // 
             // btnDetail
@@ -312,6 +372,7 @@
             this.Root2});
             this.Root1.Location = new System.Drawing.Point(0, 0);
             this.Root1.Name = "Root1";
+            this.Root1.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
             this.Root1.Size = new System.Drawing.Size(776, 500);
             this.Root1.Spacing = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
             this.Root1.Text = "Root";
@@ -334,7 +395,7 @@
             this.Root2.Location = new System.Drawing.Point(0, 0);
             this.Root2.Name = "Root2";
             this.Root2.Padding = new DevExpress.XtraLayout.Utils.Padding(3, 3, 3, 3);
-            this.Root2.Size = new System.Drawing.Size(756, 480);
+            this.Root2.Size = new System.Drawing.Size(776, 500);
             this.Root2.Spacing = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
             this.Root2.Text = "Root";
             this.Root2.TextVisible = false;
@@ -397,7 +458,7 @@
             this.emptySpaceItem5.CustomizationFormText = "emptySpaceItem5";
             this.emptySpaceItem5.Location = new System.Drawing.Point(364, 0);
             this.emptySpaceItem5.Name = "emptySpaceItem5";
-            this.emptySpaceItem5.Size = new System.Drawing.Size(92, 26);
+            this.emptySpaceItem5.Size = new System.Drawing.Size(112, 26);
             this.emptySpaceItem5.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlGroup3
@@ -405,7 +466,7 @@
             this.layoutControlGroup3.CustomizationFormText = "Lọc Thông Tin";
             this.layoutControlGroup3.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlItem6});
-            this.layoutControlGroup3.Location = new System.Drawing.Point(456, 0);
+            this.layoutControlGroup3.Location = new System.Drawing.Point(476, 0);
             this.layoutControlGroup3.Name = "layoutControlGroup3";
             this.layoutControlGroup3.Size = new System.Drawing.Size(294, 67);
             this.layoutControlGroup3.Text = "Lọc Thông Tin";
@@ -427,9 +488,9 @@
             this.emptySpaceItem1,
             this.layoutControlItem5,
             this.layoutControlItem7});
-            this.layoutControlGroup4.Location = new System.Drawing.Point(456, 67);
+            this.layoutControlGroup4.Location = new System.Drawing.Point(476, 67);
             this.layoutControlGroup4.Name = "layoutControlGroup4";
-            this.layoutControlGroup4.Size = new System.Drawing.Size(294, 407);
+            this.layoutControlGroup4.Size = new System.Drawing.Size(294, 427);
             this.layoutControlGroup4.Text = "Thông Tin ABC";
             // 
             // emptySpaceItem1
@@ -440,7 +501,7 @@
             this.emptySpaceItem1.MaxSize = new System.Drawing.Size(270, 0);
             this.emptySpaceItem1.MinSize = new System.Drawing.Size(270, 24);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(270, 317);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(270, 337);
             this.emptySpaceItem1.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
@@ -470,13 +531,9 @@
             this.layoutControlItem8.CustomizationFormText = "layoutControlItem8";
             this.layoutControlItem8.Location = new System.Drawing.Point(0, 26);
             this.layoutControlItem8.Name = "layoutControlItem8";
-            this.layoutControlItem8.Size = new System.Drawing.Size(456, 448);
+            this.layoutControlItem8.Size = new System.Drawing.Size(476, 468);
             this.layoutControlItem8.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem8.TextVisible = false;
-            // 
-            // splashScreenManager1
-            // 
-            splashScreenManager1.ClosingDelay = 3000;
             // 
             // frmDish
             // 
@@ -546,5 +603,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn colCreatedByName;
         private DevExpress.XtraGrid.Columns.GridColumn colDetail;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnDetail;
+        private DevExpress.XtraGrid.Columns.GridColumn colCreatedDate;
+        private DevExpress.XtraGrid.Columns.GridColumn colStatus;
     }
 }
