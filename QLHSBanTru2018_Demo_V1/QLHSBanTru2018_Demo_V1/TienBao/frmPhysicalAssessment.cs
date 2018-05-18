@@ -167,6 +167,7 @@ namespace QLHSBanTru2018_Demo_V1.TienBao
                 frmPhysicalDetail m_frmPhysicalDetail = new frmPhysicalDetail();
                 m_frmPhysicalDetail.iFunction = 2;
                 m_frmPhysicalDetail.m_PhysicalTable = new PhysicalAssessmentDAO().GetByID(int.Parse(cmbPhysicalAssessment.EditValue.ToString()));
+               
                 m_frmPhysicalDetail.Class = new ClassDAO().GetByClassID(int.Parse(cmbLopHoc.SelectedValue.ToString()));
                 m_frmPhysicalDetail.ShowDialog();
                 if (m_frmPhysicalDetail.DialogResult == DialogResult.OK)

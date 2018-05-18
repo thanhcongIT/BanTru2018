@@ -64,7 +64,6 @@
             this.btnXemChiTiet = new DevExpress.XtraEditors.SimpleButton();
             this.btnChinhSua = new DevExpress.XtraEditors.SimpleButton();
             this.btnBaoCao = new DevExpress.XtraEditors.SimpleButton();
-            this.btnXuatExcel = new DevExpress.XtraEditors.SimpleButton();
             this.cmbPhysicalAssessment = new DevExpress.XtraEditors.LookUpEdit();
             this.btnThemmoi = new DevExpress.XtraEditors.SimpleButton();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
@@ -83,7 +82,6 @@
             this.layoutControlItem13 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem15 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem14 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem12 = new DevExpress.XtraLayout.LayoutControlItem();
             this.btnXoa = new DevExpress.XtraEditors.SimpleButton();
             this.btnXem = new DevExpress.XtraEditors.SimpleButton();
@@ -113,6 +111,8 @@
             this.simpleButton25 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton26 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton27 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnXoaDotCanDo = new DevExpress.XtraEditors.SimpleButton();
+            this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPhysicalAssessment)).BeginInit();
@@ -139,8 +139,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem15)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem14)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -155,9 +155,9 @@
             this.layoutControl1.Controls.Add(this.btnXemChiTiet);
             this.layoutControl1.Controls.Add(this.btnChinhSua);
             this.layoutControl1.Controls.Add(this.btnBaoCao);
-            this.layoutControl1.Controls.Add(this.btnXuatExcel);
             this.layoutControl1.Controls.Add(this.cmbPhysicalAssessment);
             this.layoutControl1.Controls.Add(this.btnThemmoi);
+            this.layoutControl1.Controls.Add(this.btnXoaDotCanDo);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl1.Location = new System.Drawing.Point(0, 0);
             this.layoutControl1.Name = "layoutControl1";
@@ -483,26 +483,17 @@
             this.btnChinhSua.StyleController = this.layoutControl1;
             this.btnChinhSua.TabIndex = 20;
             this.btnChinhSua.Text = "Chỉnh sửa";
+            this.btnChinhSua.Click += new System.EventHandler(this.btnChinhSua_Click);
             // 
             // btnBaoCao
             // 
             this.btnBaoCao.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnBaoCao.ImageOptions.Image")));
-            this.btnBaoCao.Location = new System.Drawing.Point(644, 12);
+            this.btnBaoCao.Location = new System.Drawing.Point(646, 12);
             this.btnBaoCao.Name = "btnBaoCao";
             this.btnBaoCao.Size = new System.Drawing.Size(86, 22);
             this.btnBaoCao.StyleController = this.layoutControl1;
             this.btnBaoCao.TabIndex = 29;
             this.btnBaoCao.Text = "In báo cáo";
-            // 
-            // btnXuatExcel
-            // 
-            this.btnXuatExcel.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnXuatExcel.ImageOptions.Image")));
-            this.btnXuatExcel.Location = new System.Drawing.Point(535, 12);
-            this.btnXuatExcel.Name = "btnXuatExcel";
-            this.btnXuatExcel.Size = new System.Drawing.Size(105, 22);
-            this.btnXuatExcel.StyleController = this.layoutControl1;
-            this.btnXuatExcel.TabIndex = 20;
-            this.btnXuatExcel.Text = "Xuất EXCEL";
             // 
             // cmbPhysicalAssessment
             // 
@@ -543,8 +534,8 @@
             this.layoutControlItem13,
             this.emptySpaceItem1,
             this.layoutControlItem15,
-            this.layoutControlItem14,
-            this.layoutControlItem12});
+            this.layoutControlItem12,
+            this.layoutControlItem6});
             this.layoutControlGroup1.Name = "Root";
             this.layoutControlGroup1.Size = new System.Drawing.Size(1152, 581);
             this.layoutControlGroup1.TextVisible = false;
@@ -706,15 +697,15 @@
             // emptySpaceItem1
             // 
             this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(722, 0);
+            this.emptySpaceItem1.Location = new System.Drawing.Point(724, 0);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(410, 26);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(408, 26);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem15
             // 
             this.layoutControlItem15.Control = this.btnBaoCao;
-            this.layoutControlItem15.Location = new System.Drawing.Point(632, 0);
+            this.layoutControlItem15.Location = new System.Drawing.Point(634, 0);
             this.layoutControlItem15.MaxSize = new System.Drawing.Size(90, 26);
             this.layoutControlItem15.MinSize = new System.Drawing.Size(90, 26);
             this.layoutControlItem15.Name = "layoutControlItem15";
@@ -722,20 +713,6 @@
             this.layoutControlItem15.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem15.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem15.TextVisible = false;
-            // 
-            // layoutControlItem14
-            // 
-            this.layoutControlItem14.Control = this.btnXuatExcel;
-            this.layoutControlItem14.CustomizationFormText = "layoutControlItem21";
-            this.layoutControlItem14.Location = new System.Drawing.Point(523, 0);
-            this.layoutControlItem14.MaxSize = new System.Drawing.Size(109, 26);
-            this.layoutControlItem14.MinSize = new System.Drawing.Size(109, 26);
-            this.layoutControlItem14.Name = "layoutControlItem14";
-            this.layoutControlItem14.Size = new System.Drawing.Size(109, 26);
-            this.layoutControlItem14.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
-            this.layoutControlItem14.Text = "layoutControlItem21";
-            this.layoutControlItem14.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem14.TextVisible = false;
             // 
             // layoutControlItem12
             // 
@@ -1002,6 +979,30 @@
             this.simpleButton27.TabIndex = 17;
             this.simpleButton27.Text = "Thêm mới";
             // 
+            // btnXoaDotCanDo
+            // 
+            this.btnXoaDotCanDo.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton18.ImageOptions.Image")));
+            this.btnXoaDotCanDo.Location = new System.Drawing.Point(535, 12);
+            this.btnXoaDotCanDo.Name = "btnXoaDotCanDo";
+            this.btnXoaDotCanDo.Size = new System.Drawing.Size(107, 22);
+            this.btnXoaDotCanDo.StyleController = this.layoutControl1;
+            this.btnXoaDotCanDo.TabIndex = 32;
+            this.btnXoaDotCanDo.Text = "Xóa đợt cân đo";
+            // 
+            // layoutControlItem6
+            // 
+            this.layoutControlItem6.Control = this.btnXoaDotCanDo;
+            this.layoutControlItem6.CustomizationFormText = "layoutControlItem12";
+            this.layoutControlItem6.Location = new System.Drawing.Point(523, 0);
+            this.layoutControlItem6.MaxSize = new System.Drawing.Size(111, 26);
+            this.layoutControlItem6.MinSize = new System.Drawing.Size(111, 26);
+            this.layoutControlItem6.Name = "layoutControlItem6";
+            this.layoutControlItem6.Size = new System.Drawing.Size(111, 26);
+            this.layoutControlItem6.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            this.layoutControlItem6.Text = "layoutControlItem12";
+            this.layoutControlItem6.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem6.TextVisible = false;
+            // 
             // frmPhysicalAssessment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1036,8 +1037,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem15)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem14)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1105,9 +1106,7 @@
         private DevExpress.XtraEditors.SimpleButton simpleButton20;
         private DevExpress.XtraEditors.SimpleButton simpleButton21;
         private DevExpress.XtraEditors.SimpleButton btnBaoCao;
-        private DevExpress.XtraEditors.SimpleButton btnXuatExcel;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem15;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem14;
         private DevExpress.XtraEditors.SimpleButton simpleButton22;
         private DevExpress.XtraEditors.SimpleButton simpleButton25;
         private DevExpress.XtraEditors.SimpleButton simpleButton26;
@@ -1119,5 +1118,7 @@
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn2;
         private DevExpress.XtraEditors.SimpleButton btnThemmoi;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem12;
+        private DevExpress.XtraEditors.SimpleButton btnXoaDotCanDo;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
     }
 }

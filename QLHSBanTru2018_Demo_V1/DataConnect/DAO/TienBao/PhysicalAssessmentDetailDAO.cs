@@ -108,9 +108,9 @@ namespace DataConnect.DAO.TienBao
             try
             {
                 PhysicalDetailTable = db.GetTable<PhysicalAssessmentDetail>();
-                PhysicalAssessmentDetail model = PhysicalDetailTable.SingleOrDefault(x => x.PhysicalAssessmentDeailID.Equals(entity.PhysicalAssessmentDeailID));
-                model.PhysicalAssessmentID = entity.PhysicalAssessmentID;
-                model.StudentID = entity.StudentID;
+                PhysicalAssessmentDetail model = PhysicalDetailTable.SingleOrDefault(x => x.PhysicalAssessmentID==entity.PhysicalAssessmentID&&x.PhysicalAssessmentDeailID==entity.PhysicalAssessmentDeailID);
+                //model.PhysicalAssessmentID = entity.PhysicalAssessmentID;
+                //model.StudentID = entity.StudentID;
                 model.Height = entity.Height;
                 model.Weight = entity.Weight;
                 model.HeightRating = entity.HeightRating;

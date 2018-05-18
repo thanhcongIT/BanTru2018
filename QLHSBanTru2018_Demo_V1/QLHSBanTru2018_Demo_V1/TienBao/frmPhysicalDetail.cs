@@ -177,7 +177,7 @@ namespace QLHSBanTru2018_Demo_V1.TienBao
                     for (int i = 0; i < bandedGridView1.RowCount; i++)
                     {
                         entity.PhysicalAssessmentID = m_PhysicalTable.PhysicalAssessmentID;
-                        entity2.PhysicalAssessmentDeailID = m_PhysicalDetailTable.PhysicalAssessmentDeailID;
+                        entity2.PhysicalAssessmentDeailID = (int)(bandedGridView1.GetRowCellValue(i, bandedGridView1.Columns["PhysicalAssessmentDetailID"]));
                         entity2.PhysicalAssessmentID = m_PhysicalTable.PhysicalAssessmentID;
                         entity2.StudentID = int.Parse(bandedGridView1.GetRowCellValue(i, bandedGridView1.Columns["StudentID"]).ToString());
                         entity2.Height = int.Parse(bandedGridView1.GetRowCellValue(i, bandedGridView1.Columns["Height"]).ToString());
@@ -256,6 +256,7 @@ namespace QLHSBanTru2018_Demo_V1.TienBao
         {
             if (XtraMessageBox.Show("Bạn muốn đóng trang này ?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
             { this.Close(); }
+           
         }
 
         private void btnNextTab_Click(object sender, EventArgs e)
@@ -263,7 +264,7 @@ namespace QLHSBanTru2018_Demo_V1.TienBao
             if (tabbedControlGroup1.TabPages.Count > tabbedControlGroup1.SelectedTabPageIndex + 1)
                 tabbedControlGroup1.SelectedTabPageIndex += 1;
         }
-
+        
         private void btnQuaylai_Click(object sender, EventArgs e)
         {
             if (0 <= tabbedControlGroup1.SelectedTabPageIndex - 1)
@@ -271,5 +272,9 @@ namespace QLHSBanTru2018_Demo_V1.TienBao
         }
         #endregion
 
+        private void bandedGridView1_FocusedRowChanged(object sender, FocusedRowChangedEventArgs e)
+        {
+           
+        }
     }
 }
