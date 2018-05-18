@@ -49,5 +49,26 @@ namespace DataConnect.DAO.ThanhCongTC.ChiTieuThucPham
             b.Status = O.Status;
             return b;
         }
+        public List<TCOrderDetailViewModle> listModel(int o)
+        {
+            List<TCOrderDetailViewModle> a1 = new List<TCOrderDetailViewModle>();
+            var a = dt.OrderDetails.Where(t => t.OrderID == o);
+            a.ToList();
+            foreach (var i in a)
+            {
+                Ingredient y = dt.Ingredients.FirstOrDefault(t => t.IngredientID ==i.IngredientID);
+                TCOrderDetailViewModle b = new TCOrderDetailViewModle();
+                b.IngredientID = i.IngredientID;
+                b.OrderID = i.OrderID;
+                b.Name = y.Name;
+                b.PriceOfUnit = i.PriceOfUnit;
+                b.Unit = y.Unit;
+                b.QuantityOfUnit = (int)i.QuantityOfUnit;
+                b.TotalPrice = i.TotalPrice;
+                b.Status = i.Status;
+                a1.Add(b);
+            }
+            return a1;
+        }
     }
 }

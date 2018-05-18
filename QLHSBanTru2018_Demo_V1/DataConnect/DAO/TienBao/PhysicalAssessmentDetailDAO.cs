@@ -44,6 +44,9 @@ namespace DataConnect.DAO.TienBao
                             StudentID = phd.StudentID,
                             StudentCode = s.StudentCode,
                             FullName = s.FirstName + " " + s.LastName,
+                            Birthday = s.Birthday,
+                            Gender = s.Gender,
+                            StringGender = s.Gender == true ? "Nam" : "Nữ",
                             ClassID = sc.ClassID,
                             ClassName = c.Name,
 
@@ -51,7 +54,7 @@ namespace DataConnect.DAO.TienBao
                             Weight = phd.Weight,
                             HeightRating = phd.HeightRating,
                             WeightRating = phd.WeightRating,
-                            //OtherRating = phd.OtherRating,
+
                             NoteDetail = phd.Note,
                             StatusPhysicalAssessmentDetail = phd.Status
                         };
@@ -78,6 +81,7 @@ namespace DataConnect.DAO.TienBao
                             FullName = s.FirstName + " " + s.LastName,
                             Birthday = s.Birthday,
                             Gender = s.Gender,
+                            StringGender = s.Gender == true ? "Nam" : "Nữ",
                             ClassID = sc.ClassID,
                             ClassName = c.Name,
                         };
@@ -104,9 +108,9 @@ namespace DataConnect.DAO.TienBao
             try
             {
                 PhysicalDetailTable = db.GetTable<PhysicalAssessmentDetail>();
-                PhysicalAssessmentDetail model = PhysicalDetailTable.SingleOrDefault(x => x.PhysicalAssessmentDeailID.Equals(entity.PhysicalAssessmentDeailID));
-                model.PhysicalAssessmentID = entity.PhysicalAssessmentID;
-                model.StudentID = entity.StudentID;
+                PhysicalAssessmentDetail model = PhysicalDetailTable.SingleOrDefault(x => x.PhysicalAssessmentID==entity.PhysicalAssessmentID&&x.PhysicalAssessmentDeailID==entity.PhysicalAssessmentDeailID);
+                //model.PhysicalAssessmentID = entity.PhysicalAssessmentID;
+                //model.StudentID = entity.StudentID;
                 model.Height = entity.Height;
                 model.Weight = entity.Weight;
                 model.HeightRating = entity.HeightRating;
