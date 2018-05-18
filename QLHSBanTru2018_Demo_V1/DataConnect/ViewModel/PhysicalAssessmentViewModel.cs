@@ -30,6 +30,7 @@ namespace DataConnect.ViewModel
         public string FullName { get; set; }
         public DateTime? Birthday { get; set; }
         public bool? Gender { get; set; }
+        public string StringGender { get; set; }
         public int ClassID { get; set; }
         public string ClassName { get; set; }
 

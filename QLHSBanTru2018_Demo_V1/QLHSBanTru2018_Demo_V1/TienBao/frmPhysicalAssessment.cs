@@ -27,7 +27,6 @@ namespace QLHSBanTru2018_Demo_V1.TienBao
         {
             InitializeComponent();
         }
-
         #region LoadInfor
         private void LoadClassInfor(int GradeID)
         {
@@ -62,11 +61,10 @@ namespace QLHSBanTru2018_Demo_V1.TienBao
             cmbPhysicalAssessment.Properties.DataSource = new PhysicalAssessmentDAO().ListPhysicalAssessment(); ;
             cmbPhysicalAssessment.Properties.DisplayMember = "NamePhysicalAssessment";
             cmbPhysicalAssessment.Properties.ValueMember = "PhysicalAssessmentID";
-            cmbPhysicalAssessment.Properties.NullText = "-- Chọn đợt cân đo --";
         }
         private void cmbPhysicalAssessment_EditValueChanged(object sender, EventArgs e)
         {
-            
+
             txtPhysicalNote.Text = cmbPhysicalAssessment.GetColumnValue("NotePhysicalAssessment").ToString();
             dtPhysicalDate.Text = cmbPhysicalAssessment.GetColumnValue("DatePhysicalAssessment").ToString();
         }
@@ -124,10 +122,11 @@ namespace QLHSBanTru2018_Demo_V1.TienBao
         private void frmPhysicalAssessment_Load(object sender, EventArgs e)
         {
             this.Dock = DockStyle.Fill;
+            LoadPhysicalAssessmentInfor();
         }
         private void btnXemChiTiet_Click(object sender, EventArgs e)
         {
-            if (cmbPhysicalAssessment.SelectedText == null)
+            if (cmbPhysicalAssessment.EditValue == null)
             {
                 XtraMessageBox.Show("Mời bạn chọn đợt cân đo", "Thông báo");
             }
@@ -145,18 +144,16 @@ namespace QLHSBanTru2018_Demo_V1.TienBao
 
             frmPhysicalDetail m_frmPhysicalDetail = new frmPhysicalDetail();
             m_frmPhysicalDetail.iFunction = 1;
-         //   m_frmPhysicalDetail.Coursetable = new CourseDAO().GetByID(int.Parse(cmbNamHoc.SelectedValue.ToString()));
-
             m_frmPhysicalDetail.ShowDialog();
             if (m_frmPhysicalDetail.DialogResult == DialogResult.OK)
             {
-                FillGridControl(int.Parse(cmbLopHoc.SelectedValue.ToString()), int.Parse(cmbPhysicalAssessment.EditValue.ToString()));
+                frmPhysicalAssessment_Load(sender, e);
             }
 
         }
         private void btnChinhSua_Click(object sender, EventArgs e)
         {
-            if (cmbPhysicalAssessment.SelectedText == null)
+            if (cmbPhysicalAssessment.EditValue == null)
             {
                 XtraMessageBox.Show("Mời bạn chọn đợt cân đo", "Thông báo");
 
@@ -170,7 +167,7 @@ namespace QLHSBanTru2018_Demo_V1.TienBao
                 frmPhysicalDetail m_frmPhysicalDetail = new frmPhysicalDetail();
                 m_frmPhysicalDetail.iFunction = 2;
                 m_frmPhysicalDetail.m_PhysicalTable = new PhysicalAssessmentDAO().GetByID(int.Parse(cmbPhysicalAssessment.EditValue.ToString()));
-
+                m_frmPhysicalDetail.Class = new ClassDAO().GetByClassID(int.Parse(cmbLopHoc.SelectedValue.ToString()));
                 m_frmPhysicalDetail.ShowDialog();
                 if (m_frmPhysicalDetail.DialogResult == DialogResult.OK)
                 {
@@ -235,12 +232,6 @@ namespace QLHSBanTru2018_Demo_V1.TienBao
             gridview.IndicatorWidth = Convert.ToInt32(size.Width + 0.999f) + GridPainter.Indicator.ImageSize.Width + 10;
 
         }
-
-
-
-
         #endregion
-
-
     }
 }

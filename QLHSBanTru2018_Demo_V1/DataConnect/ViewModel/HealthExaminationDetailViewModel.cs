@@ -16,7 +16,7 @@ namespace DataConnect.ViewModel
         public string FullName { get; set; }
         public int ClassID { get; set; }
         public string ClassName { get; set; }
-        public int HealthInsurance { get; set; }
+        public string HealthInsurance { get; set; }
         public int Height { get; set; }
         public int Weight { get; set; }
         public string Eyes { get; set; }

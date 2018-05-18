@@ -69,16 +69,12 @@ namespace QLHSBanTru2018_Demo_V1.TienBao
         {
             try
             {
-                dgvPhysicalDetail.DataSource = new HealthExaminationDetailDAO().ListStudent(ClassID);
-
+                dgvPhysicalDetail.DataSource = new PhysicalAssessmentDetailDAO().ListStudent(ClassID);
             }
             catch
             { }
         }
-
         #endregion
-
-   
 
         #region EventClass
         private void cmbNamHoc_Click(object sender, EventArgs e)
@@ -131,7 +127,7 @@ namespace QLHSBanTru2018_Demo_V1.TienBao
         private void PhysicalInsert()
         {
             if (txtPhysicalName.Text != "" &&
-             txtPhysicalNote.Text != "" &&
+             txtNotePhysical.Text != "" &&
              dtPhysicalDate.Text != "")
             {
                 DataConnect.PhysicalAssessment entity = new DataConnect.PhysicalAssessment();
@@ -139,7 +135,7 @@ namespace QLHSBanTru2018_Demo_V1.TienBao
 
                 entity.Date = DateTime.Parse(dtPhysicalDate.EditValue.ToString());
                 entity.Name = txtPhysicalName.Text;
-                entity.Note = txtPhysicalNote.Text;
+                entity.Note = txtNotePhysical.Text;
                 entity.Status = true; //chbStatus.Checked ? true : false;
 
                 if (iFunction == 1)
@@ -147,16 +143,26 @@ namespace QLHSBanTru2018_Demo_V1.TienBao
                     int NewPhysicalID = m_PhysicalDAO.PhysicalInsert(entity);
                     if (NewPhysicalID > 0)
                     {
-                        entity2.PhysicalAssessmentID = NewPhysicalID;
-                        entity2.StudentID = int.Parse(bandedGridView1.GetRowCellValue(0, "StudentID").ToString());
-                        entity2.Height = int.Parse(bandedGridView1.GetRowCellValue(0, "Height").ToString());
-                        entity2.Weight = int.Parse(bandedGridView1.GetRowCellValue(0, "Weight").ToString());
-                        entity2.HeightRating = bandedGridView1.GetRowCellValue(0, "HeightRating").ToString();
-                        entity2.WeightRating = bandedGridView1.GetRowCellValue(0, "WeightRating").ToString();
-                        //entity2.OtherRating = "tốt";
-                        entity2.Note = bandedGridView1.GetRowCellValue(0, "Note").ToString();
-                        entity2.Status = true;
-                        m_PhysicalDetailDAO.PhysicalDetailInsert(entity2);
+                        for (int i = 0; i < bandedGridView1.RowCount; i++)
+                        {
+                            entity2.PhysicalAssessmentID = NewPhysicalID;
+                            entity2.StudentID = int.Parse(bandedGridView1.GetRowCellValue(i, bandedGridView1.Columns["StudentID"]).ToString());
+                            entity2.Height = int.Parse(bandedGridView1.GetRowCellValue(i, bandedGridView1.Columns["Height"]).ToString());
+                            entity2.Weight = int.Parse(bandedGridView1.GetRowCellValue(i, bandedGridView1.Columns["Weight"]).ToString());
+                            entity2.HeightRating = bandedGridView1.GetRowCellValue(i, bandedGridView1.Columns["HeightRating"]).ToString();
+                            entity2.WeightRating = bandedGridView1.GetRowCellValue(i, bandedGridView1.Columns["WeightRating"]).ToString();
+                            entity2.Note = bandedGridView1.GetRowCellValue(i, bandedGridView1.Columns["NoteDetail"]).ToString();
+                            entity2.Status = true;
+                            if (m_PhysicalDetailDAO.PhysicalDetailInsert(entity2) == true)
+                            {
+
+                            }
+                            else
+                            {
+                                XtraMessageBox.Show("Bản ghi " + i + "bị lỗi");
+                                break;
+                            }
+                        }
                         XtraMessageBox.Show("Thêm kết quả cân đo thành công!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         DialogResult = DialogResult.OK;
                         this.Close();
@@ -168,27 +174,35 @@ namespace QLHSBanTru2018_Demo_V1.TienBao
                 }
                 else if (iFunction == 2)
                 {
-                    entity.PhysicalAssessmentID = m_PhysicalTable.PhysicalAssessmentID;
-                    entity2.PhysicalAssessmentDeailID = m_PhysicalDetailTable.PhysicalAssessmentDeailID;
-                    entity2.PhysicalAssessmentID = m_PhysicalTable.PhysicalAssessmentID;
-                    entity2.StudentID = int.Parse(bandedGridView1.GetRowCellValue(0, "StudentID").ToString());
-                    entity2.Height = int.Parse(bandedGridView1.GetRowCellValue(0, "Height").ToString());
-                    entity2.Weight = int.Parse(bandedGridView1.GetRowCellValue(0, "Weight").ToString());
-                    entity2.HeightRating = bandedGridView1.GetRowCellValue(0, "HeightRating").ToString();
-                    entity2.WeightRating = bandedGridView1.GetRowCellValue(0, "WeightRating").ToString();
-                    //entity2.OtherRating = "tốt";
-                    entity2.Note = bandedGridView1.GetRowCellValue(0, "Note").ToString();
-                    entity2.Status = true;
-                    if (m_PhysicalDAO.PhysicalUpdate(entity) == true && m_PhysicalDetailDAO.PhysicalDetailUpdate(entity2) == true)
+                    for (int i = 0; i < bandedGridView1.RowCount; i++)
                     {
-                        XtraMessageBox.Show("Cập nhật thành công!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        DialogResult = DialogResult.OK;
-                        this.Close();
+                        entity.PhysicalAssessmentID = m_PhysicalTable.PhysicalAssessmentID;
+                        entity2.PhysicalAssessmentDeailID = m_PhysicalDetailTable.PhysicalAssessmentDeailID;
+                        entity2.PhysicalAssessmentID = m_PhysicalTable.PhysicalAssessmentID;
+                        entity2.StudentID = int.Parse(bandedGridView1.GetRowCellValue(i, bandedGridView1.Columns["StudentID"]).ToString());
+                        entity2.Height = int.Parse(bandedGridView1.GetRowCellValue(i, bandedGridView1.Columns["Height"]).ToString());
+                        entity2.Weight = int.Parse(bandedGridView1.GetRowCellValue(i, bandedGridView1.Columns["Weight"]).ToString());
+                        entity2.HeightRating = bandedGridView1.GetRowCellValue(i, bandedGridView1.Columns["HeightRating"]).ToString();
+                        entity2.WeightRating = bandedGridView1.GetRowCellValue(i, bandedGridView1.Columns["WeightRating"]).ToString();
+                        entity2.Note = bandedGridView1.GetRowCellValue(i, bandedGridView1.Columns["NoteDetail"]).ToString();
+                        entity2.Status = true;
+                        if (m_PhysicalDAO.PhysicalUpdate(entity) == true && m_PhysicalDetailDAO.PhysicalDetailUpdate(entity2) == true)
+                        {
+
+                        }
+                        else
+                        {
+                            XtraMessageBox.Show("Bản ghi " + i + "bị lỗi");
+                            break;
+                        }
                     }
-                    else
-                    {
-                        XtraMessageBox.Show("Hệ thống đã xảy ra lỗi", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
+                    XtraMessageBox.Show("Cập nhật thành công!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    DialogResult = DialogResult.OK;
+                    this.Close();
+                }
+                else
+                {
+                    XtraMessageBox.Show("Hệ thống đã xảy ra lỗi", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else
@@ -210,7 +224,7 @@ namespace QLHSBanTru2018_Demo_V1.TienBao
         {
 
             txtPhysicalName.Text = m_PhysicalTable.Name;
-            txtPhysicalNote.Text = m_PhysicalTable.Note;
+            txtNotePhysical.Text = m_PhysicalTable.Note;
             dtPhysicalDate.EditValue = m_PhysicalTable.Date;
             FillGridControl(Class.ClassID, m_PhysicalTable.PhysicalAssessmentID);
         }
@@ -222,7 +236,7 @@ namespace QLHSBanTru2018_Demo_V1.TienBao
             if (iFunction == 1)
             {
                 this.Text = "Thêm mới đợt cân đo";
-                
+
             }
             else if (iFunction == 2)
             {
@@ -244,9 +258,6 @@ namespace QLHSBanTru2018_Demo_V1.TienBao
             { this.Close(); }
         }
 
-
-        #endregion
-
         private void btnNextTab_Click(object sender, EventArgs e)
         {
             if (tabbedControlGroup1.TabPages.Count > tabbedControlGroup1.SelectedTabPageIndex + 1)
@@ -258,5 +269,7 @@ namespace QLHSBanTru2018_Demo_V1.TienBao
             if (0 <= tabbedControlGroup1.SelectedTabPageIndex - 1)
                 tabbedControlGroup1.SelectedTabPageIndex -= 1;
         }
+        #endregion
+
     }
 }

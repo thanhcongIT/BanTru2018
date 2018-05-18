@@ -44,6 +44,9 @@ namespace DataConnect.DAO.TienBao
                             StudentID = phd.StudentID,
                             StudentCode = s.StudentCode,
                             FullName = s.FirstName + " " + s.LastName,
+                            Birthday = s.Birthday,
+                            Gender = s.Gender,
+                            StringGender = s.Gender == true ? "Nam" : "Nữ",
                             ClassID = sc.ClassID,
                             ClassName = c.Name,
 
@@ -51,7 +54,7 @@ namespace DataConnect.DAO.TienBao
                             Weight = phd.Weight,
                             HeightRating = phd.HeightRating,
                             WeightRating = phd.WeightRating,
-                            //OtherRating = phd.OtherRating,
+
                             NoteDetail = phd.Note,
                             StatusPhysicalAssessmentDetail = phd.Status
                         };
@@ -78,6 +81,7 @@ namespace DataConnect.DAO.TienBao
                             FullName = s.FirstName + " " + s.LastName,
                             Birthday = s.Birthday,
                             Gender = s.Gender,
+                            StringGender = s.Gender == true ? "Nam" : "Nữ",
                             ClassID = sc.ClassID,
                             ClassName = c.Name,
                         };
