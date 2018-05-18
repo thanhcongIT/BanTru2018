@@ -349,6 +349,7 @@
             this.dtNgayKhoiTao.Name = "dtNgayKhoiTao";
             this.dtNgayKhoiTao.Size = new System.Drawing.Size(132, 21);
             this.dtNgayKhoiTao.TabIndex = 1;
+            this.dtNgayKhoiTao.ValueChanged += new System.EventHandler(this.dtNgayKhoiTao_ValueChanged);
             // 
             // label1
             // 
@@ -367,6 +368,7 @@
             this.dtNgayMua.Name = "dtNgayMua";
             this.dtNgayMua.Size = new System.Drawing.Size(132, 21);
             this.dtNgayMua.TabIndex = 0;
+            this.dtNgayMua.ValueChanged += new System.EventHandler(this.dtNgayMua_ValueChanged);
             // 
             // groupControl1
             // 
@@ -380,10 +382,10 @@
             // txtGhiChu
             // 
             this.txtGhiChu.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtGhiChu.Location = new System.Drawing.Point(2, 21);
+            this.txtGhiChu.Location = new System.Drawing.Point(2, 20);
             this.txtGhiChu.Multiline = true;
             this.txtGhiChu.Name = "txtGhiChu";
-            this.txtGhiChu.Size = new System.Drawing.Size(501, 104);
+            this.txtGhiChu.Size = new System.Drawing.Size(501, 105);
             this.txtGhiChu.TabIndex = 0;
             // 
             // grChiTietYeuCau
