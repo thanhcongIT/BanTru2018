@@ -218,8 +218,8 @@
       <Association Name="Employee_Employee_Function" Member="Employee_Functions" ThisKey="EmployeeID" OtherKey="EmployeeID" Type="Employee_Function" />
       <Association Name="Employee_HealthProblem" Member="HealthProblems" ThisKey="EmployeeID" OtherKey="EmployeeID" Type="HealthProblem" />
       <Association Name="Employee_History" Member="Histories" ThisKey="EmployeeID" OtherKey="EmployeeID" Type="History" />
-      <Association Name="Employee_IngredientRequest" Member="IngredientRequests" ThisKey="EmployeeID" OtherKey="CreatedBy" Type="IngredientRequest" />
       <Association Name="Employee_Order" Member="Orders" ThisKey="EmployeeID" OtherKey="EmployeeID" Type="Order" />
+      <Association Name="Employee_IngredientRequest" Member="IngredientRequests" ThisKey="EmployeeID" OtherKey="CreatedBy" Type="IngredientRequest" />
       <Association Name="Degree_Employee" Member="Degree" ThisKey="DegreeID" OtherKey="DegreeID" Type="Degree" IsForeignKey="true" />
       <Association Name="EthnicGroup_Employee" Member="EthnicGroup" ThisKey="EthnicGroupID" OtherKey="EthnicGroupID" Type="EthnicGroup" IsForeignKey="true" />
       <Association Name="Location_Employee" Member="Location" ThisKey="LocationID" OtherKey="LocationID" Type="Location" IsForeignKey="true" />
@@ -393,18 +393,6 @@
       <Association Name="Ingredient_IngredientRequestDetail" Member="IngredientRequestDetails" ThisKey="IngredientID" OtherKey="IngredientID" Type="IngredientRequestDetail" />
       <Association Name="Ingredient_OrderDetail" Member="OrderDetails" ThisKey="IngredientID" OtherKey="IngredientID" Type="OrderDetail" />
       <Association Name="IngredientType_Ingredient" Member="IngredientType" ThisKey="IngredientTypeID" OtherKey="IngredientTypeID" Type="IngredientType" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.IngredientRequest" Member="IngredientRequests">
-    <Type Name="IngredientRequest">
-      <Column Name="IngredientRequestID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Date" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="CreatedBy" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="CreatedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="Note" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
-      <Column Name="Status" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Association Name="IngredientRequest_IngredientRequestDetail" Member="IngredientRequestDetails" ThisKey="IngredientRequestID" OtherKey="IngredientRequestID" Type="IngredientRequestDetail" />
-      <Association Name="Employee_IngredientRequest" Member="Employee" ThisKey="CreatedBy" OtherKey="EmployeeID" Type="Employee" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.IngredientRequestDetail" Member="IngredientRequestDetails">
@@ -754,6 +742,7 @@
       <Association Name="Course_Week" Member="Course" ThisKey="CourseID" OtherKey="CourseID" Type="Course" IsForeignKey="true" />
     </Type>
   </Table>
+<<<<<<< HEAD
   <Table Name="dbo.DailyTracker" Member="DailyTrackers">
     <Type Name="DailyTracker">
       <Column Name="DailyTrackerID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -773,6 +762,18 @@
       <Column Name="Status" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
       <Association Name="Student_DailyTracker" Member="Student" ThisKey="StudentID" OtherKey="StudentID" Type="Student" IsForeignKey="true" />
       <Association Name="Week_DailyTracker" Member="Week" ThisKey="WeekID" OtherKey="WeekID" Type="Week" IsForeignKey="true" />
+=======
+  <Table Name="dbo.IngredientRequest" Member="IngredientRequests">
+    <Type Name="IngredientRequest">
+      <Column Name="IngredientRequestID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedBy" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedDate" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Note" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Status" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="IngredientRequest_IngredientRequestDetail" Member="IngredientRequestDetails" ThisKey="IngredientRequestID" OtherKey="IngredientRequestID" Type="IngredientRequestDetail" />
+      <Association Name="Employee_IngredientRequest" Member="Employee" ThisKey="CreatedBy" OtherKey="EmployeeID" Type="Employee" IsForeignKey="true" />
+>>>>>>> 93a78ec2b6ae4d30b47a38e33b9d6e5b7a25806c
     </Type>
   </Table>
 </Database>
