@@ -48,6 +48,7 @@
     <Compile Include="Common\LoginDetail.cs" />
     <Compile Include="DAO\HungTD\ContractDAO.cs" />
     <Compile Include="DAO\HungTD\CourseDAO.cs" />
+    <Compile Include="DAO\HungTD\DailyTrackerDAO.cs" />
     <Compile Include="DAO\HungTD\DegreeDAO.cs" />
     <Compile Include="DAO\HungTD\DepartmentDAO.cs" />
     <Compile Include="DAO\HungTD\DishDAO.cs" />
@@ -117,6 +118,7 @@
     </Compile>
     <Compile Include="ViewModel\ContractReportViewModel.cs" />
     <Compile Include="ViewModel\ContractViewModel.cs" />
+    <Compile Include="ViewModel\DailyTrackerFullViewModel.cs" />
     <Compile Include="ViewModel\Department_EmployeeViewModel.cs" />
     <Compile Include="ViewModel\DishDetailViewModel.cs" />
     <Compile Include="ViewModel\DishFullViewModel.cs" />
