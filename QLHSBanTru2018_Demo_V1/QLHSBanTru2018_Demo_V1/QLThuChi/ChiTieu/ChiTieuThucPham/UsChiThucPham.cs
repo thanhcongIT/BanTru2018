@@ -35,17 +35,41 @@ namespace QLHSBanTru2018_Demo_V1.QLThuChi.ChiTieu.ChiTieuThucPham
                 grPhieuChi.DataSource = dt.listOrderByMonth(dtTheoThang.Value);
             }
         }
-
+        public void LoadOrderDetail()
+        {
+            OrderDetailDAO dt = new OrderDetailDAO();
+            //grChiTietPhieuChi.DataSource = dt.OrderDetailViewModle();
+        }
         private void cbTheoNgay_CheckedChanged(object sender, EventArgs e)
         {
-            dtTheoThang.Enabled = false;
-            dtTheoNgay.Enabled = true;
+            try
+            {
+                dtTheoThang.Enabled = false;
+                dtTheoNgay.Enabled = true;
+                LoadOrder();
+            }
+            catch 
+            {
+
+                
+            }
+            
         }
 
         private void cbTheoThang_CheckedChanged(object sender, EventArgs e)
         {
-            dtTheoNgay.Enabled = false;
-            dtTheoThang.Enabled = true;
+            try
+            {
+                dtTheoNgay.Enabled = false;
+                dtTheoThang.Enabled = true;
+                LoadOrder();
+            }
+            catch 
+            {
+
+                
+            }
+            
         }
 
         private void dtTheoNgay_ValueChanged(object sender, EventArgs e)

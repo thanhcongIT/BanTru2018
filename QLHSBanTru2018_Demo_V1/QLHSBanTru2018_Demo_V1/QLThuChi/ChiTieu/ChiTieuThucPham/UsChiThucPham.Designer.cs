@@ -31,6 +31,10 @@
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.dtTheoThang = new System.Windows.Forms.DateTimePicker();
+            this.dtTheoNgay = new System.Windows.Forms.DateTimePicker();
             this.cbTheoThang = new System.Windows.Forms.RadioButton();
             this.cbTheoNgay = new System.Windows.Forms.RadioButton();
             this.grChiTietPhieuChi = new DevExpress.XtraGrid.GridControl();
@@ -50,10 +54,6 @@
             this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem3 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem4 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.dtTheoNgay = new System.Windows.Forms.DateTimePicker();
-            this.dtTheoThang = new System.Windows.Forms.DateTimePicker();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
@@ -97,7 +97,7 @@
             // 
             this.groupControl2.Location = new System.Drawing.Point(262, 12);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(491, 84);
+            this.groupControl2.Size = new System.Drawing.Size(491, 184);
             this.groupControl2.TabIndex = 9;
             this.groupControl2.Text = "Thông tin thực phẩm";
             // 
@@ -113,6 +113,45 @@
             this.groupControl1.Name = "groupControl1";
             this.groupControl1.Size = new System.Drawing.Size(246, 77);
             this.groupControl1.TabIndex = 8;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(7, 53);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(62, 13);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Theo tháng";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(7, 26);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(58, 13);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Theo ngày";
+            // 
+            // dtTheoThang
+            // 
+            this.dtTheoThang.CustomFormat = "MM/yyyy";
+            this.dtTheoThang.Enabled = false;
+            this.dtTheoThang.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtTheoThang.Location = new System.Drawing.Point(71, 47);
+            this.dtTheoThang.Name = "dtTheoThang";
+            this.dtTheoThang.Size = new System.Drawing.Size(107, 21);
+            this.dtTheoThang.TabIndex = 3;
+            this.dtTheoThang.ValueChanged += new System.EventHandler(this.dtTheoThang_ValueChanged);
+            // 
+            // dtTheoNgay
+            // 
+            this.dtTheoNgay.CustomFormat = "dd/MM/yyyy";
+            this.dtTheoNgay.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtTheoNgay.Location = new System.Drawing.Point(71, 20);
+            this.dtTheoNgay.Name = "dtTheoNgay";
+            this.dtTheoNgay.Size = new System.Drawing.Size(107, 21);
+            this.dtTheoNgay.TabIndex = 2;
+            this.dtTheoNgay.ValueChanged += new System.EventHandler(this.dtTheoNgay_ValueChanged);
             // 
             // cbTheoThang
             // 
@@ -138,10 +177,10 @@
             // 
             // grChiTietPhieuChi
             // 
-            this.grChiTietPhieuChi.Location = new System.Drawing.Point(262, 100);
+            this.grChiTietPhieuChi.Location = new System.Drawing.Point(262, 200);
             this.grChiTietPhieuChi.MainView = this.gridView2;
             this.grChiTietPhieuChi.Name = "grChiTietPhieuChi";
-            this.grChiTietPhieuChi.Size = new System.Drawing.Size(491, 440);
+            this.grChiTietPhieuChi.Size = new System.Drawing.Size(491, 340);
             this.grChiTietPhieuChi.TabIndex = 7;
             this.grChiTietPhieuChi.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -229,9 +268,9 @@
             // layoutControlItem4
             // 
             this.layoutControlItem4.Control = this.grChiTietPhieuChi;
-            this.layoutControlItem4.Location = new System.Drawing.Point(250, 88);
+            this.layoutControlItem4.Location = new System.Drawing.Point(250, 188);
             this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(495, 444);
+            this.layoutControlItem4.Size = new System.Drawing.Size(495, 344);
             this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem4.TextVisible = false;
             // 
@@ -249,7 +288,7 @@
             this.layoutControlItem6.Control = this.groupControl2;
             this.layoutControlItem6.Location = new System.Drawing.Point(250, 0);
             this.layoutControlItem6.Name = "layoutControlItem6";
-            this.layoutControlItem6.Size = new System.Drawing.Size(495, 88);
+            this.layoutControlItem6.Size = new System.Drawing.Size(495, 188);
             this.layoutControlItem6.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem6.TextVisible = false;
             // 
@@ -284,45 +323,6 @@
             this.emptySpaceItem4.Name = "emptySpaceItem4";
             this.emptySpaceItem4.Size = new System.Drawing.Size(511, 172);
             this.emptySpaceItem4.TextSize = new System.Drawing.Size(0, 0);
-            // 
-            // dtTheoNgay
-            // 
-            this.dtTheoNgay.CustomFormat = "dd/MM/yyyy";
-            this.dtTheoNgay.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtTheoNgay.Location = new System.Drawing.Point(71, 20);
-            this.dtTheoNgay.Name = "dtTheoNgay";
-            this.dtTheoNgay.Size = new System.Drawing.Size(107, 21);
-            this.dtTheoNgay.TabIndex = 2;
-            this.dtTheoNgay.ValueChanged += new System.EventHandler(this.dtTheoNgay_ValueChanged);
-            // 
-            // dtTheoThang
-            // 
-            this.dtTheoThang.CustomFormat = "MM/yyyy";
-            this.dtTheoThang.Enabled = false;
-            this.dtTheoThang.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtTheoThang.Location = new System.Drawing.Point(71, 47);
-            this.dtTheoThang.Name = "dtTheoThang";
-            this.dtTheoThang.Size = new System.Drawing.Size(107, 21);
-            this.dtTheoThang.TabIndex = 3;
-            this.dtTheoThang.ValueChanged += new System.EventHandler(this.dtTheoThang_ValueChanged);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(7, 26);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(58, 13);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Theo ngày";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(7, 53);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(62, 13);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Theo tháng";
             // 
             // UsChiThucPham
             // 

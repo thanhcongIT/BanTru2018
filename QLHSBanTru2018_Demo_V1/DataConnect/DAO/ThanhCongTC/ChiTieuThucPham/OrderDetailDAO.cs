@@ -49,5 +49,10 @@ namespace DataConnect.DAO.ThanhCongTC.ChiTieuThucPham
             b.Status = O.Status;
             return b;
         }
+        //public List<TCOrderDetailViewModle>listModel(Order o)
+        //{
+        //    var a = dt.OrderDetails.Where(t => t.OrderID == o.OrderID);
+        //    a.ToList();
+        //}
     }
 }
