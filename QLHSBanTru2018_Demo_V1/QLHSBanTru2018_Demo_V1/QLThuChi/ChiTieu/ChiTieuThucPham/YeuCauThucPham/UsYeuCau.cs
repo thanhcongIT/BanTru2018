@@ -240,5 +240,35 @@ namespace QLHSBanTru2018_Demo_V1.QLThuChi.ChiTieu.ChiTieuThucPham
                 
             }
         }
+
+        private void dtNgayMua_ValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                LoadIngredienRequestByDate();
+                LoadIngredienRequestDetail((int)gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "IngredientRequestID"));
+                LoadIngredienRequesDetailBought(IngredienRequesID);
+            }
+            catch
+            {
+
+                
+            }
+        }
+
+        private void dtNgayKhoiTao_ValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                LoadIngredienRequestByDate();
+                LoadIngredienRequestDetail((int)gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "IngredientRequestID"));
+                LoadIngredienRequesDetailBought(IngredienRequesID);
+            }
+            catch
+            {
+
+
+            }
+        }
     }
 }
