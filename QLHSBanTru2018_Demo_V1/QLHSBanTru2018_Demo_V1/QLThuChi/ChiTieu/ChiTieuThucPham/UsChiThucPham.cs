@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using DataConnect.DAO.ThanhCongTC.ChiTieuThucPham;
+using DataConnect;
 
 namespace QLHSBanTru2018_Demo_V1.QLThuChi.ChiTieu.ChiTieuThucPham
 {
@@ -21,7 +22,16 @@ namespace QLHSBanTru2018_Demo_V1.QLThuChi.ChiTieu.ChiTieuThucPham
 
         private void UsChiThucPham_Load(object sender, EventArgs e)
         {
-            LoadOrder();
+            try
+            {
+                LoadOrder();
+                LoadOrderDetail((int)gridView2.GetRowCellValue(gridView2.FocusedRowHandle, "OrderID"));
+            }
+            catch 
+            {
+
+                
+            }            
         }
         public void LoadOrder()
         {
@@ -35,10 +45,10 @@ namespace QLHSBanTru2018_Demo_V1.QLThuChi.ChiTieu.ChiTieuThucPham
                 grPhieuChi.DataSource = dt.listOrderByMonth(dtTheoThang.Value);
             }
         }
-        public void LoadOrderDetail()
+        public void LoadOrderDetail(int a)
         {
             OrderDetailDAO dt = new OrderDetailDAO();
-            //grChiTietPhieuChi.DataSource = dt.OrderDetailViewModle();
+            grChiTietPhieuChi.DataSource = dt.listModel(a);
         }
         private void cbTheoNgay_CheckedChanged(object sender, EventArgs e)
         {
@@ -74,12 +84,48 @@ namespace QLHSBanTru2018_Demo_V1.QLThuChi.ChiTieu.ChiTieuThucPham
 
         private void dtTheoNgay_ValueChanged(object sender, EventArgs e)
         {
-            LoadOrder();
+            try
+            {
+                LoadOrder();
+                LoadOrderDetail((int)gridView2.GetRowCellValue(gridView2.FocusedRowHandle, "OrderID"));
+            }
+            catch 
+            {
+
+            
+            }
         }
 
         private void dtTheoThang_ValueChanged(object sender, EventArgs e)
         {
-            LoadOrder();
+            try
+            {
+                LoadOrder();
+                LoadOrderDetail((int)gridView2.GetRowCellValue(gridView2.FocusedRowHandle, "OrderID"));
+            }
+            catch 
+            {
+
+                
+            }
+        }
+
+        private void gridView2_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
+        {
+            
+        }
+
+        private void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
+        {
+            try
+            {
+                LoadOrderDetail((int)gridView1.GetRowCellValue(e.FocusedRowHandle, "OrderID"));
+            }
+            catch 
+            {
+
+                
+            }
         }
     }
 }

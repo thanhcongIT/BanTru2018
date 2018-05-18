@@ -52,15 +52,23 @@ namespace QLHSBanTru2018_Demo_V1.QLThuChi.ChiTieu
         public void LoadChiTietHoaDon()
         {
             InvoiceDetailDAO dt = new InvoiceDetailDAO();
-            grChitietkhoanchi.DataSource = dt.ListInvoiceDetail(System.Guid.Parse(txtMaHoaDon.Text));
+            grChitietkhoanchi.DataSource = dt.ListInvoiceDetail((System.Guid)gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "InvoiceID"));
         }
 
         private void UsKhoanChi_Load(object sender, EventArgs e)
         {
-            LoadNamhoc();
-            LoadHocky();
-            LoadHoaDon();
-            LoadChiTietHoaDon();
+            try
+            {
+                LoadNamhoc();
+                LoadHocky();
+                LoadHoaDon();
+                LoadChiTietHoaDon();
+            }
+            catch
+            {
+
+                
+            }
         }
 
         private void bntThem_Click(object sender, EventArgs e)
@@ -72,15 +80,31 @@ namespace QLHSBanTru2018_Demo_V1.QLThuChi.ChiTieu
 
         private void cbbNamhoc_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            LoadHocky();
-            LoadHoaDon();
-            LoadChiTietHoaDon();
+            try
+            {
+                LoadHocky();
+                LoadHoaDon();
+                LoadChiTietHoaDon();
+            }
+            catch 
+            {
+
+               
+            }
         }
 
         private void cbbHocky_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            LoadHoaDon();
-            LoadChiTietHoaDon();
+            try
+            {
+                LoadHoaDon();
+                LoadChiTietHoaDon();
+            }
+            catch 
+            {
+
+               
+            }
         }
 
         private void bntXuathoadon_Click(object sender, EventArgs e)
