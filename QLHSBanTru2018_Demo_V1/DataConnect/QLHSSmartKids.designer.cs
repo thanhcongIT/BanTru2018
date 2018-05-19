@@ -33,9 +33,9 @@ namespace DataConnect
     partial void InsertAgeGroup(AgeGroup instance);
     partial void UpdateAgeGroup(AgeGroup instance);
     partial void DeleteAgeGroup(AgeGroup instance);
-    partial void InsertWeeklyTask(WeeklyTask instance);
-    partial void UpdateWeeklyTask(WeeklyTask instance);
-    partial void DeleteWeeklyTask(WeeklyTask instance);
+    partial void InsertWeekYear(WeekYear instance);
+    partial void UpdateWeekYear(WeekYear instance);
+    partial void DeleteWeekYear(WeekYear instance);
     partial void InsertClass(Class instance);
     partial void UpdateClass(Class instance);
     partial void DeleteClass(Class instance);
@@ -60,9 +60,6 @@ namespace DataConnect
     partial void InsertDailyTracker(DailyTracker instance);
     partial void UpdateDailyTracker(DailyTracker instance);
     partial void DeleteDailyTracker(DailyTracker instance);
-    partial void InsertDateOfDate(DateOfDate instance);
-    partial void UpdateDateOfDate(DateOfDate instance);
-    partial void DeleteDateOfDate(DateOfDate instance);
     partial void InsertDateOfEntry(DateOfEntry instance);
     partial void UpdateDateOfEntry(DateOfEntry instance);
     partial void DeleteDateOfEntry(DateOfEntry instance);
@@ -204,6 +201,9 @@ namespace DataConnect
     partial void InsertWeek(Week instance);
     partial void UpdateWeek(Week instance);
     partial void DeleteWeek(Week instance);
+    partial void InsertWeeklyTask(WeeklyTask instance);
+    partial void UpdateWeeklyTask(WeeklyTask instance);
+    partial void DeleteWeeklyTask(WeeklyTask instance);
     #endregion
 		
 		public QLHSSmartKidsDataContext() : 
@@ -244,11 +244,11 @@ namespace DataConnect
 			}
 		}
 		
-		public System.Data.Linq.Table<WeeklyTask> WeeklyTasks
+		public System.Data.Linq.Table<WeekYear> WeekYears
 		{
 			get
 			{
-				return this.GetTable<WeeklyTask>();
+				return this.GetTable<WeekYear>();
 			}
 		}
 		
@@ -313,14 +313,6 @@ namespace DataConnect
 			get
 			{
 				return this.GetTable<DailyTracker>();
-			}
-		}
-		
-		public System.Data.Linq.Table<DateOfDate> DateOfDates
-		{
-			get
-			{
-				return this.GetTable<DateOfDate>();
 			}
 		}
 		
@@ -699,6 +691,14 @@ namespace DataConnect
 				return this.GetTable<Week>();
 			}
 		}
+		
+		public System.Data.Linq.Table<WeeklyTask> WeeklyTasks
+		{
+			get
+			{
+				return this.GetTable<WeeklyTask>();
+			}
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.AgeGroup")]
@@ -915,8 +915,8 @@ namespace DataConnect
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.WeeklyTask")]
-	public partial class WeeklyTask : INotifyPropertyChanging, INotifyPropertyChanged
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.WeekYear")]
+	public partial class WeekYear : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
@@ -924,22 +924,6 @@ namespace DataConnect
 		private int _WeeklyTaskID;
 		
 		private string _MonthlyTaskID;
-		
-		private int _StudentID;
-		
-		private string _Eating;
-		
-		private string _Sleep;
-		
-		private string _Health;
-		
-		private string _Study;
-		
-		private string _Comment;
-		
-		private string _Pages;
-		
-		private EntityRef<Student> _Student;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -949,25 +933,10 @@ namespace DataConnect
     partial void OnWeeklyTaskIDChanged();
     partial void OnMonthlyTaskIDChanging(string value);
     partial void OnMonthlyTaskIDChanged();
-    partial void OnStudentIDChanging(int value);
-    partial void OnStudentIDChanged();
-    partial void OnEatingChanging(string value);
-    partial void OnEatingChanged();
-    partial void OnSleepChanging(string value);
-    partial void OnSleepChanged();
-    partial void OnHealthChanging(string value);
-    partial void OnHealthChanged();
-    partial void OnStudyChanging(string value);
-    partial void OnStudyChanged();
-    partial void OnCommentChanging(string value);
-    partial void OnCommentChanged();
-    partial void OnPagesChanging(string value);
-    partial void OnPagesChanged();
     #endregion
 		
-		public WeeklyTask()
+		public WeekYear()
 		{
-			this._Student = default(EntityRef<Student>);
 			OnCreated();
 		}
 		
@@ -1007,184 +976,6 @@ namespace DataConnect
 					this._MonthlyTaskID = value;
 					this.SendPropertyChanged("MonthlyTaskID");
 					this.OnMonthlyTaskIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StudentID", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int StudentID
-		{
-			get
-			{
-				return this._StudentID;
-			}
-			set
-			{
-				if ((this._StudentID != value))
-				{
-					if (this._Student.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnStudentIDChanging(value);
-					this.SendPropertyChanging();
-					this._StudentID = value;
-					this.SendPropertyChanged("StudentID");
-					this.OnStudentIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Eating", DbType="NVarChar(200)")]
-		public string Eating
-		{
-			get
-			{
-				return this._Eating;
-			}
-			set
-			{
-				if ((this._Eating != value))
-				{
-					this.OnEatingChanging(value);
-					this.SendPropertyChanging();
-					this._Eating = value;
-					this.SendPropertyChanged("Eating");
-					this.OnEatingChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Sleep", DbType="NVarChar(200)")]
-		public string Sleep
-		{
-			get
-			{
-				return this._Sleep;
-			}
-			set
-			{
-				if ((this._Sleep != value))
-				{
-					this.OnSleepChanging(value);
-					this.SendPropertyChanging();
-					this._Sleep = value;
-					this.SendPropertyChanged("Sleep");
-					this.OnSleepChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Health", DbType="NVarChar(200)")]
-		public string Health
-		{
-			get
-			{
-				return this._Health;
-			}
-			set
-			{
-				if ((this._Health != value))
-				{
-					this.OnHealthChanging(value);
-					this.SendPropertyChanging();
-					this._Health = value;
-					this.SendPropertyChanged("Health");
-					this.OnHealthChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Study", DbType="NVarChar(200)")]
-		public string Study
-		{
-			get
-			{
-				return this._Study;
-			}
-			set
-			{
-				if ((this._Study != value))
-				{
-					this.OnStudyChanging(value);
-					this.SendPropertyChanging();
-					this._Study = value;
-					this.SendPropertyChanged("Study");
-					this.OnStudyChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Comment", DbType="NVarChar(200)")]
-		public string Comment
-		{
-			get
-			{
-				return this._Comment;
-			}
-			set
-			{
-				if ((this._Comment != value))
-				{
-					this.OnCommentChanging(value);
-					this.SendPropertyChanging();
-					this._Comment = value;
-					this.SendPropertyChanged("Comment");
-					this.OnCommentChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Pages", DbType="NChar(10)")]
-		public string Pages
-		{
-			get
-			{
-				return this._Pages;
-			}
-			set
-			{
-				if ((this._Pages != value))
-				{
-					this.OnPagesChanging(value);
-					this.SendPropertyChanging();
-					this._Pages = value;
-					this.SendPropertyChanged("Pages");
-					this.OnPagesChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Student_WeeklyTask", Storage="_Student", ThisKey="StudentID", OtherKey="StudentID", IsForeignKey=true)]
-		public Student Student
-		{
-			get
-			{
-				return this._Student.Entity;
-			}
-			set
-			{
-				Student previousValue = this._Student.Entity;
-				if (((previousValue != value) 
-							|| (this._Student.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Student.Entity = null;
-						previousValue.WeeklyTasks.Remove(this);
-					}
-					this._Student.Entity = value;
-					if ((value != null))
-					{
-						value.WeeklyTasks.Add(this);
-						this._StudentID = value.StudentID;
-					}
-					else
-					{
-						this._StudentID = default(int);
-					}
-					this.SendPropertyChanged("Student");
 				}
 			}
 		}
@@ -2439,13 +2230,11 @@ namespace DataConnect
 		
 		private int _DailyMenuID;
 		
-		private string _Name;
-		
 		private int _WeekID;
 		
 		private System.DateTime _Date;
 		
-		private bool _IsForm;
+		private int _AgeGroup;
 		
 		private bool _Status;
 		
@@ -2459,14 +2248,12 @@ namespace DataConnect
     partial void OnCreated();
     partial void OnDailyMenuIDChanging(int value);
     partial void OnDailyMenuIDChanged();
-    partial void OnNameChanging(string value);
-    partial void OnNameChanged();
     partial void OnWeekIDChanging(int value);
     partial void OnWeekIDChanged();
     partial void OnDateChanging(System.DateTime value);
     partial void OnDateChanged();
-    partial void OnIsFormChanging(bool value);
-    partial void OnIsFormChanged();
+    partial void OnAgeGroupChanging(int value);
+    partial void OnAgeGroupChanged();
     partial void OnStatusChanging(bool value);
     partial void OnStatusChanged();
     #endregion
@@ -2494,26 +2281,6 @@ namespace DataConnect
 					this._DailyMenuID = value;
 					this.SendPropertyChanged("DailyMenuID");
 					this.OnDailyMenuIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string Name
-		{
-			get
-			{
-				return this._Name;
-			}
-			set
-			{
-				if ((this._Name != value))
-				{
-					this.OnNameChanging(value);
-					this.SendPropertyChanging();
-					this._Name = value;
-					this.SendPropertyChanged("Name");
-					this.OnNameChanged();
 				}
 			}
 		}
@@ -2562,22 +2329,22 @@ namespace DataConnect
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IsForm", DbType="Bit NOT NULL")]
-		public bool IsForm
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AgeGroup", DbType="Int NOT NULL")]
+		public int AgeGroup
 		{
 			get
 			{
-				return this._IsForm;
+				return this._AgeGroup;
 			}
 			set
 			{
-				if ((this._IsForm != value))
+				if ((this._AgeGroup != value))
 				{
-					this.OnIsFormChanging(value);
+					this.OnAgeGroupChanging(value);
 					this.SendPropertyChanging();
-					this._IsForm = value;
-					this.SendPropertyChanged("IsForm");
-					this.OnIsFormChanged();
+					this._AgeGroup = value;
+					this.SendPropertyChanged("AgeGroup");
+					this.OnAgeGroupChanged();
 				}
 			}
 		}
@@ -3617,68 +3384,6 @@ namespace DataConnect
 						this._WeekID = default(int);
 					}
 					this.SendPropertyChanged("Week");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.DateOfDate")]
-	public partial class DateOfDate : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private string _DateOfEntry;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnDateOfEntryChanging(string value);
-    partial void OnDateOfEntryChanged();
-    #endregion
-		
-		public DateOfDate()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DateOfEntry", DbType="NChar(10) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string DateOfEntry
-		{
-			get
-			{
-				return this._DateOfEntry;
-			}
-			set
-			{
-				if ((this._DateOfEntry != value))
-				{
-					this.OnDateOfEntryChanging(value);
-					this.SendPropertyChanging();
-					this._DateOfEntry = value;
-					this.SendPropertyChanged("DateOfEntry");
-					this.OnDateOfEntryChanged();
 				}
 			}
 		}
@@ -14896,8 +14601,6 @@ namespace DataConnect
 		
 		private bool _Status;
 		
-		private EntitySet<WeeklyTask> _WeeklyTasks;
-		
 		private EntitySet<CourseTask> _CourseTasks;
 		
 		private EntitySet<DailyTask> _DailyTasks;
@@ -14917,6 +14620,8 @@ namespace DataConnect
 		private EntitySet<Student_Lesson> _Student_Lessons;
 		
 		private EntitySet<StudentParent> _StudentParents;
+		
+		private EntitySet<WeeklyTask> _WeeklyTasks;
 		
 		private EntityRef<Preferred> _Preferred;
 		
@@ -14966,7 +14671,6 @@ namespace DataConnect
 		
 		public Student()
 		{
-			this._WeeklyTasks = new EntitySet<WeeklyTask>(new Action<WeeklyTask>(this.attach_WeeklyTasks), new Action<WeeklyTask>(this.detach_WeeklyTasks));
 			this._CourseTasks = new EntitySet<CourseTask>(new Action<CourseTask>(this.attach_CourseTasks), new Action<CourseTask>(this.detach_CourseTasks));
 			this._DailyTasks = new EntitySet<DailyTask>(new Action<DailyTask>(this.attach_DailyTasks), new Action<DailyTask>(this.detach_DailyTasks));
 			this._DailyTrackers = new EntitySet<DailyTracker>(new Action<DailyTracker>(this.attach_DailyTrackers), new Action<DailyTracker>(this.detach_DailyTrackers));
@@ -14977,6 +14681,7 @@ namespace DataConnect
 			this._Student_Classes = new EntitySet<Student_Class>(new Action<Student_Class>(this.attach_Student_Classes), new Action<Student_Class>(this.detach_Student_Classes));
 			this._Student_Lessons = new EntitySet<Student_Lesson>(new Action<Student_Lesson>(this.attach_Student_Lessons), new Action<Student_Lesson>(this.detach_Student_Lessons));
 			this._StudentParents = new EntitySet<StudentParent>(new Action<StudentParent>(this.attach_StudentParents), new Action<StudentParent>(this.detach_StudentParents));
+			this._WeeklyTasks = new EntitySet<WeeklyTask>(new Action<WeeklyTask>(this.attach_WeeklyTasks), new Action<WeeklyTask>(this.detach_WeeklyTasks));
 			this._Preferred = default(EntityRef<Preferred>);
 			OnCreated();
 		}
@@ -15365,19 +15070,6 @@ namespace DataConnect
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Student_WeeklyTask", Storage="_WeeklyTasks", ThisKey="StudentID", OtherKey="StudentID")]
-		public EntitySet<WeeklyTask> WeeklyTasks
-		{
-			get
-			{
-				return this._WeeklyTasks;
-			}
-			set
-			{
-				this._WeeklyTasks.Assign(value);
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Student_CourseTask", Storage="_CourseTasks", ThisKey="StudentID", OtherKey="StudentID")]
 		public EntitySet<CourseTask> CourseTasks
 		{
@@ -15508,6 +15200,19 @@ namespace DataConnect
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Student_WeeklyTask", Storage="_WeeklyTasks", ThisKey="StudentID", OtherKey="StudentID")]
+		public EntitySet<WeeklyTask> WeeklyTasks
+		{
+			get
+			{
+				return this._WeeklyTasks;
+			}
+			set
+			{
+				this._WeeklyTasks.Assign(value);
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Preferred_Student", Storage="_Preferred", ThisKey="PreferredID", OtherKey="PreferredID", IsForeignKey=true)]
 		public Preferred Preferred
 		{
@@ -15560,18 +15265,6 @@ namespace DataConnect
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
-		}
-		
-		private void attach_WeeklyTasks(WeeklyTask entity)
-		{
-			this.SendPropertyChanging();
-			entity.Student = this;
-		}
-		
-		private void detach_WeeklyTasks(WeeklyTask entity)
-		{
-			this.SendPropertyChanging();
-			entity.Student = null;
 		}
 		
 		private void attach_CourseTasks(CourseTask entity)
@@ -15689,6 +15382,18 @@ namespace DataConnect
 		}
 		
 		private void detach_StudentParents(StudentParent entity)
+		{
+			this.SendPropertyChanging();
+			entity.Student = null;
+		}
+		
+		private void attach_WeeklyTasks(WeeklyTask entity)
+		{
+			this.SendPropertyChanging();
+			entity.Student = this;
+		}
+		
+		private void detach_WeeklyTasks(WeeklyTask entity)
 		{
 			this.SendPropertyChanging();
 			entity.Student = null;
@@ -16731,7 +16436,7 @@ namespace DataConnect
 		
 		private int _StudentID;
 		
-		private string _DateOfEntry;
+		private string _DateTask;
 		
 		private string _StartTime;
 		
@@ -16757,8 +16462,8 @@ namespace DataConnect
     partial void OnTrackingIDChanged();
     partial void OnStudentIDChanging(int value);
     partial void OnStudentIDChanged();
-    partial void OnDateOfEntryChanging(string value);
-    partial void OnDateOfEntryChanged();
+    partial void OnDateTaskChanging(string value);
+    partial void OnDateTaskChanged();
     partial void OnStartTimeChanging(string value);
     partial void OnStartTimeChanged();
     partial void OnEndTimeChanging(string value);
@@ -16822,22 +16527,22 @@ namespace DataConnect
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DateOfEntry", DbType="NChar(10)")]
-		public string DateOfEntry
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DateTask", DbType="NChar(20)")]
+		public string DateTask
 		{
 			get
 			{
-				return this._DateOfEntry;
+				return this._DateTask;
 			}
 			set
 			{
-				if ((this._DateOfEntry != value))
+				if ((this._DateTask != value))
 				{
-					this.OnDateOfEntryChanging(value);
+					this.OnDateTaskChanging(value);
 					this.SendPropertyChanging();
-					this._DateOfEntry = value;
-					this.SendPropertyChanged("DateOfEntry");
-					this.OnDateOfEntryChanged();
+					this._DateTask = value;
+					this.SendPropertyChanged("DateTask");
+					this.OnDateTaskChanged();
 				}
 			}
 		}
@@ -17299,6 +17004,301 @@ namespace DataConnect
 		{
 			this.SendPropertyChanging();
 			entity.Week = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.WeeklyTask")]
+	public partial class WeeklyTask : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _WeeklyTaskID;
+		
+		private string _MonthlyTaskID;
+		
+		private int _StudentID;
+		
+		private string _Eating;
+		
+		private string _Sleep;
+		
+		private string _Health;
+		
+		private string _Study;
+		
+		private string _Comment;
+		
+		private string _Pages;
+		
+		private EntityRef<Student> _Student;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnWeeklyTaskIDChanging(int value);
+    partial void OnWeeklyTaskIDChanged();
+    partial void OnMonthlyTaskIDChanging(string value);
+    partial void OnMonthlyTaskIDChanged();
+    partial void OnStudentIDChanging(int value);
+    partial void OnStudentIDChanged();
+    partial void OnEatingChanging(string value);
+    partial void OnEatingChanged();
+    partial void OnSleepChanging(string value);
+    partial void OnSleepChanged();
+    partial void OnHealthChanging(string value);
+    partial void OnHealthChanged();
+    partial void OnStudyChanging(string value);
+    partial void OnStudyChanged();
+    partial void OnCommentChanging(string value);
+    partial void OnCommentChanged();
+    partial void OnPagesChanging(string value);
+    partial void OnPagesChanged();
+    #endregion
+		
+		public WeeklyTask()
+		{
+			this._Student = default(EntityRef<Student>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_WeeklyTaskID", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int WeeklyTaskID
+		{
+			get
+			{
+				return this._WeeklyTaskID;
+			}
+			set
+			{
+				if ((this._WeeklyTaskID != value))
+				{
+					this.OnWeeklyTaskIDChanging(value);
+					this.SendPropertyChanging();
+					this._WeeklyTaskID = value;
+					this.SendPropertyChanged("WeeklyTaskID");
+					this.OnWeeklyTaskIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MonthlyTaskID", DbType="NChar(20) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string MonthlyTaskID
+		{
+			get
+			{
+				return this._MonthlyTaskID;
+			}
+			set
+			{
+				if ((this._MonthlyTaskID != value))
+				{
+					this.OnMonthlyTaskIDChanging(value);
+					this.SendPropertyChanging();
+					this._MonthlyTaskID = value;
+					this.SendPropertyChanged("MonthlyTaskID");
+					this.OnMonthlyTaskIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StudentID", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int StudentID
+		{
+			get
+			{
+				return this._StudentID;
+			}
+			set
+			{
+				if ((this._StudentID != value))
+				{
+					if (this._Student.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnStudentIDChanging(value);
+					this.SendPropertyChanging();
+					this._StudentID = value;
+					this.SendPropertyChanged("StudentID");
+					this.OnStudentIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Eating", DbType="NVarChar(200)")]
+		public string Eating
+		{
+			get
+			{
+				return this._Eating;
+			}
+			set
+			{
+				if ((this._Eating != value))
+				{
+					this.OnEatingChanging(value);
+					this.SendPropertyChanging();
+					this._Eating = value;
+					this.SendPropertyChanged("Eating");
+					this.OnEatingChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Sleep", DbType="NVarChar(200)")]
+		public string Sleep
+		{
+			get
+			{
+				return this._Sleep;
+			}
+			set
+			{
+				if ((this._Sleep != value))
+				{
+					this.OnSleepChanging(value);
+					this.SendPropertyChanging();
+					this._Sleep = value;
+					this.SendPropertyChanged("Sleep");
+					this.OnSleepChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Health", DbType="NVarChar(200)")]
+		public string Health
+		{
+			get
+			{
+				return this._Health;
+			}
+			set
+			{
+				if ((this._Health != value))
+				{
+					this.OnHealthChanging(value);
+					this.SendPropertyChanging();
+					this._Health = value;
+					this.SendPropertyChanged("Health");
+					this.OnHealthChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Study", DbType="NVarChar(200)")]
+		public string Study
+		{
+			get
+			{
+				return this._Study;
+			}
+			set
+			{
+				if ((this._Study != value))
+				{
+					this.OnStudyChanging(value);
+					this.SendPropertyChanging();
+					this._Study = value;
+					this.SendPropertyChanged("Study");
+					this.OnStudyChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Comment", DbType="NVarChar(200)")]
+		public string Comment
+		{
+			get
+			{
+				return this._Comment;
+			}
+			set
+			{
+				if ((this._Comment != value))
+				{
+					this.OnCommentChanging(value);
+					this.SendPropertyChanging();
+					this._Comment = value;
+					this.SendPropertyChanged("Comment");
+					this.OnCommentChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Pages", DbType="NChar(10)")]
+		public string Pages
+		{
+			get
+			{
+				return this._Pages;
+			}
+			set
+			{
+				if ((this._Pages != value))
+				{
+					this.OnPagesChanging(value);
+					this.SendPropertyChanging();
+					this._Pages = value;
+					this.SendPropertyChanged("Pages");
+					this.OnPagesChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Student_WeeklyTask", Storage="_Student", ThisKey="StudentID", OtherKey="StudentID", IsForeignKey=true)]
+		public Student Student
+		{
+			get
+			{
+				return this._Student.Entity;
+			}
+			set
+			{
+				Student previousValue = this._Student.Entity;
+				if (((previousValue != value) 
+							|| (this._Student.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Student.Entity = null;
+						previousValue.WeeklyTasks.Remove(this);
+					}
+					this._Student.Entity = value;
+					if ((value != null))
+					{
+						value.WeeklyTasks.Add(this);
+						this._StudentID = value.StudentID;
+					}
+					else
+					{
+						this._StudentID = default(int);
+					}
+					this.SendPropertyChanged("Student");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
 		}
 	}
 }
