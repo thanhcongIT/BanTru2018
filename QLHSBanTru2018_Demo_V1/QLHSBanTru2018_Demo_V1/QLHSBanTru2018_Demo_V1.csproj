@@ -266,6 +266,18 @@
     <Compile Include="HungTD\Form\Ingredient\frmIngredientTypeDetail.Designer.cs">
       <DependentUpon>frmIngredientTypeDetail.cs</DependentUpon>
     </Compile>
+    <Compile Include="HungTD\Form\Menu\frmDailyMenuDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HungTD\Form\Menu\frmDailyMenuDetail.Designer.cs">
+      <DependentUpon>frmDailyMenuDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HungTD\Form\Menu\frmWeeklyMenu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HungTD\Form\Menu\frmWeeklyMenu.Designer.cs">
+      <DependentUpon>frmWeeklyMenu.cs</DependentUpon>
+    </Compile>
     <Compile Include="HungTD\Form\NewFolder1\frmABC.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -659,6 +671,12 @@
     <EmbeddedResource Include="HungTD\Form\Ingredient\frmIngredientTypeDetail.resx">
       <DependentUpon>frmIngredientTypeDetail.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="HungTD\Form\Menu\frmDailyMenuDetail.resx">
+      <DependentUpon>frmDailyMenuDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HungTD\Form\Menu\frmWeeklyMenu.resx">
+      <DependentUpon>frmWeeklyMenu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="HungTD\Form\NewFolder1\frmABC.resx">
       <DependentUpon>frmABC.cs</DependentUpon>
     </EmbeddedResource>
@@ -865,7 +883,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="HungTD\Form\History\" />
-    <Folder Include="HungTD\Form\Menu\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DataConnect\DataConnect.csproj">

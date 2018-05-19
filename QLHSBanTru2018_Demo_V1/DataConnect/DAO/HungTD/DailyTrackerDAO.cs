@@ -67,12 +67,13 @@ namespace DataConnect.DAO.HungTD
                 return false;
             }
         }
-        public List<DailyTrackerFullViewModel> GetDailyTrackersOfWeek(Week week, DayOfWeek day)
+        public List<DailyTrackerFullViewModel> GetDailyTrackersOfWeek(Week week, DayOfWeek day, int? ClassID)
         {
             try
             {
                 var model = from dt in dailyTrackers
                             where dt.WeekID.Equals(week.WeekID) && dt.Date.DayOfWeek.Equals(day)
+                            && dt.Student.Student_Classes.FirstOrDefault().ClassID.Equals(ClassID)
                             select new DailyTrackerFullViewModel
                             {
                                 DailyTrackerID = dt.DailyTrackerID,
@@ -83,7 +84,7 @@ namespace DataConnect.DAO.HungTD
                                 WeekID = dt.WeekID,
                                 Date = dt.Date,
                                 Present = dt.Present,
-                                PresentString = dt.Reason.Equals(1) ? "Có mặt" : (dt.Reason.Equals(0) ? "Vắng mặt" : "Đến muộn"),
+                                PresentString = dt.Reason.Equals(0) ? "Chưa điểm danh" : (dt.Reason.Equals(1) ? "Có mặt" : "Vắng mặt"),
                                 Reason = dt.Reason,
                                 TimeIn = dt.TimeIn,
                                 TimeOut = dt.TimeOut,
@@ -95,21 +96,59 @@ namespace DataConnect.DAO.HungTD
                                 Note = dt.Note,
                                 Status = dt.Status,
 
-                                Monday = false,
-                                Tuesday = false,
-                                Wednesday = false,
-                                Thursday = false,
-                                Friday = false,
-                                Saturday = false,
-                                Sunday = false
+                                Monday = 2,
+                                Tuesday = 2,
+                                Wednesday = 2,
+                                Thursday = 2,
+                                Friday = 2,
+                                Saturday = 2,
+                                Sunday = 2
                             };
-
+                
                 foreach(var item in model)
                 {
+                    var model2 = from dt in dailyTrackers
+                                 where dt.WeekID.Equals(week.WeekID) && dt.StudentID.Equals(item.StudentID)
+                                 select new DailyTrackerFullViewModel
+                                 {
+                                     DailyTrackerID = dt.DailyTrackerID,
+                                     StudentID = dt.StudentID,
+                                     StudentFirstName = dt.Student.FirstName,
+                                     StudentLastName = dt.Student.LastName,
+                                     StudentHomeName = dt.Student.HomeName,
+                                     WeekID = dt.WeekID,
+                                     Date = dt.Date,
+                                     Present = dt.Present,
+                                     PresentString = dt.Reason.Equals(1) ? "Có mặt" : (dt.Reason.Equals(0) ? "Vắng mặt" : "Đến muộn"),
+                                     Reason = dt.Reason,
+                                     TimeIn = dt.TimeIn,
+                                     TimeOut = dt.TimeOut,
+                                     DrugTime = dt.DrugTime,
+                                     Eating = dt.Eating,
+                                     Sleep = dt.Sleep,
+                                     Health = dt.Health,
+                                     Study = dt.Study,
+                                     Note = dt.Note,
+                                     Status = dt.Status,
 
+                                     Monday = null,
+                                     Tuesday = null,
+                                     Wednesday = null,
+                                     Thursday = null,
+                                     Friday = null,
+                                     Saturday = null,
+                                     Sunday = null
+                                 };
+                    item.Monday = model2.ToList()[0].Present;
+                    item.Tuesday = model2.ToList()[1].Present;
+                    item.Wednesday = model2.ToList()[2].Present;
+                    item.Thursday = model2.ToList()[3].Present;
+                    item.Friday = model2.ToList()[4].Present;
+                    item.Saturday = model2.ToList()[5].Present;
+                    item.Sunday = model2.ToList()[6].Present;
                 }
 
-                return null;
+                return model.ToList();
             }
             catch
             {

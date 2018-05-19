@@ -26,6 +26,7 @@ using QLHSBanTru2018_Demo_V1.QLThuChi.ChiTieu;
 using QLHSBanTru2018_Demo_V1.HungTD.Form.Dish;
 using QLHSBanTru2018_Demo_V1.QLThuChi.ChiTieu.ChiTieuThucPham;
 using QLHSBanTru2018_Demo_V1.QLThuChi.ChiTieu.ChiTieuThucPham.ThongKeThucPham;
+using QLHSBanTru2018_Demo_V1.HungTD.Form.Menu;
 
 namespace QLHSBanTru2018_Demo_V1
 {
@@ -123,7 +124,7 @@ namespace QLHSBanTru2018_Demo_V1
         private void btnDailyMenuManager_ItemClick(object sender, ItemClickEventArgs e)
         {
             pnControlsPanel.Controls.Clear();
-            //pnControlsPanel.Controls.Add(new frmMenu());
+            pnControlsPanel.Controls.Add(new frmWeeklyMenu());
             labTitle.Caption = "QUẢN LÝ THỰC ĐƠN";
         }
         #endregion
