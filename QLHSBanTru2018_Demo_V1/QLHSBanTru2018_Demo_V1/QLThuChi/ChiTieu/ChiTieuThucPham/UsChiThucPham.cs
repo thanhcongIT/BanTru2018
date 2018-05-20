@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using DataConnect.DAO.ThanhCongTC.ChiTieuThucPham;
 using DataConnect;
+using DataConnect.DAO.HungTD;
+using System.IO;
 
 namespace QLHSBanTru2018_Demo_V1.QLThuChi.ChiTieu.ChiTieuThucPham
 {
@@ -120,6 +122,17 @@ namespace QLHSBanTru2018_Demo_V1.QLThuChi.ChiTieu.ChiTieuThucPham
             try
             {
                 LoadOrderDetail((int)gridView1.GetRowCellValue(e.FocusedRowHandle, "OrderID"));
+                txtTongTien.Text =gridView1.GetRowCellValue(e.FocusedRowHandle, "TotalPrice").ToString();
+                EmployeeDAO employeeDAO = new EmployeeDAO();
+                Employee a = employeeDAO.GetByID((int)gridView1.GetRowCellValue(e.FocusedRowHandle, "EmployeeID"));
+                txtHoTen.Text = a.FirstName + a.LastName;
+                txtNgaySinh.Text = a.Birthday.ToString().Substring(0, 10);
+                txtSDT.Text = a.Phone.ToString();
+                txtEmail.Text = a.Email;
+                txtNoiSinh.Text = a.AddressDetail;
+                txtGhichu.Text = a.Note;
+                MemoryStream mom = new MemoryStream(a.Image.ToArray());
+                pcAnh.Image = Image.FromStream(mom);
             }
             catch 
             {

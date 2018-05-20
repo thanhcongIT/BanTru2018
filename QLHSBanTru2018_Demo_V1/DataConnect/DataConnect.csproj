@@ -48,6 +48,8 @@
     <Compile Include="Common\LoginDetail.cs" />
     <Compile Include="DAO\HungTD\ContractDAO.cs" />
     <Compile Include="DAO\HungTD\CourseDAO.cs" />
+    <Compile Include="DAO\HungTD\DailyMenuDAO.cs" />
+    <Compile Include="DAO\HungTD\DailyTrackerDAO.cs" />
     <Compile Include="DAO\HungTD\DegreeDAO.cs" />
     <Compile Include="DAO\HungTD\DepartmentDAO.cs" />
     <Compile Include="DAO\HungTD\DishDAO.cs" />
@@ -71,13 +73,9 @@
     <Compile Include="DAO\HungTD\TopicDAO.cs" />
     <Compile Include="DAO\HungTD\AgeGroupDAO.cs" />
     <Compile Include="DAO\HungTD\WeekDAO.cs" />
-    <Compile Include="DAO\ThanhCongTC\ChiTieuThucPham\Dataset\DsHoaDonThucPham.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DsHoaDonThucPham.xsd</DependentUpon>
-    </Compile>
     <Compile Include="DAO\ThanhCongTC\ChiTieuThucPham\OrderDAO.cs" />
     <Compile Include="DAO\ThanhCongTC\ChiTieuThucPham\OrderDetailDAO.cs" />
+    <Compile Include="DAO\ThanhCongTC\ChiTieuThucPham\StatisticalDAO.cs" />
     <Compile Include="DAO\ThanhCongTC\ChiTieuThucPham\TCIngredientRequestDAO.cs" />
     <Compile Include="DAO\ThanhCongTC\ChiTieuThucPham\TCIngredientRequestDetailDAO.cs" />
     <Compile Include="DAO\ThanhCongTC\ChiTieu\InvoiceDAO.cs" />
@@ -92,6 +90,7 @@
     <Compile Include="DAO\ThanhCongTC\KhoanThu\SemesterDAO.cs" />
     <Compile Include="DAO\ThanhCongTC\KhoanThu\StudenGrade.cs" />
     <Compile Include="DAO\ThanhCongTC\KhoanThu\studentReceivableDAO.cs" />
+    <Compile Include="DAO\ThanhCongTC\TCViewModle\OrderOrderDetailViewModle.cs" />
     <Compile Include="DAO\ThanhCongTC\TCViewModle\TCIngredientRequestDetaiViewModle.cs" />
     <Compile Include="DAO\ThanhCongTC\TCViewModle\TCOrderDetailViewModle.cs" />
     <Compile Include="DAO\ThanhCongTC\TCViewModle\TCStudentViewModle.cs" />
@@ -117,6 +116,7 @@
     </Compile>
     <Compile Include="ViewModel\ContractReportViewModel.cs" />
     <Compile Include="ViewModel\ContractViewModel.cs" />
+    <Compile Include="ViewModel\DailyTrackerFullViewModel.cs" />
     <Compile Include="ViewModel\Department_EmployeeViewModel.cs" />
     <Compile Include="ViewModel\DishDetailViewModel.cs" />
     <Compile Include="ViewModel\DishFullViewModel.cs" />
@@ -133,20 +133,10 @@
     <Compile Include="ViewModel\PhysicalAssessmentViewModel.cs" />
     <Compile Include="ViewModel\SemesterViewModel.cs" />
     <Compile Include="ViewModel\StudentViewModel.cs" />
+    <Compile Include="ViewModel\WeeklyMenuFullViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="DAO\ThanhCongTC\ChiTieuThucPham\Dataset\DsHoaDonThucPham.xsc">
-      <DependentUpon>DsHoaDonThucPham.xsd</DependentUpon>
-    </None>
-    <None Include="DAO\ThanhCongTC\ChiTieuThucPham\Dataset\DsHoaDonThucPham.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DsHoaDonThucPham.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="DAO\ThanhCongTC\ChiTieuThucPham\Dataset\DsHoaDonThucPham.xss">
-      <DependentUpon>DsHoaDonThucPham.xsd</DependentUpon>
-    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -164,6 +154,9 @@
     <None Include="QLHSSmartKids.dbml.layout">
       <DependentUpon>QLHSSmartKids.dbml</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DAO\ThanhCongTC\ChiTieuThucPham\Dataset\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
