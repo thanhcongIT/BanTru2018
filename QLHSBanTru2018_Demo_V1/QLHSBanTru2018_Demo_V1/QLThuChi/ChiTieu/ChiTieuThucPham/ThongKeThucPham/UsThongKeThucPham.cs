@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using DataConnect.DAO.HungTD;
 using DataConnect.DAO.ThanhCongTC.ChiTieuThucPham;
+using DataConnect;
+using System.IO;
 
 namespace QLHSBanTru2018_Demo_V1.QLThuChi.ChiTieu.ChiTieuThucPham.ThongKeThucPham
 {
@@ -58,6 +60,7 @@ namespace QLHSBanTru2018_Demo_V1.QLThuChi.ChiTieu.ChiTieuThucPham.ThongKeThucPha
             loadLoaiTP();
             cbbLoaithucPham_SelectedIndexChanged(sender, e);
             LoadDanhSachThucPham((int)cbbLoaithucPham.SelectedValue);
+            
         }
 
         private void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
@@ -70,10 +73,23 @@ namespace QLHSBanTru2018_Demo_V1.QLThuChi.ChiTieu.ChiTieuThucPham.ThongKeThucPha
             LoadThongKeThucPham((int)gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "IngredientID"), dtTheoNgay.Value);
             TinhTong();           
         }
-
+       
         private void gridView3_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
-            //MessageBox.Show("" + gridView3.GetRowCellValue(e.FocusedRowHandle, "QuantityOfUnit") + "");
+            EmployeeDAO dt = new EmployeeDAO();
+            Employee a = new Employee();
+            a = dt.GetByID((int)gridView3.GetRowCellValue(e.FocusedRowHandle, "EmployeeID"));
+            txtHoTen.Text = a.FirstName + " " + a.LastName;
+            txtCMT.Text = a.IdentityNumber;
+            txtNgaySinh.Text = a.AddressDetail;
+            txtSDT.Text = a.Phone;
+            txtEmail.Text = a.Email;
+            txtNgaySinh.Text = a.Birthday.ToString().Substring(0, 10);
+            txtGhiChu.Text = a.Note;
+            MemoryStream mom = new MemoryStream(a.Image.ToArray());
+            pcAnh.Image = Image.FromStream(mom);
+            txtNoiSinh.Text = new LocationDAO().GetFullNameLocaion(a.LocationID);
+
         }
 
         private void cbTheoNgay_CheckedChanged(object sender, EventArgs e)
