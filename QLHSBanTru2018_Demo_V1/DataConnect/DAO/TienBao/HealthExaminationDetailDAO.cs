@@ -128,6 +128,9 @@ namespace DataConnect.DAO.TienBao
                             StudentID = s.StudentID,
                             StudentCode = s.StudentCode,
                             FullName = s.FirstName + " " + s.LastName,
+                            Gender = s.Gender,
+                            Birthday = s.Birthday,
+                            StringGender = s.Gender == true ? "Nam" : "Nữ",
                             ClassID = sc.ClassID,
                             ClassName = c.Name,
                         };

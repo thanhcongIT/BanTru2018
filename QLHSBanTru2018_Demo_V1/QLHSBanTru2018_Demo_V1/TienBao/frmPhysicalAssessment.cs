@@ -62,12 +62,6 @@ namespace QLHSBanTru2018_Demo_V1.TienBao
             cmbPhysicalAssessment.Properties.DisplayMember = "NamePhysicalAssessment";
             cmbPhysicalAssessment.Properties.ValueMember = "PhysicalAssessmentID";
         }
-        private void cmbPhysicalAssessment_EditValueChanged(object sender, EventArgs e)
-        {
-
-            txtPhysicalNote.Text = cmbPhysicalAssessment.GetColumnValue("NotePhysicalAssessment").ToString();
-            dtPhysicalDate.Text = cmbPhysicalAssessment.GetColumnValue("DatePhysicalAssessment").ToString();
-        }
         private void FillGridControl(int ClassID, int PhysicalAssessmentID)
         {
             try
@@ -124,6 +118,12 @@ namespace QLHSBanTru2018_Demo_V1.TienBao
             this.Dock = DockStyle.Fill;
             LoadPhysicalAssessmentInfor();
         }
+        private void cmbPhysicalAssessment_EditValueChanged(object sender, EventArgs e)
+        {         
+             txtPhysicalNote.Text = cmbPhysicalAssessment.GetColumnValue("NotePhysicalAssessment").ToString();
+             dtPhysicalDate.Text = cmbPhysicalAssessment.GetColumnValue("DatePhysicalAssessment").ToString();                         
+        }
+        
         private void btnXemChiTiet_Click(object sender, EventArgs e)
         {
             if (cmbPhysicalAssessment.EditValue == null)
@@ -139,6 +139,7 @@ namespace QLHSBanTru2018_Demo_V1.TienBao
                 FillGridControl(int.Parse(cmbLopHoc.SelectedValue.ToString()), int.Parse(cmbPhysicalAssessment.EditValue.ToString()));
             }
         }
+        
         private void btnThemmoi_Click(object sender, EventArgs e)
         {
 
@@ -147,6 +148,12 @@ namespace QLHSBanTru2018_Demo_V1.TienBao
             m_frmPhysicalDetail.ShowDialog();
             if (m_frmPhysicalDetail.DialogResult == DialogResult.OK)
             {
+                cmbNamHoc.SelectedIndex = -1;
+                cmbHocKy.SelectedIndex = -1;
+                cmbKhoiLop.SelectedIndex = -1;
+                cmbLopHoc.SelectedIndex = -1;
+                dtPhysicalDate.Text = string.Empty;
+                txtPhysicalNote.Text = string.Empty;
                 frmPhysicalAssessment_Load(sender, e);
             }
 
@@ -174,6 +181,28 @@ namespace QLHSBanTru2018_Demo_V1.TienBao
                 {
                     FillGridControl(int.Parse(cmbLopHoc.SelectedValue.ToString()), int.Parse(cmbPhysicalAssessment.EditValue.ToString()));
                 }
+            }
+        }
+        private void btnXoaDotCanDo_Click(object sender, EventArgs e)
+        {
+            if (cmbPhysicalAssessment.EditValue == null)
+            {
+                XtraMessageBox.Show("Mời bạn chọn đợt cân đo cần xóa", "Thông báo");
+
+            }
+            else if(XtraMessageBox.Show("Bạn muốn xóa bỏ đợt cân đo này ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            {
+               new PhysicalAssessmentDAO().PhysicalDelete(int.Parse(cmbPhysicalAssessment.EditValue.ToString()));               
+               if (XtraMessageBox.Show(" Xóa đợt cân đo thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information) == DialogResult.OK)
+               {
+                    cmbNamHoc.SelectedIndex = -1;
+                    cmbHocKy.SelectedIndex = -1;
+                    cmbKhoiLop.SelectedIndex = -1;
+                    cmbLopHoc.SelectedIndex = -1;
+                    dtPhysicalDate.Text = string.Empty;
+                    txtPhysicalNote.Text = string.Empty;
+                    frmPhysicalAssessment_Load(sender, e);
+               }                
             }
         }
         #endregion
@@ -223,7 +252,6 @@ namespace QLHSBanTru2018_Demo_V1.TienBao
             {
             }
         }
-
         private void bandedGridView1_RowCountChanged(object sender, EventArgs e)
         {
             GridView gridview = ((GridView)sender);
@@ -234,5 +262,7 @@ namespace QLHSBanTru2018_Demo_V1.TienBao
 
         }
         #endregion
+
+        
     }
 }

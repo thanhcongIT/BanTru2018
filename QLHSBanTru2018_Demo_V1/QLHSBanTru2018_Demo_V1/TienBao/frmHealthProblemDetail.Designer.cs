@@ -30,21 +30,12 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmHealthProblemDetail));
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
-            this.cbbStudentName = new DevExpress.XtraEditors.GridLookUpEdit();
-            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.txtStudentCode = new DevExpress.XtraEditors.TextEdit();
             this.txtClassName = new DevExpress.XtraEditors.TextEdit();
             this.dtDateProblem = new DevExpress.XtraEditors.DateEdit();
             this.txtDiagnosed = new DevExpress.XtraEditors.MemoEdit();
             this.txtMeasure = new DevExpress.XtraEditors.MemoEdit();
             this.cbbServerity = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.cbbEmployee = new DevExpress.XtraEditors.GridLookUpEdit();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.chbStatus = new DevExpress.XtraEditors.CheckEdit();
             this.btnSave = new DevExpress.XtraEditors.SimpleButton();
             this.btnHuy = new DevExpress.XtraEditors.SimpleButton();
@@ -65,10 +56,10 @@
             this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem3 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.cbbStudentName = new DevExpress.XtraEditors.LookUpEdit();
+            this.cbbEmployee = new DevExpress.XtraEditors.LookUpEdit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cbbStudentName.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtStudentCode.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtClassName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtDateProblem.Properties.CalendarTimeProperties)).BeginInit();
@@ -76,8 +67,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtDiagnosed.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMeasure.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbbServerity.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbbEmployee.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chbStatus.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbbSignal.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
@@ -96,22 +85,24 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbbStudentName.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbbEmployee.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
             // 
-            this.layoutControl1.Controls.Add(this.cbbStudentName);
             this.layoutControl1.Controls.Add(this.txtStudentCode);
             this.layoutControl1.Controls.Add(this.txtClassName);
             this.layoutControl1.Controls.Add(this.dtDateProblem);
             this.layoutControl1.Controls.Add(this.txtDiagnosed);
             this.layoutControl1.Controls.Add(this.txtMeasure);
             this.layoutControl1.Controls.Add(this.cbbServerity);
-            this.layoutControl1.Controls.Add(this.cbbEmployee);
             this.layoutControl1.Controls.Add(this.chbStatus);
             this.layoutControl1.Controls.Add(this.btnSave);
             this.layoutControl1.Controls.Add(this.btnHuy);
             this.layoutControl1.Controls.Add(this.cbbSignal);
+            this.layoutControl1.Controls.Add(this.cbbStudentName);
+            this.layoutControl1.Controls.Add(this.cbbEmployee);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl1.Location = new System.Drawing.Point(0, 0);
             this.layoutControl1.Name = "layoutControl1";
@@ -120,62 +111,6 @@
             this.layoutControl1.Size = new System.Drawing.Size(585, 474);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
-            // 
-            // cbbStudentName
-            // 
-            this.cbbStudentName.Location = new System.Drawing.Point(116, 12);
-            this.cbbStudentName.Name = "cbbStudentName";
-            this.cbbStudentName.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cbbStudentName.Properties.PopupView = this.gridView2;
-            this.cbbStudentName.Size = new System.Drawing.Size(457, 20);
-            this.cbbStudentName.StyleController = this.layoutControl1;
-            this.cbbStudentName.TabIndex = 4;
-            this.cbbStudentName.EditValueChanged += new System.EventHandler(this.cbbStudentName_EditValueChanged);
-            // 
-            // gridView2
-            // 
-            this.gridView2.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.gridColumn3,
-            this.gridColumn4,
-            this.gridColumn5});
-            this.gridView2.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
-            this.gridView2.Name = "gridView2";
-            this.gridView2.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.gridView2.OptionsView.ShowGroupPanel = false;
-            // 
-            // gridColumn3
-            // 
-            this.gridColumn3.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridColumn3.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn3.Caption = "Mã học sinh";
-            this.gridColumn3.FieldName = "StudentCode";
-            this.gridColumn3.Name = "gridColumn3";
-            this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 0;
-            this.gridColumn3.Width = 259;
-            // 
-            // gridColumn4
-            // 
-            this.gridColumn4.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridColumn4.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn4.Caption = "Họ và tên";
-            this.gridColumn4.FieldName = "FullName";
-            this.gridColumn4.Name = "gridColumn4";
-            this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 1;
-            this.gridColumn4.Width = 372;
-            // 
-            // gridColumn5
-            // 
-            this.gridColumn5.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridColumn5.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn5.Caption = "Lớp học";
-            this.gridColumn5.FieldName = "ClassName";
-            this.gridColumn5.Name = "gridColumn5";
-            this.gridColumn5.Visible = true;
-            this.gridColumn5.VisibleIndex = 2;
-            this.gridColumn5.Width = 375;
             // 
             // txtStudentCode
             // 
@@ -239,49 +174,6 @@
             this.cbbServerity.Size = new System.Drawing.Size(457, 20);
             this.cbbServerity.StyleController = this.layoutControl1;
             this.cbbServerity.TabIndex = 23;
-            // 
-            // cbbEmployee
-            // 
-            this.cbbEmployee.Location = new System.Drawing.Point(116, 303);
-            this.cbbEmployee.Name = "cbbEmployee";
-            this.cbbEmployee.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cbbEmployee.Properties.PopupView = this.gridView1;
-            this.cbbEmployee.Size = new System.Drawing.Size(457, 20);
-            this.cbbEmployee.StyleController = this.layoutControl1;
-            this.cbbEmployee.TabIndex = 13;
-            // 
-            // gridView1
-            // 
-            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.gridColumn1,
-            this.gridColumn2});
-            this.gridView1.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
-            this.gridView1.Name = "gridView1";
-            this.gridView1.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.gridView1.OptionsView.ShowGroupPanel = false;
-            // 
-            // gridColumn1
-            // 
-            this.gridColumn1.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridColumn1.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn1.Caption = "Mã giáo viên";
-            this.gridColumn1.FieldName = "EmployeeID";
-            this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 0;
-            this.gridColumn1.Width = 241;
-            // 
-            // gridColumn2
-            // 
-            this.gridColumn2.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridColumn2.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn2.Caption = "Tên giáo viên";
-            this.gridColumn2.FieldName = "EmployeeName";
-            this.gridColumn2.Name = "gridColumn2";
-            this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 1;
-            this.gridColumn2.Width = 765;
             // 
             // chbStatus
             // 
@@ -502,6 +394,36 @@
             this.layoutControlItem1.Text = "Họ và tên";
             this.layoutControlItem1.TextSize = new System.Drawing.Size(101, 13);
             // 
+            // cbbStudentName
+            // 
+            this.cbbStudentName.Location = new System.Drawing.Point(116, 12);
+            this.cbbStudentName.Name = "cbbStudentName";
+            this.cbbStudentName.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbbStudentName.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("StudentCode", "Mã học sinh"),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("FullName", "Họ tên"),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("ClassName", "Lớp học")});
+            this.cbbStudentName.Properties.NullText = "-- Chọn học sinh --";
+            this.cbbStudentName.Size = new System.Drawing.Size(457, 20);
+            this.cbbStudentName.StyleController = this.layoutControl1;
+            this.cbbStudentName.TabIndex = 4;
+            this.cbbStudentName.EditValueChanged += new System.EventHandler(this.cbbStudentName_EditValueChanged);
+            // 
+            // cbbEmployee
+            // 
+            this.cbbEmployee.Location = new System.Drawing.Point(116, 303);
+            this.cbbEmployee.Name = "cbbEmployee";
+            this.cbbEmployee.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbbEmployee.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("EmployeeID", "Mã giáo viên"),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("EmployeeName", "Tên giáo viên")});
+            this.cbbEmployee.Properties.NullText = "-- Chọn giáo viên --";
+            this.cbbEmployee.Size = new System.Drawing.Size(457, 20);
+            this.cbbEmployee.StyleController = this.layoutControl1;
+            this.cbbEmployee.TabIndex = 13;
+            // 
             // frmHealthProblemDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -516,8 +438,6 @@
             this.Load += new System.EventHandler(this.frmHealthProblemDetail_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.cbbStudentName.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtStudentCode.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtClassName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtDateProblem.Properties.CalendarTimeProperties)).EndInit();
@@ -525,8 +445,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtDiagnosed.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMeasure.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbbServerity.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbbEmployee.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chbStatus.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbbSignal.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
@@ -545,6 +463,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbbStudentName.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbbEmployee.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -553,21 +473,12 @@
 
         private DevExpress.XtraLayout.LayoutControl layoutControl1;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
-        private DevExpress.XtraEditors.GridLookUpEdit cbbStudentName;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
         private DevExpress.XtraEditors.TextEdit txtStudentCode;
         private DevExpress.XtraEditors.TextEdit txtClassName;
         private DevExpress.XtraEditors.DateEdit dtDateProblem;
         private DevExpress.XtraEditors.MemoEdit txtDiagnosed;
         private DevExpress.XtraEditors.MemoEdit txtMeasure;
         private DevExpress.XtraEditors.ComboBoxEdit cbbServerity;
-        private DevExpress.XtraEditors.GridLookUpEdit cbbEmployee;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
         private DevExpress.XtraEditors.CheckEdit chbStatus;
         private DevExpress.XtraEditors.SimpleButton btnSave;
         private DevExpress.XtraEditors.SimpleButton btnHuy;
@@ -587,5 +498,7 @@
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem2;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem3;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
+        private DevExpress.XtraEditors.LookUpEdit cbbStudentName;
+        private DevExpress.XtraEditors.LookUpEdit cbbEmployee;
     }
 }

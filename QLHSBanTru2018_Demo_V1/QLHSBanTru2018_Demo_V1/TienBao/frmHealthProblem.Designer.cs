@@ -47,6 +47,8 @@
             this.colMeasure = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colServerity = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colEmployee = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemButtonEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.dtFillStartDate = new DevExpress.XtraEditors.DateEdit();
             this.txtFillEndDate = new DevExpress.XtraEditors.DateEdit();
             this.btnXem = new DevExpress.XtraEditors.SimpleButton();
@@ -63,12 +65,11 @@
             this.layoutControlItem14 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem15 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.repositoryItemButtonEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHealthProblem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFillStartDate.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFillStartDate.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtFillEndDate.Properties.CalendarTimeProperties)).BeginInit();
@@ -83,7 +84,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem14)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem15)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -118,6 +118,10 @@
             // 
             // gridView1
             // 
+            this.gridView1.Appearance.FocusedCell.BackColor = System.Drawing.Color.Bisque;
+            this.gridView1.Appearance.FocusedCell.Options.UseBackColor = true;
+            this.gridView1.Appearance.FocusedRow.BackColor = System.Drawing.Color.Bisque;
+            this.gridView1.Appearance.FocusedRow.Options.UseBackColor = true;
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colHealthProblemID,
             this.colStartDate,
@@ -132,6 +136,7 @@
             this.gridColumn1});
             this.gridView1.GridControl = this.dgvHealthProblem;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsView.EnableAppearanceOddRow = true;
             this.gridView1.OptionsView.ShowFooter = true;
             this.gridView1.OptionsView.ShowGroupPanel = false;
             // 
@@ -147,8 +152,6 @@
             this.colHealthProblemID.FieldName = "HealthProblemID";
             this.colHealthProblemID.Name = "colHealthProblemID";
             this.colHealthProblemID.OptionsColumn.AllowEdit = false;
-            this.colHealthProblemID.Visible = true;
-            this.colHealthProblemID.VisibleIndex = 0;
             this.colHealthProblemID.Width = 56;
             // 
             // colStartDate
@@ -166,7 +169,7 @@
             this.colStartDate.Name = "colStartDate";
             this.colStartDate.OptionsColumn.AllowEdit = false;
             this.colStartDate.Visible = true;
-            this.colStartDate.VisibleIndex = 1;
+            this.colStartDate.VisibleIndex = 0;
             this.colStartDate.Width = 110;
             // 
             // colStudentCode
@@ -182,7 +185,7 @@
             this.colStudentCode.Name = "colStudentCode";
             this.colStudentCode.OptionsColumn.AllowEdit = false;
             this.colStudentCode.Visible = true;
-            this.colStudentCode.VisibleIndex = 2;
+            this.colStudentCode.VisibleIndex = 1;
             this.colStudentCode.Width = 98;
             // 
             // colFullName
@@ -198,7 +201,7 @@
             this.colFullName.Name = "colFullName";
             this.colFullName.OptionsColumn.AllowEdit = false;
             this.colFullName.Visible = true;
-            this.colFullName.VisibleIndex = 3;
+            this.colFullName.VisibleIndex = 2;
             this.colFullName.Width = 103;
             // 
             // colClassName
@@ -214,7 +217,7 @@
             this.colClassName.Name = "colClassName";
             this.colClassName.OptionsColumn.AllowEdit = false;
             this.colClassName.Visible = true;
-            this.colClassName.VisibleIndex = 4;
+            this.colClassName.VisibleIndex = 3;
             this.colClassName.Width = 57;
             // 
             // colSignal
@@ -230,7 +233,7 @@
             this.colSignal.Name = "colSignal";
             this.colSignal.OptionsColumn.AllowEdit = false;
             this.colSignal.Visible = true;
-            this.colSignal.VisibleIndex = 5;
+            this.colSignal.VisibleIndex = 4;
             this.colSignal.Width = 109;
             // 
             // colDiagnosed
@@ -246,7 +249,7 @@
             this.colDiagnosed.Name = "colDiagnosed";
             this.colDiagnosed.OptionsColumn.AllowEdit = false;
             this.colDiagnosed.Visible = true;
-            this.colDiagnosed.VisibleIndex = 6;
+            this.colDiagnosed.VisibleIndex = 5;
             this.colDiagnosed.Width = 103;
             // 
             // colMeasure
@@ -262,7 +265,7 @@
             this.colMeasure.Name = "colMeasure";
             this.colMeasure.OptionsColumn.AllowEdit = false;
             this.colMeasure.Visible = true;
-            this.colMeasure.VisibleIndex = 7;
+            this.colMeasure.VisibleIndex = 6;
             this.colMeasure.Width = 99;
             // 
             // colServerity
@@ -278,7 +281,7 @@
             this.colServerity.Name = "colServerity";
             this.colServerity.OptionsColumn.AllowEdit = false;
             this.colServerity.Visible = true;
-            this.colServerity.VisibleIndex = 8;
+            this.colServerity.VisibleIndex = 7;
             this.colServerity.Width = 91;
             // 
             // colEmployee
@@ -294,8 +297,30 @@
             this.colEmployee.Name = "colEmployee";
             this.colEmployee.OptionsColumn.AllowEdit = false;
             this.colEmployee.Visible = true;
-            this.colEmployee.VisibleIndex = 9;
+            this.colEmployee.VisibleIndex = 8;
             this.colEmployee.Width = 120;
+            // 
+            // gridColumn1
+            // 
+            this.gridColumn1.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.gridColumn1.AppearanceHeader.Options.UseFont = true;
+            this.gridColumn1.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn1.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn1.Caption = "Chỉnh sửa";
+            this.gridColumn1.ColumnEdit = this.repositoryItemButtonEdit1;
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 9;
+            // 
+            // repositoryItemButtonEdit1
+            // 
+            this.repositoryItemButtonEdit1.AutoHeight = false;
+            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
+            this.repositoryItemButtonEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.repositoryItemButtonEdit1.Name = "repositoryItemButtonEdit1";
+            this.repositoryItemButtonEdit1.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.repositoryItemButtonEdit1.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.btnUpdate_ButtonClick);
             // 
             // dtFillStartDate
             // 
@@ -328,10 +353,10 @@
             this.btnXem.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnXem.ImageOptions.Image")));
             this.btnXem.Location = new System.Drawing.Point(24, 90);
             this.btnXem.Name = "btnXem";
-            this.btnXem.Size = new System.Drawing.Size(179, 22);
+            this.btnXem.Size = new System.Drawing.Size(179, 38);
             this.btnXem.StyleController = this.layoutControl1;
             this.btnXem.TabIndex = 77;
-            this.btnXem.Text = "Xem";
+            this.btnXem.Text = "Xem sự cố y tế";
             this.btnXem.Click += new System.EventHandler(this.btnXem_Click);
             // 
             // btnThem
@@ -477,28 +502,6 @@
             this.emptySpaceItem1.Size = new System.Drawing.Size(456, 26);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
-            // gridColumn1
-            // 
-            this.gridColumn1.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.gridColumn1.AppearanceHeader.Options.UseFont = true;
-            this.gridColumn1.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridColumn1.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn1.Caption = "Cập nhật";
-            this.gridColumn1.ColumnEdit = this.repositoryItemButtonEdit1;
-            this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 10;
-            // 
-            // repositoryItemButtonEdit1
-            // 
-            this.repositoryItemButtonEdit1.AutoHeight = false;
-            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
-            this.repositoryItemButtonEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
-            this.repositoryItemButtonEdit1.Name = "repositoryItemButtonEdit1";
-            this.repositoryItemButtonEdit1.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
-            this.repositoryItemButtonEdit1.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.btnUpdate_ButtonClick);
-            // 
             // frmHealthProblem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -511,6 +514,7 @@
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvHealthProblem)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFillStartDate.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFillStartDate.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtFillEndDate.Properties.CalendarTimeProperties)).EndInit();
@@ -525,7 +529,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem14)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem15)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).EndInit();
             this.ResumeLayout(false);
 
         }

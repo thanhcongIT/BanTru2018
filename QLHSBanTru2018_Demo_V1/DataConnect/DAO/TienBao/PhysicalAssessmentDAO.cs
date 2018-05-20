@@ -22,6 +22,7 @@ namespace DataConnect.DAO.TienBao
             PhysicalTable = db.GetTable<PhysicalAssessment>();
 
             var query = from ph in PhysicalTable
+                        where ph.Status == true
                         select new PhysicalAssessmentViewModel
                         {
                             PhysicalAssessmentID = ph.PhysicalAssessmentID,
