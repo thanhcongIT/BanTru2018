@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DataConnect.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Data.Linq;
 using System.Linq;
@@ -17,6 +18,18 @@ namespace DataConnect.DAO.HungTD
         public DailyMenuDAO()
         {
             db = new QLHSSmartKidsDataContext();
+        }
+        public DailyMenu GetDailyMenuDetail(int dailyMenuID)
+        {
+            try
+            {
+                dailyMenus = db.GetTable<DailyMenu>();
+                return dailyMenus.FirstOrDefault(x => x.DailyMenuID.Equals(dailyMenuID));
+            }
+            catch
+            {
+                return null;
+            }
         }
         public int InsertDailyMenuDetail(DailyMenuDetail entity)
         {
@@ -100,16 +113,12 @@ namespace DataConnect.DAO.HungTD
                 return false;
             }
         }
-        public List<DailyMenuDetail> GetDailyMenuDetail(int DailyMenuID)
+        public List<WeeklyMenuFullViewModel> GetDailyMenu(int WeekID)
         {
             try
             {
-                dailyMenuDetails = db.GetTable<DailyMenuDetail>();
 
-                var model = from dmd in dailyMenuDetails
-                            where dmd.DailyMenuID.Equals(DailyMenuID)
-                            select dmd;
-                return model.ToList();
+                return null;
             }
             catch
             {

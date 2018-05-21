@@ -37,6 +37,20 @@ namespace DataConnect.DAO.HungTD
                         };
             return model.ToList();
         }
+        public List<DishViewModel> ListAllForMenu(int AgeGroupID)
+        {
+            var model = from d in dishes
+                        where d.Status.Equals(true)
+                        && d.AgeGroupID.Equals(AgeGroupID)
+                        select new DishViewModel
+                        {
+                            DishID = d.DishID,
+                            DishName = d.Name,
+                            MealID = d.MealID,
+                            MealName = d.Meal.Name
+                        };
+            return model.ToList();
+        }
 
         public Dish GetByID(int dishID)
         {

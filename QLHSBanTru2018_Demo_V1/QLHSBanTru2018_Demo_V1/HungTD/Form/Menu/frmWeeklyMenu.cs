@@ -17,5 +17,20 @@ namespace QLHSBanTru2018_Demo_V1.HungTD.Form.Menu
         {
             InitializeComponent();
         }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            frmDailyMenuDetail frmDMD = new frmDailyMenuDetail();
+            frmDMD.setFunction(1);
+            frmDMD.setAgeGroupID(1);
+            frmDMD.setTitle("Thêm mới thực đơn");
+            frmDMD.ShowDialog();
+            if (frmDMD.DialogResult == DialogResult.OK)
+                FillCombobox();
+        }
+        private void FillCombobox()
+        {
+
+        }
     }
 }
