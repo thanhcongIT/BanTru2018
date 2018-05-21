@@ -13,6 +13,7 @@ using DataConnect.DAO.ThanhCongTC.ChiTieuThucPham;
 using DataConnect;
 using System.IO;
 using DataConnect.DAO.ThanhCongTC;
+using DataConnect.DAO.ThanhCongTC.DataSet;
 
 namespace QLHSBanTru2018_Demo_V1.QLThuChi.ChiTieu.ChiTieuThucPham.ThongKeThucPham
 {
@@ -240,7 +241,12 @@ namespace QLHSBanTru2018_Demo_V1.QLThuChi.ChiTieu.ChiTieuThucPham.ThongKeThucPha
 
         private void btnXuatDuLieu_Click(object sender, EventArgs e)
         {
-            
+            XtraReport1 a = new XtraReport1();
+            a.FilterString = "[OrderID]='" + 65 + "'";
+            a.CreateDocument();
+            FrRptHoaDonThucPham b = new FrRptHoaDonThucPham();
+            b.documentViewer1.DocumentSource = a;
+            b.ShowDialog();
         }
     }
 }
