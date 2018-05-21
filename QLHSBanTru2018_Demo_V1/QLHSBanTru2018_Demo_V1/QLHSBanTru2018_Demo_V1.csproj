@@ -341,10 +341,10 @@
     <Compile Include="MD5Hash\PasswordEncryptor.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="QLThuChi\ChiTieu\ChiTieuThucPham\FrRptHoaDonThucPham.cs">
+    <Compile Include="QLThuChi\ChiTieu\ChiTieuThucPham\ThongKeThucPham\FrRptHoaDonThucPham.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="QLThuChi\ChiTieu\ChiTieuThucPham\FrRptHoaDonThucPham.Designer.cs">
+    <Compile Include="QLThuChi\ChiTieu\ChiTieuThucPham\ThongKeThucPham\FrRptHoaDonThucPham.Designer.cs">
       <DependentUpon>FrRptHoaDonThucPham.cs</DependentUpon>
     </Compile>
     <Compile Include="QLThuChi\ChiTieu\ChiTieuThucPham\ThongKeThucPham\UsThongKeThucPham.cs">
@@ -358,12 +358,6 @@
     </Compile>
     <Compile Include="QLThuChi\ChiTieu\ChiTieuThucPham\YeuCauThucPham\FrThanhToanThucPham.Designer.cs">
       <DependentUpon>FrThanhToanThucPham.cs</DependentUpon>
-    </Compile>
-    <Compile Include="QLThuChi\ChiTieu\ChiTieuThucPham\FrThemPhieuChi.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="QLThuChi\ChiTieu\ChiTieuThucPham\FrThemPhieuChi.Designer.cs">
-      <DependentUpon>FrThemPhieuChi.cs</DependentUpon>
     </Compile>
     <Compile Include="QLThuChi\ChiTieu\ChiTieuThucPham\YeuCauThucPham\TcFrNhanVien.cs">
       <SubType>Form</SubType>
@@ -718,7 +712,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="QLThuChi\ChiTieu\ChiTieuThucPham\FrRptHoaDonThucPham.resx">
+    <EmbeddedResource Include="QLThuChi\ChiTieu\ChiTieuThucPham\ThongKeThucPham\FrRptHoaDonThucPham.resx">
       <DependentUpon>FrRptHoaDonThucPham.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="QLThuChi\ChiTieu\ChiTieuThucPham\ThongKeThucPham\UsThongKeThucPham.resx">
@@ -726,9 +720,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="QLThuChi\ChiTieu\ChiTieuThucPham\YeuCauThucPham\FrThanhToanThucPham.resx">
       <DependentUpon>FrThanhToanThucPham.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="QLThuChi\ChiTieu\ChiTieuThucPham\FrThemPhieuChi.resx">
-      <DependentUpon>FrThemPhieuChi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="QLThuChi\ChiTieu\ChiTieuThucPham\YeuCauThucPham\TcFrNhanVien.resx">
       <DependentUpon>TcFrNhanVien.cs</DependentUpon>

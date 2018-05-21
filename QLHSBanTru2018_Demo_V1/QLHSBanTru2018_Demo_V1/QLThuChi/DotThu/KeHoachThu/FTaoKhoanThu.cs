@@ -152,5 +152,18 @@ namespace QLHSBanTru2018_Demo_V1.QLThuChi
         {
             txtDv.Text = cbbDonViThoiGian.Text;
         }
+
+        private void txtDv_TextChanged(object sender, EventArgs e)
+        {
+            if (txtDv.Text!= "Ngày")
+            {
+                cbHoanLai.Checked = false;
+                cbHoanLai.Enabled = false;
+            }
+            else
+            {
+                cbHoanLai.Enabled = true;
+            }
+        }
     }
 }

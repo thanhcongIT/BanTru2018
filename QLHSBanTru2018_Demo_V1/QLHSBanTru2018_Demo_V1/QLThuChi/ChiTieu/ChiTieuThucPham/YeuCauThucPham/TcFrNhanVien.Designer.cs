@@ -160,7 +160,7 @@
             // 
             this.cbbWard.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbWard.FormattingEnabled = true;
-            this.cbbWard.Location = new System.Drawing.Point(599, 279);
+            this.cbbWard.Location = new System.Drawing.Point(599, 281);
             this.cbbWard.Name = "cbbWard";
             this.cbbWard.Size = new System.Drawing.Size(161, 21);
             this.cbbWard.TabIndex = 27;
@@ -169,7 +169,7 @@
             // 
             this.cbbDistrict.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbDistrict.FormattingEnabled = true;
-            this.cbbDistrict.Location = new System.Drawing.Point(353, 279);
+            this.cbbDistrict.Location = new System.Drawing.Point(353, 281);
             this.cbbDistrict.Name = "cbbDistrict";
             this.cbbDistrict.Size = new System.Drawing.Size(160, 21);
             this.cbbDistrict.TabIndex = 29;
@@ -178,14 +178,14 @@
             // 
             this.cbbProvince.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbProvince.FormattingEnabled = true;
-            this.cbbProvince.Location = new System.Drawing.Point(106, 279);
+            this.cbbProvince.Location = new System.Drawing.Point(106, 281);
             this.cbbProvince.Name = "cbbProvince";
             this.cbbProvince.Size = new System.Drawing.Size(161, 21);
             this.cbbProvince.TabIndex = 30;
             // 
             // txtUsername
             // 
-            this.txtUsername.Location = new System.Drawing.Point(106, 42);
+            this.txtUsername.Location = new System.Drawing.Point(106, 43);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(198, 20);
             this.txtUsername.StyleController = this.layoutControl1;
@@ -193,7 +193,7 @@
             // 
             // txtFirstName
             // 
-            this.txtFirstName.Location = new System.Drawing.Point(106, 66);
+            this.txtFirstName.Location = new System.Drawing.Point(106, 67);
             this.txtFirstName.Name = "txtFirstName";
             this.txtFirstName.Size = new System.Drawing.Size(198, 20);
             this.txtFirstName.StyleController = this.layoutControl1;
@@ -202,7 +202,7 @@
             // dtBirthday
             // 
             this.dtBirthday.EditValue = null;
-            this.dtBirthday.Location = new System.Drawing.Point(106, 90);
+            this.dtBirthday.Location = new System.Drawing.Point(106, 91);
             this.dtBirthday.Name = "dtBirthday";
             this.dtBirthday.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
             this.dtBirthday.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -215,7 +215,7 @@
             // 
             // txtLastName
             // 
-            this.txtLastName.Location = new System.Drawing.Point(390, 66);
+            this.txtLastName.Location = new System.Drawing.Point(390, 67);
             this.txtLastName.Name = "txtLastName";
             this.txtLastName.Size = new System.Drawing.Size(192, 20);
             this.txtLastName.StyleController = this.layoutControl1;
@@ -223,7 +223,7 @@
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(390, 42);
+            this.txtPassword.Location = new System.Drawing.Point(390, 43);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Properties.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(192, 20);
@@ -233,7 +233,7 @@
             // picImage
             // 
             this.picImage.Cursor = System.Windows.Forms.Cursors.Default;
-            this.picImage.Location = new System.Drawing.Point(586, 42);
+            this.picImage.Location = new System.Drawing.Point(586, 43);
             this.picImage.Name = "picImage";
             this.picImage.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Squeeze;
             this.picImage.Size = new System.Drawing.Size(174, 191);
@@ -242,7 +242,7 @@
             // 
             // txtPhone
             // 
-            this.txtPhone.Location = new System.Drawing.Point(390, 115);
+            this.txtPhone.Location = new System.Drawing.Point(390, 116);
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(192, 20);
             this.txtPhone.StyleController = this.layoutControl1;
@@ -250,7 +250,7 @@
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(106, 114);
+            this.txtEmail.Location = new System.Drawing.Point(106, 115);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(198, 20);
             this.txtEmail.StyleController = this.layoutControl1;
@@ -258,7 +258,7 @@
             // 
             // txtIdentityNumber
             // 
-            this.txtIdentityNumber.Location = new System.Drawing.Point(106, 139);
+            this.txtIdentityNumber.Location = new System.Drawing.Point(106, 140);
             this.txtIdentityNumber.Name = "txtIdentityNumber";
             this.txtIdentityNumber.Size = new System.Drawing.Size(198, 20);
             this.txtIdentityNumber.StyleController = this.layoutControl1;
@@ -267,7 +267,7 @@
             // dtDateOfIssue
             // 
             this.dtDateOfIssue.EditValue = null;
-            this.dtDateOfIssue.Location = new System.Drawing.Point(106, 163);
+            this.dtDateOfIssue.Location = new System.Drawing.Point(106, 164);
             this.dtDateOfIssue.Name = "dtDateOfIssue";
             this.dtDateOfIssue.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -279,7 +279,7 @@
             // 
             // txtPlaceOfIssue
             // 
-            this.txtPlaceOfIssue.Location = new System.Drawing.Point(390, 139);
+            this.txtPlaceOfIssue.Location = new System.Drawing.Point(390, 140);
             this.txtPlaceOfIssue.Name = "txtPlaceOfIssue";
             this.txtPlaceOfIssue.Size = new System.Drawing.Size(192, 44);
             this.txtPlaceOfIssue.StyleController = this.layoutControl1;
@@ -289,7 +289,7 @@
             // 
             this.cbbEthnicGroup.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbEthnicGroup.FormattingEnabled = true;
-            this.cbbEthnicGroup.Location = new System.Drawing.Point(106, 187);
+            this.cbbEthnicGroup.Location = new System.Drawing.Point(106, 188);
             this.cbbEthnicGroup.Name = "cbbEthnicGroup";
             this.cbbEthnicGroup.Size = new System.Drawing.Size(198, 21);
             this.cbbEthnicGroup.TabIndex = 31;
@@ -298,7 +298,7 @@
             // 
             this.cbbReligion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbReligion.FormattingEnabled = true;
-            this.cbbReligion.Location = new System.Drawing.Point(390, 187);
+            this.cbbReligion.Location = new System.Drawing.Point(390, 188);
             this.cbbReligion.Name = "cbbReligion";
             this.cbbReligion.Size = new System.Drawing.Size(192, 21);
             this.cbbReligion.TabIndex = 32;
@@ -307,7 +307,7 @@
             // 
             this.cbbDegree.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbDegree.FormattingEnabled = true;
-            this.cbbDegree.Location = new System.Drawing.Point(106, 212);
+            this.cbbDegree.Location = new System.Drawing.Point(106, 213);
             this.cbbDegree.Name = "cbbDegree";
             this.cbbDegree.Size = new System.Drawing.Size(198, 21);
             this.cbbDegree.TabIndex = 33;
@@ -319,16 +319,16 @@
             this.cbbGender.Items.AddRange(new object[] {
             "Nam",
             "Nữ"});
-            this.cbbGender.Location = new System.Drawing.Point(390, 90);
+            this.cbbGender.Location = new System.Drawing.Point(390, 91);
             this.cbbGender.Name = "cbbGender";
             this.cbbGender.Size = new System.Drawing.Size(192, 21);
             this.cbbGender.TabIndex = 34;
             // 
             // txtNote
             // 
-            this.txtNote.Location = new System.Drawing.Point(24, 344);
+            this.txtNote.Location = new System.Drawing.Point(24, 346);
             this.txtNote.Name = "txtNote";
-            this.txtNote.Size = new System.Drawing.Size(736, 144);
+            this.txtNote.Size = new System.Drawing.Size(736, 142);
             this.txtNote.StyleController = this.layoutControl1;
             this.txtNote.TabIndex = 21;
             // 
@@ -364,9 +364,9 @@
             this.ward,
             this.aaa,
             this.layoutControlItem6});
-            this.layoutControlGroup4.Location = new System.Drawing.Point(0, 237);
+            this.layoutControlGroup4.Location = new System.Drawing.Point(0, 238);
             this.layoutControlGroup4.Name = "layoutControlGroup4";
-            this.layoutControlGroup4.Size = new System.Drawing.Size(764, 67);
+            this.layoutControlGroup4.Size = new System.Drawing.Size(764, 68);
             this.layoutControlGroup4.Text = "Địa chỉ";
             // 
             // ward
@@ -420,7 +420,7 @@
             this.layoutControlItem7});
             this.layoutControlGroup3.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup3.Name = "layoutControlGroup3";
-            this.layoutControlGroup3.Size = new System.Drawing.Size(764, 237);
+            this.layoutControlGroup3.Size = new System.Drawing.Size(764, 238);
             this.layoutControlGroup3.Text = "Thông tin cá nhân";
             // 
             // ItemForUsername
@@ -582,9 +582,9 @@
             this.ItemForNote,
             this.ItemForStatus,
             this.emptySpaceItem4});
-            this.layoutControlGroup5.Location = new System.Drawing.Point(0, 304);
+            this.layoutControlGroup5.Location = new System.Drawing.Point(0, 306);
             this.layoutControlGroup5.Name = "layoutControlGroup5";
-            this.layoutControlGroup5.Size = new System.Drawing.Size(764, 211);
+            this.layoutControlGroup5.Size = new System.Drawing.Size(764, 209);
             this.layoutControlGroup5.TextVisible = false;
             // 
             // ItemForNote
@@ -593,7 +593,7 @@
             this.ItemForNote.CustomizationFormText = "Ghi chú:";
             this.ItemForNote.Location = new System.Drawing.Point(0, 0);
             this.ItemForNote.Name = "ItemForNote";
-            this.ItemForNote.Size = new System.Drawing.Size(740, 164);
+            this.ItemForNote.Size = new System.Drawing.Size(740, 162);
             this.ItemForNote.Text = "Ghi chú:";
             this.ItemForNote.TextLocation = DevExpress.Utils.Locations.Top;
             this.ItemForNote.TextSize = new System.Drawing.Size(79, 13);
@@ -602,7 +602,7 @@
             // 
             this.ItemForStatus.Control = this.chbStatus;
             this.ItemForStatus.CustomizationFormText = "Tình trạng";
-            this.ItemForStatus.Location = new System.Drawing.Point(28, 164);
+            this.ItemForStatus.Location = new System.Drawing.Point(28, 162);
             this.ItemForStatus.Name = "ItemForStatus";
             this.ItemForStatus.Size = new System.Drawing.Size(712, 23);
             this.ItemForStatus.Text = "Tình trạng";
@@ -612,7 +612,7 @@
             // 
             this.emptySpaceItem4.AllowHotTrack = false;
             this.emptySpaceItem4.CustomizationFormText = "emptySpaceItem1";
-            this.emptySpaceItem4.Location = new System.Drawing.Point(0, 164);
+            this.emptySpaceItem4.Location = new System.Drawing.Point(0, 162);
             this.emptySpaceItem4.Name = "emptySpaceItem4";
             this.emptySpaceItem4.Size = new System.Drawing.Size(28, 23);
             this.emptySpaceItem4.Text = "emptySpaceItem1";

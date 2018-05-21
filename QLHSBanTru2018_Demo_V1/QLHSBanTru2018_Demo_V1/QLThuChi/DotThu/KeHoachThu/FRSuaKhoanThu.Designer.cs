@@ -28,8 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FRSuaKhoanThu));
-            this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel();
+            this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
             this.txtDv = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtTongthu = new System.Windows.Forms.TextBox();
@@ -65,6 +66,7 @@
             this.txtDv.Size = new System.Drawing.Size(100, 21);
             this.txtDv.TabIndex = 66;
             this.txtDv.Text = "Ngày";
+            this.txtDv.TextChanged += new System.EventHandler(this.txtDv_TextChanged);
             // 
             // label2
             // 

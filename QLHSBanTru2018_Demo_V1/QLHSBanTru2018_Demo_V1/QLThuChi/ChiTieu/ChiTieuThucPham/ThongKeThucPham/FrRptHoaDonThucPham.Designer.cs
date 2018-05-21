@@ -29,13 +29,11 @@
         private void InitializeComponent()
         {
             this.documentViewer1 = new DevExpress.XtraPrinting.Preview.DocumentViewer();
-            this.remoteDocumentSource1 = new DevExpress.ReportServer.Printing.RemoteDocumentSource();
             this.SuspendLayout();
             // 
             // documentViewer1
             // 
             this.documentViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-
             this.documentViewer1.IsMetric = false;
             this.documentViewer1.Location = new System.Drawing.Point(0, 0);
             this.documentViewer1.Name = "documentViewer1";
@@ -57,6 +55,5 @@
         #endregion
 
         public DevExpress.XtraPrinting.Preview.DocumentViewer documentViewer1;
-        private DevExpress.ReportServer.Printing.RemoteDocumentSource remoteDocumentSource1;
     }
 }
