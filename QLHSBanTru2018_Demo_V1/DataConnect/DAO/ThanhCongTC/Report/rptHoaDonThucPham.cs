@@ -11,6 +11,7 @@ namespace DataConnect.DAO.ThanhCongTC.Report
         public rptHoaDonThucPham()
         {
             InitializeComponent();
+            
         }
 
     }
