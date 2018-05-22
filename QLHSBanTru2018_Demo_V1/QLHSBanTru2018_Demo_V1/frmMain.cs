@@ -226,14 +226,22 @@ namespace QLHSBanTru2018_Demo_V1
         }
 
 
-
-
         #endregion
 
         #region Vũ Đức Thiện
 
         #endregion
 
-       
+        private void btnDiemDanhHS_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            DucThien.DiemDanhHS a = new DucThien.DiemDanhHS();
+            a.ShowDialog();
+        }
+
+        private void btnTheoDoiDenMuon_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            DucThien.TheoDoiDenMuonHS a = new DucThien.TheoDoiDenMuonHS();
+            a.ShowDialog();
+        }
     }
 }

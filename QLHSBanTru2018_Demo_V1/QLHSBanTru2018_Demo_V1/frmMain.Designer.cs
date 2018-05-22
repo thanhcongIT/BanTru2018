@@ -65,6 +65,7 @@
             this.btnDishManager = new DevExpress.XtraBars.BarButtonItem();
             this.btnChiThucPham = new DevExpress.XtraBars.BarButtonItem();
             this.btnYeuCau = new DevExpress.XtraBars.BarButtonItem();
+            this.btnDiemDanhHS = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -81,9 +82,11 @@
             this.ribbonPage3 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup7 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup13 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
             this.pnControlsPanel = new System.Windows.Forms.Panel();
+            this.btnTheoDoiDenMuon = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             this.SuspendLayout();
             // 
@@ -125,9 +128,11 @@
             this.btnDoituongchinhsach,
             this.btnDishManager,
             this.btnChiThucPham,
-            this.btnYeuCau});
+            this.btnYeuCau,
+            this.btnDiemDanhHS,
+            this.btnTheoDoiDenMuon});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 35;
+            this.ribbon.MaxItemId = 37;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -436,6 +441,13 @@
             this.btnYeuCau.Name = "btnYeuCau";
             this.btnYeuCau.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnYeuCau_ItemClick);
             // 
+            // btnDiemDanhHS
+            // 
+            this.btnDiemDanhHS.Caption = "Điểm Danh Học Sinh";
+            this.btnDiemDanhHS.Id = 35;
+            this.btnDiemDanhHS.Name = "btnDiemDanhHS";
+            this.btnDiemDanhHS.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDiemDanhHS_ItemClick);
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -539,7 +551,8 @@
             // 
             this.ribbonPage3.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup6,
-            this.ribbonPageGroup7});
+            this.ribbonPageGroup7,
+            this.ribbonPageGroup13});
             this.ribbonPage3.Name = "ribbonPage3";
             this.ribbonPage3.Text = "Học Sinh";
             // 
@@ -558,6 +571,13 @@
             this.ribbonPageGroup7.ItemLinks.Add(this.btnHealth);
             this.ribbonPageGroup7.Name = "ribbonPageGroup7";
             this.ribbonPageGroup7.Text = "Sức khỏe - y tế";
+            // 
+            // ribbonPageGroup13
+            // 
+            this.ribbonPageGroup13.ItemLinks.Add(this.btnDiemDanhHS);
+            this.ribbonPageGroup13.ItemLinks.Add(this.btnTheoDoiDenMuon);
+            this.ribbonPageGroup13.Name = "ribbonPageGroup13";
+            this.ribbonPageGroup13.Text = "ribbonPageGroup13";
             // 
             // ribbonStatusBar
             // 
@@ -579,6 +599,13 @@
             this.pnControlsPanel.Name = "pnControlsPanel";
             this.pnControlsPanel.Size = new System.Drawing.Size(1364, 600);
             this.pnControlsPanel.TabIndex = 3;
+            // 
+            // btnTheoDoiDenMuon
+            // 
+            this.btnTheoDoiDenMuon.Caption = "Theo Dõi Đến Muộn";
+            this.btnTheoDoiDenMuon.Id = 36;
+            this.btnTheoDoiDenMuon.Name = "btnTheoDoiDenMuon";
+            this.btnTheoDoiDenMuon.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnTheoDoiDenMuon_ItemClick);
             // 
             // frmMain
             // 
@@ -655,5 +682,8 @@
         private DevExpress.XtraBars.BarButtonItem btnChiThucPham;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup12;
         private DevExpress.XtraBars.BarButtonItem btnYeuCau;
+        private DevExpress.XtraBars.BarButtonItem btnDiemDanhHS;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup13;
+        private DevExpress.XtraBars.BarButtonItem btnTheoDoiDenMuon;
     }
 }

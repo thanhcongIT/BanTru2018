@@ -42,7 +42,7 @@
   <ItemGroup>
     <Reference Include="Accessibility" />
     <Reference Include="Bunifu_UI_v1.5.3">
-      <HintPath>C:\Users\khico\Downloads\Bunifu_UI_v1.5.3.dll</HintPath>
+      <HintPath>C:\Users\ADMIN\Downloads\Bunifu_UI_v1.5.3.dll</HintPath>
     </Reference>
     <Reference Include="Dapper, Version=1.50.4.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Dapper.1.50.4\lib\net451\Dapper.dll</HintPath>
@@ -111,6 +111,105 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CPITQLHSBanTru2018DataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CPITQLHSBanTru2018DataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CPITQLHSBanTru2018DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CPITQLHSBanTru2018DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CPITQLHSBanTru2018DataSet10.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CPITQLHSBanTru2018DataSet10.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CPITQLHSBanTru2018DataSet11.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CPITQLHSBanTru2018DataSet11.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CPITQLHSBanTru2018DataSet12.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CPITQLHSBanTru2018DataSet12.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CPITQLHSBanTru2018DataSet13.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CPITQLHSBanTru2018DataSet13.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CPITQLHSBanTru2018DataSet14.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CPITQLHSBanTru2018DataSet14.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CPITQLHSBanTru2018DataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CPITQLHSBanTru2018DataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CPITQLHSBanTru2018DataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CPITQLHSBanTru2018DataSet3.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CPITQLHSBanTru2018DataSet4.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CPITQLHSBanTru2018DataSet4.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CPITQLHSBanTru2018DataSet5.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CPITQLHSBanTru2018DataSet5.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CPITQLHSBanTru2018DataSet6.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CPITQLHSBanTru2018DataSet6.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CPITQLHSBanTru2018DataSet7.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CPITQLHSBanTru2018DataSet7.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CPITQLHSBanTru2018DataSet8.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CPITQLHSBanTru2018DataSet8.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CPITQLHSBanTru2018DataSet9.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CPITQLHSBanTru2018DataSet9.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DucThien\DiemDanhHS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DucThien\DiemDanhHS.Designer.cs">
+      <DependentUpon>DiemDanhHS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DucThien\NhanXetHangTuan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DucThien\NhanXetHangTuan.Designer.cs">
+      <DependentUpon>NhanXetHangTuan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DucThien\TheoDoiDenMuon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DucThien\TheoDoiDenMuon.Designer.cs">
+      <DependentUpon>TheoDoiDenMuon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DucThien\TheoDoiDenMuonHS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DucThien\TheoDoiDenMuonHS.Designer.cs">
+      <DependentUpon>TheoDoiDenMuonHS.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -552,6 +651,18 @@
     <Compile Include="TienBao\WaitForm.Designer.cs">
       <DependentUpon>WaitForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="DucThien\DiemDanhHS.resx">
+      <DependentUpon>DiemDanhHS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DucThien\NhanXetHangTuan.resx">
+      <DependentUpon>NhanXetHangTuan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DucThien\TheoDoiDenMuon.resx">
+      <DependentUpon>TheoDoiDenMuon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DucThien\TheoDoiDenMuonHS.resx">
+      <DependentUpon>TheoDoiDenMuonHS.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -783,6 +894,171 @@
       <DependentUpon>WaitForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config" />
+    <None Include="CPITQLHSBanTru2018DataSet.xsc">
+      <DependentUpon>CPITQLHSBanTru2018DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="CPITQLHSBanTru2018DataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CPITQLHSBanTru2018DataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CPITQLHSBanTru2018DataSet.xss">
+      <DependentUpon>CPITQLHSBanTru2018DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="CPITQLHSBanTru2018DataSet1.xsc">
+      <DependentUpon>CPITQLHSBanTru2018DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="CPITQLHSBanTru2018DataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CPITQLHSBanTru2018DataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CPITQLHSBanTru2018DataSet1.xss">
+      <DependentUpon>CPITQLHSBanTru2018DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="CPITQLHSBanTru2018DataSet10.xsc">
+      <DependentUpon>CPITQLHSBanTru2018DataSet10.xsd</DependentUpon>
+    </None>
+    <None Include="CPITQLHSBanTru2018DataSet10.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CPITQLHSBanTru2018DataSet10.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CPITQLHSBanTru2018DataSet10.xss">
+      <DependentUpon>CPITQLHSBanTru2018DataSet10.xsd</DependentUpon>
+    </None>
+    <None Include="CPITQLHSBanTru2018DataSet11.xsc">
+      <DependentUpon>CPITQLHSBanTru2018DataSet11.xsd</DependentUpon>
+    </None>
+    <None Include="CPITQLHSBanTru2018DataSet11.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CPITQLHSBanTru2018DataSet11.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CPITQLHSBanTru2018DataSet11.xss">
+      <DependentUpon>CPITQLHSBanTru2018DataSet11.xsd</DependentUpon>
+    </None>
+    <None Include="CPITQLHSBanTru2018DataSet12.xsc">
+      <DependentUpon>CPITQLHSBanTru2018DataSet12.xsd</DependentUpon>
+    </None>
+    <None Include="CPITQLHSBanTru2018DataSet12.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CPITQLHSBanTru2018DataSet12.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CPITQLHSBanTru2018DataSet12.xss">
+      <DependentUpon>CPITQLHSBanTru2018DataSet12.xsd</DependentUpon>
+    </None>
+    <None Include="CPITQLHSBanTru2018DataSet13.xsc">
+      <DependentUpon>CPITQLHSBanTru2018DataSet13.xsd</DependentUpon>
+    </None>
+    <None Include="CPITQLHSBanTru2018DataSet13.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CPITQLHSBanTru2018DataSet13.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CPITQLHSBanTru2018DataSet13.xss">
+      <DependentUpon>CPITQLHSBanTru2018DataSet13.xsd</DependentUpon>
+    </None>
+    <None Include="CPITQLHSBanTru2018DataSet14.xsc">
+      <DependentUpon>CPITQLHSBanTru2018DataSet14.xsd</DependentUpon>
+    </None>
+    <None Include="CPITQLHSBanTru2018DataSet14.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CPITQLHSBanTru2018DataSet14.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CPITQLHSBanTru2018DataSet14.xss">
+      <DependentUpon>CPITQLHSBanTru2018DataSet14.xsd</DependentUpon>
+    </None>
+    <None Include="CPITQLHSBanTru2018DataSet2.xsc">
+      <DependentUpon>CPITQLHSBanTru2018DataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="CPITQLHSBanTru2018DataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CPITQLHSBanTru2018DataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CPITQLHSBanTru2018DataSet2.xss">
+      <DependentUpon>CPITQLHSBanTru2018DataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="CPITQLHSBanTru2018DataSet3.xsc">
+      <DependentUpon>CPITQLHSBanTru2018DataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="CPITQLHSBanTru2018DataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CPITQLHSBanTru2018DataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CPITQLHSBanTru2018DataSet3.xss">
+      <DependentUpon>CPITQLHSBanTru2018DataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="CPITQLHSBanTru2018DataSet4.xsc">
+      <DependentUpon>CPITQLHSBanTru2018DataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="CPITQLHSBanTru2018DataSet4.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CPITQLHSBanTru2018DataSet4.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CPITQLHSBanTru2018DataSet4.xss">
+      <DependentUpon>CPITQLHSBanTru2018DataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="CPITQLHSBanTru2018DataSet5.xsc">
+      <DependentUpon>CPITQLHSBanTru2018DataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="CPITQLHSBanTru2018DataSet5.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CPITQLHSBanTru2018DataSet5.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CPITQLHSBanTru2018DataSet5.xss">
+      <DependentUpon>CPITQLHSBanTru2018DataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="CPITQLHSBanTru2018DataSet6.xsc">
+      <DependentUpon>CPITQLHSBanTru2018DataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="CPITQLHSBanTru2018DataSet6.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CPITQLHSBanTru2018DataSet6.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CPITQLHSBanTru2018DataSet6.xss">
+      <DependentUpon>CPITQLHSBanTru2018DataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="CPITQLHSBanTru2018DataSet7.xsc">
+      <DependentUpon>CPITQLHSBanTru2018DataSet7.xsd</DependentUpon>
+    </None>
+    <None Include="CPITQLHSBanTru2018DataSet7.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CPITQLHSBanTru2018DataSet7.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CPITQLHSBanTru2018DataSet7.xss">
+      <DependentUpon>CPITQLHSBanTru2018DataSet7.xsd</DependentUpon>
+    </None>
+    <None Include="CPITQLHSBanTru2018DataSet8.xsc">
+      <DependentUpon>CPITQLHSBanTru2018DataSet8.xsd</DependentUpon>
+    </None>
+    <None Include="CPITQLHSBanTru2018DataSet8.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CPITQLHSBanTru2018DataSet8.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CPITQLHSBanTru2018DataSet8.xss">
+      <DependentUpon>CPITQLHSBanTru2018DataSet8.xsd</DependentUpon>
+    </None>
+    <None Include="CPITQLHSBanTru2018DataSet9.xsc">
+      <DependentUpon>CPITQLHSBanTru2018DataSet9.xsd</DependentUpon>
+    </None>
+    <None Include="CPITQLHSBanTru2018DataSet9.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CPITQLHSBanTru2018DataSet9.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CPITQLHSBanTru2018DataSet9.xss">
+      <DependentUpon>CPITQLHSBanTru2018DataSet9.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\DataConnect.Employee.datasource" />
     <None Include="Properties\Settings.settings">
