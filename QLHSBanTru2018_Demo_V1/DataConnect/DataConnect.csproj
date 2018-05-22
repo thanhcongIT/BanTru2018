@@ -85,6 +85,7 @@
     <Compile Include="DAO\HungTD\PositionDAO.cs" />
     <Compile Include="DAO\HungTD\ReligionDAO.cs" />
     <Compile Include="DAO\HungTD\SemesterDAO.cs" />
+    <Compile Include="DAO\HungTD\StudentDailyTrackerDAO.cs" />
     <Compile Include="DAO\HungTD\TopicDAO.cs" />
     <Compile Include="DAO\HungTD\AgeGroupDAO.cs" />
     <Compile Include="DAO\HungTD\WeekDAO.cs" />
@@ -156,6 +157,7 @@
     <Compile Include="ViewModel\ContractReportViewModel.cs" />
     <Compile Include="ViewModel\ContractViewModel.cs" />
     <Compile Include="ViewModel\DailyTrackerFullViewModel.cs" />
+    <Compile Include="ViewModel\DayOfWeekViewModel.cs" />
     <Compile Include="ViewModel\Department_EmployeeViewModel.cs" />
     <Compile Include="ViewModel\DishDetailViewModel.cs" />
     <Compile Include="ViewModel\DishFullViewModel.cs" />

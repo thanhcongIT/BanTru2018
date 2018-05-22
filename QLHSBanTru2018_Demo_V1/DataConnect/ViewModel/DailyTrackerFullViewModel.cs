@@ -8,12 +8,13 @@ namespace DataConnect.ViewModel
 {
     public class DailyTrackerFullViewModel
     {
-        public int DailyTrackerID { get; set; }
         public int StudentID { get; set; }
         public string StudentFirstName { get; set; }
         public string StudentLastName { get; set; }
         public string StudentHomeName { get; set; }
-        public int WeekID { get; set; }
+        public bool Gender { get; set; }
+        public string StringGender { get; set; }
+        public DateTime BirthDay { get; set; }
         public DateTime Date { get; set; }
         public int Present { get; set; }
         public string PresentString { get; set; }
@@ -27,13 +28,6 @@ namespace DataConnect.ViewModel
         public int? Study { get; set; }
         public string Note { get; set; }
         public bool Status { get; set; }
-
-        public int? Monday { get; set; }
-        public int? Tuesday { get; set; }
-        public int? Wednesday { get; set; }
-        public int? Thursday { get; set; }
-        public int? Friday { get; set; }
-        public int? Saturday { get; set; }
-        public int? Sunday { get; set; }
+        public string StringStatus { get; set; }
     }
 }

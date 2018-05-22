@@ -27,6 +27,7 @@ using QLHSBanTru2018_Demo_V1.HungTD.Form.Dish;
 using QLHSBanTru2018_Demo_V1.QLThuChi.ChiTieu.ChiTieuThucPham;
 using QLHSBanTru2018_Demo_V1.QLThuChi.ChiTieu.ChiTieuThucPham.ThongKeThucPham;
 using QLHSBanTru2018_Demo_V1.HungTD.Form.Menu;
+using QLHSBanTru2018_Demo_V1.HungTD.Form.DailyTracker;
 
 namespace QLHSBanTru2018_Demo_V1
 {
@@ -126,6 +127,15 @@ namespace QLHSBanTru2018_Demo_V1
             pnControlsPanel.Controls.Clear();
             pnControlsPanel.Controls.Add(new frmWeeklyMenu());
             labTitle.Caption = "QUẢN LÝ THỰC ĐƠN";
+        }
+
+        private void btnDailyTracker_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            pnControlsPanel.Controls.Clear();
+            frmDailyTracker frmDT = new frmDailyTracker();
+            frmDT.SetClassID(8);
+            pnControlsPanel.Controls.Add(frmDT);
+            labTitle.Caption = "ĐIỂM DANH HÀNG NGÀY";
         }
         #endregion
 
@@ -257,6 +267,5 @@ namespace QLHSBanTru2018_Demo_V1
         #region Vũ Đức Thiện
 
         #endregion
-
     }
 }

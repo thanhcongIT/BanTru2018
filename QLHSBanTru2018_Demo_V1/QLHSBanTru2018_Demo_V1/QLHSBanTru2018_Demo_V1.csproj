@@ -166,6 +166,12 @@
     <Compile Include="HungTD\Form\Course\frmCourseList.Designer.cs">
       <DependentUpon>frmCourseList.cs</DependentUpon>
     </Compile>
+    <Compile Include="HungTD\Form\DailyTracker\frmDailyTracker.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HungTD\Form\DailyTracker\frmDailyTracker.Designer.cs">
+      <DependentUpon>frmDailyTracker.cs</DependentUpon>
+    </Compile>
     <Compile Include="HungTD\Form\Department\frmDepartmentDetail.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -624,6 +630,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="HungTD\Form\Course\frmCourseList.resx">
       <DependentUpon>frmCourseList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HungTD\Form\DailyTracker\frmDailyTracker.resx">
+      <DependentUpon>frmDailyTracker.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HungTD\Form\Department\frmDepartmentDetail.resx">
       <DependentUpon>frmDepartmentDetail.cs</DependentUpon>

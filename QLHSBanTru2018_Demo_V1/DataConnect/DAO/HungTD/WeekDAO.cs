@@ -18,6 +18,10 @@ namespace DataConnect.DAO.HungTD
             db = new QLHSSmartKidsDataContext();
             weeks = db.GetTable<Week>();
         }
+        public Week GetByID(int weekID)
+        {
+            return weeks.FirstOrDefault(x => x.WeekID.Equals(weekID));
+        }
         public List<WeekViewModel> ListAll(int courseID)
         {
             try
@@ -113,6 +117,54 @@ namespace DataConnect.DAO.HungTD
             catch
             {
                 return false;
+            }
+        }
+        public List<DayOfWeekViewModel> ListDayOfWeek(int weekID)
+        {
+            try
+            {
+                Week week = GetByID(weekID);
+
+                List<DayOfWeekViewModel> model = new List<DayOfWeekViewModel>();
+                int dayIndex=2;
+                switch (week.StartDate.DayOfWeek)
+                {
+                    case DayOfWeek.Monday:
+                        dayIndex = 2;
+                        break;
+                    case DayOfWeek.Tuesday:
+                        dayIndex = 3;
+                        break;
+                    case DayOfWeek.Wednesday:
+                        dayIndex = 4;
+                        break;
+                    case DayOfWeek.Thursday:
+                        dayIndex = 3;
+                        break;
+                    case DayOfWeek.Friday:
+                        dayIndex = 3;
+                        break;
+                    case DayOfWeek.Saturday:
+                        dayIndex = 3;
+                        break;
+                    default:
+                        dayIndex = 0;
+                        break;
+                }
+                for(DateTime date = week.StartDate; date.Date<week.EndDate; date = date.AddDays(1))
+                {
+                    model.Add(new DayOfWeekViewModel
+                    {
+                        Date = date,
+                        FullName = dayIndex != 0 ? "Thứ " + dayIndex.ToString() + " (" + date.ToString("dd/MM/yyyy") + ")" : "Chủ nhật (" + date.ToString("dd/MM/yyyy") + ")"
+                    });
+                    dayIndex++;
+                }
+                return model.ToList();
+            }
+            catch
+            {
+                return null;
             }
         }
     }

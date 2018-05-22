@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.btnDepartment = new DevExpress.XtraBars.BarButtonItem();
@@ -66,6 +67,7 @@
             this.btnYeuCau = new DevExpress.XtraBars.BarButtonItem();
             this.btnMealManager = new DevExpress.XtraBars.BarButtonItem();
             this.btnThongKeThucPham = new DevExpress.XtraBars.BarButtonItem();
+            this.btnDailyMenuManager = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -75,6 +77,7 @@
             this.ribbonPage4 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup9 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup11 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup13 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup10 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -83,10 +86,10 @@
             this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup7 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
-            this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel();
+            this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
             this.pnControlsPanel = new System.Windows.Forms.Panel();
-            this.ribbonPageGroup13 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.btnDailyMenuManager = new DevExpress.XtraBars.BarButtonItem();
+            this.ribbonPageGroup14 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.btnDailyTracker = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             this.SuspendLayout();
             // 
@@ -131,9 +134,10 @@
             this.btnYeuCau,
             this.btnMealManager,
             this.btnThongKeThucPham,
-            this.btnDailyMenuManager});
+            this.btnDailyMenuManager,
+            this.btnDailyTracker});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 38;
+            this.ribbon.MaxItemId = 39;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -460,6 +464,15 @@
             this.btnThongKeThucPham.Name = "btnThongKeThucPham";
             this.btnThongKeThucPham.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThongKeThucPham_ItemClick);
             // 
+            // btnDailyMenuManager
+            // 
+            this.btnDailyMenuManager.Caption = "Quản Lý Thực Đơn";
+            this.btnDailyMenuManager.Id = 37;
+            this.btnDailyMenuManager.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDailyMenuManager.ImageOptions.Image")));
+            this.btnDailyMenuManager.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnDailyMenuManager.ImageOptions.LargeImage")));
+            this.btnDailyMenuManager.Name = "btnDailyMenuManager";
+            this.btnDailyMenuManager.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDailyMenuManager_ItemClick);
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -511,7 +524,8 @@
             this.ribbonPage4.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup9,
             this.ribbonPageGroup11,
-            this.ribbonPageGroup13});
+            this.ribbonPageGroup13,
+            this.ribbonPageGroup14});
             this.ribbonPage4.Name = "ribbonPage4";
             this.ribbonPage4.Text = "Thực Phẩm - Dinh Dưỡng";
             // 
@@ -528,6 +542,12 @@
             this.ribbonPageGroup11.ItemLinks.Add(this.btnMealManager);
             this.ribbonPageGroup11.Name = "ribbonPageGroup11";
             this.ribbonPageGroup11.Text = "Món Ăn";
+            // 
+            // ribbonPageGroup13
+            // 
+            this.ribbonPageGroup13.ItemLinks.Add(this.btnDailyMenuManager);
+            this.ribbonPageGroup13.Name = "ribbonPageGroup13";
+            this.ribbonPageGroup13.Text = "Thực Đơn";
             // 
             // ribbonPage2
             // 
@@ -607,20 +627,20 @@
             this.pnControlsPanel.Size = new System.Drawing.Size(1364, 600);
             this.pnControlsPanel.TabIndex = 3;
             // 
-            // ribbonPageGroup13
+            // ribbonPageGroup14
             // 
-            this.ribbonPageGroup13.ItemLinks.Add(this.btnDailyMenuManager);
-            this.ribbonPageGroup13.Name = "ribbonPageGroup13";
-            this.ribbonPageGroup13.Text = "Thực Đơn";
+            this.ribbonPageGroup14.ItemLinks.Add(this.btnDailyTracker);
+            this.ribbonPageGroup14.Name = "ribbonPageGroup14";
+            this.ribbonPageGroup14.Text = "Nghiệp Vụ Hàng Ngày";
             // 
-            // btnDailyMenuManager
+            // btnDailyTracker
             // 
-            this.btnDailyMenuManager.Caption = "Quản Lý Thực Đơn";
-            this.btnDailyMenuManager.Id = 37;
-            this.btnDailyMenuManager.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDailyMenuManager.ImageOptions.Image")));
-            this.btnDailyMenuManager.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnDailyMenuManager.ImageOptions.LargeImage")));
-            this.btnDailyMenuManager.Name = "btnDailyMenuManager";
-            this.btnDailyMenuManager.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDailyMenuManager_ItemClick);
+            this.btnDailyTracker.Caption = "Điểm Danh Hàng Ngày";
+            this.btnDailyTracker.Id = 38;
+            this.btnDailyTracker.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDailyTracker.ImageOptions.Image")));
+            this.btnDailyTracker.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnDailyTracker.ImageOptions.LargeImage")));
+            this.btnDailyTracker.Name = "btnDailyTracker";
+            this.btnDailyTracker.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDailyTracker_ItemClick);
             // 
             // frmMain
             // 
@@ -701,5 +721,7 @@
         private DevExpress.XtraBars.BarButtonItem btnThongKeThucPham;
         private DevExpress.XtraBars.BarButtonItem btnDailyMenuManager;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup13;
+        private DevExpress.XtraBars.BarButtonItem btnDailyTracker;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup14;
     }
 }
