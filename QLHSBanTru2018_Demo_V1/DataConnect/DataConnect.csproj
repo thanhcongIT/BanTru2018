@@ -103,16 +103,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </Compile>
-    <Compile Include="DAO\ThanhCongTC\DataSet\HDThucPham.Designer.cs">
+    <Compile Include="DAO\ThanhCongTC\DataSet\HoaDonThucPham.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>HDThucPham.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="DAO\ThanhCongTC\DataSet\rptHoaDonThucPham.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="DAO\ThanhCongTC\DataSet\rptHoaDonThucPham.Designer.cs">
-      <DependentUpon>rptHoaDonThucPham.cs</DependentUpon>
+      <DependentUpon>HoaDonThucPham.xsd</DependentUpon>
     </Compile>
     <Compile Include="DAO\ThanhCongTC\DataSet\XtraReport1.cs">
       <SubType>Component</SubType>
@@ -129,6 +123,12 @@
     <Compile Include="DAO\ThanhCongTC\KhoanThu\SemesterDAO.cs" />
     <Compile Include="DAO\ThanhCongTC\KhoanThu\StudenGrade.cs" />
     <Compile Include="DAO\ThanhCongTC\KhoanThu\studentReceivableDAO.cs" />
+    <Compile Include="DAO\ThanhCongTC\Report\rptHoaDonThucPham.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DAO\ThanhCongTC\Report\rptHoaDonThucPham.Designer.cs">
+      <DependentUpon>rptHoaDonThucPham.cs</DependentUpon>
+    </Compile>
     <Compile Include="DAO\ThanhCongTC\TCViewModle\OrderOrderDetailViewModle.cs" />
     <Compile Include="DAO\ThanhCongTC\TCViewModle\TCIngredientRequestDetaiViewModle.cs" />
     <Compile Include="DAO\ThanhCongTC\TCViewModle\TCOrderDetailViewModle.cs" />
@@ -187,16 +187,16 @@
     <None Include="DAO\ThanhCongTC\DataSet\DataSet1.xss">
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </None>
-    <None Include="DAO\ThanhCongTC\DataSet\HDThucPham.xsc">
-      <DependentUpon>HDThucPham.xsd</DependentUpon>
+    <None Include="DAO\ThanhCongTC\DataSet\HoaDonThucPham.xsc">
+      <DependentUpon>HoaDonThucPham.xsd</DependentUpon>
     </None>
-    <None Include="DAO\ThanhCongTC\DataSet\HDThucPham.xsd">
+    <None Include="DAO\ThanhCongTC\DataSet\HoaDonThucPham.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>HDThucPham.Designer.cs</LastGenOutput>
+      <LastGenOutput>HoaDonThucPham.Designer.cs</LastGenOutput>
     </None>
-    <None Include="DAO\ThanhCongTC\DataSet\HDThucPham.xss">
-      <DependentUpon>HDThucPham.xsd</DependentUpon>
+    <None Include="DAO\ThanhCongTC\DataSet\HoaDonThucPham.xss">
+      <DependentUpon>HoaDonThucPham.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -217,13 +217,14 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="DAO\ThanhCongTC\DataSet\rptHoaDonThucPham.resx">
-      <DependentUpon>rptHoaDonThucPham.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="DAO\ThanhCongTC\DataSet\XtraReport1.resx">
       <DependentUpon>XtraReport1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DAO\ThanhCongTC\Report\rptHoaDonThucPham.resx">
+      <DependentUpon>rptHoaDonThucPham.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -117,54 +117,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="btnTK.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAZdEVYdFNvZnR3YXJlAEFkb2JlIEltYWdlUmVhZHlxyWU8AAAAI3RFWHRUaXRsZQBBZGQ7Rmls
-        ZTtBZGRGaWxlO0JhcnM7UmliYm9uOxXcqgoAAACJSURBVDhPY/j//z8DJRiuuaWl5T8e/A8qZ4xuGYoB
-        QEmcAGRAX1/fXSCNYghJBgBN/4VuCEkGoHkRrJdoA5D9BjQIFCYUGQAKcDobULZ8+n8QBgFQWADZpLmA
-        qgaAXEGUC2C24qIJRiPFBiDHPZJhDCDnY/UCrswE9TM4FmCaMQzAlqWRFeNyAQC0yiKjhL2rtgAAAABJ
-        RU5ErkJggg==
-</value>
-  </data>
-  <metadata name="classBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>826, 17</value>
-  </metadata>
-  <metadata name="cPITQLHSBanTru2018DataSet13.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>601, 17</value>
-  </metadata>
-  <metadata name="weekYearBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>242, 17</value>
-  </metadata>
-  <metadata name="cPITQLHSBanTru2018DataSet12.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <metadata name="hoaDonThucPham1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <data name="simpleButton2.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAZdEVYdFNvZnR3YXJlAEFkb2JlIEltYWdlUmVhZHlxyWU8AAAAWnRFWHRUaXRsZQBEZWxldGU7
-        RGVsZXRlSXRlbTtSZW1vdmU7UmVtb3ZlSXRlbTtEZWxldGVMaXN0O0xpc3Q7UmVtb3ZlTGlzdDtJdGVt
-        O0xpc3Q7Q2xlYXI7RXJhc2VY4hcLAAAAmklEQVQ4T2P4//8/AyUYrrmlpeU/HvwPKmeMbhmKAUBJnABk
-        QF9f310gjWIISQYATf+FbghJBiB7EeYVog1A9hvIoIE1AOoasOsJeuH9wS3/byS7/P/+4BbcFyA2SAyI
-        0wgaAFUINwRJM1iMoAHoGpANBLKNCRoAcjcOQ8AJivYGkOQF9MwEcj7RgYgrS4OiCmoIPBOBAg8WjQDi
-        QSuEAskg8AAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="simpleButton1.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAZdEVYdFNvZnR3YXJlAEFkb2JlIEltYWdlUmVhZHlxyWU8AAAAIHRFWHRUaXRsZQBFZGl0O0Jh
-        cnM7UmliYm9uO1N0YW5kYXJkOzATw9sAAACdSURBVDhPpZO7DYAwDETZKXOwFEqdedgF0dLTUmB8CCPH
-        BMgnkpUi8rtzTu6IqGupu9l7Tx+1X2/OikUAfnw9AIQQZr4jSBGA6ZuFFAH0iDJKNkDPBlAzgCGneJUD
-        yFcDpmWlfhilXJEDadaQbIBRhgMHJ1mARHP+CF/N7OA/BdhM2UeED4BdJsQlP64g9y5EALtlyBmlIpOP
-        O5WlDgCbJlLbJSOcAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <metadata name="weekYearTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>424, 17</value>
+  <metadata name="orderTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 56</value>
   </metadata>
-  <metadata name="classTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>982, 17</value>
+  <metadata name="orderDetailTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 95</value>
   </metadata>
 </root>

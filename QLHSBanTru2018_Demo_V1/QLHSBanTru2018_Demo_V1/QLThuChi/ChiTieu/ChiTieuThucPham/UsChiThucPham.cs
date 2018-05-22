@@ -12,6 +12,7 @@ using DataConnect.DAO.ThanhCongTC.ChiTieuThucPham;
 using DataConnect;
 using DataConnect.DAO.HungTD;
 using System.IO;
+using DataConnect.DAO.ThanhCongTC.Report;
 
 namespace QLHSBanTru2018_Demo_V1.QLThuChi.ChiTieu.ChiTieuThucPham
 {
@@ -141,6 +142,15 @@ namespace QLHSBanTru2018_Demo_V1.QLThuChi.ChiTieu.ChiTieuThucPham
             }
         }
 
-        
+        private void bntIn_Click(object sender, EventArgs e)
+        {
+            rptHoaDonThucPham a = new rptHoaDonThucPham();
+            a.FilterString = "[OrderID]='" + 65 + "'";
+            
+            a.CreateDocument();
+            FrRptHoaDonThuPham b = new FrRptHoaDonThuPham();
+            b.documentViewer1.DocumentSource = a;
+            b.ShowDialog();
+        }
     }
 }

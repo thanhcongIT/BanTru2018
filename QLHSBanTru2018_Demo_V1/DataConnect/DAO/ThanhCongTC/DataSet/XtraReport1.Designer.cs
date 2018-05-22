@@ -30,10 +30,6 @@
         {
             this.Detail = new DevExpress.XtraReports.UI.DetailBand();
             this.TopMargin = new DevExpress.XtraReports.UI.TopMarginBand();
-            this.BottomMargin = new DevExpress.XtraReports.UI.BottomMarginBand();
-            this.dataSet11 = new DataConnect.DAO.ThanhCongTC.DataSet.DataSet1();
-            this.orderDetailTableAdapter = new DataConnect.DAO.ThanhCongTC.DataSet.DataSet1TableAdapters.OrderDetailTableAdapter();
-            this.orderTableAdapter1 = new DataConnect.DAO.ThanhCongTC.DataSet.DataSet1TableAdapters.OrderTableAdapter();
             this.xrTable1 = new DevExpress.XtraReports.UI.XRTable();
             this.xrTableRow1 = new DevExpress.XtraReports.UI.XRTableRow();
             this.xrTableCell1 = new DevExpress.XtraReports.UI.XRTableCell();
@@ -44,6 +40,10 @@
             this.xrTableCell6 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell7 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell8 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.BottomMargin = new DevExpress.XtraReports.UI.BottomMarginBand();
+            this.dataSet11 = new DataConnect.DAO.ThanhCongTC.DataSet.DataSet1();
+            this.orderDetailTableAdapter = new DataConnect.DAO.ThanhCongTC.DataSet.DataSet1TableAdapters.OrderDetailTableAdapter();
+            this.orderTableAdapter1 = new DataConnect.DAO.ThanhCongTC.DataSet.DataSet1TableAdapters.OrderTableAdapter();
             this.DetailReport = new DevExpress.XtraReports.UI.DetailReportBand();
             this.Detail1 = new DevExpress.XtraReports.UI.DetailBand();
             this.xrTable2 = new DevExpress.XtraReports.UI.XRTable();
@@ -56,14 +56,14 @@
             this.xrTableCell14 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell15 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell16 = new DevExpress.XtraReports.UI.XRTableCell();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
             // Detail
             // 
-            this.Detail.HeightF = 100F;
+            this.Detail.HeightF = 6.25F;
             this.Detail.Name = "Detail";
             this.Detail.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
             this.Detail.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
@@ -76,26 +76,6 @@
             this.TopMargin.Name = "TopMargin";
             this.TopMargin.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
             this.TopMargin.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
-            // 
-            // BottomMargin
-            // 
-            this.BottomMargin.HeightF = 100F;
-            this.BottomMargin.Name = "BottomMargin";
-            this.BottomMargin.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
-            this.BottomMargin.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
-            // 
-            // dataSet11
-            // 
-            this.dataSet11.DataSetName = "DataSet1";
-            this.dataSet11.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // orderDetailTableAdapter
-            // 
-            this.orderDetailTableAdapter.ClearBeforeFill = true;
-            // 
-            // orderTableAdapter1
-            // 
-            this.orderTableAdapter1.ClearBeforeFill = true;
             // 
             // xrTable1
             // 
@@ -182,6 +162,26 @@
             this.xrTableCell8.Name = "xrTableCell8";
             this.xrTableCell8.Text = "xrTableCell8";
             this.xrTableCell8.Weight = 0.15384615384615386D;
+            // 
+            // BottomMargin
+            // 
+            this.BottomMargin.HeightF = 100F;
+            this.BottomMargin.Name = "BottomMargin";
+            this.BottomMargin.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
+            this.BottomMargin.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
+            // 
+            // dataSet11
+            // 
+            this.dataSet11.DataSetName = "DataSet1";
+            this.dataSet11.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // orderDetailTableAdapter
+            // 
+            this.orderDetailTableAdapter.ClearBeforeFill = true;
+            // 
+            // orderTableAdapter1
+            // 
+            this.orderTableAdapter1.ClearBeforeFill = true;
             // 
             // DetailReport
             // 
@@ -299,8 +299,8 @@
             this.DataMember = "Order";
             this.DataSource = this.dataSet11;
             this.Version = "17.2";
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
 

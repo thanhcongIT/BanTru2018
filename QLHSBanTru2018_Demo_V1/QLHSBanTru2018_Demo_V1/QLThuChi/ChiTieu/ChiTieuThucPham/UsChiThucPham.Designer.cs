@@ -167,11 +167,11 @@
             this.layoutControl2.Controls.Add(this.panelControl1);
             this.layoutControl2.Controls.Add(this.pcAnh);
             this.layoutControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.layoutControl2.Location = new System.Drawing.Point(2, 21);
+            this.layoutControl2.Location = new System.Drawing.Point(2, 20);
             this.layoutControl2.Name = "layoutControl2";
             this.layoutControl2.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(507, 151, 650, 400);
             this.layoutControl2.Root = this.layoutControlGroup2;
-            this.layoutControl2.Size = new System.Drawing.Size(521, 220);
+            this.layoutControl2.Size = new System.Drawing.Size(521, 221);
             this.layoutControl2.TabIndex = 0;
             this.layoutControl2.Text = "layoutControl2";
             // 
@@ -227,10 +227,10 @@
             // txtNoiSinh
             // 
             this.txtNoiSinh.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtNoiSinh.Location = new System.Drawing.Point(2, 21);
+            this.txtNoiSinh.Location = new System.Drawing.Point(2, 20);
             this.txtNoiSinh.Multiline = true;
             this.txtNoiSinh.Name = "txtNoiSinh";
-            this.txtNoiSinh.Size = new System.Drawing.Size(217, 49);
+            this.txtNoiSinh.Size = new System.Drawing.Size(217, 50);
             this.txtNoiSinh.TabIndex = 0;
             // 
             // txtEmail
@@ -340,7 +340,7 @@
             this.layoutControlItem8,
             this.layoutControlItem14});
             this.layoutControlGroup2.Name = "Root";
-            this.layoutControlGroup2.Size = new System.Drawing.Size(521, 220);
+            this.layoutControlGroup2.Size = new System.Drawing.Size(521, 221);
             this.layoutControlGroup2.TextVisible = false;
             // 
             // layoutControlItem7
@@ -350,7 +350,7 @@
             this.layoutControlItem7.MaxSize = new System.Drawing.Size(163, 200);
             this.layoutControlItem7.MinSize = new System.Drawing.Size(163, 200);
             this.layoutControlItem7.Name = "layoutControlItem7";
-            this.layoutControlItem7.Size = new System.Drawing.Size(163, 200);
+            this.layoutControlItem7.Size = new System.Drawing.Size(163, 201);
             this.layoutControlItem7.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem7.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem7.TextVisible = false;
@@ -362,7 +362,7 @@
             this.layoutControlItem8.MaxSize = new System.Drawing.Size(253, 200);
             this.layoutControlItem8.MinSize = new System.Drawing.Size(253, 200);
             this.layoutControlItem8.Name = "layoutControlItem8";
-            this.layoutControlItem8.Size = new System.Drawing.Size(253, 200);
+            this.layoutControlItem8.Size = new System.Drawing.Size(253, 201);
             this.layoutControlItem8.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem8.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem8.TextVisible = false;
@@ -374,7 +374,7 @@
             this.layoutControlItem14.MaxSize = new System.Drawing.Size(0, 200);
             this.layoutControlItem14.MinSize = new System.Drawing.Size(5, 200);
             this.layoutControlItem14.Name = "layoutControlItem14";
-            this.layoutControlItem14.Size = new System.Drawing.Size(85, 200);
+            this.layoutControlItem14.Size = new System.Drawing.Size(85, 201);
             this.layoutControlItem14.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem14.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem14.TextVisible = false;
@@ -497,6 +497,7 @@
             this.bntIn.StyleController = this.layoutControl1;
             this.bntIn.TabIndex = 4;
             this.bntIn.Text = "In phiếu chi";
+            this.bntIn.Click += new System.EventHandler(this.bntIn_Click);
             // 
             // layoutControlGroup1
             // 
