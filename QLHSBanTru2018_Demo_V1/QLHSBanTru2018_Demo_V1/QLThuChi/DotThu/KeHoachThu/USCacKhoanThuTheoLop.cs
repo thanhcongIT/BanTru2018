@@ -236,7 +236,7 @@ namespace QLHSBanTru2018_Demo_V1.QLThuChi
                 #region ===========đổ dữ liệu vào sheet======
                 worksheet.Cells[1, 1] = "SỞ GIÁO DỤC VÀ ĐÀO TẠO HÀ NỘI";
                 worksheet.Cells[2, 1] = "TRƯỜNG MẦM NON HOA LINH";
-
+                worksheet.Cells[3, 8] = "Ngày "+DateTime.Today.Day+" tháng "+DateTime.Today.Month+" năm "+DateTime.Today.Year+"";
 
                 worksheet.Cells[4, 1] = "DANH SÁCH HỌC SINH";
                 worksheet.Cells[5, 1] = "Năm học:" + cbbNamhoc.Text;
@@ -262,14 +262,15 @@ namespace QLHSBanTru2018_Demo_V1.QLThuChi
                     List<ReceivableDetail_Student> a = new List<ReceivableDetail_Student>();
                     List<ReceivableDetail> b = new List<ReceivableDetail>();
                     decimal tong = 0;
+                    int perferredID = (int)gridView1.GetRowCellValue(i, gridView1.Columns["PreferredID"]);
                     a = dt.ListReceivableDetail_Student((int)gridView1.GetRowCellValue(i, gridView1.Columns["StudentID"]));
+                    //b = dc.ListReceivableDetail((int)cbbDotthu.SelectedValue);
                     foreach (var j in a)
                     {
                         ReceivableDetail c = new ReceivableDetail();
                         c = dc.ReceivableDetaiByStudenID(j.ReceivableDetailID, (int)cbbDotthu.SelectedValue);
                         if (c != null)
                         {
-                            tong += (decimal)c.TotalPriceDetail;
                             b.Add(c);
                         }
 
@@ -279,35 +280,39 @@ namespace QLHSBanTru2018_Demo_V1.QLThuChi
                     foreach (var j in b)
                     {
                         string mg = j.PreferredID;
-                        List<string> b1 = new List<string>();
-                        int perferredID = (int)gridView1.GetRowCellValue(i, gridView1.Columns["PreferredID"]);
-                        for (int sj = 0; sj < (mg.Length - 1); sj += 2)
+                        if (mg!="")
                         {
-
-                            string c = mg.Substring(sj, 1);
-                            b1.Add(c);
-                        }
-                        if (b1.Count == 0)
-                        {
-                            worksheet.Cells[10 + i, 9] = tong;
-                        }
-                        else
-                        {
-                            foreach (var k in b1)
+                            List<string> b1 = new List<string>();
+                            for (int sj = 0; sj < (mg.Length - 1); sj += 2)
                             {
-                                if (int.Parse(k) == perferredID)
+
+                                string c = mg.Substring(sj, 1);
+                                b1.Add(c);
+                            }
+                            for (int k = 0; k < b1.Count; k++)
+                            {
+                                if (int.Parse(b1[k].ToString()) == perferredID)
                                 {
                                     PreferredDAO dv = new PreferredDAO();
                                     float pr = dv.lookPreferredPercent(perferredID);
+                                    tong += (decimal)j.TotalPriceDetail;
                                     tong = tong - (((decimal)j.TotalPriceDetail * (decimal)pr) / 100);
-                                    worksheet.Cells[10 + i, 9] = tong;
+                                    //worksheet.Cells[10 + i, 9] = tong;
                                     break;
                                 }
-                                worksheet.Cells[10 + i, 9] = tong;
+                                if (k==b1.Count-1)
+                                {
+                                    tong += (decimal)j.TotalPriceDetail;
+                                }
                             }
+                            //tong += (decimal)j.TotalPriceDetail;
+                        }
+                        else
+                        {
+                            tong += (decimal)j.TotalPriceDetail;
                         }
                     }
-
+                    worksheet.Cells[10 + i, 9] = tong;
                     //  grDanhsachkhoanthu.DataSource = b;
                     #endregion ==== tinh tien hoc tung hoc sinh====
                     #region---- thong tin hoc sinh----
@@ -316,15 +321,7 @@ namespace QLHSBanTru2018_Demo_V1.QLThuChi
                     worksheet.Cells[10 + i, 3] = gridView1.GetRowCellValue(i, gridView1.Columns["FirstName"]);
                     worksheet.Cells[10 + i, 4] = gridView1.GetRowCellValue(i, gridView1.Columns["LastName"]);
                     worksheet.Cells[10 + i, 5] = gridView1.GetRowCellValue(i, gridView1.Columns["Birthday"]);
-                    if ((bool)gridView1.GetRowCellValue(i, gridView1.Columns["Gender"]) == true)
-                    {
-                        worksheet.Cells[10 + i, 6] = "Nam";
-                    }
-                    else
-                    {
-                        worksheet.Cells[10 + i, 6] = "Nữ";
-                    }
-                    //worksheet.Cells[10 + i, 6] = gridView1.GetRowCellValue(i, gridView1.Columns["Gender"]);
+                    worksheet.Cells[10 + i, 6] = gridView1.GetRowCellValue(i, gridView1.Columns["Gender"]);
                     worksheet.Cells[10 + i, 7] = gridView1.GetRowCellValue(i, gridView1.Columns["AdressDetail"]);
                     worksheet.Cells[10 + i, 8] = gridView1.GetRowCellValue(i, gridView1.Columns["tinhtrang"]);
                     #endregion---thong tin hoc sinh------
@@ -335,7 +332,7 @@ namespace QLHSBanTru2018_Demo_V1.QLThuChi
                 #endregion============đổ dữ liệu vào sheet=======
                 #region=====căn chỉnh======
                 //định dạng trang
-                worksheet.PageSetup.Orientation = Microsoft.Office.Interop.Excel.XlPageOrientation.xlPortrait; // Giấy dọc
+                worksheet.PageSetup.Orientation = Microsoft.Office.Interop.Excel.XlPageOrientation.xlLandscape; // Giấy dọc
                 worksheet.PageSetup.PaperSize = Microsoft.Office.Interop.Excel.XlPaperSize.xlPaperA4; // Loại giấy A4
                 worksheet.PageSetup.LeftMargin = 0;//can le trai
                 worksheet.PageSetup.TopMargin = 0;
@@ -363,6 +360,7 @@ namespace QLHSBanTru2018_Demo_V1.QLThuChi
 
                 worksheet.Range["A1", "I1"].MergeCells = true; // Nhập dòng tiêu đề
                 worksheet.Range["A2", "I2"].MergeCells = true;
+                worksheet.Range["H3", "I3"].MergeCells = true;
                 worksheet.Range["A4", "I4"].MergeCells = true;
                 worksheet.Range["A5", "I5"].MergeCells = true;
                 worksheet.Range["A6", "I6"].MergeCells = true;

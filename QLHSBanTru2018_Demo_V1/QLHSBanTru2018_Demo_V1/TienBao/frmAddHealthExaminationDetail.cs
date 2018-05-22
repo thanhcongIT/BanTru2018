@@ -37,15 +37,15 @@ namespace QLHSBanTru2018_Demo_V1.TienBao
         #region LoadDao
         private void frmAddHealthDetailInsert()
         {
-            if (lblStudentName.Text != "" 
-             //txtStudentCode.Text != "" &&
+            if (txtStudentCode.Text != "" &&
+             txtFullName.Text != "" 
             // txtStudentID.Text != "" 
             )
             {
                 DataConnect.HealthExaminationDetail entity = new DataConnect.HealthExaminationDetail();
                 entity.StudentID = int.Parse(Student.StudentID.ToString());                
                 entity.HealthExaminationID = int.Parse(healthExamination.HealthExaminationID.ToString());
-                entity.HealthInsurance = 1;
+                entity.HealthInsurance = cmbHealthInsurance.Text;
                 entity.Height = int.Parse(txtHeight.Text);
                 entity.Weight = int.Parse(txtWeight.Text);
                 entity.Eyes = cmbEyesRating.Text;
@@ -102,8 +102,9 @@ namespace QLHSBanTru2018_Demo_V1.TienBao
             {
                 this.Text = "Nhập kết quả khám sức khỏe";
                 lblHealthExamName.Text = healthExamination.Name;           
-                lblStudentName.Text = Student.StudentCode + " " + "-" + " " + Student.FirstName + " " + Student.LastName;
-                if(healthExamination.Height == true  )
+                txtFullName.Text =  Student.FirstName + " " + Student.LastName;
+                txtStudentCode.Text = Student.StudentCode;
+                if (healthExamination.Height == true  )
                 { txtHeight.Enabled = true; }
                 else {txtHeight.Enabled = false;}
                 if (healthExamination.Weight == true)
@@ -136,7 +137,6 @@ namespace QLHSBanTru2018_Demo_V1.TienBao
                 if (healthExamination.Endocrine == true)
                 { cmbEndocrineRating.Enabled = true; }
                 else { cmbEndocrineRating.Enabled = false; }
-
             }
         }        
         #endregion
@@ -146,7 +146,18 @@ namespace QLHSBanTru2018_Demo_V1.TienBao
         {
             loadfrmAddHealthDetail();
         }
+        private void btnLuu_Click(object sender, EventArgs e)
+        {
+            frmAddHealthDetailInsert();
+        }
 
+        private void btnDong_Click(object sender, EventArgs e)
+        {
+            if (XtraMessageBox.Show("Bạn muốn đóng trang này ?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
+            { this.Close(); }
+        }
         #endregion
+
+
     }
 }

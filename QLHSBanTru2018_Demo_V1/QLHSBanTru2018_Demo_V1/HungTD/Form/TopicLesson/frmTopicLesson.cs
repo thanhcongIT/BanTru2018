@@ -42,13 +42,13 @@ namespace QLHSBanTru2018_Demo_V1.HungTD.Form.TopicLession
         }
         private void FillCombobox()
         {
-            cbbTopicType.DataSource = new TopicTypeDAO().ListAll();
-            cbbTopicType.DisplayMember = "Name";
-            cbbTopicType.ValueMember = "TopicTypeID";
+            cbbAgeGroup.DataSource = new AgeGroupDAO().ListAll();
+            cbbAgeGroup.DisplayMember = "Name";
+            cbbAgeGroup.ValueMember = "AgeGroupID";
 
             try
             {
-                FillGridControls(int.Parse(cbbTopicType.SelectedValue.ToString()));
+                FillGridControls(int.Parse(cbbAgeGroup.SelectedValue.ToString()));
             }
             catch
             {
@@ -60,7 +60,7 @@ namespace QLHSBanTru2018_Demo_V1.HungTD.Form.TopicLession
         {
             try
             {
-                FillGridControls(int.Parse(cbbTopicType.SelectedValue.ToString()));
+                FillGridControls(int.Parse(cbbAgeGroup.SelectedValue.ToString()));
             }
             catch
             {

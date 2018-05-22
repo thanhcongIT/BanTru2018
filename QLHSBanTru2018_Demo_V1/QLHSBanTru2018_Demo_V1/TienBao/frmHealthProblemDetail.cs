@@ -1,21 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using DataConnect.DAO.TienBao;
 using DevExpress.XtraEditors;
-using DataConnect.DAO.TienBao;
-using DataConnect.DAO.HungTD;
-using System.IO;
-using System.Drawing.Imaging;
-using DevExpress.XtraGrid.Views.Base;
-using DevExpress.XtraGrid.Columns;
-using DevExpress.XtraGrid.Views.Grid;
-using DevExpress.XtraSplashScreen;
+using System;
+using System.Windows.Forms;
 
 namespace QLHSBanTru2018_Demo_V1.TienBao
 {
@@ -40,7 +26,6 @@ namespace QLHSBanTru2018_Demo_V1.TienBao
             cbbStudentName.Properties.DataSource = new HealthProblemDAO().ListStudent(); ;
             cbbStudentName.Properties.DisplayMember = "FullName";
             cbbStudentName.Properties.ValueMember = "StudentID";
-            cbbStudentName.Properties.NullText = "Chọn học sinh";
             
         }
         private void LoadEmployee()
@@ -48,7 +33,6 @@ namespace QLHSBanTru2018_Demo_V1.TienBao
             cbbEmployee.Properties.DataSource = new HealthProblemDAO().ListEmPloyee(); ;
             cbbEmployee.Properties.DisplayMember = "EmployeeName";
             cbbEmployee.Properties.ValueMember = "EmployeeID";
-            cbbEmployee.Properties.NullText = "Chọn giáo viên";
         }
         #endregion
 
@@ -111,7 +95,8 @@ namespace QLHSBanTru2018_Demo_V1.TienBao
         }
         private void loadHealthProblem()
         {
-            //cbbStudentName.EditValue = m_HealthProblem.StudentID;
+            cbbStudentName.EditValue = m_HealthProblem.StudentID;
+            cbbEmployee.EditValue = m_HealthProblem.EmployeeID;
             cbbSignal.Text = m_HealthProblem.Signal;
             txtDiagnosed.Text = m_HealthProblem.Diagnosed;
             txtMeasure.Text = m_HealthProblem.Measure;
@@ -125,8 +110,8 @@ namespace QLHSBanTru2018_Demo_V1.TienBao
         #region Event
         private void cbbStudentName_EditValueChanged(object sender, EventArgs e)
         {
-            txtStudentCode.Text = cbbStudentName.Properties.View.GetFocusedRowCellValue("StudentCode").ToString();
-            txtClassName.Text = cbbStudentName.Properties.View.GetFocusedRowCellValue("ClassName").ToString();
+            txtStudentCode.Text = cbbStudentName.GetColumnValue("StudentCode").ToString();
+            txtClassName.Text = cbbStudentName.GetColumnValue("ClassName").ToString();
         }
         private void frmHealthProblemDetail_Load(object sender, EventArgs e)
         {

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DataConnect.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Data.Linq;
 using System.Linq;
@@ -24,35 +25,38 @@ namespace DataConnect.DAO.HungTD
         {
             return dishDetails.FirstOrDefault(x => x.DishDetailID.Equals(dishDetailID));
         }
-        public int Insert(DishDetail entity)
+        public int Insert(DishDetail entity, int dishID)
         {
-            try
-            {
-                dishDetails.InsertOnSubmit(entity);
-                db.SubmitChanges();
-                return entity.DishDetailID;
-            }
-            catch
-            {
-                return 0;
-            }
+            DishDetail dishDetail = new DishDetail();
+            dishDetail.DishID = dishID;
+            dishDetail.IngredientID = entity.IngredientID;
+            dishDetail.QuantiyOfUnit = entity.QuantiyOfUnit;
+            dishDetail.Status = entity.Status;
+            dishDetails.InsertOnSubmit(dishDetail);
+            db.SubmitChanges();
+            return dishDetail.DishDetailID;
         }
-        public bool InsertList(List<DishDetail> listDishDetail)
+        public bool InsertList(List<DishDetail> listDishDetail, int dishID)
         {
-            try
+            //try
+            //{
+            //    foreach (DishDetail item in listDishDetail)
+            //    {
+            //        Insert(item, dishID);
+            //    }
+            //    return true;
+            //}
+            //catch
+            //{
+            //    return false;
+            //}
+            foreach (DishDetail item in listDishDetail)
             {
-                foreach (DishDetail item in listDishDetail)
-                {
-                    Insert(item);
-                }
-                return true;
+                Insert(item, dishID);
             }
-            catch
-            {
-                return false;
-            }
+            return true;
         }
-        public bool ChangeQuantity(DishDetail entity)
+        public bool Update(DishDetail entity)
         {
             try
             {
@@ -66,13 +70,16 @@ namespace DataConnect.DAO.HungTD
                 return false;
             }
         }
-        public bool ChangeQuantityList(List<DishDetail> listDishDetail)
+        public bool Update(List<DishDetail> listDishDetail)
         {
             try
             {
                 foreach (DishDetail item in listDishDetail)
                 {
-                    ChangeQuantity(item);
+                    if (!Update(item))
+                    {
+                        break;
+                    }
                 }
                 return true;
             }
@@ -86,13 +93,114 @@ namespace DataConnect.DAO.HungTD
             try
             {
                 DishDetail obj = dishDetails.Single(x => x.DishDetailID.Equals(dishDetailID));
-                obj.Status = false;
+                dishDetails.DeleteOnSubmit(obj);
                 db.SubmitChanges();
                 return true;
             }
             catch
             {
                 return false;
+            }
+        }
+
+        public bool DeleteListByDish(int dishID)
+        {
+            try
+            {
+                List<DishDetail> listObj = dishDetails.Where(x => x.DishID.Equals(dishID)).ToList();
+                foreach(DishDetail obj in listObj)
+                {
+                    Delete(obj.DishDetailID);
+                }
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+        public List<DishDetailViewModel> GetDishDetailViewModels(int dishID)
+        {
+            try
+            {
+                Table<Ingredient> ingredients = db.GetTable<Ingredient>();
+                var model = from d in dishDetails
+                            join i in ingredients
+                            on d.IngredientID equals i.IngredientID
+                            where d.DishID == dishID
+                            select new DishDetailViewModel
+                            {
+                                DishID = d.DishID,
+                                IngredientID = d.IngredientID,
+                                IngredientName = i.Name,
+                                QuantityOfUnit = d.QuantiyOfUnit,
+                                Status = d.Status
+                            };
+                return model.ToList();
+            }
+            catch
+            {
+                return null;
+            }
+        }
+
+        public Ingredient NutritionCalculation(int DishID)
+        {
+            try
+            {
+                Ingredient total = new Ingredient();
+
+                total.IngredientID = 0;
+                total.Name = "ABC";
+                total.IngredientTypeID = 1;
+                total.Unit = "X";
+                total.Kcal = 0;
+                total.Protein = 0;
+                total.Fat = 0;
+                total.Glucose = 0;
+                total.Fiber = 0;
+                total.Canxi = 0;
+                total.Iron = 0;
+                total.Photpho = 0;
+                total.Kali = 0;
+                total.Natri = 0;
+                total.VitaminA = 0;
+                total.VitaminB1 = 0;
+                total.VitaminC = 0;
+                total.AxitFolic = 0;
+                total.Cholesterol = 0;
+                total.Status = true;
+
+                List<DishDetail> listDishDetail = dishDetails.Where(x => x.DishID.Equals(DishID)).ToList();
+                List<Ingredient> listIngredient = new List<Ingredient>();
+                foreach (var item in listDishDetail)
+                {
+                    Ingredient ingredient = new IngredientDAO().GetByID(item.IngredientID);
+
+                    total.Kcal = ingredient.Kcal * item.QuantiyOfUnit;
+                    total.Protein = ingredient.Protein * item.QuantiyOfUnit;
+                    total.Fat = ingredient.Fat * item.QuantiyOfUnit;
+                    total.Glucose = ingredient.Glucose * item.QuantiyOfUnit;
+                    total.Fiber = ingredient.Fiber * item.QuantiyOfUnit;
+                    total.Canxi = ingredient.Canxi * item.QuantiyOfUnit;
+                    total.Iron = ingredient.Iron * item.QuantiyOfUnit;
+                    total.Photpho = ingredient.Photpho * item.QuantiyOfUnit;
+                    total.Kali = ingredient.Kali * item.QuantiyOfUnit;
+                    total.Natri = ingredient.Natri * item.QuantiyOfUnit;
+                    total.VitaminA = ingredient.VitaminA * item.QuantiyOfUnit;
+                    total.VitaminB1 = ingredient.VitaminB1 * item.QuantiyOfUnit;
+                    total.VitaminC = ingredient.VitaminC * item.QuantiyOfUnit;
+                    total.AxitFolic = ingredient.AxitFolic * item.QuantiyOfUnit;
+                    total.Cholesterol = ingredient.Cholesterol * item.QuantiyOfUnit;
+
+
+                    listIngredient.Add(ingredient);
+                }
+                return total;
+            }
+            catch
+            {
+                return null;
             }
         }
     }

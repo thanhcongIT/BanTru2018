@@ -50,10 +50,12 @@
     <Reference Include="DevExpress.BonusSkins.v17.2" />
     <Reference Include="DevExpress.Charts.v17.2.Core, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Data.v17.2" />
+    <Reference Include="DevExpress.ExpressApp.v17.2, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Images.v17.2, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Office.v17.2.Core" />
     <Reference Include="DevExpress.Pdf.v17.2.Core, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Pdf.v17.2.Drawing, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Persistent.Base.v17.2, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.PivotGrid.v17.2.Core, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.RichEdit.v17.2.Core" />
     <Reference Include="DevExpress.RichEdit.v17.2.Export" />
@@ -64,6 +66,8 @@
     <Reference Include="DevExpress.XtraBars.v17.2" />
     <Reference Include="DevExpress.Sparkline.v17.2.Core" />
     <Reference Include="DevExpress.XtraCharts.v17.2, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v17.2.UI, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v17.2.Wizard, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraEditors.v17.2" />
     <Reference Include="DevExpress.XtraGauges.v17.2.Core, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraGrid.v17.2, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
@@ -95,6 +99,7 @@
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Windows.Input.Manipulations" />
     <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
@@ -288,11 +293,23 @@
     <Compile Include="HungTD\Form\Dish\frmDishDetail.Designer.cs">
       <DependentUpon>frmDishDetail.cs</DependentUpon>
     </Compile>
+    <Compile Include="HungTD\Form\Dish\frmDishNutritionCalculation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HungTD\Form\Dish\frmDishNutritionCalculation.Designer.cs">
+      <DependentUpon>frmDishNutritionCalculation.cs</DependentUpon>
+    </Compile>
     <Compile Include="HungTD\Form\Dish\frmDishType.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="HungTD\Form\Dish\frmDishType.Designer.cs">
       <DependentUpon>frmDishType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HungTD\Form\Dish\frmMeal.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HungTD\Form\Dish\frmMeal.Designer.cs">
+      <DependentUpon>frmMeal.cs</DependentUpon>
     </Compile>
     <Compile Include="HungTD\Form\Employee\frmEmployeeDetail.cs">
       <SubType>Form</SubType>
@@ -347,6 +364,18 @@
     </Compile>
     <Compile Include="HungTD\Form\Ingredient\frmIngredientTypeDetail.Designer.cs">
       <DependentUpon>frmIngredientTypeDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HungTD\Form\Menu\frmDailyMenuDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HungTD\Form\Menu\frmDailyMenuDetail.Designer.cs">
+      <DependentUpon>frmDailyMenuDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HungTD\Form\Menu\frmWeeklyMenu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HungTD\Form\Menu\frmWeeklyMenu.Designer.cs">
+      <DependentUpon>frmWeeklyMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="HungTD\Form\NewFolder1\frmABC.cs">
       <SubType>UserControl</SubType>
@@ -411,16 +440,28 @@
     <Compile Include="MD5Hash\PasswordEncryptor.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="QLThuChi\ChiTieu\ChiTieuThucPham\FrThemPhieuChi.cs">
+    <Compile Include="QLThuChi\ChiTieu\ChiTieuThucPham\ThongKeThucPham\FrRptHoaDonThucPham.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="QLThuChi\ChiTieu\ChiTieuThucPham\FrThemPhieuChi.Designer.cs">
-      <DependentUpon>FrThemPhieuChi.cs</DependentUpon>
+    <Compile Include="QLThuChi\ChiTieu\ChiTieuThucPham\ThongKeThucPham\FrRptHoaDonThucPham.Designer.cs">
+      <DependentUpon>FrRptHoaDonThucPham.cs</DependentUpon>
     </Compile>
-    <Compile Include="QLThuChi\ChiTieu\ChiTieuThucPham\TcFrNhanVien.cs">
+    <Compile Include="QLThuChi\ChiTieu\ChiTieuThucPham\ThongKeThucPham\UsThongKeThucPham.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="QLThuChi\ChiTieu\ChiTieuThucPham\ThongKeThucPham\UsThongKeThucPham.Designer.cs">
+      <DependentUpon>UsThongKeThucPham.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QLThuChi\ChiTieu\ChiTieuThucPham\YeuCauThucPham\FrThanhToanThucPham.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="QLThuChi\ChiTieu\ChiTieuThucPham\TcFrNhanVien.Designer.cs">
+    <Compile Include="QLThuChi\ChiTieu\ChiTieuThucPham\YeuCauThucPham\FrThanhToanThucPham.Designer.cs">
+      <DependentUpon>FrThanhToanThucPham.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QLThuChi\ChiTieu\ChiTieuThucPham\YeuCauThucPham\TcFrNhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QLThuChi\ChiTieu\ChiTieuThucPham\YeuCauThucPham\TcFrNhanVien.Designer.cs">
       <DependentUpon>TcFrNhanVien.cs</DependentUpon>
     </Compile>
     <Compile Include="QLThuChi\ChiTieu\ChiTieuThucPham\UsChiThucPham.cs">
@@ -429,10 +470,10 @@
     <Compile Include="QLThuChi\ChiTieu\ChiTieuThucPham\UsChiThucPham.Designer.cs">
       <DependentUpon>UsChiThucPham.cs</DependentUpon>
     </Compile>
-    <Compile Include="QLThuChi\ChiTieu\ChiTieuThucPham\UsYeuCau.cs">
+    <Compile Include="QLThuChi\ChiTieu\ChiTieuThucPham\YeuCauThucPham\UsYeuCau.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="QLThuChi\ChiTieu\ChiTieuThucPham\UsYeuCau.Designer.cs">
+    <Compile Include="QLThuChi\ChiTieu\ChiTieuThucPham\YeuCauThucPham\UsYeuCau.Designer.cs">
       <DependentUpon>UsYeuCau.cs</DependentUpon>
     </Compile>
     <Compile Include="QLThuChi\ChiTieu\KhoanChi\FrChiTietHoaDon.cs">
@@ -702,6 +743,9 @@
     <EmbeddedResource Include="HungTD\Form\Dish\frmDishDetail.resx">
       <DependentUpon>frmDishDetail.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="HungTD\Form\Dish\frmDishNutritionCalculation.resx">
+      <DependentUpon>frmDishNutritionCalculation.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="HungTD\Form\Dish\frmDishType.resx">
       <DependentUpon>frmDishType.cs</DependentUpon>
     </EmbeddedResource>
@@ -731,6 +775,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="HungTD\Form\Ingredient\frmIngredientTypeDetail.resx">
       <DependentUpon>frmIngredientTypeDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HungTD\Form\Menu\frmDailyMenuDetail.resx">
+      <DependentUpon>frmDailyMenuDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HungTD\Form\Menu\frmWeeklyMenu.resx">
+      <DependentUpon>frmWeeklyMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HungTD\Form\NewFolder1\frmABC.resx">
       <DependentUpon>frmABC.cs</DependentUpon>
@@ -773,16 +823,22 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="QLThuChi\ChiTieu\ChiTieuThucPham\FrThemPhieuChi.resx">
-      <DependentUpon>FrThemPhieuChi.cs</DependentUpon>
+    <EmbeddedResource Include="QLThuChi\ChiTieu\ChiTieuThucPham\ThongKeThucPham\FrRptHoaDonThucPham.resx">
+      <DependentUpon>FrRptHoaDonThucPham.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="QLThuChi\ChiTieu\ChiTieuThucPham\TcFrNhanVien.resx">
+    <EmbeddedResource Include="QLThuChi\ChiTieu\ChiTieuThucPham\ThongKeThucPham\UsThongKeThucPham.resx">
+      <DependentUpon>UsThongKeThucPham.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QLThuChi\ChiTieu\ChiTieuThucPham\YeuCauThucPham\FrThanhToanThucPham.resx">
+      <DependentUpon>FrThanhToanThucPham.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QLThuChi\ChiTieu\ChiTieuThucPham\YeuCauThucPham\TcFrNhanVien.resx">
       <DependentUpon>TcFrNhanVien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="QLThuChi\ChiTieu\ChiTieuThucPham\UsChiThucPham.resx">
       <DependentUpon>UsChiThucPham.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="QLThuChi\ChiTieu\ChiTieuThucPham\UsYeuCau.resx">
+    <EmbeddedResource Include="QLThuChi\ChiTieu\ChiTieuThucPham\YeuCauThucPham\UsYeuCau.resx">
       <DependentUpon>UsYeuCau.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="QLThuChi\ChiTieu\KhoanChi\FrChiTietHoaDon.resx">

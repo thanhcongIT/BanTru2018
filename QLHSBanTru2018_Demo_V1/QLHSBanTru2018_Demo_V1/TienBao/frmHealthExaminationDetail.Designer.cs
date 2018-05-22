@@ -125,12 +125,15 @@
             this.btnNhapkq});
             this.dgvHealthDetail.Size = new System.Drawing.Size(856, 492);
             this.dgvHealthDetail.TabIndex = 6;
-            this.dgvHealthDetail.UseEmbeddedNavigator = true;
             this.dgvHealthDetail.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             // 
             // gridView1
             // 
+            this.gridView1.Appearance.FocusedCell.BackColor = System.Drawing.Color.Bisque;
+            this.gridView1.Appearance.FocusedCell.Options.UseBackColor = true;
+            this.gridView1.Appearance.FocusedRow.BackColor = System.Drawing.Color.Bisque;
+            this.gridView1.Appearance.FocusedRow.Options.UseBackColor = true;
             this.gridView1.ColumnPanelRowHeight = 2;
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colStudentName,
@@ -148,6 +151,8 @@
             // 
             // colStudentName
             // 
+            this.colStudentName.AppearanceCell.Options.UseTextOptions = true;
+            this.colStudentName.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colStudentName.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.colStudentName.AppearanceHeader.Options.UseFont = true;
             this.colStudentName.AppearanceHeader.Options.UseTextOptions = true;
@@ -157,11 +162,13 @@
             this.colStudentName.Name = "colStudentName";
             this.colStudentName.OptionsColumn.AllowEdit = false;
             this.colStudentName.Visible = true;
-            this.colStudentName.VisibleIndex = 0;
-            this.colStudentName.Width = 119;
+            this.colStudentName.VisibleIndex = 1;
+            this.colStudentName.Width = 193;
             // 
             // colStudentCode
             // 
+            this.colStudentCode.AppearanceCell.Options.UseTextOptions = true;
+            this.colStudentCode.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colStudentCode.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.colStudentCode.AppearanceHeader.Options.UseFont = true;
             this.colStudentCode.AppearanceHeader.Options.UseTextOptions = true;
@@ -171,11 +178,13 @@
             this.colStudentCode.Name = "colStudentCode";
             this.colStudentCode.OptionsColumn.AllowEdit = false;
             this.colStudentCode.Visible = true;
-            this.colStudentCode.VisibleIndex = 1;
-            this.colStudentCode.Width = 95;
+            this.colStudentCode.VisibleIndex = 0;
+            this.colStudentCode.Width = 130;
             // 
             // colClass
             // 
+            this.colClass.AppearanceCell.Options.UseTextOptions = true;
+            this.colClass.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colClass.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.colClass.AppearanceHeader.Options.UseFont = true;
             this.colClass.AppearanceHeader.Options.UseTextOptions = true;
@@ -186,10 +195,12 @@
             this.colClass.OptionsColumn.AllowEdit = false;
             this.colClass.Visible = true;
             this.colClass.VisibleIndex = 2;
-            this.colClass.Width = 68;
+            this.colClass.Width = 94;
             // 
             // gridColumn5
             // 
+            this.gridColumn5.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn5.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridColumn5.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.gridColumn5.AppearanceHeader.Options.UseFont = true;
             this.gridColumn5.AppearanceHeader.Options.UseTextOptions = true;
@@ -200,10 +211,12 @@
             this.gridColumn5.OptionsColumn.AllowEdit = false;
             this.gridColumn5.Visible = true;
             this.gridColumn5.VisibleIndex = 3;
-            this.gridColumn5.Width = 87;
+            this.gridColumn5.Width = 150;
             // 
             // gridColumn6
             // 
+            this.gridColumn6.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn6.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridColumn6.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.gridColumn6.AppearanceHeader.Options.UseFont = true;
             this.gridColumn6.AppearanceHeader.Options.UseTextOptions = true;
@@ -214,10 +227,12 @@
             this.gridColumn6.OptionsColumn.AllowEdit = false;
             this.gridColumn6.Visible = true;
             this.gridColumn6.VisibleIndex = 4;
-            this.gridColumn6.Width = 131;
+            this.gridColumn6.Width = 212;
             // 
             // gridColumn7
             // 
+            this.gridColumn7.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn7.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridColumn7.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.gridColumn7.AppearanceHeader.Options.UseFont = true;
             this.gridColumn7.AppearanceHeader.Options.UseTextOptions = true;
@@ -228,10 +243,12 @@
             this.gridColumn7.OptionsColumn.AllowEdit = false;
             this.gridColumn7.Visible = true;
             this.gridColumn7.VisibleIndex = 5;
-            this.gridColumn7.Width = 56;
+            this.gridColumn7.Width = 179;
             // 
             // gridColumn8
             // 
+            this.gridColumn8.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn8.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridColumn8.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.gridColumn8.AppearanceHeader.Options.UseFont = true;
             this.gridColumn8.AppearanceHeader.Options.UseTextOptions = true;
@@ -241,7 +258,7 @@
             this.gridColumn8.Name = "gridColumn8";
             this.gridColumn8.Visible = true;
             this.gridColumn8.VisibleIndex = 6;
-            this.gridColumn8.Width = 97;
+            this.gridColumn8.Width = 110;
             // 
             // btnNhapkq
             // 

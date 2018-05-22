@@ -50,7 +50,7 @@
             this.btnEdit = new DevExpress.XtraEditors.SimpleButton();
             this.btnDelete = new DevExpress.XtraEditors.SimpleButton();
             this.btnPrint = new DevExpress.XtraEditors.SimpleButton();
-            this.cbbTopicType = new System.Windows.Forms.ComboBox();
+            this.cbbAgeGroup = new System.Windows.Forms.ComboBox();
             this.txtDescription = new DevExpress.XtraEditors.MemoEdit();
             this.txtName = new DevExpress.XtraEditors.MemoEdit();
             this.txtTopicDescription = new DevExpress.XtraEditors.MemoEdit();
@@ -116,7 +116,7 @@
             this.layoutControl1.Controls.Add(this.btnEdit);
             this.layoutControl1.Controls.Add(this.btnDelete);
             this.layoutControl1.Controls.Add(this.btnPrint);
-            this.layoutControl1.Controls.Add(this.cbbTopicType);
+            this.layoutControl1.Controls.Add(this.cbbAgeGroup);
             this.layoutControl1.Controls.Add(this.txtDescription);
             this.layoutControl1.Controls.Add(this.txtName);
             this.layoutControl1.Controls.Add(this.txtTopicDescription);
@@ -312,15 +312,15 @@
             this.btnPrint.TabIndex = 7;
             this.btnPrint.Text = "In Báo Cáo";
             // 
-            // cbbTopicType
+            // cbbAgeGroup
             // 
-            this.cbbTopicType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbbTopicType.FormattingEnabled = true;
-            this.cbbTopicType.Location = new System.Drawing.Point(537, 61);
-            this.cbbTopicType.Name = "cbbTopicType";
-            this.cbbTopicType.Size = new System.Drawing.Size(182, 21);
-            this.cbbTopicType.TabIndex = 9;
-            this.cbbTopicType.SelectedIndexChanged += new System.EventHandler(this.cbbTopicType_SelectedIndexChanged);
+            this.cbbAgeGroup.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbAgeGroup.FormattingEnabled = true;
+            this.cbbAgeGroup.Location = new System.Drawing.Point(537, 61);
+            this.cbbAgeGroup.Name = "cbbAgeGroup";
+            this.cbbAgeGroup.Size = new System.Drawing.Size(182, 21);
+            this.cbbAgeGroup.TabIndex = 9;
+            this.cbbAgeGroup.SelectedIndexChanged += new System.EventHandler(this.cbbTopicType_SelectedIndexChanged);
             // 
             // txtDescription
             // 
@@ -461,7 +461,7 @@
             // 
             // layoutControlItem6
             // 
-            this.layoutControlItem6.Control = this.cbbTopicType;
+            this.layoutControlItem6.Control = this.cbbAgeGroup;
             this.layoutControlItem6.CustomizationFormText = "Lọc ngày tháng năm:";
             this.layoutControlItem6.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem6.Name = "layoutControlItem6";
@@ -651,7 +651,7 @@
         private DevExpress.XtraEditors.SimpleButton btnEdit;
         private DevExpress.XtraEditors.SimpleButton btnDelete;
         private DevExpress.XtraEditors.SimpleButton btnPrint;
-        private System.Windows.Forms.ComboBox cbbTopicType;
+        private System.Windows.Forms.ComboBox cbbAgeGroup;
         private DevExpress.XtraLayout.LayoutControlGroup Root1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;

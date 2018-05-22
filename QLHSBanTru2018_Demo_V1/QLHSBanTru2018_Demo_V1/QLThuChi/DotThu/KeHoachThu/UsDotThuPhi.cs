@@ -115,5 +115,7 @@ namespace QLHSBanTru2018_Demo_V1.QLThuChi
                 e.Appearance.BackColor = Color.FromArgb(245, 245, 245);
             }
         }
+
+        
     }
 }

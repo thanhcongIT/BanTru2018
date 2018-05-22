@@ -17,10 +17,41 @@ namespace DataConnect.DAO.HungTD
             db = new QLHSSmartKidsDataContext();
             dishes = db.GetTable<Dish>();
         }
-        public List<DishViewModel> ListAll()
+        public List<DishFullViewModel> ListAll()
         {
-            return null;
+            var model = from d in dishes
+                        where d.Status.Equals(true)
+                        select new DishFullViewModel
+                        {
+                            DishID = d.DishID,
+                            MealID = d.MealID,
+                            MealName = d.Meal.Name,
+                            AgeGroupID = d.AgeGroupID,
+                            AgeGroupName = d.AgeGroup.Name,
+                            Name = d.Name,
+                            CreatedDate = d.CreatedDate,
+                            CreatedBy = d.CreatedBy,
+                            CreatedByName = d.Employee.FirstName + " " + d.Employee.LastName,
+                            StringStatus = d.Status == true ? "Kích hoạt" : "Khóa",
+                            Status = d.Status
+                        };
+            return model.ToList();
         }
+        public List<DishViewModel> ListAllForMenu(int AgeGroupID)
+        {
+            var model = from d in dishes
+                        where d.Status.Equals(true)
+                        && d.AgeGroupID.Equals(AgeGroupID)
+                        select new DishViewModel
+                        {
+                            DishID = d.DishID,
+                            DishName = d.Name,
+                            MealID = d.MealID,
+                            MealName = d.Meal.Name
+                        };
+            return model.ToList();
+        }
+
         public Dish GetByID(int dishID)
         {
             return dishes.FirstOrDefault(x => x.DishID.Equals(dishID));
@@ -31,9 +62,10 @@ namespace DataConnect.DAO.HungTD
             {
                 dishes.InsertOnSubmit(dishEntity);
                 db.SubmitChanges();
-                if (new DishDetailDAO().InsertList(listDishDetailEntity))
+                int a = dishEntity.DishID;
+                if (new DishDetailDAO().InsertList(listDishDetailEntity, dishEntity.DishID))
                 {
-                    return dishEntity.DishID; ;
+                    return dishEntity.DishID;
                 }
                 else
                 {
@@ -45,12 +77,57 @@ namespace DataConnect.DAO.HungTD
                 return 0;
             }
         }
+
+        public bool Update(Dish dishEntity, List<DishDetail> listDishDetailEntity)
+        {
+            try
+            {
+                Dish obj = dishes.SingleOrDefault(x => x.DishID.Equals(dishEntity.DishID));
+                obj.MealID = dishEntity.MealID;
+                obj.AgeGroupID = dishEntity.AgeGroupID;
+                obj.Name = dishEntity.Name;
+                obj.CreatedBy = dishEntity.CreatedBy;
+                obj.CreatedDate = dishEntity.CreatedDate;
+                obj.Status = dishEntity.Status;
+                db.SubmitChanges();
+
+                List<DishDetail> dishDetails = new DishDetailDAO().GetByDishID(dishEntity.DishID);
+                foreach(DishDetail item in listDishDetailEntity)
+                {
+                    bool exist = false;
+                    foreach(DishDetail item2 in dishDetails)
+                    {
+                        if (item.DishID == item2.DishID)
+                        {
+                            exist = true;
+                        }
+                    }
+                    if (exist)
+                    {
+                        new DishDetailDAO().Update(item);
+                    }
+                    else
+                    {
+                        new DishDetailDAO().Insert(item, dishEntity.DishID);
+                    }
+                }
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
         public bool Delete(int dishID)
         {
             try
             {
-                Dish obj = dishes.FirstOrDefault(x => x.DishID.Equals(dishID));
-                dishes.DeleteOnSubmit(obj);
+                new DishDetailDAO().DeleteListByDish(dishID);
+
+                Dish entity = dishes.SingleOrDefault(x => x.DishID.Equals(dishID));
+                dishes.DeleteOnSubmit(entity);
+                db.SubmitChanges();
                 return true;
             }
             catch

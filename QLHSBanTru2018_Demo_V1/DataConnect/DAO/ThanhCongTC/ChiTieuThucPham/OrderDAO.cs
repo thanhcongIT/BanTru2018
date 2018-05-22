@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DataConnect.DAO.ThanhCongTC.TCViewModle;
 
 namespace DataConnect.DAO.ThanhCongTC.ChiTieuThucPham
 {
@@ -15,6 +16,7 @@ namespace DataConnect.DAO.ThanhCongTC.ChiTieuThucPham
             a.OrderName = order.OrderName;
             a.Date = order.Date;
             a.EmployeeID = order.EmployeeID;
+            a.TotalPrice = order.TotalPrice;
             a.Status = order.Status;
             dt.Orders.InsertOnSubmit(a);
             dt.SubmitChanges();
@@ -32,5 +34,11 @@ namespace DataConnect.DAO.ThanhCongTC.ChiTieuThucPham
             var a = dt.Orders.Where(t => t.Date.Month == dateTime.Month && t.Date.Year == dateTime.Year);
             return a.ToList();
         }
+        public List<Order>ListOrderByDay(DateTime dateTime)
+        {
+            var a = dt.Orders.Where(t => t.Date == dateTime);
+            return a.ToList();
+        }
+       
     }
 }

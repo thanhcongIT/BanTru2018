@@ -22,6 +22,7 @@ namespace DataConnect.DAO.TienBao
             PhysicalTable = db.GetTable<PhysicalAssessment>();
 
             var query = from ph in PhysicalTable
+                        where ph.Status == true
                         select new PhysicalAssessmentViewModel
                         {
                             PhysicalAssessmentID = ph.PhysicalAssessmentID,
@@ -33,18 +34,18 @@ namespace DataConnect.DAO.TienBao
             List<PhysicalAssessmentViewModel> list = query.ToList();
             return list;
         }
-        public bool PhysicalInsert(PhysicalAssessment entity)
+        public int PhysicalInsert(PhysicalAssessment entity)
         {
             try
             {
                 PhysicalTable = db.GetTable<PhysicalAssessment>();
                 PhysicalTable.InsertOnSubmit(entity);
                 db.SubmitChanges();
-                return true;
+                return entity.PhysicalAssessmentID;
             }
             catch
             {
-                return false;
+                return 0;
             }
         }
         public bool PhysicalUpdate(PhysicalAssessment entity)

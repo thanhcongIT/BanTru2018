@@ -25,6 +25,8 @@ using QLHSBanTru2018_Demo_V1.HungTD.Form.Ingredient;
 using QLHSBanTru2018_Demo_V1.QLThuChi.ChiTieu;
 using QLHSBanTru2018_Demo_V1.HungTD.Form.Dish;
 using QLHSBanTru2018_Demo_V1.QLThuChi.ChiTieu.ChiTieuThucPham;
+using QLHSBanTru2018_Demo_V1.QLThuChi.ChiTieu.ChiTieuThucPham.ThongKeThucPham;
+using QLHSBanTru2018_Demo_V1.HungTD.Form.Menu;
 
 namespace QLHSBanTru2018_Demo_V1
 {
@@ -112,6 +114,19 @@ namespace QLHSBanTru2018_Demo_V1
             pnControlsPanel.Controls.Add(new frmDish());
             labTitle.Caption = "QUẢN LÝ MÓN ĂN";
         }
+        
+        private void btnMealManager_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            pnControlsPanel.Controls.Clear();
+            pnControlsPanel.Controls.Add(new frmMeal());
+            labTitle.Caption = "QUẢN LÝ BỮA SĂN";
+        }
+        private void btnDailyMenuManager_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            pnControlsPanel.Controls.Clear();
+            pnControlsPanel.Controls.Add(new frmWeeklyMenu());
+            labTitle.Caption = "QUẢN LÝ THỰC ĐƠN";
+        }
         #endregion
 
         #region s2s2s2s2 Nguyễn Kiều Thành Công s2s2s2
@@ -164,6 +179,13 @@ namespace QLHSBanTru2018_Demo_V1
         private void btnYeuCau_ItemClick(object sender, ItemClickEventArgs e)
         {
             UsYeuCau a = new UsYeuCau();
+            pnControlsPanel.Controls.Clear();
+            pnControlsPanel.Controls.Add(a);
+            a.Dock = DockStyle.Fill;
+        }
+        private void btnThongKeThucPham_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            UsThongKeThucPham a = new UsThongKeThucPham();
             pnControlsPanel.Controls.Clear();
             pnControlsPanel.Controls.Add(a);
             a.Dock = DockStyle.Fill;
@@ -226,12 +248,20 @@ namespace QLHSBanTru2018_Demo_V1
         }
 
 
+<<<<<<< HEAD
+=======
+
+
+
+
+>>>>>>> 6f5772d93d4b1fb5e0aed374284f6d92044f8b78
         #endregion
 
         #region Vũ Đức Thiện
 
         #endregion
 
+<<<<<<< HEAD
         private void btnDiemDanhHS_ItemClick(object sender, ItemClickEventArgs e)
         {
             DucThien.DiemDanhHS a = new DucThien.DiemDanhHS();
@@ -243,5 +273,7 @@ namespace QLHSBanTru2018_Demo_V1
             DucThien.TheoDoiDenMuonHS a = new DucThien.TheoDoiDenMuonHS();
             a.ShowDialog();
         }
+=======
+>>>>>>> 6f5772d93d4b1fb5e0aed374284f6d92044f8b78
     }
 }

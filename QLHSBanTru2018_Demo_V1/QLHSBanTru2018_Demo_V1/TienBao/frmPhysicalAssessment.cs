@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Linq;
+using System.Data.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
@@ -26,7 +27,6 @@ namespace QLHSBanTru2018_Demo_V1.TienBao
         {
             InitializeComponent();
         }
-
         #region LoadInfor
         private void LoadClassInfor(int GradeID)
         {
@@ -58,9 +58,9 @@ namespace QLHSBanTru2018_Demo_V1.TienBao
         }
         private void LoadPhysicalAssessmentInfor()
         {
-            cmbPhysicalAssessment.DataSource = new PhysicalAssessmentDAO().ListPhysicalAssessment(); ;
-            cmbPhysicalAssessment.DisplayMember = "NamePhysicalAssessment";
-            cmbPhysicalAssessment.ValueMember = "PhysicalAssessmentID";
+            cmbPhysicalAssessment.Properties.DataSource = new PhysicalAssessmentDAO().ListPhysicalAssessment(); ;
+            cmbPhysicalAssessment.Properties.DisplayMember = "NamePhysicalAssessment";
+            cmbPhysicalAssessment.Properties.ValueMember = "PhysicalAssessmentID";
         }
         private void FillGridControl(int ClassID, int PhysicalAssessmentID)
         {
@@ -72,29 +72,140 @@ namespace QLHSBanTru2018_Demo_V1.TienBao
             catch
             { }
         }
-              
+
         #endregion
 
+        #region EventClass
+        private void cmbNamHoc_Click(object sender, EventArgs e)
+        {
+            LoadCourseInfor();
+        }
+        private void cmbNamHoc_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                LoadSemesterInfor(int.Parse(cmbNamHoc.SelectedValue.ToString()));
+            }
+            catch
+            { }
+        }
+        private void cmbHocKy_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                LoadGradeInfor(int.Parse(cmbHocKy.SelectedValue.ToString()));
 
+            }
+            catch
+            { }
+        }
+        private void cmbKhoiHoc_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                LoadClassInfor(int.Parse(cmbKhoiLop.SelectedValue.ToString()));
 
+            }
+            catch
+            { }
+        }
 
+        #endregion
 
+        #region Event
+        private void frmPhysicalAssessment_Load(object sender, EventArgs e)
+        {
+            this.Dock = DockStyle.Fill;
+            LoadPhysicalAssessmentInfor();
+        }
+        private void cmbPhysicalAssessment_EditValueChanged(object sender, EventArgs e)
+        {         
+             txtPhysicalNote.Text = cmbPhysicalAssessment.GetColumnValue("NotePhysicalAssessment").ToString();
+             dtPhysicalDate.Text = cmbPhysicalAssessment.GetColumnValue("DatePhysicalAssessment").ToString();                         
+        }
+        
+        private void btnXemChiTiet_Click(object sender, EventArgs e)
+        {
+            if (cmbPhysicalAssessment.EditValue == null)
+            {
+                XtraMessageBox.Show("Mời bạn chọn đợt cân đo", "Thông báo");
+            }
+            else if (cmbLopHoc.SelectedValue == null)
+            {
+                XtraMessageBox.Show("Mời bạn chọn lớp học", "Thông báo");
+            }
+            else
+            {
+                FillGridControl(int.Parse(cmbLopHoc.SelectedValue.ToString()), int.Parse(cmbPhysicalAssessment.EditValue.ToString()));
+            }
+        }
+        
+        private void btnThemmoi_Click(object sender, EventArgs e)
+        {
 
+            frmPhysicalDetail m_frmPhysicalDetail = new frmPhysicalDetail();
+            m_frmPhysicalDetail.iFunction = 1;
+            m_frmPhysicalDetail.ShowDialog();
+            if (m_frmPhysicalDetail.DialogResult == DialogResult.OK)
+            {
+                cmbNamHoc.SelectedIndex = -1;
+                cmbHocKy.SelectedIndex = -1;
+                cmbKhoiLop.SelectedIndex = -1;
+                cmbLopHoc.SelectedIndex = -1;
+                dtPhysicalDate.Text = string.Empty;
+                txtPhysicalNote.Text = string.Empty;
+                frmPhysicalAssessment_Load(sender, e);
+            }
 
+        }
+        private void btnChinhSua_Click(object sender, EventArgs e)
+        {
+            if (cmbPhysicalAssessment.EditValue == null)
+            {
+                XtraMessageBox.Show("Mời bạn chọn đợt cân đo", "Thông báo");
 
+            }
+            else if (cmbLopHoc.SelectedValue == null)
+            {
+                XtraMessageBox.Show("Mời bạn chọn lớp học", "Thông báo");
+            }
+            else
+            {
+                frmPhysicalDetail m_frmPhysicalDetail = new frmPhysicalDetail();
+                m_frmPhysicalDetail.iFunction = 2;
+                m_frmPhysicalDetail.m_PhysicalTable = new PhysicalAssessmentDAO().GetByID(int.Parse(cmbPhysicalAssessment.EditValue.ToString()));
+               
+                m_frmPhysicalDetail.Class = new ClassDAO().GetByClassID(int.Parse(cmbLopHoc.SelectedValue.ToString()));
+                m_frmPhysicalDetail.ShowDialog();
+                if (m_frmPhysicalDetail.DialogResult == DialogResult.OK)
+                {
+                    FillGridControl(int.Parse(cmbLopHoc.SelectedValue.ToString()), int.Parse(cmbPhysicalAssessment.EditValue.ToString()));
+                }
+            }
+        }
+        private void btnXoaDotCanDo_Click(object sender, EventArgs e)
+        {
+            if (cmbPhysicalAssessment.EditValue == null)
+            {
+                XtraMessageBox.Show("Mời bạn chọn đợt cân đo cần xóa", "Thông báo");
 
-
-
-
-
-
-
-
-
-
-
-
-
+            }
+            else if(XtraMessageBox.Show("Bạn muốn xóa bỏ đợt cân đo này ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            {
+               new PhysicalAssessmentDAO().PhysicalDelete(int.Parse(cmbPhysicalAssessment.EditValue.ToString()));               
+               if (XtraMessageBox.Show(" Xóa đợt cân đo thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information) == DialogResult.OK)
+               {
+                    cmbNamHoc.SelectedIndex = -1;
+                    cmbHocKy.SelectedIndex = -1;
+                    cmbKhoiLop.SelectedIndex = -1;
+                    cmbLopHoc.SelectedIndex = -1;
+                    dtPhysicalDate.Text = string.Empty;
+                    txtPhysicalNote.Text = string.Empty;
+                    frmPhysicalAssessment_Load(sender, e);
+               }                
+            }
+        }
+        #endregion
 
         #region STT
         private void bandedGridView1_CustomDrawRowIndicator(object sender, RowIndicatorCustomDrawEventArgs e)
@@ -137,11 +248,10 @@ namespace QLHSBanTru2018_Demo_V1.TienBao
 
                 }
             }
-            catch 
+            catch
             {
             }
         }
-
         private void bandedGridView1_RowCountChanged(object sender, EventArgs e)
         {
             GridView gridview = ((GridView)sender);
@@ -152,5 +262,7 @@ namespace QLHSBanTru2018_Demo_V1.TienBao
 
         }
         #endregion
+
+        
     }
 }

@@ -63,7 +63,11 @@ namespace QLHSBanTru2018_Demo_V1.Properties {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
         [global::System.Configuration.DefaultSettingValueAttribute("Data Source=42.112.20.82;Initial Catalog=CPITQLHSBanTru2018;Persist Security Info" +
+<<<<<<< HEAD
             "=True;User ID=CPITQLHSBanTru;Password=BanTru@2018")]
+=======
+            "=True;User ID=CPITQLHSBanTru")]
+>>>>>>> 6f5772d93d4b1fb5e0aed374284f6d92044f8b78
         public string CPITQLHSBanTru2018ConnectionString {
             get {
                 return ((string)(this["CPITQLHSBanTru2018ConnectionString"]));

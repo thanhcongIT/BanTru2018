@@ -15,6 +15,11 @@ namespace QLHSBanTru2018_Demo_V1.HungTD.Form.Dish
     public partial class frmChangeQuantity : DevExpress.XtraEditors.XtraForm
     {
         DataConnect.Ingredient ingredient;
+        public double quantity = 0;
+        public double getQuantity()
+        {
+            return this.quantity;
+        }
         public void setTitle(string title)
         {
             this.Text = title;
@@ -22,6 +27,10 @@ namespace QLHSBanTru2018_Demo_V1.HungTD.Form.Dish
         public void setIngredient(int ingredientID)
         {
             this.ingredient = new IngredientDAO().GetByID(ingredientID);
+        }
+        public DataConnect.Ingredient getIngredient()
+        {
+            return this.ingredient;
         }
         public frmChangeQuantity()
         {
@@ -37,7 +46,16 @@ namespace QLHSBanTru2018_Demo_V1.HungTD.Form.Dish
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-
+            if (int.Parse(txtQuantity.Text) > 0)
+            {
+                this.quantity = double.Parse(txtQuantity.Text);
+                DialogResult = DialogResult.OK;
+                this.Close();
+            }
+            else
+            {
+                errorProvider1.SetError(txtQuantity, "Lượng sản phẩm phải lớn hơn 0");
+            }
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
