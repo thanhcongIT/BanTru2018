@@ -29,23 +29,23 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmWeeklyMenu));
-            DevExpress.XtraEditors.TableLayout.TableColumnDefinition tableColumnDefinition1 = new DevExpress.XtraEditors.TableLayout.TableColumnDefinition();
-            DevExpress.XtraEditors.TableLayout.TableColumnDefinition tableColumnDefinition2 = new DevExpress.XtraEditors.TableLayout.TableColumnDefinition();
-            DevExpress.XtraEditors.TableLayout.TableRowDefinition tableRowDefinition1 = new DevExpress.XtraEditors.TableLayout.TableRowDefinition();
-            DevExpress.XtraEditors.TableLayout.TableRowDefinition tableRowDefinition2 = new DevExpress.XtraEditors.TableLayout.TableRowDefinition();
-            DevExpress.XtraEditors.TableLayout.TableRowDefinition tableRowDefinition3 = new DevExpress.XtraEditors.TableLayout.TableRowDefinition();
-            DevExpress.XtraEditors.TableLayout.TableRowDefinition tableRowDefinition4 = new DevExpress.XtraEditors.TableLayout.TableRowDefinition();
-            DevExpress.XtraEditors.TableLayout.TableRowDefinition tableRowDefinition5 = new DevExpress.XtraEditors.TableLayout.TableRowDefinition();
-            DevExpress.XtraGrid.Views.Tile.TileViewItemElement tileViewItemElement1 = new DevExpress.XtraGrid.Views.Tile.TileViewItemElement();
-            DevExpress.XtraGrid.Views.Tile.TileViewItemElement tileViewItemElement2 = new DevExpress.XtraGrid.Views.Tile.TileViewItemElement();
-            DevExpress.XtraGrid.Views.Tile.TileViewItemElement tileViewItemElement3 = new DevExpress.XtraGrid.Views.Tile.TileViewItemElement();
-            DevExpress.XtraGrid.Views.Tile.TileViewItemElement tileViewItemElement4 = new DevExpress.XtraGrid.Views.Tile.TileViewItemElement();
-            DevExpress.XtraGrid.Views.Tile.TileViewItemElement tileViewItemElement5 = new DevExpress.XtraGrid.Views.Tile.TileViewItemElement();
-            DevExpress.XtraGrid.Views.Tile.TileViewItemElement tileViewItemElement6 = new DevExpress.XtraGrid.Views.Tile.TileViewItemElement();
-            DevExpress.XtraGrid.Views.Tile.TileViewItemElement tileViewItemElement7 = new DevExpress.XtraGrid.Views.Tile.TileViewItemElement();
-            DevExpress.XtraGrid.Views.Tile.TileViewItemElement tileViewItemElement8 = new DevExpress.XtraGrid.Views.Tile.TileViewItemElement();
-            DevExpress.XtraGrid.Views.Tile.TileViewItemElement tileViewItemElement9 = new DevExpress.XtraGrid.Views.Tile.TileViewItemElement();
-            DevExpress.XtraGrid.Views.Tile.TileViewItemElement tileViewItemElement10 = new DevExpress.XtraGrid.Views.Tile.TileViewItemElement();
+            DevExpress.XtraEditors.TableLayout.TableColumnDefinition tableColumnDefinition3 = new DevExpress.XtraEditors.TableLayout.TableColumnDefinition();
+            DevExpress.XtraEditors.TableLayout.TableColumnDefinition tableColumnDefinition4 = new DevExpress.XtraEditors.TableLayout.TableColumnDefinition();
+            DevExpress.XtraEditors.TableLayout.TableRowDefinition tableRowDefinition6 = new DevExpress.XtraEditors.TableLayout.TableRowDefinition();
+            DevExpress.XtraEditors.TableLayout.TableRowDefinition tableRowDefinition7 = new DevExpress.XtraEditors.TableLayout.TableRowDefinition();
+            DevExpress.XtraEditors.TableLayout.TableRowDefinition tableRowDefinition8 = new DevExpress.XtraEditors.TableLayout.TableRowDefinition();
+            DevExpress.XtraEditors.TableLayout.TableRowDefinition tableRowDefinition9 = new DevExpress.XtraEditors.TableLayout.TableRowDefinition();
+            DevExpress.XtraEditors.TableLayout.TableRowDefinition tableRowDefinition10 = new DevExpress.XtraEditors.TableLayout.TableRowDefinition();
+            DevExpress.XtraGrid.Views.Tile.TileViewItemElement tileViewItemElement11 = new DevExpress.XtraGrid.Views.Tile.TileViewItemElement();
+            DevExpress.XtraGrid.Views.Tile.TileViewItemElement tileViewItemElement12 = new DevExpress.XtraGrid.Views.Tile.TileViewItemElement();
+            DevExpress.XtraGrid.Views.Tile.TileViewItemElement tileViewItemElement13 = new DevExpress.XtraGrid.Views.Tile.TileViewItemElement();
+            DevExpress.XtraGrid.Views.Tile.TileViewItemElement tileViewItemElement14 = new DevExpress.XtraGrid.Views.Tile.TileViewItemElement();
+            DevExpress.XtraGrid.Views.Tile.TileViewItemElement tileViewItemElement15 = new DevExpress.XtraGrid.Views.Tile.TileViewItemElement();
+            DevExpress.XtraGrid.Views.Tile.TileViewItemElement tileViewItemElement16 = new DevExpress.XtraGrid.Views.Tile.TileViewItemElement();
+            DevExpress.XtraGrid.Views.Tile.TileViewItemElement tileViewItemElement17 = new DevExpress.XtraGrid.Views.Tile.TileViewItemElement();
+            DevExpress.XtraGrid.Views.Tile.TileViewItemElement tileViewItemElement18 = new DevExpress.XtraGrid.Views.Tile.TileViewItemElement();
+            DevExpress.XtraGrid.Views.Tile.TileViewItemElement tileViewItemElement19 = new DevExpress.XtraGrid.Views.Tile.TileViewItemElement();
+            DevExpress.XtraGrid.Views.Tile.TileViewItemElement tileViewItemElement20 = new DevExpress.XtraGrid.Views.Tile.TileViewItemElement();
             this.colBreakfast = new DevExpress.XtraGrid.Columns.TileViewColumn();
             this.repositoryItemMemoEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
             this.colDayOfWeek = new DevExpress.XtraGrid.Columns.TileViewColumn();
@@ -57,7 +57,7 @@
             this.btnEdit = new DevExpress.XtraEditors.SimpleButton();
             this.btnDelete = new DevExpress.XtraEditors.SimpleButton();
             this.btnPrint = new DevExpress.XtraEditors.SimpleButton();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbbWeekID = new System.Windows.Forms.ComboBox();
             this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
             this.textEdit2 = new DevExpress.XtraEditors.TextEdit();
             this.gcMain = new DevExpress.XtraGrid.GridControl();
@@ -150,7 +150,7 @@
             this.layoutControl1.Controls.Add(this.btnEdit);
             this.layoutControl1.Controls.Add(this.btnDelete);
             this.layoutControl1.Controls.Add(this.btnPrint);
-            this.layoutControl1.Controls.Add(this.comboBox1);
+            this.layoutControl1.Controls.Add(this.cbbWeekID);
             this.layoutControl1.Controls.Add(this.textEdit1);
             this.layoutControl1.Controls.Add(this.textEdit2);
             this.layoutControl1.Controls.Add(this.gcMain);
@@ -204,28 +204,28 @@
             this.btnPrint.TabIndex = 7;
             this.btnPrint.Text = "In Báo Cáo";
             // 
-            // comboBox1
+            // cbbWeekID
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(826, 45);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(162, 21);
-            this.comboBox1.TabIndex = 9;
+            this.cbbWeekID.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbWeekID.FormattingEnabled = true;
+            this.cbbWeekID.Location = new System.Drawing.Point(791, 45);
+            this.cbbWeekID.Name = "cbbWeekID";
+            this.cbbWeekID.Size = new System.Drawing.Size(197, 21);
+            this.cbbWeekID.TabIndex = 9;
             // 
             // textEdit1
             // 
-            this.textEdit1.Location = new System.Drawing.Point(826, 112);
+            this.textEdit1.Location = new System.Drawing.Point(791, 112);
             this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Size = new System.Drawing.Size(162, 20);
+            this.textEdit1.Size = new System.Drawing.Size(197, 20);
             this.textEdit1.StyleController = this.layoutControl1;
             this.textEdit1.TabIndex = 10;
             // 
             // textEdit2
             // 
-            this.textEdit2.Location = new System.Drawing.Point(826, 136);
+            this.textEdit2.Location = new System.Drawing.Point(791, 136);
             this.textEdit2.Name = "textEdit2";
-            this.textEdit2.Size = new System.Drawing.Size(162, 20);
+            this.textEdit2.Size = new System.Drawing.Size(197, 20);
             this.textEdit2.StyleController = this.layoutControl1;
             this.textEdit2.TabIndex = 11;
             // 
@@ -259,88 +259,88 @@
             this.tileView1.OptionsTiles.RowCount = 0;
             this.tileView1.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
             new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colWeekID, DevExpress.Data.ColumnSortOrder.Ascending)});
-            tableColumnDefinition1.Length.Value = 96D;
-            tableColumnDefinition2.Length.Value = 118D;
-            this.tileView1.TileColumns.Add(tableColumnDefinition1);
-            this.tileView1.TileColumns.Add(tableColumnDefinition2);
-            tableRowDefinition1.Length.Value = 24D;
-            tableRowDefinition2.Length.Value = 36D;
-            tableRowDefinition3.Length.Value = 113D;
-            tableRowDefinition4.Length.Value = 54D;
-            tableRowDefinition5.Length.Value = 71D;
-            this.tileView1.TileRows.Add(tableRowDefinition1);
-            this.tileView1.TileRows.Add(tableRowDefinition2);
-            this.tileView1.TileRows.Add(tableRowDefinition3);
-            this.tileView1.TileRows.Add(tableRowDefinition4);
-            this.tileView1.TileRows.Add(tableRowDefinition5);
-            tileViewItemElement1.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileViewItemElement1.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
-            tileViewItemElement1.Text = "Ngày:";
-            tileViewItemElement1.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleLeft;
-            tileViewItemElement2.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileViewItemElement2.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
-            tileViewItemElement2.RowIndex = 1;
-            tileViewItemElement2.Text = "Bữa Sáng:";
-            tileViewItemElement2.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleLeft;
-            tileViewItemElement3.Column = this.colBreakfast;
-            tileViewItemElement3.ColumnIndex = 1;
-            tileViewItemElement3.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileViewItemElement3.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
-            tileViewItemElement3.RowIndex = 1;
-            tileViewItemElement3.Text = "colBreakfast";
-            tileViewItemElement3.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleLeft;
-            tileViewItemElement4.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileViewItemElement4.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
-            tileViewItemElement4.RowIndex = 2;
-            tileViewItemElement4.Text = "Bữa trưa:";
-            tileViewItemElement4.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleLeft;
-            tileViewItemElement5.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileViewItemElement5.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
-            tileViewItemElement5.RowIndex = 3;
-            tileViewItemElement5.Text = "Bữa tráng miệng:";
-            tileViewItemElement5.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleLeft;
-            tileViewItemElement6.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileViewItemElement6.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
-            tileViewItemElement6.RowIndex = 4;
-            tileViewItemElement6.Text = "Bữa phụ chiều:";
-            tileViewItemElement6.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleLeft;
-            tileViewItemElement7.Column = this.colDayOfWeek;
-            tileViewItemElement7.ColumnIndex = 1;
-            tileViewItemElement7.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileViewItemElement7.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
-            tileViewItemElement7.Text = "colDayOfWeek";
-            tileViewItemElement7.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleLeft;
-            tileViewItemElement8.Column = this.colLunch;
-            tileViewItemElement8.ColumnIndex = 1;
-            tileViewItemElement8.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileViewItemElement8.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
-            tileViewItemElement8.RowIndex = 2;
-            tileViewItemElement8.Text = "colLunch";
-            tileViewItemElement8.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleLeft;
-            tileViewItemElement9.Column = this.colAfterLunch;
-            tileViewItemElement9.ColumnIndex = 1;
-            tileViewItemElement9.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileViewItemElement9.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
-            tileViewItemElement9.RowIndex = 3;
-            tileViewItemElement9.Text = "colAfterLunch";
-            tileViewItemElement9.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleLeft;
-            tileViewItemElement10.Column = this.colAfternoon;
-            tileViewItemElement10.ColumnIndex = 1;
-            tileViewItemElement10.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileViewItemElement10.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
-            tileViewItemElement10.RowIndex = 4;
-            tileViewItemElement10.Text = "colAfternoon";
-            tileViewItemElement10.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleLeft;
-            this.tileView1.TileTemplate.Add(tileViewItemElement1);
-            this.tileView1.TileTemplate.Add(tileViewItemElement2);
-            this.tileView1.TileTemplate.Add(tileViewItemElement3);
-            this.tileView1.TileTemplate.Add(tileViewItemElement4);
-            this.tileView1.TileTemplate.Add(tileViewItemElement5);
-            this.tileView1.TileTemplate.Add(tileViewItemElement6);
-            this.tileView1.TileTemplate.Add(tileViewItemElement7);
-            this.tileView1.TileTemplate.Add(tileViewItemElement8);
-            this.tileView1.TileTemplate.Add(tileViewItemElement9);
-            this.tileView1.TileTemplate.Add(tileViewItemElement10);
+            tableColumnDefinition3.Length.Value = 96D;
+            tableColumnDefinition4.Length.Value = 118D;
+            this.tileView1.TileColumns.Add(tableColumnDefinition3);
+            this.tileView1.TileColumns.Add(tableColumnDefinition4);
+            tableRowDefinition6.Length.Value = 24D;
+            tableRowDefinition7.Length.Value = 36D;
+            tableRowDefinition8.Length.Value = 113D;
+            tableRowDefinition9.Length.Value = 54D;
+            tableRowDefinition10.Length.Value = 71D;
+            this.tileView1.TileRows.Add(tableRowDefinition6);
+            this.tileView1.TileRows.Add(tableRowDefinition7);
+            this.tileView1.TileRows.Add(tableRowDefinition8);
+            this.tileView1.TileRows.Add(tableRowDefinition9);
+            this.tileView1.TileRows.Add(tableRowDefinition10);
+            tileViewItemElement11.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileViewItemElement11.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
+            tileViewItemElement11.Text = "Ngày:";
+            tileViewItemElement11.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleLeft;
+            tileViewItemElement12.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileViewItemElement12.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
+            tileViewItemElement12.RowIndex = 1;
+            tileViewItemElement12.Text = "Bữa Sáng:";
+            tileViewItemElement12.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleLeft;
+            tileViewItemElement13.Column = this.colBreakfast;
+            tileViewItemElement13.ColumnIndex = 1;
+            tileViewItemElement13.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileViewItemElement13.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
+            tileViewItemElement13.RowIndex = 1;
+            tileViewItemElement13.Text = "colBreakfast";
+            tileViewItemElement13.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleLeft;
+            tileViewItemElement14.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileViewItemElement14.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
+            tileViewItemElement14.RowIndex = 2;
+            tileViewItemElement14.Text = "Bữa trưa:";
+            tileViewItemElement14.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleLeft;
+            tileViewItemElement15.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileViewItemElement15.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
+            tileViewItemElement15.RowIndex = 3;
+            tileViewItemElement15.Text = "Bữa tráng miệng:";
+            tileViewItemElement15.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleLeft;
+            tileViewItemElement16.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileViewItemElement16.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
+            tileViewItemElement16.RowIndex = 4;
+            tileViewItemElement16.Text = "Bữa phụ chiều:";
+            tileViewItemElement16.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleLeft;
+            tileViewItemElement17.Column = this.colDayOfWeek;
+            tileViewItemElement17.ColumnIndex = 1;
+            tileViewItemElement17.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileViewItemElement17.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
+            tileViewItemElement17.Text = "colDayOfWeek";
+            tileViewItemElement17.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleLeft;
+            tileViewItemElement18.Column = this.colLunch;
+            tileViewItemElement18.ColumnIndex = 1;
+            tileViewItemElement18.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileViewItemElement18.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
+            tileViewItemElement18.RowIndex = 2;
+            tileViewItemElement18.Text = "colLunch";
+            tileViewItemElement18.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleLeft;
+            tileViewItemElement19.Column = this.colAfterLunch;
+            tileViewItemElement19.ColumnIndex = 1;
+            tileViewItemElement19.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileViewItemElement19.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
+            tileViewItemElement19.RowIndex = 3;
+            tileViewItemElement19.Text = "colAfterLunch";
+            tileViewItemElement19.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleLeft;
+            tileViewItemElement20.Column = this.colAfternoon;
+            tileViewItemElement20.ColumnIndex = 1;
+            tileViewItemElement20.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileViewItemElement20.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
+            tileViewItemElement20.RowIndex = 4;
+            tileViewItemElement20.Text = "colAfternoon";
+            tileViewItemElement20.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleLeft;
+            this.tileView1.TileTemplate.Add(tileViewItemElement11);
+            this.tileView1.TileTemplate.Add(tileViewItemElement12);
+            this.tileView1.TileTemplate.Add(tileViewItemElement13);
+            this.tileView1.TileTemplate.Add(tileViewItemElement14);
+            this.tileView1.TileTemplate.Add(tileViewItemElement15);
+            this.tileView1.TileTemplate.Add(tileViewItemElement16);
+            this.tileView1.TileTemplate.Add(tileViewItemElement17);
+            this.tileView1.TileTemplate.Add(tileViewItemElement18);
+            this.tileView1.TileTemplate.Add(tileViewItemElement19);
+            this.tileView1.TileTemplate.Add(tileViewItemElement20);
             // 
             // colWeekID
             // 
@@ -473,13 +473,13 @@
             // 
             // layoutControlItem6
             // 
-            this.layoutControlItem6.Control = this.comboBox1;
+            this.layoutControlItem6.Control = this.cbbWeekID;
             this.layoutControlItem6.CustomizationFormText = "Lọc ngày tháng năm:";
             this.layoutControlItem6.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem6.Name = "layoutControlItem6";
             this.layoutControlItem6.Size = new System.Drawing.Size(270, 25);
-            this.layoutControlItem6.Text = "Lọc ngày tháng năm:";
-            this.layoutControlItem6.TextSize = new System.Drawing.Size(101, 13);
+            this.layoutControlItem6.Text = "Theo tuần:";
+            this.layoutControlItem6.TextSize = new System.Drawing.Size(66, 13);
             // 
             // layoutControlGroup4
             // 
@@ -513,7 +513,7 @@
             this.layoutControlItem5.Name = "layoutControlItem5";
             this.layoutControlItem5.Size = new System.Drawing.Size(270, 24);
             this.layoutControlItem5.Text = "Họ và tên:";
-            this.layoutControlItem5.TextSize = new System.Drawing.Size(101, 13);
+            this.layoutControlItem5.TextSize = new System.Drawing.Size(66, 13);
             // 
             // layoutControlItem7
             // 
@@ -523,7 +523,7 @@
             this.layoutControlItem7.Name = "layoutControlItem7";
             this.layoutControlItem7.Size = new System.Drawing.Size(270, 24);
             this.layoutControlItem7.Text = "Mã hợp đồng:";
-            this.layoutControlItem7.TextSize = new System.Drawing.Size(101, 13);
+            this.layoutControlItem7.TextSize = new System.Drawing.Size(66, 13);
             // 
             // layoutControlItem8
             // 
@@ -542,6 +542,7 @@
             this.Controls.Add(this.layoutControl1);
             this.Name = "frmWeeklyMenu";
             this.Size = new System.Drawing.Size(1015, 605);
+            this.Load += new System.EventHandler(this.frmWeeklyMenu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
@@ -577,7 +578,7 @@
         private DevExpress.XtraEditors.SimpleButton btnEdit;
         private DevExpress.XtraEditors.SimpleButton btnDelete;
         private DevExpress.XtraEditors.SimpleButton btnPrint;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbbWeekID;
         private DevExpress.XtraEditors.TextEdit textEdit1;
         private DevExpress.XtraEditors.TextEdit textEdit2;
         private DevExpress.XtraGrid.GridControl gcMain;

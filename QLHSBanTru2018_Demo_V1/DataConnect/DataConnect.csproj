@@ -173,6 +173,7 @@
     <Compile Include="ViewModel\SemesterViewModel.cs" />
     <Compile Include="ViewModel\StudentViewModel.cs" />
     <Compile Include="ViewModel\WeeklyMenuFullViewModel.cs" />
+    <Compile Include="ViewModel\WeekViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

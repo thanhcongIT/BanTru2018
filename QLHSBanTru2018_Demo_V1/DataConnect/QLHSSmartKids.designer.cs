@@ -2647,69 +2647,74 @@ namespace DataConnect
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private int _DailyTaskID;
-		
 		private int _StudentID;
+		
+		private string _DateTask;
 		
 		private System.Nullable<int> _WeeklyTaskID;
 		
 		private string _MonthlyTaskID;
 		
-		private string _DateTask;
-		
 		private string _Present;
 		
 		private string _Reason;
 		
-		private EntityRef<DateOfEntry> _DateOfEntry;
+		private System.Nullable<System.DateTime> _StartTime;
 		
-		private EntityRef<Student> _Student;
+		private System.Nullable<System.DateTime> _EndTime;
+		
+		private System.Nullable<System.DateTime> _DrugTime;
+		
+		private string _Eating;
+		
+		private string _Sleep;
+		
+		private string _Health;
+		
+		private string _Study;
+		
+		private string _Note;
+		
+		private EntityRef<DateOfEntry> _DateOfEntry;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void OnDailyTaskIDChanging(int value);
-    partial void OnDailyTaskIDChanged();
     partial void OnStudentIDChanging(int value);
     partial void OnStudentIDChanged();
+    partial void OnDateTaskChanging(string value);
+    partial void OnDateTaskChanged();
     partial void OnWeeklyTaskIDChanging(System.Nullable<int> value);
     partial void OnWeeklyTaskIDChanged();
     partial void OnMonthlyTaskIDChanging(string value);
     partial void OnMonthlyTaskIDChanged();
-    partial void OnDateTaskChanging(string value);
-    partial void OnDateTaskChanged();
     partial void OnPresentChanging(string value);
     partial void OnPresentChanged();
     partial void OnReasonChanging(string value);
     partial void OnReasonChanged();
+    partial void OnStartTimeChanging(System.Nullable<System.DateTime> value);
+    partial void OnStartTimeChanged();
+    partial void OnEndTimeChanging(System.Nullable<System.DateTime> value);
+    partial void OnEndTimeChanged();
+    partial void OnDrugTimeChanging(System.Nullable<System.DateTime> value);
+    partial void OnDrugTimeChanged();
+    partial void OnEatingChanging(string value);
+    partial void OnEatingChanged();
+    partial void OnSleepChanging(string value);
+    partial void OnSleepChanged();
+    partial void OnHealthChanging(string value);
+    partial void OnHealthChanged();
+    partial void OnStudyChanging(string value);
+    partial void OnStudyChanged();
+    partial void OnNoteChanging(string value);
+    partial void OnNoteChanged();
     #endregion
 		
 		public DailyTask()
 		{
 			this._DateOfEntry = default(EntityRef<DateOfEntry>);
-			this._Student = default(EntityRef<Student>);
 			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DailyTaskID", AutoSync=AutoSync.Always, DbType="Int NOT NULL IDENTITY", IsDbGenerated=true)]
-		public int DailyTaskID
-		{
-			get
-			{
-				return this._DailyTaskID;
-			}
-			set
-			{
-				if ((this._DailyTaskID != value))
-				{
-					this.OnDailyTaskIDChanging(value);
-					this.SendPropertyChanging();
-					this._DailyTaskID = value;
-					this.SendPropertyChanged("DailyTaskID");
-					this.OnDailyTaskIDChanged();
-				}
-			}
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StudentID", DbType="Int NOT NULL", IsPrimaryKey=true)]
@@ -2723,15 +2728,35 @@ namespace DataConnect
 			{
 				if ((this._StudentID != value))
 				{
-					if (this._Student.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
 					this.OnStudentIDChanging(value);
 					this.SendPropertyChanging();
 					this._StudentID = value;
 					this.SendPropertyChanged("StudentID");
 					this.OnStudentIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DateTask", DbType="NChar(20) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string DateTask
+		{
+			get
+			{
+				return this._DateTask;
+			}
+			set
+			{
+				if ((this._DateTask != value))
+				{
+					if (this._DateOfEntry.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnDateTaskChanging(value);
+					this.SendPropertyChanging();
+					this._DateTask = value;
+					this.SendPropertyChanged("DateTask");
+					this.OnDateTaskChanged();
 				}
 			}
 		}
@@ -2776,30 +2801,6 @@ namespace DataConnect
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DateTask", DbType="NChar(20) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string DateTask
-		{
-			get
-			{
-				return this._DateTask;
-			}
-			set
-			{
-				if ((this._DateTask != value))
-				{
-					if (this._DateOfEntry.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnDateTaskChanging(value);
-					this.SendPropertyChanging();
-					this._DateTask = value;
-					this.SendPropertyChanged("DateTask");
-					this.OnDateTaskChanged();
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Present", DbType="NVarChar(20)")]
 		public string Present
 		{
@@ -2840,6 +2841,166 @@ namespace DataConnect
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StartTime", DbType="Date")]
+		public System.Nullable<System.DateTime> StartTime
+		{
+			get
+			{
+				return this._StartTime;
+			}
+			set
+			{
+				if ((this._StartTime != value))
+				{
+					this.OnStartTimeChanging(value);
+					this.SendPropertyChanging();
+					this._StartTime = value;
+					this.SendPropertyChanged("StartTime");
+					this.OnStartTimeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EndTime", DbType="Date")]
+		public System.Nullable<System.DateTime> EndTime
+		{
+			get
+			{
+				return this._EndTime;
+			}
+			set
+			{
+				if ((this._EndTime != value))
+				{
+					this.OnEndTimeChanging(value);
+					this.SendPropertyChanging();
+					this._EndTime = value;
+					this.SendPropertyChanged("EndTime");
+					this.OnEndTimeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DrugTime", DbType="Date")]
+		public System.Nullable<System.DateTime> DrugTime
+		{
+			get
+			{
+				return this._DrugTime;
+			}
+			set
+			{
+				if ((this._DrugTime != value))
+				{
+					this.OnDrugTimeChanging(value);
+					this.SendPropertyChanging();
+					this._DrugTime = value;
+					this.SendPropertyChanged("DrugTime");
+					this.OnDrugTimeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Eating", DbType="NVarChar(200)")]
+		public string Eating
+		{
+			get
+			{
+				return this._Eating;
+			}
+			set
+			{
+				if ((this._Eating != value))
+				{
+					this.OnEatingChanging(value);
+					this.SendPropertyChanging();
+					this._Eating = value;
+					this.SendPropertyChanged("Eating");
+					this.OnEatingChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Sleep", DbType="NVarChar(200)")]
+		public string Sleep
+		{
+			get
+			{
+				return this._Sleep;
+			}
+			set
+			{
+				if ((this._Sleep != value))
+				{
+					this.OnSleepChanging(value);
+					this.SendPropertyChanging();
+					this._Sleep = value;
+					this.SendPropertyChanged("Sleep");
+					this.OnSleepChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Health", DbType="NVarChar(200)")]
+		public string Health
+		{
+			get
+			{
+				return this._Health;
+			}
+			set
+			{
+				if ((this._Health != value))
+				{
+					this.OnHealthChanging(value);
+					this.SendPropertyChanging();
+					this._Health = value;
+					this.SendPropertyChanged("Health");
+					this.OnHealthChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Study", DbType="NVarChar(200)")]
+		public string Study
+		{
+			get
+			{
+				return this._Study;
+			}
+			set
+			{
+				if ((this._Study != value))
+				{
+					this.OnStudyChanging(value);
+					this.SendPropertyChanging();
+					this._Study = value;
+					this.SendPropertyChanged("Study");
+					this.OnStudyChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Note", DbType="NVarChar(200)")]
+		public string Note
+		{
+			get
+			{
+				return this._Note;
+			}
+			set
+			{
+				if ((this._Note != value))
+				{
+					this.OnNoteChanging(value);
+					this.SendPropertyChanging();
+					this._Note = value;
+					this.SendPropertyChanged("Note");
+					this.OnNoteChanged();
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="DateOfEntry_DailyTask", Storage="_DateOfEntry", ThisKey="DateTask", OtherKey="DateTask", IsForeignKey=true)]
 		public DateOfEntry DateOfEntry
 		{
@@ -2870,40 +3031,6 @@ namespace DataConnect
 						this._DateTask = default(string);
 					}
 					this.SendPropertyChanged("DateOfEntry");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Student_DailyTask", Storage="_Student", ThisKey="StudentID", OtherKey="StudentID", IsForeignKey=true)]
-		public Student Student
-		{
-			get
-			{
-				return this._Student.Entity;
-			}
-			set
-			{
-				Student previousValue = this._Student.Entity;
-				if (((previousValue != value) 
-							|| (this._Student.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Student.Entity = null;
-						previousValue.DailyTasks.Remove(this);
-					}
-					this._Student.Entity = value;
-					if ((value != null))
-					{
-						value.DailyTasks.Add(this);
-						this._StudentID = value.StudentID;
-					}
-					else
-					{
-						this._StudentID = default(int);
-					}
-					this.SendPropertyChanged("Student");
 				}
 			}
 		}
@@ -14603,8 +14730,6 @@ namespace DataConnect
 		
 		private EntitySet<CourseTask> _CourseTasks;
 		
-		private EntitySet<DailyTask> _DailyTasks;
-		
 		private EntitySet<DailyTracker> _DailyTrackers;
 		
 		private EntitySet<HealthExaminationDetail> _HealthExaminationDetails;
@@ -14672,7 +14797,6 @@ namespace DataConnect
 		public Student()
 		{
 			this._CourseTasks = new EntitySet<CourseTask>(new Action<CourseTask>(this.attach_CourseTasks), new Action<CourseTask>(this.detach_CourseTasks));
-			this._DailyTasks = new EntitySet<DailyTask>(new Action<DailyTask>(this.attach_DailyTasks), new Action<DailyTask>(this.detach_DailyTasks));
 			this._DailyTrackers = new EntitySet<DailyTracker>(new Action<DailyTracker>(this.attach_DailyTrackers), new Action<DailyTracker>(this.detach_DailyTrackers));
 			this._HealthExaminationDetails = new EntitySet<HealthExaminationDetail>(new Action<HealthExaminationDetail>(this.attach_HealthExaminationDetails), new Action<HealthExaminationDetail>(this.detach_HealthExaminationDetails));
 			this._HealthProblems = new EntitySet<HealthProblem>(new Action<HealthProblem>(this.attach_HealthProblems), new Action<HealthProblem>(this.detach_HealthProblems));
@@ -15083,19 +15207,6 @@ namespace DataConnect
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Student_DailyTask", Storage="_DailyTasks", ThisKey="StudentID", OtherKey="StudentID")]
-		public EntitySet<DailyTask> DailyTasks
-		{
-			get
-			{
-				return this._DailyTasks;
-			}
-			set
-			{
-				this._DailyTasks.Assign(value);
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Student_DailyTracker", Storage="_DailyTrackers", ThisKey="StudentID", OtherKey="StudentID")]
 		public EntitySet<DailyTracker> DailyTrackers
 		{
@@ -15274,18 +15385,6 @@ namespace DataConnect
 		}
 		
 		private void detach_CourseTasks(CourseTask entity)
-		{
-			this.SendPropertyChanging();
-			entity.Student = null;
-		}
-		
-		private void attach_DailyTasks(DailyTask entity)
-		{
-			this.SendPropertyChanging();
-			entity.Student = this;
-		}
-		
-		private void detach_DailyTasks(DailyTask entity)
 		{
 			this.SendPropertyChanging();
 			entity.Student = null;
