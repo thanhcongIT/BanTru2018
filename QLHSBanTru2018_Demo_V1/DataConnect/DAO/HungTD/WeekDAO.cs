@@ -1,6 +1,8 @@
-﻿using System;
+﻿using DataConnect.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Data.Linq;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,12 +18,26 @@ namespace DataConnect.DAO.HungTD
             db = new QLHSSmartKidsDataContext();
             weeks = db.GetTable<Week>();
         }
-        public List<Week> ListAll(int courseID)
+        public List<WeekViewModel> ListAll(int courseID)
         {
             try
             {
-                var model = weeks.Where(x => x.CourseID.Equals(courseID));
-                return model.ToList();
+                var model = from w in weeks
+                            where w.CourseID.Equals(courseID)
+                            select new WeekViewModel
+                            {
+                                WeekID = w.WeekID,
+                                WeekIndex = w.WeekIndex,
+                                StartDate = w.StartDate,
+                                EndDate = w.EndDate,
+                                WeekFullName = ""
+                            };
+                List<WeekViewModel> model2 = model.ToList();
+                for(int i = 0;i<model2.Count();i++)
+                {
+                    model2[i].WeekFullName = "Tuần " + model2[i].WeekIndex + " (" + model2[i].StartDate.ToString("dd/MM/yy") + " đến " + model2[i].EndDate.ToString("dd/MM/yy") + ")";
+                }
+                return model2;
             }
             catch
             {
@@ -50,7 +66,7 @@ namespace DataConnect.DAO.HungTD
                 w.CourseID = course.CourseID;
                 w.WeekIndex = 1;
                 w.StartDate = course.StartDate;
-                for(DateTime d = course.StartDate; d<=d.AddDays(7);d = d.AddDays(1))
+                for (DateTime d = course.StartDate; d <= d.AddDays(7); d = d.AddDays(1))
                 {
                     if (d.DayOfWeek == DayOfWeek.Sunday)
                         w.EndDate = d;
