@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="CPITQLHSBanTru2018DataSet3" targetNamespace="http://tempuri.org/CPITQLHSBanTru2018DataSet3.xsd" xmlns:mstns="http://tempuri.org/CPITQLHSBanTru2018DataSet3.xsd" xmlns="http://tempuri.org/CPITQLHSBanTru2018DataSet3.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="CPITQLHSBanTru2018ConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="CPITQLHSBanTru2018ConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.QLHSBanTru2018_Demo_V1.Properties.Settings.GlobalReference.Default.CPITQLHSBanTru2018ConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DailyTaskTableAdapter" GeneratorDataComponentClassName="DailyTaskTableAdapter" Name="DailyTask" UserDataComponentName="DailyTaskTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="CPITQLHSBanTru2018ConnectionString (Settings)" DbObjectName="CPITQLHSBanTru2018.dbo.DailyTask" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT DateTask FROM dbo.DailyTask</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="DateTask" DataSetColumn="DateTask" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="CPITQLHSBanTru2018DataSet3" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="CPITQLHSBanTru2018DataSet3" msprop:Generator_UserDSName="CPITQLHSBanTru2018DataSet3">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DailyTask" msprop:Generator_TableClassName="DailyTaskDataTable" msprop:Generator_TableVarName="tableDailyTask" msprop:Generator_TablePropName="DailyTask" msprop:Generator_RowDeletingName="DailyTaskRowDeleting" msprop:Generator_RowChangingName="DailyTaskRowChanging" msprop:Generator_RowEvHandlerName="DailyTaskRowChangeEventHandler" msprop:Generator_RowDeletedName="DailyTaskRowDeleted" msprop:Generator_UserTableName="DailyTask" msprop:Generator_RowChangedName="DailyTaskRowChanged" msprop:Generator_RowEvArgName="DailyTaskRowChangeEvent" msprop:Generator_RowClassName="DailyTaskRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="DateTask" msprop:Generator_ColumnVarNameInTable="columnDateTask" msprop:Generator_ColumnPropNameInRow="DateTask" msprop:Generator_ColumnPropNameInTable="DateTaskColumn" msprop:Generator_UserColumnName="DateTask">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

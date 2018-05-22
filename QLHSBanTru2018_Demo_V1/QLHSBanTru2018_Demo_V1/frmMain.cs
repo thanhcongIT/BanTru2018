@@ -248,15 +248,32 @@ namespace QLHSBanTru2018_Demo_V1
         }
 
 
+<<<<<<< HEAD
+=======
 
 
 
 
+>>>>>>> 6f5772d93d4b1fb5e0aed374284f6d92044f8b78
         #endregion
 
         #region Vũ Đức Thiện
 
         #endregion
 
+<<<<<<< HEAD
+        private void btnDiemDanhHS_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            DucThien.DiemDanhHS a = new DucThien.DiemDanhHS();
+            a.ShowDialog();
+        }
+
+        private void btnTheoDoiDenMuon_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            DucThien.TheoDoiDenMuonHS a = new DucThien.TheoDoiDenMuonHS();
+            a.ShowDialog();
+        }
+=======
+>>>>>>> 6f5772d93d4b1fb5e0aed374284f6d92044f8b78
     }
 }
