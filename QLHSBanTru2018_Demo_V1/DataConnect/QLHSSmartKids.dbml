@@ -327,31 +327,6 @@
       <Association Name="HealthExamination_HealthExaminationDetail" Member="HealthExaminationDetails" ThisKey="HealthExaminationID" OtherKey="HealthExaminationID" Type="HealthExaminationDetail" />
     </Type>
   </Table>
-  <Table Name="dbo.HealthExaminationDetail" Member="HealthExaminationDetails">
-    <Type Name="HealthExaminationDetail">
-      <Column Name="HealthExaminationDetailID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="HealthExaminationID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="StudentID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="HealthInsurance" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="Height" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Weight" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Eyes" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
-      <Column Name="ENT" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
-      <Column Name="InternalMedicine" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
-      <Column Name="Oral" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
-      <Column Name="Surgery" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
-      <Column Name="Dermatology" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
-      <Column Name="BoneMuscle" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
-      <Column Name="Nerve" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
-      <Column Name="Endocrine" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
-      <Column Name="Other" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
-      <Column Name="Note" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
-      <Column Name="Rating" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
-      <Column Name="Status" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Association Name="HealthExamination_HealthExaminationDetail" Member="HealthExamination" ThisKey="HealthExaminationID" OtherKey="HealthExaminationID" Type="HealthExamination" IsForeignKey="true" />
-      <Association Name="Student_HealthExaminationDetail" Member="Student" ThisKey="StudentID" OtherKey="StudentID" Type="Student" IsForeignKey="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.HealthProblem" Member="HealthProblems">
     <Type Name="HealthProblem">
       <Column Name="HealthProblemID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -679,7 +654,6 @@
       <Column Name="Status" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
       <Association Name="Student_CourseTask" Member="CourseTasks" ThisKey="StudentID" OtherKey="StudentID" Type="CourseTask" />
       <Association Name="Student_DailyTracker" Member="DailyTrackers" ThisKey="StudentID" OtherKey="StudentID" Type="DailyTracker" />
-      <Association Name="Student_HealthExaminationDetail" Member="HealthExaminationDetails" ThisKey="StudentID" OtherKey="StudentID" Type="HealthExaminationDetail" />
       <Association Name="Student_HealthProblem" Member="HealthProblems" ThisKey="StudentID" OtherKey="StudentID" Type="HealthProblem" />
       <Association Name="Student_PhysicalAssessmentDetail" Member="PhysicalAssessmentDetails" ThisKey="StudentID" OtherKey="StudentID" Type="PhysicalAssessmentDetail" />
       <Association Name="Student_ReceivableDetail_Student" Member="ReceivableDetail_Students" ThisKey="StudentID" OtherKey="StudentID" Type="ReceivableDetail_Student" />
@@ -687,6 +661,7 @@
       <Association Name="Student_Student_Lesson" Member="Student_Lessons" ThisKey="StudentID" OtherKey="StudentID" Type="Student_Lesson" />
       <Association Name="Student_StudentParent" Member="StudentParents" ThisKey="StudentID" OtherKey="StudentID" Type="StudentParent" />
       <Association Name="Student_WeeklyTask" Member="WeeklyTasks" ThisKey="StudentID" OtherKey="StudentID" Type="WeeklyTask" />
+      <Association Name="Student_HealthExaminationDetail" Member="HealthExaminationDetails" ThisKey="StudentID" OtherKey="StudentID" Type="HealthExaminationDetail" />
       <Association Name="Preferred_Student" Member="Preferred" ThisKey="PreferredID" OtherKey="PreferredID" Type="Preferred" IsForeignKey="true" />
     </Type>
   </Table>
@@ -778,6 +753,31 @@
       <Column Name="Comment" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
       <Column Name="Pages" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
       <Association Name="Student_WeeklyTask" Member="Student" ThisKey="StudentID" OtherKey="StudentID" Type="Student" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HealthExaminationDetail" Member="HealthExaminationDetails">
+    <Type Name="HealthExaminationDetail">
+      <Column Name="HealthExaminationDetailID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="HealthExaminationID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="StudentID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="HealthInsurance" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Height" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="Weight" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="Eyes" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="ENT" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="InternalMedicine" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="Oral" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="Surgery" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="Dermatology" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="BoneMuscle" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="Nerve" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="Endocrine" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="Other" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Note" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Rating" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Status" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="HealthExamination_HealthExaminationDetail" Member="HealthExamination" ThisKey="HealthExaminationID" OtherKey="HealthExaminationID" Type="HealthExamination" IsForeignKey="true" />
+      <Association Name="Student_HealthExaminationDetail" Member="Student" ThisKey="StudentID" OtherKey="StudentID" Type="Student" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>
