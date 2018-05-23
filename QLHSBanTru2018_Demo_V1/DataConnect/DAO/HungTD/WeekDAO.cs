@@ -22,6 +22,10 @@ namespace DataConnect.DAO.HungTD
         {
             return weeks.FirstOrDefault(x => x.WeekID.Equals(weekID));
         }
+        public int GetWeekIndexByID(int weekID)
+        {
+            return weeks.FirstOrDefault(x => x.WeekID.Equals(weekID)).WeekIndex;
+        }
         public List<WeekViewModel> ListAll(int courseID)
         {
             try

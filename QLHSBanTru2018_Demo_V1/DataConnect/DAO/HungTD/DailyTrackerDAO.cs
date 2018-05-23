@@ -47,7 +47,6 @@ namespace DataConnect.DAO.HungTD
                         entity.Reason = "";
                         entity.TimeIn = null;
                         entity.TimeOut = null;
-                        entity.DrugTime = null;
                         entity.Eating = null;
                         entity.Sleep = null;
                         entity.Health = null;
@@ -76,17 +75,18 @@ namespace DataConnect.DAO.HungTD
                             where dt.Date.Equals(day) && dt.Student.Student_Classes.FirstOrDefault(x => x.Status.Equals(true)).ClassID.Equals(ClassID)
                             select new DailyTrackerFullViewModel
                             {
+                                DailyTrackerID = dt.DailyTrackerID,
                                 StudentID = dt.StudentID,
                                 StudentFirstName = dt.Student.FirstName,
                                 StudentLastName = dt.Student.LastName,
                                 StudentHomeName = dt.Student.HomeName,
+                                StudentFullName = dt.Student.FirstName + " " + dt.Student.LastName,
                                 Date = dt.Date,
                                 Present = dt.Present,
-                                PresentString = dt.Status == false ? "" : (dt.Present == 0 ? "Vắng" : (dt.Present == 1 ? "Có mặt" : "Muộn")),
+                                StringPresent = dt.Status == false ? "" : (dt.Present == 0 ? "Vắng" : (dt.Present == 1 ? "Có mặt" : "Muộn")),
                                 Reason = dt.Reason,
                                 TimeIn = dt.TimeIn,
                                 TimeOut = dt.TimeOut,
-                                DrugTime = dt.DrugTime,
                                 Eating = dt.Eating,
                                 Sleep = dt.Sleep,
                                 Health = dt.Health,
@@ -104,14 +104,89 @@ namespace DataConnect.DAO.HungTD
                 return null;
             }
         }
+        public bool HasDailyTrackerOfWeek()
+        {
+            try
+            {
+                WeekDAO weekDAO = new WeekDAO();
+                int weekID = weekDAO.GetWeekIDNow();
+                Week week = weekDAO.GetByID(weekID);
+                if (dailyTrackers.Where(x => x.WeekID.Equals(weekID)).Count() < 1)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public bool ChangePresent(int dailyTrackerID, int present)
+        {
+            try
+            {
+                DailyTracker dailyTracker = dailyTrackers.FirstOrDefault(x => x.DailyTrackerID.Equals(dailyTrackerID));
+                dailyTracker.Present = present;
+                dailyTracker.Status = true;
+                db.SubmitChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public bool ChangeTimeIn(int dailyTrackerID, TimeSpan? timeIn, int present)
+        {
+            try
+            {
+                DailyTracker dailyTracker = dailyTrackers.FirstOrDefault(x => x.DailyTrackerID.Equals(dailyTrackerID));
+                dailyTracker.Present = present;
+                dailyTracker.TimeIn = timeIn;
+                dailyTracker.Status = true;
+                db.SubmitChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public int ChangeTimeOut(int dailyTrackerID, TimeSpan? timeOut)
+        {
+            try
+            {
+                DailyTracker dailyTracker = dailyTrackers.FirstOrDefault(x => x.DailyTrackerID.Equals(dailyTrackerID));
+                if (dailyTracker.Status == false)
+                {
+                    return 2;
+                }
+                else
+                {
+                    dailyTracker.TimeOut = timeOut;
+                    db.SubmitChanges();
+                    return 1;
+                }
+            }
+            catch
+            {
+                return 0;
+            }
+        }
+
         public void InitDailyTrackerOfWeek(int classID)
         {
-            int weekID = new WeekDAO().GetWeekIDNow();
-            Week week = new WeekDAO().GetByID(weekID);
-            if (dailyTrackers.Where(x=>x.WeekID.Equals(weekID)).Count() < 1)
-            {
-                InsertAllDailyTrackerOfWeek(week, new StudentDailyTrackerDAO().ListAllByClassID(classID));
-            }
+            WeekDAO weekDAO = new WeekDAO();
+            int weekID = weekDAO.GetWeekIDNow();
+            Week week = weekDAO.GetByID(weekID);
+            InsertAllDailyTrackerOfWeek(week, new StudentDailyTrackerDAO().ListAllByClassID(classID));
         }
     }
 }
