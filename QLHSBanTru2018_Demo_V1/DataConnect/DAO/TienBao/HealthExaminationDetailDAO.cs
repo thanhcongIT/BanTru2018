@@ -45,7 +45,7 @@ namespace DataConnect.DAO.TienBao
                             FullName = s.FirstName + " " + s.LastName,
                             //HealthInsurance = hd.HealthInsurance,
                             Height = hd.Height,
-                            Weight = (int)hd.Weight,
+                            Weight = hd.Weight,
                             Eyes = hd.Eyes,
                             ENT = hd.ENT,
                             Oral = hd.Oral,

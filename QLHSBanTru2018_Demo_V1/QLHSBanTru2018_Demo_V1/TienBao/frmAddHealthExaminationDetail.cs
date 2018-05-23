@@ -46,8 +46,8 @@ namespace QLHSBanTru2018_Demo_V1.TienBao
                 entity.StudentID = int.Parse(Student.StudentID.ToString());                
                 entity.HealthExaminationID = int.Parse(healthExamination.HealthExaminationID.ToString());
                 entity.HealthInsurance = cmbHealthInsurance.Text;
-                entity.Height = int.Parse(txtHeight.Text);
-                entity.Weight = int.Parse(txtWeight.Text);
+                entity.Height = double.Parse(txtHeight.Text);
+                entity.Weight = double.Parse(txtWeight.Text);
                 entity.Eyes = cmbEyesRating.Text;
                 entity.ENT = cmbENTRating.Text;
                 entity.Oral = cmbOralRating.Text;
@@ -58,7 +58,7 @@ namespace QLHSBanTru2018_Demo_V1.TienBao
                 entity.Nerve = cmbNerveRating.Text;
                 entity.Endocrine = cmbEndocrineRating.Text;
                 entity.Other =txtOtherRating.Text;
-                entity.Rating = double.Parse(cmbRating.Text);
+                entity.Rating = cmbRating.Text;
                 entity.Note = txtNote.Text;
                 entity.Status = chbStatus.Checked ? true : false;
 

@@ -20,8 +20,8 @@ namespace DataConnect.ViewModel
         public int ClassID { get; set; }
         public string ClassName { get; set; }
         public string HealthInsurance { get; set; }
-        public int Height { get; set; }
-        public int Weight { get; set; }
+        public double Height { get; set; }
+        public double Weight { get; set; }
         public string Eyes { get; set; }
         public string ENT { get; set; }
         public string Oral { get; set; }
@@ -33,7 +33,7 @@ namespace DataConnect.ViewModel
         public string Endocrine { get; set; }
         public string Other { get; set; }
         public string Note { get; set; }
-        public double Rating { get; set; }
+        public string Rating { get; set; }
         public bool Status { get; set; }
 
     }
