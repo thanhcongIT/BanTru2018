@@ -55,6 +55,8 @@ namespace QLHSBanTru2018_Demo_V1.QLThuChi.ChiTieu
                 SpendSpeciesDAO.spend.CreatedDate = (DateTime)gridView1.GetRowCellValue(e.FocusedRowHandle, "CreatedDate");
                 SpendSpeciesDAO.spend.Note = gridView1.GetRowCellValue(e.FocusedRowHandle, "Note").ToString();
                 SpendSpeciesDAO.spend.Status = (bool)gridView1.GetRowCellValue(e.FocusedRowHandle, "Status");
+                txtGhiChu.Text = gridView1.GetRowCellValue(e.FocusedRowHandle, "Note").ToString();
+                groupControl1.Text="Ghi chú"+" "+ gridView1.GetRowCellValue(e.FocusedRowHandle, "Name").ToString();
             }
             catch 
             {
@@ -84,6 +86,25 @@ namespace QLHSBanTru2018_Demo_V1.QLThuChi.ChiTieu
                     MessageBox.Show("Không thể xóa ");
                 }
             }
+        }
+
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void gridView1_CustomUnboundColumnData(object sender, DevExpress.XtraGrid.Views.Base.CustomColumnDataEventArgs e)
+        {
+            if (e.Column.FieldName != "TinhTrang") return;
+            if ((bool)gridView1.GetRowCellValue(e.ListSourceRowIndex, "Status")==true)
+            {
+                e.Value = "Kích hoạt";
+            }
+            else
+            {
+                e.Value = "Khóa";
+            }
+           
         }
     }
 }

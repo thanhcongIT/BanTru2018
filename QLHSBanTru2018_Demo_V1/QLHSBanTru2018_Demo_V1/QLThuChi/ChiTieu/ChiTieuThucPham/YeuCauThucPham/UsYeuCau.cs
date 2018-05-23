@@ -203,7 +203,7 @@ namespace QLHSBanTru2018_Demo_V1.QLThuChi.ChiTieu.ChiTieuThucPham
         {
             EmployeeDAO dt = new EmployeeDAO();
             Employee a = dt.GetByID((int)gridView1.GetRowCellValue(e.ListSourceRowIndex, "CreatedBy"));
-            if (e.Column.FieldName != "TenNhanVien") return;
+            if (e.Column.FieldName != "NvYeuCau") return;
             e.Value = a.FirstName+" "+a.LastName;
         }
 
