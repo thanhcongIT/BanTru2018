@@ -54,6 +54,8 @@
             this.btnSetTimeOut = new System.Windows.Forms.ToolStripMenuItem();
             this.btnSetTimeOutNow = new System.Windows.Forms.ToolStripMenuItem();
             this.btnSetTimeOutCustom = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.btnDrugTime = new System.Windows.Forms.ToolStripMenuItem();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colFirstName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colLastName = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -97,8 +99,8 @@
             this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem12 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem14 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.btnDrugTime = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnDrugTimeList = new DevExpress.XtraEditors.SimpleButton();
+            this.layoutControlItem16 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
@@ -134,6 +136,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem14)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem16)).BeginInit();
             this.SuspendLayout();
             // 
             // splashScreenManager1
@@ -157,6 +160,7 @@
             this.layoutControl1.Controls.Add(this.textEdit6);
             this.layoutControl1.Controls.Add(this.btnInit);
             this.layoutControl1.Controls.Add(this.textEdit7);
+            this.layoutControl1.Controls.Add(this.btnDrugTimeList);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl1.Location = new System.Drawing.Point(0, 0);
             this.layoutControl1.Name = "layoutControl1";
@@ -264,18 +268,18 @@
             this.toolStripSeparator2,
             this.btnDrugTime});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 148);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(167, 126);
             // 
             // btnDetailTracker
             // 
             this.btnDetailTracker.Name = "btnDetailTracker";
-            this.btnDetailTracker.Size = new System.Drawing.Size(180, 22);
+            this.btnDetailTracker.Size = new System.Drawing.Size(166, 22);
             this.btnDetailTracker.Text = "Đánh Giá Chi Tiết";
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(163, 6);
             // 
             // btnPresent
             // 
@@ -284,7 +288,7 @@
             this.btnPresent0,
             this.btnPresent2});
             this.btnPresent.Name = "btnPresent";
-            this.btnPresent.Size = new System.Drawing.Size(180, 22);
+            this.btnPresent.Size = new System.Drawing.Size(166, 22);
             this.btnPresent.Text = "Điểm Danh";
             // 
             // btnPresent1
@@ -314,7 +318,7 @@
             this.btnSetTimeInNow,
             this.btnSetTimeInCustom});
             this.btnSetTimeIn.Name = "btnSetTimeIn";
-            this.btnSetTimeIn.Size = new System.Drawing.Size(180, 22);
+            this.btnSetTimeIn.Size = new System.Drawing.Size(166, 22);
             this.btnSetTimeIn.Text = "Giờ Vào Lớp";
             // 
             // btnSetTimeInNow
@@ -337,7 +341,7 @@
             this.btnSetTimeOutNow,
             this.btnSetTimeOutCustom});
             this.btnSetTimeOut.Name = "btnSetTimeOut";
-            this.btnSetTimeOut.Size = new System.Drawing.Size(180, 22);
+            this.btnSetTimeOut.Size = new System.Drawing.Size(166, 22);
             this.btnSetTimeOut.Text = "Giờ Đón";
             // 
             // btnSetTimeOutNow
@@ -353,6 +357,18 @@
             this.btnSetTimeOutCustom.Size = new System.Drawing.Size(139, 22);
             this.btnSetTimeOutCustom.Text = "Chọn Giờ";
             this.btnSetTimeOutCustom.Click += new System.EventHandler(this.btnSetTimeOutCustom_Click);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(163, 6);
+            // 
+            // btnDrugTime
+            // 
+            this.btnDrugTime.Name = "btnDrugTime";
+            this.btnDrugTime.Size = new System.Drawing.Size(166, 22);
+            this.btnDrugTime.Text = "Nhắc Thuốc";
+            this.btnDrugTime.Click += new System.EventHandler(this.btnDrugTime_Click);
             // 
             // gridView1
             // 
@@ -697,7 +713,8 @@
             this.layoutControlGroup4,
             this.layoutControlItem8,
             this.layoutControlGroup2,
-            this.layoutControlItem14});
+            this.layoutControlItem14,
+            this.layoutControlItem16});
             this.Root2.Location = new System.Drawing.Point(0, 0);
             this.Root2.Name = "Root2";
             this.Root2.Padding = new DevExpress.XtraLayout.Utils.Padding(3, 3, 3, 3);
@@ -762,9 +779,9 @@
             // 
             this.emptySpaceItem5.AllowHotTrack = false;
             this.emptySpaceItem5.CustomizationFormText = "emptySpaceItem5";
-            this.emptySpaceItem5.Location = new System.Drawing.Point(460, 0);
+            this.emptySpaceItem5.Location = new System.Drawing.Point(556, 0);
             this.emptySpaceItem5.Name = "emptySpaceItem5";
-            this.emptySpaceItem5.Size = new System.Drawing.Size(194, 26);
+            this.emptySpaceItem5.Size = new System.Drawing.Size(98, 26);
             this.emptySpaceItem5.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlGroup3
@@ -921,17 +938,29 @@
             this.layoutControlItem14.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem14.TextVisible = false;
             // 
-            // toolStripSeparator2
+            // btnDrugTimeList
             // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(177, 6);
+            this.btnDrugTimeList.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.btnDrugTimeList.Location = new System.Drawing.Point(475, 15);
+            this.btnDrugTimeList.Name = "btnDrugTimeList";
+            this.btnDrugTimeList.Size = new System.Drawing.Size(92, 22);
+            this.btnDrugTimeList.StyleController = this.layoutControl1;
+            this.btnDrugTimeList.TabIndex = 20;
+            this.btnDrugTimeList.Text = "Nhắc Thuốc";
+            this.btnDrugTimeList.Click += new System.EventHandler(this.btnDrugTimeList_Click);
             // 
-            // btnDrugTime
+            // layoutControlItem16
             // 
-            this.btnDrugTime.Name = "btnDrugTime";
-            this.btnDrugTime.Size = new System.Drawing.Size(180, 22);
-            this.btnDrugTime.Text = "Nhắc Thuốc";
-            this.btnDrugTime.Click += new System.EventHandler(this.btnDrugTime_Click);
+            this.layoutControlItem16.Control = this.btnDrugTimeList;
+            this.layoutControlItem16.Location = new System.Drawing.Point(460, 0);
+            this.layoutControlItem16.MaxSize = new System.Drawing.Size(96, 26);
+            this.layoutControlItem16.MinSize = new System.Drawing.Size(96, 26);
+            this.layoutControlItem16.Name = "layoutControlItem16";
+            this.layoutControlItem16.Size = new System.Drawing.Size(96, 26);
+            this.layoutControlItem16.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            this.layoutControlItem16.Text = "DS Nhắc Thuốc";
+            this.layoutControlItem16.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem16.TextVisible = false;
             // 
             // frmDailyTracker
             // 
@@ -976,6 +1005,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem14)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem16)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1050,5 +1080,7 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem15;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripMenuItem btnDrugTime;
+        private DevExpress.XtraEditors.SimpleButton btnDrugTimeList;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem16;
     }
 }

@@ -23,7 +23,6 @@ namespace QLHSBanTru2018_Demo_V1.HungTD.Form.DailyTracker
         public frmDailyTracker()
         {
             InitializeComponent();
-            this.Dock = DockStyle.Fill;
         }
 
         private void frmDailyTracker_Load(object sender, EventArgs e)
@@ -125,94 +124,166 @@ namespace QLHSBanTru2018_Demo_V1.HungTD.Form.DailyTracker
         {
             InitDailyTracker();
         }
+        private bool CheckNow()
+        {
+            if (DateTime.Compare(DateTime.Now.Date, DateTime.Parse(cbbDayOfWeek.SelectedValue.ToString())) == 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
 
         private void btnPresent1_Click(object sender, EventArgs e)
         {
-            var rowHandle = gridView1.FocusedRowHandle;
-            new DailyTrackerDAO().ChangePresent(Convert.ToInt32(gridView1.GetRowCellValue(rowHandle, "DailyTrackerID").ToString()),1);
-            FillGridControl();
+            if (CheckNow())
+            {
+                var rowHandle = gridView1.FocusedRowHandle;
+                new DailyTrackerDAO().ChangePresent(Convert.ToInt32(gridView1.GetRowCellValue(rowHandle, "DailyTrackerID").ToString()), 1);
+                FillGridControl();
+            }
+            else
+            {
+                MessageBox.Show("Bạn chỉ có thể chỉnh sửa thông tin của ngày hiện tại!", "Xin lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+            }
         }
 
         private void btnPresent0_Click(object sender, EventArgs e)
         {
-            var rowHandle = gridView1.FocusedRowHandle;
-            new DailyTrackerDAO().ChangePresent(Convert.ToInt32(gridView1.GetRowCellValue(rowHandle, "DailyTrackerID").ToString()), 0);
-            FillGridControl();
+            if (CheckNow())
+            {
+                var rowHandle = gridView1.FocusedRowHandle;
+                new DailyTrackerDAO().ChangePresent(Convert.ToInt32(gridView1.GetRowCellValue(rowHandle, "DailyTrackerID").ToString()), 0);
+                FillGridControl();
+            }
+            else
+            {
+                MessageBox.Show("Bạn chỉ có thể chỉnh sửa thông tin của ngày hiện tại!", "Xin lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+            }
         }
 
         private void btnPresent2_Click(object sender, EventArgs e)
         {
-            var rowHandle = gridView1.FocusedRowHandle;
-            new DailyTrackerDAO().ChangePresent(Convert.ToInt32(gridView1.GetRowCellValue(rowHandle, "DailyTrackerID").ToString()), 2);
-            FillGridControl();
+            if (CheckNow())
+            {
+                var rowHandle = gridView1.FocusedRowHandle;
+                new DailyTrackerDAO().ChangePresent(Convert.ToInt32(gridView1.GetRowCellValue(rowHandle, "DailyTrackerID").ToString()), 2);
+                FillGridControl();
+            }
+            else
+            {
+                MessageBox.Show("Bạn chỉ có thể chỉnh sửa thông tin của ngày hiện tại!", "Xin lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+            }
         }
 
         private void btnSetTimeInNow_Click(object sender, EventArgs e)
         {
-            var rowHandle = gridView1.FocusedRowHandle;
-            if (DateTime.Now.TimeOfDay<new TimeSpan(8,00,00))
+            if (CheckNow())
             {
-                new DailyTrackerDAO().ChangeTimeIn(Convert.ToInt32(gridView1.GetRowCellValue(rowHandle, "DailyTrackerID").ToString()), DateTime.Now.TimeOfDay, 1);
+                var rowHandle = gridView1.FocusedRowHandle;
+                if (DateTime.Now.TimeOfDay < new TimeSpan(8, 00, 00))
+                {
+                    new DailyTrackerDAO().ChangeTimeIn(Convert.ToInt32(gridView1.GetRowCellValue(rowHandle, "DailyTrackerID").ToString()), DateTime.Now.TimeOfDay, 1);
+                }
+                else
+                {
+                    new DailyTrackerDAO().ChangeTimeIn(Convert.ToInt32(gridView1.GetRowCellValue(rowHandle, "DailyTrackerID").ToString()), DateTime.Now.TimeOfDay, 2);
+                }
+                FillGridControl();
             }
             else
             {
-                new DailyTrackerDAO().ChangeTimeIn(Convert.ToInt32(gridView1.GetRowCellValue(rowHandle, "DailyTrackerID").ToString()), DateTime.Now.TimeOfDay, 2);
+                MessageBox.Show("Bạn chỉ có thể chỉnh sửa thông tin của ngày hiện tại!", "Xin lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
             }
-            FillGridControl();
         }
 
         private void btnSetTimeInCustom_Click(object sender, EventArgs e)
         {
-            frmCustomTime frmCT = new frmCustomTime();
-            frmCT.ShowDialog();
-            if (frmCT.DialogResult == DialogResult.OK)
+            if (CheckNow())
             {
-                TimeSpan timeSpan = frmCT.GetTimeSpan();
-                var rowHandle = gridView1.FocusedRowHandle;
-                if(timeSpan<new TimeSpan(8, 00, 00))
+                frmCustomTime frmCT = new frmCustomTime();
+                frmCT.ShowDialog();
+                if (frmCT.DialogResult == DialogResult.OK)
                 {
-                    new DailyTrackerDAO().ChangeTimeIn(Convert.ToInt32(gridView1.GetRowCellValue(rowHandle, "DailyTrackerID").ToString()), timeSpan, 1);
+                    TimeSpan timeSpan = frmCT.GetTimeSpan();
+                    var rowHandle = gridView1.FocusedRowHandle;
+                    if (timeSpan < new TimeSpan(8, 00, 00))
+                    {
+                        new DailyTrackerDAO().ChangeTimeIn(Convert.ToInt32(gridView1.GetRowCellValue(rowHandle, "DailyTrackerID").ToString()), timeSpan, 1);
+                    }
+                    else
+                    {
+                        new DailyTrackerDAO().ChangeTimeIn(Convert.ToInt32(gridView1.GetRowCellValue(rowHandle, "DailyTrackerID").ToString()), timeSpan, 2);
+                    }
+                    FillGridControl();
                 }
-                else
-                {
-                    new DailyTrackerDAO().ChangeTimeIn(Convert.ToInt32(gridView1.GetRowCellValue(rowHandle, "DailyTrackerID").ToString()), timeSpan, 2);
-                }
-                FillGridControl();
             }
-
-
+            else
+            {
+                MessageBox.Show("Bạn chỉ có thể chỉnh sửa thông tin của ngày hiện tại!", "Xin lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+            }
         }
 
         private void btnSetTimeOutNow_Click(object sender, EventArgs e)
         {
-            var rowHandle = gridView1.FocusedRowHandle;
+            if (CheckNow())
+            {
+                var rowHandle = gridView1.FocusedRowHandle;
 
-            new DailyTrackerDAO().ChangeTimeOut(Convert.ToInt32(gridView1.GetRowCellValue(rowHandle, "DailyTrackerID").ToString()), DateTime.Now.TimeOfDay);
-            FillGridControl();
+                new DailyTrackerDAO().ChangeTimeOut(Convert.ToInt32(gridView1.GetRowCellValue(rowHandle, "DailyTrackerID").ToString()), DateTime.Now.TimeOfDay);
+                FillGridControl();
+            }
+            else
+            {
+                MessageBox.Show("Bạn chỉ có thể chỉnh sửa thông tin của ngày hiện tại!", "Xin lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+            }
         }
 
         private void btnSetTimeOutCustom_Click(object sender, EventArgs e)
         {
-            frmCustomTime frmCT = new frmCustomTime();
-            frmCT.ShowDialog();
-            if (frmCT.DialogResult == DialogResult.OK)
+            if (CheckNow())
             {
-                TimeSpan timeSpan = frmCT.GetTimeSpan();
-                var rowHandle = gridView1.FocusedRowHandle;
-                new DailyTrackerDAO().ChangeTimeOut(Convert.ToInt32(gridView1.GetRowCellValue(rowHandle, "DailyTrackerID").ToString()), timeSpan);
-                FillGridControl();
+                frmCustomTime frmCT = new frmCustomTime();
+                frmCT.ShowDialog();
+                if (frmCT.DialogResult == DialogResult.OK)
+                {
+                    TimeSpan timeSpan = frmCT.GetTimeSpan();
+                    var rowHandle = gridView1.FocusedRowHandle;
+                    new DailyTrackerDAO().ChangeTimeOut(Convert.ToInt32(gridView1.GetRowCellValue(rowHandle, "DailyTrackerID").ToString()), timeSpan);
+                    FillGridControl();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Bạn chỉ có thể chỉnh sửa thông tin của ngày hiện tại!", "Xin lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
             }
         }
 
         private void btnDrugTime_Click(object sender, EventArgs e)
-        {
-            var rowHandle = gridView1.FocusedRowHandle;
+        {if (CheckNow())
+            {
+                var rowHandle = gridView1.FocusedRowHandle;
 
-            frmDrugTime frmDT = new frmDrugTime();
-            frmDT.setDailyTrackerID(Convert.ToInt32(gridView1.GetRowCellValue(rowHandle, "DailyTrackerID").ToString()));
-            frmDT.setStudentFullName(gridView1.GetRowCellValue(rowHandle, "StudentFullName").ToString());
-            frmDT.setGender(gridView1.GetRowCellValue(rowHandle, "StringGender").ToString());
-            frmDT.ShowDialog();
+                frmDrugTime frmDT = new frmDrugTime();
+                frmDT.setDailyTrackerID(Convert.ToInt32(gridView1.GetRowCellValue(rowHandle, "DailyTrackerID").ToString()));
+                frmDT.setStudentFullName(gridView1.GetRowCellValue(rowHandle, "StudentFullName").ToString());
+                frmDT.setGender(gridView1.GetRowCellValue(rowHandle, "StringGender").ToString());
+                frmDT.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Bạn chỉ có thể chỉnh sửa thông tin của ngày hiện tại!", "Xin lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+            }
+        }
+
+        private void btnDrugTimeList_Click(object sender, EventArgs e)
+        {
+            frmListDrugTime frmLDT = new frmListDrugTime();
+            frmLDT.setDay(DateTime.Parse(cbbDayOfWeek.SelectedValue.ToString()));
+            frmLDT.setClassID(ClassID);
+            frmLDT.ShowDialog();
         }
     }
 }

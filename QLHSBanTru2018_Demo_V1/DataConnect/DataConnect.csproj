@@ -65,6 +65,7 @@
     <Compile Include="DAO\HungTD\CourseDAO.cs" />
     <Compile Include="DAO\HungTD\DailyMenuDAO.cs" />
     <Compile Include="DAO\HungTD\DailyTrackerDAO.cs" />
+    <Compile Include="DAO\HungTD\DailyTrackerDrugTimeDAO.cs" />
     <Compile Include="DAO\HungTD\DegreeDAO.cs" />
     <Compile Include="DAO\HungTD\DepartmentDAO.cs" />
     <Compile Include="DAO\HungTD\DishDAO.cs" />
@@ -156,6 +157,7 @@
     </Compile>
     <Compile Include="ViewModel\ContractReportViewModel.cs" />
     <Compile Include="ViewModel\ContractViewModel.cs" />
+    <Compile Include="ViewModel\DailyTrackerDrugTimeViewModel.cs" />
     <Compile Include="ViewModel\DailyTrackerFullViewModel.cs" />
     <Compile Include="ViewModel\DayOfWeekViewModel.cs" />
     <Compile Include="ViewModel\Department_EmployeeViewModel.cs" />

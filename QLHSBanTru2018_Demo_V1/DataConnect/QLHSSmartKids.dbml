@@ -761,11 +761,12 @@
   </Table>
   <Table Name="dbo.DailyTrackerDrugTime" Member="DailyTrackerDrugTimes">
     <Type Name="DailyTrackerDrugTime">
-      <Column Name="DailyTrackerDrugTime" Member="DailyTrackerDrugTime1" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DailyTrackerDrugTimeID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="DailyTrackerID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="DrugTime" Type="System.TimeSpan" DbType="Time NOT NULL" CanBeNull="false" />
       <Column Name="DrugName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="DrugQuantity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Note" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
       <Column Name="Status" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
       <Association Name="DailyTracker_DailyTrackerDrugTime" Member="DailyTracker" ThisKey="DailyTrackerID" OtherKey="DailyTrackerID" Type="DailyTracker" IsForeignKey="true" />
     </Type>
