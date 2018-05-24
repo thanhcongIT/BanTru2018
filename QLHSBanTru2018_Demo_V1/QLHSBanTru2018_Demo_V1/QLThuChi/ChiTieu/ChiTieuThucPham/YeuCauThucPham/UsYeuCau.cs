@@ -38,12 +38,15 @@ namespace QLHSBanTru2018_Demo_V1.QLThuChi.ChiTieu.ChiTieuThucPham
         public void LoadIngredienRequestDetail(int InredientRequestID)
         {
             TCIngredientRequestDetailDAO dt = new TCIngredientRequestDetailDAO();
-            grChiTietYeuCau.DataSource = dt.listInredientRequestDetail1(InredientRequestID);
+            
+            dt.listInredientRequestDetail1(InredientRequestID);
+            grChiTietYeuCau.DataSource = TCIngredientRequestDetailDAO.ListInredientReques;
         }
         public void LoadIngredienRequesDetailBought(int InredientRequestID)
         {
             TCIngredientRequestDetailDAO dt = new TCIngredientRequestDetailDAO();
-            grDamua.DataSource = dt.listInredientRequestDetail2(InredientRequestID);
+            dt.listInredientRequestDetail2(InredientRequestID);
+            grDamua.DataSource = TCIngredientRequestDetailDAO.ListInredientReques2;
         }
         private void UsYeuCau_Load(object sender, EventArgs e)
         {
@@ -91,104 +94,121 @@ namespace QLHSBanTru2018_Demo_V1.QLThuChi.ChiTieu.ChiTieuThucPham
             TcFrNhanVien a = new TcFrNhanVien();
             a.ShowDialog();
         }
-
-        private void gridView2_CustomUnboundColumnData(object sender, DevExpress.XtraGrid.Views.Base.CustomColumnDataEventArgs e)
-        {
-           
-        }
-        private void gridView2_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
-        {
-            IngredientDAO dt = new IngredientDAO();
-            TCIngredientRequestDAO.Ingredient = dt.GetByID((int)gridView2.GetRowCellValue(e.FocusedRowHandle, "IngredientID"));
-        }
-
         private void btnMua_Click(object sender, EventArgs e)
         {
-            try
-            {
-                TCIngredientRequestDetailDAO dt = new TCIngredientRequestDetailDAO();
-                for (int i = 0; i < gridView2.RowCount; i++)
+                int a1 = gridView2.SelectedRowsCount;
+                int[] a = gridView2.GetSelectedRows();
+                for (int i = 0; i < a1; i++)
                 {
-                    if ((bool)gridView2.GetRowCellValue(i,gridView2.Columns["Status"])==true)
+                    TCIngredientRequestDetaiViewModle b = new TCIngredientRequestDetaiViewModle();
+                    //IngredientRequestDetail b = new IngredientRequestDetail();
+                    b.IngredientRequestID = IngredienRequesID;
+                    b.IngredientID = (int)gridView2.GetRowCellValue(a[i], gridView2.Columns["IngredientID"]);
+                    b.Quantity = (double)gridView2.GetRowCellValue(a[i], gridView2.Columns["Quantity"]);
+                    b.Name = gridView2.GetRowCellValue(a[i], gridView2.Columns["Name"]).ToString();
+                    b.Status = (bool)gridView2.GetRowCellValue(a[i], gridView2.Columns["Status"]);
+                    b.Unit = gridView2.GetRowCellValue(a[i], gridView2.Columns["Unit"]).ToString();
+                    TCIngredientRequestDetailDAO.ListInredientReques2.Add(b);
+                    TCIngredientRequestDetailDAO.ListInredientReques.RemoveAt(a[i]);
+                    for (int j = i + 1; j <= a1 - 1; j++)
                     {
-                        IngredientRequestDetail a = new IngredientRequestDetail();
-                        a.IngredientRequestID= IngredienRequesID;
-                        a.IngredientID = (int)gridView2.GetRowCellValue(i, gridView2.Columns["IngredientID"]);
-                        a.Status = true;
-                        if (dt.Edit(a)==true)
-                        {
-
-                        }
-                        else
-                        {
-                            MessageBox.Show("Lỗi bản ghi thữ " + i + "");
-                            break;
-                        }
+                        a[j] += -1;
                     }
-                }
-                LoadIngredienRequesDetailBought(IngredienRequesID);
-                LoadIngredienRequestDetail(IngredienRequesID);
-            }
-            catch 
-            {
-
-                
-            }
+                }   
+                grDamua.DataSource = TCIngredientRequestDetailDAO.ListInredientReques2;
+                gridView3.RefreshData();
+                gridView2.RefreshData();
         }
 
         private void btnHuyMua_Click(object sender, EventArgs e)
         {
-            try
+            int a1 = gridView3.SelectedRowsCount;
+            int[] a = gridView3.GetSelectedRows();
+            for (int i = 0; i < a1; i++)
             {
-                TCIngredientRequestDetailDAO dt = new TCIngredientRequestDetailDAO();
-                for (int i = 0; i < gridView3.RowCount; i++)
+                if ((bool)gridView3.GetRowCellValue(a[i], gridView3.Columns["Status"])==false)
                 {
-                    if ((bool)gridView3.GetRowCellValue(i, gridView3.Columns["Status"]) == false)
+                    TCIngredientRequestDetaiViewModle b = new TCIngredientRequestDetaiViewModle();
+                    b.IngredientRequestID = IngredienRequesID;
+                    b.IngredientID = (int)gridView3.GetRowCellValue(a[i], gridView3.Columns["IngredientID"]);
+                    b.Quantity = (double)gridView3.GetRowCellValue(a[i], gridView3.Columns["Quantity"]);
+                    b.Name = gridView3.GetRowCellValue(a[i], gridView3.Columns["Name"]).ToString();
+                    b.Status = (bool)gridView3.GetRowCellValue(a[i], gridView3.Columns["Status"]);
+                    b.Unit = gridView3.GetRowCellValue(a[i], gridView3.Columns["Unit"]).ToString();
+                    TCIngredientRequestDetailDAO.ListInredientReques.Add(b);
+                    TCIngredientRequestDetailDAO.ListInredientReques2.RemoveAt(a[i]);
+                    for (int j = i + 1; j <= a1 - 1; j++)
                     {
-                        IngredientRequestDetail a = new IngredientRequestDetail();
-                        a.IngredientRequestID = IngredienRequesID;
-                        a.IngredientID = (int)gridView3.GetRowCellValue(i, gridView3.Columns["IngredientID"]);
-                        a.Status = false;
-                        if (dt.Edit(a) == true)
-                        {
-
-                        }
-                        else
-                        {
-                            MessageBox.Show("Lỗi bản ghi thữ " + i + "");
-                            break;
-                        }
+                        a[j] += -1;
                     }
-                }
-                LoadIngredienRequestDetail(IngredienRequesID);
-                LoadIngredienRequesDetailBought(IngredienRequesID);
+                }              
             }
-            catch
-            {
-
-
-            }
+            grChiTietYeuCau.DataSource = TCIngredientRequestDetailDAO.ListInredientReques;
+            gridView3.RefreshData();
+            gridView2.RefreshData();
         }
 
         private void btnHoaDon_Click(object sender, EventArgs e)
         {
+
             if (gridView3.RowCount!=0)
             {
                 try
                 {
                     OrderDetailDAO dt = new OrderDetailDAO();
+                    TCIngredientRequestDetailDAO dc = new TCIngredientRequestDetailDAO();
                     OrderDetailDAO.ListTCOrderDetailViewModle.Clear();
                     for (int i = 0; i < gridView3.RowCount; i++)
                     {
-                        OrderDetail a = new OrderDetail();
-                        TCOrderDetailViewModle b = new TCOrderDetailViewModle();
-                        a.IngredientID = (int)gridView3.GetRowCellValue(i, gridView3.Columns["IngredientID"]);
-                        a.QuantityOfUnit = (double)gridView3.GetRowCellValue(i, gridView3.Columns["Quantity"]);
-                        b = dt.OrderDetailViewModle(a);
-                        OrderDetailDAO.ListTCOrderDetailViewModle.Add(b);
+                        if ((bool)gridView3.GetRowCellValue(i,gridView3.Columns["Status"])==false)
+                        {
+                            OrderDetail a = new OrderDetail();
+                            TCOrderDetailViewModle b = new TCOrderDetailViewModle();
+                            a.IngredientID = (int)gridView3.GetRowCellValue(i, gridView3.Columns["IngredientID"]);
+                            a.QuantityOfUnit = (double)gridView3.GetRowCellValue(i, gridView3.Columns["Quantity"]);
+                            b = dt.OrderDetailViewModle(a);
+                            OrderDetailDAO.ListTCOrderDetailViewModle.Add(b);
+                        }
+                        
                     }
                     FrThanhToanThucPham c = new FrThanhToanThucPham();
                     c.ShowDialog();
+                    if (OrderDetailDAO.ThanhToan== true)
+                    {
+                        for (int i = 0; i < gridView3.RowCount; i++)
+                        {
+                            if ((bool)gridView3.GetRowCellValue(i, gridView3.Columns["Status"]) == false)
+                            {
+                                //loại bỏ yêu cầu khi đã thực hiện
+                                IngredientRequestDetail a1 = new IngredientRequestDetail();
+                                a1.IngredientID = (int)gridView3.GetRowCellValue(i, gridView3.Columns["IngredientID"]);
+                                a1.IngredientRequestID = IngredienRequesID;
+                                a1.Status = true;
+                                dc.Edit(a1);
+                            }
+
+                        }
+                        LoadIngredienRequesDetailBought(IngredienRequesID);
+                    }
+                    
+                    
+                    //nếu hoàn thành yêu cầu
+                    if ((bool)gridView3.GetRowCellValue((gridView3.RowCount - 1), gridView3.Columns["Status"]) == true&&gridView2.RowCount==0)
+                    {
+                        IngredientRequest a2 = new IngredientRequest();
+                        a2.IngredientRequestID = IngredienRequesID;
+                        a2.Status = true;
+                        if (new TCIngredientRequestDAO().Edit(a2)==true)
+                        {
+                            MessageBox.Show("Đã hoàn thành yêu cầu");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Chưa hoàn thành yêu cầu");
+                        }
+                    }
+
+
                 }
                 catch
                 {
@@ -205,6 +225,7 @@ namespace QLHSBanTru2018_Demo_V1.QLThuChi.ChiTieu.ChiTieuThucPham
             Employee a = dt.GetByID((int)gridView1.GetRowCellValue(e.ListSourceRowIndex, "CreatedBy"));
             if (e.Column.FieldName != "NvYeuCau") return;
             e.Value = a.FirstName+" "+a.LastName;
+                      
         }
 
         private void cbNgayMua_CheckedChanged_1(object sender, EventArgs e)

@@ -47,6 +47,10 @@
             this.txtOtherRating = new DevExpress.XtraEditors.MemoEdit();
             this.cmbHealthInsurance = new DevExpress.XtraEditors.ComboBoxEdit();
             this.btnHelp1 = new DevExpress.XtraEditors.SimpleButton();
+            this.txtStudentCode = new DevExpress.XtraEditors.TextEdit();
+            this.txtFullName = new DevExpress.XtraEditors.TextEdit();
+            this.txtHeight = new DevExpress.XtraEditors.TextEdit();
+            this.txtWeight = new DevExpress.XtraEditors.TextEdit();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -72,13 +76,9 @@
             this.emptySpaceItem5 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.txtStudentCode = new DevExpress.XtraEditors.TextEdit();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.txtFullName = new DevExpress.XtraEditors.TextEdit();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.txtHeight = new DevExpress.XtraEditors.TextEdit();
-            this.txtWeight = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chbStatus.Properties)).BeginInit();
@@ -95,6 +95,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtNote.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtOtherRating.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbHealthInsurance.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtStudentCode.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtFullName.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtHeight.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtWeight.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
@@ -120,13 +124,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtStudentCode.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtFullName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtHeight.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtWeight.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -295,16 +295,16 @@
             // 
             this.txtNote.Location = new System.Drawing.Point(104, 450);
             this.txtNote.Name = "txtNote";
-            this.txtNote.Size = new System.Drawing.Size(476, 68);
+            this.txtNote.Size = new System.Drawing.Size(476, 70);
             this.txtNote.StyleController = this.layoutControl1;
             this.txtNote.TabIndex = 28;
             // 
             // btnLuu
             // 
             this.btnLuu.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnLuu.ImageOptions.Image")));
-            this.btnLuu.Location = new System.Drawing.Point(365, 522);
+            this.btnLuu.Location = new System.Drawing.Point(365, 524);
             this.btnLuu.Name = "btnLuu";
-            this.btnLuu.Size = new System.Drawing.Size(103, 38);
+            this.btnLuu.Size = new System.Drawing.Size(103, 36);
             this.btnLuu.StyleController = this.layoutControl1;
             this.btnLuu.TabIndex = 29;
             this.btnLuu.Text = "Lưu";
@@ -313,9 +313,9 @@
             // btnDong
             // 
             this.btnDong.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDong.ImageOptions.Image")));
-            this.btnDong.Location = new System.Drawing.Point(472, 522);
+            this.btnDong.Location = new System.Drawing.Point(472, 524);
             this.btnDong.Name = "btnDong";
-            this.btnDong.Size = new System.Drawing.Size(108, 38);
+            this.btnDong.Size = new System.Drawing.Size(108, 36);
             this.btnDong.StyleController = this.layoutControl1;
             this.btnDong.TabIndex = 30;
             this.btnDong.Text = "Đóng";
@@ -355,6 +355,48 @@
             this.btnHelp1.StyleController = this.layoutControl1;
             this.btnHelp1.TabIndex = 32;
             this.btnHelp1.ToolTip = "Trợ giúp";
+            // 
+            // txtStudentCode
+            // 
+            this.txtStudentCode.Location = new System.Drawing.Point(181, 46);
+            this.txtStudentCode.Name = "txtStudentCode";
+            this.txtStudentCode.Size = new System.Drawing.Size(103, 20);
+            this.txtStudentCode.StyleController = this.layoutControl1;
+            this.txtStudentCode.TabIndex = 33;
+            // 
+            // txtFullName
+            // 
+            this.txtFullName.Location = new System.Drawing.Point(380, 46);
+            this.txtFullName.Name = "txtFullName";
+            this.txtFullName.Size = new System.Drawing.Size(112, 20);
+            this.txtFullName.StyleController = this.layoutControl1;
+            this.txtFullName.TabIndex = 34;
+            // 
+            // txtHeight
+            // 
+            this.txtHeight.EditValue = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.txtHeight.Location = new System.Drawing.Point(104, 94);
+            this.txtHeight.Name = "txtHeight";
+            this.txtHeight.Size = new System.Drawing.Size(388, 20);
+            this.txtHeight.StyleController = this.layoutControl1;
+            this.txtHeight.TabIndex = 25;
+            // 
+            // txtWeight
+            // 
+            this.txtWeight.EditValue = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.txtWeight.Location = new System.Drawing.Point(104, 118);
+            this.txtWeight.Name = "txtWeight";
+            this.txtWeight.Size = new System.Drawing.Size(388, 20);
+            this.txtWeight.StyleController = this.layoutControl1;
+            this.txtWeight.TabIndex = 26;
             // 
             // layoutControlGroup1
             // 
@@ -544,33 +586,33 @@
             this.layoutControlItem18.Control = this.txtNote;
             this.layoutControlItem18.Location = new System.Drawing.Point(0, 438);
             this.layoutControlItem18.Name = "layoutControlItem18";
-            this.layoutControlItem18.Size = new System.Drawing.Size(572, 72);
+            this.layoutControlItem18.Size = new System.Drawing.Size(572, 74);
             this.layoutControlItem18.Text = "Kết luận";
             this.layoutControlItem18.TextSize = new System.Drawing.Size(89, 13);
             // 
             // layoutControlItem19
             // 
             this.layoutControlItem19.Control = this.btnLuu;
-            this.layoutControlItem19.Location = new System.Drawing.Point(353, 510);
+            this.layoutControlItem19.Location = new System.Drawing.Point(353, 512);
             this.layoutControlItem19.Name = "layoutControlItem19";
-            this.layoutControlItem19.Size = new System.Drawing.Size(107, 42);
+            this.layoutControlItem19.Size = new System.Drawing.Size(107, 40);
             this.layoutControlItem19.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem19.TextVisible = false;
             // 
             // emptySpaceItem3
             // 
             this.emptySpaceItem3.AllowHotTrack = false;
-            this.emptySpaceItem3.Location = new System.Drawing.Point(0, 510);
+            this.emptySpaceItem3.Location = new System.Drawing.Point(0, 512);
             this.emptySpaceItem3.Name = "emptySpaceItem3";
-            this.emptySpaceItem3.Size = new System.Drawing.Size(353, 42);
+            this.emptySpaceItem3.Size = new System.Drawing.Size(353, 40);
             this.emptySpaceItem3.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem20
             // 
             this.layoutControlItem20.Control = this.btnDong;
-            this.layoutControlItem20.Location = new System.Drawing.Point(460, 510);
+            this.layoutControlItem20.Location = new System.Drawing.Point(460, 512);
             this.layoutControlItem20.Name = "layoutControlItem20";
-            this.layoutControlItem20.Size = new System.Drawing.Size(112, 42);
+            this.layoutControlItem20.Size = new System.Drawing.Size(112, 40);
             this.layoutControlItem20.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem20.TextVisible = false;
             // 
@@ -630,14 +672,6 @@
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
             // 
-            // txtStudentCode
-            // 
-            this.txtStudentCode.Location = new System.Drawing.Point(181, 46);
-            this.txtStudentCode.Name = "txtStudentCode";
-            this.txtStudentCode.Size = new System.Drawing.Size(103, 20);
-            this.txtStudentCode.StyleController = this.layoutControl1;
-            this.txtStudentCode.TabIndex = 33;
-            // 
             // layoutControlItem4
             // 
             this.layoutControlItem4.Control = this.txtStudentCode;
@@ -646,14 +680,6 @@
             this.layoutControlItem4.Size = new System.Drawing.Size(199, 24);
             this.layoutControlItem4.Text = "Mã học sinh";
             this.layoutControlItem4.TextSize = new System.Drawing.Size(89, 13);
-            // 
-            // txtFullName
-            // 
-            this.txtFullName.Location = new System.Drawing.Point(380, 46);
-            this.txtFullName.Name = "txtFullName";
-            this.txtFullName.Size = new System.Drawing.Size(112, 20);
-            this.txtFullName.StyleController = this.layoutControl1;
-            this.txtFullName.TabIndex = 34;
             // 
             // layoutControlItem6
             // 
@@ -671,32 +697,6 @@
             this.emptySpaceItem1.Name = "emptySpaceItem1";
             this.emptySpaceItem1.Size = new System.Drawing.Size(88, 24);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
-            // 
-            // txtHeight
-            // 
-            this.txtHeight.EditValue = new decimal(new int[] {
-            0,
-            0,
-            0,
-            0});
-            this.txtHeight.Location = new System.Drawing.Point(104, 94);
-            this.txtHeight.Name = "txtHeight";
-            this.txtHeight.Size = new System.Drawing.Size(388, 20);
-            this.txtHeight.StyleController = this.layoutControl1;
-            this.txtHeight.TabIndex = 25;
-            // 
-            // txtWeight
-            // 
-            this.txtWeight.EditValue = new decimal(new int[] {
-            0,
-            0,
-            0,
-            0});
-            this.txtWeight.Location = new System.Drawing.Point(104, 118);
-            this.txtWeight.Name = "txtWeight";
-            this.txtWeight.Size = new System.Drawing.Size(388, 20);
-            this.txtWeight.StyleController = this.layoutControl1;
-            this.txtWeight.TabIndex = 26;
             // 
             // frmAddHealthExaminationDetail
             // 
@@ -725,6 +725,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtNote.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtOtherRating.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbHealthInsurance.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtStudentCode.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtFullName.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtHeight.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtWeight.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
@@ -750,13 +754,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtStudentCode.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtFullName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtHeight.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtWeight.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }

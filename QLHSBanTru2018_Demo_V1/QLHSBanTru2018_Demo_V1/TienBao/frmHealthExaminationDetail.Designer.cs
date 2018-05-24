@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions3 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmHealthExaminationDetail));
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject9 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject10 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject11 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject12 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.cmbHealthExam = new System.Windows.Forms.ComboBox();
             this.dgvHealthDetail = new DevExpress.XtraGrid.GridControl();
@@ -263,9 +263,9 @@
             // btnNhapkq
             // 
             this.btnNhapkq.AutoHeight = false;
-            editorButtonImageOptions3.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions3.Image")));
+            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
             this.btnNhapkq.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions3, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject9, serializableAppearanceObject10, serializableAppearanceObject11, serializableAppearanceObject12, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btnNhapkq.Name = "btnNhapkq";
             this.btnNhapkq.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             // 
@@ -310,7 +310,7 @@
             this.btnXemchitiet.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnXemchitiet.ImageOptions.Image")));
             this.btnXemchitiet.Location = new System.Drawing.Point(12, 225);
             this.btnXemchitiet.Name = "btnXemchitiet";
-            this.btnXemchitiet.Size = new System.Drawing.Size(163, 38);
+            this.btnXemchitiet.Size = new System.Drawing.Size(163, 36);
             this.btnXemchitiet.StyleController = this.layoutControl1;
             this.btnXemchitiet.TabIndex = 26;
             this.btnXemchitiet.Text = "Xem danh sách đã nhập";
@@ -319,9 +319,9 @@
             // btnDanhsach
             // 
             this.btnDanhsach.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDanhsach.ImageOptions.Image")));
-            this.btnDanhsach.Location = new System.Drawing.Point(12, 267);
+            this.btnDanhsach.Location = new System.Drawing.Point(12, 265);
             this.btnDanhsach.Name = "btnDanhsach";
-            this.btnDanhsach.Size = new System.Drawing.Size(163, 38);
+            this.btnDanhsach.Size = new System.Drawing.Size(163, 36);
             this.btnDanhsach.StyleController = this.layoutControl1;
             this.btnDanhsach.TabIndex = 27;
             this.btnDanhsach.Text = "Nhập mới kết quả khám";
@@ -380,9 +380,9 @@
             // emptySpaceItem1
             // 
             this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 297);
+            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 293);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(167, 199);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(167, 203);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem4
@@ -437,9 +437,9 @@
             // layoutControlItem8
             // 
             this.layoutControlItem8.Control = this.btnDanhsach;
-            this.layoutControlItem8.Location = new System.Drawing.Point(0, 255);
+            this.layoutControlItem8.Location = new System.Drawing.Point(0, 253);
             this.layoutControlItem8.Name = "layoutControlItem8";
-            this.layoutControlItem8.Size = new System.Drawing.Size(167, 42);
+            this.layoutControlItem8.Size = new System.Drawing.Size(167, 40);
             this.layoutControlItem8.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem8.TextVisible = false;
             // 
@@ -448,7 +448,7 @@
             this.layoutControlItem7.Control = this.btnXemchitiet;
             this.layoutControlItem7.Location = new System.Drawing.Point(0, 213);
             this.layoutControlItem7.Name = "layoutControlItem7";
-            this.layoutControlItem7.Size = new System.Drawing.Size(167, 42);
+            this.layoutControlItem7.Size = new System.Drawing.Size(167, 40);
             this.layoutControlItem7.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem7.TextVisible = false;
             // 

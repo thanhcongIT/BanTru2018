@@ -13,6 +13,8 @@ namespace DataConnect.DAO.ThanhCongTC.ChiTieuThucPham
         Table<Ingredient> ingredient;
         Table<IngredientRequestDetail> ingredientRequesDetail;
         QLHSSmartKidsDataContext dt = new QLHSSmartKidsDataContext();
+        public static List<TCIngredientRequestDetaiViewModle> ListInredientReques = new List<TCIngredientRequestDetaiViewModle>();
+        public static List<TCIngredientRequestDetaiViewModle> ListInredientReques2 = new List<TCIngredientRequestDetaiViewModle>();
         public static TCIngredientRequestDetaiViewModle DemoIngredientRequestDetai= new TCIngredientRequestDetaiViewModle();
         public List<TCIngredientRequestDetaiViewModle> listInredientRequestDetail1(int ingredientRequest)
         {
@@ -30,6 +32,7 @@ namespace DataConnect.DAO.ThanhCongTC.ChiTieuThucPham
                         Name = b.Name,
                         Status = c.Status
                     };
+            ListInredientReques = a.ToList();
             return a.ToList();
                                    
         }
@@ -49,6 +52,7 @@ namespace DataConnect.DAO.ThanhCongTC.ChiTieuThucPham
                         Name = b.Name,
                         Status = c.Status
                     };
+            ListInredientReques2 = a.ToList();
             return a.ToList();
 
         }

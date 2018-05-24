@@ -29,7 +29,8 @@ namespace QLHSBanTru2018_Demo_V1.QLThuChi.ChiTieu.ChiTieuThucPham
         }
         private void FrThanhToanThucPham_Load(object sender, EventArgs e)
         {
-            EmployeeDAO dt = new EmployeeDAO();
+            OrderDetailDAO.ThanhToan = false;
+             EmployeeDAO dt = new EmployeeDAO();
             LoadChiTietThanhToan();
             Employee a = dt.GetByID(LoginDetail.LoginID);
             txtHoTen.Text = a.FirstName + " " + a.LastName;
@@ -55,6 +56,7 @@ namespace QLHSBanTru2018_Demo_V1.QLThuChi.ChiTieu.ChiTieuThucPham
 
         private void btnHuy_Click(object sender, EventArgs e)
         {
+            OrderDetailDAO.ThanhToan = false;
             this.Close();
         }
 
@@ -102,6 +104,8 @@ namespace QLHSBanTru2018_Demo_V1.QLThuChi.ChiTieu.ChiTieuThucPham
                         }
                     }
                     MessageBox.Show("Lưu thành công");
+                    OrderDetailDAO.ThanhToan = true;
+                    this.Close();
                     // in hóa đơn 
                  
                 }

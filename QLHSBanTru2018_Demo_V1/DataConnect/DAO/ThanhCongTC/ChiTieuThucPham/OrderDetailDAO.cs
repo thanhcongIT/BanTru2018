@@ -10,6 +10,7 @@ namespace DataConnect.DAO.ThanhCongTC.ChiTieuThucPham
     public class OrderDetailDAO
     {
         QLHSSmartKidsDataContext dt = new QLHSSmartKidsDataContext();
+        public static bool ThanhToan = false;
         public bool Insert(OrderDetail orderDetail)
         {
             OrderDetail a = new OrderDetail();

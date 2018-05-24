@@ -241,11 +241,8 @@ namespace QLHSBanTru2018_Demo_V1.QLThuChi.ChiTieu.ChiTieuThucPham.ThongKeThucPha
 
         private void btnXuatDuLieu_Click(object sender, EventArgs e)
         {
-            XtraReport1 a = new XtraReport1();
-            a.FilterString = "[OrderID]='" + 65 + "'";
-            a.CreateDocument();
+            
             FrRptHoaDonThucPham b = new FrRptHoaDonThucPham();
-            b.documentViewer1.DocumentSource = a;
             b.ShowDialog();
         }
     }
