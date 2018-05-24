@@ -16938,7 +16938,7 @@ namespace DataConnect
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private int _DailyTrackerDrugTime1;
+		private int _DailyTrackerDrugTimeID;
 		
 		private int _DailyTrackerID;
 		
@@ -16948,6 +16948,8 @@ namespace DataConnect
 		
 		private int _DrugQuantity;
 		
+		private string _Note;
+		
 		private bool _Status;
 		
 		private EntityRef<DailyTracker> _DailyTracker;
@@ -16956,8 +16958,8 @@ namespace DataConnect
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void OnDailyTrackerDrugTime1Changing(int value);
-    partial void OnDailyTrackerDrugTime1Changed();
+    partial void OnDailyTrackerDrugTimeIDChanging(int value);
+    partial void OnDailyTrackerDrugTimeIDChanged();
     partial void OnDailyTrackerIDChanging(int value);
     partial void OnDailyTrackerIDChanged();
     partial void OnDrugTimeChanging(System.TimeSpan value);
@@ -16966,6 +16968,8 @@ namespace DataConnect
     partial void OnDrugNameChanged();
     partial void OnDrugQuantityChanging(int value);
     partial void OnDrugQuantityChanged();
+    partial void OnNoteChanging(string value);
+    partial void OnNoteChanged();
     partial void OnStatusChanging(bool value);
     partial void OnStatusChanged();
     #endregion
@@ -16976,22 +16980,22 @@ namespace DataConnect
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="DailyTrackerDrugTime", Storage="_DailyTrackerDrugTime1", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int DailyTrackerDrugTime1
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DailyTrackerDrugTimeID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int DailyTrackerDrugTimeID
 		{
 			get
 			{
-				return this._DailyTrackerDrugTime1;
+				return this._DailyTrackerDrugTimeID;
 			}
 			set
 			{
-				if ((this._DailyTrackerDrugTime1 != value))
+				if ((this._DailyTrackerDrugTimeID != value))
 				{
-					this.OnDailyTrackerDrugTime1Changing(value);
+					this.OnDailyTrackerDrugTimeIDChanging(value);
 					this.SendPropertyChanging();
-					this._DailyTrackerDrugTime1 = value;
-					this.SendPropertyChanged("DailyTrackerDrugTime1");
-					this.OnDailyTrackerDrugTime1Changed();
+					this._DailyTrackerDrugTimeID = value;
+					this.SendPropertyChanged("DailyTrackerDrugTimeID");
+					this.OnDailyTrackerDrugTimeIDChanged();
 				}
 			}
 		}
@@ -17076,6 +17080,26 @@ namespace DataConnect
 					this._DrugQuantity = value;
 					this.SendPropertyChanged("DrugQuantity");
 					this.OnDrugQuantityChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Note", DbType="NVarChar(100)")]
+		public string Note
+		{
+			get
+			{
+				return this._Note;
+			}
+			set
+			{
+				if ((this._Note != value))
+				{
+					this.OnNoteChanging(value);
+					this.SendPropertyChanging();
+					this._Note = value;
+					this.SendPropertyChanged("Note");
+					this.OnNoteChanged();
 				}
 			}
 		}
