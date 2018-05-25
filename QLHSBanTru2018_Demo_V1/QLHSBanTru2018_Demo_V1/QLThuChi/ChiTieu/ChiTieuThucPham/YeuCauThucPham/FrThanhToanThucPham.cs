@@ -43,15 +43,15 @@ namespace QLHSBanTru2018_Demo_V1.QLThuChi.ChiTieu.ChiTieuThucPham
         }
         private void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
-            decimal tong = 0;
-            for (int i = 0; i < gridView1.RowCount; i++)
-            {
-                decimal a = (decimal)gridView1.GetRowCellValue(i, "PriceOfUnit");
-                int b = (int)gridView1.GetRowCellValue(i, "QuantityOfUnit");
-                gridView1.SetRowCellValue(i, gridView1.Columns["TotalPrice"], a * b);
-                tong += (a * b);
-            }
-            txtTongTien.Text = tong.ToString();
+            //decimal tong = 0;
+            //for (int i = 0; i < gridView1.RowCount; i++)
+            //{
+            //    decimal a = (decimal)gridView1.GetRowCellValue(i, "PriceOfUnit");
+            //    int b = (int)gridView1.GetRowCellValue(i, "QuantityOfUnit");
+            //    gridView1.SetRowCellValue(i, gridView1.Columns["TotalPrice"], a * b);
+            //    tong += (a * b);
+            //}
+            //txtTongTien.Text = tong.ToString();
         }
 
         private void btnHuy_Click(object sender, EventArgs e)
@@ -62,12 +62,11 @@ namespace QLHSBanTru2018_Demo_V1.QLThuChi.ChiTieu.ChiTieuThucPham
 
         private void gridView1_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
         {
-            //decimal tong = decimal.Parse(txtTongTien.Text);
-            //decimal a = (decimal)gridView1.GetRowCellValue(e.RowHandle, "PriceOfUnit");
-            //int b = (int)gridView1.GetRowCellValue(e.RowHandle, "QuantityOfUnit");
-            //tong += (a * b);
-            //txtTongTien.Text = tong.ToString();
-            //MessageBox.Show("â");
+            //grChiTiet view = sender as grChiTiet;
+            
+            decimal a = (decimal)gridView1.GetRowCellValue(e.RowHandle, "PriceOfUnit");
+            int b = (int)gridView1.GetRowCellValue(e.RowHandle, "QuantityOfUnit");
+            gridView1.SetRowCellValue(1, gridView1.Columns["TotalPrice"], 2);                          
         }
         private void btnTaoHoaDon_Click(object sender, EventArgs e)
         {
