@@ -22,7 +22,7 @@ namespace QLHSBanTru2018_Demo_V1.QLThuChi
         public void LoadDataDotThu()
         {
             ReceivableIDAO db = new ReceivableIDAO();
-            grDotThu.DataSource = db.ListReceivable((int)cbbHocky.SelectedValue, (int)cbbHocky.SelectedValue);
+            grDotThu.DataSource = db.ListReceivable((int)cbbNamhoc.SelectedValue, (int)cbbHocky.SelectedValue);
         }
         public void LoadDataChitietdotthu()
         {
