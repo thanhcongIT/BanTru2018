@@ -36,107 +36,23 @@ namespace QLHSBanTru2018_Demo_V1.TienBao
         }
 
         #region LoadInfor
-        private void LoadClassInfor(int GradeID)
-        {
-            List<DataConnect.Class> listClass = new ClassDAO().ListClassByGrade(GradeID);
-            cmbLopHoc.DisplayMember = "Name";
-            cmbLopHoc.ValueMember = "ClassID";
-            cmbLopHoc.DataSource = listClass;
-        }
-        private void LoadGradeInfor(int SemesterID)
-        {
-            List<DataConnect.Grade> ListGrade = new DataConnect.DAO.HungTD.GradeDAO().ListBySemester(SemesterID);
-            cmbKhoiLop.DisplayMember = "Name";
-            cmbKhoiLop.ValueMember = "GradeID";
-            cmbKhoiLop.DataSource = ListGrade;
-        }
-        private void LoadSemesterInfor(int CourseID)
-        {
-            List<DataConnect.Semester> ListSemester = new SemesterDAO().ListByCourseID(CourseID);
-            cmbHocKy.DisplayMember = "Name";
-            cmbHocKy.ValueMember = "SemesterID";
-            cmbHocKy.DataSource = ListSemester;
-        }
-        private void LoadCourseInfor()
-        {
-            List<DataConnect.Course> ListCourse = new CourseDAO().ListAll();
-            cmbNamHoc.DataSource = ListCourse;
-            cmbNamHoc.DisplayMember = "Name";
-            cmbNamHoc.ValueMember = "CourseID";
-        }
-
-        private void Danhsach(int ClassID)
+        private void FillGridControl(int ClassID, int PhysicalAssessmentID)
         {
             try
             {
-                dgvPhysicalDetail.DataSource = new PhysicalAssessmentDetailDAO().ListStudent(ClassID);
-            }
-            catch
-            { }
-        }
-        #endregion
-
-        #region EventClass
-        private void cmbNamHoc_Click(object sender, EventArgs e)
-        {
-            LoadCourseInfor();
-        }
-        private void cmbNamHoc_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                LoadSemesterInfor(int.Parse(cmbNamHoc.SelectedValue.ToString()));
-            }
-            catch
-            { }
-        }
-        private void cmbHocKy_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                LoadGradeInfor(int.Parse(cmbHocKy.SelectedValue.ToString()));
+                dgvPhysicalDetail.DataSource = new PhysicalAssessmentDetailDAO().ListPhysicalDetail(ClassID, PhysicalAssessmentID);
 
             }
             catch
             { }
         }
-        private void cmbKhoiHoc_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                LoadClassInfor(int.Parse(cmbKhoiLop.SelectedValue.ToString()));
-
-            }
-            catch
-            { }
-        }
-        private void cmbLopHoc_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                Danhsach(int.Parse(cmbLopHoc.SelectedValue.ToString()));
-
-            }
-            catch
-            { }
-        }
-
         #endregion
 
         #region LoadDAO
         private void PhysicalInsert()
         {
-            if (txtPhysicalName.Text != "" &&
-             txtNotePhysical.Text != "" &&
-             dtPhysicalDate.Text != "")
-            {
                 DataConnect.PhysicalAssessment entity = new DataConnect.PhysicalAssessment();
                 DataConnect.PhysicalAssessmentDetail entity2 = new DataConnect.PhysicalAssessmentDetail();
-
-                entity.Date = DateTime.Parse(dtPhysicalDate.EditValue.ToString());
-                entity.Name = txtPhysicalName.Text;
-                entity.Note = txtNotePhysical.Text;
-                entity.Status = true; //chbStatus.Checked ? true : false;
 
                 if (iFunction == 1)
                 {
@@ -186,7 +102,7 @@ namespace QLHSBanTru2018_Demo_V1.TienBao
                         entity2.WeightRating = bandedGridView1.GetRowCellValue(i, bandedGridView1.Columns["WeightRating"]).ToString();
                         entity2.Note = bandedGridView1.GetRowCellValue(i, bandedGridView1.Columns["NoteDetail"]).ToString();
                         entity2.Status = true;
-                        if (m_PhysicalDAO.PhysicalUpdate(entity) == true && m_PhysicalDetailDAO.PhysicalDetailUpdate(entity2) == true)
+                        if ( m_PhysicalDetailDAO.PhysicalDetailUpdate(entity2) == true)
                         {
 
                         }
@@ -204,28 +120,10 @@ namespace QLHSBanTru2018_Demo_V1.TienBao
                 {
                     XtraMessageBox.Show("Hệ thống đã xảy ra lỗi", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-            }
-            else
-            {
-                XtraMessageBox.Show("Mời bạn nhập đầy đủ thông tin!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
         }
-        private void FillGridControl(int ClassID, int PhysicalAssessmentID)
-        {
-            try
-            {
-                dgvPhysicalDetail.DataSource = new PhysicalAssessmentDetailDAO().ListPhysicalDetail(ClassID, PhysicalAssessmentID);
-
-            }
-            catch
-            { }
-        }
+        
         private void loadPhysicalDetail()
         {
-
-            txtPhysicalName.Text = m_PhysicalTable.Name;
-            txtNotePhysical.Text = m_PhysicalTable.Note;
-            dtPhysicalDate.EditValue = m_PhysicalTable.Date;
             FillGridControl(Class.ClassID, m_PhysicalTable.PhysicalAssessmentID);
         }
         #endregion
@@ -241,10 +139,7 @@ namespace QLHSBanTru2018_Demo_V1.TienBao
             else if (iFunction == 2)
             {
                 this.Text = "Cập nhật kết quả cân đo";
-                cmbLopHoc.Enabled = false;
-                cmbKhoiLop.Enabled = false;
-                cmbHocKy.Enabled = false;
-                cmbNamHoc.Enabled = false;
+                
                 loadPhysicalDetail();
             }
         }

@@ -206,7 +206,7 @@ namespace DataConnect.DAO.TienBao
             {
                 HealthExaminationDetailTable = db.GetTable<HealthExaminationDetail>();
                 HealthExaminationDetail model = HealthExaminationDetailTable.SingleOrDefault(x => x.HealthExaminationDetailID.Equals(HealthExaminationDetailID));
-                model.Status = false;
+                db.HealthExaminationDetails.DeleteOnSubmit(model);
                 db.SubmitChanges();
                 return true;
             }

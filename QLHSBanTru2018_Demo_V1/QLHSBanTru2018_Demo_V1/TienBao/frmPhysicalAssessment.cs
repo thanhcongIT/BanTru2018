@@ -121,7 +121,7 @@ namespace QLHSBanTru2018_Demo_V1.TienBao
         private void cmbPhysicalAssessment_EditValueChanged(object sender, EventArgs e)
         {         
              txtPhysicalNote.Text = cmbPhysicalAssessment.GetColumnValue("NotePhysicalAssessment").ToString();
-             dtPhysicalDate.Text = cmbPhysicalAssessment.GetColumnValue("DatePhysicalAssessment").ToString();                         
+             dtPhysicalDate.Text = cmbPhysicalAssessment.GetColumnValue("DatePhysicalAssessment").ToString();
         }
         
         private void btnXemChiTiet_Click(object sender, EventArgs e)
@@ -142,21 +142,26 @@ namespace QLHSBanTru2018_Demo_V1.TienBao
         
         private void btnThemmoi_Click(object sender, EventArgs e)
         {
-
-            frmPhysicalDetail m_frmPhysicalDetail = new frmPhysicalDetail();
-            m_frmPhysicalDetail.iFunction = 1;
-            m_frmPhysicalDetail.ShowDialog();
-            if (m_frmPhysicalDetail.DialogResult == DialogResult.OK)
+            if (cmbPhysicalAssessment.EditValue == null)
             {
-                cmbNamHoc.SelectedIndex = -1;
-                cmbHocKy.SelectedIndex = -1;
-                cmbKhoiLop.SelectedIndex = -1;
-                cmbLopHoc.SelectedIndex = -1;
-                dtPhysicalDate.Text = string.Empty;
-                txtPhysicalNote.Text = string.Empty;
-                frmPhysicalAssessment_Load(sender, e);
+                XtraMessageBox.Show("Mời bạn chọn đợt khám cân đo", "Thông báo");
             }
-
+            else if (cmbLopHoc.SelectedValue == null)
+            {
+                XtraMessageBox.Show("Mời bạn chọn lớp học", "Thông báo");
+            }
+            else
+            {
+                frmListStudentPhysicalDetail m_frmListStudent = new frmListStudentPhysicalDetail();
+                m_frmListStudent.iFunction = 1;
+                m_frmListStudent.physicalAssessment = new PhysicalAssessmentDAO().GetByID(int.Parse(cmbPhysicalAssessment.EditValue.ToString()));
+                m_frmListStudent.Class = new ClassDAO().GetByClassID(int.Parse(cmbLopHoc.SelectedValue.ToString()));
+                m_frmListStudent.ShowDialog();
+                if (m_frmListStudent.DialogResult == DialogResult.OK)
+                {
+                    FillGridControl(int.Parse(cmbLopHoc.SelectedValue.ToString()), int.Parse(cmbPhysicalAssessment.EditValue.ToString()));
+                }
+            }
         }
         private void btnChinhSua_Click(object sender, EventArgs e)
         {
@@ -173,8 +178,7 @@ namespace QLHSBanTru2018_Demo_V1.TienBao
             {
                 frmPhysicalDetail m_frmPhysicalDetail = new frmPhysicalDetail();
                 m_frmPhysicalDetail.iFunction = 2;
-                m_frmPhysicalDetail.m_PhysicalTable = new PhysicalAssessmentDAO().GetByID(int.Parse(cmbPhysicalAssessment.EditValue.ToString()));
-               
+                m_frmPhysicalDetail.m_PhysicalTable = new PhysicalAssessmentDAO().GetByID(int.Parse(cmbPhysicalAssessment.EditValue.ToString()));             
                 m_frmPhysicalDetail.Class = new ClassDAO().GetByClassID(int.Parse(cmbLopHoc.SelectedValue.ToString()));
                 m_frmPhysicalDetail.ShowDialog();
                 if (m_frmPhysicalDetail.DialogResult == DialogResult.OK)
@@ -185,24 +189,19 @@ namespace QLHSBanTru2018_Demo_V1.TienBao
         }
         private void btnXoaDotCanDo_Click(object sender, EventArgs e)
         {
-            if (cmbPhysicalAssessment.EditValue == null)
-            {
-                XtraMessageBox.Show("Mời bạn chọn đợt cân đo cần xóa", "Thông báo");
 
-            }
-            else if(XtraMessageBox.Show("Bạn muốn xóa bỏ đợt cân đo này ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+        }
+        private void btnXoahocsinh_Click(object sender, EventArgs e)
+        {
+            if (XtraMessageBox.Show("Bạn muốn xóa học sinh này?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
-               new PhysicalAssessmentDAO().PhysicalDelete(int.Parse(cmbPhysicalAssessment.EditValue.ToString()));               
-               if (XtraMessageBox.Show(" Xóa đợt cân đo thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information) == DialogResult.OK)
-               {
-                    cmbNamHoc.SelectedIndex = -1;
-                    cmbHocKy.SelectedIndex = -1;
-                    cmbKhoiLop.SelectedIndex = -1;
-                    cmbLopHoc.SelectedIndex = -1;
-                    dtPhysicalDate.Text = string.Empty;
-                    txtPhysicalNote.Text = string.Empty;
-                    frmPhysicalAssessment_Load(sender, e);
-               }                
+                int dong = bandedGridView1.FocusedRowHandle;
+                string PhysicalDetailID = bandedGridView1.GetRowCellValue(dong, bandedGridView1.Columns["PhysicalAssessmentDetailID"]).ToString();
+                new PhysicalAssessmentDetailDAO().PhysicalDetailDelete(int.Parse(PhysicalDetailID.ToString()));
+                if (XtraMessageBox.Show(" Xóa học sinh thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information) == DialogResult.OK)
+                {
+                    FillGridControl(int.Parse(cmbLopHoc.SelectedValue.ToString()), int.Parse(cmbPhysicalAssessment.EditValue.ToString()));
+                }
             }
         }
         #endregion
@@ -261,8 +260,9 @@ namespace QLHSBanTru2018_Demo_V1.TienBao
             gridview.IndicatorWidth = Convert.ToInt32(size.Width + 0.999f) + GridPainter.Indicator.ImageSize.Width + 10;
 
         }
+
         #endregion
 
-        
+       
     }
 }

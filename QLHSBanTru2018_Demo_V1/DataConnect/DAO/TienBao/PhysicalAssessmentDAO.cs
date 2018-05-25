@@ -73,7 +73,7 @@ namespace DataConnect.DAO.TienBao
             {
                 PhysicalTable = db.GetTable<PhysicalAssessment>();
                 PhysicalAssessment model = PhysicalTable.SingleOrDefault(x => x.PhysicalAssessmentID.Equals(PhysicalAssessmentID));
-                model.Status = false;
+                db.PhysicalAssessments.DeleteOnSubmit(model);
                 db.SubmitChanges();
                 return true;
             }

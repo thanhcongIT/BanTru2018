@@ -68,6 +68,7 @@
             this.btnMealManager = new DevExpress.XtraBars.BarButtonItem();
             this.btnThongKeThucPham = new DevExpress.XtraBars.BarButtonItem();
             this.btnDailyMenuManager = new DevExpress.XtraBars.BarButtonItem();
+            this.btnDailyTracker = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -78,6 +79,7 @@
             this.ribbonPageGroup9 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup11 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup13 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup14 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup10 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -88,8 +90,9 @@
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
             this.pnControlsPanel = new System.Windows.Forms.Panel();
-            this.ribbonPageGroup14 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.btnDailyTracker = new DevExpress.XtraBars.BarButtonItem();
+            this.barSubItem2 = new DevExpress.XtraBars.BarSubItem();
+            this.btnDotCanDo = new DevExpress.XtraBars.BarButtonItem();
+            this.btnKetQua = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             this.SuspendLayout();
             // 
@@ -135,9 +138,12 @@
             this.btnMealManager,
             this.btnThongKeThucPham,
             this.btnDailyMenuManager,
-            this.btnDailyTracker});
+            this.btnDailyTracker,
+            this.barSubItem2,
+            this.btnDotCanDo,
+            this.btnKetQua});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 39;
+            this.ribbon.MaxItemId = 42;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -473,6 +479,15 @@
             this.btnDailyMenuManager.Name = "btnDailyMenuManager";
             this.btnDailyMenuManager.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDailyMenuManager_ItemClick);
             // 
+            // btnDailyTracker
+            // 
+            this.btnDailyTracker.Caption = "Điểm Danh Hàng Ngày";
+            this.btnDailyTracker.Id = 38;
+            this.btnDailyTracker.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDailyTracker.ImageOptions.Image")));
+            this.btnDailyTracker.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnDailyTracker.ImageOptions.LargeImage")));
+            this.btnDailyTracker.Name = "btnDailyTracker";
+            this.btnDailyTracker.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDailyTracker_ItemClick);
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -549,6 +564,12 @@
             this.ribbonPageGroup13.Name = "ribbonPageGroup13";
             this.ribbonPageGroup13.Text = "Thực Đơn";
             // 
+            // ribbonPageGroup14
+            // 
+            this.ribbonPageGroup14.ItemLinks.Add(this.btnDailyTracker);
+            this.ribbonPageGroup14.Name = "ribbonPageGroup14";
+            this.ribbonPageGroup14.Text = "Nghiệp Vụ Hàng Ngày";
+            // 
             // ribbonPage2
             // 
             this.ribbonPage2.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -601,7 +622,7 @@
             // ribbonPageGroup7
             // 
             this.ribbonPageGroup7.ItemLinks.Add(this.btnHealthProblem);
-            this.ribbonPageGroup7.ItemLinks.Add(this.btnCanDo);
+            this.ribbonPageGroup7.ItemLinks.Add(this.barSubItem2);
             this.ribbonPageGroup7.ItemLinks.Add(this.btnHealth);
             this.ribbonPageGroup7.Name = "ribbonPageGroup7";
             this.ribbonPageGroup7.Text = "Sức khỏe - y tế";
@@ -627,20 +648,34 @@
             this.pnControlsPanel.Size = new System.Drawing.Size(1364, 600);
             this.pnControlsPanel.TabIndex = 3;
             // 
-            // ribbonPageGroup14
+            // barSubItem2
             // 
-            this.ribbonPageGroup14.ItemLinks.Add(this.btnDailyTracker);
-            this.ribbonPageGroup14.Name = "ribbonPageGroup14";
-            this.ribbonPageGroup14.Text = "Nghiệp Vụ Hàng Ngày";
+            this.barSubItem2.Caption = "Thông tin cân đo";
+            this.barSubItem2.Id = 39;
+            this.barSubItem2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barSubItem2.ImageOptions.Image")));
+            this.barSubItem2.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barSubItem2.ImageOptions.LargeImage")));
+            this.barSubItem2.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnDotCanDo),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnKetQua)});
+            this.barSubItem2.Name = "barSubItem2";
             // 
-            // btnDailyTracker
+            // btnDotCanDo
             // 
-            this.btnDailyTracker.Caption = "Điểm Danh Hàng Ngày";
-            this.btnDailyTracker.Id = 38;
-            this.btnDailyTracker.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDailyTracker.ImageOptions.Image")));
-            this.btnDailyTracker.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnDailyTracker.ImageOptions.LargeImage")));
-            this.btnDailyTracker.Name = "btnDailyTracker";
-            this.btnDailyTracker.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDailyTracker_ItemClick);
+            this.btnDotCanDo.Caption = "Thông tin đợt cân đo";
+            this.btnDotCanDo.Id = 40;
+            this.btnDotCanDo.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDotCanDo.ImageOptions.Image")));
+            this.btnDotCanDo.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnDotCanDo.ImageOptions.LargeImage")));
+            this.btnDotCanDo.Name = "btnDotCanDo";
+            this.btnDotCanDo.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDotCanDo_ItemClick);
+            // 
+            // btnKetQua
+            // 
+            this.btnKetQua.Caption = "Kết quả cân đo";
+            this.btnKetQua.Id = 41;
+            this.btnKetQua.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.ImageOptions.Image")));
+            this.btnKetQua.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.ImageOptions.LargeImage")));
+            this.btnKetQua.Name = "btnKetQua";
+            this.btnKetQua.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnKetQua_ItemClick);
             // 
             // frmMain
             // 
@@ -723,5 +758,8 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup13;
         private DevExpress.XtraBars.BarButtonItem btnDailyTracker;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup14;
+        private DevExpress.XtraBars.BarSubItem barSubItem2;
+        private DevExpress.XtraBars.BarButtonItem btnDotCanDo;
+        private DevExpress.XtraBars.BarButtonItem btnKetQua;
     }
 }
