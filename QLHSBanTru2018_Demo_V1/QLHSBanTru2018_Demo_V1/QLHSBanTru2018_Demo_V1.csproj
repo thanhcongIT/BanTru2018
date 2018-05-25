@@ -547,6 +547,12 @@
     <Compile Include="TienBao\frmAddHealthExaminationDetail.Designer.cs">
       <DependentUpon>frmAddHealthExaminationDetail.cs</DependentUpon>
     </Compile>
+    <Compile Include="TienBao\frmAddPhysicalAssessment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TienBao\frmAddPhysicalAssessment.Designer.cs">
+      <DependentUpon>frmAddPhysicalAssessment.cs</DependentUpon>
+    </Compile>
     <Compile Include="TienBao\frmAddStudent.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -857,6 +863,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TienBao\frmAddHealthExaminationDetail.resx">
       <DependentUpon>frmAddHealthExaminationDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TienBao\frmAddPhysicalAssessment.resx">
+      <DependentUpon>frmAddPhysicalAssessment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TienBao\frmAddStudent.resx">
       <DependentUpon>frmAddStudent.cs</DependentUpon>
