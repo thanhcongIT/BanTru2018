@@ -13,6 +13,7 @@ namespace DataConnect.ViewModel
         public string NamePhysicalAssessment { get; set; }
         public string NotePhysicalAssessment { get; set; }
         public bool StatusPhysicalAssessment { get; set; }
+        public string StringStatus { get; set; }
 
 
         public int PhysicalAssessmentDetailID { get; set; }       
@@ -23,6 +24,7 @@ namespace DataConnect.ViewModel
         public string OtherRating { get; set; }
         public string NoteDetail { get; set; }
         public bool StatusPhysicalAssessmentDetail { get; set; }
+        public string StringStatusDetail { get; set; }
 
 
         public int StudentID { get; set; }

@@ -29,24 +29,23 @@ namespace DataConnect.DAO.TienBao
                             DatePhysicalAssessment = ph.Date,
                             NamePhysicalAssessment = ph.Name,
                             NotePhysicalAssessment = ph.Note,
-                            StatusPhysicalAssessment = ph.Status
+                            StatusPhysicalAssessment = ph.Status,
+                            StringStatus = ph.Status == true ? "Đang sử dụng" : "Không sử dụng"
                         };
             List<PhysicalAssessmentViewModel> list = query.ToList();
             return list;
         }
-        public int PhysicalInsert(PhysicalAssessment entity)
+        public bool PhysicalInsert(PhysicalAssessment entity)
         {
-            try
-            {
-                PhysicalTable = db.GetTable<PhysicalAssessment>();
-                PhysicalTable.InsertOnSubmit(entity);
-                db.SubmitChanges();
-                return entity.PhysicalAssessmentID;
-            }
-            catch
-            {
-                return 0;
-            }
+            PhysicalAssessment a = new PhysicalAssessment();
+            a.Date = entity.Date;
+            a.Status = entity.Status;
+            a.Name = entity.Name;
+            a.Note = entity.Note;
+            db.PhysicalAssessments.InsertOnSubmit(a);
+            db.SubmitChanges();
+            return true;
+            
         }
         public bool PhysicalUpdate(PhysicalAssessment entity)
         {

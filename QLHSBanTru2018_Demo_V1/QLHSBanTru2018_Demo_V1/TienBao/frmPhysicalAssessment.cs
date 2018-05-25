@@ -58,7 +58,7 @@ namespace QLHSBanTru2018_Demo_V1.TienBao
         }
         private void LoadPhysicalAssessmentInfor()
         {
-            cmbPhysicalAssessment.Properties.DataSource = new PhysicalAssessmentDAO().ListPhysicalAssessment(); ;
+            cmbPhysicalAssessment.Properties.DataSource = new PhysicalAssessmentDAO().ListPhysicalAssessment(); 
             cmbPhysicalAssessment.Properties.DisplayMember = "NamePhysicalAssessment";
             cmbPhysicalAssessment.Properties.ValueMember = "PhysicalAssessmentID";
         }
