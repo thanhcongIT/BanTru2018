@@ -46,7 +46,7 @@
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.txtClassName = new DevExpress.XtraEditors.TextEdit();
             this.txtHealthExamName = new DevExpress.XtraEditors.TextEdit();
-            this.dgvHealthDetail = new DevExpress.XtraGrid.GridControl();
+            this.dgvListStudent = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -62,11 +62,16 @@
             this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.btnThuchien = new DevExpress.XtraEditors.SimpleButton();
+            this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.btnHuybo = new DevExpress.XtraEditors.SimpleButton();
+            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtClassName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtHealthExamName.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvHealthDetail)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListStudent)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnNhapketquakham)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).BeginInit();
@@ -75,13 +80,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
             // 
             this.layoutControl1.Controls.Add(this.txtClassName);
             this.layoutControl1.Controls.Add(this.txtHealthExamName);
-            this.layoutControl1.Controls.Add(this.dgvHealthDetail);
+            this.layoutControl1.Controls.Add(this.dgvListStudent);
+            this.layoutControl1.Controls.Add(this.btnThuchien);
+            this.layoutControl1.Controls.Add(this.btnHuybo);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl1.Location = new System.Drawing.Point(0, 0);
             this.layoutControl1.Name = "layoutControl1";
@@ -93,7 +103,7 @@
             // 
             // txtClassName
             // 
-            this.txtClassName.Location = new System.Drawing.Point(73, 43);
+            this.txtClassName.Location = new System.Drawing.Point(73, 42);
             this.txtClassName.Name = "txtClassName";
             this.txtClassName.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.txtClassName.Properties.Appearance.Options.UseFont = true;
@@ -103,7 +113,7 @@
             // 
             // txtHealthExamName
             // 
-            this.txtHealthExamName.Location = new System.Drawing.Point(364, 43);
+            this.txtHealthExamName.Location = new System.Drawing.Point(364, 42);
             this.txtHealthExamName.Name = "txtHealthExamName";
             this.txtHealthExamName.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.txtHealthExamName.Properties.Appearance.Options.UseFont = true;
@@ -111,23 +121,23 @@
             this.txtHealthExamName.StyleController = this.layoutControl1;
             this.txtHealthExamName.TabIndex = 5;
             // 
-            // dgvHealthDetail
+            // dgvListStudent
             // 
-            this.dgvHealthDetail.EmbeddedNavigator.Buttons.Append.Enabled = false;
-            this.dgvHealthDetail.EmbeddedNavigator.Buttons.CancelEdit.Enabled = false;
-            this.dgvHealthDetail.EmbeddedNavigator.Buttons.Edit.Enabled = false;
-            this.dgvHealthDetail.EmbeddedNavigator.Buttons.EndEdit.Enabled = false;
-            this.dgvHealthDetail.EmbeddedNavigator.Buttons.Remove.Enabled = false;
-            this.dgvHealthDetail.EmbeddedNavigator.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.dgvHealthDetail.Location = new System.Drawing.Point(12, 79);
-            this.dgvHealthDetail.MainView = this.gridView1;
-            this.dgvHealthDetail.Name = "dgvHealthDetail";
-            this.dgvHealthDetail.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.dgvListStudent.EmbeddedNavigator.Buttons.Append.Enabled = false;
+            this.dgvListStudent.EmbeddedNavigator.Buttons.CancelEdit.Enabled = false;
+            this.dgvListStudent.EmbeddedNavigator.Buttons.Edit.Enabled = false;
+            this.dgvListStudent.EmbeddedNavigator.Buttons.EndEdit.Enabled = false;
+            this.dgvListStudent.EmbeddedNavigator.Buttons.Remove.Enabled = false;
+            this.dgvListStudent.EmbeddedNavigator.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.dgvListStudent.Location = new System.Drawing.Point(12, 78);
+            this.dgvListStudent.MainView = this.gridView1;
+            this.dgvListStudent.Name = "dgvListStudent";
+            this.dgvListStudent.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemButtonEdit1,
             this.btnNhapketquakham});
-            this.dgvHealthDetail.Size = new System.Drawing.Size(653, 452);
-            this.dgvHealthDetail.TabIndex = 6;
-            this.dgvHealthDetail.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.dgvListStudent.Size = new System.Drawing.Size(653, 411);
+            this.dgvListStudent.TabIndex = 6;
+            this.dgvListStudent.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             // 
             // gridView1
@@ -145,12 +155,13 @@
             this.gridColumn3,
             this.gridColumn4,
             this.gridColumn8});
-            this.gridView1.GridControl = this.dgvHealthDetail;
+            this.gridView1.GridControl = this.dgvListStudent;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsSelection.MultiSelect = true;
+            this.gridView1.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CheckBoxRowSelect;
             this.gridView1.OptionsView.EnableAppearanceOddRow = true;
             this.gridView1.OptionsView.ShowGroupPanel = false;
             this.gridView1.CustomDrawRowIndicator += new DevExpress.XtraGrid.Views.Grid.RowIndicatorCustomDrawEventHandler(this.gridView1_CustomDrawRowIndicator);
-            this.gridView1.RowCellStyle += new DevExpress.XtraGrid.Views.Grid.RowCellStyleEventHandler(this.gridView1_RowCellStyle);
             this.gridView1.RowCountChanged += new System.EventHandler(this.gridView1_RowCountChanged);
             // 
             // gridColumn1
@@ -179,7 +190,7 @@
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.OptionsColumn.AllowEdit = false;
             this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 1;
+            this.gridColumn2.VisibleIndex = 2;
             this.gridColumn2.Width = 210;
             // 
             // gridColumn6
@@ -195,7 +206,7 @@
             this.gridColumn6.Name = "gridColumn6";
             this.gridColumn6.OptionsColumn.AllowEdit = false;
             this.gridColumn6.Visible = true;
-            this.gridColumn6.VisibleIndex = 2;
+            this.gridColumn6.VisibleIndex = 3;
             this.gridColumn6.Width = 126;
             // 
             // gridColumn5
@@ -211,7 +222,7 @@
             this.gridColumn5.Name = "gridColumn5";
             this.gridColumn5.OptionsColumn.AllowEdit = false;
             this.gridColumn5.Visible = true;
-            this.gridColumn5.VisibleIndex = 3;
+            this.gridColumn5.VisibleIndex = 4;
             this.gridColumn5.Width = 126;
             // 
             // gridColumn3
@@ -227,7 +238,7 @@
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.OptionsColumn.AllowEdit = false;
             this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 0;
+            this.gridColumn3.VisibleIndex = 1;
             this.gridColumn3.Width = 174;
             // 
             // gridColumn4
@@ -243,7 +254,7 @@
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.OptionsColumn.AllowEdit = false;
             this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 4;
+            this.gridColumn4.VisibleIndex = 5;
             this.gridColumn4.Width = 124;
             // 
             // gridColumn8
@@ -257,8 +268,6 @@
             this.gridColumn8.Caption = "Nhập kết quả khám";
             this.gridColumn8.ColumnEdit = this.btnNhapketquakham;
             this.gridColumn8.Name = "gridColumn8";
-            this.gridColumn8.Visible = true;
-            this.gridColumn8.VisibleIndex = 5;
             this.gridColumn8.Width = 308;
             // 
             // btnNhapketquakham
@@ -287,18 +296,21 @@
             this.layoutControlGroup1.GroupBordersVisible = false;
             this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlItem3,
-            this.layoutControlGroup2});
+            this.layoutControlGroup2,
+            this.layoutControlItem9,
+            this.layoutControlItem4,
+            this.emptySpaceItem1});
             this.layoutControlGroup1.Name = "Root";
             this.layoutControlGroup1.Size = new System.Drawing.Size(677, 543);
             this.layoutControlGroup1.TextVisible = false;
             // 
             // layoutControlItem3
             // 
-            this.layoutControlItem3.Control = this.dgvHealthDetail;
+            this.layoutControlItem3.Control = this.dgvListStudent;
             this.layoutControlItem3.CustomizationFormText = "layoutControlItem3";
-            this.layoutControlItem3.Location = new System.Drawing.Point(0, 67);
+            this.layoutControlItem3.Location = new System.Drawing.Point(0, 66);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(657, 456);
+            this.layoutControlItem3.Size = new System.Drawing.Size(657, 415);
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem3.TextVisible = false;
             // 
@@ -309,7 +321,7 @@
             this.layoutControlItem1});
             this.layoutControlGroup2.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup2.Name = "layoutControlGroup2";
-            this.layoutControlGroup2.Size = new System.Drawing.Size(657, 67);
+            this.layoutControlGroup2.Size = new System.Drawing.Size(657, 66);
             this.layoutControlGroup2.Text = "Thông tin đợt khám";
             // 
             // layoutControlItem2
@@ -330,6 +342,58 @@
             this.layoutControlItem1.Text = "Lớp học";
             this.layoutControlItem1.TextSize = new System.Drawing.Size(46, 13);
             // 
+            // btnThuchien
+            // 
+            this.btnThuchien.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.btnThuchien.Location = new System.Drawing.Point(401, 493);
+            this.btnThuchien.Name = "btnThuchien";
+            this.btnThuchien.Size = new System.Drawing.Size(134, 38);
+            this.btnThuchien.StyleController = this.layoutControl1;
+            this.btnThuchien.TabIndex = 28;
+            this.btnThuchien.Text = "Nhập danh sách";
+            this.btnThuchien.Click += new System.EventHandler(this.btnthuchien_Click);
+            // 
+            // layoutControlItem9
+            // 
+            this.layoutControlItem9.Control = this.btnThuchien;
+            this.layoutControlItem9.CustomizationFormText = "layoutControlItem9";
+            this.layoutControlItem9.Location = new System.Drawing.Point(389, 481);
+            this.layoutControlItem9.Name = "layoutControlItem9";
+            this.layoutControlItem9.Size = new System.Drawing.Size(138, 42);
+            this.layoutControlItem9.Text = "layoutControlItem9";
+            this.layoutControlItem9.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem9.TextVisible = false;
+            // 
+            // btnHuybo
+            // 
+            this.btnHuybo.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
+            this.btnHuybo.Location = new System.Drawing.Point(539, 493);
+            this.btnHuybo.Name = "btnHuybo";
+            this.btnHuybo.Size = new System.Drawing.Size(126, 38);
+            this.btnHuybo.StyleController = this.layoutControl1;
+            this.btnHuybo.TabIndex = 28;
+            this.btnHuybo.Text = "Hủy bỏ";
+            this.btnHuybo.Click += new System.EventHandler(this.btnHuybo_Click);
+            // 
+            // layoutControlItem4
+            // 
+            this.layoutControlItem4.Control = this.btnHuybo;
+            this.layoutControlItem4.CustomizationFormText = "layoutControlItem9";
+            this.layoutControlItem4.Location = new System.Drawing.Point(527, 481);
+            this.layoutControlItem4.Name = "layoutControlItem4";
+            this.layoutControlItem4.Size = new System.Drawing.Size(130, 42);
+            this.layoutControlItem4.Text = "layoutControlItem9";
+            this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem4.TextVisible = false;
+            // 
+            // emptySpaceItem1
+            // 
+            this.emptySpaceItem1.AllowHotTrack = false;
+            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 481);
+            this.emptySpaceItem1.Name = "emptySpaceItem1";
+            this.emptySpaceItem1.Size = new System.Drawing.Size(389, 42);
+            this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
+            // 
             // frmNewHealthExamDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -344,7 +408,7 @@
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.txtClassName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtHealthExamName.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvHealthDetail)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListStudent)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnNhapketquakham)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).EndInit();
@@ -353,6 +417,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -363,7 +430,7 @@
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
         private DevExpress.XtraEditors.TextEdit txtClassName;
         private DevExpress.XtraEditors.TextEdit txtHealthExamName;
-        private DevExpress.XtraGrid.GridControl dgvHealthDetail;
+        private DevExpress.XtraGrid.GridControl dgvListStudent;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
@@ -378,5 +445,10 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
+        private DevExpress.XtraEditors.SimpleButton btnThuchien;
+        private DevExpress.XtraEditors.SimpleButton btnHuybo;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem9;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
+        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
     }
 }

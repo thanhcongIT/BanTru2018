@@ -138,6 +138,84 @@ namespace QLHSBanTru2018_Demo_V1.TienBao
                 { cmbEndocrineRating.Enabled = true; }
                 else { cmbEndocrineRating.Enabled = false; }
             }
+            else if (iFunction == 2)
+            {
+                this.Text = "Cập nhật kết quả khám sức khỏe";
+                lblHealthExamName.Text = healthExamination.Name;
+                txtFullName.Text = Student.FirstName + " " + Student.LastName;
+                txtStudentCode.Text = Student.StudentCode;
+                cmbHealthInsurance.Text = m_HealthExaminationDetail.HealthInsurance;
+                txtOtherRating.Text = m_HealthExaminationDetail.Other;
+                cmbRating.Text = m_HealthExaminationDetail.Rating;
+                txtNote.Text = m_HealthExaminationDetail.Note;
+                chbStatus.Checked = m_HealthExaminationDetail.Status;
+                if (healthExamination.Height == true)
+                {
+                    txtHeight.Enabled = true;
+                    txtHeight.Text = m_HealthExaminationDetail.Height.ToString();
+                }
+                else { txtHeight.Enabled = false; }
+                if (healthExamination.Weight == true)
+                {
+                    txtWeight.Enabled = true;
+                    txtWeight.Text = m_HealthExaminationDetail.Weight.ToString();
+                }
+                else { txtWeight.Enabled = false; }
+                if (healthExamination.Eyes == true)
+                {
+                    cmbEyesRating.Enabled = true;
+                    cmbEyesRating.Text = m_HealthExaminationDetail.Eyes;
+                }
+                else { cmbEyesRating.Enabled = false; }
+                if (healthExamination.ENT == true)
+                {
+                    cmbENTRating.Enabled = true;
+                    cmbENTRating.Text = m_HealthExaminationDetail.ENT;
+                }
+                else { cmbENTRating.Enabled = false; }
+                if (healthExamination.Oral == true)
+                {
+                    cmbOralRating.Enabled = true;
+                    cmbOralRating.Text = m_HealthExaminationDetail.Oral;
+                }
+                else { cmbOralRating.Enabled = false; }
+                if (healthExamination.InternalMedicine == true)
+                {
+                    cmbInternalMedicineRating.Enabled = true;
+                    cmbInternalMedicineRating.Text = m_HealthExaminationDetail.InternalMedicine;
+                }
+                else { cmbInternalMedicineRating.Enabled = false; }
+                if (healthExamination.Surgery == true)
+                {
+                    cmbSurgeryRating.Enabled = true;
+                    cmbSurgeryRating.Text = m_HealthExaminationDetail.Surgery;
+                }
+                else { cmbSurgeryRating.Enabled = false; }
+                if (healthExamination.Dermatology == true)
+                {
+                    cmbDermatologyRating.Enabled = true;
+                    cmbDermatologyRating.Text = m_HealthExaminationDetail.Dermatology;
+                }
+                else { cmbDermatologyRating.Enabled = false; }
+                if (healthExamination.BoneMuscle == true)
+                {
+                    cmbBoneMuscleRating.Enabled = true;
+                    cmbBoneMuscleRating.Text = m_HealthExaminationDetail.BoneMuscle;
+                }
+                else { cmbBoneMuscleRating.Enabled = false; }
+                if (healthExamination.Nerve == true)
+                {
+                    cmbNerveRating.Enabled = true;
+                    cmbNerveRating.Text = m_HealthExaminationDetail.Nerve;
+                }
+                else { cmbNerveRating.Enabled = false; }
+                if (healthExamination.Endocrine == true)
+                {
+                    cmbEndocrineRating.Enabled = true;
+                    cmbEndocrineRating.Text = m_HealthExaminationDetail.Endocrine;
+                }
+                else { cmbEndocrineRating.Enabled = false; }
+            }
         }        
         #endregion
 

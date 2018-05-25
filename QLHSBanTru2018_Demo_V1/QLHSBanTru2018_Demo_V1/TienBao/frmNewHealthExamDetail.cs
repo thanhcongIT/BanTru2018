@@ -17,6 +17,7 @@ using DevExpress.XtraGrid.Columns;
 using DevExpress.XtraGrid.Views.Grid;
 using DevExpress.XtraGrid.Views.Grid.Drawing;
 using DevExpress.XtraGrid;
+using DataConnect;
 
 namespace QLHSBanTru2018_Demo_V1.TienBao
 {
@@ -35,17 +36,51 @@ namespace QLHSBanTru2018_Demo_V1.TienBao
         {
             InitializeComponent();
         }
-
         #region LoadInfo
         private void Danhsach(int ClassID)
         {
             try
             {
-                dgvHealthDetail.DataSource = new HealthExaminationDetailDAO().ListStudent(ClassID);
-
+                dgvListStudent.DataSource = new HealthExaminationDetailDAO().ListStudent(ClassID);
             }
             catch
             { }
+        }
+        #endregion
+
+        #region DAO
+        private void InsertStudent()
+        {
+
+            HealthExaminationDetail entity = new HealthExaminationDetail();
+            HealthExaminationDetailDAO m_HealthExamDAO = new HealthExaminationDetailDAO();
+            if (iFunction == 1)
+            {
+                int a1 = gridView1.SelectedRowsCount;
+                int[] a = gridView1.GetSelectedRows();
+                for (int i = 0; i < a1; i++)
+                {
+                    entity.StudentID = (int)gridView1.GetRowCellValue(a[i], gridView1.Columns["StudentID"]);
+                    entity.HealthExaminationID = healthExamination.HealthExaminationID;
+                    entity.HealthInsurance = "-- Chọn loại bảo hiểm --";
+                    entity.Height = 1;
+                    entity.Weight = 1;
+                    entity.Rating = "Chưa đánh giá";
+                    entity.Status = false;
+                    if (m_HealthExamDAO.HealthDetailInsert(entity) == true)
+                    {
+
+                    }
+                    else
+                    {
+                        XtraMessageBox.Show("Bản ghi " + i + "bị lỗi");
+                    }
+                }
+                XtraMessageBox.Show("Thêm kết quả khám sức khỏe thành công!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                DialogResult = DialogResult.OK;
+                this.Close();
+               
+            }
         }
         #endregion
 
@@ -59,25 +94,34 @@ namespace QLHSBanTru2018_Demo_V1.TienBao
                 txtClassName.Text = Class.Name;
                 txtHealthExamName.Text = healthExamination.Name;
                 Danhsach(int.Parse(Class.ClassID.ToString()));
-                
+
             }
         }
         private void btnNhapketquakham_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
-              int dong = gridView1.FocusedRowHandle;
-              string StudentID = gridView1.GetRowCellValue(dong, gridView1.Columns["StudentID"]).ToString();
+            int dong = gridView1.FocusedRowHandle;
+            string StudentID = gridView1.GetRowCellValue(dong, gridView1.Columns["StudentID"]).ToString();
             frmAddHealthExaminationDetail m_addHealthDetail = new frmAddHealthExaminationDetail();
             m_addHealthDetail.iFunction = 1;
             m_addHealthDetail.healthExamination = new HealthExaminationDAO().GetByID(int.Parse(healthExamination.HealthExaminationID.ToString()));
-          //  m_addHealthDetail.m_HealthExaminationDetail = new HealthExaminationDetailDAO().GetByID(int.Parse(healthExamination.HealthExaminationID.ToString()));
             m_addHealthDetail.Student = new StudentDAO().GetByID(int.Parse(StudentID.ToString()));
             m_addHealthDetail.ShowDialog();
             if (m_addHealthDetail.DialogResult == DialogResult.OK)
             {
-                Danhsach(int.Parse(Class.ClassID.ToString()));
-               
+             //   Danhsach(int.Parse(Class.ClassID.ToString()));
             }
         }
+        private void btnthuchien_Click(object sender, EventArgs e)
+        {
+            InsertStudent();
+        }
+        private void btnHuybo_Click(object sender, EventArgs e)
+        {
+
+        }
+        #endregion
+
+        #region STT
         private void gridView1_CustomDrawRowIndicator(object sender, RowIndicatorCustomDrawEventArgs e)
         {
             try
@@ -115,7 +159,7 @@ namespace QLHSBanTru2018_Demo_V1.TienBao
 
                     e.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
                     e.Info.DisplayText = "";
-                    
+
                 }
             }
             catch (Exception ex)
@@ -130,12 +174,8 @@ namespace QLHSBanTru2018_Demo_V1.TienBao
             SizeF size = gr.MeasureString(gridview.RowCount.ToString(), gridview.PaintAppearance.Row.GetFont());
             gridview.IndicatorWidth = Convert.ToInt32(size.Width + 0.999f) + GridPainter.Indicator.ImageSize.Width + 10;
         }
-
         #endregion
 
-        private void gridView1_RowCellStyle(object sender, RowCellStyleEventArgs e)
-        {
-
-        }
+      
     }
 }
