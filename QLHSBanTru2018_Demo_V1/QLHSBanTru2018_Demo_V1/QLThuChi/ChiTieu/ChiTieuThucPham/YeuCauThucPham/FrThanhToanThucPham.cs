@@ -13,6 +13,8 @@ using QLHSBanTru2018_Demo_V1.Common;
 using DataConnect;
 using DataConnect.DAO.HungTD;
 using System.IO;
+using DevExpress.XtraGrid.Views.Base;
+using DevExpress.XtraGrid.Views.BandedGrid;
 
 namespace QLHSBanTru2018_Demo_V1.QLThuChi.ChiTieu.ChiTieuThucPham
 {
@@ -43,15 +45,15 @@ namespace QLHSBanTru2018_Demo_V1.QLThuChi.ChiTieu.ChiTieuThucPham
         }
         private void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
-            decimal tong = 0;
-            for (int i = 0; i < gridView1.RowCount; i++)
-            {
-                decimal a = (decimal)gridView1.GetRowCellValue(i, "PriceOfUnit");
-                int b = (int)gridView1.GetRowCellValue(i, "QuantityOfUnit");
-                gridView1.SetRowCellValue(i, gridView1.Columns["TotalPrice"], a * b);
-                tong += (a * b);
-            }
-            txtTongTien.Text = tong.ToString();
+            //decimal tong = 0;
+            //for (int i = 0; i < gridView1.RowCount; i++)
+            //{
+            //    decimal a = (decimal)gridView1.GetRowCellValue(i, "PriceOfUnit");
+            //    int b = (int)gridView1.GetRowCellValue(i, "QuantityOfUnit");
+            //    gridView1.SetRowCellValue(i, gridView1.Columns["TotalPrice"], a * b);
+            //    tong += (a * b);
+            //}
+            //txtTongTien.Text = tong.ToString();
         }
 
         private void btnHuy_Click(object sender, EventArgs e)
@@ -59,15 +61,35 @@ namespace QLHSBanTru2018_Demo_V1.QLThuChi.ChiTieu.ChiTieuThucPham
             OrderDetailDAO.ThanhToan = false;
             this.Close();
         }
-
+        public void viethoadon(int dong,decimal value)
+        {
+            gridView1.SetRowCellValue(dong, gridView1.Columns["TotalPrice"], value);
+        }
         private void gridView1_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
         {
-            //decimal tong = decimal.Parse(txtTongTien.Text);
-            //decimal a = (decimal)gridView1.GetRowCellValue(e.RowHandle, "PriceOfUnit");
-            //int b = (int)gridView1.GetRowCellValue(e.RowHandle, "QuantityOfUnit");
-            //tong += (a * b);
-            //txtTongTien.Text = tong.ToString();
-            //MessageBox.Show("â");
+            //DevExpress.XtraGrid.Views.Grid.GridView view = sender as DevExpress.XtraGrid.Views.Grid.GridView;
+            ////MessageBox.Show("" + e.RowHandle + "");
+            //viethoadon(e.RowHandle);
+            //BandedGridView view = sender as BandedGridView;
+            //decimal a = 1000;
+            //view.Columns["TotalPrice"]
+            
+
+        }
+        private void gridView1_CellValueChanging(object sender, CellValueChangedEventArgs e)
+        {
+            double a = double.Parse(gridView1.GetRowCellValue(e.RowHandle, "QuantityOfUnit").ToString());
+            gridView1.SetFocusedRowCellValue("TotalPrice", e.Value);
+            decimal b = (decimal)gridView1.GetRowCellValue(e.RowHandle, "TotalPrice");
+            decimal c = (decimal)a * b;
+            gridView1.SetFocusedRowCellValue("TotalPrice", c);
+            decimal tong = 0;
+            for (int i = 0; i < gridView1.RowCount; i++)
+            {
+                tong += decimal.Parse(gridView1.GetRowCellValue(i, "TotalPrice").ToString());
+
+            }
+            txtTongTien.Text = tong.ToString();
         }
         private void btnTaoHoaDon_Click(object sender, EventArgs e)
         {
@@ -121,5 +143,7 @@ namespace QLHSBanTru2018_Demo_V1.QLThuChi.ChiTieu.ChiTieuThucPham
                 
             }  
         }
+
+       
     }
 }

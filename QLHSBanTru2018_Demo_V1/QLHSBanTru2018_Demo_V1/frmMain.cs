@@ -237,10 +237,7 @@ namespace QLHSBanTru2018_Demo_V1
 
         private void btnCanDo_ItemClick(object sender, ItemClickEventArgs e)
         {
-            frmPhysicalAssessment m_frmPhysicalAssessment = new frmPhysicalAssessment();
-            pnControlsPanel.Controls.Clear();
-            pnControlsPanel.Controls.Add(m_frmPhysicalAssessment);
-            m_frmPhysicalAssessment.Dock = DockStyle.Fill;
+            
         }
 
         private void btnHealthExam_ItemClick(object sender, ItemClickEventArgs e)
@@ -258,7 +255,21 @@ namespace QLHSBanTru2018_Demo_V1
             m_frmHealthExamDetail.Dock = DockStyle.Fill;
         }
 
+        private void btnDotCanDo_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            frmListPhysicalAssessment m_frmlistPhysicalAssessment = new frmListPhysicalAssessment();
+            pnControlsPanel.Controls.Clear();
+            pnControlsPanel.Controls.Add(m_frmlistPhysicalAssessment);
+            m_frmlistPhysicalAssessment.Dock = DockStyle.Fill;
+        }
 
+        private void btnKetQua_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            frmPhysicalAssessment m_frmPhysicalAssessment = new frmPhysicalAssessment();
+            pnControlsPanel.Controls.Clear();
+            pnControlsPanel.Controls.Add(m_frmPhysicalAssessment);
+            m_frmPhysicalAssessment.Dock = DockStyle.Fill;
+        }
 
 
 
@@ -268,5 +279,7 @@ namespace QLHSBanTru2018_Demo_V1
         #region Vũ Đức Thiện
 
         #endregion
+
+
     }
 }

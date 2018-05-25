@@ -154,17 +154,18 @@ namespace DataConnect.DAO.TienBao
 
         public bool HealthDetailInsert(HealthExaminationDetail entity)
         {
-            try
-            {
-                HealthExaminationDetailTable = db.GetTable<HealthExaminationDetail>();
-                HealthExaminationDetailTable.InsertOnSubmit(entity);
-                db.SubmitChanges();
-                return true;
-            }
-            catch
-            {
-                return false;
-            }
+            HealthExaminationDetail a = new HealthExaminationDetail();
+            a.HealthExaminationID = entity.HealthExaminationID;
+            a.StudentID = entity.StudentID;
+            a.HealthInsurance = entity.HealthInsurance;
+            a.Status = false;
+            a.Height = entity.Height;
+            a.Weight = entity.Weight;
+            a.Rating = entity.Rating;
+            db.HealthExaminationDetails.InsertOnSubmit(a);
+            db.SubmitChanges();
+            return true;
+         
         }
         public bool HealthDetailUpdate(HealthExaminationDetail entity)
         {
@@ -205,7 +206,7 @@ namespace DataConnect.DAO.TienBao
             {
                 HealthExaminationDetailTable = db.GetTable<HealthExaminationDetail>();
                 HealthExaminationDetail model = HealthExaminationDetailTable.SingleOrDefault(x => x.HealthExaminationDetailID.Equals(HealthExaminationDetailID));
-                model.Status = false;
+                db.HealthExaminationDetails.DeleteOnSubmit(model);
                 db.SubmitChanges();
                 return true;
             }

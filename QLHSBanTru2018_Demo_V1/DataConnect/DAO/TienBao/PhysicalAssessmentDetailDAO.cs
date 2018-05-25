@@ -91,17 +91,18 @@ namespace DataConnect.DAO.TienBao
 
         public bool PhysicalDetailInsert(PhysicalAssessmentDetail entity)
         {
-            try
-            {
-                PhysicalDetailTable = db.GetTable<PhysicalAssessmentDetail>();
-                PhysicalDetailTable.InsertOnSubmit(entity);
-                db.SubmitChanges();
-                return true;
-            }
-            catch
-            {
-                return false;
-            }
+            PhysicalAssessmentDetail a = new PhysicalAssessmentDetail();
+            a.PhysicalAssessmentID = entity.PhysicalAssessmentID;
+            a.StudentID = entity.StudentID;
+            a.Status = false;
+            a.Height = entity.Height;
+            a.Weight = entity.Weight;
+            a.HeightRating = entity.HeightRating;
+            a.WeightRating = entity.WeightRating;
+            a.Note = entity.Note;
+            db.PhysicalAssessmentDetails.InsertOnSubmit(a);
+            db.SubmitChanges();
+            return true;
         }
         public bool PhysicalDetailUpdate(PhysicalAssessmentDetail entity)
         {
@@ -133,7 +134,7 @@ namespace DataConnect.DAO.TienBao
             {
                 PhysicalDetailTable = db.GetTable<PhysicalAssessmentDetail>();
                 PhysicalAssessmentDetail model = PhysicalDetailTable.SingleOrDefault(x => x.PhysicalAssessmentDeailID.Equals(PhysicalAssessmentDetailID));
-                model.Status = false;
+                db.PhysicalAssessmentDetails.DeleteOnSubmit(model);
                 db.SubmitChanges();
                 return true;
             }

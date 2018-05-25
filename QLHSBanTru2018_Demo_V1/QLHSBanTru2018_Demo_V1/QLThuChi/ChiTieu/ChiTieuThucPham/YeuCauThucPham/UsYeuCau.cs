@@ -27,18 +27,17 @@ namespace QLHSBanTru2018_Demo_V1.QLThuChi.ChiTieu.ChiTieuThucPham
             TCIngredientRequestDAO dt = new TCIngredientRequestDAO();
             if (cbNgayMua.Checked == true)
             {
-                grYeuCau.DataSource = dt.listIngredienRequesByDate(dtNgayMua.Value);
+                grYeuCau.DataSource = dt.listIngredienRequesByDate(dtNgayMua.Value);               
             }
             else
             {
-                grYeuCau.DataSource = dt.listIngredienRequesByCreatedDate(dtNgayKhoiTao.Value);
+                grYeuCau.DataSource = dt.listIngredienRequesByCreatedDate(dtNgayKhoiTao.Value);             
             }
 
         }
         public void LoadIngredienRequestDetail(int InredientRequestID)
         {
-            TCIngredientRequestDetailDAO dt = new TCIngredientRequestDetailDAO();
-            
+            TCIngredientRequestDetailDAO dt = new TCIngredientRequestDetailDAO();   
             dt.listInredientRequestDetail1(InredientRequestID);
             grChiTietYeuCau.DataSource = TCIngredientRequestDetailDAO.ListInredientReques;
         }
@@ -153,6 +152,17 @@ namespace QLHSBanTru2018_Demo_V1.QLThuChi.ChiTieu.ChiTieuThucPham
 
             if (gridView3.RowCount!=0)
             {
+                for (int i = 0; i < gridView3.RowCount; i++)
+                {
+                    if ((bool)gridView3.GetRowCellValue(i,gridView3.Columns["Status"])==false)
+                    {
+                        break;
+                    }
+                    if (i==gridView3.RowCount-1)
+                    {
+                        return;
+                    }
+                }
                 try
                 {
                     OrderDetailDAO dt = new OrderDetailDAO();
@@ -225,7 +235,7 @@ namespace QLHSBanTru2018_Demo_V1.QLThuChi.ChiTieu.ChiTieuThucPham
             Employee a = dt.GetByID((int)gridView1.GetRowCellValue(e.ListSourceRowIndex, "CreatedBy"));
             if (e.Column.FieldName != "NvYeuCau") return;
             e.Value = a.FirstName+" "+a.LastName;
-                      
+
         }
 
         private void cbNgayMua_CheckedChanged_1(object sender, EventArgs e)
@@ -236,8 +246,20 @@ namespace QLHSBanTru2018_Demo_V1.QLThuChi.ChiTieu.ChiTieuThucPham
                 dtNgayKhoiTao.Enabled = false;
                 dtNgayMua.Enabled = true;
                 LoadIngredienRequestByDate();
-                LoadIngredienRequestDetail((int)gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "IngredientRequestID"));
-                LoadIngredienRequesDetailBought(IngredienRequesID);
+                if (gridView1.RowCount == 0)
+                {
+                    TCIngredientRequestDetailDAO.ListInredientReques.Clear();
+                    grChiTietYeuCau.DataSource = TCIngredientRequestDetailDAO.ListInredientReques;
+                    TCIngredientRequestDetailDAO.ListInredientReques2.Clear();
+                    grDamua.DataSource = TCIngredientRequestDetailDAO.ListInredientReques2;
+                    gridView3.RefreshData();
+                    gridView2.RefreshData();
+                }
+                else
+                {
+                    LoadIngredienRequestDetail((int)gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "IngredientRequestID"));
+                    LoadIngredienRequesDetailBought((int)gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "IngredientRequestID"));
+                }                          
             }
             catch
             {
@@ -252,8 +274,20 @@ namespace QLHSBanTru2018_Demo_V1.QLThuChi.ChiTieu.ChiTieuThucPham
                 dtNgayMua.Enabled = false;
                 dtNgayKhoiTao.Enabled = true;
                 LoadIngredienRequestByDate();
-                LoadIngredienRequestDetail((int)gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "IngredientRequestID"));
-                LoadIngredienRequesDetailBought(IngredienRequesID);
+                if (gridView1.RowCount == 0)
+                {
+                    TCIngredientRequestDetailDAO.ListInredientReques.Clear();
+                    grChiTietYeuCau.DataSource = TCIngredientRequestDetailDAO.ListInredientReques;
+                    TCIngredientRequestDetailDAO.ListInredientReques2.Clear();
+                    grDamua.DataSource = TCIngredientRequestDetailDAO.ListInredientReques2;
+                    gridView3.RefreshData();
+                    gridView2.RefreshData();
+                }
+                else
+                {
+                    LoadIngredienRequestDetail((int)gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "IngredientRequestID"));
+                    LoadIngredienRequesDetailBought((int)gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "IngredientRequestID"));
+                }         
             }
             catch 
             {
@@ -267,8 +301,20 @@ namespace QLHSBanTru2018_Demo_V1.QLThuChi.ChiTieu.ChiTieuThucPham
             try
             {
                 LoadIngredienRequestByDate();
-                LoadIngredienRequestDetail((int)gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "IngredientRequestID"));
-                LoadIngredienRequesDetailBought(IngredienRequesID);
+                if (gridView1.RowCount==0)
+                {
+                    TCIngredientRequestDetailDAO.ListInredientReques.Clear();
+                    grChiTietYeuCau.DataSource = TCIngredientRequestDetailDAO.ListInredientReques;
+                    TCIngredientRequestDetailDAO.ListInredientReques2.Clear();
+                    grDamua.DataSource = TCIngredientRequestDetailDAO.ListInredientReques2;
+                    gridView3.RefreshData();
+                    gridView2.RefreshData();
+                }
+                else
+                {
+                    LoadIngredienRequestDetail((int)gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "IngredientRequestID"));
+                    LoadIngredienRequesDetailBought((int)gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "IngredientRequestID"));
+                }          
             }
             catch
             {
@@ -282,14 +328,41 @@ namespace QLHSBanTru2018_Demo_V1.QLThuChi.ChiTieu.ChiTieuThucPham
             try
             {
                 LoadIngredienRequestByDate();
-                LoadIngredienRequestDetail((int)gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "IngredientRequestID"));
-                LoadIngredienRequesDetailBought(IngredienRequesID);
+                if (gridView1.RowCount == 0)
+                {
+                    TCIngredientRequestDetailDAO.ListInredientReques.Clear();
+                    grChiTietYeuCau.DataSource = TCIngredientRequestDetailDAO.ListInredientReques;
+                    TCIngredientRequestDetailDAO.ListInredientReques2.Clear();
+                    grDamua.DataSource = TCIngredientRequestDetailDAO.ListInredientReques2;
+                    gridView3.RefreshData();
+                    gridView2.RefreshData();
+                }
+                else
+                {
+                    LoadIngredienRequestDetail((int)gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "IngredientRequestID"));
+                    LoadIngredienRequesDetailBought((int)gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "IngredientRequestID"));
+                }
+                
             }
             catch
             {
 
 
             }
+        }
+
+        private void gridView3_CustomUnboundColumnData(object sender, DevExpress.XtraGrid.Views.Base.CustomColumnDataEventArgs e)
+        {
+            if (e.Column.FieldName != "TinhTrang") return;
+            if ((bool)gridView3.GetRowCellValue(e.ListSourceRowIndex,"Status")==true)
+            {
+                e.Value = "Hoàn thành";
+            }
+            else
+            {
+                e.Value = "Chua Hoàn thành";
+            }
+            
         }
     }
 }

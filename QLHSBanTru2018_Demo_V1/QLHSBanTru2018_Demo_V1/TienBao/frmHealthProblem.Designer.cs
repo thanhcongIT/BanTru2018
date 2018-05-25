@@ -325,7 +325,7 @@
             // dtFillStartDate
             // 
             this.dtFillStartDate.EditValue = null;
-            this.dtFillStartDate.Location = new System.Drawing.Point(74, 43);
+            this.dtFillStartDate.Location = new System.Drawing.Point(74, 42);
             this.dtFillStartDate.Name = "dtFillStartDate";
             this.dtFillStartDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -338,7 +338,7 @@
             // txtFillEndDate
             // 
             this.txtFillEndDate.EditValue = null;
-            this.txtFillEndDate.Location = new System.Drawing.Point(74, 67);
+            this.txtFillEndDate.Location = new System.Drawing.Point(74, 66);
             this.txtFillEndDate.Name = "txtFillEndDate";
             this.txtFillEndDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -351,9 +351,9 @@
             // btnXem
             // 
             this.btnXem.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnXem.ImageOptions.Image")));
-            this.btnXem.Location = new System.Drawing.Point(24, 91);
+            this.btnXem.Location = new System.Drawing.Point(24, 90);
             this.btnXem.Name = "btnXem";
-            this.btnXem.Size = new System.Drawing.Size(179, 36);
+            this.btnXem.Size = new System.Drawing.Size(179, 38);
             this.btnXem.StyleController = this.layoutControl1;
             this.btnXem.TabIndex = 77;
             this.btnXem.Text = "Xem sự cố y tế";
@@ -470,7 +470,7 @@
             this.layoutControlItem1.CustomizationFormText = "layoutControlItem1";
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 48);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(183, 416);
+            this.layoutControlItem1.Size = new System.Drawing.Size(183, 417);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
