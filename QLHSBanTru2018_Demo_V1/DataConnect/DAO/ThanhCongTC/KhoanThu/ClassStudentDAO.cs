@@ -59,7 +59,6 @@ namespace DataConnect.DAO.ThanhCongTC
                     {
                         listStudenReceivableDetail.Add(st);
                     }
-                    
                     break;
                 }
                 
