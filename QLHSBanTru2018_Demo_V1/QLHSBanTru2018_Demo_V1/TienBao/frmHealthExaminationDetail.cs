@@ -150,7 +150,7 @@ namespace QLHSBanTru2018_Demo_V1.TienBao
         {
             LoadCourseInfor();
         }
-       private void btnXemchitiet_Click(object sender, EventArgs e)
+        private void btnXemchitiet_Click(object sender, EventArgs e)
         {
             if (cmbHealthExam.SelectedValue == null )
             {
@@ -165,6 +165,23 @@ namespace QLHSBanTru2018_Demo_V1.TienBao
             {
                 FillGridControl(int.Parse(cmbLopHoc.SelectedValue.ToString()), int.Parse(cmbHealthExam.SelectedValue.ToString()));
             }
+        }
+        private void cmbHealthExam_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbLopHoc.SelectedValue == null)
+            {
+                XtraMessageBox.Show("Mời bạn chọn lớp học", "Thông báo");
+            }
+            else
+            {
+                try
+                {
+                    FillGridControl(int.Parse(cmbLopHoc.SelectedValue.ToString()), int.Parse(cmbHealthExam.SelectedValue.ToString()));
+                }
+                catch
+                { }
+            }
+            
         }
         private void btnNhapds_Click(object sender, EventArgs e)
         {
@@ -187,7 +204,7 @@ namespace QLHSBanTru2018_Demo_V1.TienBao
                 m_frmNewHealth.ShowDialog();
                 if (m_frmNewHealth.DialogResult == DialogResult.OK)
                 {
-                  //  Danhsach(int.Parse(cmbLopHoc.SelectedValue.ToString()));
+                    FillGridControl(int.Parse(cmbLopHoc.SelectedValue.ToString()), int.Parse(cmbHealthExam.SelectedValue.ToString()));
                 }
             }
         }
@@ -209,10 +226,7 @@ namespace QLHSBanTru2018_Demo_V1.TienBao
             }
         }
 
-        private void btnXoa_Click(object sender, EventArgs e)
-        {
-          
-        }
+       
 
         //------------------Gridview_Button------------------
         private void btnchinhsua_Click(object sender, EventArgs e)
@@ -231,8 +245,21 @@ namespace QLHSBanTru2018_Demo_V1.TienBao
                 FillGridControl(int.Parse(cmbLopHoc.SelectedValue.ToString()), int.Parse(cmbHealthExam.SelectedValue.ToString()));
             }
         }
+        private void btnXoahs_Click(object sender, EventArgs e)
+        {
+            if (XtraMessageBox.Show("Bạn muốn xóa học sinh này?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            {
+                int dong = gridView1.FocusedRowHandle;
+                string HealthDetailID = gridView1.GetRowCellValue(dong, gridView1.Columns["HealthExaminationDetailID"]).ToString();
+                new HealthExaminationDetailDAO().HealthDetailDelete(int.Parse(HealthDetailID.ToString()));
+                if (XtraMessageBox.Show(" Xóa học sinh thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information) == DialogResult.OK)
+                {
+                    FillGridControl(int.Parse(cmbLopHoc.SelectedValue.ToString()), int.Parse(cmbHealthExam.SelectedValue.ToString()));
+                }
+            }
+        }
         //------------------Gridview_Button------------------
-        
+
 
         #endregion
 
@@ -289,6 +316,8 @@ namespace QLHSBanTru2018_Demo_V1.TienBao
             SizeF size = gr.MeasureString(gridview.RowCount.ToString(), gridview.PaintAppearance.Row.GetFont());
             gridview.IndicatorWidth = Convert.ToInt32(size.Width + 0.999f) + GridPainter.Indicator.ImageSize.Width + 10;
         }
+
+
 
         #endregion
 

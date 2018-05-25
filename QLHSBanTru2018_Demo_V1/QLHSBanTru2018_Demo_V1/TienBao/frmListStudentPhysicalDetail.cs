@@ -21,18 +21,18 @@ using DataConnect;
 
 namespace QLHSBanTru2018_Demo_V1.TienBao
 {
-    public partial class frmNewHealthExamDetail : DevExpress.XtraEditors.XtraForm
+    public partial class frmListStudentPhysicalDetail : DevExpress.XtraEditors.XtraForm
     {
         public int iFunction;
         public DataConnect.Student Student;
         public DataConnect.Class Class;
-        public DataConnect.HealthExamination healthExamination;
+        public DataConnect.PhysicalAssessment physicalAssessment;
         public DataConnect.StudentParent studentparents;
         StudentDAO m_StudentDAO = new StudentDAO();
         StudentParentsDAO m_StudentParentsDAO = new StudentParentsDAO();
         StudentClassDao m_StudentClassDAO = new StudentClassDao();
 
-        public frmNewHealthExamDetail()
+        public frmListStudentPhysicalDetail()
         {
             InitializeComponent();
         }
@@ -41,7 +41,7 @@ namespace QLHSBanTru2018_Demo_V1.TienBao
         {
             try
             {
-                dgvListStudent.DataSource = new HealthExaminationDetailDAO().ListStudent(ClassID);
+                dgvListStudent.DataSource = new PhysicalAssessmentDetailDAO().ListStudent(ClassID);
             }
             catch
             { }
@@ -52,8 +52,8 @@ namespace QLHSBanTru2018_Demo_V1.TienBao
         private void InsertStudent()
         {
 
-            HealthExaminationDetail entity = new HealthExaminationDetail();
-            HealthExaminationDetailDAO m_HealthExamDAO = new HealthExaminationDetailDAO();
+            PhysicalAssessmentDetail entity = new PhysicalAssessmentDetail();
+            PhysicalAssessmentDetailDAO m_PhysicalDetailDAO = new PhysicalAssessmentDetailDAO();
             if (iFunction == 1)
             {
                 int a1 = gridView1.SelectedRowsCount;
@@ -61,13 +61,14 @@ namespace QLHSBanTru2018_Demo_V1.TienBao
                 for (int i = 0; i < a1; i++)
                 {
                     entity.StudentID = (int)gridView1.GetRowCellValue(a[i], gridView1.Columns["StudentID"]);
-                    entity.HealthExaminationID = healthExamination.HealthExaminationID;
-                    entity.HealthInsurance = "-- Chọn loại bảo hiểm --";
-                    entity.Height = 1;
-                    entity.Weight = 1;
-                    entity.Rating = "Chưa đánh giá";
-                    entity.Status = false;
-                    if (m_HealthExamDAO.HealthDetailInsert(entity) == true)
+                    entity.PhysicalAssessmentID = physicalAssessment.PhysicalAssessmentID;
+                    entity.Height = 0;
+                    entity.Weight = 0;
+                    entity.HeightRating = "Chưa đánh giá";
+                    entity.WeightRating = "Chưa đánh giá";
+                    entity.Note = "Chưa đánh giá";
+                    entity.Status = true;
+                    if (m_PhysicalDetailDAO.PhysicalDetailInsert(entity) == true)
                     {
 
                     }
@@ -76,23 +77,23 @@ namespace QLHSBanTru2018_Demo_V1.TienBao
                         XtraMessageBox.Show("Bản ghi " + i + "bị lỗi");
                     }
                 }
-                XtraMessageBox.Show("Thêm kết quả khám sức khỏe thành công!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                XtraMessageBox.Show("Thêm danh sách học sinh thành công!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 DialogResult = DialogResult.OK;
                 this.Close();
-               
+
             }
         }
         #endregion
 
         #region Event
         bool indicatorIcon = true;
-        private void frmNewHealthExamDetail_Load(object sender, EventArgs e)
+        private void frmListStudentPhysicalDetail_Load(object sender, EventArgs e)
         {
             if (iFunction == 1)
             {
                 this.Text = "Thêm mới kết quả khám";
                 txtClassName.Text = Class.Name;
-                txtHealthExamName.Text = healthExamination.Name;
+                txtPhysicalName.Text = physicalAssessment.Name;
                 Danhsach(int.Parse(Class.ClassID.ToString()));
 
             }
@@ -120,7 +121,7 @@ namespace QLHSBanTru2018_Demo_V1.TienBao
         }
         private void btnHuybo_Click(object sender, EventArgs e)
         {
-            if (XtraMessageBox.Show("Bạn muốn đóng trang này?"+"Các thay đổi chưa được lưu!", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
+            if (XtraMessageBox.Show("Bạn muốn đóng trang này?" + "Các thay đổi chưa được lưu!", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
             { this.Close(); }
         }
         #endregion
@@ -180,6 +181,6 @@ namespace QLHSBanTru2018_Demo_V1.TienBao
         }
         #endregion
 
-      
+       
     }
 }
