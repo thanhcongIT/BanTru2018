@@ -39,9 +39,13 @@ namespace QLHSBanTru2018_Demo_V1.QLThuChi
             cbHoanLai.Checked = (bool)ReceivableDetailDAO.DemoReceibavleDetail.Feedback;
             int a = (int)ReceivableDetailDAO.DemoReceibavleDetail.GradeID;
             cbbKhoihoc.Text = dt.lookforGrade(a).Name;
-            if (ReceivableDetailDAO.DemoReceibavleDetail.PreferredID=="")
+            if (ReceivableDetailDAO.DemoReceibavleDetail.PreferredID!="")
             {
                 cbDoituongchinhsach.Checked = true;
+            }
+            else
+            {
+                cbDoituongchinhsach.Checked = false;
             }
             
         }

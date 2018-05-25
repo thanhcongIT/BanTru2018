@@ -31,6 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrThietLapKeHoachThu));
             this.bntDong = new DevExpress.XtraEditors.SimpleButton();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
+            this.txtGhiChu = new System.Windows.Forms.TextBox();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.layoutControl3 = new DevExpress.XtraLayout.LayoutControl();
             this.label2 = new System.Windows.Forms.Label();
@@ -57,6 +59,7 @@
             this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn11 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.bntKhoitao = new DevExpress.XtraEditors.SimpleButton();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.layoutControl2 = new DevExpress.XtraLayout.LayoutControl();
@@ -84,12 +87,11 @@
             this.layoutControlItem12 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem14 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem15 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.txtGhiChu = new System.Windows.Forms.TextBox();
-            this.gridColumn11 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
+            this.groupControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl3)).BeginInit();
@@ -125,8 +127,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem14)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem15)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
-            this.groupControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             this.SuspendLayout();
             // 
@@ -164,6 +164,24 @@
             this.layoutControl1.Size = new System.Drawing.Size(784, 461);
             this.layoutControl1.TabIndex = 5;
             this.layoutControl1.Text = "layoutControl1";
+            // 
+            // groupControl3
+            // 
+            this.groupControl3.Controls.Add(this.txtGhiChu);
+            this.groupControl3.Location = new System.Drawing.Point(12, 160);
+            this.groupControl3.Name = "groupControl3";
+            this.groupControl3.Size = new System.Drawing.Size(760, 89);
+            this.groupControl3.TabIndex = 11;
+            this.groupControl3.Text = "Ghi chú";
+            // 
+            // txtGhiChu
+            // 
+            this.txtGhiChu.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtGhiChu.Location = new System.Drawing.Point(2, 21);
+            this.txtGhiChu.Multiline = true;
+            this.txtGhiChu.Name = "txtGhiChu";
+            this.txtGhiChu.Size = new System.Drawing.Size(756, 66);
+            this.txtGhiChu.TabIndex = 0;
             // 
             // panelControl1
             // 
@@ -411,6 +429,14 @@
             this.gridColumn10.FieldName = "PreferredID";
             this.gridColumn10.Name = "gridColumn10";
             this.gridColumn10.OptionsColumn.AllowEdit = false;
+            // 
+            // gridColumn11
+            // 
+            this.gridColumn11.Caption = "Hoàn lại";
+            this.gridColumn11.FieldName = "Feedback";
+            this.gridColumn11.Name = "gridColumn11";
+            this.gridColumn11.Visible = true;
+            this.gridColumn11.VisibleIndex = 5;
             // 
             // bntKhoitao
             // 
@@ -680,15 +706,6 @@
             this.layoutControlItem15.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem15.TextVisible = false;
             // 
-            // groupControl3
-            // 
-            this.groupControl3.Controls.Add(this.txtGhiChu);
-            this.groupControl3.Location = new System.Drawing.Point(12, 160);
-            this.groupControl3.Name = "groupControl3";
-            this.groupControl3.Size = new System.Drawing.Size(760, 89);
-            this.groupControl3.TabIndex = 11;
-            this.groupControl3.Text = "Ghi chú";
-            // 
             // layoutControlItem5
             // 
             this.layoutControlItem5.Control = this.groupControl3;
@@ -697,23 +714,6 @@
             this.layoutControlItem5.Size = new System.Drawing.Size(764, 93);
             this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem5.TextVisible = false;
-            // 
-            // txtGhiChu
-            // 
-            this.txtGhiChu.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtGhiChu.Location = new System.Drawing.Point(2, 21);
-            this.txtGhiChu.Multiline = true;
-            this.txtGhiChu.Name = "txtGhiChu";
-            this.txtGhiChu.Size = new System.Drawing.Size(756, 66);
-            this.txtGhiChu.TabIndex = 0;
-            // 
-            // gridColumn11
-            // 
-            this.gridColumn11.Caption = "Hoàn lại";
-            this.gridColumn11.FieldName = "Feedback";
-            this.gridColumn11.Name = "gridColumn11";
-            this.gridColumn11.Visible = true;
-            this.gridColumn11.VisibleIndex = 5;
             // 
             // FrThietLapKeHoachThu
             // 
@@ -726,6 +726,9 @@
             this.Load += new System.EventHandler(this.FrThietLapKeHoachThu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).EndInit();
+            this.groupControl3.ResumeLayout(false);
+            this.groupControl3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl3)).EndInit();
@@ -761,9 +764,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem14)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem15)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).EndInit();
-            this.groupControl3.ResumeLayout(false);
-            this.groupControl3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             this.ResumeLayout(false);
 

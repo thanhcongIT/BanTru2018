@@ -37,20 +37,8 @@ namespace QLHSBanTru2018_Demo_V1.QLThuChi
             //LoadDataKeHoachThu();
             grCacKhoanThu.DataSource = ReceivableDetailDAO.ListDemoReceivableDetail;
 
-            if (this.WindowState == FormWindowState.Maximized)
-            {
-                this.WindowState = FormWindowState.Normal;
-                this.WindowState = FormWindowState.Maximized;
-            }
-            else
-            {
-                if (this.WindowState == FormWindowState.Normal)
-                {
-                    this.WindowState = FormWindowState.Maximized;
-                    this.WindowState = FormWindowState.Normal;
-                }
+            gridView1.RefreshData();
 
-            }
         }
 
         private void bntSua_Click(object sender, EventArgs e)
@@ -64,20 +52,7 @@ namespace QLHSBanTru2018_Demo_V1.QLThuChi
                 FRSuaKhoanThu a = new FRSuaKhoanThu();
                 a.ShowDialog();
             }
-            if (this.WindowState == FormWindowState.Maximized)
-            {
-                this.WindowState = FormWindowState.Normal;
-                this.WindowState = FormWindowState.Maximized;
-            }
-            else
-            {
-                if (this.WindowState == FormWindowState.Normal)
-                {
-                    this.WindowState = FormWindowState.Maximized;
-                    this.WindowState = FormWindowState.Normal;
-                }
-
-            }
+            gridView1.RefreshData();
             // đưa trỏ chuột về dòng đầu tiên
             try
             {
@@ -94,10 +69,10 @@ namespace QLHSBanTru2018_Demo_V1.QLThuChi
                 PreferredDAO.PreferredIDList = gridView1.GetRowCellValue(0, "PreferredID").ToString();
                 ReceivableDetailDAO.DemoReceibavleDetail = a;
             }
-            catch 
+            catch
             {
 
-                
+
             }
         }
 
