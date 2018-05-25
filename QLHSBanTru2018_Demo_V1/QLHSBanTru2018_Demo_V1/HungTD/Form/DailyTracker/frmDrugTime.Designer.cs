@@ -31,7 +31,9 @@
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.gcMain = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.tspDrugTime = new DevExpress.XtraEditors.TimeSpanEdit();
+            this.colDrugName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDrugTime = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDrugQuantity = new DevExpress.XtraGrid.Columns.GridColumn();
             this.txtStudentFullName = new DevExpress.XtraEditors.TextEdit();
             this.txtGender = new DevExpress.XtraEditors.TextEdit();
             this.txtDrugName = new DevExpress.XtraEditors.TextEdit();
@@ -47,7 +49,6 @@
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlGroup3 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -56,14 +57,12 @@
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem3 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.colDrugName = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colDrugTime = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colDrugQuantity = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.tspDrugTime = new DevExpress.XtraEditors.TimeSpanEdit();
+            this.adf = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gcMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tspDrugTime.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtStudentFullName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtGender.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDrugName.Properties)).BeginInit();
@@ -76,7 +75,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
@@ -85,12 +83,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tspDrugTime.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.adf)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
             // 
-            this.layoutControl1.Controls.Add(this.gcMain);
             this.layoutControl1.Controls.Add(this.tspDrugTime);
+            this.layoutControl1.Controls.Add(this.gcMain);
             this.layoutControl1.Controls.Add(this.txtStudentFullName);
             this.layoutControl1.Controls.Add(this.txtGender);
             this.layoutControl1.Controls.Add(this.txtDrugName);
@@ -127,19 +127,45 @@
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.ShowGroupPanel = false;
             // 
-            // tspDrugTime
+            // colDrugName
             // 
-            this.tspDrugTime.EditValue = System.TimeSpan.Parse("00:00:00");
-            this.tspDrugTime.Location = new System.Drawing.Point(93, 156);
-            this.tspDrugTime.Name = "tspDrugTime";
-            this.tspDrugTime.Properties.Appearance.Options.UseTextOptions = true;
-            this.tspDrugTime.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.tspDrugTime.Properties.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.tspDrugTime.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.tspDrugTime.Size = new System.Drawing.Size(267, 20);
-            this.tspDrugTime.StyleController = this.layoutControl1;
-            this.tspDrugTime.TabIndex = 8;
+            this.colDrugName.Caption = "Tên Thuốc";
+            this.colDrugName.FieldName = "DrugName";
+            this.colDrugName.Name = "colDrugName";
+            this.colDrugName.Visible = true;
+            this.colDrugName.VisibleIndex = 0;
+            this.colDrugName.Width = 372;
+            // 
+            // colDrugTime
+            // 
+            this.colDrugTime.AppearanceCell.Options.UseTextOptions = true;
+            this.colDrugTime.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colDrugTime.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.colDrugTime.AppearanceHeader.Options.UseTextOptions = true;
+            this.colDrugTime.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colDrugTime.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.colDrugTime.Caption = "Giờ Uống";
+            this.colDrugTime.DisplayFormat.FormatString = "hh\\:mm";
+            this.colDrugTime.FieldName = "DrugTime";
+            this.colDrugTime.Name = "colDrugTime";
+            this.colDrugTime.Visible = true;
+            this.colDrugTime.VisibleIndex = 1;
+            this.colDrugTime.Width = 159;
+            // 
+            // colDrugQuantity
+            // 
+            this.colDrugQuantity.AppearanceCell.Options.UseTextOptions = true;
+            this.colDrugQuantity.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colDrugQuantity.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.colDrugQuantity.AppearanceHeader.Options.UseTextOptions = true;
+            this.colDrugQuantity.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colDrugQuantity.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.colDrugQuantity.Caption = "Số Lượng";
+            this.colDrugQuantity.FieldName = "DrugQuantity";
+            this.colDrugQuantity.Name = "colDrugQuantity";
+            this.colDrugQuantity.Visible = true;
+            this.colDrugQuantity.VisibleIndex = 2;
+            this.colDrugQuantity.Width = 161;
             // 
             // txtStudentFullName
             // 
@@ -269,12 +295,12 @@
             // 
             this.layoutControlGroup3.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlItem3,
-            this.layoutControlItem5,
             this.layoutControlItem4,
             this.emptySpaceItem1,
             this.layoutControlItem7,
             this.emptySpaceItem2,
-            this.layoutControlItem10});
+            this.layoutControlItem10,
+            this.adf});
             this.layoutControlGroup3.Location = new System.Drawing.Point(0, 90);
             this.layoutControlGroup3.Name = "layoutControlGroup3";
             this.layoutControlGroup3.Size = new System.Drawing.Size(364, 185);
@@ -288,15 +314,6 @@
             this.layoutControlItem3.Size = new System.Drawing.Size(340, 24);
             this.layoutControlItem3.Text = "Tên Thuốc:";
             this.layoutControlItem3.TextSize = new System.Drawing.Size(66, 13);
-            // 
-            // layoutControlItem5
-            // 
-            this.layoutControlItem5.Control = this.tspDrugTime;
-            this.layoutControlItem5.Location = new System.Drawing.Point(0, 24);
-            this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(340, 24);
-            this.layoutControlItem5.Text = "Giờ Uống:";
-            this.layoutControlItem5.TextSize = new System.Drawing.Size(66, 13);
             // 
             // layoutControlItem4
             // 
@@ -371,45 +388,25 @@
             this.layoutControlItem9.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem9.TextVisible = false;
             // 
-            // colDrugName
+            // tspDrugTime
             // 
-            this.colDrugName.Caption = "Tên Thuốc";
-            this.colDrugName.FieldName = "DrugName";
-            this.colDrugName.Name = "colDrugName";
-            this.colDrugName.Visible = true;
-            this.colDrugName.VisibleIndex = 0;
-            this.colDrugName.Width = 372;
+            this.tspDrugTime.EditValue = System.TimeSpan.Parse("00:00:00");
+            this.tspDrugTime.Location = new System.Drawing.Point(93, 156);
+            this.tspDrugTime.Name = "tspDrugTime";
+            this.tspDrugTime.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.tspDrugTime.Size = new System.Drawing.Size(267, 20);
+            this.tspDrugTime.StyleController = this.layoutControl1;
+            this.tspDrugTime.TabIndex = 14;
             // 
-            // colDrugTime
+            // adf
             // 
-            this.colDrugTime.AppearanceCell.Options.UseTextOptions = true;
-            this.colDrugTime.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colDrugTime.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.colDrugTime.AppearanceHeader.Options.UseTextOptions = true;
-            this.colDrugTime.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colDrugTime.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.colDrugTime.Caption = "Giờ Uống";
-            this.colDrugTime.DisplayFormat.FormatString = "hh\\:mm";
-            this.colDrugTime.FieldName = "DrugTime";
-            this.colDrugTime.Name = "colDrugTime";
-            this.colDrugTime.Visible = true;
-            this.colDrugTime.VisibleIndex = 1;
-            this.colDrugTime.Width = 159;
-            // 
-            // colDrugQuantity
-            // 
-            this.colDrugQuantity.AppearanceCell.Options.UseTextOptions = true;
-            this.colDrugQuantity.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colDrugQuantity.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.colDrugQuantity.AppearanceHeader.Options.UseTextOptions = true;
-            this.colDrugQuantity.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colDrugQuantity.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.colDrugQuantity.Caption = "Số Lượng";
-            this.colDrugQuantity.FieldName = "DrugQuantity";
-            this.colDrugQuantity.Name = "colDrugQuantity";
-            this.colDrugQuantity.Visible = true;
-            this.colDrugQuantity.VisibleIndex = 2;
-            this.colDrugQuantity.Width = 161;
+            this.adf.Control = this.tspDrugTime;
+            this.adf.Location = new System.Drawing.Point(0, 24);
+            this.adf.Name = "adf";
+            this.adf.Size = new System.Drawing.Size(340, 24);
+            this.adf.Text = "Giờ Uống:";
+            this.adf.TextSize = new System.Drawing.Size(66, 13);
             // 
             // frmDrugTime
             // 
@@ -427,7 +424,6 @@
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gcMain)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tspDrugTime.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtStudentFullName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtGender.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDrugName.Properties)).EndInit();
@@ -440,7 +436,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
@@ -449,6 +444,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tspDrugTime.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.adf)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -462,12 +459,10 @@
         private DevExpress.XtraEditors.TextEdit txtGender;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup2;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
-        private DevExpress.XtraEditors.TimeSpanEdit tspDrugTime;
         private DevExpress.XtraEditors.TextEdit txtDrugName;
         private DevExpress.XtraEditors.TextEdit txtQuantity;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
         private DevExpress.XtraGrid.GridControl gcMain;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
@@ -486,5 +481,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn colDrugName;
         private DevExpress.XtraGrid.Columns.GridColumn colDrugTime;
         private DevExpress.XtraGrid.Columns.GridColumn colDrugQuantity;
+        private DevExpress.XtraEditors.TimeSpanEdit tspDrugTime;
+        private DevExpress.XtraLayout.LayoutControlItem adf;
     }
 }

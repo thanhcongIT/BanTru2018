@@ -18,6 +18,10 @@ namespace DataConnect.DAO.HungTD
             db = new QLHSSmartKidsDataContext();
             dailyTrackers = db.GetTable<DailyTracker>();
         }
+        public DailyTracker GetByID(int dailyTrackerID)
+        {
+            return dailyTrackers.FirstOrDefault(x => x.DailyTrackerID.Equals(dailyTrackerID));
+        }
         public int Insert(DailyTracker entity)
         {
             try
@@ -29,6 +33,29 @@ namespace DataConnect.DAO.HungTD
             catch
             {
                 return 0;
+            }
+        }
+        public bool Edit(DailyTracker entity)
+        {
+            try
+            {
+                DailyTracker dailyTracker = dailyTrackers.FirstOrDefault(x => x.DailyTrackerID.Equals(entity.DailyTrackerID));
+                dailyTracker.Present = entity.Present;
+                dailyTracker.Reason = entity.Reason;
+                dailyTracker.TimeIn = entity.TimeIn;
+                dailyTracker.TimeOut = entity.TimeOut;
+                dailyTracker.Eating = entity.Eating;
+                dailyTracker.Sleep = entity.Sleep;
+                dailyTracker.Health = entity.Health;
+                dailyTracker.Study = entity.Study;
+                dailyTracker.Note = entity.Note;
+                dailyTracker.Status = entity.Status;
+                db.SubmitChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
             }
         }
         public bool InsertAllDailyTrackerOfWeek(Week week, List<Student> students)

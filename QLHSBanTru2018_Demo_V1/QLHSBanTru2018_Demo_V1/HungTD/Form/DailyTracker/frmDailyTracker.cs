@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using DataConnect.DAO.HungTD;
 using DevExpress.XtraSplashScreen;
+using DataConnect.DAO.TienBao;
 
 namespace QLHSBanTru2018_Demo_V1.HungTD.Form.DailyTracker
 {
@@ -262,7 +263,8 @@ namespace QLHSBanTru2018_Demo_V1.HungTD.Form.DailyTracker
         }
 
         private void btnDrugTime_Click(object sender, EventArgs e)
-        {if (CheckNow())
+        {
+            if (CheckNow())
             {
                 var rowHandle = gridView1.FocusedRowHandle;
 
@@ -284,6 +286,29 @@ namespace QLHSBanTru2018_Demo_V1.HungTD.Form.DailyTracker
             frmLDT.setDay(DateTime.Parse(cbbDayOfWeek.SelectedValue.ToString()));
             frmLDT.setClassID(ClassID);
             frmLDT.ShowDialog();
+        }
+
+        private void btnDetailTracker_Click(object sender, EventArgs e)
+        {
+            if (CheckNow())
+            {
+                var rowHandle = gridView1.FocusedRowHandle;
+
+                frmDailyTrackerDetail frmDTD = new frmDailyTrackerDetail();
+
+                frmDTD.setDailyTrackerID(Convert.ToInt32(gridView1.GetRowCellValue(rowHandle, "DailyTrackerID").ToString()));
+                frmDTD.setStudentID(Convert.ToInt32(gridView1.GetRowCellValue(rowHandle, "StudentID").ToString()));
+                frmDTD.setClassName(new ClassDAO().GetByClassID(ClassID).Name);
+                frmDTD.setWeekName(cbbWeekID.Text);
+                frmDTD.setDayName(cbbDayOfWeek.Text);
+                frmDTD.ShowDialog();
+
+                FillGridControl();
+            }
+            else
+            {
+                MessageBox.Show("Bạn chỉ có thể chỉnh sửa thông tin của ngày hiện tại!", "Xin lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+            }
         }
     }
 }
