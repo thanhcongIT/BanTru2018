@@ -27,11 +27,11 @@ namespace QLHSBanTru2018_Demo_V1.QLThuChi.ChiTieu.ChiTieuThucPham
             TCIngredientRequestDAO dt = new TCIngredientRequestDAO();
             if (cbNgayMua.Checked == true)
             {
-                grYeuCau.DataSource = dt.listIngredienRequesByDate(dtNgayMua.Value);
+                grYeuCau.DataSource = dt.listIngredienRequesByDate(dtNgayMua.Value);               
             }
             else
             {
-                grYeuCau.DataSource = dt.listIngredienRequesByCreatedDate(dtNgayKhoiTao.Value);
+                grYeuCau.DataSource = dt.listIngredienRequesByCreatedDate(dtNgayKhoiTao.Value);             
             }
 
         }
@@ -152,6 +152,17 @@ namespace QLHSBanTru2018_Demo_V1.QLThuChi.ChiTieu.ChiTieuThucPham
 
             if (gridView3.RowCount!=0)
             {
+                for (int i = 0; i < gridView3.RowCount; i++)
+                {
+                    if ((bool)gridView3.GetRowCellValue(i,gridView3.Columns["Status"])==false)
+                    {
+                        break;
+                    }
+                    if (i==gridView3.RowCount-1)
+                    {
+                        return;
+                    }
+                }
                 try
                 {
                     OrderDetailDAO dt = new OrderDetailDAO();
@@ -224,7 +235,7 @@ namespace QLHSBanTru2018_Demo_V1.QLThuChi.ChiTieu.ChiTieuThucPham
             Employee a = dt.GetByID((int)gridView1.GetRowCellValue(e.ListSourceRowIndex, "CreatedBy"));
             if (e.Column.FieldName != "NvYeuCau") return;
             e.Value = a.FirstName+" "+a.LastName;
-                      
+
         }
 
         private void cbNgayMua_CheckedChanged_1(object sender, EventArgs e)
@@ -338,6 +349,20 @@ namespace QLHSBanTru2018_Demo_V1.QLThuChi.ChiTieu.ChiTieuThucPham
 
 
             }
+        }
+
+        private void gridView3_CustomUnboundColumnData(object sender, DevExpress.XtraGrid.Views.Base.CustomColumnDataEventArgs e)
+        {
+            if (e.Column.FieldName != "TinhTrang") return;
+            if ((bool)gridView3.GetRowCellValue(e.ListSourceRowIndex,"Status")==true)
+            {
+                e.Value = "Hoàn thành";
+            }
+            else
+            {
+                e.Value = "Chua Hoàn thành";
+            }
+            
         }
     }
 }

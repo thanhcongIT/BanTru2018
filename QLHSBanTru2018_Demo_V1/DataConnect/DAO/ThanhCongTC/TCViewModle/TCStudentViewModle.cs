@@ -25,7 +25,7 @@ namespace DataConnect.DAO.ThanhCongTC.TCViewModle
         public int BirthPlaceID { get; set; }
         public int LocationID { get; set; }
         public string AdressDetail { get; set; }
-        public int PreferredID { get; set; }
+        public int? PreferredID { get; set; }
         public string Note { get; set; }
         public bool Status { get; set; }
 

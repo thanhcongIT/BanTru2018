@@ -37,7 +37,7 @@ namespace DataConnect.DAO.ThanhCongTC
         }
         public List<Preferred> ListPreferred()
         {
-            var a = dt.Preferreds;
+            var a = dt.Preferreds.Where(t=>t.PreferredID!=0);
             return a.ToList();
         }
         public Preferred listPreferredByID(int PrefrerredID)

@@ -178,6 +178,12 @@
     <Compile Include="HungTD\Form\DailyTracker\frmDailyTracker.Designer.cs">
       <DependentUpon>frmDailyTracker.cs</DependentUpon>
     </Compile>
+    <Compile Include="HungTD\Form\DailyTracker\frmDailyTrackerDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HungTD\Form\DailyTracker\frmDailyTrackerDetail.Designer.cs">
+      <DependentUpon>frmDailyTrackerDetail.cs</DependentUpon>
+    </Compile>
     <Compile Include="HungTD\Form\DailyTracker\frmDrugTime.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -672,6 +678,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="HungTD\Form\DailyTracker\frmDailyTracker.resx">
       <DependentUpon>frmDailyTracker.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HungTD\Form\DailyTracker\frmDailyTrackerDetail.resx">
+      <DependentUpon>frmDailyTrackerDetail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HungTD\Form\DailyTracker\frmDrugTime.resx">
       <DependentUpon>frmDrugTime.cs</DependentUpon>
