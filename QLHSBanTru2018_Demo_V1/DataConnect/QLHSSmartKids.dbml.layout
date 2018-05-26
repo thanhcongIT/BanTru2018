@@ -38,12 +38,6 @@
         <elementListCompartment Id="83748675-cd3f-40cc-b100-ca4c94f3072c" absoluteBounds="12.265, 25.585, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="709d8c2b-22ad-4177-969a-ad75a3f6ba0a" absoluteBounds="9.25, 1.125, 2, 1.7708968098958331">
-      <DataClassMoniker Name="/QLHSSmartKidsDataContext/DailyMenu" />
-      <nestedChildShapes>
-        <elementListCompartment Id="08d86c39-d4f9-4053-b727-df00c6e19a9c" absoluteBounds="9.265, 1.585, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
     <classShape Id="a784cf7a-8f5d-440b-89fa-27d4e8044b6a" absoluteBounds="12, 13.375, 2, 1.3862939453124987">
       <DataClassMoniker Name="/QLHSSmartKidsDataContext/DailyMenuDetail" />
       <nestedChildShapes>
@@ -345,35 +339,28 @@
         <classShapeMoniker Id="8635bdb8-79fc-4822-8361-92ea8730e412" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(11.25 : 2.89453358158053); (11.625 : 3.26953358158053); (11.625 : 14.0681469726562); (12 : 14.0681469726562)]" fixedFrom="NotFixed" fixedTo="NotFixed">
-      <AssociationMoniker Name="/QLHSSmartKidsDataContext/DailyMenu/DailyMenu_DailyMenuDetail" />
-      <nodes>
-        <classShapeMoniker Id="709d8c2b-22ad-4177-969a-ad75a3f6ba0a" />
-        <classShapeMoniker Id="a784cf7a-8f5d-440b-89fa-27d4e8044b6a" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(16.75 : 4.00084554036458); (17.5 : 4.00084554036458)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(16.75 : 4.00084554036458); (17.1666666666667 : 4.00084554036458 : JumpStart); (17.3333333333333 : 4.00084554036458 : JumpEnd); (17.5 : 4.00084554036458)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/QLHSSmartKidsDataContext/DateOfEntry/DateOfEntry_DailyTask" />
       <nodes>
         <classShapeMoniker Id="0b2ee100-ad5a-47db-a6c6-e2718b1d2c44" />
         <classShapeMoniker Id="32ffd19b-84ea-4dee-b7ca-4c16ed63790c" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(11.25 : 13.6590734863281); (11.5416666666667 : 13.6590734863281 : JumpStart); (11.7708333333333 : 13.6590734863281 : JumpEnd); (12 : 13.6590734863281)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(11.25 : 13.6590734863281); (11.6041666666667 : 13.6590734863281 : JumpStart); (11.7708333333333 : 13.6590734863281 : JumpEnd); (12 : 13.6590734863281)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/QLHSSmartKidsDataContext/Dish/Dish_DailyMenuDetail" />
       <nodes>
         <classShapeMoniker Id="32296166-f770-42f4-80a1-772b8deebedf" />
         <classShapeMoniker Id="a784cf7a-8f5d-440b-89fa-27d4e8044b6a" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(7.5 : 6.14589680989583); (7.5 : 6.75); (8.75 : 6.75); (8.75 : 9.375); (8.5 : 9.375); (8.5 : 14.0777498372396); (9.25 : 14.0777498372396)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(7.5 : 6.14589680989583); (7.5 : 6.75); (8.47916666666667 : 6.75 : JumpStart); (8.64583333333333 : 6.75 : JumpEnd); (8.75 : 6.75); (8.75 : 9.375); (8.5 : 9.375); (8.5 : 14.0777498372396); (9.25 : 14.0777498372396)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/QLHSSmartKidsDataContext/AgeGroup/AgeGroup_Dish" />
       <nodes>
         <classShapeMoniker Id="c9d6c994-c68a-44cc-b174-f3489c78862d" />
         <classShapeMoniker Id="32296166-f770-42f4-80a1-772b8deebedf" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(11.03125 : 13); (11.03125 : 11.0104484049479); (11.5416666666667 : 11.0104484049479 : JumpStart); (11.7083333333333 : 11.0104484049479 : JumpEnd); (12 : 11.0104484049479)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(11.03125 : 13); (11.03125 : 11.0104484049479); (12 : 11.0104484049479)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/QLHSSmartKidsDataContext/Dish/Dish_DishDetail" />
       <nodes>
         <classShapeMoniker Id="32296166-f770-42f4-80a1-772b8deebedf" />
@@ -387,7 +374,7 @@
         <classShapeMoniker Id="f61f9296-d13c-4508-a3ea-96730786a5d6" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 17.0777091471354); (5.66666666666667 : 17.0777091471354 : JumpStart); (5.95833333333333 : 17.0777091471354 : JumpEnd); (6 : 17.0777091471354); (6 : 29.375); (7.4062495 : 29.375); (7.4062495 : 35)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(5.5 : 17.0777091471354); (5.57291666666667 : 17.0777091471354 : JumpStart); (5.95833333333333 : 17.0777091471354 : JumpEnd); (6 : 17.0777091471354); (6 : 29.375); (7.4062495 : 29.375); (7.4062495 : 35)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/QLHSSmartKidsDataContext/Employee/Employee_Contract" />
       <nodes>
         <classShapeMoniker Id="d8db84b2-5908-4d9c-ba2f-d7eae13b7007" />
@@ -401,14 +388,14 @@
         <classShapeMoniker Id="5ab6c294-9d8e-4704-b381-15a2961e13f2" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 14.9896468098958); (9.25 : 14.9896468098958)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(5.5 : 14.9896468098958); (5.57291666666667 : 14.9896468098958 : JumpStart); (5.83333333333333 : 14.9896468098958 : JumpEnd); (5.85416666666667 : 14.9896468098958 : JumpStart); (6.02083333333333 : 14.9896468098958 : JumpEnd); (8.47916666666667 : 14.9896468098958 : JumpStart); (8.64583333333333 : 14.9896468098958 : JumpEnd); (9.25 : 14.9896468098958)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/QLHSSmartKidsDataContext/Employee/Employee_Dish" />
       <nodes>
         <classShapeMoniker Id="d8db84b2-5908-4d9c-ba2f-d7eae13b7007" />
         <classShapeMoniker Id="32296166-f770-42f4-80a1-772b8deebedf" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 14.8453836153846); (6.0625 : 14.2828836153846); (6.0625 : 11.2752774720052); (6.25 : 11.2752774720052)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(5.5 : 14.8453836153846); (5.59732443490112 : 14.7480591804835 : JumpStart); (5.80892556509888 : 14.5364580502857 : JumpEnd); (6.0625 : 14.2828836153846); (6.0625 : 11.2752774720052); (6.25 : 11.2752774720052)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/QLHSSmartKidsDataContext/Employee/Employee_Division" />
       <nodes>
         <classShapeMoniker Id="d8db84b2-5908-4d9c-ba2f-d7eae13b7007" />
@@ -436,21 +423,21 @@
         <classShapeMoniker Id="053ac9ae-c86a-4444-8551-72d6cba40c64" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 17.482001546224); (5.66666666666667 : 17.482001546224 : JumpStart); (6.08333333333333 : 17.482001546224 : JumpEnd); (6.25 : 17.482001546224)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(5.5 : 17.482001546224); (5.57291666666667 : 17.482001546224 : JumpStart); (5.83333333333333 : 17.482001546224 : JumpEnd); (5.85416666666667 : 17.482001546224 : JumpStart); (6.02083333333333 : 17.482001546224 : JumpEnd); (6.25 : 17.482001546224)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/QLHSSmartKidsDataContext/Employee/Employee_Employee_Class" />
       <nodes>
         <classShapeMoniker Id="d8db84b2-5908-4d9c-ba2f-d7eae13b7007" />
         <classShapeMoniker Id="053ac9ae-c86a-4444-8551-72d6cba40c64" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(4.45259365384615 : 14.75); (4.45259365384615 : 14.0312475); (5.66666666666667 : 14.0312475 : JumpStart); (5.95833333333333 : 14.0312475 : JumpEnd); (5.97916666666667 : 14.0312475 : JumpStart); (6.14583333333333 : 14.0312475 : JumpEnd); (6.25 : 14.0312475)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(4.45259365384615 : 14.75); (4.45259365384615 : 14.0312475); (5.57291666666667 : 14.0312475 : JumpStart); (5.95833333333333 : 14.0312475 : JumpEnd); (5.97916666666667 : 14.0312475 : JumpStart); (6.14583333333333 : 14.0312475 : JumpEnd); (6.25 : 14.0312475)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/QLHSSmartKidsDataContext/Employee/Employee_Employee_Function" />
       <nodes>
         <classShapeMoniker Id="d8db84b2-5908-4d9c-ba2f-d7eae13b7007" />
         <classShapeMoniker Id="608a3070-aab9-4555-9b38-83e8d93154cf" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 14.9431469726562); (3.5 : 14.9431469726562)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(2.75 : 14.9431469726562); (3.08854516666667 : 14.9431469726562 : JumpStart); (3.25521183333333 : 14.9431469726562 : JumpEnd); (3.5 : 14.9431469726562)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/QLHSSmartKidsDataContext/EthnicGroup/EthnicGroup_Employee" />
       <nodes>
         <classShapeMoniker Id="83a892cf-9491-4fc9-bb1e-f07fd83e58ae" />
@@ -464,49 +451,49 @@
         <classShapeMoniker Id="608a3070-aab9-4555-9b38-83e8d93154cf" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 25.0681469726563); (3.08854516666667 : 25.0681469726563 : JumpStart); (3.25521183333333 : 25.0681469726563 : JumpEnd); (3.5 : 25.0681469726563)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(2.75 : 25.0681469726563); (3.5 : 25.0681469726563)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/QLHSSmartKidsDataContext/FunctionGroup/FunctionGroup_Function" />
       <nodes>
         <classShapeMoniker Id="a175d424-54c1-45fa-bda3-c738c2526dc0" />
         <classShapeMoniker Id="7cc1330d-974f-4f87-82e9-936ce5122634" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 28.0392976888021); (3.5 : 28.0392976888021)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(2.75 : 28.0392976888021); (3.08854516666667 : 28.0392976888021 : JumpStart); (3.25521183333333 : 28.0392976888021 : JumpEnd); (3.5 : 28.0392976888021)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/QLHSSmartKidsDataContext/Grade/Grade_Class" />
       <nodes>
         <classShapeMoniker Id="60da97bc-224b-4ae7-8679-64cee1cf2d52" />
         <classShapeMoniker Id="77389b0b-a0e3-4254-a408-3e1ba8836a22" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 15.78125); (5.57291666666667 : 15.78125 : JumpStart); (5.83333333333333 : 15.78125 : JumpEnd); (5.85416666666667 : 15.78125 : JumpStart); (6.02083333333333 : 15.78125 : JumpEnd); (11.6041666666667 : 15.78125 : JumpStart); (11.7708333333333 : 15.78125 : JumpEnd); (11.9166666666667 : 15.78125 : JumpStart); (12.0833333333333 : 15.78125 : JumpEnd); (12.25 : 15.78125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(5.5 : 15.78125); (5.57291666666667 : 15.78125 : JumpStart); (5.83333333333333 : 15.78125 : JumpEnd); (5.85416666666667 : 15.78125 : JumpStart); (6.02083333333333 : 15.78125 : JumpEnd); (8.47916666666667 : 15.78125 : JumpStart); (8.64583333333333 : 15.78125 : JumpEnd); (11.6041666666667 : 15.78125 : JumpStart); (11.7708333333333 : 15.78125 : JumpEnd); (12.25 : 15.78125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/QLHSSmartKidsDataContext/Employee/Employee_HealthProblem" />
       <nodes>
         <classShapeMoniker Id="d8db84b2-5908-4d9c-ba2f-d7eae13b7007" />
         <classShapeMoniker Id="b4d8bf09-f771-4bce-8685-445cd88ff0e0" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 16.15625); (5.66666666666667 : 16.15625 : JumpStart); (5.83333333333333 : 16.15625 : JumpEnd); (5.85416666666667 : 16.15625 : JumpStart); (6.02083333333333 : 16.15625 : JumpEnd); (9.25 : 16.15625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(5.5 : 16.15625); (5.57291666666667 : 16.15625 : JumpStart); (5.83333333333333 : 16.15625 : JumpEnd); (5.85416666666667 : 16.15625 : JumpStart); (6.02083333333333 : 16.15625 : JumpEnd); (8.47916666666667 : 16.15625 : JumpStart); (8.64583333333333 : 16.15625 : JumpEnd); (9.25 : 16.15625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/QLHSSmartKidsDataContext/Employee/Employee_History" />
       <nodes>
         <classShapeMoniker Id="d8db84b2-5908-4d9c-ba2f-d7eae13b7007" />
         <classShapeMoniker Id="f0486f89-0460-47f1-b79b-350492c25469" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 24.1862992741887); (5.90625 : 23.7800492741887); (5.90625 : 18.5881982421875); (8.62650915249399 : 18.5881982421875); (9.25150915249399 : 17.9631982421875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(5.5 : 24.1862992741887); (5.69107443490112 : 23.9952248392876 : JumpStart); (5.80892556509888 : 23.8773737090898 : JumpEnd); (5.90625 : 23.7800492741887); (5.90625 : 18.5881982421875); (8.62650915249399 : 18.5881982421875); (9.25150915249399 : 17.9631982421875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/QLHSSmartKidsDataContext/Function/Function_History" />
       <nodes>
         <classShapeMoniker Id="7cc1330d-974f-4f87-82e9-936ce5122634" />
         <classShapeMoniker Id="f0486f89-0460-47f1-b79b-350492c25469" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(11.25 : 25.8115374615385); (11.3160719349011 : 25.7454655266373 : JumpStart); (11.5276768150989 : 25.5338606464396 : JumpEnd); (11.6875 : 25.3740374615385); (11.6875 : 11.0104484049479); (12 : 11.0104484049479)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(11.25 : 25.8115374615385); (11.3160719349011 : 25.7454655266374 : JumpStart); (11.5276768150989 : 25.5338606464396 : JumpEnd); (11.6875 : 25.3740374615385); (11.6875 : 11.0104484049479); (12 : 11.0104484049479)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/QLHSSmartKidsDataContext/Ingredient/Ingredient_DishDetail" />
       <nodes>
         <classShapeMoniker Id="4bea73de-b64a-49f9-abd6-afec2cf50cde" />
         <classShapeMoniker Id="c1d996e2-3246-49dd-866b-e2f8469cadd8" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(4.5 : 19.4054182942708); (4.5 : 20.7315991210938); (5.66666666666667 : 20.7315991210938 : JumpStart); (6.08333333333333 : 20.7315991210938 : JumpEnd); (6.25 : 20.7315991210938)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(4.5 : 19.4054182942708); (4.5 : 20.7315991210938); (5.66666666666667 : 20.7315991210938 : JumpStart); (5.83333333333333 : 20.7315991210938 : JumpEnd); (5.85416666666667 : 20.7315991210938 : JumpStart); (6.14583333333333 : 20.7315991210938 : JumpEnd); (6.25 : 20.7315991210938)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/QLHSSmartKidsDataContext/Employee/Employee_IngredientRequest" />
       <nodes>
         <classShapeMoniker Id="d8db84b2-5908-4d9c-ba2f-d7eae13b7007" />
@@ -520,7 +507,7 @@
         <classShapeMoniker Id="3e6ff97a-f12f-405c-baba-9d447976b78d" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(8.25 : 20.7580451888021); (9 : 20.7580451888021)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(8.25 : 20.7580451888021); (8.47916666666667 : 20.7580451888021 : JumpStart); (8.64583333333333 : 20.7580451888021 : JumpEnd); (9 : 20.7580451888021)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/QLHSSmartKidsDataContext/IngredientRequest/IngredientRequest_IngredientRequestDetail" />
       <nodes>
         <classShapeMoniker Id="970e2cde-f1e9-4573-a8cf-8c66a40f773e" />
@@ -534,7 +521,7 @@
         <classShapeMoniker Id="4bea73de-b64a-49f9-abd6-afec2cf50cde" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.65625 : 6.02089680989583); (5.65625 : 19.6049625651042); (5.66666666666667 : 19.6049625651042 : JumpStart); (6.20833333333333 : 19.6049625651042 : JumpEnd); (11.2916641666667 : 19.6049625651042 : JumpStart); (11.4583308333333 : 19.6049625651042 : JumpEnd); (11.6041666666667 : 19.6049625651042 : JumpStart); (11.7708333333333 : 19.6049625651042 : JumpEnd); (11.9166666666667 : 19.6049625651042 : JumpStart); (12.0833333333333 : 19.6049625651042 : JumpEnd); (15.5 : 19.6049625651042)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(5.65625 : 6.02089680989583); (5.65625 : 19.6049625651042); (5.66666666666667 : 19.6049625651042 : JumpStart); (6.20833333333333 : 19.6049625651042 : JumpEnd); (8.47916666666667 : 19.6049625651042 : JumpStart); (8.64583333333333 : 19.6049625651042 : JumpEnd); (11.2916641666667 : 19.6049625651042 : JumpStart); (11.4583308333333 : 19.6049625651042 : JumpEnd); (11.6041666666667 : 19.6049625651042 : JumpStart); (11.7708333333333 : 19.6049625651042 : JumpEnd); (15.5 : 19.6049625651042)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/QLHSSmartKidsDataContext/Course/Course_Invoice" />
       <nodes>
         <classShapeMoniker Id="39c1235a-bca2-406a-8a3f-0d4cfb70f42f" />
@@ -555,14 +542,14 @@
         <classShapeMoniker Id="d8db84b2-5908-4d9c-ba2f-d7eae13b7007" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(8.40625 : 8.57859537760417); (8.40625 : 13.15625); (8.41666666666667 : 13.15625 : JumpStart); (8.58333333333333 : 13.15625 : JumpEnd); (9.25 : 13.15625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(8.40625 : 8.57859537760417); (8.40625 : 13.15625); (8.41666666666667 : 13.15625 : JumpStart); (8.64583333333333 : 13.15625 : JumpEnd); (9.25 : 13.15625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/QLHSSmartKidsDataContext/Meal/Meal_Dish" />
       <nodes>
         <classShapeMoniker Id="0f0c07ad-0c96-40af-8e97-f7a7e5229fb3" />
         <classShapeMoniker Id="32296166-f770-42f4-80a1-772b8deebedf" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 19.3115711404247); (5.96875 : 19.7803211404247); (5.96875 : 23.4815991210938); (6.25 : 23.4815991210938)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(5.5 : 19.3115711404247); (5.59732443490112 : 19.4088955753258 : JumpStart); (5.80892556509888 : 19.6204967055236 : JumpEnd); (5.81607443490112 : 19.6276455753258 : JumpStart); (5.96517556509888 : 19.7767467055236 : JumpEnd); (5.96875 : 19.7803211404247); (5.96875 : 23.4815991210938); (5.97916666666667 : 23.4815991210938 : JumpStart); (6.14583333333333 : 23.4815991210938 : JumpEnd); (6.25 : 23.4815991210938)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/QLHSSmartKidsDataContext/Employee/Employee_Order" />
       <nodes>
         <classShapeMoniker Id="d8db84b2-5908-4d9c-ba2f-d7eae13b7007" />
@@ -590,7 +577,7 @@
         <classShapeMoniker Id="eb5e6ef5-5dfb-4a92-8774-c220c7d9c0df" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 11.8662019856771); (6.25 : 11.8662019856771)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(5.5 : 11.8662019856771); (5.79166666666667 : 11.8662019856771 : JumpStart); (5.95833333333333 : 11.8662019856771 : JumpEnd); (6.25 : 11.8662019856771)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/QLHSSmartKidsDataContext/Position/Position_Division" />
       <nodes>
         <classShapeMoniker Id="b4f62c9b-83fe-4fa9-ac9b-f9dcb30149f0" />
@@ -618,7 +605,7 @@
         <classShapeMoniker Id="bd802c4d-7660-4f51-ba98-0bb321bc3554" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 19.1402091471354); (3.08854516666667 : 19.1402091471354 : JumpStart); (3.25521183333333 : 19.1402091471354 : JumpEnd); (3.5 : 19.1402091471354)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(2.75 : 19.1402091471354); (3.5 : 19.1402091471354)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/QLHSSmartKidsDataContext/Religion/Religion_Employee" />
       <nodes>
         <classShapeMoniker Id="7ce9ae04-f793-4f21-bb4f-2fbed8e38229" />
@@ -632,7 +619,7 @@
         <classShapeMoniker Id="60da97bc-224b-4ae7-8679-64cee1cf2d52" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.843752 : 30); (2.843752 : 29.2083968098958); (3.08854516666667 : 29.2083968098958 : JumpStart); (3.25521183333333 : 29.2083968098958 : JumpEnd); (4.41666666666667 : 29.2083968098958 : JumpStart); (4.58333333333333 : 29.2083968098958 : JumpEnd); (6.0625 : 29.2083968098958); (6.0625 : 19.25); (11.2916641666667 : 19.25 : JumpStart); (11.4583308333333 : 19.25 : JumpEnd); (11.6041666666667 : 19.25 : JumpStart); (11.7708333333333 : 19.25 : JumpEnd); (11.9166666666667 : 19.25 : JumpStart); (12.0833333333333 : 19.25 : JumpEnd); (15.125 : 19.25); (15.125 : 18.0837292825521); (15.5 : 18.0837292825521)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(2.843752 : 30); (2.843752 : 29.2083968098958); (3.08854516666667 : 29.2083968098958 : JumpStart); (3.25521183333333 : 29.2083968098958 : JumpEnd); (4.41666666666667 : 29.2083968098958 : JumpStart); (4.58333333333333 : 29.2083968098958 : JumpEnd); (6.0625 : 29.2083968098958); (6.0625 : 19.25); (8.47916666666667 : 19.25 : JumpStart); (8.64583333333333 : 19.25 : JumpEnd); (11.2916641666667 : 19.25 : JumpStart); (11.4583308333333 : 19.25 : JumpEnd); (11.6041666666667 : 19.25 : JumpStart); (11.7708333333333 : 19.25 : JumpEnd); (15.125 : 19.25); (15.125 : 18.0837292825521); (15.5 : 18.0837292825521)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/QLHSSmartKidsDataContext/Semester/Semester_Invoice" />
       <nodes>
         <classShapeMoniker Id="5a061acb-d57c-4c3d-89cb-4d6e15dd3e7e" />
@@ -660,14 +647,14 @@
         <classShapeMoniker Id="8635bdb8-79fc-4822-8361-92ea8730e412" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(11.3749975 : 39.75); (11.3749975 : 18.1915511067708); (11.6041666666667 : 18.1915511067708 : JumpStart); (11.7708333333333 : 18.1915511067708 : JumpEnd); (11.9166666666667 : 18.1915511067708 : JumpStart); (12.0833333333333 : 18.1915511067708 : JumpEnd); (12.25 : 18.1915511067708)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(11.3749975 : 39.75); (11.3749975 : 18.1915511067708); (11.6041666666667 : 18.1915511067708 : JumpStart); (11.7708333333333 : 18.1915511067708 : JumpEnd); (12.25 : 18.1915511067708)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/QLHSSmartKidsDataContext/Student/Student_HealthProblem" />
       <nodes>
         <classShapeMoniker Id="9a8d70c9-b92c-484e-af46-f0f53b0d84e6" />
         <classShapeMoniker Id="b4d8bf09-f771-4bce-8685-445cd88ff0e0" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(11.5 : 41.890625); (14.3229166666667 : 41.890625 : JumpStart); (14.4895833333333 : 41.890625 : JumpEnd); (15.25 : 41.890625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(11.5 : 41.890625); (15.25 : 41.890625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/QLHSSmartKidsDataContext/Student/Student_PhysicalAssessmentDetail" />
       <nodes>
         <classShapeMoniker Id="9a8d70c9-b92c-484e-af46-f0f53b0d84e6" />
@@ -702,14 +689,14 @@
         <classShapeMoniker Id="9f462648-e2e8-4c72-9093-9ec4ef2c8099" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(14 : 5.38869416145833); (17 : 5.38869416145833); (17 : 16.375); (17.75 : 16.375); (17.75 : 23.125); (16.75 : 23.125); (16.75 : 23.5)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(14 : 5.38869416145833); (17 : 5.38869416145833); (17 : 16.375); (17.75 : 16.375); (17.75 : 23.125); (16.75 : 23.125); (16.75 : 23.5)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/QLHSSmartKidsDataContext/Lesson/Lesson_Student_Lesson" />
       <nodes>
         <classShapeMoniker Id="0aa9a19e-15c8-40a0-94f0-8e607df487a4" />
         <classShapeMoniker Id="806926df-4906-4115-a75f-3005f2234663" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(11.4375025 : 39.75); (11.4375025 : 24.8021468098958); (11.6041666666667 : 24.8021468098958 : JumpStart); (11.7708333333333 : 24.8021468098958 : JumpEnd); (15.2604166666667 : 24.8021468098958 : JumpStart); (15.4270833333333 : 24.8021468098958 : JumpEnd); (15.75 : 24.8021468098958)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(11.4375025 : 39.75); (11.4375025 : 24.8021468098958); (15.75 : 24.8021468098958)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/QLHSSmartKidsDataContext/Student/Student_Student_Lesson" />
       <nodes>
         <classShapeMoniker Id="9a8d70c9-b92c-484e-af46-f0f53b0d84e6" />
@@ -723,25 +710,18 @@
         <classShapeMoniker Id="c23e8479-f62c-41c5-8fdd-d03c2aa23bf0" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(11.25 : 5.23159912109375); (11.5416666666667 : 5.23159912109375 : JumpStart); (11.7083333333333 : 5.23159912109375 : JumpEnd); (12 : 5.23159912109375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(11.25 : 5.23159912109375); (12 : 5.23159912109375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/QLHSSmartKidsDataContext/Topic/Topic_Lesson" />
       <nodes>
         <classShapeMoniker Id="3e7c1f35-965d-472f-9acc-1ad453c114aa" />
         <classShapeMoniker Id="0aa9a19e-15c8-40a0-94f0-8e607df487a4" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(8.5 : 5.26044840494792); (8.91666666666667 : 5.26044840494792 : JumpStart); (9.08333333333333 : 5.26044840494792 : JumpEnd); (9.25 : 5.26044840494792)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(8.5 : 5.26044840494792); (9.25 : 5.26044840494792)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/QLHSSmartKidsDataContext/AgeGroup/AgeGroup_Topic" />
       <nodes>
         <classShapeMoniker Id="c9d6c994-c68a-44cc-b174-f3489c78862d" />
         <classShapeMoniker Id="3e7c1f35-965d-472f-9acc-1ad453c114aa" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(8.5 : 1.91909912109375); (8.91666666666667 : 1.91909912109375 : JumpStart); (9.08333333333333 : 1.91909912109375 : JumpEnd); (9.25 : 1.91909912109375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
-      <AssociationMoniker Name="/QLHSSmartKidsDataContext/Week/Week_DailyMenu" />
-      <nodes>
-        <classShapeMoniker Id="7820dc07-e376-4a9f-bd45-56e02ab7ee68" />
-        <classShapeMoniker Id="709d8c2b-22ad-4177-969a-ad75a3f6ba0a" />
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(4.75 : 4.25); (4.75 : 1.73159912109375); (6.5 : 1.73159912109375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
@@ -790,25 +770,45 @@
         <elementListCompartment Id="5fd7dff9-0eb9-4d5a-a0f4-1fe4a54ed690" absoluteBounds="12.265, 21.21, 1.9700000000000002, 2.941609700520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(14.25 : 21.9375); (15.34375 : 21.9375); (15.34375 : 26.375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(14.25 : 21.9375); (15.34375 : 21.9375); (15.34375 : 26.375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/QLHSSmartKidsDataContext/DailyTracker/DailyTracker_DailyTrackerDrugTime" />
       <nodes>
         <classShapeMoniker Id="5cb9cb17-6c80-468c-a8bd-825c84853446" />
         <classShapeMoniker Id="00e489a9-cf7f-48c1-b263-4c7c01bf0e74" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(11.46875125 : 39.75); (11.46875125 : 22.0392976888021); (11.6041666666667 : 22.0392976888021 : JumpStart); (11.7708333333333 : 22.0392976888021 : JumpEnd); (12.25 : 22.0392976888021)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(11.46875125 : 39.75); (11.46875125 : 22.5008048502604); (11.6041666666667 : 22.5008048502604 : JumpStart); (11.7708333333333 : 22.5008048502604 : JumpEnd); (12.25 : 22.5008048502604)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/QLHSSmartKidsDataContext/Student/Student_DailyTracker" />
       <nodes>
         <classShapeMoniker Id="9a8d70c9-b92c-484e-af46-f0f53b0d84e6" />
         <classShapeMoniker Id="5cb9cb17-6c80-468c-a8bd-825c84853446" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(8.5 : 1.73159912109375); (9 : 1.73159912109375); (9 : 7); (11.5416666666667 : 7 : JumpStart); (11.7083333333333 : 7 : JumpEnd); (12.5 : 7); (12.5 : 9.875); (14.25 : 9.875); (14.25 : 15.375); (12 : 15.375); (12 : 20.375); (13.25 : 20.375); (13.25 : 20.75)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(7.5 : 2.7131982421875); (7.5 : 4.3125); (8.5625 : 4.3125); (8.5625 : 22.4375); (11.2916641666667 : 22.4375 : JumpStart); (11.4583308333333 : 22.4375 : JumpEnd); (11.6041666666667 : 22.4375 : JumpStart); (11.7708333333333 : 22.4375 : JumpEnd); (12.15625 : 22.4375); (12.15625 : 22.5008048502604); (12.25 : 22.5008048502604)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/QLHSSmartKidsDataContext/Week/Week_DailyTracker" />
       <nodes>
         <classShapeMoniker Id="7820dc07-e376-4a9f-bd45-56e02ab7ee68" />
         <classShapeMoniker Id="5cb9cb17-6c80-468c-a8bd-825c84853446" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="da37901e-a02a-4bed-bf3c-8755a17fb8f4" absoluteBounds="12.375, 2.5, 2, 1.9631982421875">
+      <DataClassMoniker Name="/QLHSSmartKidsDataContext/DailyMenu" />
+      <nestedChildShapes>
+        <elementListCompartment Id="19df2741-f4d6-4bea-a3ab-c9bdf7baf3c5" absoluteBounds="12.39, 2.96, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(14.375 : 2.9687505); (17.25 : 2.9687505); (17.25 : 13); (17.0833333333333 : 13 : JumpStart); (16.9166666666667 : 13 : JumpEnd); (14.5833333333333 : 13 : JumpStart); (14.4166666666667 : 13 : JumpEnd); (13 : 13); (13 : 13.375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/QLHSSmartKidsDataContext/DailyMenu/DailyMenu_DailyMenuDetail" />
+      <nodes>
+        <classShapeMoniker Id="da37901e-a02a-4bed-bf3c-8755a17fb8f4" />
+        <classShapeMoniker Id="a784cf7a-8f5d-440b-89fa-27d4e8044b6a" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.5 : 1.6249995); (13.375 : 1.6249995); (13.375 : 2.5)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/QLHSSmartKidsDataContext/Week/Week_DailyMenu" />
+      <nodes>
+        <classShapeMoniker Id="7820dc07-e376-4a9f-bd45-56e02ab7ee68" />
+        <classShapeMoniker Id="da37901e-a02a-4bed-bf3c-8755a17fb8f4" />
       </nodes>
     </associationConnector>
   </nestedChildShapes>
