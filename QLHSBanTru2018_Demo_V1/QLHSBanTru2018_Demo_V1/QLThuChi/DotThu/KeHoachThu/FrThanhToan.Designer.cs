@@ -477,7 +477,8 @@
             // gridColumn2
             // 
             this.gridColumn2.Caption = "Mức thu";
-            this.gridColumn2.DisplayFormat.FormatString = "VND";
+            this.gridColumn2.DisplayFormat.FormatString = "c2";
+            this.gridColumn2.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.gridColumn2.FieldName = "Price";
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.OptionsColumn.AllowEdit = false;
@@ -495,7 +496,7 @@
             // 
             // gridColumn4
             // 
-            this.gridColumn4.Caption = "/Đơn vị";
+            this.gridColumn4.Caption = "Số lượng";
             this.gridColumn4.FieldName = "Frequency";
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.OptionsColumn.AllowEdit = false;
@@ -513,6 +514,8 @@
             // gridColumn6
             // 
             this.gridColumn6.Caption = "Tổng thu";
+            this.gridColumn6.DisplayFormat.FormatString = "c2";
+            this.gridColumn6.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.gridColumn6.FieldName = "TotalPriceDetail";
             this.gridColumn6.Name = "gridColumn6";
             this.gridColumn6.OptionsColumn.AllowEdit = false;

@@ -57,23 +57,6 @@ namespace QLHSBanTru2018_Demo_V1.QLThuChi.ChiTieu
             dtNgaykhoitao.EditValue = DateTime.Now;
             InvoiceDetailDAO.listDemoInvoiceDetail.Clear();
         }
-        public void MinMaxForm()
-        {
-            if (this.WindowState == FormWindowState.Maximized)
-            {
-                this.WindowState = FormWindowState.Normal;
-                this.WindowState = FormWindowState.Maximized;
-            }
-            else
-            {
-                if (this.WindowState == FormWindowState.Normal)
-                {
-                    this.WindowState = FormWindowState.Maximized;
-                    this.WindowState = FormWindowState.Normal;
-                }
-
-            }
-        }
         public void TinhTongTien()
         {
             decimal tong = 0;
@@ -92,61 +75,65 @@ namespace QLHSBanTru2018_Demo_V1.QLThuChi.ChiTieu
             FrChiTietHoaDon a = new FrChiTietHoaDon();
             a.ShowDialog();
             loadChiTietHoaDon();
-            MinMaxForm();
+            gridView1.RefreshData();
             float Tong = 0;
             TinhTongTien();
         }
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            try
+            if (gridView1.RowCount!=0)
             {
-                InvoiceDAO dt = new InvoiceDAO();
-                InvoiceDetailDAO dc = new InvoiceDetailDAO();
-                Invoice a = new Invoice();
-                a.CourseID = (int)cbbNamhoc.SelectedValue;
-                a.SemesterID = (int)cbbHocky.SelectedValue;
-                a.CreatedDate = DateTime.Now;
-                a.EmployeeID = LoginDetail.LoginID;
-                a.NameMoneyReceive = txtHoten.Text;
-                a.PhoneNumber = txtSDT.Text;
-                a.AdressDetail = txtDiachi.Text;
-                a.TotalPrice = decimal.Parse(txtTongchi.Text);
-                a.SpendSpeciesID = (int)cbbLoaichi.SelectedValue;
-                a.Note = txtGhichu.Text;
-                System.Guid a1= dt.Insert(a);
-                if (a1!=null)
+                try
                 {
-                    for (int i = 0; i < gridView1.RowCount; i++)
+                    InvoiceDAO dt = new InvoiceDAO();
+                    InvoiceDetailDAO dc = new InvoiceDetailDAO();
+                    Invoice a = new Invoice();
+                    a.CourseID = (int)cbbNamhoc.SelectedValue;
+                    a.SemesterID = (int)cbbHocky.SelectedValue;
+                    a.CreatedDate = DateTime.Now;
+                    a.EmployeeID = LoginDetail.LoginID;
+                    a.NameMoneyReceive = txtHoten.Text;
+                    a.PhoneNumber = txtSDT.Text;
+                    a.AdressDetail = txtDiachi.Text;
+                    a.TotalPrice = decimal.Parse(txtTongchi.Text);
+                    a.SpendSpeciesID = (int)cbbLoaichi.SelectedValue;
+                    a.Note = txtGhichu.Text;
+                    System.Guid a1 = dt.Insert(a);
+                    if (a1 != null)
                     {
-                        InvoiceDetail b = new InvoiceDetail();
-                        b.InvoiceID = a1;
-                        b.NameInvoiceDetail = gridView1.GetRowCellValue(i, gridView1.Columns["NameInvoiceDetail"]).ToString();
-                        b.Price = (decimal)gridView1.GetRowCellValue(i, gridView1.Columns["Price"]);
-                        b.Unit = gridView1.GetRowCellValue(i, gridView1.Columns["Unit"]).ToString();
-                        b.Amount = (int)gridView1.GetRowCellValue(i, gridView1.Columns["Amount"]);
-                        b.TotalPriceDetail = (decimal)gridView1.GetRowCellValue(i, gridView1.Columns["TotalPriceDetail"]);
-                        b.Note = gridView1.GetRowCellValue(i, gridView1.Columns["Note"]).ToString();
-                        b.Status = false;
-                        if (dc.Insert(b)==true)
+                        for (int i = 0; i < gridView1.RowCount; i++)
                         {
+                            InvoiceDetail b = new InvoiceDetail();
+                            b.InvoiceID = a1;
+                            b.NameInvoiceDetail = gridView1.GetRowCellValue(i, gridView1.Columns["NameInvoiceDetail"]).ToString();
+                            b.Price = (decimal)gridView1.GetRowCellValue(i, gridView1.Columns["Price"]);
+                            b.Unit = gridView1.GetRowCellValue(i, gridView1.Columns["Unit"]).ToString();
+                            b.Amount = (int)gridView1.GetRowCellValue(i, gridView1.Columns["Amount"]);
+                            b.TotalPriceDetail = (decimal)gridView1.GetRowCellValue(i, gridView1.Columns["TotalPriceDetail"]);
+                            b.Note = gridView1.GetRowCellValue(i, gridView1.Columns["Note"]).ToString();
+                            b.Status = false;
+                            if (dc.Insert(b) == true)
+                            {
 
+                            }
+                            else
+                            {
+                                MessageBox.Show("Bản ghi " + i + " bị lỗi");
+                                break;
+                            }
                         }
-                        else
-                        {
-                            MessageBox.Show("Bản ghi " + i + " bị lỗi");
-                            break;
-                        }
+                        MessageBox.Show("Lưu thành công");
+                        this.Close();
                     }
-                    MessageBox.Show("Lưu thành công");
-                    this.Close();
+                }
+                catch
+                {
+
+
                 }
             }
-            catch
-            {
-
-               
-            }
+            
         }
         private void cbbNamhoc_SelectionChangeCommitted(object sender, EventArgs e)
         {
@@ -188,7 +175,7 @@ namespace QLHSBanTru2018_Demo_V1.QLThuChi.ChiTieu
             {
                 FrSuaChiTietHoaDon a = new FrSuaChiTietHoaDon();
                 a.ShowDialog();
-                MinMaxForm();
+                gridView1.RefreshData();
                 TinhTongTien();
             }            
         }
@@ -203,7 +190,7 @@ namespace QLHSBanTru2018_Demo_V1.QLThuChi.ChiTieu
             {
                 InvoiceDetailDAO.listDemoInvoiceDetail.RemoveAt(InvoiceDetailDAO.Therowfocust);
                 loadChiTietHoaDon();
-                MinMaxForm();
+                gridView1.RefreshData();
                 TinhTongTien();
             }
         }

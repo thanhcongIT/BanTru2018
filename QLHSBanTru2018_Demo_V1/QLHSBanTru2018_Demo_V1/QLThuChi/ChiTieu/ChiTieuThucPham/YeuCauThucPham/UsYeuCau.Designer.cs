@@ -40,6 +40,7 @@
             this.gridColumn17 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn18 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn19 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn20 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnNguoiYeuCau = new DevExpress.XtraEditors.SimpleButton();
             this.dtKhoiTao = new DevExpress.XtraEditors.DateEdit();
             this.dtYeuCau = new DevExpress.XtraEditors.DateEdit();
@@ -89,7 +90,6 @@
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem3 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.gridColumn20 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grDamua)).BeginInit();
@@ -260,6 +260,17 @@
             this.gridColumn19.OptionsColumn.AllowEdit = false;
             this.gridColumn19.Width = 108;
             // 
+            // gridColumn20
+            // 
+            this.gridColumn20.Caption = "Tình trạng";
+            this.gridColumn20.FieldName = "TinhTrang";
+            this.gridColumn20.Name = "gridColumn20";
+            this.gridColumn20.OptionsColumn.AllowEdit = false;
+            this.gridColumn20.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
+            this.gridColumn20.Visible = true;
+            this.gridColumn20.VisibleIndex = 4;
+            this.gridColumn20.Width = 88;
+            // 
             // btnNguoiYeuCau
             // 
             this.btnNguoiYeuCau.Location = new System.Drawing.Point(618, 12);
@@ -392,10 +403,10 @@
             // txtGhiChu
             // 
             this.txtGhiChu.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtGhiChu.Location = new System.Drawing.Point(2, 20);
+            this.txtGhiChu.Location = new System.Drawing.Point(2, 21);
             this.txtGhiChu.Multiline = true;
             this.txtGhiChu.Name = "txtGhiChu";
-            this.txtGhiChu.Size = new System.Drawing.Size(501, 105);
+            this.txtGhiChu.Size = new System.Drawing.Size(501, 104);
             this.txtGhiChu.TabIndex = 0;
             // 
             // grChiTietYeuCau
@@ -732,17 +743,6 @@
             this.emptySpaceItem3.Name = "emptySpaceItem3";
             this.emptySpaceItem3.Size = new System.Drawing.Size(412, 226);
             this.emptySpaceItem3.TextSize = new System.Drawing.Size(0, 0);
-            // 
-            // gridColumn20
-            // 
-            this.gridColumn20.Caption = "Tình trạng";
-            this.gridColumn20.FieldName = "TinhTrang";
-            this.gridColumn20.Name = "gridColumn20";
-            this.gridColumn20.OptionsColumn.AllowEdit = false;
-            this.gridColumn20.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
-            this.gridColumn20.Visible = true;
-            this.gridColumn20.VisibleIndex = 4;
-            this.gridColumn20.Width = 88;
             // 
             // UsYeuCau
             // 

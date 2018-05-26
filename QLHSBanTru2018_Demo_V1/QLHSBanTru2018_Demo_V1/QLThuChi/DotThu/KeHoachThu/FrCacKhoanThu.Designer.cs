@@ -376,6 +376,8 @@
             // gridColumn4
             // 
             this.gridColumn4.Caption = "Mức thu";
+            this.gridColumn4.DisplayFormat.FormatString = "c2";
+            this.gridColumn4.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.gridColumn4.FieldName = "Price";
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.OptionsColumn.AllowEdit = false;
@@ -410,6 +412,8 @@
             // gridColumn8
             // 
             this.gridColumn8.Caption = "Tổng";
+            this.gridColumn8.DisplayFormat.FormatString = "c2";
+            this.gridColumn8.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.gridColumn8.FieldName = "TotalPriceDetail";
             this.gridColumn8.Name = "gridColumn8";
             this.gridColumn8.OptionsColumn.AllowEdit = false;

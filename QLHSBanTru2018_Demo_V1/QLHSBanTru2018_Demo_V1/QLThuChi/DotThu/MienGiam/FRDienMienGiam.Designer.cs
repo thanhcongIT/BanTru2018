@@ -137,6 +137,7 @@
             this.grMiengiam.Location = new System.Drawing.Point(2, 2);
             this.grMiengiam.MainView = this.gridView1;
             this.grMiengiam.Name = "grMiengiam";
+            this.grMiengiam.ShowOnlyPredefinedDetails = true;
             this.grMiengiam.Size = new System.Drawing.Size(396, 299);
             this.grMiengiam.TabIndex = 0;
             this.grMiengiam.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -178,13 +179,13 @@
             this.gridColumn3.FieldName = "Status";
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.OptionsColumn.AllowEdit = false;
-            this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 2;
             this.gridColumn3.Width = 72;
             // 
             // gridColumn4
             // 
             this.gridColumn4.Caption = "Tỉ lệ miễn giảm";
+            this.gridColumn4.DisplayFormat.FormatString = "#.0\"%\"";
+            this.gridColumn4.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.gridColumn4.FieldName = "Percent";
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.OptionsColumn.AllowEdit = false;

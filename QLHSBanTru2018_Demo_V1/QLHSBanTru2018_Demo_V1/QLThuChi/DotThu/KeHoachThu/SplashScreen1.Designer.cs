@@ -66,6 +66,7 @@
             // 
             // pictureEdit2
             // 
+            this.pictureEdit2.Cursor = System.Windows.Forms.Cursors.Default;
             this.pictureEdit2.EditValue = ((object)(resources.GetObject("pictureEdit2.EditValue")));
             this.pictureEdit2.Location = new System.Drawing.Point(12, 12);
             this.pictureEdit2.Name = "pictureEdit2";
@@ -79,6 +80,7 @@
             // 
             // pictureEdit1
             // 
+            this.pictureEdit1.Cursor = System.Windows.Forms.Cursors.Default;
             this.pictureEdit1.EditValue = ((object)(resources.GetObject("pictureEdit1.EditValue")));
             this.pictureEdit1.Location = new System.Drawing.Point(278, 266);
             this.pictureEdit1.Name = "pictureEdit1";

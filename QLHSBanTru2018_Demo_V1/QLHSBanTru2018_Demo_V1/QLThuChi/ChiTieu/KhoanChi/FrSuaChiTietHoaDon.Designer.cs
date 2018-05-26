@@ -32,6 +32,7 @@
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.layoutControl2 = new DevExpress.XtraLayout.LayoutControl();
+            this.txtDongia = new DevExpress.XtraEditors.TextEdit();
             this.txtDonvi = new System.Windows.Forms.TextBox();
             this.txtThanhtien = new System.Windows.Forms.TextBox();
             this.nudSoluong = new System.Windows.Forms.NumericUpDown();
@@ -41,6 +42,7 @@
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.txtGhichu = new System.Windows.Forms.TextBox();
             this.btnLuu = new DevExpress.XtraEditors.SimpleButton();
@@ -51,20 +53,20 @@
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.txtDongia = new DevExpress.XtraEditors.TextEdit();
-            this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).BeginInit();
             this.layoutControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDongia.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudSoluong)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
@@ -73,8 +75,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtDongia.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -114,6 +114,19 @@
             this.layoutControl2.Size = new System.Drawing.Size(399, 119);
             this.layoutControl2.TabIndex = 0;
             this.layoutControl2.Text = "layoutControl2";
+            // 
+            // txtDongia
+            // 
+            this.txtDongia.EditValue = "0";
+            this.txtDongia.Location = new System.Drawing.Point(68, 36);
+            this.txtDongia.Name = "txtDongia";
+            this.txtDongia.Properties.DisplayFormat.FormatString = "c2";
+            this.txtDongia.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
+            this.txtDongia.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.txtDongia.Size = new System.Drawing.Size(129, 20);
+            this.txtDongia.StyleController = this.layoutControl2;
+            this.txtDongia.TabIndex = 9;
+            this.txtDongia.EditValueChanged += new System.EventHandler(this.txtDongia_EditValueChanged);
             // 
             // txtDonvi
             // 
@@ -196,6 +209,15 @@
             this.layoutControlItem9.Text = "Đơn vị";
             this.layoutControlItem9.TextSize = new System.Drawing.Size(53, 13);
             // 
+            // layoutControlItem6
+            // 
+            this.layoutControlItem6.Control = this.txtDongia;
+            this.layoutControlItem6.Location = new System.Drawing.Point(0, 24);
+            this.layoutControlItem6.Name = "layoutControlItem6";
+            this.layoutControlItem6.Size = new System.Drawing.Size(189, 24);
+            this.layoutControlItem6.Text = "Đơn giá";
+            this.layoutControlItem6.TextSize = new System.Drawing.Size(53, 13);
+            // 
             // groupControl1
             // 
             this.groupControl1.Controls.Add(this.txtGhichu);
@@ -208,10 +230,10 @@
             // txtGhichu
             // 
             this.txtGhichu.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtGhichu.Location = new System.Drawing.Point(2, 20);
+            this.txtGhichu.Location = new System.Drawing.Point(2, 21);
             this.txtGhichu.Multiline = true;
             this.txtGhichu.Name = "txtGhichu";
-            this.txtGhichu.Size = new System.Drawing.Size(399, 149);
+            this.txtGhichu.Size = new System.Drawing.Size(399, 148);
             this.txtGhichu.TabIndex = 0;
             // 
             // btnLuu
@@ -294,25 +316,6 @@
             this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem4.TextVisible = false;
             // 
-            // txtDongia
-            // 
-            this.txtDongia.EditValue = "0";
-            this.txtDongia.Location = new System.Drawing.Point(68, 36);
-            this.txtDongia.Name = "txtDongia";
-            this.txtDongia.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txtDongia.Size = new System.Drawing.Size(129, 20);
-            this.txtDongia.StyleController = this.layoutControl2;
-            this.txtDongia.TabIndex = 9;
-            // 
-            // layoutControlItem6
-            // 
-            this.layoutControlItem6.Control = this.txtDongia;
-            this.layoutControlItem6.Location = new System.Drawing.Point(0, 24);
-            this.layoutControlItem6.Name = "layoutControlItem6";
-            this.layoutControlItem6.Size = new System.Drawing.Size(189, 24);
-            this.layoutControlItem6.Text = "Đơn giá";
-            this.layoutControlItem6.TextSize = new System.Drawing.Size(53, 13);
-            // 
             // FrSuaChiTietHoaDon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -328,12 +331,14 @@
             this.panelControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).EndInit();
             this.layoutControl2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.txtDongia.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudSoluong)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
@@ -343,8 +348,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtDongia.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             this.ResumeLayout(false);
 
         }

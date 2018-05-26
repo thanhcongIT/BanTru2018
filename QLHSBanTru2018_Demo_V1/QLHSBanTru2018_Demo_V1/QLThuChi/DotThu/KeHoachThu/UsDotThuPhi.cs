@@ -61,14 +61,13 @@ namespace QLHSBanTru2018_Demo_V1.QLThuChi
         {
             try
             {
-                txtMadotthu.Text = gridView1.GetRowCellValue(e.FocusedRowHandle, "ReceivableID").ToString();
                 txtTendotthu.Text = gridView1.GetRowCellValue(e.FocusedRowHandle, "Name").ToString();
-               // txtTongthu.Text = gridView1.GetRowCellValue(e.FocusedRowHandle, "TotalPrice").ToString();
-                dtNgaybatdau.Text = gridView1.GetRowCellValue(e.FocusedRowHandle, "StartDate").ToString();
-                dtNgayketthuc.Text = gridView1.GetRowCellValue(e.FocusedRowHandle, "EndDate").ToString();
-                dtNgaykhoitao.Text = gridView1.GetRowCellValue(e.FocusedRowHandle, "CreatedDate").ToString();
+                // txtTongthu.Text = gridView1.GetRowCellValue(e.FocusedRowHandle, "TotalPrice").ToString();
+                txtNgaybatdau.Text = gridView1.GetRowCellValue(e.FocusedRowHandle, "StartDate").ToString().Substring(0, 10);
+                txtNgayketthuc.Text = gridView1.GetRowCellValue(e.FocusedRowHandle, "EndDate").ToString().Substring(0, 10);
+                txtNgaykhoitao.Text = gridView1.GetRowCellValue(e.FocusedRowHandle, "CreatedDate").ToString().Substring(0, 10);
                 ReceivableDetailDAO dt = new ReceivableDetailDAO();
-                grChiTietDotThu.DataSource = dt.ListReceivableDetail(int.Parse(txtMadotthu.Text));
+                grChiTietDotThu.DataSource = dt.ListReceivableDetail((int)gridView1.GetRowCellValue(e.FocusedRowHandle, "ReceivableID"));
             }
             catch 
             {

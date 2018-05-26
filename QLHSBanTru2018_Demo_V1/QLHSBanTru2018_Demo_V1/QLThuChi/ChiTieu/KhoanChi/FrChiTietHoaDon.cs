@@ -58,5 +58,10 @@ namespace QLHSBanTru2018_Demo_V1.QLThuChi.ChiTieu
         {
             TinhThanhTien();
         }
+
+        private void txtDongia_EditValueChanged(object sender, EventArgs e)
+        {
+            TinhThanhTien();
+        }
     }
 }
