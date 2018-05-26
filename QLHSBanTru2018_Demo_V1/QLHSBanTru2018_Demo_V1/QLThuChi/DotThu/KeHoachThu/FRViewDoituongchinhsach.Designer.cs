@@ -117,6 +117,8 @@
             // gridColumn4
             // 
             this.gridColumn4.Caption = "Tỉ lệ miễn giảm";
+            this.gridColumn4.DisplayFormat.FormatString = "#.0\"%\"";
+            this.gridColumn4.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.gridColumn4.FieldName = "Percent";
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.OptionsColumn.AllowEdit = false;

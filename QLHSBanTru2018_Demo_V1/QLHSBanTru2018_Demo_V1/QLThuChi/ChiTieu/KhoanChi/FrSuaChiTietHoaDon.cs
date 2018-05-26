@@ -33,7 +33,7 @@ namespace QLHSBanTru2018_Demo_V1.QLThuChi.ChiTieu
 
         private void txtTenchitiet_TextChanged(object sender, EventArgs e)
         {
-            TinhThanhTien();
+
         }
 
         private void nudSoluong_ValueChanged(object sender, EventArgs e)
@@ -64,6 +64,11 @@ namespace QLHSBanTru2018_Demo_V1.QLThuChi.ChiTieu
             dt.Status = false;
             InvoiceDetailDAO.listDemoInvoiceDetail.Add(dt);
             this.Close();
+        }
+
+        private void txtDongia_EditValueChanged(object sender, EventArgs e)
+        {
+            TinhThanhTien();
         }
     }
 }

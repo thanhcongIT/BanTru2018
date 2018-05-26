@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FRThemDoiTuong));
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.bntThoat = new DevExpress.XtraEditors.SimpleButton();
+            this.bntLuu = new DevExpress.XtraEditors.SimpleButton();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -38,8 +40,6 @@
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.bntThoat = new DevExpress.XtraEditors.SimpleButton();
-            this.bntLuu = new DevExpress.XtraEditors.SimpleButton();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
@@ -66,6 +66,28 @@
             this.layoutControl1.Size = new System.Drawing.Size(311, 113);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
+            // 
+            // bntThoat
+            // 
+            this.bntThoat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bntThoat.ImageOptions.Image")));
+            this.bntThoat.Location = new System.Drawing.Point(228, 79);
+            this.bntThoat.Name = "bntThoat";
+            this.bntThoat.Size = new System.Drawing.Size(71, 22);
+            this.bntThoat.StyleController = this.layoutControl1;
+            this.bntThoat.TabIndex = 6;
+            this.bntThoat.Text = "Thoát";
+            this.bntThoat.Click += new System.EventHandler(this.bntThoat_Click);
+            // 
+            // bntLuu
+            // 
+            this.bntLuu.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bntLuu.ImageOptions.Image")));
+            this.bntLuu.Location = new System.Drawing.Point(155, 79);
+            this.bntLuu.Name = "bntLuu";
+            this.bntLuu.Size = new System.Drawing.Size(69, 22);
+            this.bntLuu.StyleController = this.layoutControl1;
+            this.bntLuu.TabIndex = 5;
+            this.bntLuu.Text = "Lưu";
+            this.bntLuu.Click += new System.EventHandler(this.bntLuu_Click);
             // 
             // panelControl1
             // 
@@ -139,28 +161,6 @@
             this.layoutControlItem1.Size = new System.Drawing.Size(291, 67);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
-            // 
-            // bntThoat
-            // 
-            this.bntThoat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bntThoat.ImageOptions.Image")));
-            this.bntThoat.Location = new System.Drawing.Point(228, 79);
-            this.bntThoat.Name = "bntThoat";
-            this.bntThoat.Size = new System.Drawing.Size(71, 22);
-            this.bntThoat.StyleController = this.layoutControl1;
-            this.bntThoat.TabIndex = 6;
-            this.bntThoat.Text = "Thoát";
-            this.bntThoat.Click += new System.EventHandler(this.bntThoat_Click);
-            // 
-            // bntLuu
-            // 
-            this.bntLuu.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bntLuu.ImageOptions.Image")));
-            this.bntLuu.Location = new System.Drawing.Point(155, 79);
-            this.bntLuu.Name = "bntLuu";
-            this.bntLuu.Size = new System.Drawing.Size(69, 22);
-            this.bntLuu.StyleController = this.layoutControl1;
-            this.bntLuu.TabIndex = 5;
-            this.bntLuu.Text = "Lưu";
-            this.bntLuu.Click += new System.EventHandler(this.bntLuu_Click);
             // 
             // layoutControlItem2
             // 

@@ -49,10 +49,10 @@ namespace QLHSBanTru2018_Demo_V1.QLThuChi.ChiTieu
                
             }
         }
-        public void LoadChiTietHoaDon()
+        public void LoadChiTietHoaDon(System.Guid a)
         {
             InvoiceDetailDAO dt = new InvoiceDetailDAO();
-            grChitietkhoanchi.DataSource = dt.ListInvoiceDetail((System.Guid)gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "InvoiceID"));
+            grChitietkhoanchi.DataSource = dt.ListInvoiceDetail(a);
         }
 
         private void UsKhoanChi_Load(object sender, EventArgs e)
@@ -62,7 +62,7 @@ namespace QLHSBanTru2018_Demo_V1.QLThuChi.ChiTieu
                 LoadNamhoc();
                 LoadHocky();
                 LoadHoaDon();
-                LoadChiTietHoaDon();
+                LoadChiTietHoaDon((System.Guid)gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "InvoiceID"));
             }
             catch
             {
@@ -84,7 +84,14 @@ namespace QLHSBanTru2018_Demo_V1.QLThuChi.ChiTieu
             {
                 LoadHocky();
                 LoadHoaDon();
-                LoadChiTietHoaDon();
+                if (gridView2.RowCount==0)
+                {
+                    grChitietkhoanchi.DataSource = "";
+                }
+                else
+                {
+                    LoadChiTietHoaDon((System.Guid)gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "InvoiceID"));
+                }               
             }
             catch 
             {
@@ -98,7 +105,19 @@ namespace QLHSBanTru2018_Demo_V1.QLThuChi.ChiTieu
             try
             {
                 LoadHoaDon();
-                LoadChiTietHoaDon();
+                if (gridView1.RowCount==0)
+                {
+                    
+                    grChitietkhoanchi.DataSource = "";
+                    
+                }
+                else
+                {
+                    LoadChiTietHoaDon((System.Guid)gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "InvoiceID"));
+                }
+                
+                
+               
             }
             catch 
             {
@@ -128,7 +147,7 @@ namespace QLHSBanTru2018_Demo_V1.QLThuChi.ChiTieu
                 Employee a = dt.GetByID((int)gridView1.GetRowCellValue(e.FocusedRowHandle, "EmployeeID"));
                 txtNguoiTao.Text = a.FirstName.ToString()+a.LastName.ToString();
                 //laod chi tiết hóa đơn
-                LoadChiTietHoaDon();
+                LoadChiTietHoaDon((System.Guid)gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "InvoiceID"));
             }
             catch 
             {

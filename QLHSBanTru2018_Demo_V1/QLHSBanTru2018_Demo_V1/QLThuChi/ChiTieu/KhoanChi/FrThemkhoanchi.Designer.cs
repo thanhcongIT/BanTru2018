@@ -277,6 +277,8 @@
             // gridColumn4
             // 
             this.gridColumn4.Caption = "Đơn giá";
+            this.gridColumn4.DisplayFormat.FormatString = "c2";
+            this.gridColumn4.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.gridColumn4.FieldName = "Price";
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.Visible = true;
@@ -293,6 +295,8 @@
             // gridColumn6
             // 
             this.gridColumn6.Caption = "Số lượng";
+            this.gridColumn6.DisplayFormat.FormatString = "#,###.0";
+            this.gridColumn6.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.gridColumn6.FieldName = "Amount";
             this.gridColumn6.Name = "gridColumn6";
             this.gridColumn6.Visible = true;
@@ -301,6 +305,8 @@
             // gridColumn7
             // 
             this.gridColumn7.Caption = "Thành tiền";
+            this.gridColumn7.DisplayFormat.FormatString = "c2";
+            this.gridColumn7.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.gridColumn7.FieldName = "TotalPriceDetail";
             this.gridColumn7.Name = "gridColumn7";
             this.gridColumn7.Visible = true;
