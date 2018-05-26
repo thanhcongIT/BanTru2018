@@ -13,6 +13,8 @@ using DataConnect.DAO.ThanhCongTC.ChiTieu;
 using DataConnect.DAO.HungTD;
 using DataConnect;
 using QLHSBanTru2018_Demo_V1.QLThuChi.ChiTieu.LoaiChi;
+using DataConnect.DAO.ThanhCongTC.ChiTieuThucPham;
+using QLHSBanTru2018_Demo_V1.QLThuChi.ChiTieu.ChiTieuThucPham;
 
 namespace QLHSBanTru2018_Demo_V1.QLThuChi.ChiTieu
 {
@@ -145,6 +147,7 @@ namespace QLHSBanTru2018_Demo_V1.QLThuChi.ChiTieu
                 txtGhichu.Text = gridView1.GetRowCellValue(e.FocusedRowHandle, "Note").ToString();
                 EmployeeDAO dt = new EmployeeDAO();
                 Employee a = dt.GetByID((int)gridView1.GetRowCellValue(e.FocusedRowHandle, "EmployeeID"));
+                TCIngredientRequestDAO.employeeReques = a;
                 txtNguoiTao.Text = a.FirstName.ToString()+a.LastName.ToString();
                 //laod chi tiết hóa đơn
                 LoadChiTietHoaDon((System.Guid)gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "InvoiceID"));
@@ -181,6 +184,15 @@ namespace QLHSBanTru2018_Demo_V1.QLThuChi.ChiTieu
         {
             FrViewInvoiceDetail a = new FrViewInvoiceDetail();
             a.ShowDialog();
+        }
+
+        private void btnChiTietNhanVien_Click(object sender, EventArgs e)
+        {
+            if (txtNguoiTao.Text!="")
+            {
+                TcFrNhanVien a = new TcFrNhanVien();
+                a.ShowDialog();
+            }
         }
     }
 }

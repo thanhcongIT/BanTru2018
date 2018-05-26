@@ -105,6 +105,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DAO\ThanhCongTC\DataSet\HoaDonChiTieu.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HoaDonChiTieu.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DAO\ThanhCongTC\DataSet\HoaDonThucPham.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -191,6 +196,17 @@
     </None>
     <None Include="DAO\ThanhCongTC\DataSet\DataSet1.xss">
       <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="DAO\ThanhCongTC\DataSet\HoaDonChiTieu.xsc">
+      <DependentUpon>HoaDonChiTieu.xsd</DependentUpon>
+    </None>
+    <None Include="DAO\ThanhCongTC\DataSet\HoaDonChiTieu.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HoaDonChiTieu.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DAO\ThanhCongTC\DataSet\HoaDonChiTieu.xss">
+      <DependentUpon>HoaDonChiTieu.xsd</DependentUpon>
     </None>
     <None Include="DAO\ThanhCongTC\DataSet\HoaDonThucPham.xsc">
       <DependentUpon>HoaDonThucPham.xsd</DependentUpon>

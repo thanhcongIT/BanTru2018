@@ -391,6 +391,12 @@
     <Compile Include="QLThuChi\ChiTieu\ChiTieuThucPham\ThongKeThucPham\UsThongKeThucPham.Designer.cs">
       <DependentUpon>UsThongKeThucPham.cs</DependentUpon>
     </Compile>
+    <Compile Include="QLThuChi\ChiTieu\ChiTieuThucPham\WaitForm1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QLThuChi\ChiTieu\ChiTieuThucPham\WaitForm1.Designer.cs">
+      <DependentUpon>WaitForm1.cs</DependentUpon>
+    </Compile>
     <Compile Include="QLThuChi\ChiTieu\ChiTieuThucPham\YeuCauThucPham\FrThanhToanThucPham.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -791,6 +797,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="QLThuChi\ChiTieu\ChiTieuThucPham\ThongKeThucPham\UsThongKeThucPham.resx">
       <DependentUpon>UsThongKeThucPham.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QLThuChi\ChiTieu\ChiTieuThucPham\WaitForm1.resx">
+      <DependentUpon>WaitForm1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="QLThuChi\ChiTieu\ChiTieuThucPham\YeuCauThucPham\FrThanhToanThucPham.resx">
       <DependentUpon>FrThanhToanThucPham.cs</DependentUpon>

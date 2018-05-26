@@ -13,6 +13,7 @@ using DataConnect;
 using DataConnect.DAO.HungTD;
 using System.IO;
 using DataConnect.DAO.ThanhCongTC.Report;
+using DevExpress.XtraSplashScreen;
 
 namespace QLHSBanTru2018_Demo_V1.QLThuChi.ChiTieu.ChiTieuThucPham
 {
@@ -144,13 +145,18 @@ namespace QLHSBanTru2018_Demo_V1.QLThuChi.ChiTieu.ChiTieuThucPham
 
         private void bntIn_Click(object sender, EventArgs e)
         {
-            rptHoaDonThucPham a = new rptHoaDonThucPham();
-            a.FilterString = "[OrderID]='" + 65 + "'";
+            if (gridView1.RowCount!=0)
+            {
+                SplashScreenManager.ShowForm(typeof(WaitForm1));
+                rptHoaDonThucPham a = new rptHoaDonThucPham();
+                a.FilterString = "[OrderID]='" + gridView1.GetRowCellValue(gridView1.FocusedRowHandle,gridView1.Columns["OrderID"]) + "'";
+                a.CreateDocument();
+                FrRptHoaDonThuPham b = new FrRptHoaDonThuPham();
+                b.documentViewer1.DocumentSource = a;
+                b.ShowDialog();
+                SplashScreenManager.CloseForm();
+            }
             
-            a.CreateDocument();
-            FrRptHoaDonThuPham b = new FrRptHoaDonThuPham();
-            b.documentViewer1.DocumentSource = a;
-            b.ShowDialog();
         }
     }
 }
