@@ -26,13 +26,13 @@ namespace QLHSBanTru2018_Demo_V1.HungTD.Form.Menu
         {
             this.iFunction = function;
         }
-        public void setTitle(string title)
-        {
-            this.Text = title;
-        }
         public void setAgeGroupID(int ageGroupID)
         {
             this.ageGroupID = ageGroupID;
+        }
+        public void setTitle(string title)
+        {
+            this.Text = title;
         }
         public void setDailyMenu(int dailyMenuID)
         {
@@ -53,8 +53,6 @@ namespace QLHSBanTru2018_Demo_V1.HungTD.Form.Menu
             }
             else
             {
-                txtCreatedBy.Text = LoginDetail.LoginName;
-                dailyMenu = new DataConnect.DailyMenu();
                 dailyMenuDetails = new List<DataConnect.DailyMenuDetail>();
                 selectedDish = new List<DishViewModel>();
             }
@@ -107,6 +105,7 @@ namespace QLHSBanTru2018_Demo_V1.HungTD.Form.Menu
             var rowHandle = gridView2.FocusedRowHandle;
             try
             {
+                entity.DailyMenuID = dailyMenu.DailyMenuID;
                 entity.DishID = Convert.ToInt32(gridView2.GetRowCellValue(rowHandle, "DishID").ToString());
             }
             catch
@@ -162,6 +161,23 @@ namespace QLHSBanTru2018_Demo_V1.HungTD.Form.Menu
             {
 
             }
+        }
+
+        private void btnFinish_Click(object sender, EventArgs e)
+        {
+            if(new DailyMenuDAO().InsertListDailyMenuDetail(dailyMenuDetails))
+            {
+                MessageBox.Show("Cập nhật món ăn ngày " + dailyMenu.Date.ToString("dd/MM/yyyy") + " thành công!", "Thông Báo!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
+            }
+            else
+            {
+                MessageBox.Show("Cập nhật món ăn ngày " + dailyMenu.Date.ToString("dd/MM/yyyy") + " không thành công!", "Thông Báo!", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+            }
+        }
+
+        private void btnPrevious_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

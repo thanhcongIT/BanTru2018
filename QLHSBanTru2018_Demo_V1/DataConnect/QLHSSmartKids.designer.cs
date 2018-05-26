@@ -48,9 +48,6 @@ namespace DataConnect
     partial void InsertCourseTask(CourseTask instance);
     partial void UpdateCourseTask(CourseTask instance);
     partial void DeleteCourseTask(CourseTask instance);
-    partial void InsertDailyMenu(DailyMenu instance);
-    partial void UpdateDailyMenu(DailyMenu instance);
-    partial void DeleteDailyMenu(DailyMenu instance);
     partial void InsertDailyMenuDetail(DailyMenuDetail instance);
     partial void UpdateDailyMenuDetail(DailyMenuDetail instance);
     partial void DeleteDailyMenuDetail(DailyMenuDetail instance);
@@ -207,6 +204,9 @@ namespace DataConnect
     partial void InsertDailyTracker(DailyTracker instance);
     partial void UpdateDailyTracker(DailyTracker instance);
     partial void DeleteDailyTracker(DailyTracker instance);
+    partial void InsertDailyMenu(DailyMenu instance);
+    partial void UpdateDailyMenu(DailyMenu instance);
+    partial void DeleteDailyMenu(DailyMenu instance);
     #endregion
 		
 		public QLHSSmartKidsDataContext() : 
@@ -284,14 +284,6 @@ namespace DataConnect
 			get
 			{
 				return this.GetTable<CourseTask>();
-			}
-		}
-		
-		public System.Data.Linq.Table<DailyMenu> DailyMenus
-		{
-			get
-			{
-				return this.GetTable<DailyMenu>();
 			}
 		}
 		
@@ -708,6 +700,14 @@ namespace DataConnect
 			get
 			{
 				return this.GetTable<DailyTracker>();
+			}
+		}
+		
+		public System.Data.Linq.Table<DailyMenu> DailyMenus
+		{
+			get
+			{
+				return this.GetTable<DailyMenu>();
 			}
 		}
 	}
@@ -2233,233 +2233,6 @@ namespace DataConnect
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.DailyMenu")]
-	public partial class DailyMenu : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _DailyMenuID;
-		
-		private int _WeekID;
-		
-		private System.DateTime _Date;
-		
-		private int _AgeGroup;
-		
-		private bool _Status;
-		
-		private EntitySet<DailyMenuDetail> _DailyMenuDetails;
-		
-		private EntityRef<Week> _Week;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnDailyMenuIDChanging(int value);
-    partial void OnDailyMenuIDChanged();
-    partial void OnWeekIDChanging(int value);
-    partial void OnWeekIDChanged();
-    partial void OnDateChanging(System.DateTime value);
-    partial void OnDateChanged();
-    partial void OnAgeGroupChanging(int value);
-    partial void OnAgeGroupChanged();
-    partial void OnStatusChanging(bool value);
-    partial void OnStatusChanged();
-    #endregion
-		
-		public DailyMenu()
-		{
-			this._DailyMenuDetails = new EntitySet<DailyMenuDetail>(new Action<DailyMenuDetail>(this.attach_DailyMenuDetails), new Action<DailyMenuDetail>(this.detach_DailyMenuDetails));
-			this._Week = default(EntityRef<Week>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DailyMenuID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int DailyMenuID
-		{
-			get
-			{
-				return this._DailyMenuID;
-			}
-			set
-			{
-				if ((this._DailyMenuID != value))
-				{
-					this.OnDailyMenuIDChanging(value);
-					this.SendPropertyChanging();
-					this._DailyMenuID = value;
-					this.SendPropertyChanged("DailyMenuID");
-					this.OnDailyMenuIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_WeekID", DbType="Int NOT NULL")]
-		public int WeekID
-		{
-			get
-			{
-				return this._WeekID;
-			}
-			set
-			{
-				if ((this._WeekID != value))
-				{
-					if (this._Week.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnWeekIDChanging(value);
-					this.SendPropertyChanging();
-					this._WeekID = value;
-					this.SendPropertyChanged("WeekID");
-					this.OnWeekIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Date", DbType="Date NOT NULL")]
-		public System.DateTime Date
-		{
-			get
-			{
-				return this._Date;
-			}
-			set
-			{
-				if ((this._Date != value))
-				{
-					this.OnDateChanging(value);
-					this.SendPropertyChanging();
-					this._Date = value;
-					this.SendPropertyChanged("Date");
-					this.OnDateChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AgeGroup", DbType="Int NOT NULL")]
-		public int AgeGroup
-		{
-			get
-			{
-				return this._AgeGroup;
-			}
-			set
-			{
-				if ((this._AgeGroup != value))
-				{
-					this.OnAgeGroupChanging(value);
-					this.SendPropertyChanging();
-					this._AgeGroup = value;
-					this.SendPropertyChanged("AgeGroup");
-					this.OnAgeGroupChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Status", DbType="Bit NOT NULL")]
-		public bool Status
-		{
-			get
-			{
-				return this._Status;
-			}
-			set
-			{
-				if ((this._Status != value))
-				{
-					this.OnStatusChanging(value);
-					this.SendPropertyChanging();
-					this._Status = value;
-					this.SendPropertyChanged("Status");
-					this.OnStatusChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="DailyMenu_DailyMenuDetail", Storage="_DailyMenuDetails", ThisKey="DailyMenuID", OtherKey="DailyMenuID")]
-		public EntitySet<DailyMenuDetail> DailyMenuDetails
-		{
-			get
-			{
-				return this._DailyMenuDetails;
-			}
-			set
-			{
-				this._DailyMenuDetails.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Week_DailyMenu", Storage="_Week", ThisKey="WeekID", OtherKey="WeekID", IsForeignKey=true)]
-		public Week Week
-		{
-			get
-			{
-				return this._Week.Entity;
-			}
-			set
-			{
-				Week previousValue = this._Week.Entity;
-				if (((previousValue != value) 
-							|| (this._Week.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Week.Entity = null;
-						previousValue.DailyMenus.Remove(this);
-					}
-					this._Week.Entity = value;
-					if ((value != null))
-					{
-						value.DailyMenus.Add(this);
-						this._WeekID = value.WeekID;
-					}
-					else
-					{
-						this._WeekID = default(int);
-					}
-					this.SendPropertyChanged("Week");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_DailyMenuDetails(DailyMenuDetail entity)
-		{
-			this.SendPropertyChanging();
-			entity.DailyMenu = this;
-		}
-		
-		private void detach_DailyMenuDetails(DailyMenuDetail entity)
-		{
-			this.SendPropertyChanging();
-			entity.DailyMenu = null;
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.DailyMenuDetail")]
 	public partial class DailyMenuDetail : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -2472,9 +2245,9 @@ namespace DataConnect
 		
 		private bool _Status;
 		
-		private EntityRef<DailyMenu> _DailyMenu;
-		
 		private EntityRef<Dish> _Dish;
+		
+		private EntityRef<DailyMenu> _DailyMenu;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -2490,8 +2263,8 @@ namespace DataConnect
 		
 		public DailyMenuDetail()
 		{
-			this._DailyMenu = default(EntityRef<DailyMenu>);
 			this._Dish = default(EntityRef<Dish>);
+			this._DailyMenu = default(EntityRef<DailyMenu>);
 			OnCreated();
 		}
 		
@@ -2563,40 +2336,6 @@ namespace DataConnect
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="DailyMenu_DailyMenuDetail", Storage="_DailyMenu", ThisKey="DailyMenuID", OtherKey="DailyMenuID", IsForeignKey=true)]
-		public DailyMenu DailyMenu
-		{
-			get
-			{
-				return this._DailyMenu.Entity;
-			}
-			set
-			{
-				DailyMenu previousValue = this._DailyMenu.Entity;
-				if (((previousValue != value) 
-							|| (this._DailyMenu.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._DailyMenu.Entity = null;
-						previousValue.DailyMenuDetails.Remove(this);
-					}
-					this._DailyMenu.Entity = value;
-					if ((value != null))
-					{
-						value.DailyMenuDetails.Add(this);
-						this._DailyMenuID = value.DailyMenuID;
-					}
-					else
-					{
-						this._DailyMenuID = default(int);
-					}
-					this.SendPropertyChanged("DailyMenu");
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Dish_DailyMenuDetail", Storage="_Dish", ThisKey="DishID", OtherKey="DishID", IsForeignKey=true)]
 		public Dish Dish
 		{
@@ -2627,6 +2366,40 @@ namespace DataConnect
 						this._DishID = default(int);
 					}
 					this.SendPropertyChanged("Dish");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="DailyMenu_DailyMenuDetail", Storage="_DailyMenu", ThisKey="DailyMenuID", OtherKey="DailyMenuID", IsForeignKey=true)]
+		public DailyMenu DailyMenu
+		{
+			get
+			{
+				return this._DailyMenu.Entity;
+			}
+			set
+			{
+				DailyMenu previousValue = this._DailyMenu.Entity;
+				if (((previousValue != value) 
+							|| (this._DailyMenu.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._DailyMenu.Entity = null;
+						previousValue.DailyMenuDetails.Remove(this);
+					}
+					this._DailyMenu.Entity = value;
+					if ((value != null))
+					{
+						value.DailyMenuDetails.Add(this);
+						this._DailyMenuID = value.DailyMenuID;
+					}
+					else
+					{
+						this._DailyMenuID = default(int);
+					}
+					this.SendPropertyChanged("DailyMenu");
 				}
 			}
 		}
@@ -15800,9 +15573,9 @@ namespace DataConnect
 		
 		private bool _Status;
 		
-		private EntitySet<DailyMenu> _DailyMenus;
-		
 		private EntitySet<DailyTracker> _DailyTrackers;
+		
+		private EntitySet<DailyMenu> _DailyMenus;
 		
 		private EntityRef<Course> _Course;
 		
@@ -15826,8 +15599,8 @@ namespace DataConnect
 		
 		public Week()
 		{
-			this._DailyMenus = new EntitySet<DailyMenu>(new Action<DailyMenu>(this.attach_DailyMenus), new Action<DailyMenu>(this.detach_DailyMenus));
 			this._DailyTrackers = new EntitySet<DailyTracker>(new Action<DailyTracker>(this.attach_DailyTrackers), new Action<DailyTracker>(this.detach_DailyTrackers));
+			this._DailyMenus = new EntitySet<DailyMenu>(new Action<DailyMenu>(this.attach_DailyMenus), new Action<DailyMenu>(this.detach_DailyMenus));
 			this._Course = default(EntityRef<Course>);
 			OnCreated();
 		}
@@ -15956,19 +15729,6 @@ namespace DataConnect
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Week_DailyMenu", Storage="_DailyMenus", ThisKey="WeekID", OtherKey="WeekID")]
-		public EntitySet<DailyMenu> DailyMenus
-		{
-			get
-			{
-				return this._DailyMenus;
-			}
-			set
-			{
-				this._DailyMenus.Assign(value);
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Week_DailyTracker", Storage="_DailyTrackers", ThisKey="WeekID", OtherKey="WeekID")]
 		public EntitySet<DailyTracker> DailyTrackers
 		{
@@ -15979,6 +15739,19 @@ namespace DataConnect
 			set
 			{
 				this._DailyTrackers.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Week_DailyMenu", Storage="_DailyMenus", ThisKey="WeekID", OtherKey="WeekID")]
+		public EntitySet<DailyMenu> DailyMenus
+		{
+			get
+			{
+				return this._DailyMenus;
+			}
+			set
+			{
+				this._DailyMenus.Assign(value);
 			}
 		}
 		
@@ -16036,18 +15809,6 @@ namespace DataConnect
 			}
 		}
 		
-		private void attach_DailyMenus(DailyMenu entity)
-		{
-			this.SendPropertyChanging();
-			entity.Week = this;
-		}
-		
-		private void detach_DailyMenus(DailyMenu entity)
-		{
-			this.SendPropertyChanging();
-			entity.Week = null;
-		}
-		
 		private void attach_DailyTrackers(DailyTracker entity)
 		{
 			this.SendPropertyChanging();
@@ -16055,6 +15816,18 @@ namespace DataConnect
 		}
 		
 		private void detach_DailyTrackers(DailyTracker entity)
+		{
+			this.SendPropertyChanging();
+			entity.Week = null;
+		}
+		
+		private void attach_DailyMenus(DailyMenu entity)
+		{
+			this.SendPropertyChanging();
+			entity.Week = this;
+		}
+		
+		private void detach_DailyMenus(DailyMenu entity)
 		{
 			this.SendPropertyChanging();
 			entity.Week = null;
@@ -17660,6 +17433,257 @@ namespace DataConnect
 		{
 			this.SendPropertyChanging();
 			entity.DailyTracker = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.DailyMenu")]
+	public partial class DailyMenu : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _DailyMenuID;
+		
+		private int _WeekID;
+		
+		private System.DateTime _Date;
+		
+		private int _AgeGroupID;
+		
+		private bool _IsForm;
+		
+		private bool _Status;
+		
+		private EntitySet<DailyMenuDetail> _DailyMenuDetails;
+		
+		private EntityRef<Week> _Week;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnDailyMenuIDChanging(int value);
+    partial void OnDailyMenuIDChanged();
+    partial void OnWeekIDChanging(int value);
+    partial void OnWeekIDChanged();
+    partial void OnDateChanging(System.DateTime value);
+    partial void OnDateChanged();
+    partial void OnAgeGroupIDChanging(int value);
+    partial void OnAgeGroupIDChanged();
+    partial void OnIsFormChanging(bool value);
+    partial void OnIsFormChanged();
+    partial void OnStatusChanging(bool value);
+    partial void OnStatusChanged();
+    #endregion
+		
+		public DailyMenu()
+		{
+			this._DailyMenuDetails = new EntitySet<DailyMenuDetail>(new Action<DailyMenuDetail>(this.attach_DailyMenuDetails), new Action<DailyMenuDetail>(this.detach_DailyMenuDetails));
+			this._Week = default(EntityRef<Week>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DailyMenuID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int DailyMenuID
+		{
+			get
+			{
+				return this._DailyMenuID;
+			}
+			set
+			{
+				if ((this._DailyMenuID != value))
+				{
+					this.OnDailyMenuIDChanging(value);
+					this.SendPropertyChanging();
+					this._DailyMenuID = value;
+					this.SendPropertyChanged("DailyMenuID");
+					this.OnDailyMenuIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_WeekID", DbType="Int NOT NULL")]
+		public int WeekID
+		{
+			get
+			{
+				return this._WeekID;
+			}
+			set
+			{
+				if ((this._WeekID != value))
+				{
+					if (this._Week.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnWeekIDChanging(value);
+					this.SendPropertyChanging();
+					this._WeekID = value;
+					this.SendPropertyChanged("WeekID");
+					this.OnWeekIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Date", DbType="Date NOT NULL")]
+		public System.DateTime Date
+		{
+			get
+			{
+				return this._Date;
+			}
+			set
+			{
+				if ((this._Date != value))
+				{
+					this.OnDateChanging(value);
+					this.SendPropertyChanging();
+					this._Date = value;
+					this.SendPropertyChanged("Date");
+					this.OnDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AgeGroupID", DbType="Int NOT NULL")]
+		public int AgeGroupID
+		{
+			get
+			{
+				return this._AgeGroupID;
+			}
+			set
+			{
+				if ((this._AgeGroupID != value))
+				{
+					this.OnAgeGroupIDChanging(value);
+					this.SendPropertyChanging();
+					this._AgeGroupID = value;
+					this.SendPropertyChanged("AgeGroupID");
+					this.OnAgeGroupIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IsForm", DbType="Bit NOT NULL")]
+		public bool IsForm
+		{
+			get
+			{
+				return this._IsForm;
+			}
+			set
+			{
+				if ((this._IsForm != value))
+				{
+					this.OnIsFormChanging(value);
+					this.SendPropertyChanging();
+					this._IsForm = value;
+					this.SendPropertyChanged("IsForm");
+					this.OnIsFormChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Status", DbType="Bit NOT NULL")]
+		public bool Status
+		{
+			get
+			{
+				return this._Status;
+			}
+			set
+			{
+				if ((this._Status != value))
+				{
+					this.OnStatusChanging(value);
+					this.SendPropertyChanging();
+					this._Status = value;
+					this.SendPropertyChanged("Status");
+					this.OnStatusChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="DailyMenu_DailyMenuDetail", Storage="_DailyMenuDetails", ThisKey="DailyMenuID", OtherKey="DailyMenuID")]
+		public EntitySet<DailyMenuDetail> DailyMenuDetails
+		{
+			get
+			{
+				return this._DailyMenuDetails;
+			}
+			set
+			{
+				this._DailyMenuDetails.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Week_DailyMenu", Storage="_Week", ThisKey="WeekID", OtherKey="WeekID", IsForeignKey=true)]
+		public Week Week
+		{
+			get
+			{
+				return this._Week.Entity;
+			}
+			set
+			{
+				Week previousValue = this._Week.Entity;
+				if (((previousValue != value) 
+							|| (this._Week.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Week.Entity = null;
+						previousValue.DailyMenus.Remove(this);
+					}
+					this._Week.Entity = value;
+					if ((value != null))
+					{
+						value.DailyMenus.Add(this);
+						this._WeekID = value.WeekID;
+					}
+					else
+					{
+						this._WeekID = default(int);
+					}
+					this.SendPropertyChanged("Week");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_DailyMenuDetails(DailyMenuDetail entity)
+		{
+			this.SendPropertyChanging();
+			entity.DailyMenu = this;
+		}
+		
+		private void detach_DailyMenuDetails(DailyMenuDetail entity)
+		{
+			this.SendPropertyChanging();
+			entity.DailyMenu = null;
 		}
 	}
 }
