@@ -15,6 +15,8 @@ using DataConnect;
 using QLHSBanTru2018_Demo_V1.QLThuChi.ChiTieu.LoaiChi;
 using DataConnect.DAO.ThanhCongTC.ChiTieuThucPham;
 using QLHSBanTru2018_Demo_V1.QLThuChi.ChiTieu.ChiTieuThucPham;
+using DevExpress.XtraSplashScreen;
+using DataConnect.DAO.ThanhCongTC.Report;
 
 namespace QLHSBanTru2018_Demo_V1.QLThuChi.ChiTieu
 {
@@ -130,7 +132,14 @@ namespace QLHSBanTru2018_Demo_V1.QLThuChi.ChiTieu
 
         private void bntXuathoadon_Click(object sender, EventArgs e)
         {
-            
+            SplashScreenManager.ShowForm(typeof(WaitForm1));
+            rptHoaDonChiTieu a = new rptHoaDonChiTieu();
+            a.FilterString = "[InvoiceID]='" + gridView1.GetRowCellValue(gridView1.FocusedRowHandle, gridView1.Columns["InvoiceID"]) + "'";
+            a.CreateDocument();
+            FrRptHoaDonThuPham b = new FrRptHoaDonThuPham();
+            b.documentViewer1.DocumentSource = a;
+            b.ShowDialog();
+            SplashScreenManager.CloseForm();
         }
 
         private void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)

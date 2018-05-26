@@ -130,6 +130,12 @@
     <Compile Include="DAO\ThanhCongTC\KhoanThu\SemesterDAO.cs" />
     <Compile Include="DAO\ThanhCongTC\KhoanThu\StudenGrade.cs" />
     <Compile Include="DAO\ThanhCongTC\KhoanThu\studentReceivableDAO.cs" />
+    <Compile Include="DAO\ThanhCongTC\Report\rptHoaDonChiTieu.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DAO\ThanhCongTC\Report\rptHoaDonChiTieu.Designer.cs">
+      <DependentUpon>rptHoaDonChiTieu.cs</DependentUpon>
+    </Compile>
     <Compile Include="DAO\ThanhCongTC\Report\rptHoaDonThucPham.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -240,6 +246,9 @@
   <ItemGroup>
     <EmbeddedResource Include="DAO\ThanhCongTC\DataSet\XtraReport1.resx">
       <DependentUpon>XtraReport1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DAO\ThanhCongTC\Report\rptHoaDonChiTieu.resx">
+      <DependentUpon>rptHoaDonChiTieu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DAO\ThanhCongTC\Report\rptHoaDonThucPham.resx">
       <DependentUpon>rptHoaDonThucPham.cs</DependentUpon>
