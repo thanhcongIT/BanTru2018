@@ -46,16 +46,13 @@ namespace QLHSBanTru2018_Demo_V1.HungTD.Form.Menu
         private void frmDailyMenuDetail_Load(object sender, EventArgs e)
         {
             notSelectedDish = new DishDAO().ListAllForMenu(ageGroupID);
+            dailyMenuDetails = new DailyMenuDAO().ListDailyMenuDetailByDailyMenuID(dailyMenu.DailyMenuID);
+            selectedDish = new DailyMenuDAO().ListByMenuToViewModel(dailyMenu.DailyMenuID);
+            foreach(var item in selectedDish)
+            {
+                notSelectedDish.RemoveAll(x => x.DishID.Equals(item.DishID));
+            }
             FillCombobox();
-            if (iFunction == 2)
-            {
-                LoadDetail();
-            }
-            else
-            {
-                dailyMenuDetails = new List<DataConnect.DailyMenuDetail>();
-                selectedDish = new List<DishViewModel>();
-            }
         }
         private void FillCombobox()
         {
@@ -65,6 +62,7 @@ namespace QLHSBanTru2018_Demo_V1.HungTD.Form.Menu
             try
             {
                 FillGridControl(int.Parse(cbbMealID.SelectedValue.ToString()));
+                FillGridControlRight();
             }
             catch
             {
@@ -165,9 +163,11 @@ namespace QLHSBanTru2018_Demo_V1.HungTD.Form.Menu
 
         private void btnFinish_Click(object sender, EventArgs e)
         {
-            if(new DailyMenuDAO().InsertListDailyMenuDetail(dailyMenuDetails))
+            if (new DailyMenuDAO().InsertListDailyMenuDetail(dailyMenuDetails))
             {
                 MessageBox.Show("Cập nhật món ăn ngày " + dailyMenu.Date.ToString("dd/MM/yyyy") + " thành công!", "Thông Báo!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
+                DialogResult = DialogResult.OK;
+                this.Close();
             }
             else
             {

@@ -43,27 +43,47 @@ namespace DataConnect.DAO.HungTD
                 return null;
             }
         }
-        public int InsertDailyMenuDetail(DailyMenuDetail entity)
+        public List<DishViewModel> ListByMenuToViewModel(int dailyMenuID)
         {
             try
             {
                 dailyMenuDetails = db.GetTable<DailyMenuDetail>();
-                dailyMenuDetails.InsertOnSubmit(entity);
-                db.SubmitChanges();
-                return 1;
+
+                var model = from dmd in dailyMenuDetails
+                            where dmd.DailyMenuID.Equals(dailyMenuID)
+                            select new DishViewModel
+                            {
+                                DishID = dmd.DishID,
+                                DishName = dmd.Dish.Name,
+                                MealID = dmd.Dish.MealID,
+                                MealName = dmd.Dish.Meal.Name
+                            };
+                return model.ToList();
             }
             catch
             {
-                return 0;
+                return null;
             }
+        }
+        public int InsertDailyMenuDetail(DailyMenuDetail entity)
+        {
+            dailyMenuDetails = db.GetTable<DailyMenuDetail>();
+            dailyMenuDetails.InsertOnSubmit(entity);
+            db.SubmitChanges();
+            return 1;
         }
         public bool InsertListDailyMenuDetail(List<DailyMenuDetail> listEntity)
         {
             try
             {
+                DeleteAllDailyMenuDetailByDailyMenuID(listEntity[0].DailyMenuID);
                 foreach (DailyMenuDetail item in listEntity)
                 {
-                    if (InsertDailyMenuDetail(item) <= 0)
+                    DailyMenuDetail entity = new DailyMenuDetail();
+                    entity.DailyMenuID = item.DailyMenuID;
+                    entity.DishID = item.DishID;
+                    entity.Status = true;
+                    if (InsertDailyMenuDetail(entity) <= 0)
                     {
                         return false;
                     }
@@ -135,92 +155,111 @@ namespace DataConnect.DAO.HungTD
                 return false;
             }
         }
-        public List<WeeklyMenuFullViewModel> GetDailyMenu(int weekID, int ageGroupID)
+
+        public bool DeleteAllDailyMenuDetailByDailyMenuID(int dailyMenuID)
         {
             try
             {
-                dailyMenus = db.GetTable<DailyMenu>();
                 dailyMenuDetails = db.GetTable<DailyMenuDetail>();
-                var model = from dm in dailyMenus
-                            where dm.WeekID.Equals(weekID) && dm.AgeGroupID.Equals(ageGroupID)
-                            select new WeeklyMenuFullViewModel
-                            {
-                                DailyMenuID = dm.DailyMenuID,
-                                WeekID = dm.WeekID,
-                                WeekIndex = dm.Week.WeekIndex,
-                                DayOfWeek = "",
-                                Date = dm.Date,
-                                Breakfast = "",
-                                Lunch = "",
-                                AfterLunch = "",
-                                Afternoon = "",
-                                IsForm = dm.IsForm,
-                                Status = dm.Status
-                            };
-                List<WeeklyMenuFullViewModel> model2 = model.ToList();
-                for (int i = 0; i < model2.Count(); i++)
+                List<DailyMenuDetail> listDelete = dailyMenuDetails.Where(x => x.DailyMenuID.Equals(dailyMenuID)).ToList();
+                foreach(var item in listDelete)
                 {
-                    List<DailyMenuDetail> dailyMenuDetails = ListDailyMenuDetailByDailyMenuID(model2[i].DailyMenuID);
-                    
-                    if (dailyMenuDetails.Count > 0)
-                    {
-                        string breakfast = "";
-                        string lunch = "";
-                        string afterLunch = "";
-                        string afternoon = "";
-                        foreach (DailyMenuDetail item in dailyMenuDetails)
-                        {
-
-                            if (item.Dish.MealID == 1)
-                                breakfast += item.Dish.Name + ", ";
-                            else if (item.Dish.MealID == 2)
-                                lunch += item.Dish.Name + ", ";
-                            else if (item.Dish.MealID == 3)
-                                afterLunch += item.Dish.Name + ", ";
-                            else
-                                afternoon += item.Dish.Name + ", ";
-
-                            model2[i].Breakfast = breakfast.Substring(0, breakfast.Length - 1);
-                            model2[i].Lunch = lunch.Substring(0, breakfast.Length - 1);
-                            model2[i].AfterLunch = afterLunch.Substring(0, breakfast.Length - 1);
-                            model2[i].Afternoon = afternoon.Substring(0, breakfast.Length - 1);
-                        }
-                    }
-
-
-                    switch (model2[i].Date.DayOfWeek)
-                    {
-                        case DayOfWeek.Monday:
-                            model2[i].DayOfWeek = "Thứ 2";
-                            break;
-                        case DayOfWeek.Tuesday:
-                            model2[i].DayOfWeek = "Thứ 3";
-                            break;
-                        case DayOfWeek.Wednesday:
-                            model2[i].DayOfWeek = "Thứ 4";
-                            break;
-                        case DayOfWeek.Thursday:
-                            model2[i].DayOfWeek = "Thứ 5";
-                            break;
-                        case DayOfWeek.Friday:
-                            model2[i].DayOfWeek = "Thứ 6";
-                            break;
-                        case DayOfWeek.Saturday:
-                            model2[i].DayOfWeek = "Thứ 7";
-                            break;
-                        default:
-                            model2[i].DayOfWeek = "Chủ nhật";
-                            break;
-                    }
-
+                    if (!Delete(item))
+                        return false;
                 }
-
-                return model2;
+                return true;
             }
             catch
             {
-                return null;
+                return false;
             }
+        }
+        public List<WeeklyMenuFullViewModel> GetDailyMenu(int weekID, int weekID2, int weekID3, int weekID4, int weekID5, int ageGroupID)
+        {
+            dailyMenus = db.GetTable<DailyMenu>();
+            dailyMenuDetails = db.GetTable<DailyMenuDetail>();
+            var model = from dm in dailyMenus
+                        where (dm.WeekID.Equals(weekID)||dm.WeekID.Equals(weekID2)
+                        || dm.WeekID.Equals(weekID3)
+                        || dm.WeekID.Equals(weekID4)
+                        || dm.WeekID.Equals(weekID5)) 
+                        && dm.AgeGroupID.Equals(ageGroupID)
+                        select new WeeklyMenuFullViewModel
+                        {
+                            DailyMenuID = dm.DailyMenuID,
+                            WeekID = dm.WeekID,
+                            WeekIndex = dm.Week.WeekIndex,
+                            DayOfWeek = "",
+                            Date = dm.Date,
+                            Breakfast = "",
+                            Lunch = "",
+                            AfterLunch = "",
+                            Afternoon = "",
+                            IsForm = dm.IsForm,
+                            Status = dm.Status
+                        };
+            List<WeeklyMenuFullViewModel> model2 = model.ToList();
+            for (int i = 0; i < model2.Count(); i++)
+            {
+                List<DailyMenuDetail> dailyMenuDetails = ListDailyMenuDetailByDailyMenuID(model2[i].DailyMenuID);
+
+                if (dailyMenuDetails.Count > 0)
+                {
+                    string breakfast = "";
+                    string lunch = "";
+                    string afterLunch = "";
+                    string afternoon = "";
+                    foreach (DailyMenuDetail item in dailyMenuDetails)
+                    {
+
+                        if (item.Dish.MealID == 1)
+                            breakfast = breakfast + item.Dish.Name + ", ";
+                        else if (item.Dish.MealID == 2)
+                            lunch = lunch + item.Dish.Name + ", ";
+                        else if (item.Dish.MealID == 3)
+                            afterLunch = afterLunch + item.Dish.Name + ", ";
+                        else
+                            afternoon = afternoon + item.Dish.Name + ", ";
+                    }
+                    if (breakfast.Length > 2)
+                        model2[i].Breakfast = breakfast.Substring(0, breakfast.Length - 2);
+                    if (lunch.Length > 2)
+                        model2[i].Lunch = lunch.Substring(0, lunch.Length - 2);
+                    if (afterLunch.Length > 2)
+                        model2[i].AfterLunch = afterLunch.Substring(0, afterLunch.Length - 2);
+                    if (afternoon.Length > 2)
+                        model2[i].Afternoon = afternoon.Substring(0, afternoon.Length - 2);
+                }
+
+
+                switch (model2[i].Date.DayOfWeek)
+                {
+                    case DayOfWeek.Monday:
+                        model2[i].DayOfWeek = "Thứ 2";
+                        break;
+                    case DayOfWeek.Tuesday:
+                        model2[i].DayOfWeek = "Thứ 3";
+                        break;
+                    case DayOfWeek.Wednesday:
+                        model2[i].DayOfWeek = "Thứ 4";
+                        break;
+                    case DayOfWeek.Thursday:
+                        model2[i].DayOfWeek = "Thứ 5";
+                        break;
+                    case DayOfWeek.Friday:
+                        model2[i].DayOfWeek = "Thứ 6";
+                        break;
+                    case DayOfWeek.Saturday:
+                        model2[i].DayOfWeek = "Thứ 7";
+                        break;
+                    default:
+                        model2[i].DayOfWeek = "Chủ nhật";
+                        break;
+                }
+
+            }
+
+            return model2;
         }
         public bool HasDailyMenuOfWeek(int weekID)
         {

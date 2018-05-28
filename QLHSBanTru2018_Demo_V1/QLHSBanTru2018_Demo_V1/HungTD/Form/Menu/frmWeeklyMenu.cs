@@ -54,9 +54,7 @@ namespace QLHSBanTru2018_Demo_V1.HungTD.Form.Menu
         }
         private void FillGridControl(int weekID, int ageGroupID)
         {
-            SplashScreenManager.ShowForm(typeof(TienBao.WaitForm));
-            gcMain.DataSource = new DailyMenuDAO().GetDailyMenu(weekID, ageGroupID);
-            SplashScreenManager.CloseForm();
+            gcMain.DataSource = new DailyMenuDAO().GetDailyMenu(weekID, weekID+1,weekID+2, weekID+3,weekID+4, ageGroupID);
         }
 
         private void cbbAgeGroup_SelectedIndexChanged(object sender, EventArgs e)
