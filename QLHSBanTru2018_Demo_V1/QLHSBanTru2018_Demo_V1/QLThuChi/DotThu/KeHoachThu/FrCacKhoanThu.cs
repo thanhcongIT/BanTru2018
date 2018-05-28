@@ -202,6 +202,8 @@ namespace QLHSBanTru2018_Demo_V1.QLThuChi
                 a.GradeID = (int)gridView1.GetRowCellValue(e.FocusedRowHandle, "GradeID");
                 a.Feedback = (bool)gridView1.GetRowCellValue(e.FocusedRowHandle, "Feedback");
                 a.PreferredID = gridView1.GetRowCellValue(e.FocusedRowHandle, "PreferredID").ToString();
+                a.StartDay = (DateTime)gridView1.GetRowCellValue(e.FocusedRowHandle, "StartDay");
+                a.EndDay = (DateTime)gridView1.GetRowCellValue(e.FocusedRowHandle, "EndDay");
                 PreferredDAO.PreferredIDList = gridView1.GetRowCellValue(e.FocusedRowHandle, "PreferredID").ToString();
                 ReceivableDetailDAO.DemoReceibavleDetail = a;
                 studentReceivableDAO.TherowFocust = gridView1.FocusedRowHandle;

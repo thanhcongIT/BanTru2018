@@ -106,6 +106,7 @@
             this.grDoituongchinhsach.Location = new System.Drawing.Point(2, 2);
             this.grDoituongchinhsach.MainView = this.gridView1;
             this.grDoituongchinhsach.Name = "grDoituongchinhsach";
+            this.grDoituongchinhsach.ShowOnlyPredefinedDetails = true;
             this.grDoituongchinhsach.Size = new System.Drawing.Size(298, 248);
             this.grDoituongchinhsach.TabIndex = 0;
             this.grDoituongchinhsach.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {

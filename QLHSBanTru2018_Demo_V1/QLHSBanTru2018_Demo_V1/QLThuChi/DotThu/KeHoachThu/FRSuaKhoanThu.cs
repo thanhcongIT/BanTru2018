@@ -39,6 +39,8 @@ namespace QLHSBanTru2018_Demo_V1.QLThuChi
             cbHoanLai.Checked = (bool)ReceivableDetailDAO.DemoReceibavleDetail.Feedback;
             int a = (int)ReceivableDetailDAO.DemoReceibavleDetail.GradeID;
             cbbKhoihoc.Text = dt.lookforGrade(a).Name;
+            dtNgayBatDau.EditValue = (DateTime)ReceivableDetailDAO.DemoReceibavleDetail.StartDay;
+            dtNgayKetThuc.EditValue = (DateTime)ReceivableDetailDAO.DemoReceibavleDetail.EndDay;
             if (ReceivableDetailDAO.DemoReceibavleDetail.PreferredID!="")
             {
                 cbDoituongchinhsach.Checked = true;
@@ -153,6 +155,8 @@ namespace QLHSBanTru2018_Demo_V1.QLThuChi
                 a.Frequency = int.Parse(txtTanso.Text);
                 a.TotalPriceDetail = decimal.Parse(txtTongthu.Text);
                 a.GradeID = (int)cbbKhoihoc.SelectedValue;
+                a.StartDay = (DateTime)dtNgayBatDau.EditValue;
+                a.EndDay = (DateTime)dtNgayKetThuc.EditValue;
                 a.Feedback = cbHoanLai.Checked == true ? true : false;
                 if (cbDoituongchinhsach.Checked == true)
                 {

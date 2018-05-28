@@ -391,6 +391,12 @@
     <Compile Include="QLThuChi\ChiTieu\ChiTieuThucPham\ThongKeThucPham\UsThongKeThucPham.Designer.cs">
       <DependentUpon>UsThongKeThucPham.cs</DependentUpon>
     </Compile>
+    <Compile Include="QLThuChi\ChiTieu\ChiTieuThucPham\WaitForm1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QLThuChi\ChiTieu\ChiTieuThucPham\WaitForm1.Designer.cs">
+      <DependentUpon>WaitForm1.cs</DependentUpon>
+    </Compile>
     <Compile Include="QLThuChi\ChiTieu\ChiTieuThucPham\YeuCauThucPham\FrThanhToanThucPham.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -414,6 +420,12 @@
     </Compile>
     <Compile Include="QLThuChi\ChiTieu\ChiTieuThucPham\YeuCauThucPham\UsYeuCau.Designer.cs">
       <DependentUpon>UsYeuCau.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QLThuChi\ChiTieu\ChiTraHocPhi\UsChiTraHocPhi.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="QLThuChi\ChiTieu\ChiTraHocPhi\UsChiTraHocPhi.Designer.cs">
+      <DependentUpon>UsChiTraHocPhi.cs</DependentUpon>
     </Compile>
     <Compile Include="QLThuChi\ChiTieu\KhoanChi\FrChiTietHoaDon.cs">
       <SubType>Form</SubType>
@@ -792,6 +804,9 @@
     <EmbeddedResource Include="QLThuChi\ChiTieu\ChiTieuThucPham\ThongKeThucPham\UsThongKeThucPham.resx">
       <DependentUpon>UsThongKeThucPham.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="QLThuChi\ChiTieu\ChiTieuThucPham\WaitForm1.resx">
+      <DependentUpon>WaitForm1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="QLThuChi\ChiTieu\ChiTieuThucPham\YeuCauThucPham\FrThanhToanThucPham.resx">
       <DependentUpon>FrThanhToanThucPham.cs</DependentUpon>
     </EmbeddedResource>
@@ -803,6 +818,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="QLThuChi\ChiTieu\ChiTieuThucPham\YeuCauThucPham\UsYeuCau.resx">
       <DependentUpon>UsYeuCau.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QLThuChi\ChiTieu\ChiTraHocPhi\UsChiTraHocPhi.resx">
+      <DependentUpon>UsChiTraHocPhi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="QLThuChi\ChiTieu\KhoanChi\FrChiTietHoaDon.resx">
       <DependentUpon>FrChiTietHoaDon.cs</DependentUpon>

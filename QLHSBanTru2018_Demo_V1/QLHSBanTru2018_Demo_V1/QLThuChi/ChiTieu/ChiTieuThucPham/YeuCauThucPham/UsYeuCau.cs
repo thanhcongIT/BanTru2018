@@ -90,8 +90,11 @@ namespace QLHSBanTru2018_Demo_V1.QLThuChi.ChiTieu.ChiTieuThucPham
         }
         private void btnNguoiYeuCau_Click(object sender, EventArgs e)
         {
-            TcFrNhanVien a = new TcFrNhanVien();
-            a.ShowDialog();
+            if (txtNguoiYeuCau.Text!="")
+            {
+                TcFrNhanVien a = new TcFrNhanVien();
+                a.ShowDialog();
+            }
         }
         private void btnMua_Click(object sender, EventArgs e)
         {

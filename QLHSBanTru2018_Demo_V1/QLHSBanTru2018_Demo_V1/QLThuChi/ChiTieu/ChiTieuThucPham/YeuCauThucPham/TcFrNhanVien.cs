@@ -22,9 +22,6 @@ namespace QLHSBanTru2018_Demo_V1.QLThuChi.ChiTieu.ChiTieuThucPham
         }
         private void TcFrNhanVien_Load(object sender, EventArgs e)
         {
-            btnThoat.Hide();
-            try
-            {
                 txtFirstName.Text = TCIngredientRequestDAO.employeeReques.FirstName;
                 txtLastName.Text = TCIngredientRequestDAO.employeeReques.LastName;
                 dtBirthday.EditValue = TCIngredientRequestDAO.employeeReques.Birthday;
@@ -34,21 +31,19 @@ namespace QLHSBanTru2018_Demo_V1.QLThuChi.ChiTieu.ChiTieuThucPham
                 txtIdentityNumber.Text = TCIngredientRequestDAO.employeeReques.IdentityNumber;
                 txtPlaceOfIssue.Text = TCIngredientRequestDAO.employeeReques.PlaceOfIssue;
                 dtDateOfIssue.EditValue = TCIngredientRequestDAO.employeeReques.DateOfIssue;
-                cbbEthnicGroup.Text = TCIngredientRequestDAO.employeeReques.EthnicGroup.Name;
-                cbbReligion.Text = TCIngredientRequestDAO.employeeReques.Religion.Name;
-                cbbDegree.Text = TCIngredientRequestDAO.employeeReques.Degree.Name;
                 txtNote.Text = TCIngredientRequestDAO.employeeReques.Note;
-            }
-            catch 
-            {
-
-                
-            }
+                MemoryStream mom = new MemoryStream(TCIngredientRequestDAO.employeeReques.Image.ToArray());
+                picImage.Image = Image.FromStream(mom);
+                txtDanToc.Text = TCIngredientRequestDAO.employeeReques.EthnicGroup.Name;
+                txtTonGiao.Text = TCIngredientRequestDAO.employeeReques.Religion.Name;
+                txtHocVan.Text = TCIngredientRequestDAO.employeeReques.Degree.Name;
+                txtDiaChi.Text = TCIngredientRequestDAO.employeeReques.AddressDetail;
+           
         }
 
         private void btnThoat_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
     }
 }
