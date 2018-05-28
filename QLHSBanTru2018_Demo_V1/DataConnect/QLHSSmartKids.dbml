@@ -523,31 +523,13 @@
       <Association Name="Receivable_ReceivableDetail" Member="ReceivableDetails" ThisKey="ReceivableID" OtherKey="ReceivableID" Type="ReceivableDetail" />
     </Type>
   </Table>
-  <Table Name="dbo.ReceivableDetail" Member="ReceivableDetails">
-    <Type Name="ReceivableDetail">
-      <Column Name="ReceivableDetailID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="ReceivableID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Name" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
-      <Column Name="Price" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
-      <Column Name="TimeUnits" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
-      <Column Name="Frequency" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="TotalPriceDetail" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
-      <Column Name="GradeID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="PreferredID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Feedback" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="Status" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Association Name="ReceivableDetail_ReceivableDetail_Student" Member="ReceivableDetail_Students" ThisKey="ReceivableDetailID" OtherKey="ReceivableDetailID" Type="ReceivableDetail_Student" />
-      <Association Name="Grade_ReceivableDetail" Member="Grade" ThisKey="GradeID" OtherKey="GradeID" Type="Grade" IsForeignKey="true" />
-      <Association Name="Receivable_ReceivableDetail" Member="Receivable" ThisKey="ReceivableID" OtherKey="ReceivableID" Type="Receivable" IsForeignKey="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.ReceivableDetail_Student" Member="ReceivableDetail_Students">
     <Type Name="ReceivableDetail_Student">
       <Column Name="ReceivableDetailID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="StudentID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="Status" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Association Name="ReceivableDetail_ReceivableDetail_Student" Member="ReceivableDetail" ThisKey="ReceivableDetailID" OtherKey="ReceivableDetailID" Type="ReceivableDetail" IsForeignKey="true" />
       <Association Name="Student_ReceivableDetail_Student" Member="Student" ThisKey="StudentID" OtherKey="StudentID" Type="Student" IsForeignKey="true" />
+      <Association Name="ReceivableDetail_ReceivableDetail_Student" Member="ReceivableDetail" ThisKey="ReceivableDetailID" OtherKey="ReceivableDetailID" Type="ReceivableDetail" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.Religion" Member="Religions">
@@ -795,6 +777,26 @@
       <Association Name="Employee_Invoice1" Member="Employee1" ThisKey="EmployeeID" OtherKey="EmployeeID" Type="Employee" IsForeignKey="true" />
       <Association Name="Semester_Invoice" Member="Semester" ThisKey="SemesterID" OtherKey="SemesterID" Type="Semester" IsForeignKey="true" />
       <Association Name="SpendSpecy_Invoice" Member="SpendSpecy" ThisKey="SpendSpeciesID" OtherKey="SpendSpeciesID" Type="SpendSpecy" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ReceivableDetail" Member="ReceivableDetails">
+    <Type Name="ReceivableDetail">
+      <Column Name="ReceivableDetailID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ReceivableID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Price" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="TimeUnits" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="Frequency" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TotalPriceDetail" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="GradeID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PreferredID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Feedback" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="StartDay" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="EndDay" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Status" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="ReceivableDetail_ReceivableDetail_Student" Member="ReceivableDetail_Students" ThisKey="ReceivableDetailID" OtherKey="ReceivableDetailID" Type="ReceivableDetail_Student" />
+      <Association Name="Grade_ReceivableDetail" Member="Grade" ThisKey="GradeID" OtherKey="GradeID" Type="Grade" IsForeignKey="true" />
+      <Association Name="Receivable_ReceivableDetail" Member="Receivable" ThisKey="ReceivableID" OtherKey="ReceivableID" Type="Receivable" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>

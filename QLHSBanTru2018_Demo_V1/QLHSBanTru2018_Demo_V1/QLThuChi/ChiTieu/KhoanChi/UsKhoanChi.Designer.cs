@@ -194,10 +194,10 @@
             this.layoutControl5.Controls.Add(this.txtDiaChi);
             this.layoutControl5.Controls.Add(this.txtHoTen);
             this.layoutControl5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.layoutControl5.Location = new System.Drawing.Point(2, 20);
+            this.layoutControl5.Location = new System.Drawing.Point(2, 21);
             this.layoutControl5.Name = "layoutControl5";
             this.layoutControl5.Root = this.layoutControlGroup5;
-            this.layoutControl5.Size = new System.Drawing.Size(344, 69);
+            this.layoutControl5.Size = new System.Drawing.Size(344, 68);
             this.layoutControl5.TabIndex = 0;
             this.layoutControl5.Text = "layoutControl5";
             // 
@@ -231,7 +231,7 @@
             this.layoutControlItem15,
             this.layoutControlItem16});
             this.layoutControlGroup5.Name = "layoutControlGroup5";
-            this.layoutControlGroup5.Size = new System.Drawing.Size(344, 69);
+            this.layoutControlGroup5.Size = new System.Drawing.Size(344, 68);
             this.layoutControlGroup5.TextVisible = false;
             // 
             // layoutControlItem13
@@ -248,7 +248,7 @@
             this.layoutControlItem15.Control = this.txtDiaChi;
             this.layoutControlItem15.Location = new System.Drawing.Point(0, 24);
             this.layoutControlItem15.Name = "layoutControlItem15";
-            this.layoutControlItem15.Size = new System.Drawing.Size(165, 25);
+            this.layoutControlItem15.Size = new System.Drawing.Size(165, 24);
             this.layoutControlItem15.Text = "Địa chỉ";
             this.layoutControlItem15.TextSize = new System.Drawing.Size(32, 13);
             // 
@@ -257,7 +257,7 @@
             this.layoutControlItem16.Control = this.txtSDT;
             this.layoutControlItem16.Location = new System.Drawing.Point(165, 24);
             this.layoutControlItem16.Name = "layoutControlItem16";
-            this.layoutControlItem16.Size = new System.Drawing.Size(159, 25);
+            this.layoutControlItem16.Size = new System.Drawing.Size(159, 24);
             this.layoutControlItem16.Text = "SĐT";
             this.layoutControlItem16.TextSize = new System.Drawing.Size(32, 13);
             // 
@@ -545,10 +545,10 @@
             // txtGhichu
             // 
             this.txtGhichu.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtGhichu.Location = new System.Drawing.Point(2, 20);
+            this.txtGhichu.Location = new System.Drawing.Point(2, 21);
             this.txtGhichu.Multiline = true;
             this.txtGhichu.Name = "txtGhichu";
-            this.txtGhichu.Size = new System.Drawing.Size(344, 75);
+            this.txtGhichu.Size = new System.Drawing.Size(344, 74);
             this.txtGhichu.TabIndex = 0;
             // 
             // grChitietkhoanchi
