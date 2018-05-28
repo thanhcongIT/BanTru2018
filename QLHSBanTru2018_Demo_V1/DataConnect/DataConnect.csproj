@@ -142,6 +142,7 @@
     <Compile Include="DAO\ThanhCongTC\Report\rptHoaDonThucPham.Designer.cs">
       <DependentUpon>rptHoaDonThucPham.cs</DependentUpon>
     </Compile>
+    <Compile Include="DAO\ThanhCongTC\TCViewModle\FeedBackToStudenViewModle.cs" />
     <Compile Include="DAO\ThanhCongTC\TCViewModle\OrderOrderDetailViewModle.cs" />
     <Compile Include="DAO\ThanhCongTC\TCViewModle\TCIngredientRequestDetaiViewModle.cs" />
     <Compile Include="DAO\ThanhCongTC\TCViewModle\TCOrderDetailViewModle.cs" />
