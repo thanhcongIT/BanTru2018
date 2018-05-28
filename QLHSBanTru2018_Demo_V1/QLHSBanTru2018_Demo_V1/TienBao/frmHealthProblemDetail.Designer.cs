@@ -40,6 +40,8 @@
             this.btnSave = new DevExpress.XtraEditors.SimpleButton();
             this.btnHuy = new DevExpress.XtraEditors.SimpleButton();
             this.cbbSignal = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.cbbStudentName = new DevExpress.XtraEditors.LookUpEdit();
+            this.cbbEmployee = new DevExpress.XtraEditors.LookUpEdit();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -56,8 +58,6 @@
             this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem3 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.cbbStudentName = new DevExpress.XtraEditors.LookUpEdit();
-            this.cbbEmployee = new DevExpress.XtraEditors.LookUpEdit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtStudentCode.Properties)).BeginInit();
@@ -69,6 +69,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.cbbServerity.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chbStatus.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbbSignal.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbbStudentName.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbbEmployee.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
@@ -85,8 +87,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbbStudentName.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbbEmployee.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -157,13 +157,13 @@
             // 
             this.txtMeasure.Location = new System.Drawing.Point(116, 192);
             this.txtMeasure.Name = "txtMeasure";
-            this.txtMeasure.Size = new System.Drawing.Size(457, 83);
+            this.txtMeasure.Size = new System.Drawing.Size(457, 85);
             this.txtMeasure.StyleController = this.layoutControl1;
             this.txtMeasure.TabIndex = 11;
             // 
             // cbbServerity
             // 
-            this.cbbServerity.Location = new System.Drawing.Point(116, 279);
+            this.cbbServerity.Location = new System.Drawing.Point(116, 281);
             this.cbbServerity.Name = "cbbServerity";
             this.cbbServerity.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -178,7 +178,7 @@
             // chbStatus
             // 
             this.chbStatus.EditValue = true;
-            this.chbStatus.Location = new System.Drawing.Point(116, 327);
+            this.chbStatus.Location = new System.Drawing.Point(116, 329);
             this.chbStatus.Name = "chbStatus";
             this.chbStatus.Properties.Caption = "Kích hoạt";
             this.chbStatus.Properties.GlyphAlignment = DevExpress.Utils.HorzAlignment.Default;
@@ -189,9 +189,9 @@
             // btnSave
             // 
             this.btnSave.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.ImageOptions.Image")));
-            this.btnSave.Location = new System.Drawing.Point(363, 350);
+            this.btnSave.Location = new System.Drawing.Point(363, 352);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(103, 38);
+            this.btnSave.Size = new System.Drawing.Size(103, 36);
             this.btnSave.StyleController = this.layoutControl1;
             this.btnSave.TabIndex = 14;
             this.btnSave.Text = "Lưu";
@@ -200,9 +200,9 @@
             // btnHuy
             // 
             this.btnHuy.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnHuy.ImageOptions.Image")));
-            this.btnHuy.Location = new System.Drawing.Point(470, 350);
+            this.btnHuy.Location = new System.Drawing.Point(470, 352);
             this.btnHuy.Name = "btnHuy";
-            this.btnHuy.Size = new System.Drawing.Size(103, 38);
+            this.btnHuy.Size = new System.Drawing.Size(103, 36);
             this.btnHuy.StyleController = this.layoutControl1;
             this.btnHuy.TabIndex = 15;
             this.btnHuy.Text = "Hủy";
@@ -224,6 +224,36 @@
             this.cbbSignal.Size = new System.Drawing.Size(457, 20);
             this.cbbSignal.StyleController = this.layoutControl1;
             this.cbbSignal.TabIndex = 9;
+            // 
+            // cbbStudentName
+            // 
+            this.cbbStudentName.Location = new System.Drawing.Point(116, 12);
+            this.cbbStudentName.Name = "cbbStudentName";
+            this.cbbStudentName.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbbStudentName.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("StudentCode", "Mã học sinh"),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("FullName", "Họ tên"),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("ClassName", "Lớp học")});
+            this.cbbStudentName.Properties.NullText = "-- Chọn học sinh --";
+            this.cbbStudentName.Size = new System.Drawing.Size(457, 20);
+            this.cbbStudentName.StyleController = this.layoutControl1;
+            this.cbbStudentName.TabIndex = 4;
+            this.cbbStudentName.EditValueChanged += new System.EventHandler(this.cbbStudentName_EditValueChanged);
+            // 
+            // cbbEmployee
+            // 
+            this.cbbEmployee.Location = new System.Drawing.Point(116, 305);
+            this.cbbEmployee.Name = "cbbEmployee";
+            this.cbbEmployee.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbbEmployee.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("EmployeeID", "Mã giáo viên"),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("EmployeeName", "Tên giáo viên")});
+            this.cbbEmployee.Properties.NullText = "-- Chọn giáo viên --";
+            this.cbbEmployee.Size = new System.Drawing.Size(457, 20);
+            this.cbbEmployee.StyleController = this.layoutControl1;
+            this.cbbEmployee.TabIndex = 13;
             // 
             // layoutControlGroup1
             // 
@@ -305,7 +335,7 @@
             this.layoutControlItem8.CustomizationFormText = "Biện pháp xử lý";
             this.layoutControlItem8.Location = new System.Drawing.Point(0, 180);
             this.layoutControlItem8.Name = "layoutControlItem8";
-            this.layoutControlItem8.Size = new System.Drawing.Size(565, 87);
+            this.layoutControlItem8.Size = new System.Drawing.Size(565, 89);
             this.layoutControlItem8.Text = "Biện pháp xử lý";
             this.layoutControlItem8.TextSize = new System.Drawing.Size(101, 13);
             // 
@@ -313,7 +343,7 @@
             // 
             this.layoutControlItem5.Control = this.cbbServerity;
             this.layoutControlItem5.CustomizationFormText = "Mức độ nghiêm trọng";
-            this.layoutControlItem5.Location = new System.Drawing.Point(0, 267);
+            this.layoutControlItem5.Location = new System.Drawing.Point(0, 269);
             this.layoutControlItem5.Name = "layoutControlItem5";
             this.layoutControlItem5.Size = new System.Drawing.Size(565, 24);
             this.layoutControlItem5.Text = "Mức độ nghiêm trọng";
@@ -323,7 +353,7 @@
             // 
             this.layoutControlItem10.Control = this.cbbEmployee;
             this.layoutControlItem10.CustomizationFormText = "Người xử lý";
-            this.layoutControlItem10.Location = new System.Drawing.Point(0, 291);
+            this.layoutControlItem10.Location = new System.Drawing.Point(0, 293);
             this.layoutControlItem10.Name = "layoutControlItem10";
             this.layoutControlItem10.Size = new System.Drawing.Size(565, 24);
             this.layoutControlItem10.Text = "Người xử lý";
@@ -333,7 +363,7 @@
             // 
             this.ItemForStatus.Control = this.chbStatus;
             this.ItemForStatus.CustomizationFormText = "Tình trạng";
-            this.ItemForStatus.Location = new System.Drawing.Point(0, 315);
+            this.ItemForStatus.Location = new System.Drawing.Point(0, 317);
             this.ItemForStatus.Name = "ItemForStatus";
             this.ItemForStatus.Size = new System.Drawing.Size(565, 23);
             this.ItemForStatus.Text = "Tình trạng";
@@ -343,18 +373,18 @@
             // 
             this.emptySpaceItem1.AllowHotTrack = false;
             this.emptySpaceItem1.CustomizationFormText = "emptySpaceItem1";
-            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 338);
+            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 340);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(351, 42);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(351, 40);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem11
             // 
             this.layoutControlItem11.Control = this.btnSave;
             this.layoutControlItem11.CustomizationFormText = "layoutControlItem11";
-            this.layoutControlItem11.Location = new System.Drawing.Point(351, 338);
+            this.layoutControlItem11.Location = new System.Drawing.Point(351, 340);
             this.layoutControlItem11.Name = "layoutControlItem11";
-            this.layoutControlItem11.Size = new System.Drawing.Size(107, 42);
+            this.layoutControlItem11.Size = new System.Drawing.Size(107, 40);
             this.layoutControlItem11.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem11.TextVisible = false;
             // 
@@ -362,9 +392,9 @@
             // 
             this.layoutControlItem12.Control = this.btnHuy;
             this.layoutControlItem12.CustomizationFormText = "layoutControlItem12";
-            this.layoutControlItem12.Location = new System.Drawing.Point(458, 338);
+            this.layoutControlItem12.Location = new System.Drawing.Point(458, 340);
             this.layoutControlItem12.Name = "layoutControlItem12";
-            this.layoutControlItem12.Size = new System.Drawing.Size(107, 42);
+            this.layoutControlItem12.Size = new System.Drawing.Size(107, 40);
             this.layoutControlItem12.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem12.TextVisible = false;
             // 
@@ -394,36 +424,6 @@
             this.layoutControlItem1.Text = "Họ và tên";
             this.layoutControlItem1.TextSize = new System.Drawing.Size(101, 13);
             // 
-            // cbbStudentName
-            // 
-            this.cbbStudentName.Location = new System.Drawing.Point(116, 12);
-            this.cbbStudentName.Name = "cbbStudentName";
-            this.cbbStudentName.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cbbStudentName.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("StudentCode", "Mã học sinh"),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("FullName", "Họ tên"),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("ClassName", "Lớp học")});
-            this.cbbStudentName.Properties.NullText = "-- Chọn học sinh --";
-            this.cbbStudentName.Size = new System.Drawing.Size(457, 20);
-            this.cbbStudentName.StyleController = this.layoutControl1;
-            this.cbbStudentName.TabIndex = 4;
-            this.cbbStudentName.EditValueChanged += new System.EventHandler(this.cbbStudentName_EditValueChanged);
-            // 
-            // cbbEmployee
-            // 
-            this.cbbEmployee.Location = new System.Drawing.Point(116, 303);
-            this.cbbEmployee.Name = "cbbEmployee";
-            this.cbbEmployee.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cbbEmployee.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("EmployeeID", "Mã giáo viên"),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("EmployeeName", "Tên giáo viên")});
-            this.cbbEmployee.Properties.NullText = "-- Chọn giáo viên --";
-            this.cbbEmployee.Size = new System.Drawing.Size(457, 20);
-            this.cbbEmployee.StyleController = this.layoutControl1;
-            this.cbbEmployee.TabIndex = 13;
-            // 
             // frmHealthProblemDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -447,6 +447,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.cbbServerity.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chbStatus.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbbSignal.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbbStudentName.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbbEmployee.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
@@ -463,8 +465,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbbStudentName.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbbEmployee.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }

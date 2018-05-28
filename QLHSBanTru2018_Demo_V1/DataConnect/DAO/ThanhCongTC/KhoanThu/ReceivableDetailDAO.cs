@@ -22,6 +22,8 @@ namespace DataConnect.DAO.ThanhCongTC
             a.TimeUnits = entity.TimeUnits;
             a.Frequency = entity.Frequency;
             a.Feedback = entity.Feedback;
+            a.StartDay = entity.StartDay;
+            a.EndDay = entity.EndDay;
             dt.ReceivableDetails.InsertOnSubmit(a);
             dt.SubmitChanges();
             return a.ReceivableDetailID;
@@ -38,6 +40,8 @@ namespace DataConnect.DAO.ThanhCongTC
             a.Frequency = entity.Frequency;
             a.TimeUnits = entity.TimeUnits;
             a.Feedback = entity.Feedback;
+            a.StartDay = entity.StartDay;
+            entity.EndDay = entity.EndDay;
             a.TotalPriceDetail = entity.TotalPriceDetail;
             dt.SubmitChanges();
             return true;

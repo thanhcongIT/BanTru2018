@@ -58,6 +58,8 @@ namespace QLHSBanTru2018_Demo_V1.QLThuChi
                 a.Frequency = int.Parse(txtTanso.Text);
                 a.TotalPriceDetail = decimal.Parse(txtTongthu.Text);
                 a.GradeID = (int)cbbKhoihoc.SelectedValue;
+                a.StartDay = (DateTime)dtNgayBatDau.EditValue;
+                a.EndDay = (DateTime)dtNgayKetThuc.EditValue;
                 a.Feedback = cbHoanLai.Checked == true ? true : false;
                 if (cbDoituongchinhsach.Checked==true)
                 {
@@ -79,6 +81,8 @@ namespace QLHSBanTru2018_Demo_V1.QLThuChi
 
         private void FTaoKhoanThu_Load(object sender, EventArgs e)
         {
+            dtNgayBatDau.EditValue = DateTime.Now;
+            dtNgayKetThuc.EditValue = DateTime.Now;
             loadHocKy();
             loadKhoi();
         }

@@ -73,6 +73,8 @@
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.gridColumn14 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn15 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
@@ -285,7 +287,9 @@
             this.gridColumn10,
             this.gridColumn11,
             this.gridColumn12,
-            this.gridColumn13});
+            this.gridColumn13,
+            this.gridColumn14,
+            this.gridColumn15});
             this.gridView2.GridControl = this.grChiTietDotThu;
             this.gridView2.Name = "gridView2";
             this.gridView2.OptionsView.ShowGroupPanel = false;
@@ -314,7 +318,7 @@
             this.gridColumn6.OptionsColumn.AllowEdit = false;
             this.gridColumn6.Visible = true;
             this.gridColumn6.VisibleIndex = 0;
-            this.gridColumn6.Width = 281;
+            this.gridColumn6.Width = 191;
             // 
             // gridColumn7
             // 
@@ -325,8 +329,8 @@
             this.gridColumn7.Name = "gridColumn7";
             this.gridColumn7.OptionsColumn.AllowEdit = false;
             this.gridColumn7.Visible = true;
-            this.gridColumn7.VisibleIndex = 1;
-            this.gridColumn7.Width = 103;
+            this.gridColumn7.VisibleIndex = 3;
+            this.gridColumn7.Width = 85;
             // 
             // gridColumn8
             // 
@@ -335,8 +339,8 @@
             this.gridColumn8.Name = "gridColumn8";
             this.gridColumn8.OptionsColumn.AllowEdit = false;
             this.gridColumn8.Visible = true;
-            this.gridColumn8.VisibleIndex = 2;
-            this.gridColumn8.Width = 99;
+            this.gridColumn8.VisibleIndex = 4;
+            this.gridColumn8.Width = 60;
             // 
             // gridColumn9
             // 
@@ -345,8 +349,8 @@
             this.gridColumn9.Name = "gridColumn9";
             this.gridColumn9.OptionsColumn.AllowEdit = false;
             this.gridColumn9.Visible = true;
-            this.gridColumn9.VisibleIndex = 3;
-            this.gridColumn9.Width = 99;
+            this.gridColumn9.VisibleIndex = 5;
+            this.gridColumn9.Width = 65;
             // 
             // gridColumn10
             // 
@@ -364,8 +368,8 @@
             this.gridColumn11.Name = "gridColumn11";
             this.gridColumn11.OptionsColumn.AllowEdit = false;
             this.gridColumn11.Visible = true;
-            this.gridColumn11.VisibleIndex = 4;
-            this.gridColumn11.Width = 107;
+            this.gridColumn11.VisibleIndex = 6;
+            this.gridColumn11.Width = 95;
             // 
             // gridColumn12
             // 
@@ -518,6 +522,24 @@
             this.emptySpaceItem2.Size = new System.Drawing.Size(223, 26);
             this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
             // 
+            // gridColumn14
+            // 
+            this.gridColumn14.Caption = "Ngày bắt đầu";
+            this.gridColumn14.FieldName = "StartDay";
+            this.gridColumn14.Name = "gridColumn14";
+            this.gridColumn14.Visible = true;
+            this.gridColumn14.VisibleIndex = 1;
+            this.gridColumn14.Width = 123;
+            // 
+            // gridColumn15
+            // 
+            this.gridColumn15.Caption = "Ngày kết thúc";
+            this.gridColumn15.FieldName = "EndDay";
+            this.gridColumn15.Name = "gridColumn15";
+            this.gridColumn15.Visible = true;
+            this.gridColumn15.VisibleIndex = 2;
+            this.gridColumn15.Width = 103;
+            // 
             // UsDotThuPhi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -600,5 +622,7 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem8;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem9;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem10;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn14;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn15;
     }
 }

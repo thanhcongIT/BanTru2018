@@ -97,13 +97,13 @@
             this.dgvListStudent.EmbeddedNavigator.Buttons.EndEdit.Enabled = false;
             this.dgvListStudent.EmbeddedNavigator.Buttons.Remove.Enabled = false;
             this.dgvListStudent.EmbeddedNavigator.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.dgvListStudent.Location = new System.Drawing.Point(22, 88);
+            this.dgvListStudent.Location = new System.Drawing.Point(22, 89);
             this.dgvListStudent.MainView = this.gridView1;
             this.dgvListStudent.Name = "dgvListStudent";
             this.dgvListStudent.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemButtonEdit2,
             this.repositoryItemButtonEdit1});
-            this.dgvListStudent.Size = new System.Drawing.Size(535, 362);
+            this.dgvListStudent.Size = new System.Drawing.Size(535, 363);
             this.dgvListStudent.TabIndex = 6;
             this.dgvListStudent.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -256,7 +256,7 @@
             // 
             // txtPhysicalName
             // 
-            this.txtPhysicalName.Location = new System.Drawing.Point(327, 52);
+            this.txtPhysicalName.Location = new System.Drawing.Point(327, 53);
             this.txtPhysicalName.Name = "txtPhysicalName";
             this.txtPhysicalName.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.txtPhysicalName.Properties.Appearance.Options.UseFont = true;
@@ -266,7 +266,7 @@
             // 
             // txtClassName
             // 
-            this.txtClassName.Location = new System.Drawing.Point(90, 52);
+            this.txtClassName.Location = new System.Drawing.Point(90, 53);
             this.txtClassName.Name = "txtClassName";
             this.txtClassName.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.txtClassName.Properties.Appearance.Options.UseFont = true;
@@ -277,9 +277,9 @@
             // btnLuuDS
             // 
             this.btnLuuDS.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnLuuDS.ImageOptions.Image")));
-            this.btnLuuDS.Location = new System.Drawing.Point(341, 454);
+            this.btnLuuDS.Location = new System.Drawing.Point(341, 456);
             this.btnLuuDS.Name = "btnLuuDS";
-            this.btnLuuDS.Size = new System.Drawing.Size(121, 38);
+            this.btnLuuDS.Size = new System.Drawing.Size(121, 36);
             this.btnLuuDS.StyleController = this.layoutControl1;
             this.btnLuuDS.TabIndex = 28;
             this.btnLuuDS.Text = "Nhập danh sách";
@@ -288,9 +288,9 @@
             // btnHuybo
             // 
             this.btnHuybo.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnHuybo.ImageOptions.Image")));
-            this.btnHuybo.Location = new System.Drawing.Point(466, 454);
+            this.btnHuybo.Location = new System.Drawing.Point(466, 456);
             this.btnHuybo.Name = "btnHuybo";
-            this.btnHuybo.Size = new System.Drawing.Size(91, 38);
+            this.btnHuybo.Size = new System.Drawing.Size(91, 36);
             this.btnHuybo.StyleController = this.layoutControl1;
             this.btnHuybo.TabIndex = 28;
             this.btnHuybo.Text = "Hủy bỏ";
@@ -328,9 +328,9 @@
             // 
             this.layoutControlItem3.Control = this.dgvListStudent;
             this.layoutControlItem3.CustomizationFormText = "layoutControlItem3";
-            this.layoutControlItem3.Location = new System.Drawing.Point(0, 66);
+            this.layoutControlItem3.Location = new System.Drawing.Point(0, 67);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(539, 366);
+            this.layoutControlItem3.Size = new System.Drawing.Size(539, 367);
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem3.TextVisible = false;
             // 
@@ -342,7 +342,7 @@
             this.layoutControlItem1});
             this.layoutControlGroup3.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup3.Name = "layoutControlGroup3";
-            this.layoutControlGroup3.Size = new System.Drawing.Size(539, 66);
+            this.layoutControlGroup3.Size = new System.Drawing.Size(539, 67);
             this.layoutControlGroup3.Text = "Thông tin đợt khám";
             // 
             // layoutControlItem2
@@ -369,9 +369,9 @@
             // 
             this.layoutControlItem9.Control = this.btnLuuDS;
             this.layoutControlItem9.CustomizationFormText = "layoutControlItem9";
-            this.layoutControlItem9.Location = new System.Drawing.Point(319, 432);
+            this.layoutControlItem9.Location = new System.Drawing.Point(319, 434);
             this.layoutControlItem9.Name = "layoutControlItem9";
-            this.layoutControlItem9.Size = new System.Drawing.Size(125, 42);
+            this.layoutControlItem9.Size = new System.Drawing.Size(125, 40);
             this.layoutControlItem9.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem9.TextVisible = false;
             // 
@@ -379,9 +379,9 @@
             // 
             this.layoutControlItem4.Control = this.btnHuybo;
             this.layoutControlItem4.CustomizationFormText = "layoutControlItem9";
-            this.layoutControlItem4.Location = new System.Drawing.Point(444, 432);
+            this.layoutControlItem4.Location = new System.Drawing.Point(444, 434);
             this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(95, 42);
+            this.layoutControlItem4.Size = new System.Drawing.Size(95, 40);
             this.layoutControlItem4.Text = "layoutControlItem9";
             this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem4.TextVisible = false;
@@ -390,9 +390,9 @@
             // 
             this.emptySpaceItem1.AllowHotTrack = false;
             this.emptySpaceItem1.CustomizationFormText = "emptySpaceItem1";
-            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 432);
+            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 434);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(319, 42);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(319, 40);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // frmListStudentPhysicalDetail

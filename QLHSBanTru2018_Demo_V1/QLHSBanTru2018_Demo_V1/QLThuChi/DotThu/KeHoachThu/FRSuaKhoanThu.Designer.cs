@@ -54,13 +54,13 @@
             this.bntLuu = new DevExpress.XtraEditors.SimpleButton();
             this.label9 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.dateEdit2 = new DevExpress.XtraEditors.DateEdit();
-            this.dateEdit1 = new DevExpress.XtraEditors.DateEdit();
+            this.dtNgayKetThuc = new DevExpress.XtraEditors.DateEdit();
+            this.dtNgayBatDau = new DevExpress.XtraEditors.DateEdit();
             ((System.ComponentModel.ISupportInitialize)(this.cbDoituongchinhsach.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit2.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit2.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtNgayKetThuc.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtNgayKetThuc.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtNgayBatDau.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtNgayBatDau.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // defaultLookAndFeel1
@@ -298,29 +298,29 @@
             this.label3.TabIndex = 70;
             this.label3.Text = "Đến";
             // 
-            // dateEdit2
+            // dtNgayKetThuc
             // 
-            this.dateEdit2.EditValue = null;
-            this.dateEdit2.Location = new System.Drawing.Point(226, 111);
-            this.dateEdit2.Name = "dateEdit2";
-            this.dateEdit2.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.dtNgayKetThuc.EditValue = null;
+            this.dtNgayKetThuc.Location = new System.Drawing.Point(226, 111);
+            this.dtNgayKetThuc.Name = "dtNgayKetThuc";
+            this.dtNgayKetThuc.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEdit2.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.dtNgayKetThuc.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEdit2.Size = new System.Drawing.Size(100, 20);
-            this.dateEdit2.TabIndex = 69;
+            this.dtNgayKetThuc.Size = new System.Drawing.Size(100, 20);
+            this.dtNgayKetThuc.TabIndex = 69;
             // 
-            // dateEdit1
+            // dtNgayBatDau
             // 
-            this.dateEdit1.EditValue = null;
-            this.dateEdit1.Location = new System.Drawing.Point(87, 111);
-            this.dateEdit1.Name = "dateEdit1";
-            this.dateEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.dtNgayBatDau.EditValue = null;
+            this.dtNgayBatDau.Location = new System.Drawing.Point(87, 111);
+            this.dtNgayBatDau.Name = "dtNgayBatDau";
+            this.dtNgayBatDau.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEdit1.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.dtNgayBatDau.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEdit1.Size = new System.Drawing.Size(100, 20);
-            this.dateEdit1.TabIndex = 68;
+            this.dtNgayBatDau.Size = new System.Drawing.Size(100, 20);
+            this.dtNgayBatDau.TabIndex = 68;
             // 
             // FRSuaKhoanThu
             // 
@@ -331,8 +331,8 @@
             this.ClientSize = new System.Drawing.Size(338, 283);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.dateEdit2);
-            this.Controls.Add(this.dateEdit1);
+            this.Controls.Add(this.dtNgayKetThuc);
+            this.Controls.Add(this.dtNgayBatDau);
             this.Controls.Add(this.cbHoanLai);
             this.Controls.Add(this.txtDv);
             this.Controls.Add(this.label2);
@@ -358,10 +358,10 @@
             this.Text = "Sửa thông tin khoản thu";
             this.Load += new System.EventHandler(this.FRSuaKhoanThu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.cbDoituongchinhsach.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit2.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit2.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtNgayKetThuc.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtNgayKetThuc.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtNgayBatDau.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtNgayBatDau.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -392,7 +392,7 @@
         private System.Windows.Forms.CheckBox cbHoanLai;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label3;
-        private DevExpress.XtraEditors.DateEdit dateEdit2;
-        private DevExpress.XtraEditors.DateEdit dateEdit1;
+        private DevExpress.XtraEditors.DateEdit dtNgayKetThuc;
+        private DevExpress.XtraEditors.DateEdit dtNgayBatDau;
     }
 }

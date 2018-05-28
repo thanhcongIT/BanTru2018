@@ -69,6 +69,9 @@
             this.btnThongKeThucPham = new DevExpress.XtraBars.BarButtonItem();
             this.btnDailyMenuManager = new DevExpress.XtraBars.BarButtonItem();
             this.btnDailyTracker = new DevExpress.XtraBars.BarButtonItem();
+            this.barSubItem2 = new DevExpress.XtraBars.BarSubItem();
+            this.btnDotCanDo = new DevExpress.XtraBars.BarButtonItem();
+            this.btnKetQua = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -90,9 +93,6 @@
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
             this.pnControlsPanel = new System.Windows.Forms.Panel();
-            this.barSubItem2 = new DevExpress.XtraBars.BarSubItem();
-            this.btnDotCanDo = new DevExpress.XtraBars.BarButtonItem();
-            this.btnKetQua = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             this.SuspendLayout();
             // 
@@ -411,7 +411,7 @@
             // 
             // btnDanhMucChiTieu
             // 
-            this.btnDanhMucChiTieu.Caption = "Danh mục chi tiêu";
+            this.btnDanhMucChiTieu.Caption = "Hoàn phí";
             this.btnDanhMucChiTieu.Id = 30;
             this.btnDanhMucChiTieu.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDanhMucChiTieu.ImageOptions.Image")));
             this.btnDanhMucChiTieu.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnDanhMucChiTieu.ImageOptions.LargeImage")));
@@ -487,6 +487,35 @@
             this.btnDailyTracker.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnDailyTracker.ImageOptions.LargeImage")));
             this.btnDailyTracker.Name = "btnDailyTracker";
             this.btnDailyTracker.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDailyTracker_ItemClick);
+            // 
+            // barSubItem2
+            // 
+            this.barSubItem2.Caption = "Thông tin cân đo";
+            this.barSubItem2.Id = 39;
+            this.barSubItem2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barSubItem2.ImageOptions.Image")));
+            this.barSubItem2.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barSubItem2.ImageOptions.LargeImage")));
+            this.barSubItem2.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnDotCanDo),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnKetQua)});
+            this.barSubItem2.Name = "barSubItem2";
+            // 
+            // btnDotCanDo
+            // 
+            this.btnDotCanDo.Caption = "Thông tin đợt cân đo";
+            this.btnDotCanDo.Id = 40;
+            this.btnDotCanDo.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDotCanDo.ImageOptions.Image")));
+            this.btnDotCanDo.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnDotCanDo.ImageOptions.LargeImage")));
+            this.btnDotCanDo.Name = "btnDotCanDo";
+            this.btnDotCanDo.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDotCanDo_ItemClick);
+            // 
+            // btnKetQua
+            // 
+            this.btnKetQua.Caption = "Kết quả cân đo";
+            this.btnKetQua.Id = 41;
+            this.btnKetQua.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnKetQua.ImageOptions.Image")));
+            this.btnKetQua.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnKetQua.ImageOptions.LargeImage")));
+            this.btnKetQua.Name = "btnKetQua";
+            this.btnKetQua.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnKetQua_ItemClick);
             // 
             // ribbonPage1
             // 
@@ -647,35 +676,6 @@
             this.pnControlsPanel.Name = "pnControlsPanel";
             this.pnControlsPanel.Size = new System.Drawing.Size(1364, 600);
             this.pnControlsPanel.TabIndex = 3;
-            // 
-            // barSubItem2
-            // 
-            this.barSubItem2.Caption = "Thông tin cân đo";
-            this.barSubItem2.Id = 39;
-            this.barSubItem2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barSubItem2.ImageOptions.Image")));
-            this.barSubItem2.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barSubItem2.ImageOptions.LargeImage")));
-            this.barSubItem2.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.btnDotCanDo),
-            new DevExpress.XtraBars.LinkPersistInfo(this.btnKetQua)});
-            this.barSubItem2.Name = "barSubItem2";
-            // 
-            // btnDotCanDo
-            // 
-            this.btnDotCanDo.Caption = "Thông tin đợt cân đo";
-            this.btnDotCanDo.Id = 40;
-            this.btnDotCanDo.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDotCanDo.ImageOptions.Image")));
-            this.btnDotCanDo.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnDotCanDo.ImageOptions.LargeImage")));
-            this.btnDotCanDo.Name = "btnDotCanDo";
-            this.btnDotCanDo.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDotCanDo_ItemClick);
-            // 
-            // btnKetQua
-            // 
-            this.btnKetQua.Caption = "Kết quả cân đo";
-            this.btnKetQua.Id = 41;
-            this.btnKetQua.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.ImageOptions.Image")));
-            this.btnKetQua.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.ImageOptions.LargeImage")));
-            this.btnKetQua.Name = "btnKetQua";
-            this.btnKetQua.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnKetQua_ItemClick);
             // 
             // frmMain
             // 

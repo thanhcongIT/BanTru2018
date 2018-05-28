@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAddHealthExamination));
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.txtNameExam = new DevExpress.XtraEditors.TextEdit();
@@ -69,7 +70,7 @@
             this.layoutControlItem13 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.ItemForStatus = new DevExpress.XtraLayout.LayoutControlItem();
-            this.timer1 = new System.Windows.Forms.Timer();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtNameExam.Properties)).BeginInit();
@@ -142,7 +143,7 @@
             // 
             // txtNameExam
             // 
-            this.txtNameExam.Location = new System.Drawing.Point(92, 42);
+            this.txtNameExam.Location = new System.Drawing.Point(92, 43);
             this.txtNameExam.Name = "txtNameExam";
             this.txtNameExam.Size = new System.Drawing.Size(347, 20);
             this.txtNameExam.StyleController = this.layoutControl1;
@@ -150,7 +151,7 @@
             // 
             // txtPlaceExam
             // 
-            this.txtPlaceExam.Location = new System.Drawing.Point(92, 66);
+            this.txtPlaceExam.Location = new System.Drawing.Point(92, 67);
             this.txtPlaceExam.Name = "txtPlaceExam";
             this.txtPlaceExam.Size = new System.Drawing.Size(347, 20);
             this.txtPlaceExam.StyleController = this.layoutControl1;
@@ -159,7 +160,7 @@
             // dtDateExam
             // 
             this.dtDateExam.EditValue = null;
-            this.dtDateExam.Location = new System.Drawing.Point(92, 90);
+            this.dtDateExam.Location = new System.Drawing.Point(92, 91);
             this.dtDateExam.Name = "dtDateExam";
             this.dtDateExam.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -171,7 +172,7 @@
             // 
             // chbWeight
             // 
-            this.chbWeight.Location = new System.Drawing.Point(36, 160);
+            this.chbWeight.Location = new System.Drawing.Point(36, 161);
             this.chbWeight.Name = "chbWeight";
             this.chbWeight.Properties.Caption = "Chiều cao";
             this.chbWeight.Size = new System.Drawing.Size(213, 19);
@@ -180,7 +181,7 @@
             // 
             // chbHeight
             // 
-            this.chbHeight.Location = new System.Drawing.Point(36, 183);
+            this.chbHeight.Location = new System.Drawing.Point(36, 184);
             this.chbHeight.Name = "chbHeight";
             this.chbHeight.Properties.Caption = "Cân nặng";
             this.chbHeight.Size = new System.Drawing.Size(213, 19);
@@ -189,7 +190,7 @@
             // 
             // chbEyes
             // 
-            this.chbEyes.Location = new System.Drawing.Point(36, 206);
+            this.chbEyes.Location = new System.Drawing.Point(36, 207);
             this.chbEyes.Name = "chbEyes";
             this.chbEyes.Properties.Caption = "Mắt";
             this.chbEyes.Size = new System.Drawing.Size(213, 19);
@@ -198,7 +199,7 @@
             // 
             // chbENT
             // 
-            this.chbENT.Location = new System.Drawing.Point(36, 229);
+            this.chbENT.Location = new System.Drawing.Point(36, 230);
             this.chbENT.Name = "chbENT";
             this.chbENT.Properties.Caption = "Tai - mũi - họng";
             this.chbENT.Size = new System.Drawing.Size(213, 19);
@@ -207,7 +208,7 @@
             // 
             // chbOral
             // 
-            this.chbOral.Location = new System.Drawing.Point(36, 252);
+            this.chbOral.Location = new System.Drawing.Point(36, 253);
             this.chbOral.Name = "chbOral";
             this.chbOral.Properties.Caption = "Răng - miệng";
             this.chbOral.Size = new System.Drawing.Size(213, 19);
@@ -216,7 +217,7 @@
             // 
             // chbBoneMuscle
             // 
-            this.chbBoneMuscle.Location = new System.Drawing.Point(36, 275);
+            this.chbBoneMuscle.Location = new System.Drawing.Point(36, 276);
             this.chbBoneMuscle.Name = "chbBoneMuscle";
             this.chbBoneMuscle.Properties.Caption = "Cơ xương";
             this.chbBoneMuscle.Size = new System.Drawing.Size(391, 19);
@@ -225,7 +226,7 @@
             // 
             // chbDermatology
             // 
-            this.chbDermatology.Location = new System.Drawing.Point(253, 160);
+            this.chbDermatology.Location = new System.Drawing.Point(253, 161);
             this.chbDermatology.Name = "chbDermatology";
             this.chbDermatology.Properties.Caption = "Da liễu";
             this.chbDermatology.Size = new System.Drawing.Size(174, 19);
@@ -234,7 +235,7 @@
             // 
             // chbInternalMedicine
             // 
-            this.chbInternalMedicine.Location = new System.Drawing.Point(253, 183);
+            this.chbInternalMedicine.Location = new System.Drawing.Point(253, 184);
             this.chbInternalMedicine.Name = "chbInternalMedicine";
             this.chbInternalMedicine.Properties.Caption = "Nộikhoa";
             this.chbInternalMedicine.Size = new System.Drawing.Size(174, 19);
@@ -243,7 +244,7 @@
             // 
             // chbSurgery
             // 
-            this.chbSurgery.Location = new System.Drawing.Point(253, 206);
+            this.chbSurgery.Location = new System.Drawing.Point(253, 207);
             this.chbSurgery.Name = "chbSurgery";
             this.chbSurgery.Properties.Caption = "Ngoại khoa";
             this.chbSurgery.Size = new System.Drawing.Size(174, 19);
@@ -252,7 +253,7 @@
             // 
             // chbNerve
             // 
-            this.chbNerve.Location = new System.Drawing.Point(253, 229);
+            this.chbNerve.Location = new System.Drawing.Point(253, 230);
             this.chbNerve.Name = "chbNerve";
             this.chbNerve.Properties.Caption = "Nội tiết";
             this.chbNerve.Size = new System.Drawing.Size(174, 19);
@@ -261,7 +262,7 @@
             // 
             // chbEndocrine
             // 
-            this.chbEndocrine.Location = new System.Drawing.Point(253, 252);
+            this.chbEndocrine.Location = new System.Drawing.Point(253, 253);
             this.chbEndocrine.Name = "chbEndocrine";
             this.chbEndocrine.Properties.Caption = "Thần kinh";
             this.chbEndocrine.Size = new System.Drawing.Size(174, 19);
@@ -271,9 +272,9 @@
             // btnLuu
             // 
             this.btnLuu.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnLuu.ImageOptions.Image")));
-            this.btnLuu.Location = new System.Drawing.Point(217, 333);
+            this.btnLuu.Location = new System.Drawing.Point(217, 334);
             this.btnLuu.Name = "btnLuu";
-            this.btnLuu.Size = new System.Drawing.Size(108, 38);
+            this.btnLuu.Size = new System.Drawing.Size(108, 36);
             this.btnLuu.StyleController = this.layoutControl1;
             this.btnLuu.TabIndex = 81;
             this.btnLuu.Text = "Lưu";
@@ -282,9 +283,9 @@
             // btnHuy
             // 
             this.btnHuy.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnHuy.ImageOptions.Image")));
-            this.btnHuy.Location = new System.Drawing.Point(329, 333);
+            this.btnHuy.Location = new System.Drawing.Point(329, 334);
             this.btnHuy.Name = "btnHuy";
-            this.btnHuy.Size = new System.Drawing.Size(110, 38);
+            this.btnHuy.Size = new System.Drawing.Size(110, 36);
             this.btnHuy.StyleController = this.layoutControl1;
             this.btnHuy.TabIndex = 82;
             this.btnHuy.Text = "Hủy";
@@ -293,7 +294,7 @@
             // chbStatus
             // 
             this.chbStatus.EditValue = true;
-            this.chbStatus.Location = new System.Drawing.Point(92, 310);
+            this.chbStatus.Location = new System.Drawing.Point(92, 311);
             this.chbStatus.Name = "chbStatus";
             this.chbStatus.Properties.Caption = "Đang sử dụng";
             this.chbStatus.Properties.GlyphAlignment = DevExpress.Utils.HorzAlignment.Default;
@@ -523,7 +524,7 @@
             this.layoutControlItem1.Control = this.btnLuu;
             this.layoutControlItem1.Location = new System.Drawing.Point(193, 291);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(112, 46);
+            this.layoutControlItem1.Size = new System.Drawing.Size(112, 45);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
@@ -532,7 +533,7 @@
             this.layoutControlItem13.Control = this.btnHuy;
             this.layoutControlItem13.Location = new System.Drawing.Point(305, 291);
             this.layoutControlItem13.Name = "layoutControlItem13";
-            this.layoutControlItem13.Size = new System.Drawing.Size(114, 46);
+            this.layoutControlItem13.Size = new System.Drawing.Size(114, 45);
             this.layoutControlItem13.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem13.TextVisible = false;
             // 
@@ -542,7 +543,7 @@
             this.emptySpaceItem1.CustomizationFormText = "emptySpaceItem1";
             this.emptySpaceItem1.Location = new System.Drawing.Point(0, 291);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(193, 46);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(193, 45);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // ItemForStatus
