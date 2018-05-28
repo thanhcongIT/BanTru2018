@@ -191,10 +191,10 @@ namespace DataConnect.DAO.HungTD
                             WeekIndex = dm.Week.WeekIndex,
                             DayOfWeek = "",
                             Date = dm.Date,
-                            Breakfast = "",
-                            Lunch = "",
-                            AfterLunch = "",
-                            Afternoon = "",
+                            Breakfast = "(Hiện tại chưa có món ăn nào)",
+                            Lunch = "(Hiện tại chưa có món ăn nào)",
+                            AfterLunch = "(Hiện tại chưa có món ăn nào)",
+                            Afternoon = "(Hiện tại chưa có món ăn nào)",
                             IsForm = dm.IsForm,
                             Status = dm.Status
                         };
@@ -222,13 +222,13 @@ namespace DataConnect.DAO.HungTD
                             afternoon = afternoon + item.Dish.Name + ", ";
                     }
                     if (breakfast.Length > 2)
-                        model2[i].Breakfast = breakfast.Substring(0, breakfast.Length - 2);
+                        model2[i].Breakfast = (breakfast.Substring(0, breakfast.Length - 2))!=""? breakfast.Substring(0, breakfast.Length - 2): "(Hiện tại chưa có món ăn nào)";
                     if (lunch.Length > 2)
-                        model2[i].Lunch = lunch.Substring(0, lunch.Length - 2);
+                        model2[i].Lunch = (lunch.Substring(0, lunch.Length - 2)) != "" ? lunch.Substring(0, lunch.Length - 2) : "(Hiện tại chưa có món ăn nào)";
                     if (afterLunch.Length > 2)
-                        model2[i].AfterLunch = afterLunch.Substring(0, afterLunch.Length - 2);
+                        model2[i].AfterLunch = (afterLunch.Substring(0, afterLunch.Length - 2)) != "" ? afterLunch.Substring(0, afterLunch.Length - 2) : "(Hiện tại chưa có món ăn nào)";
                     if (afternoon.Length > 2)
-                        model2[i].Afternoon = afternoon.Substring(0, afternoon.Length - 2);
+                        model2[i].Afternoon = (afternoon.Substring(0, afternoon.Length - 2)) != "" ? afternoon.Substring(0, afternoon.Length - 2) : "(Hiện tại chưa có món ăn nào)";
                 }
 
 
