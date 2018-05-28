@@ -134,7 +134,6 @@ namespace QLHSBanTru2018_Demo_V1
         {
             pnControlsPanel.Controls.Clear();
             frmDailyTracker frmDT = new frmDailyTracker();
-            frmDT.Dock = DockStyle.Fill;
             frmDT.SetClassID(8);
             pnControlsPanel.Controls.Add(frmDT);
             labTitle.Caption = "ĐIỂM DANH HÀNG NGÀY";
