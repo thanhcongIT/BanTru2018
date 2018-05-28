@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using DataConnect.DAO.ThanhCongTC;
+using DataConnect;
 
 namespace QLHSBanTru2018_Demo_V1.QLThuChi.ChiTieu.ChiTraHocPhi
 {
@@ -53,6 +54,13 @@ namespace QLHSBanTru2018_Demo_V1.QLThuChi.ChiTieu.ChiTraHocPhi
             cbbDotthu.ValueMember = "ReceivableID";
             cbbDotthu.DisplayMember = "Name";
         }
+        public void LoadKhoanPhi(int MaDot)
+        {
+            ReceivableDetailDAO dt = new ReceivableDetailDAO();
+            cbbKhoanThu.Properties.DataSource = dt.FeedbackReceivableDetail(MaDot);
+            cbbKhoanThu.Properties.ValueMember = "ReceivableDetailID";
+            cbbKhoanThu.Properties.DisplayMember = "Name";
+        }
         private void UsChiTraHocPhi_Load(object sender, EventArgs e)
         {
             try
@@ -62,6 +70,7 @@ namespace QLHSBanTru2018_Demo_V1.QLThuChi.ChiTieu.ChiTraHocPhi
                 laodDotthu();
                 LoadKhoihoc();
                 LoadLophoc();
+                LoadKhoanPhi((int)cbbDotthu.SelectedValue);
             }
             catch 
             {
@@ -78,6 +87,8 @@ namespace QLHSBanTru2018_Demo_V1.QLThuChi.ChiTieu.ChiTraHocPhi
                 laodDotthu();
                 LoadKhoihoc();
                 LoadLophoc();
+                LoadKhoanPhi((int)cbbDotthu.SelectedValue);
+                cbbDotthu.Refresh();
             }
             catch
             {
@@ -93,6 +104,7 @@ namespace QLHSBanTru2018_Demo_V1.QLThuChi.ChiTieu.ChiTraHocPhi
                 laodDotthu();
                 LoadKhoihoc();
                 LoadLophoc();
+                LoadKhoanPhi((int)cbbDotthu.SelectedValue);
             }
             catch
             {
@@ -106,14 +118,31 @@ namespace QLHSBanTru2018_Demo_V1.QLThuChi.ChiTieu.ChiTraHocPhi
             try
             {
                 LoadKhoihoc();
-                LoadLophoc();
-                this.Refresh();
+                LoadLophoc();               
             }
             catch
             {
-
-
+                
             }
+        }
+
+        private void cbbDotthu_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            try
+            {
+                LoadKhoanPhi((int)cbbDotthu.SelectedValue);
+            }
+            catch 
+            {
+
+               
+            }
+        }
+
+        private void cbbKhoanThu_EditValueChanged(object sender, EventArgs e)
+        {
+            txtNgayBatDau.Text = cbbKhoanThu.GetColumnValue("StartDay").ToString();
+            txtNgayKetThuc.Text = cbbKhoanThu.GetColumnValue("EndDay").ToString();
         }
     }
 }

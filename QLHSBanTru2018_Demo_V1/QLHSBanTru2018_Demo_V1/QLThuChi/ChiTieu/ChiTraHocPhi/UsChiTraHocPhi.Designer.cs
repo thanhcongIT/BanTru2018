@@ -54,9 +54,9 @@
             this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.cbbKhoanThu = new DevExpress.XtraEditors.LookUpEdit();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtNgayBatDau = new System.Windows.Forms.TextBox();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtNgayKetThuc = new System.Windows.Forms.TextBox();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
@@ -148,6 +148,7 @@
             this.cbbDotthu.Name = "cbbDotthu";
             this.cbbDotthu.Size = new System.Drawing.Size(179, 21);
             this.cbbDotthu.TabIndex = 0;
+            this.cbbDotthu.SelectionChangeCommitted += new System.EventHandler(this.cbbDotthu_SelectionChangeCommitted);
             // 
             // label5
             // 
@@ -307,8 +308,8 @@
             // 
             // layoutControl2
             // 
-            this.layoutControl2.Controls.Add(this.textBox2);
-            this.layoutControl2.Controls.Add(this.textBox1);
+            this.layoutControl2.Controls.Add(this.txtNgayKetThuc);
+            this.layoutControl2.Controls.Add(this.txtNgayBatDau);
             this.layoutControl2.Controls.Add(this.cbbKhoanThu);
             this.layoutControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl2.Location = new System.Drawing.Point(2, 2);
@@ -337,9 +338,11 @@
             this.cbbKhoanThu.Name = "cbbKhoanThu";
             this.cbbKhoanThu.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbbKhoanThu.Properties.NullText = "---Chọn khoản thu---";
             this.cbbKhoanThu.Size = new System.Drawing.Size(370, 20);
             this.cbbKhoanThu.StyleController = this.layoutControl2;
             this.cbbKhoanThu.TabIndex = 4;
+            this.cbbKhoanThu.EditValueChanged += new System.EventHandler(this.cbbKhoanThu_EditValueChanged);
             // 
             // layoutControlItem5
             // 
@@ -350,32 +353,32 @@
             this.layoutControlItem5.Text = "Khoản thu";
             this.layoutControlItem5.TextSize = new System.Drawing.Size(67, 13);
             // 
-            // textBox1
+            // txtNgayBatDau
             // 
-            this.textBox1.Location = new System.Drawing.Point(83, 36);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(165, 20);
-            this.textBox1.TabIndex = 5;
+            this.txtNgayBatDau.Location = new System.Drawing.Point(83, 36);
+            this.txtNgayBatDau.Name = "txtNgayBatDau";
+            this.txtNgayBatDau.Size = new System.Drawing.Size(165, 20);
+            this.txtNgayBatDau.TabIndex = 5;
             // 
             // layoutControlItem6
             // 
-            this.layoutControlItem6.Control = this.textBox1;
+            this.layoutControlItem6.Control = this.txtNgayBatDau;
             this.layoutControlItem6.Location = new System.Drawing.Point(0, 24);
             this.layoutControlItem6.Name = "layoutControlItem6";
             this.layoutControlItem6.Size = new System.Drawing.Size(240, 26);
             this.layoutControlItem6.Text = "Ngày bắt đầu";
             this.layoutControlItem6.TextSize = new System.Drawing.Size(67, 13);
             // 
-            // textBox2
+            // txtNgayKetThuc
             // 
-            this.textBox2.Location = new System.Drawing.Point(323, 36);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(130, 20);
-            this.textBox2.TabIndex = 6;
+            this.txtNgayKetThuc.Location = new System.Drawing.Point(323, 36);
+            this.txtNgayKetThuc.Name = "txtNgayKetThuc";
+            this.txtNgayKetThuc.Size = new System.Drawing.Size(130, 20);
+            this.txtNgayKetThuc.TabIndex = 6;
             // 
             // layoutControlItem7
             // 
-            this.layoutControlItem7.Control = this.textBox2;
+            this.layoutControlItem7.Control = this.txtNgayKetThuc;
             this.layoutControlItem7.Location = new System.Drawing.Point(240, 24);
             this.layoutControlItem7.Name = "layoutControlItem7";
             this.layoutControlItem7.Size = new System.Drawing.Size(205, 26);
@@ -443,8 +446,8 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
         private DevExpress.XtraEditors.PanelControl panelControl3;
         private DevExpress.XtraLayout.LayoutControl layoutControl2;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtNgayKetThuc;
+        private System.Windows.Forms.TextBox txtNgayBatDau;
         private DevExpress.XtraEditors.LookUpEdit cbbKhoanThu;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup2;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;

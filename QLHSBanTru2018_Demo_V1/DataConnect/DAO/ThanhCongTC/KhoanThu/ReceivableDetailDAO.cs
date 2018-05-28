@@ -65,5 +65,10 @@ namespace DataConnect.DAO.ThanhCongTC
             ReceivableDetail a = dt.ReceivableDetails.Where(t => t.ReceivableDetailID == ReceivableDetailID && t.ReceivableID == ReceivableId).FirstOrDefault();
             return a;
         }
+        public List<ReceivableDetail>FeedbackReceivableDetail(int ReceivableID)
+        {
+            var a = dt.ReceivableDetails.Where(t => t.ReceivableID == ReceivableID&&t.Feedback==true);
+            return a.ToList();
+        }
     }
 }
