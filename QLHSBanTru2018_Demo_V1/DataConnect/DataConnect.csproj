@@ -97,6 +97,7 @@
     <Compile Include="DAO\ThanhCongTC\ChiTieuThucPham\TCIngredientDAO.cs" />
     <Compile Include="DAO\ThanhCongTC\ChiTieuThucPham\TCIngredientRequestDAO.cs" />
     <Compile Include="DAO\ThanhCongTC\ChiTieuThucPham\TCIngredientRequestDetailDAO.cs" />
+    <Compile Include="DAO\ThanhCongTC\ChiTieu\FeedbackStudenDAO.cs" />
     <Compile Include="DAO\ThanhCongTC\ChiTieu\InvoiceDAO.cs" />
     <Compile Include="DAO\ThanhCongTC\ChiTieu\InvoiceDetailDAO.cs" />
     <Compile Include="DAO\ThanhCongTC\ChiTieu\SpendSpeciesDAO.cs" />
