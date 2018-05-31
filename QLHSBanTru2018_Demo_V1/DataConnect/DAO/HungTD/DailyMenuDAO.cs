@@ -184,6 +184,7 @@ namespace DataConnect.DAO.HungTD
                         || dm.WeekID.Equals(weekID4)
                         || dm.WeekID.Equals(weekID5)) 
                         && dm.AgeGroupID.Equals(ageGroupID)
+                        && dm.Date.DayOfWeek!=DayOfWeek.Sunday
                         select new WeeklyMenuFullViewModel
                         {
                             DailyMenuID = dm.DailyMenuID,

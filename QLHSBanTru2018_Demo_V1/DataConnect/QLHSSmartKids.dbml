@@ -8,13 +8,22 @@
       <Column Name="DisplayOrder" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="Status" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
       <Association Name="AgeGroup_Dish" Member="Dishes" ThisKey="AgeGroupID" OtherKey="AgeGroupID" Type="Dish" />
+      <Association Name="AgeGroup_Grade" Member="Grades" ThisKey="AgeGroupID" OtherKey="AgeGroupID" Type="Grade" />
       <Association Name="AgeGroup_Topic" Member="Topics" ThisKey="AgeGroupID" OtherKey="AgeGroupID" Type="Topic" />
     </Type>
   </Table>
-  <Table Name="dbo.WeekYear" Member="WeekYears">
-    <Type Name="WeekYear">
+  <Table Name="dbo.WeeklyTask" Member="WeeklyTasks">
+    <Type Name="WeeklyTask">
       <Column Name="WeeklyTaskID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="MonthlyTaskID" Type="System.String" DbType="NChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="StudentID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Eating" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Sleep" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Health" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Study" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Comment" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Pages" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Association Name="Student_WeeklyTask" Member="Student" ThisKey="StudentID" OtherKey="StudentID" Type="Student" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.Class" Member="Classes">
@@ -54,9 +63,9 @@
       <Column Name="EndDate" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
       <Column Name="Status" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
       <Association Name="Course_CourseTask" Member="CourseTasks" ThisKey="CourseID" OtherKey="CourseID" Type="CourseTask" />
+      <Association Name="Course_Invoice" Member="Invoices" ThisKey="CourseID" OtherKey="CourseID" Type="Invoice" />
       <Association Name="Course_Semester" Member="Semesters" ThisKey="CourseID" OtherKey="CourseID" Type="Semester" />
       <Association Name="Course_Week" Member="Weeks" ThisKey="CourseID" OtherKey="CourseID" Type="Week" />
-      <Association Name="Course_Invoice" Member="Invoices" ThisKey="CourseID" OtherKey="CourseID" Type="Invoice" />
     </Type>
   </Table>
   <Table Name="dbo.CourseTask" Member="CourseTasks">
@@ -73,38 +82,82 @@
       <Association Name="Student_CourseTask" Member="Student" ThisKey="StudentID" OtherKey="StudentID" Type="Student" IsForeignKey="true" />
     </Type>
   </Table>
+  <Table Name="dbo.DailyMenu" Member="DailyMenus">
+    <Type Name="DailyMenu">
+      <Column Name="DailyMenuID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="WeekID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="AgeGroupID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IsForm" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Status" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="DailyMenu_DailyMenuDetail" Member="DailyMenuDetails" ThisKey="DailyMenuID" OtherKey="DailyMenuID" Type="DailyMenuDetail" />
+      <Association Name="Week_DailyMenu" Member="Week" ThisKey="WeekID" OtherKey="WeekID" Type="Week" IsForeignKey="true" />
+    </Type>
+  </Table>
   <Table Name="dbo.DailyMenuDetail" Member="DailyMenuDetails">
     <Type Name="DailyMenuDetail">
       <Column Name="DailyMenuID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="DishID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="Status" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Association Name="Dish_DailyMenuDetail" Member="Dish" ThisKey="DishID" OtherKey="DishID" Type="Dish" IsForeignKey="true" />
       <Association Name="DailyMenu_DailyMenuDetail" Member="DailyMenu" ThisKey="DailyMenuID" OtherKey="DailyMenuID" Type="DailyMenu" IsForeignKey="true" />
+      <Association Name="Dish_DailyMenuDetail" Member="Dish" ThisKey="DishID" OtherKey="DishID" Type="Dish" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.DailyTask" Member="DailyTasks">
     <Type Name="DailyTask">
       <Column Name="StudentID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="DateTask" Type="System.String" DbType="NChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="DateTask" Type="System.DateTime" DbType="Date NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="WeeklyTaskID" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="MonthlyTaskID" Type="System.String" DbType="NChar(20)" CanBeNull="true" />
       <Column Name="Present" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
       <Column Name="Reason" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
-      <Column Name="StartTime" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="EndTime" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="DrugTime" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="StartTime" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="EndTime" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="DrugTime" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
       <Column Name="Eating" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
       <Column Name="Sleep" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
       <Column Name="Health" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
       <Column Name="Study" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
       <Column Name="Note" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
-      <Association Name="DateOfEntry_DailyTask" Member="DateOfEntry" ThisKey="DateTask" OtherKey="DateTask" Type="DateOfEntry" IsForeignKey="true" />
+      <Association Name="Student_DailyTask" Member="Student" ThisKey="StudentID" OtherKey="StudentID" Type="Student" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.DateOfEntry" Member="DateOfEntries">
-    <Type Name="DateOfEntry">
-      <Column Name="DateTask" Type="System.String" DbType="NChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Association Name="DateOfEntry_DailyTask" Member="DailyTasks" ThisKey="DateTask" OtherKey="DateTask" Type="DailyTask" />
+  <Table Name="dbo.DailyTracker" Member="DailyTrackers">
+    <Type Name="DailyTracker">
+      <Column Name="DailyTrackerID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="StudentID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="WeekID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Present" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Reason" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="TimeIn" Type="System.TimeSpan" DbType="Time" CanBeNull="true" />
+      <Column Name="TimeOut" Type="System.TimeSpan" DbType="Time" CanBeNull="true" />
+      <Column Name="Eating" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Sleep" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Health" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Study" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Note" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Status" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="DailyTracker_DailyTrackerDrugTime" Member="DailyTrackerDrugTimes" ThisKey="DailyTrackerID" OtherKey="DailyTrackerID" Type="DailyTrackerDrugTime" />
+      <Association Name="Student_DailyTracker" Member="Student" ThisKey="StudentID" OtherKey="StudentID" Type="Student" IsForeignKey="true" />
+      <Association Name="Week_DailyTracker" Member="Week" ThisKey="WeekID" OtherKey="WeekID" Type="Week" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DailyTrackerDrugTime" Member="DailyTrackerDrugTimes">
+    <Type Name="DailyTrackerDrugTime">
+      <Column Name="DailyTrackerDrugTimeID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DailyTrackerID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DrugTime" Type="System.TimeSpan" DbType="Time NOT NULL" CanBeNull="false" />
+      <Column Name="DrugName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DrugQuantity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Note" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Status" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="DailyTracker_DailyTrackerDrugTime" Member="DailyTracker" ThisKey="DailyTrackerID" OtherKey="DailyTrackerID" Type="DailyTracker" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DateDate" Member="DateDates">
+    <Type Name="DateDate">
+      <Column Name="DateTask" Type="System.DateTime" DbType="Date NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
     </Type>
   </Table>
   <Table Name="dbo.Degree" Member="Degrees">
@@ -120,7 +173,7 @@
       <Column Name="DepartmentID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="Status" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Association Name="Department_Division" Member="Divisions" ThisKey="DepartmentID" OtherKey="DepartmentID" Type="Division" />
+      <Association Name="Department_Position" Member="Positions" ThisKey="DepartmentID" OtherKey="DepartmentID" Type="Position" />
     </Type>
   </Table>
   <Table Name="dbo.Dish" Member="Dishes">
@@ -154,15 +207,12 @@
     <Type Name="Division">
       <Column Name="DivisionID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="EmployeeID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="DepartmentID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="PositionID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="StartDate" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
       <Column Name="EndDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="CreatedDate" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
       <Column Name="CreatedBy" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="Note" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
       <Column Name="Status" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Association Name="Department_Division" Member="Department" ThisKey="DepartmentID" OtherKey="DepartmentID" Type="Department" IsForeignKey="true" />
       <Association Name="Employee_Division" Member="Employee" ThisKey="EmployeeID" OtherKey="EmployeeID" Type="Employee" IsForeignKey="true" />
       <Association Name="Employee_Division1" Member="Employee1" ThisKey="CreatedBy" OtherKey="EmployeeID" Type="Employee" IsForeignKey="true" />
       <Association Name="Position_Division" Member="Position" ThisKey="PositionID" OtherKey="PositionID" Type="Position" IsForeignKey="true" />
@@ -200,9 +250,9 @@
       <Association Name="Employee_HealthProblem" Member="HealthProblems" ThisKey="EmployeeID" OtherKey="EmployeeID" Type="HealthProblem" />
       <Association Name="Employee_History" Member="Histories" ThisKey="EmployeeID" OtherKey="EmployeeID" Type="History" />
       <Association Name="Employee_IngredientRequest" Member="IngredientRequests" ThisKey="EmployeeID" OtherKey="CreatedBy" Type="IngredientRequest" />
-      <Association Name="Employee_Order" Member="Orders" ThisKey="EmployeeID" OtherKey="EmployeeID" Type="Order" />
       <Association Name="Employee_Invoice" Member="Invoices" ThisKey="EmployeeID" OtherKey="EmployeeID" Type="Invoice" />
       <Association Name="Employee_Invoice1" Member="Invoices1" ThisKey="EmployeeID" OtherKey="EmployeeID" Type="Invoice" />
+      <Association Name="Employee_Order" Member="Orders" ThisKey="EmployeeID" OtherKey="EmployeeID" Type="Order" />
       <Association Name="Degree_Employee" Member="Degree" ThisKey="DegreeID" OtherKey="DegreeID" Type="Degree" IsForeignKey="true" />
       <Association Name="EthnicGroup_Employee" Member="EthnicGroup" ThisKey="EthnicGroupID" OtherKey="EthnicGroupID" Type="EthnicGroup" IsForeignKey="true" />
       <Association Name="Location_Employee" Member="Location" ThisKey="LocationID" OtherKey="LocationID" Type="Location" IsForeignKey="true" />
@@ -268,11 +318,13 @@
     <Type Name="Grade">
       <Column Name="GradeID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="SemesterID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AgeGroupID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="Note" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
       <Column Name="Status" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
       <Association Name="Grade_Class" Member="Classes" ThisKey="GradeID" OtherKey="GradeID" Type="Class" />
       <Association Name="Grade_ReceivableDetail" Member="ReceivableDetails" ThisKey="GradeID" OtherKey="GradeID" Type="ReceivableDetail" />
+      <Association Name="AgeGroup_Grade" Member="AgeGroup" ThisKey="AgeGroupID" OtherKey="AgeGroupID" Type="AgeGroup" IsForeignKey="true" />
       <Association Name="Semester_Grade" Member="Semester" ThisKey="SemesterID" OtherKey="SemesterID" Type="Semester" IsForeignKey="true" />
     </Type>
   </Table>
@@ -295,6 +347,31 @@
       <Column Name="Endocrine" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
       <Column Name="Status" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
       <Association Name="HealthExamination_HealthExaminationDetail" Member="HealthExaminationDetails" ThisKey="HealthExaminationID" OtherKey="HealthExaminationID" Type="HealthExaminationDetail" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HealthExaminationDetail" Member="HealthExaminationDetails">
+    <Type Name="HealthExaminationDetail">
+      <Column Name="HealthExaminationDetailID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="HealthExaminationID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="StudentID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="HealthInsurance" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Height" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="Weight" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="Eyes" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="ENT" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="InternalMedicine" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="Oral" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="Surgery" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="Dermatology" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="BoneMuscle" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="Nerve" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="Endocrine" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="Other" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Note" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Rating" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Status" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="HealthExamination_HealthExaminationDetail" Member="HealthExamination" ThisKey="HealthExaminationID" OtherKey="HealthExaminationID" Type="HealthExamination" IsForeignKey="true" />
+      <Association Name="Student_HealthExaminationDetail" Member="Student" ThisKey="StudentID" OtherKey="StudentID" Type="Student" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.HealthProblem" Member="HealthProblems">
@@ -381,6 +458,28 @@
       <Column Name="Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="Status" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
       <Association Name="IngredientType_Ingredient" Member="Ingredients" ThisKey="IngredientTypeID" OtherKey="IngredientTypeID" Type="Ingredient" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Invoice" Member="Invoices">
+    <Type Name="Invoice">
+      <Column Name="InvoiceID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CourseID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SemesterID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CreatedDate" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="EmployeeID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NameMoneyReceive" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PhoneNumber" Type="System.String" DbType="Char(11)" CanBeNull="true" />
+      <Column Name="AdressDetail" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="TotalPrice" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="SpendSpeciesID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Note" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Status" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="Invoice_InvoiceDetail" Member="InvoiceDetails" ThisKey="InvoiceID" OtherKey="InvoiceID" Type="InvoiceDetail" />
+      <Association Name="Course_Invoice" Member="Course" ThisKey="CourseID" OtherKey="CourseID" Type="Course" IsForeignKey="true" />
+      <Association Name="Employee_Invoice" Member="Employee" ThisKey="EmployeeID" OtherKey="EmployeeID" Type="Employee" IsForeignKey="true" />
+      <Association Name="Employee_Invoice1" Member="Employee1" ThisKey="EmployeeID" OtherKey="EmployeeID" Type="Employee" IsForeignKey="true" />
+      <Association Name="Semester_Invoice" Member="Semester" ThisKey="SemesterID" OtherKey="SemesterID" Type="Semester" IsForeignKey="true" />
+      <Association Name="SpendSpecy_Invoice" Member="SpendSpecy" ThisKey="SpendSpeciesID" OtherKey="SpendSpeciesID" Type="SpendSpecy" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.InvoiceDetail" Member="InvoiceDetails">
@@ -495,9 +594,12 @@
   <Table Name="dbo.Position" Member="Positions">
     <Type Name="Position">
       <Column Name="PositionID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DepartmentID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DisplayOrder" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="Status" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
       <Association Name="Position_Division" Member="Divisions" ThisKey="PositionID" OtherKey="PositionID" Type="Division" />
+      <Association Name="Department_Position" Member="Department" ThisKey="DepartmentID" OtherKey="DepartmentID" Type="Department" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.Preferred" Member="Preferreds">
@@ -523,13 +625,33 @@
       <Association Name="Receivable_ReceivableDetail" Member="ReceivableDetails" ThisKey="ReceivableID" OtherKey="ReceivableID" Type="ReceivableDetail" />
     </Type>
   </Table>
+  <Table Name="dbo.ReceivableDetail" Member="ReceivableDetails">
+    <Type Name="ReceivableDetail">
+      <Column Name="ReceivableDetailID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ReceivableID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Price" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="TimeUnits" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="Frequency" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TotalPriceDetail" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="GradeID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PreferredID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Feedback" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="StartDay" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="EndDay" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Status" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="ReceivableDetail_ReceivableDetail_Student" Member="ReceivableDetail_Students" ThisKey="ReceivableDetailID" OtherKey="ReceivableDetailID" Type="ReceivableDetail_Student" />
+      <Association Name="Grade_ReceivableDetail" Member="Grade" ThisKey="GradeID" OtherKey="GradeID" Type="Grade" IsForeignKey="true" />
+      <Association Name="Receivable_ReceivableDetail" Member="Receivable" ThisKey="ReceivableID" OtherKey="ReceivableID" Type="Receivable" IsForeignKey="true" />
+    </Type>
+  </Table>
   <Table Name="dbo.ReceivableDetail_Student" Member="ReceivableDetail_Students">
     <Type Name="ReceivableDetail_Student">
       <Column Name="ReceivableDetailID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="StudentID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="Status" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Association Name="Student_ReceivableDetail_Student" Member="Student" ThisKey="StudentID" OtherKey="StudentID" Type="Student" IsForeignKey="true" />
       <Association Name="ReceivableDetail_ReceivableDetail_Student" Member="ReceivableDetail" ThisKey="ReceivableDetailID" OtherKey="ReceivableDetailID" Type="ReceivableDetail" IsForeignKey="true" />
+      <Association Name="Student_ReceivableDetail_Student" Member="Student" ThisKey="StudentID" OtherKey="StudentID" Type="Student" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.Religion" Member="Religions">
@@ -584,16 +706,17 @@
       <Column Name="PreferredID" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="Note" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
       <Column Name="Status" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="Student_WeeklyTask" Member="WeeklyTasks" ThisKey="StudentID" OtherKey="StudentID" Type="WeeklyTask" />
       <Association Name="Student_CourseTask" Member="CourseTasks" ThisKey="StudentID" OtherKey="StudentID" Type="CourseTask" />
+      <Association Name="Student_DailyTask" Member="DailyTasks" ThisKey="StudentID" OtherKey="StudentID" Type="DailyTask" />
+      <Association Name="Student_DailyTracker" Member="DailyTrackers" ThisKey="StudentID" OtherKey="StudentID" Type="DailyTracker" />
+      <Association Name="Student_HealthExaminationDetail" Member="HealthExaminationDetails" ThisKey="StudentID" OtherKey="StudentID" Type="HealthExaminationDetail" />
       <Association Name="Student_HealthProblem" Member="HealthProblems" ThisKey="StudentID" OtherKey="StudentID" Type="HealthProblem" />
       <Association Name="Student_PhysicalAssessmentDetail" Member="PhysicalAssessmentDetails" ThisKey="StudentID" OtherKey="StudentID" Type="PhysicalAssessmentDetail" />
       <Association Name="Student_ReceivableDetail_Student" Member="ReceivableDetail_Students" ThisKey="StudentID" OtherKey="StudentID" Type="ReceivableDetail_Student" />
       <Association Name="Student_Student_Class" Member="Student_Classes" ThisKey="StudentID" OtherKey="StudentID" Type="Student_Class" />
       <Association Name="Student_Student_Lesson" Member="Student_Lessons" ThisKey="StudentID" OtherKey="StudentID" Type="Student_Lesson" />
       <Association Name="Student_StudentParent" Member="StudentParents" ThisKey="StudentID" OtherKey="StudentID" Type="StudentParent" />
-      <Association Name="Student_WeeklyTask" Member="WeeklyTasks" ThisKey="StudentID" OtherKey="StudentID" Type="WeeklyTask" />
-      <Association Name="Student_HealthExaminationDetail" Member="HealthExaminationDetails" ThisKey="StudentID" OtherKey="StudentID" Type="HealthExaminationDetail" />
-      <Association Name="Student_DailyTracker" Member="DailyTrackers" ThisKey="StudentID" OtherKey="StudentID" Type="DailyTracker" />
       <Association Name="Preferred_Student" Member="Preferred" ThisKey="PreferredID" OtherKey="PreferredID" Type="Preferred" IsForeignKey="true" />
     </Type>
   </Table>
@@ -645,21 +768,6 @@
       <Association Name="AgeGroup_Topic" Member="AgeGroup" ThisKey="AgeGroupID" OtherKey="AgeGroupID" Type="AgeGroup" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.TrackingUpLate" Member="TrackingUpLates">
-    <Type Name="TrackingUpLate">
-      <Column Name="TrackingID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="StudentID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="DateTask" Type="System.String" DbType="NChar(20)" CanBeNull="true" />
-      <Column Name="StartTime" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
-      <Column Name="EndTime" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
-      <Column Name="DrugTime" Type="System.String" DbType="NChar(20)" CanBeNull="true" />
-      <Column Name="Eating" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
-      <Column Name="Sleep" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
-      <Column Name="Health" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
-      <Column Name="Study" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
-      <Column Name="Note" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.Week" Member="Weeks">
     <Type Name="Week">
       <Column Name="WeekID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -668,135 +776,9 @@
       <Column Name="StartDate" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
       <Column Name="EndDate" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
       <Column Name="Status" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Association Name="Week_DailyTracker" Member="DailyTrackers" ThisKey="WeekID" OtherKey="WeekID" Type="DailyTracker" />
       <Association Name="Week_DailyMenu" Member="DailyMenus" ThisKey="WeekID" OtherKey="WeekID" Type="DailyMenu" />
+      <Association Name="Week_DailyTracker" Member="DailyTrackers" ThisKey="WeekID" OtherKey="WeekID" Type="DailyTracker" />
       <Association Name="Course_Week" Member="Course" ThisKey="CourseID" OtherKey="CourseID" Type="Course" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.WeeklyTask" Member="WeeklyTasks">
-    <Type Name="WeeklyTask">
-      <Column Name="WeeklyTaskID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="MonthlyTaskID" Type="System.String" DbType="NChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="StudentID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="Eating" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
-      <Column Name="Sleep" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
-      <Column Name="Health" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
-      <Column Name="Study" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
-      <Column Name="Comment" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
-      <Column Name="Pages" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
-      <Association Name="Student_WeeklyTask" Member="Student" ThisKey="StudentID" OtherKey="StudentID" Type="Student" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.HealthExaminationDetail" Member="HealthExaminationDetails">
-    <Type Name="HealthExaminationDetail">
-      <Column Name="HealthExaminationDetailID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="HealthExaminationID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="StudentID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="HealthInsurance" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="Height" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
-      <Column Name="Weight" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
-      <Column Name="Eyes" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
-      <Column Name="ENT" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
-      <Column Name="InternalMedicine" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
-      <Column Name="Oral" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
-      <Column Name="Surgery" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
-      <Column Name="Dermatology" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
-      <Column Name="BoneMuscle" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
-      <Column Name="Nerve" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
-      <Column Name="Endocrine" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
-      <Column Name="Other" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
-      <Column Name="Note" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
-      <Column Name="Rating" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="Status" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Association Name="HealthExamination_HealthExaminationDetail" Member="HealthExamination" ThisKey="HealthExaminationID" OtherKey="HealthExaminationID" Type="HealthExamination" IsForeignKey="true" />
-      <Association Name="Student_HealthExaminationDetail" Member="Student" ThisKey="StudentID" OtherKey="StudentID" Type="Student" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.DailyTrackerDrugTime" Member="DailyTrackerDrugTimes">
-    <Type Name="DailyTrackerDrugTime">
-      <Column Name="DailyTrackerDrugTimeID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="DailyTrackerID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="DrugTime" Type="System.TimeSpan" DbType="Time NOT NULL" CanBeNull="false" />
-      <Column Name="DrugName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="DrugQuantity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Note" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="Status" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Association Name="DailyTracker_DailyTrackerDrugTime" Member="DailyTracker" ThisKey="DailyTrackerID" OtherKey="DailyTrackerID" Type="DailyTracker" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.DailyTracker" Member="DailyTrackers">
-    <Type Name="DailyTracker">
-      <Column Name="DailyTrackerID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="StudentID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="WeekID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
-      <Column Name="Present" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Reason" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
-      <Column Name="TimeIn" Type="System.TimeSpan" DbType="Time" CanBeNull="true" />
-      <Column Name="TimeOut" Type="System.TimeSpan" DbType="Time" CanBeNull="true" />
-      <Column Name="Eating" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Sleep" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Health" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Study" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Note" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
-      <Column Name="Status" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Association Name="DailyTracker_DailyTrackerDrugTime" Member="DailyTrackerDrugTimes" ThisKey="DailyTrackerID" OtherKey="DailyTrackerID" Type="DailyTrackerDrugTime" />
-      <Association Name="Student_DailyTracker" Member="Student" ThisKey="StudentID" OtherKey="StudentID" Type="Student" IsForeignKey="true" />
-      <Association Name="Week_DailyTracker" Member="Week" ThisKey="WeekID" OtherKey="WeekID" Type="Week" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.DailyMenu" Member="DailyMenus">
-    <Type Name="DailyMenu">
-      <Column Name="DailyMenuID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="WeekID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
-      <Column Name="AgeGroupID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="IsForm" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Column Name="Status" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Association Name="DailyMenu_DailyMenuDetail" Member="DailyMenuDetails" ThisKey="DailyMenuID" OtherKey="DailyMenuID" Type="DailyMenuDetail" />
-      <Association Name="Week_DailyMenu" Member="Week" ThisKey="WeekID" OtherKey="WeekID" Type="Week" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.Invoice" Member="Invoices">
-    <Type Name="Invoice">
-      <Column Name="InvoiceID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="CourseID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="SemesterID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="CreatedDate" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
-      <Column Name="EmployeeID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="NameMoneyReceive" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="PhoneNumber" Type="System.String" DbType="Char(11)" CanBeNull="true" />
-      <Column Name="AdressDetail" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="TotalPrice" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
-      <Column Name="SpendSpeciesID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Note" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
-      <Column Name="Status" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Association Name="Invoice_InvoiceDetail" Member="InvoiceDetails" ThisKey="InvoiceID" OtherKey="InvoiceID" Type="InvoiceDetail" />
-      <Association Name="Course_Invoice" Member="Course" ThisKey="CourseID" OtherKey="CourseID" Type="Course" IsForeignKey="true" />
-      <Association Name="Employee_Invoice" Member="Employee" ThisKey="EmployeeID" OtherKey="EmployeeID" Type="Employee" IsForeignKey="true" />
-      <Association Name="Employee_Invoice1" Member="Employee1" ThisKey="EmployeeID" OtherKey="EmployeeID" Type="Employee" IsForeignKey="true" />
-      <Association Name="Semester_Invoice" Member="Semester" ThisKey="SemesterID" OtherKey="SemesterID" Type="Semester" IsForeignKey="true" />
-      <Association Name="SpendSpecy_Invoice" Member="SpendSpecy" ThisKey="SpendSpeciesID" OtherKey="SpendSpeciesID" Type="SpendSpecy" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.ReceivableDetail" Member="ReceivableDetails">
-    <Type Name="ReceivableDetail">
-      <Column Name="ReceivableDetailID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="ReceivableID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Name" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
-      <Column Name="Price" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
-      <Column Name="TimeUnits" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
-      <Column Name="Frequency" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="TotalPriceDetail" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
-      <Column Name="GradeID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="PreferredID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Feedback" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="StartDay" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="EndDay" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="Status" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Association Name="ReceivableDetail_ReceivableDetail_Student" Member="ReceivableDetail_Students" ThisKey="ReceivableDetailID" OtherKey="ReceivableDetailID" Type="ReceivableDetail_Student" />
-      <Association Name="Grade_ReceivableDetail" Member="Grade" ThisKey="GradeID" OtherKey="GradeID" Type="Grade" IsForeignKey="true" />
-      <Association Name="Receivable_ReceivableDetail" Member="Receivable" ThisKey="ReceivableID" OtherKey="ReceivableID" Type="Receivable" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>

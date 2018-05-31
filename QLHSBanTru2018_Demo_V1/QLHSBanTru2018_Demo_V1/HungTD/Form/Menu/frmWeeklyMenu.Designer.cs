@@ -49,10 +49,11 @@
             DevExpress.XtraGrid.Views.Tile.TileViewItemElement tileViewItemElement10 = new DevExpress.XtraGrid.Views.Tile.TileViewItemElement();
             this.colBreakfast = new DevExpress.XtraGrid.Columns.TileViewColumn();
             this.repositoryItemMemoEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
-            this.colDayOfWeek = new DevExpress.XtraGrid.Columns.TileViewColumn();
             this.colLunch = new DevExpress.XtraGrid.Columns.TileViewColumn();
             this.colAfterLunch = new DevExpress.XtraGrid.Columns.TileViewColumn();
             this.colAfternoon = new DevExpress.XtraGrid.Columns.TileViewColumn();
+            this.colDayOfWeek = new DevExpress.XtraGrid.Columns.TileViewColumn();
+            this.colDate = new DevExpress.XtraGrid.Columns.TileViewColumn();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.cbbAgeGroup = new System.Windows.Forms.ComboBox();
             this.btnAdd = new DevExpress.XtraEditors.SimpleButton();
@@ -63,6 +64,8 @@
             this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
             this.textEdit2 = new DevExpress.XtraEditors.TextEdit();
             this.gcMain = new DevExpress.XtraGrid.GridControl();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.btnDailyMenuDetail = new System.Windows.Forms.ToolStripMenuItem();
             this.tileView1 = new DevExpress.XtraGrid.Views.Tile.TileView();
             this.colWeekID = new DevExpress.XtraGrid.Columns.TileViewColumn();
             this.repositoryItemMemoEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
@@ -84,15 +87,13 @@
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
             this.btnInitDailyMenu = new DevExpress.XtraLayout.LayoutControlItem();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.btnDailyMenuDetail = new System.Windows.Forms.ToolStripMenuItem();
-            this.colDate = new DevExpress.XtraGrid.Columns.TileViewColumn();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcMain)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tileView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
@@ -112,7 +113,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnInitDailyMenu)).BeginInit();
-            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // colBreakfast
@@ -126,21 +126,6 @@
             // repositoryItemMemoEdit2
             // 
             this.repositoryItemMemoEdit2.Name = "repositoryItemMemoEdit2";
-            // 
-            // colDayOfWeek
-            // 
-            this.colDayOfWeek.AppearanceCell.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.colDayOfWeek.AppearanceCell.Options.UseBackColor = true;
-            this.colDayOfWeek.AppearanceCell.Options.UseTextOptions = true;
-            this.colDayOfWeek.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colDayOfWeek.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.colDayOfWeek.AppearanceHeader.Options.UseTextOptions = true;
-            this.colDayOfWeek.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colDayOfWeek.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.colDayOfWeek.FieldName = "DayOfWeek";
-            this.colDayOfWeek.Name = "colDayOfWeek";
-            this.colDayOfWeek.Visible = true;
-            this.colDayOfWeek.VisibleIndex = 0;
             // 
             // colLunch
             // 
@@ -162,6 +147,28 @@
             this.colAfternoon.Name = "colAfternoon";
             this.colAfternoon.Visible = true;
             this.colAfternoon.VisibleIndex = 4;
+            // 
+            // colDayOfWeek
+            // 
+            this.colDayOfWeek.AppearanceCell.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.colDayOfWeek.AppearanceCell.Options.UseBackColor = true;
+            this.colDayOfWeek.AppearanceCell.Options.UseTextOptions = true;
+            this.colDayOfWeek.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colDayOfWeek.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.colDayOfWeek.AppearanceHeader.Options.UseTextOptions = true;
+            this.colDayOfWeek.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colDayOfWeek.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.colDayOfWeek.FieldName = "DayOfWeek";
+            this.colDayOfWeek.Name = "colDayOfWeek";
+            this.colDayOfWeek.Visible = true;
+            this.colDayOfWeek.VisibleIndex = 0;
+            // 
+            // colDate
+            // 
+            this.colDate.FieldName = "Date";
+            this.colDate.Name = "colDate";
+            this.colDate.Visible = true;
+            this.colDate.VisibleIndex = 6;
             // 
             // layoutControl1
             // 
@@ -275,8 +282,24 @@
             this.gcMain.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.tileView1});
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnDailyMenuDetail});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(180, 26);
+            // 
+            // btnDailyMenuDetail
+            // 
+            this.btnDailyMenuDetail.Name = "btnDailyMenuDetail";
+            this.btnDailyMenuDetail.Size = new System.Drawing.Size(179, 22);
+            this.btnDailyMenuDetail.Text = "Cập Nhật Thực Đơn";
+            this.btnDailyMenuDetail.Click += new System.EventHandler(this.btnDailyMenuDetail_Click);
+            // 
             // tileView1
             // 
+            this.tileView1.Appearance.ItemFocused.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.tileView1.Appearance.ItemFocused.Options.UseBackColor = true;
             this.tileView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colDayOfWeek,
             this.colBreakfast,
@@ -288,20 +311,24 @@
             this.tileView1.ColumnSet.GroupColumn = this.colWeekID;
             this.tileView1.GridControl = this.gcMain;
             this.tileView1.Name = "tileView1";
-            this.tileView1.OptionsTiles.ItemSize = new System.Drawing.Size(336, 210);
-            this.tileView1.OptionsTiles.LayoutMode = DevExpress.XtraGrid.Views.Tile.TileViewLayoutMode.Kanban;
+            this.tileView1.OptionsTiles.IndentBetweenGroups = 15;
+            this.tileView1.OptionsTiles.IndentBetweenItems = 10;
+            this.tileView1.OptionsTiles.ItemPadding = new System.Windows.Forms.Padding(13);
+            this.tileView1.OptionsTiles.ItemSize = new System.Drawing.Size(298, 165);
+            this.tileView1.OptionsTiles.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.tileView1.OptionsTiles.Padding = new System.Windows.Forms.Padding(0);
             this.tileView1.OptionsTiles.RowCount = 0;
             this.tileView1.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
             new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colWeekID, DevExpress.Data.ColumnSortOrder.Ascending)});
-            tableColumnDefinition1.Length.Value = 111D;
-            tableColumnDefinition2.Length.Value = 201D;
+            tableColumnDefinition1.Length.Value = 97D;
+            tableColumnDefinition2.Length.Value = 151D;
             this.tileView1.TileColumns.Add(tableColumnDefinition1);
             this.tileView1.TileColumns.Add(tableColumnDefinition2);
-            tableRowDefinition1.Length.Value = 46D;
-            tableRowDefinition2.Length.Value = 32D;
-            tableRowDefinition3.Length.Value = 53D;
+            tableRowDefinition1.Length.Value = 37D;
+            tableRowDefinition2.Length.Value = 25D;
+            tableRowDefinition3.Length.Value = 37D;
             tableRowDefinition4.Length.Value = 27D;
-            tableRowDefinition5.Length.Value = 36D;
+            tableRowDefinition5.Length.Value = 28D;
             this.tileView1.TileRows.Add(tableRowDefinition1);
             this.tileView1.TileRows.Add(tableRowDefinition2);
             this.tileView1.TileRows.Add(tableRowDefinition3);
@@ -610,27 +637,6 @@
             this.btnInitDailyMenu.TextSize = new System.Drawing.Size(0, 0);
             this.btnInitDailyMenu.TextVisible = false;
             // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btnDailyMenuDetail});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(180, 26);
-            // 
-            // btnDailyMenuDetail
-            // 
-            this.btnDailyMenuDetail.Name = "btnDailyMenuDetail";
-            this.btnDailyMenuDetail.Size = new System.Drawing.Size(179, 22);
-            this.btnDailyMenuDetail.Text = "Cập Nhật Thực Đơn";
-            this.btnDailyMenuDetail.Click += new System.EventHandler(this.btnDailyMenuDetail_Click);
-            // 
-            // colDate
-            // 
-            this.colDate.FieldName = "Date";
-            this.colDate.Name = "colDate";
-            this.colDate.Visible = true;
-            this.colDate.VisibleIndex = 6;
-            // 
             // frmWeeklyMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -645,6 +651,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcMain)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.tileView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
@@ -664,7 +671,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnInitDailyMenu)).EndInit();
-            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

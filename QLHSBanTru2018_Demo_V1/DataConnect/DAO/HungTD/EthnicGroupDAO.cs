@@ -19,7 +19,7 @@ namespace DataConnect.DAO.HungTD
             Table<EthnicGroup> ethnicTable = db.GetTable<EthnicGroup>();
             var ethnicGroup = from d in ethnicTable
                          where (d.Status.Equals(true))
-                         orderby d.Name
+                         orderby d.EthnicGroupID
                          select d;
             return ethnicGroup.ToList();
         }

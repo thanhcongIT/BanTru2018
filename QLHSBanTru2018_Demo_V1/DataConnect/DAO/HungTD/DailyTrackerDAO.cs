@@ -100,6 +100,7 @@ namespace DataConnect.DAO.HungTD
             {
                 var model = from dt in dailyTrackers
                             where dt.Date.Equals(day) && dt.Student.Student_Classes.FirstOrDefault(x => x.Status.Equals(true)).ClassID.Equals(ClassID)
+                            orderby dt.Student.LastName
                             select new DailyTrackerFullViewModel
                             {
                                 DailyTrackerID = dt.DailyTrackerID,

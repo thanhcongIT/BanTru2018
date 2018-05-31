@@ -19,7 +19,7 @@ namespace QLHSBanTru2018_Demo_V1.HungTD.Form.Menu
         {
             InitializeComponent();
         }
-        int weekID=0;
+        int weekID = 0;
         int ageGroupID = 0;
 
         private void frmWeeklyMenu_Load(object sender, EventArgs e)
@@ -54,7 +54,21 @@ namespace QLHSBanTru2018_Demo_V1.HungTD.Form.Menu
         }
         private void FillGridControl(int weekID, int ageGroupID)
         {
-            gcMain.DataSource = new DailyMenuDAO().GetDailyMenu(weekID, weekID+1,weekID+2, weekID+3,weekID+4, ageGroupID);
+            gcMain.DataSource = new DailyMenuDAO().GetDailyMenu(weekID - 4, weekID - 3, weekID - 2, weekID - 1, weekID, ageGroupID);
+            for(int i=0;i<tileView1.DataRowCount; i++)
+            {
+                try
+                {
+                    if (tileView1.GetRowCellDisplayText(i, tileView1.Columns["Date"]).ToString() == DateTime.Now.ToString("dd/MM/yyyy"))
+                    {
+                        tileView1.FocusedRowHandle = tileView1.GetRowHandle(i);
+                    }
+                }
+                catch
+                {
+
+                }
+            }
         }
 
         private void cbbAgeGroup_SelectedIndexChanged(object sender, EventArgs e)

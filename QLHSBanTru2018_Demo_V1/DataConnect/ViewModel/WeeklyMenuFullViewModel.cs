@@ -8,8 +8,6 @@ namespace DataConnect.ViewModel
 {
     public class WeeklyMenuFullViewModel
     {
-        internal string lunch;
-
         public int DailyMenuID { get; set; }
         public int WeekID { get; set; }
         public int WeekIndex { get; set; }

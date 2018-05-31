@@ -108,7 +108,7 @@ namespace QLHSBanTru2018_Demo_V1.HungTD.Form.Employee
                 entity.Email = txtEmail.Text;
                 entity.Phone = txtPhone.Text;
                 entity.IdentityNumber = txtIdentityNumber.Text;
-                entity.PlaceOfIssue = placeOfIssue.Text;
+                entity.PlaceOfIssue = txtPlaceOfIssue.Text;
                 entity.DateOfIssue = DateTime.Parse(dtDateOfIssue.EditValue.ToString());
                 entity.EthnicGroupID = int.Parse(cbbEthnicGroup.SelectedValue.ToString());
                 entity.ReligionID = int.Parse(cbbReligion.SelectedValue.ToString());
@@ -147,7 +147,24 @@ namespace QLHSBanTru2018_Demo_V1.HungTD.Form.Employee
             }
             else
             {
-                MessageBox.Show("Mời bạn nhập đầy đủ thông tin!");
+                if (txtUsername.Text == "")
+                    epError.SetError(txtUsername, "Tên đăng nhập không được để trống");
+                if (txtPassword.Text == "" && iFunction==1)
+                    epError.SetError(txtPassword, "Mật khẩu không được để trống");
+                if (txtFirstName.Text == "")
+                    epError.SetError(txtFirstName, "Họ đệm không được để trống");
+                if (txtLastName.Text == "")
+                    epError.SetError(txtLastName, "Tên HS không được để trống");
+                if (txtEmail.Text == "")
+                    epError.SetError(txtEmail, "Email không được để trống");
+                else if(!txtEmail.Text.Contains("@"))
+                    epError.SetError(txtEmail, "Email không hợp lệ");
+                if (txtPhone.Text == "")
+                    epError.SetError(txtPhone, "Số điện thoại không được để trống");
+                if (txtIdentityNumber.Text == "")
+                    epError.SetError(txtIdentityNumber, "Số CMTND không được để trống");
+                if (txtPlaceOfIssue.Text == "")
+                    epError.SetError(txtPlaceOfIssue, "Nơi cấp không được để trống");
             }
         }
 
