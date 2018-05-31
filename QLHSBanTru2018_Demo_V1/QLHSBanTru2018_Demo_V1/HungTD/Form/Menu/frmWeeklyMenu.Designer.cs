@@ -79,6 +79,8 @@
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.cbbAgeGroup = new System.Windows.Forms.ComboBox();
+            this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
@@ -102,6 +104,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
             this.SuspendLayout();
             // 
             // colBreakfast
@@ -146,6 +149,7 @@
             // 
             // layoutControl1
             // 
+            this.layoutControl1.Controls.Add(this.cbbAgeGroup);
             this.layoutControl1.Controls.Add(this.btnAdd);
             this.layoutControl1.Controls.Add(this.btnEdit);
             this.layoutControl1.Controls.Add(this.btnDelete);
@@ -208,14 +212,15 @@
             // 
             this.cbbWeekID.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbWeekID.FormattingEnabled = true;
-            this.cbbWeekID.Location = new System.Drawing.Point(791, 45);
+            this.cbbWeekID.Location = new System.Drawing.Point(791, 70);
             this.cbbWeekID.Name = "cbbWeekID";
             this.cbbWeekID.Size = new System.Drawing.Size(197, 21);
             this.cbbWeekID.TabIndex = 9;
+            this.cbbWeekID.SelectedIndexChanged += new System.EventHandler(this.cbbWeekID_SelectedIndexChanged);
             // 
             // textEdit1
             // 
-            this.textEdit1.Location = new System.Drawing.Point(791, 112);
+            this.textEdit1.Location = new System.Drawing.Point(791, 137);
             this.textEdit1.Name = "textEdit1";
             this.textEdit1.Size = new System.Drawing.Size(197, 20);
             this.textEdit1.StyleController = this.layoutControl1;
@@ -223,7 +228,7 @@
             // 
             // textEdit2
             // 
-            this.textEdit2.Location = new System.Drawing.Point(791, 136);
+            this.textEdit2.Location = new System.Drawing.Point(791, 161);
             this.textEdit2.Name = "textEdit2";
             this.textEdit2.Size = new System.Drawing.Size(197, 20);
             this.textEdit2.StyleController = this.layoutControl1;
@@ -465,17 +470,18 @@
             // 
             this.layoutControlGroup3.CustomizationFormText = "Lọc Thông Tin";
             this.layoutControlGroup3.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.layoutControlItem6});
+            this.layoutControlItem6,
+            this.layoutControlItem9});
             this.layoutControlGroup3.Location = new System.Drawing.Point(695, 0);
             this.layoutControlGroup3.Name = "layoutControlGroup3";
-            this.layoutControlGroup3.Size = new System.Drawing.Size(294, 67);
+            this.layoutControlGroup3.Size = new System.Drawing.Size(294, 92);
             this.layoutControlGroup3.Text = "Lọc Thông Tin";
             // 
             // layoutControlItem6
             // 
             this.layoutControlItem6.Control = this.cbbWeekID;
             this.layoutControlItem6.CustomizationFormText = "Lọc ngày tháng năm:";
-            this.layoutControlItem6.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem6.Location = new System.Drawing.Point(0, 25);
             this.layoutControlItem6.Name = "layoutControlItem6";
             this.layoutControlItem6.Size = new System.Drawing.Size(270, 25);
             this.layoutControlItem6.Text = "Theo tuần:";
@@ -488,9 +494,9 @@
             this.emptySpaceItem1,
             this.layoutControlItem5,
             this.layoutControlItem7});
-            this.layoutControlGroup4.Location = new System.Drawing.Point(695, 67);
+            this.layoutControlGroup4.Location = new System.Drawing.Point(695, 92);
             this.layoutControlGroup4.Name = "layoutControlGroup4";
-            this.layoutControlGroup4.Size = new System.Drawing.Size(294, 512);
+            this.layoutControlGroup4.Size = new System.Drawing.Size(294, 487);
             this.layoutControlGroup4.Text = "Thông Tin ABC";
             // 
             // emptySpaceItem1
@@ -501,7 +507,7 @@
             this.emptySpaceItem1.MaxSize = new System.Drawing.Size(270, 0);
             this.emptySpaceItem1.MinSize = new System.Drawing.Size(270, 24);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(270, 422);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(270, 397);
             this.emptySpaceItem1.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
@@ -535,6 +541,25 @@
             this.layoutControlItem8.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem8.TextVisible = false;
             // 
+            // cbbAgeGroup
+            // 
+            this.cbbAgeGroup.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbAgeGroup.FormattingEnabled = true;
+            this.cbbAgeGroup.Location = new System.Drawing.Point(791, 45);
+            this.cbbAgeGroup.Name = "cbbAgeGroup";
+            this.cbbAgeGroup.Size = new System.Drawing.Size(197, 21);
+            this.cbbAgeGroup.TabIndex = 13;
+            this.cbbAgeGroup.SelectedIndexChanged += new System.EventHandler(this.cbbAgeGroup_SelectedIndexChanged);
+            // 
+            // layoutControlItem9
+            // 
+            this.layoutControlItem9.Control = this.cbbAgeGroup;
+            this.layoutControlItem9.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem9.Name = "layoutControlItem9";
+            this.layoutControlItem9.Size = new System.Drawing.Size(270, 25);
+            this.layoutControlItem9.Text = "Theo tuổi:";
+            this.layoutControlItem9.TextSize = new System.Drawing.Size(66, 13);
+            // 
             // frmWeeklyMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -566,6 +591,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -605,5 +631,7 @@
         private DevExpress.XtraGrid.Columns.TileViewColumn colAfternoon;
         private DevExpress.XtraGrid.Columns.TileViewColumn colWeekID;
         private DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit repositoryItemMemoEdit1;
+        private System.Windows.Forms.ComboBox cbbAgeGroup;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem9;
     }
 }

@@ -18,7 +18,8 @@ namespace QLHSBanTru2018_Demo_V1.HungTD.Form.Menu
         {
             InitializeComponent();
         }
-        int weekID;
+        int weekID=0;
+        int ageGroupID = 0;
 
         private void frmWeeklyMenu_Load(object sender, EventArgs e)
         {
@@ -38,23 +39,52 @@ namespace QLHSBanTru2018_Demo_V1.HungTD.Form.Menu
         }
         private void FillCombobox()
         {
-            cbbWeekID.DataSource = new WeekDAO().ListAll(9);
+            cbbWeekID.DataSource = new WeekDAO().ListAll(21);
             cbbWeekID.DisplayMember = "WeekFullName";
             cbbWeekID.ValueMember = "WeekID";
+            cbbWeekID.SelectedValue = new WeekDAO().GetWeekIDNow();
 
+            cbbAgeGroup.DataSource = new AgeGroupDAO().ListAll();
+            cbbAgeGroup.DisplayMember = "Name";
+            cbbAgeGroup.ValueMember = "AgeGroupID";
 
             try
             {
-                FillGridControl(weekID);
+                FillGridControl(ageGroupID, weekID);
             }
             catch
             {
 
             }
         }
-        private void FillGridControl(int weekID)
+        private void FillGridControl(int ageGroupID, int weekID)
         {
 
+        }
+
+        private void cbbAgeGroup_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                FillGridControl(ageGroupID, weekID);
+
+            }
+            catch
+            {
+
+            }
+        }
+
+        private void cbbWeekID_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                FillGridControl(ageGroupID, weekID);
+            }
+            catch
+            {
+
+            }
         }
     }
 }

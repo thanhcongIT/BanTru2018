@@ -33,7 +33,7 @@ namespace DataConnect.DAO.HungTD
                                 WeekFullName = ""
                             };
                 List<WeekViewModel> model2 = model.ToList();
-                for(int i = 0;i<model2.Count();i++)
+                for (int i = 0; i < model2.Count(); i++)
                 {
                     model2[i].WeekFullName = "Tuần " + model2[i].WeekIndex + " (" + model2[i].StartDate.ToString("dd/MM/yy") + " đến " + model2[i].EndDate.ToString("dd/MM/yy") + ")";
                 }
@@ -42,6 +42,19 @@ namespace DataConnect.DAO.HungTD
             catch
             {
                 return null;
+            }
+        }
+        public int GetWeekIDNow()
+        {
+            try
+            {
+                DateTime now = DateTime.Now;
+
+                return weeks.FirstOrDefault(x => x.StartDate.Date < now && x.EndDate.Date > now).WeekID;
+            }
+            catch
+            {
+                return 0;
             }
         }
         public int Insert(Week entity)
@@ -66,10 +79,13 @@ namespace DataConnect.DAO.HungTD
                 w.CourseID = course.CourseID;
                 w.WeekIndex = 1;
                 w.StartDate = course.StartDate;
-                for (DateTime d = course.StartDate; d <= d.AddDays(7); d = d.AddDays(1))
+                for (DateTime d = course.StartDate; d < d.AddDays(7); d = d.AddDays(1))
                 {
                     if (d.DayOfWeek == DayOfWeek.Sunday)
+                    {
                         w.EndDate = d;
+                        break;
+                    }
                 }
                 w.Status = true;
                 Insert(w);
