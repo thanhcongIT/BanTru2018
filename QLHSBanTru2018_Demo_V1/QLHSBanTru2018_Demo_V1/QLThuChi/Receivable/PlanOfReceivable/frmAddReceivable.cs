@@ -115,9 +115,9 @@ namespace QLHSBanTru2018_Demo_V1.QLThuChi
                         rbdt.Name = txtTendotthu.Text;
                         rbdt.CourseID = (int)cbbNamhoc.SelectedValue;
                         rbdt.SemesterID = (int)cbbHocky.SelectedValue;
-                        rbdt.StartDate = dtNgaybatdau.Value;
-                        rbdt.EndDate = dtNgayketthuc.Value;
-                        rbdt.CreatedDate = dtNgaykhoitao.Value;
+                        rbdt.StartDate = (DateTime)dtNgaybatdau.EditValue;
+                        rbdt.EndDate = (DateTime)dtNgayketthuc.EditValue;
+                        rbdt.CreatedDate = (DateTime)dtNgaykhoitao.EditValue;
                         rbdt.Note = txtGhiChu.Text;
                         rbdt.Status = false;
                         int c = rb.Insert(rbdt);
@@ -254,6 +254,19 @@ namespace QLHSBanTru2018_Demo_V1.QLThuChi
         private void cbbNamhoc_SelectionChangeCommitted(object sender, EventArgs e)
         {
             LoadHocky();
+        }
+
+        private void cbbNamhoc_SelectionChangeCommitted_1(object sender, EventArgs e)
+        {
+            LoadHocky();
+        }
+
+        private void grCacsKhoanThu_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode==Keys.Enter)
+            {
+                MessageBox.Show("ok");
+            }
         }
     }
 }
