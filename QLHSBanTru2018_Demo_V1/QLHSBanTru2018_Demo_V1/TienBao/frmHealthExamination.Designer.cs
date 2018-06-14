@@ -479,7 +479,7 @@
             // 
             // txtNameExam
             // 
-            this.txtNameExam.Location = new System.Drawing.Point(887, 66);
+            this.txtNameExam.Location = new System.Drawing.Point(887, 67);
             this.txtNameExam.Name = "txtNameExam";
             this.txtNameExam.Size = new System.Drawing.Size(134, 20);
             this.txtNameExam.StyleController = this.layoutControl1;
@@ -487,7 +487,7 @@
             // 
             // txtPlaceExam
             // 
-            this.txtPlaceExam.Location = new System.Drawing.Point(887, 90);
+            this.txtPlaceExam.Location = new System.Drawing.Point(887, 91);
             this.txtPlaceExam.Name = "txtPlaceExam";
             this.txtPlaceExam.Size = new System.Drawing.Size(134, 20);
             this.txtPlaceExam.StyleController = this.layoutControl1;
@@ -496,7 +496,7 @@
             // dtDateExam
             // 
             this.dtDateExam.EditValue = null;
-            this.dtDateExam.Location = new System.Drawing.Point(887, 114);
+            this.dtDateExam.Location = new System.Drawing.Point(887, 115);
             this.dtDateExam.Name = "dtDateExam";
             this.dtDateExam.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -508,7 +508,7 @@
             // 
             // chbWeight
             // 
-            this.chbWeight.Location = new System.Drawing.Point(831, 244);
+            this.chbWeight.Location = new System.Drawing.Point(831, 245);
             this.chbWeight.Name = "chbWeight";
             this.chbWeight.Properties.Caption = "Chiều cao";
             this.chbWeight.Size = new System.Drawing.Size(96, 19);
@@ -517,7 +517,7 @@
             // 
             // chbHeight
             // 
-            this.chbHeight.Location = new System.Drawing.Point(831, 267);
+            this.chbHeight.Location = new System.Drawing.Point(831, 268);
             this.chbHeight.Name = "chbHeight";
             this.chbHeight.Properties.Caption = "Cân nặng";
             this.chbHeight.Size = new System.Drawing.Size(96, 19);
@@ -526,7 +526,7 @@
             // 
             // chbEyes
             // 
-            this.chbEyes.Location = new System.Drawing.Point(831, 290);
+            this.chbEyes.Location = new System.Drawing.Point(831, 291);
             this.chbEyes.Name = "chbEyes";
             this.chbEyes.Properties.Caption = "Mắt";
             this.chbEyes.Size = new System.Drawing.Size(96, 19);
@@ -535,7 +535,7 @@
             // 
             // chbDermatology
             // 
-            this.chbDermatology.Location = new System.Drawing.Point(931, 244);
+            this.chbDermatology.Location = new System.Drawing.Point(931, 245);
             this.chbDermatology.Name = "chbDermatology";
             this.chbDermatology.Properties.Caption = "Da liễu";
             this.chbDermatology.Size = new System.Drawing.Size(78, 19);
@@ -544,7 +544,7 @@
             // 
             // chbBoneMuscle
             // 
-            this.chbBoneMuscle.Location = new System.Drawing.Point(831, 359);
+            this.chbBoneMuscle.Location = new System.Drawing.Point(831, 360);
             this.chbBoneMuscle.Name = "chbBoneMuscle";
             this.chbBoneMuscle.Properties.Caption = "Cơ xương";
             this.chbBoneMuscle.Size = new System.Drawing.Size(178, 19);
@@ -553,7 +553,7 @@
             // 
             // chbInternalMedicine
             // 
-            this.chbInternalMedicine.Location = new System.Drawing.Point(931, 267);
+            this.chbInternalMedicine.Location = new System.Drawing.Point(931, 268);
             this.chbInternalMedicine.Name = "chbInternalMedicine";
             this.chbInternalMedicine.Properties.Caption = "Nộikhoa";
             this.chbInternalMedicine.Size = new System.Drawing.Size(78, 19);
@@ -562,7 +562,7 @@
             // 
             // chbENT
             // 
-            this.chbENT.Location = new System.Drawing.Point(831, 313);
+            this.chbENT.Location = new System.Drawing.Point(831, 314);
             this.chbENT.Name = "chbENT";
             this.chbENT.Properties.Caption = "Tai - mũi - họng";
             this.chbENT.Size = new System.Drawing.Size(96, 19);
@@ -571,7 +571,7 @@
             // 
             // chbSurgery
             // 
-            this.chbSurgery.Location = new System.Drawing.Point(931, 290);
+            this.chbSurgery.Location = new System.Drawing.Point(931, 291);
             this.chbSurgery.Name = "chbSurgery";
             this.chbSurgery.Properties.Caption = "Ngoại khoa";
             this.chbSurgery.Size = new System.Drawing.Size(78, 19);
@@ -580,7 +580,7 @@
             // 
             // chbOral
             // 
-            this.chbOral.Location = new System.Drawing.Point(831, 336);
+            this.chbOral.Location = new System.Drawing.Point(831, 337);
             this.chbOral.Name = "chbOral";
             this.chbOral.Properties.Caption = "Răng - miệng";
             this.chbOral.Size = new System.Drawing.Size(96, 19);
@@ -589,7 +589,7 @@
             // 
             // chbNerve
             // 
-            this.chbNerve.Location = new System.Drawing.Point(931, 313);
+            this.chbNerve.Location = new System.Drawing.Point(931, 314);
             this.chbNerve.Name = "chbNerve";
             this.chbNerve.Properties.Caption = "Nội tiết";
             this.chbNerve.Size = new System.Drawing.Size(78, 19);
@@ -598,7 +598,7 @@
             // 
             // chbEndocrine
             // 
-            this.chbEndocrine.Location = new System.Drawing.Point(931, 336);
+            this.chbEndocrine.Location = new System.Drawing.Point(931, 337);
             this.chbEndocrine.Name = "chbEndocrine";
             this.chbEndocrine.Properties.Caption = "Thần kinh";
             this.chbEndocrine.Size = new System.Drawing.Size(78, 19);
@@ -610,7 +610,7 @@
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.chbStatusFalse);
             this.panel2.Controls.Add(this.chbStatusTrue);
-            this.panel2.Location = new System.Drawing.Point(887, 138);
+            this.panel2.Location = new System.Drawing.Point(887, 139);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(134, 56);
             this.panel2.TabIndex = 68;
@@ -639,7 +639,7 @@
             // 
             // txtHealthExamID
             // 
-            this.txtHealthExamID.Location = new System.Drawing.Point(887, 42);
+            this.txtHealthExamID.Location = new System.Drawing.Point(887, 43);
             this.txtHealthExamID.Name = "txtHealthExamID";
             this.txtHealthExamID.Size = new System.Drawing.Size(134, 20);
             this.txtHealthExamID.StyleController = this.layoutControl1;
@@ -748,7 +748,7 @@
             this.emptySpaceItem1.AllowHotTrack = false;
             this.emptySpaceItem1.Location = new System.Drawing.Point(0, 352);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(206, 117);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(206, 116);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // LabelGender

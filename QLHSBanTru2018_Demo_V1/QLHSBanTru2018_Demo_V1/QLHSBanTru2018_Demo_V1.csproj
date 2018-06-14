@@ -42,7 +42,7 @@
   <ItemGroup>
     <Reference Include="Accessibility" />
     <Reference Include="Bunifu_UI_v1.5.3">
-      <HintPath>F:\PHANMEM\Lập trình thiết kế\DLL\Bunifu_UI_v1.5.3.dll</HintPath>
+      <HintPath>E:\20180319\Bunifu_UI_v1.5.3.dll</HintPath>
     </Reference>
     <Reference Include="Dapper, Version=1.50.4.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Dapper.1.50.4\lib\net451\Dapper.dll</HintPath>
@@ -373,167 +373,173 @@
     <Compile Include="MD5Hash\PasswordEncryptor.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="QLThuChi\ChiTieu\ChiTieuThucPham\FrRptHoaDonThuPham.cs">
+    <Compile Include="QLThuChi\Expenditure\ExpenditureOfFood\rptOrder.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="QLThuChi\ChiTieu\ChiTieuThucPham\FrRptHoaDonThuPham.Designer.cs">
-      <DependentUpon>FrRptHoaDonThuPham.cs</DependentUpon>
+    <Compile Include="QLThuChi\Expenditure\ExpenditureOfFood\rptOrder.Designer.cs">
+      <DependentUpon>rptOrder.cs</DependentUpon>
     </Compile>
-    <Compile Include="QLThuChi\ChiTieu\ChiTieuThucPham\ThongKeThucPham\FrRptHoaDonThucPham.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="QLThuChi\ChiTieu\ChiTieuThucPham\ThongKeThucPham\FrRptHoaDonThucPham.Designer.cs">
-      <DependentUpon>FrRptHoaDonThucPham.cs</DependentUpon>
-    </Compile>
-    <Compile Include="QLThuChi\ChiTieu\ChiTieuThucPham\ThongKeThucPham\UsThongKeThucPham.cs">
+    <Compile Include="QLThuChi\Expenditure\ExpenditureOfFood\StatisticsOfIngredient\frmStatisticsOfIngredient.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="QLThuChi\ChiTieu\ChiTieuThucPham\ThongKeThucPham\UsThongKeThucPham.Designer.cs">
-      <DependentUpon>UsThongKeThucPham.cs</DependentUpon>
+    <Compile Include="QLThuChi\Expenditure\ExpenditureOfFood\StatisticsOfIngredient\frmStatisticsOfIngredient.Designer.cs">
+      <DependentUpon>frmStatisticsOfIngredient.cs</DependentUpon>
     </Compile>
-    <Compile Include="QLThuChi\ChiTieu\ChiTieuThucPham\YeuCauThucPham\FrThanhToanThucPham.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="QLThuChi\ChiTieu\ChiTieuThucPham\YeuCauThucPham\FrThanhToanThucPham.Designer.cs">
-      <DependentUpon>FrThanhToanThucPham.cs</DependentUpon>
-    </Compile>
-    <Compile Include="QLThuChi\ChiTieu\ChiTieuThucPham\YeuCauThucPham\TcFrNhanVien.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="QLThuChi\ChiTieu\ChiTieuThucPham\YeuCauThucPham\TcFrNhanVien.Designer.cs">
-      <DependentUpon>TcFrNhanVien.cs</DependentUpon>
-    </Compile>
-    <Compile Include="QLThuChi\ChiTieu\ChiTieuThucPham\UsChiThucPham.cs">
+    <Compile Include="QLThuChi\Expenditure\ExpenditureOfFood\frmOrder.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="QLThuChi\ChiTieu\ChiTieuThucPham\UsChiThucPham.Designer.cs">
-      <DependentUpon>UsChiThucPham.cs</DependentUpon>
+    <Compile Include="QLThuChi\Expenditure\ExpenditureOfFood\frmOrder.Designer.cs">
+      <DependentUpon>frmOrder.cs</DependentUpon>
     </Compile>
-    <Compile Include="QLThuChi\ChiTieu\ChiTieuThucPham\YeuCauThucPham\UsYeuCau.cs">
+    <Compile Include="QLThuChi\Expenditure\ExpenditureOfFood\WaitForm1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QLThuChi\Expenditure\ExpenditureOfFood\WaitForm1.Designer.cs">
+      <DependentUpon>WaitForm1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QLThuChi\Expenditure\ExpenditureOfFood\IngredientRequest\frmPayIngredientRequest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QLThuChi\Expenditure\ExpenditureOfFood\IngredientRequest\frmPayIngredientRequest.Designer.cs">
+      <DependentUpon>frmPayIngredientRequest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QLThuChi\Expenditure\ExpenditureOfFood\IngredientRequest\frmEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QLThuChi\Expenditure\ExpenditureOfFood\IngredientRequest\frmEmployee.Designer.cs">
+      <DependentUpon>frmEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QLThuChi\Expenditure\ExpenditureOfFood\IngredientRequest\frmIngredientRequest.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="QLThuChi\ChiTieu\ChiTieuThucPham\YeuCauThucPham\UsYeuCau.Designer.cs">
-      <DependentUpon>UsYeuCau.cs</DependentUpon>
+    <Compile Include="QLThuChi\Expenditure\ExpenditureOfFood\IngredientRequest\frmIngredientRequest.Designer.cs">
+      <DependentUpon>frmIngredientRequest.cs</DependentUpon>
     </Compile>
-    <Compile Include="QLThuChi\ChiTieu\KhoanChi\FrChiTietHoaDon.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="QLThuChi\ChiTieu\KhoanChi\FrChiTietHoaDon.Designer.cs">
-      <DependentUpon>FrChiTietHoaDon.cs</DependentUpon>
-    </Compile>
-    <Compile Include="QLThuChi\ChiTieu\KhoanChi\FrSuaChiTietHoaDon.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="QLThuChi\ChiTieu\KhoanChi\FrSuaChiTietHoaDon.Designer.cs">
-      <DependentUpon>FrSuaChiTietHoaDon.cs</DependentUpon>
-    </Compile>
-    <Compile Include="QLThuChi\ChiTieu\LoaiChi\FrLoaiChi.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="QLThuChi\ChiTieu\LoaiChi\FrLoaiChi.Designer.cs">
-      <DependentUpon>FrLoaiChi.cs</DependentUpon>
-    </Compile>
-    <Compile Include="QLThuChi\ChiTieu\KhoanChi\FrThemkhoanchi.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="QLThuChi\ChiTieu\KhoanChi\FrThemkhoanchi.Designer.cs">
-      <DependentUpon>FrThemkhoanchi.cs</DependentUpon>
-    </Compile>
-    <Compile Include="QLThuChi\ChiTieu\LoaiChi\FrThemLoaiChi.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="QLThuChi\ChiTieu\LoaiChi\FrThemLoaiChi.Designer.cs">
-      <DependentUpon>FrThemLoaiChi.cs</DependentUpon>
-    </Compile>
-    <Compile Include="QLThuChi\ChiTieu\LoaiChi\FrSuaLoaiChi.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="QLThuChi\ChiTieu\LoaiChi\FrSuaLoaiChi.Designer.cs">
-      <DependentUpon>FrSuaLoaiChi.cs</DependentUpon>
-    </Compile>
-    <Compile Include="QLThuChi\ChiTieu\KhoanChi\FrViewInvoiceDetail.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="QLThuChi\ChiTieu\KhoanChi\FrViewInvoiceDetail.Designer.cs">
-      <DependentUpon>FrViewInvoiceDetail.cs</DependentUpon>
-    </Compile>
-    <Compile Include="QLThuChi\ChiTieu\KhoanChi\UsKhoanChi.cs">
+    <Compile Include="QLThuChi\Expenditure\ExpenditureTuition\frmExpenditureTuition.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="QLThuChi\ChiTieu\KhoanChi\UsKhoanChi.Designer.cs">
-      <DependentUpon>UsKhoanChi.cs</DependentUpon>
+    <Compile Include="QLThuChi\Expenditure\ExpenditureTuition\frmExpenditureTuition.Designer.cs">
+      <DependentUpon>frmExpenditureTuition.cs</DependentUpon>
     </Compile>
-    <Compile Include="QLThuChi\DotThu\KeHoachThu\FrCacKhoanThu.cs">
+    <Compile Include="QLThuChi\Expenditure\Invoice\frmAddInvoiceDetail.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="QLThuChi\DotThu\KeHoachThu\FrCacKhoanThu.Designer.cs">
-      <DependentUpon>FrCacKhoanThu.cs</DependentUpon>
+    <Compile Include="QLThuChi\Expenditure\Invoice\frmAddInvoiceDetail.Designer.cs">
+      <DependentUpon>frmAddInvoiceDetail.cs</DependentUpon>
     </Compile>
-    <Compile Include="QLThuChi\DotThu\KeHoachThu\FrDoiTuongchinhsach.cs">
+    <Compile Include="QLThuChi\Expenditure\Invoice\frmEditInvoiceDetail.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="QLThuChi\DotThu\KeHoachThu\FrDoiTuongchinhsach.Designer.cs">
-      <DependentUpon>FrDoiTuongchinhsach.cs</DependentUpon>
+    <Compile Include="QLThuChi\Expenditure\Invoice\frmEditInvoiceDetail.Designer.cs">
+      <DependentUpon>frmEditInvoiceDetail.cs</DependentUpon>
     </Compile>
-    <Compile Include="QLThuChi\DotThu\KeHoachThu\FrThanhToan.cs">
+    <Compile Include="QLThuChi\Expenditure\SpendSpecy\frmSpendSpecy.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="QLThuChi\DotThu\KeHoachThu\FrThanhToan.Designer.cs">
-      <DependentUpon>FrThanhToan.cs</DependentUpon>
+    <Compile Include="QLThuChi\Expenditure\SpendSpecy\frmSpendSpecy.Designer.cs">
+      <DependentUpon>frmSpendSpecy.cs</DependentUpon>
     </Compile>
-    <Compile Include="QLThuChi\DotThu\KeHoachThu\FRViewDoituongchinhsach.cs">
+    <Compile Include="QLThuChi\Expenditure\Invoice\frmAddInvoice.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="QLThuChi\DotThu\KeHoachThu\FRViewDoituongchinhsach.Designer.cs">
-      <DependentUpon>FRViewDoituongchinhsach.cs</DependentUpon>
+    <Compile Include="QLThuChi\Expenditure\Invoice\frmAddInvoice.Designer.cs">
+      <DependentUpon>frmAddInvoice.cs</DependentUpon>
     </Compile>
-    <Compile Include="QLThuChi\DotThu\KeHoachThu\SplashScreen1.cs">
+    <Compile Include="QLThuChi\Expenditure\SpendSpecy\frmAddSpendSpecy.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="QLThuChi\DotThu\KeHoachThu\SplashScreen1.Designer.cs">
+    <Compile Include="QLThuChi\Expenditure\SpendSpecy\frmAddSpendSpecy.Designer.cs">
+      <DependentUpon>frmAddSpendSpecy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QLThuChi\Expenditure\SpendSpecy\frmEditSpendSpecy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QLThuChi\Expenditure\SpendSpecy\frmEditSpendSpecy.Designer.cs">
+      <DependentUpon>frmEditSpendSpecy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QLThuChi\Expenditure\Invoice\frmViewInvoiceDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QLThuChi\Expenditure\Invoice\frmViewInvoiceDetail.Designer.cs">
+      <DependentUpon>frmViewInvoiceDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QLThuChi\Expenditure\Invoice\frmInvoice.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="QLThuChi\Expenditure\Invoice\frmInvoice.Designer.cs">
+      <DependentUpon>frmInvoice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QLThuChi\Receivable\PlanOfReceivable\frmAddReceivable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QLThuChi\Receivable\PlanOfReceivable\frmAddReceivable.Designer.cs">
+      <DependentUpon>frmAddReceivable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QLThuChi\Receivable\PlanOfReceivable\frmViewPreferred.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QLThuChi\Receivable\PlanOfReceivable\frmViewPreferred.Designer.cs">
+      <DependentUpon>frmViewPreferred.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QLThuChi\Receivable\PlanOfReceivable\frmPay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QLThuChi\Receivable\PlanOfReceivable\frmPay.Designer.cs">
+      <DependentUpon>frmPay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QLThuChi\Receivable\PlanOfReceivable\frmViewPreferredModle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QLThuChi\Receivable\PlanOfReceivable\frmViewPreferredModle.Designer.cs">
+      <DependentUpon>frmViewPreferredModle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QLThuChi\Receivable\PlanOfReceivable\SplashScreen1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QLThuChi\Receivable\PlanOfReceivable\SplashScreen1.Designer.cs">
       <DependentUpon>SplashScreen1.cs</DependentUpon>
     </Compile>
-    <Compile Include="QLThuChi\DotThu\MienGiam\FRDienMienGiam.cs">
+    <Compile Include="QLThuChi\Receivable\Preferred\frmPreferred.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="QLThuChi\DotThu\MienGiam\FRDienMienGiam.Designer.cs">
-      <DependentUpon>FRDienMienGiam.cs</DependentUpon>
+    <Compile Include="QLThuChi\Receivable\Preferred\frmPreferred.Designer.cs">
+      <DependentUpon>frmPreferred.cs</DependentUpon>
     </Compile>
-    <Compile Include="QLThuChi\DotThu\KeHoachThu\FRSuaKhoanThu.cs">
+    <Compile Include="QLThuChi\Receivable\PlanOfReceivable\frmEditReceivableDetail.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="QLThuChi\DotThu\KeHoachThu\FRSuaKhoanThu.Designer.cs">
-      <DependentUpon>FRSuaKhoanThu.cs</DependentUpon>
+    <Compile Include="QLThuChi\Receivable\PlanOfReceivable\frmEditReceivableDetail.Designer.cs">
+      <DependentUpon>frmEditReceivableDetail.cs</DependentUpon>
     </Compile>
-    <Compile Include="QLThuChi\DotThu\KeHoachThu\FTaoKhoanThu.cs">
+    <Compile Include="QLThuChi\Receivable\PlanOfReceivable\frmAddReceivableDetail.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="QLThuChi\DotThu\KeHoachThu\FTaoKhoanThu.Designer.cs">
-      <DependentUpon>FTaoKhoanThu.cs</DependentUpon>
+    <Compile Include="QLThuChi\Receivable\PlanOfReceivable\frmAddReceivableDetail.Designer.cs">
+      <DependentUpon>frmAddReceivableDetail.cs</DependentUpon>
     </Compile>
-    <Compile Include="QLThuChi\DotThu\MienGiam\FRSuaDoiTuong.cs">
+    <Compile Include="QLThuChi\Receivable\Preferred\frmEditPreferred.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="QLThuChi\DotThu\MienGiam\FRSuaDoiTuong.Designer.cs">
-      <DependentUpon>FRSuaDoiTuong.cs</DependentUpon>
+    <Compile Include="QLThuChi\Receivable\Preferred\frmEditPreferred.Designer.cs">
+      <DependentUpon>frmEditPreferred.cs</DependentUpon>
     </Compile>
-    <Compile Include="QLThuChi\DotThu\MienGiam\FRThemDoiTuong.cs">
+    <Compile Include="QLThuChi\Receivable\Preferred\frmAddPreferred.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="QLThuChi\DotThu\MienGiam\FRThemDoiTuong.Designer.cs">
-      <DependentUpon>FRThemDoiTuong.cs</DependentUpon>
+    <Compile Include="QLThuChi\Receivable\Preferred\frmAddPreferred.Designer.cs">
+      <DependentUpon>frmAddPreferred.cs</DependentUpon>
     </Compile>
-    <Compile Include="QLThuChi\DotThu\KeHoachThu\USCacKhoanThuTheoLop.cs">
+    <Compile Include="QLThuChi\Receivable\PlanOfReceivable\frmReceivableByClass.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="QLThuChi\DotThu\KeHoachThu\USCacKhoanThuTheoLop.Designer.cs">
-      <DependentUpon>USCacKhoanThuTheoLop.cs</DependentUpon>
+    <Compile Include="QLThuChi\Receivable\PlanOfReceivable\frmReceivableByClass.Designer.cs">
+      <DependentUpon>frmReceivableByClass.cs</DependentUpon>
     </Compile>
-    <Compile Include="QLThuChi\DotThu\KeHoachThu\UsDotThuPhi.cs">
+    <Compile Include="QLThuChi\Receivable\PlanOfReceivable\frmReceivable.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="QLThuChi\DotThu\KeHoachThu\UsDotThuPhi.Designer.cs">
-      <DependentUpon>UsDotThuPhi.cs</DependentUpon>
+    <Compile Include="QLThuChi\Receivable\PlanOfReceivable\frmReceivable.Designer.cs">
+      <DependentUpon>frmReceivable.cs</DependentUpon>
     </Compile>
     <Compile Include="Reports\ContractReport.cs">
       <SubType>Component</SubType>
@@ -783,86 +789,89 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="QLThuChi\ChiTieu\ChiTieuThucPham\FrRptHoaDonThuPham.resx">
-      <DependentUpon>FrRptHoaDonThuPham.cs</DependentUpon>
+    <EmbeddedResource Include="QLThuChi\Expenditure\ExpenditureOfFood\rptOrder.resx">
+      <DependentUpon>rptOrder.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="QLThuChi\ChiTieu\ChiTieuThucPham\ThongKeThucPham\FrRptHoaDonThucPham.resx">
-      <DependentUpon>FrRptHoaDonThucPham.cs</DependentUpon>
+    <EmbeddedResource Include="QLThuChi\Expenditure\ExpenditureOfFood\StatisticsOfIngredient\frmStatisticsOfIngredient.resx">
+      <DependentUpon>frmStatisticsOfIngredient.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="QLThuChi\ChiTieu\ChiTieuThucPham\ThongKeThucPham\UsThongKeThucPham.resx">
-      <DependentUpon>UsThongKeThucPham.cs</DependentUpon>
+    <EmbeddedResource Include="QLThuChi\Expenditure\ExpenditureOfFood\frmOrder.resx">
+      <DependentUpon>frmOrder.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="QLThuChi\ChiTieu\ChiTieuThucPham\YeuCauThucPham\FrThanhToanThucPham.resx">
-      <DependentUpon>FrThanhToanThucPham.cs</DependentUpon>
+    <EmbeddedResource Include="QLThuChi\Expenditure\ExpenditureOfFood\WaitForm1.resx">
+      <DependentUpon>WaitForm1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="QLThuChi\ChiTieu\ChiTieuThucPham\YeuCauThucPham\TcFrNhanVien.resx">
-      <DependentUpon>TcFrNhanVien.cs</DependentUpon>
+    <EmbeddedResource Include="QLThuChi\Expenditure\ExpenditureOfFood\IngredientRequest\frmPayIngredientRequest.resx">
+      <DependentUpon>frmPayIngredientRequest.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="QLThuChi\ChiTieu\ChiTieuThucPham\UsChiThucPham.resx">
-      <DependentUpon>UsChiThucPham.cs</DependentUpon>
+    <EmbeddedResource Include="QLThuChi\Expenditure\ExpenditureOfFood\IngredientRequest\frmEmployee.resx">
+      <DependentUpon>frmEmployee.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="QLThuChi\ChiTieu\ChiTieuThucPham\YeuCauThucPham\UsYeuCau.resx">
-      <DependentUpon>UsYeuCau.cs</DependentUpon>
+    <EmbeddedResource Include="QLThuChi\Expenditure\ExpenditureOfFood\IngredientRequest\frmIngredientRequest.resx">
+      <DependentUpon>frmIngredientRequest.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="QLThuChi\ChiTieu\KhoanChi\FrChiTietHoaDon.resx">
-      <DependentUpon>FrChiTietHoaDon.cs</DependentUpon>
+    <EmbeddedResource Include="QLThuChi\Expenditure\ExpenditureTuition\frmExpenditureTuition.resx">
+      <DependentUpon>frmExpenditureTuition.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="QLThuChi\ChiTieu\KhoanChi\FrSuaChiTietHoaDon.resx">
-      <DependentUpon>FrSuaChiTietHoaDon.cs</DependentUpon>
+    <EmbeddedResource Include="QLThuChi\Expenditure\Invoice\frmAddInvoiceDetail.resx">
+      <DependentUpon>frmAddInvoiceDetail.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="QLThuChi\ChiTieu\LoaiChi\FrLoaiChi.resx">
-      <DependentUpon>FrLoaiChi.cs</DependentUpon>
+    <EmbeddedResource Include="QLThuChi\Expenditure\Invoice\frmEditInvoiceDetail.resx">
+      <DependentUpon>frmEditInvoiceDetail.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="QLThuChi\ChiTieu\KhoanChi\FrThemkhoanchi.resx">
-      <DependentUpon>FrThemkhoanchi.cs</DependentUpon>
+    <EmbeddedResource Include="QLThuChi\Expenditure\SpendSpecy\frmSpendSpecy.resx">
+      <DependentUpon>frmSpendSpecy.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="QLThuChi\ChiTieu\LoaiChi\FrThemLoaiChi.resx">
-      <DependentUpon>FrThemLoaiChi.cs</DependentUpon>
+    <EmbeddedResource Include="QLThuChi\Expenditure\Invoice\frmAddInvoice.resx">
+      <DependentUpon>frmAddInvoice.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="QLThuChi\ChiTieu\LoaiChi\FrSuaLoaiChi.resx">
-      <DependentUpon>FrSuaLoaiChi.cs</DependentUpon>
+    <EmbeddedResource Include="QLThuChi\Expenditure\SpendSpecy\frmAddSpendSpecy.resx">
+      <DependentUpon>frmAddSpendSpecy.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="QLThuChi\ChiTieu\KhoanChi\FrViewInvoiceDetail.resx">
-      <DependentUpon>FrViewInvoiceDetail.cs</DependentUpon>
+    <EmbeddedResource Include="QLThuChi\Expenditure\SpendSpecy\frmEditSpendSpecy.resx">
+      <DependentUpon>frmEditSpendSpecy.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="QLThuChi\ChiTieu\KhoanChi\UsKhoanChi.resx">
-      <DependentUpon>UsKhoanChi.cs</DependentUpon>
+    <EmbeddedResource Include="QLThuChi\Expenditure\Invoice\frmViewInvoiceDetail.resx">
+      <DependentUpon>frmViewInvoiceDetail.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="QLThuChi\DotThu\KeHoachThu\FrCacKhoanThu.resx">
-      <DependentUpon>FrCacKhoanThu.cs</DependentUpon>
+    <EmbeddedResource Include="QLThuChi\Expenditure\Invoice\frmInvoice.resx">
+      <DependentUpon>frmInvoice.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="QLThuChi\DotThu\KeHoachThu\FrDoiTuongchinhsach.resx">
-      <DependentUpon>FrDoiTuongchinhsach.cs</DependentUpon>
+    <EmbeddedResource Include="QLThuChi\Receivable\PlanOfReceivable\frmAddReceivable.resx">
+      <DependentUpon>frmAddReceivable.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="QLThuChi\DotThu\KeHoachThu\FrThanhToan.resx">
-      <DependentUpon>FrThanhToan.cs</DependentUpon>
+    <EmbeddedResource Include="QLThuChi\Receivable\PlanOfReceivable\frmViewPreferred.resx">
+      <DependentUpon>frmViewPreferred.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="QLThuChi\DotThu\KeHoachThu\FRViewDoituongchinhsach.resx">
-      <DependentUpon>FRViewDoituongchinhsach.cs</DependentUpon>
+    <EmbeddedResource Include="QLThuChi\Receivable\PlanOfReceivable\frmPay.resx">
+      <DependentUpon>frmPay.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="QLThuChi\DotThu\KeHoachThu\SplashScreen1.resx">
+    <EmbeddedResource Include="QLThuChi\Receivable\PlanOfReceivable\frmViewPreferredModle.resx">
+      <DependentUpon>frmViewPreferredModle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QLThuChi\Receivable\PlanOfReceivable\SplashScreen1.resx">
       <DependentUpon>SplashScreen1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="QLThuChi\DotThu\MienGiam\FRDienMienGiam.resx">
-      <DependentUpon>FRDienMienGiam.cs</DependentUpon>
+    <EmbeddedResource Include="QLThuChi\Receivable\Preferred\frmPreferred.resx">
+      <DependentUpon>frmPreferred.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="QLThuChi\DotThu\KeHoachThu\FRSuaKhoanThu.resx">
-      <DependentUpon>FRSuaKhoanThu.cs</DependentUpon>
+    <EmbeddedResource Include="QLThuChi\Receivable\PlanOfReceivable\frmEditReceivableDetail.resx">
+      <DependentUpon>frmEditReceivableDetail.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="QLThuChi\DotThu\KeHoachThu\FTaoKhoanThu.resx">
-      <DependentUpon>FTaoKhoanThu.cs</DependentUpon>
+    <EmbeddedResource Include="QLThuChi\Receivable\PlanOfReceivable\frmAddReceivableDetail.resx">
+      <DependentUpon>frmAddReceivableDetail.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="QLThuChi\DotThu\MienGiam\FRSuaDoiTuong.resx">
-      <DependentUpon>FRSuaDoiTuong.cs</DependentUpon>
+    <EmbeddedResource Include="QLThuChi\Receivable\Preferred\frmEditPreferred.resx">
+      <DependentUpon>frmEditPreferred.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="QLThuChi\DotThu\MienGiam\FRThemDoiTuong.resx">
-      <DependentUpon>FRThemDoiTuong.cs</DependentUpon>
+    <EmbeddedResource Include="QLThuChi\Receivable\Preferred\frmAddPreferred.resx">
+      <DependentUpon>frmAddPreferred.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="QLThuChi\DotThu\KeHoachThu\USCacKhoanThuTheoLop.resx">
-      <DependentUpon>USCacKhoanThuTheoLop.cs</DependentUpon>
+    <EmbeddedResource Include="QLThuChi\Receivable\PlanOfReceivable\frmReceivableByClass.resx">
+      <DependentUpon>frmReceivableByClass.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="QLThuChi\DotThu\KeHoachThu\UsDotThuPhi.resx">
-      <DependentUpon>UsDotThuPhi.cs</DependentUpon>
+    <EmbeddedResource Include="QLThuChi\Receivable\PlanOfReceivable\frmReceivable.resx">
+      <DependentUpon>frmReceivable.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\ContractReport.resx">
       <DependentUpon>ContractReport.cs</DependentUpon>

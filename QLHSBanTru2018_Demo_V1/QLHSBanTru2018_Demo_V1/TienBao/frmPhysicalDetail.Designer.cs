@@ -101,14 +101,14 @@
             // 
             // dgvPhysicalDetail
             // 
-            this.dgvPhysicalDetail.Location = new System.Drawing.Point(24, 70);
+            this.dgvPhysicalDetail.Location = new System.Drawing.Point(24, 71);
             this.dgvPhysicalDetail.MainView = this.bandedGridView1;
             this.dgvPhysicalDetail.Name = "dgvPhysicalDetail";
             this.dgvPhysicalDetail.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.cmbHeightRating,
             this.cmbWeightRating,
             this.txtNote});
-            this.dgvPhysicalDetail.Size = new System.Drawing.Size(1186, 410);
+            this.dgvPhysicalDetail.Size = new System.Drawing.Size(1186, 411);
             this.dgvPhysicalDetail.TabIndex = 32;
             this.dgvPhysicalDetail.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.bandedGridView1});
@@ -353,9 +353,9 @@
             // simpleButton2
             // 
             this.simpleButton2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
-            this.simpleButton2.Location = new System.Drawing.Point(968, 484);
+            this.simpleButton2.Location = new System.Drawing.Point(968, 486);
             this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(127, 38);
+            this.simpleButton2.Size = new System.Drawing.Size(127, 36);
             this.simpleButton2.StyleController = this.layoutControl1;
             this.simpleButton2.TabIndex = 28;
             this.simpleButton2.Text = "Lưu ";
@@ -364,9 +364,9 @@
             // simpleButton3
             // 
             this.simpleButton3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton3.ImageOptions.Image")));
-            this.simpleButton3.Location = new System.Drawing.Point(1099, 484);
+            this.simpleButton3.Location = new System.Drawing.Point(1099, 486);
             this.simpleButton3.Name = "simpleButton3";
-            this.simpleButton3.Size = new System.Drawing.Size(111, 38);
+            this.simpleButton3.Size = new System.Drawing.Size(111, 36);
             this.simpleButton3.StyleController = this.layoutControl1;
             this.simpleButton3.TabIndex = 29;
             this.simpleButton3.Text = "Hủy bỏ";
@@ -412,33 +412,33 @@
             this.layoutControlItem4});
             this.layoutControlGroup4.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup4.Name = "layoutControlGroup4";
-            this.layoutControlGroup4.Size = new System.Drawing.Size(1190, 480);
+            this.layoutControlGroup4.Size = new System.Drawing.Size(1190, 479);
             this.layoutControlGroup4.Text = "2. Kết quả cân đo";
             // 
             // layoutControlItem13
             // 
             this.layoutControlItem13.Control = this.simpleButton2;
-            this.layoutControlItem13.Location = new System.Drawing.Point(944, 438);
+            this.layoutControlItem13.Location = new System.Drawing.Point(944, 439);
             this.layoutControlItem13.Name = "layoutControlItem13";
-            this.layoutControlItem13.Size = new System.Drawing.Size(131, 42);
+            this.layoutControlItem13.Size = new System.Drawing.Size(131, 40);
             this.layoutControlItem13.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem13.TextVisible = false;
             // 
             // layoutControlItem14
             // 
             this.layoutControlItem14.Control = this.simpleButton3;
-            this.layoutControlItem14.Location = new System.Drawing.Point(1075, 438);
+            this.layoutControlItem14.Location = new System.Drawing.Point(1075, 439);
             this.layoutControlItem14.Name = "layoutControlItem14";
-            this.layoutControlItem14.Size = new System.Drawing.Size(115, 42);
+            this.layoutControlItem14.Size = new System.Drawing.Size(115, 40);
             this.layoutControlItem14.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem14.TextVisible = false;
             // 
             // emptySpaceItem6
             // 
             this.emptySpaceItem6.AllowHotTrack = false;
-            this.emptySpaceItem6.Location = new System.Drawing.Point(0, 438);
+            this.emptySpaceItem6.Location = new System.Drawing.Point(0, 439);
             this.emptySpaceItem6.Name = "emptySpaceItem6";
-            this.emptySpaceItem6.Size = new System.Drawing.Size(944, 42);
+            this.emptySpaceItem6.Size = new System.Drawing.Size(944, 40);
             this.emptySpaceItem6.TextSize = new System.Drawing.Size(0, 0);
             // 
             // Label1
@@ -474,7 +474,7 @@
             this.simpleLabelItem2.AllowHotTrack = false;
             this.simpleLabelItem2.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.simpleLabelItem2.AppearanceItemCaption.Options.UseFont = true;
-            this.simpleLabelItem2.Location = new System.Drawing.Point(256, 0);
+            this.simpleLabelItem2.Location = new System.Drawing.Point(263, 0);
             this.simpleLabelItem2.MaxSize = new System.Drawing.Size(90, 24);
             this.simpleLabelItem2.MinSize = new System.Drawing.Size(90, 24);
             this.simpleLabelItem2.Name = "simpleLabelItem2";
@@ -487,7 +487,7 @@
             // simpleLabelItem3
             // 
             this.simpleLabelItem3.AllowHotTrack = false;
-            this.simpleLabelItem3.Location = new System.Drawing.Point(346, 0);
+            this.simpleLabelItem3.Location = new System.Drawing.Point(353, 0);
             this.simpleLabelItem3.MaxSize = new System.Drawing.Size(190, 24);
             this.simpleLabelItem3.MinSize = new System.Drawing.Size(190, 24);
             this.simpleLabelItem3.Name = "simpleLabelItem3";
@@ -500,9 +500,9 @@
             // emptySpaceItem4
             // 
             this.emptySpaceItem4.AllowHotTrack = false;
-            this.emptySpaceItem4.Location = new System.Drawing.Point(536, 0);
+            this.emptySpaceItem4.Location = new System.Drawing.Point(543, 0);
             this.emptySpaceItem4.Name = "emptySpaceItem4";
-            this.emptySpaceItem4.Size = new System.Drawing.Size(654, 24);
+            this.emptySpaceItem4.Size = new System.Drawing.Size(647, 24);
             this.emptySpaceItem4.TextSize = new System.Drawing.Size(0, 0);
             // 
             // splitterItem1
@@ -510,14 +510,14 @@
             this.splitterItem1.AllowHotTrack = true;
             this.splitterItem1.Location = new System.Drawing.Point(251, 0);
             this.splitterItem1.Name = "splitterItem1";
-            this.splitterItem1.Size = new System.Drawing.Size(5, 24);
+            this.splitterItem1.Size = new System.Drawing.Size(12, 24);
             // 
             // layoutControlItem4
             // 
             this.layoutControlItem4.Control = this.dgvPhysicalDetail;
             this.layoutControlItem4.Location = new System.Drawing.Point(0, 24);
             this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(1190, 414);
+            this.layoutControlItem4.Size = new System.Drawing.Size(1190, 415);
             this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem4.TextVisible = false;
             // 

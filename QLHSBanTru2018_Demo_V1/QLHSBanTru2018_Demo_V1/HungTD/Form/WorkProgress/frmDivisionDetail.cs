@@ -47,11 +47,9 @@ namespace QLHSBanTru2018_Demo_V1.HungTD.Form.WorkProgress
             txtName.Text = employee.FirstName + " " + employee.LastName;
             if (iFunction == 2 && division != null)
             {
-                cbbDepartment.SelectedValue = division.DepartmentID;
                 cbbPosition.SelectedValue = division.PositionID;
                 dtStartDate.EditValue = division.StartDate;
                 dtEndDate.EditValue = division.EndDate;
-                dtCreatedDate.EditValue = division.CreatedDate;
                 txtNote.Text = division.Note;
                 chkActive.Checked = division.Status;
             }
@@ -81,11 +79,9 @@ namespace QLHSBanTru2018_Demo_V1.HungTD.Form.WorkProgress
             {
                 Division entity = new Division();
                 entity.EmployeeID = employee.EmployeeID;
-                entity.DepartmentID = int.Parse(cbbDepartment.SelectedValue.ToString());
                 entity.PositionID = int.Parse(cbbPosition.SelectedValue.ToString());
                 entity.StartDate = (DateTime)dtStartDate.EditValue;
                 entity.EndDate = (DateTime)dtEndDate.EditValue;
-                entity.CreatedDate = (DateTime)dtCreatedDate.EditValue;
                 entity.CreatedBy = 1;
                 entity.Note = txtNote.Text;
                 entity.Status = chkActive.Checked;

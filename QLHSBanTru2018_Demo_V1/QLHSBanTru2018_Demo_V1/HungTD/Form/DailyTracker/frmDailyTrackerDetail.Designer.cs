@@ -44,6 +44,8 @@
             this.txtNote = new DevExpress.XtraEditors.MemoEdit();
             this.btnCancel = new DevExpress.XtraEditors.SimpleButton();
             this.btnSave = new DevExpress.XtraEditors.SimpleButton();
+            this.tspTimeIn = new DevExpress.XtraEditors.TimeSpanEdit();
+            this.tspTimeOut = new DevExpress.XtraEditors.TimeSpanEdit();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
@@ -67,8 +69,6 @@
             this.layoutControlItem17 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem16 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.tspTimeIn = new DevExpress.XtraEditors.TimeSpanEdit();
-            this.tspTimeOut = new DevExpress.XtraEditors.TimeSpanEdit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtName.Properties)).BeginInit();
@@ -79,6 +79,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtClassName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtReason.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNote.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tspTimeIn.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tspTimeOut.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).BeginInit();
@@ -102,8 +104,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem17)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem16)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tspTimeIn.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tspTimeOut.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -128,6 +128,7 @@
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl1.Location = new System.Drawing.Point(0, 0);
             this.layoutControl1.Name = "layoutControl1";
+            this.layoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(809, 254, 650, 400);
             this.layoutControl1.Root = this.layoutControlGroup1;
             this.layoutControl1.Size = new System.Drawing.Size(462, 502);
             this.layoutControl1.TabIndex = 0;
@@ -136,6 +137,7 @@
             // cbbStudy
             // 
             this.cbbStudy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbStudy.Enabled = false;
             this.cbbStudy.FormattingEnabled = true;
             this.cbbStudy.Items.AddRange(new object[] {
             "1",
@@ -156,6 +158,7 @@
             // cbbHealth
             // 
             this.cbbHealth.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbHealth.Enabled = false;
             this.cbbHealth.FormattingEnabled = true;
             this.cbbHealth.Items.AddRange(new object[] {
             "1",
@@ -176,6 +179,7 @@
             // cbbSleep
             // 
             this.cbbSleep.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbSleep.Enabled = false;
             this.cbbSleep.FormattingEnabled = true;
             this.cbbSleep.Items.AddRange(new object[] {
             "1",
@@ -196,6 +200,7 @@
             // cbbEating
             // 
             this.cbbEating.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbEating.Enabled = false;
             this.cbbEating.FormattingEnabled = true;
             this.cbbEating.Items.AddRange(new object[] {
             "1",
@@ -221,6 +226,7 @@
             this.cbbPresent.Name = "cbbPresent";
             this.cbbPresent.Size = new System.Drawing.Size(92, 21);
             this.cbbPresent.TabIndex = 10;
+            this.cbbPresent.SelectedIndexChanged += new System.EventHandler(this.cbbPresent_SelectedIndexChanged);
             // 
             // txtName
             // 
@@ -313,6 +319,32 @@
             this.btnSave.Text = "Lưu";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
+            // tspTimeIn
+            // 
+            this.tspTimeIn.EditValue = System.TimeSpan.Parse("00:00:00");
+            this.tspTimeIn.Enabled = false;
+            this.tspTimeIn.Location = new System.Drawing.Point(346, 204);
+            this.tspTimeIn.Name = "tspTimeIn";
+            this.tspTimeIn.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.tspTimeIn.Properties.TimeEditStyle = DevExpress.XtraEditors.Repository.TimeEditStyle.SpinButtons;
+            this.tspTimeIn.Size = new System.Drawing.Size(92, 20);
+            this.tspTimeIn.StyleController = this.layoutControl1;
+            this.tspTimeIn.TabIndex = 11;
+            // 
+            // tspTimeOut
+            // 
+            this.tspTimeOut.EditValue = System.TimeSpan.Parse("00:00:00");
+            this.tspTimeOut.Enabled = false;
+            this.tspTimeOut.Location = new System.Drawing.Point(137, 387);
+            this.tspTimeOut.Name = "tspTimeOut";
+            this.tspTimeOut.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.tspTimeOut.Properties.TimeEditStyle = DevExpress.XtraEditors.Repository.TimeEditStyle.SpinButtons;
+            this.tspTimeOut.Size = new System.Drawing.Size(301, 20);
+            this.tspTimeOut.StyleController = this.layoutControl1;
+            this.tspTimeOut.TabIndex = 16;
+            // 
             // layoutControlGroup1
             // 
             this.layoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
@@ -326,7 +358,7 @@
             this.layoutControlItem17,
             this.layoutControlItem16,
             this.emptySpaceItem1});
-            this.layoutControlGroup1.Name = "layoutControlGroup1";
+            this.layoutControlGroup1.Name = "Root";
             this.layoutControlGroup1.Size = new System.Drawing.Size(462, 502);
             this.layoutControlGroup1.TextVisible = false;
             // 
@@ -552,30 +584,6 @@
             this.emptySpaceItem1.Size = new System.Drawing.Size(248, 26);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
-            // tspTimeIn
-            // 
-            this.tspTimeIn.EditValue = System.TimeSpan.Parse("00:00:00");
-            this.tspTimeIn.Location = new System.Drawing.Point(346, 204);
-            this.tspTimeIn.Name = "tspTimeIn";
-            this.tspTimeIn.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.tspTimeIn.Properties.TimeEditStyle = DevExpress.XtraEditors.Repository.TimeEditStyle.SpinButtons;
-            this.tspTimeIn.Size = new System.Drawing.Size(92, 20);
-            this.tspTimeIn.StyleController = this.layoutControl1;
-            this.tspTimeIn.TabIndex = 11;
-            // 
-            // tspTimeOut
-            // 
-            this.tspTimeOut.EditValue = System.TimeSpan.Parse("00:00:00");
-            this.tspTimeOut.Location = new System.Drawing.Point(137, 387);
-            this.tspTimeOut.Name = "tspTimeOut";
-            this.tspTimeOut.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.tspTimeOut.Properties.TimeEditStyle = DevExpress.XtraEditors.Repository.TimeEditStyle.SpinButtons;
-            this.tspTimeOut.Size = new System.Drawing.Size(301, 20);
-            this.tspTimeOut.StyleController = this.layoutControl1;
-            this.tspTimeOut.TabIndex = 16;
-            // 
             // frmDailyTrackerDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -598,6 +606,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtClassName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtReason.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNote.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tspTimeIn.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tspTimeOut.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).EndInit();
@@ -621,8 +631,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem17)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem16)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tspTimeIn.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tspTimeOut.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }

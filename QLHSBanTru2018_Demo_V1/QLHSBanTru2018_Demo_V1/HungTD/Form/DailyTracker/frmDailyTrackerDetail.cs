@@ -128,18 +128,31 @@ namespace QLHSBanTru2018_Demo_V1.HungTD.Form.DailyTracker
             {
                 dailyTracker.Present = int.Parse(cbbPresent.SelectedValue.ToString());
                 dailyTracker.Reason = txtReason.Text;
-                dailyTracker.TimeIn = tspTimeIn.TimeSpan;
-                dailyTracker.TimeOut = tspTimeOut.TimeSpan;
-                dailyTracker.Eating = cbbEating.SelectedIndex;
-                dailyTracker.Sleep = cbbSleep.SelectedIndex;
-                dailyTracker.Health = cbbHealth.SelectedIndex;
-                dailyTracker.Study = cbbStudy.SelectedIndex;
                 dailyTracker.Note = txtNote.Text;
                 dailyTracker.Status = true;
+                if (int.Parse(cbbPresent.SelectedValue.ToString()) != 0)
+                {
+                    dailyTracker.TimeIn = tspTimeIn.TimeSpan;
+                    dailyTracker.TimeOut = tspTimeOut.TimeSpan;
+                    dailyTracker.Eating = cbbEating.SelectedIndex;
+                    dailyTracker.Sleep = cbbSleep.SelectedIndex;
+                    dailyTracker.Health = cbbHealth.SelectedIndex;
+                    dailyTracker.Study = cbbStudy.SelectedIndex;
+                }
+                else
+                {
+                    dailyTracker.TimeIn = null;
+                    dailyTracker.TimeOut = null;
+                    dailyTracker.Eating = null;
+                    dailyTracker.Sleep = null;
+                    dailyTracker.Health = null;
+                    dailyTracker.Study = null;
+                }
 
                 if (new DailyTrackerDAO().Edit(dailyTracker))
                 {
                     MessageBox.Show("Cập nhật đánhh giá thành công!", "Thông Báo!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Close();
                 }
                 else
                 {
@@ -155,6 +168,36 @@ namespace QLHSBanTru2018_Demo_V1.HungTD.Form.DailyTracker
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void cbbPresent_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (int.Parse(cbbPresent.SelectedValue.ToString()) == 0)
+                {
+                    tspTimeIn.Enabled = false;
+                    txtReason.Enabled = true;
+                    cbbEating.Enabled = false;
+                    cbbSleep.Enabled = false;
+                    cbbHealth.Enabled = false;
+                    cbbStudy.Enabled = false;
+                    tspTimeOut.Enabled = false;
+                }
+                else
+                {
+                    tspTimeIn.Enabled = true;
+                    txtReason.Enabled = false;
+                    cbbEating.Enabled = true;
+                    cbbSleep.Enabled = true;
+                    cbbHealth.Enabled = true;
+                    cbbStudy.Enabled = true;
+                    tspTimeOut.Enabled = true;
+                }
+            }
+            catch
+            {
+            }
         }
     }
     class Present

@@ -28,6 +28,7 @@ using QLHSBanTru2018_Demo_V1.QLThuChi.ChiTieu.ChiTieuThucPham;
 using QLHSBanTru2018_Demo_V1.QLThuChi.ChiTieu.ChiTieuThucPham.ThongKeThucPham;
 using QLHSBanTru2018_Demo_V1.HungTD.Form.Menu;
 using QLHSBanTru2018_Demo_V1.HungTD.Form.DailyTracker;
+using QLHSBanTru2018_Demo_V1.QLThuChi.ChiTieu.ChiTraHocPhi;
 
 namespace QLHSBanTru2018_Demo_V1
 {
@@ -133,7 +134,6 @@ namespace QLHSBanTru2018_Demo_V1
         {
             pnControlsPanel.Controls.Clear();
             frmDailyTracker frmDT = new frmDailyTracker();
-            frmDT.Dock = DockStyle.Fill;
             frmDT.SetClassID(8);
             pnControlsPanel.Controls.Add(frmDT);
             labTitle.Caption = "ĐIỂM DANH HÀNG NGÀY";
@@ -166,8 +166,10 @@ namespace QLHSBanTru2018_Demo_V1
         }
         private void btnDanhMucChiTieu_ItemClick(object sender, ItemClickEventArgs e)
         {
-            FrLoaiChi a = new FrLoaiChi();
-            a.ShowDialog();
+            UsChiTraHocPhi a = new UsChiTraHocPhi();
+            pnControlsPanel.Controls.Clear();
+            pnControlsPanel.Controls.Add(a);
+            a.Dock = DockStyle.Fill;
         }
         private void btnLoaichi_ItemClick(object sender, ItemClickEventArgs e)
         {

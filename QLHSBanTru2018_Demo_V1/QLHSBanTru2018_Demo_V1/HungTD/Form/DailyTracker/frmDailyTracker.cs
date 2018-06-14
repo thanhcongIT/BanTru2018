@@ -28,6 +28,7 @@ namespace QLHSBanTru2018_Demo_V1.HungTD.Form.DailyTracker
 
         private void frmDailyTracker_Load(object sender, EventArgs e)
         {
+            this.Dock = DockStyle.Fill;
             FillCombobox();
             InitDailyTracker();
         }

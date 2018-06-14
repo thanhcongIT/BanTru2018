@@ -11,8 +11,6 @@ namespace DataConnect.ViewModel
         public int DivisionID { get; set; }
         public int EmployeeID { get; set; }
         public string EmployeeFullName { get; set; }
-        public int DepartmentID { get; set; }
-        public string DepartmentName { get; set; }
         public int PositionID { get; set; }
         public string PositionName { get; set; }
         public DateTime StartDate { get; set; }

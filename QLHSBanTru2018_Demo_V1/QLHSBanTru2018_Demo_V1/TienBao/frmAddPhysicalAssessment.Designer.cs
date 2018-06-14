@@ -30,37 +30,37 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAddPhysicalAssessment));
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
-            this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.txtNotePhysical = new DevExpress.XtraEditors.MemoEdit();
             this.txtPhysicalName = new DevExpress.XtraEditors.TextEdit();
             this.dtPhysicalDate = new DevExpress.XtraEditors.DateEdit();
+            this.txtNotePhysical = new DevExpress.XtraEditors.MemoEdit();
+            this.btnHuybo = new DevExpress.XtraEditors.SimpleButton();
+            this.btnLuu = new DevExpress.XtraEditors.SimpleButton();
+            this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.emptySpaceItem3 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.txtPhysicalNote = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.btnHuybo = new DevExpress.XtraEditors.SimpleButton();
+            this.emptySpaceItem3 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.btnLuu = new DevExpress.XtraEditors.SimpleButton();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtNotePhysical.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPhysicalName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtPhysicalDate.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtPhysicalDate.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNotePhysical.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPhysicalNote)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -79,6 +79,58 @@
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
+            // txtPhysicalName
+            // 
+            this.txtPhysicalName.Location = new System.Drawing.Point(91, 43);
+            this.txtPhysicalName.Name = "txtPhysicalName";
+            this.txtPhysicalName.Size = new System.Drawing.Size(248, 20);
+            this.txtPhysicalName.StyleController = this.layoutControl1;
+            this.txtPhysicalName.TabIndex = 4;
+            // 
+            // dtPhysicalDate
+            // 
+            this.dtPhysicalDate.EditValue = null;
+            this.dtPhysicalDate.Location = new System.Drawing.Point(91, 67);
+            this.dtPhysicalDate.Name = "dtPhysicalDate";
+            this.dtPhysicalDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dtPhysicalDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dtPhysicalDate.Size = new System.Drawing.Size(94, 20);
+            this.dtPhysicalDate.StyleController = this.layoutControl1;
+            this.dtPhysicalDate.TabIndex = 5;
+            // 
+            // txtNotePhysical
+            // 
+            this.txtNotePhysical.EditValue = "Không";
+            this.txtNotePhysical.Location = new System.Drawing.Point(91, 91);
+            this.txtNotePhysical.Name = "txtNotePhysical";
+            this.txtNotePhysical.Size = new System.Drawing.Size(248, 62);
+            this.txtNotePhysical.StyleController = this.layoutControl1;
+            this.txtNotePhysical.TabIndex = 30;
+            // 
+            // btnHuybo
+            // 
+            this.btnHuybo.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnHuybo.ImageOptions.Image")));
+            this.btnHuybo.Location = new System.Drawing.Point(229, 278);
+            this.btnHuybo.Name = "btnHuybo";
+            this.btnHuybo.Size = new System.Drawing.Size(122, 36);
+            this.btnHuybo.StyleController = this.layoutControl1;
+            this.btnHuybo.TabIndex = 31;
+            this.btnHuybo.Text = "Hủy bỏ";
+            this.btnHuybo.Click += new System.EventHandler(this.btnHuybo_Click);
+            // 
+            // btnLuu
+            // 
+            this.btnLuu.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnLuu.ImageOptions.Image")));
+            this.btnLuu.Location = new System.Drawing.Point(82, 278);
+            this.btnLuu.Name = "btnLuu";
+            this.btnLuu.Size = new System.Drawing.Size(143, 36);
+            this.btnLuu.StyleController = this.layoutControl1;
+            this.btnLuu.TabIndex = 32;
+            this.btnLuu.Text = "Lưu thông tin cân đo";
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
+            // 
             // layoutControlGroup1
             // 
             this.layoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
@@ -92,35 +144,18 @@
             this.layoutControlGroup1.Size = new System.Drawing.Size(363, 326);
             this.layoutControlGroup1.TextVisible = false;
             // 
-            // txtNotePhysical
+            // layoutControlGroup2
             // 
-            this.txtNotePhysical.EditValue = "Không";
-            this.txtNotePhysical.Location = new System.Drawing.Point(92, 90);
-            this.txtNotePhysical.Name = "txtNotePhysical";
-            this.txtNotePhysical.Size = new System.Drawing.Size(247, 62);
-            this.txtNotePhysical.StyleController = this.layoutControl1;
-            this.txtNotePhysical.TabIndex = 30;
-            // 
-            // txtPhysicalName
-            // 
-            this.txtPhysicalName.Location = new System.Drawing.Point(92, 42);
-            this.txtPhysicalName.Name = "txtPhysicalName";
-            this.txtPhysicalName.Size = new System.Drawing.Size(247, 20);
-            this.txtPhysicalName.StyleController = this.layoutControl1;
-            this.txtPhysicalName.TabIndex = 4;
-            // 
-            // dtPhysicalDate
-            // 
-            this.dtPhysicalDate.EditValue = null;
-            this.dtPhysicalDate.Location = new System.Drawing.Point(92, 66);
-            this.dtPhysicalDate.Name = "dtPhysicalDate";
-            this.dtPhysicalDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dtPhysicalDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dtPhysicalDate.Size = new System.Drawing.Size(93, 20);
-            this.dtPhysicalDate.StyleController = this.layoutControl1;
-            this.dtPhysicalDate.TabIndex = 5;
+            this.layoutControlGroup2.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutControlItem1,
+            this.layoutControlItem2,
+            this.txtPhysicalNote,
+            this.emptySpaceItem3,
+            this.emptySpaceItem2});
+            this.layoutControlGroup2.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlGroup2.Name = "layoutControlGroup2";
+            this.layoutControlGroup2.Size = new System.Drawing.Size(343, 266);
+            this.layoutControlGroup2.Text = "Thông tin cân đo";
             // 
             // layoutControlItem1
             // 
@@ -142,26 +177,6 @@
             this.layoutControlItem2.Text = "Ngày cân đo:";
             this.layoutControlItem2.TextSize = new System.Drawing.Size(64, 13);
             // 
-            // emptySpaceItem2
-            // 
-            this.emptySpaceItem2.AllowHotTrack = false;
-            this.emptySpaceItem2.CustomizationFormText = "emptySpaceItem2";
-            this.emptySpaceItem2.Location = new System.Drawing.Point(0, 114);
-            this.emptySpaceItem2.Name = "emptySpaceItem2";
-            this.emptySpaceItem2.Size = new System.Drawing.Size(319, 108);
-            this.emptySpaceItem2.Text = "emptySpaceItem2";
-            this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
-            // 
-            // emptySpaceItem3
-            // 
-            this.emptySpaceItem3.AllowHotTrack = false;
-            this.emptySpaceItem3.CustomizationFormText = "emptySpaceItem3";
-            this.emptySpaceItem3.Location = new System.Drawing.Point(165, 24);
-            this.emptySpaceItem3.Name = "emptySpaceItem3";
-            this.emptySpaceItem3.Size = new System.Drawing.Size(154, 24);
-            this.emptySpaceItem3.Text = "emptySpaceItem3";
-            this.emptySpaceItem3.TextSize = new System.Drawing.Size(0, 0);
-            // 
             // txtPhysicalNote
             // 
             this.txtPhysicalNote.Control = this.txtNotePhysical;
@@ -172,66 +187,49 @@
             this.txtPhysicalNote.Text = "Ghi chú:";
             this.txtPhysicalNote.TextSize = new System.Drawing.Size(64, 13);
             // 
-            // layoutControlGroup2
+            // emptySpaceItem3
             // 
-            this.layoutControlGroup2.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.layoutControlItem1,
-            this.layoutControlItem2,
-            this.txtPhysicalNote,
-            this.emptySpaceItem3,
-            this.emptySpaceItem2});
-            this.layoutControlGroup2.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlGroup2.Name = "layoutControlGroup2";
-            this.layoutControlGroup2.Size = new System.Drawing.Size(343, 264);
-            this.layoutControlGroup2.Text = "Thông tin cân đo";
+            this.emptySpaceItem3.AllowHotTrack = false;
+            this.emptySpaceItem3.CustomizationFormText = "emptySpaceItem3";
+            this.emptySpaceItem3.Location = new System.Drawing.Point(165, 24);
+            this.emptySpaceItem3.Name = "emptySpaceItem3";
+            this.emptySpaceItem3.Size = new System.Drawing.Size(154, 24);
+            this.emptySpaceItem3.TextSize = new System.Drawing.Size(0, 0);
             // 
-            // emptySpaceItem1
+            // emptySpaceItem2
             // 
-            this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 264);
-            this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(70, 42);
-            this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
-            // 
-            // btnHuybo
-            // 
-            this.btnHuybo.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.btnHuybo.Location = new System.Drawing.Point(229, 276);
-            this.btnHuybo.Name = "btnHuybo";
-            this.btnHuybo.Size = new System.Drawing.Size(122, 38);
-            this.btnHuybo.StyleController = this.layoutControl1;
-            this.btnHuybo.TabIndex = 31;
-            this.btnHuybo.Text = "Hủy bỏ";
-            this.btnHuybo.Click += new System.EventHandler(this.btnHuybo_Click);
+            this.emptySpaceItem2.AllowHotTrack = false;
+            this.emptySpaceItem2.CustomizationFormText = "emptySpaceItem2";
+            this.emptySpaceItem2.Location = new System.Drawing.Point(0, 114);
+            this.emptySpaceItem2.Name = "emptySpaceItem2";
+            this.emptySpaceItem2.Size = new System.Drawing.Size(319, 109);
+            this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem3
             // 
             this.layoutControlItem3.Control = this.btnHuybo;
-            this.layoutControlItem3.Location = new System.Drawing.Point(217, 264);
+            this.layoutControlItem3.Location = new System.Drawing.Point(217, 266);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(126, 42);
+            this.layoutControlItem3.Size = new System.Drawing.Size(126, 40);
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem3.TextVisible = false;
-            // 
-            // btnLuu
-            // 
-            this.btnLuu.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
-            this.btnLuu.Location = new System.Drawing.Point(82, 276);
-            this.btnLuu.Name = "btnLuu";
-            this.btnLuu.Size = new System.Drawing.Size(143, 38);
-            this.btnLuu.StyleController = this.layoutControl1;
-            this.btnLuu.TabIndex = 32;
-            this.btnLuu.Text = "Lưu thông tin cân đo";
-            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // layoutControlItem4
             // 
             this.layoutControlItem4.Control = this.btnLuu;
-            this.layoutControlItem4.Location = new System.Drawing.Point(70, 264);
+            this.layoutControlItem4.Location = new System.Drawing.Point(70, 266);
             this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(147, 42);
+            this.layoutControlItem4.Size = new System.Drawing.Size(147, 40);
             this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem4.TextVisible = false;
+            // 
+            // emptySpaceItem1
+            // 
+            this.emptySpaceItem1.AllowHotTrack = false;
+            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 266);
+            this.emptySpaceItem1.Name = "emptySpaceItem1";
+            this.emptySpaceItem1.Size = new System.Drawing.Size(70, 40);
+            this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // frmAddPhysicalAssessment
             // 
@@ -244,20 +242,20 @@
             this.Load += new System.EventHandler(this.frmAddPhysicalAssessment_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtNotePhysical.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPhysicalName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtPhysicalDate.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtPhysicalDate.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNotePhysical.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPhysicalNote)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             this.ResumeLayout(false);
 
         }

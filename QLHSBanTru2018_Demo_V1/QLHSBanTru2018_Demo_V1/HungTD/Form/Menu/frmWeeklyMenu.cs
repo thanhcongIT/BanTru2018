@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using DataConnect.DAO.HungTD;
+using DevExpress.XtraSplashScreen;
 
 namespace QLHSBanTru2018_Demo_V1.HungTD.Form.Menu
 {
@@ -18,7 +19,7 @@ namespace QLHSBanTru2018_Demo_V1.HungTD.Form.Menu
         {
             InitializeComponent();
         }
-        int weekID=0;
+        int weekID = 0;
         int ageGroupID = 0;
 
         private void frmWeeklyMenu_Load(object sender, EventArgs e)
@@ -29,17 +30,11 @@ namespace QLHSBanTru2018_Demo_V1.HungTD.Form.Menu
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            frmDailyMenuDetail frmDMD = new frmDailyMenuDetail();
-            frmDMD.setFunction(1);
-            frmDMD.setAgeGroupID(1);
-            frmDMD.setTitle("Thêm mới thực đơn");
-            frmDMD.ShowDialog();
-            if (frmDMD.DialogResult == DialogResult.OK)
-                FillCombobox();
+
         }
         private void FillCombobox()
         {
-            cbbWeekID.DataSource = new WeekDAO().ListAll(21);
+            cbbWeekID.DataSource = new WeekDAO().ListAll(5);
             cbbWeekID.DisplayMember = "WeekFullName";
             cbbWeekID.ValueMember = "WeekID";
             cbbWeekID.SelectedValue = new WeekDAO().GetWeekIDNow();
@@ -50,24 +45,37 @@ namespace QLHSBanTru2018_Demo_V1.HungTD.Form.Menu
 
             try
             {
-                FillGridControl(ageGroupID, weekID);
+                FillGridControl((int)cbbWeekID.SelectedValue, (int)cbbAgeGroup.SelectedValue);
             }
             catch
             {
 
             }
         }
-        private void FillGridControl(int ageGroupID, int weekID)
+        private void FillGridControl(int weekID, int ageGroupID)
         {
+            gcMain.DataSource = new DailyMenuDAO().GetDailyMenu(weekID - 4, weekID - 3, weekID - 2, weekID - 1, weekID, ageGroupID);
+            for(int i=0;i<tileView1.DataRowCount; i++)
+            {
+                try
+                {
+                    if (tileView1.GetRowCellDisplayText(i, tileView1.Columns["Date"]).ToString() == DateTime.Now.ToString("dd/MM/yyyy"))
+                    {
+                        tileView1.FocusedRowHandle = tileView1.GetRowHandle(i);
+                    }
+                }
+                catch
+                {
 
+                }
+            }
         }
 
         private void cbbAgeGroup_SelectedIndexChanged(object sender, EventArgs e)
         {
             try
             {
-                FillGridControl(ageGroupID, weekID);
-
+                FillGridControl((int)cbbWeekID.SelectedValue, (int)cbbAgeGroup.SelectedValue);
             }
             catch
             {
@@ -79,7 +87,55 @@ namespace QLHSBanTru2018_Demo_V1.HungTD.Form.Menu
         {
             try
             {
-                FillGridControl(ageGroupID, weekID);
+                FillGridControl((int)cbbWeekID.SelectedValue, (int)cbbAgeGroup.SelectedValue);
+            }
+            catch
+            {
+
+            }
+        }
+        private void InitDailyMenu()
+        {
+            DailyMenuDAO dailyMenuDAO = new DailyMenuDAO();
+            WeekDAO weekDAO = new WeekDAO();
+
+            int weekIndex = weekDAO.GetWeekIndexByID(int.Parse(cbbWeekID.SelectedValue.ToString()));
+
+            if (dailyMenuDAO.HasDailyMenuOfWeek((int)cbbWeekID.SelectedValue))
+            {
+                if (MessageBox.Show("Phiếu thực đơn của 'TUẦN " + weekIndex + "' hiện chưa được khởi tạo. Bạn có đồng ý khởi tạo?", "Thông Báo!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    SplashScreenManager.ShowForm(typeof(TienBao.WaitForm));
+                    dailyMenuDAO.InitDailyMenuOfWeek(int.Parse(cbbWeekID.SelectedValue.ToString()));
+                    FillGridControl((int)cbbWeekID.SelectedValue, (int)cbbAgeGroup.SelectedValue);
+                    SplashScreenManager.CloseForm();
+                }
+            }
+            else
+            {
+
+            }
+        }
+
+        private void btnInit_Click(object sender, EventArgs e)
+        {
+            InitDailyMenu();
+        }
+
+        private void btnDailyMenuDetail_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var rowHandle = tileView1.FocusedRowHandle;
+
+                frmDailyMenuDetail frmDMD = new frmDailyMenuDetail();
+                frmDMD.setFunction(1);
+                frmDMD.setTitle("Thêm mới thực đơn");
+                frmDMD.setDailyMenu(int.Parse(tileView1.GetRowCellValue(rowHandle, "DailyMenuID").ToString()));
+                frmDMD.setAgeGroupID((int)cbbAgeGroup.SelectedValue);
+                frmDMD.ShowDialog();
+                if (frmDMD.DialogResult == DialogResult.OK)
+                    FillCombobox();
             }
             catch
             {

@@ -27,13 +27,10 @@ namespace DataConnect.DAO.HungTD
                             DivisionID = d.DivisionID,
                             EmployeeID = d.EmployeeID,
                             EmployeeFullName = d.Employee.FirstName + " " + d.Employee.LastName,
-                            DepartmentID = d.DepartmentID,
-                            DepartmentName = d.Department.Name,
                             PositionID = d.PositionID,
                             PositionName = d.Position.Name,
                             StartDate = d.StartDate,
                             EndDate = d.EndDate,
-                            CreatedDate = d.CreatedDate,
                             CreatedBy = d.CreatedBy,
                             CreatedByFullName = d.Employee1.FirstName + " " + d.Employee1.LastName,
                             Note = d.Note,
@@ -63,11 +60,9 @@ namespace DataConnect.DAO.HungTD
             try
             {
                 Division obj = divisions.SingleOrDefault(x => x.DivisionID.Equals(entity.DivisionID));
-                obj.DepartmentID = entity.DepartmentID;
                 obj.PositionID = entity.PositionID;
                 obj.StartDate = entity.StartDate;
                 obj.EndDate = entity.EndDate;
-                obj.CreatedDate = entity.CreatedDate;
                 obj.CreatedBy = entity.CreatedBy;
                 obj.Note = entity.Note;
                 obj.Status = entity.Status;
