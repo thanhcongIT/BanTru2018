@@ -26,6 +26,7 @@ namespace QLHSBanTru2018_Demo_V1.TienBao
         {
             InitializeComponent();
         }
+
         #region LoadInfo
         private void LoadClassInfor(int GradeID)
         {
